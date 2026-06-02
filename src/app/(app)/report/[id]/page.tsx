@@ -751,13 +751,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       {/* Override the (app) layout background to dark gradient for report */}
       <style>{`
         .gem-floating-card {
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.10);
-          border-radius: 16px;
-          padding: 24px;
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+          background: #ffffff;
+          padding: 28px 32px;
+          margin-bottom: 12px;
         }
         /* Hide the nav bottom border on report pages — it creates a
            visible seam between the white nav and the dark gradient. */
@@ -917,10 +913,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           >
             {whatsSpecial.headline && (
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
                   Why This Can Be a Hit
                 </p>
-                <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: 'rgba(255,255,255,0.88)' }}>
+                <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: '#1C1917' }}>
                   {whatsSpecial.headline}
                 </p>
               </div>
@@ -930,15 +926,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {/* PLOT SUMMARY — collapsed by default */}
           {plotSummary && (
             <details>
-              <summary className="text-[11px] font-semibold uppercase tracking-[0.12em] cursor-pointer select-none list-none" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <summary className="text-[11px] font-semibold uppercase tracking-[0.12em] cursor-pointer select-none list-none" style={{ color: '#78716C' }}>
                 <span className="flex items-center gap-1.5">
                   Plot Summary
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="inline-block transition-transform [[open]>&]:rotate-180">
-                    <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="#78716C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </summary>
-              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2" style={{ color: '#44403C' }}>
                 {plotSummary}
               </p>
             </details>

@@ -63,9 +63,8 @@ export function ProjectNeedsCards({
       <div
         className="flex overflow-hidden"
         style={{
-          borderRadius: activeTab ? '12px 12px 0 0' : '12px',
-          border: '1px solid #E7E5E4',
-          borderBottom: activeTab ? 'none' : '1px solid #E7E5E4',
+          border: 'none',
+          borderBottom: activeTab ? 'none' : 'none',
         }}
       >
         {tabs.map((tab, i) => {
@@ -106,9 +105,7 @@ export function ProjectNeedsCards({
       {activeTab && (
         <div
           style={{
-            border: '1px solid #E7E5E4',
-            borderTop: 'none',
-            borderRadius: '0 0 12px 12px',
+            borderTop: '1px solid #E7E5E4',
             background: '#FFFFFF',
           }}
         >
@@ -133,11 +130,8 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
 
   return (
     <div
-      className="rounded-xl overflow-hidden"
-      style={{
-        background: '#FAFAF9',
-        border: '1px solid #E7E5E4',
-      }}
+      className="overflow-hidden"
+      style={{ background: '#FFFFFF' }}
     >
       <button
         onClick={() => setOpen(!open)}
