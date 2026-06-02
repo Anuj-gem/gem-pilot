@@ -392,7 +392,7 @@ export function BackersList({ submissionId, budgetTotal, isOwner, currentUserId,
       {/* Empty state for visitors */}
       {!isOwner && allBackers.length === 0 && (
         <p className="text-[13px] m-0" style={{ color: '#78716C' }}>
-          No backers yet.
+          No funding yet.
         </p>
       )}
 

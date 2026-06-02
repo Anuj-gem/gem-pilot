@@ -952,16 +952,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
         <div className="gem-floating-card">
         <ProjectNeedsCards
-          investmentSummary={null}
-          investmentMetrics={{
-            projectCost: investmentProjectCost,
-            secured: totalBacking > 0 ? fmtShort(totalBacking) : null,
-            considering: investmentConsideringAmount > 0 ? fmtShort(investmentConsideringAmount) : null,
-          }}
+          investmentSummary={(() => {
+            const parts: string[] = []
+            if (totalBacking > 0) parts.push(`${fmtShort(totalBacking)} funded`)
+            if (matchingOpps.length > 0) parts.push(`${matchingOpps.length} opportunit${matchingOpps.length !== 1 ? 'ies' : 'y'}`)
+            if (revenuePlan?.total) parts.push(`${fmtShort(revenuePlan.total)} revenue`)
+            if (parts.length === 0 && investmentProjectCost) return `${investmentProjectCost} budget`
+            return parts.join(' · ') || null
+          })()}
+          investmentMetrics={null}
           crewSummary={null}
           castSummary={
             leadCharacters.length > 0
-              ? `${leadCharacters.length} character${leadCharacters.length !== 1 ? 's' : ''}`
+              ? `${leadCharacters.length} role${leadCharacters.length !== 1 ? 's' : ''}`
               : null
           }
           investmentChildren={
@@ -980,8 +983,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </CollapsibleRow>
               <CollapsibleRow
                 emoji="💰"
-                title="Backers"
-                subtitle={totalBacking > 0 ? `${backerCount} confirmed` : 'No backers yet'}
+                title="Funding"
+                subtitle={totalBacking > 0 ? `${backerCount} confirmed` : 'No funding yet'}
                 value={totalBacking > 0 ? fmtShort(totalBacking) : '$0'}
                 valueColor={totalBacking > 0 ? '#0F6E56' : '#78716C'}
               >
@@ -995,7 +998,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </CollapsibleRow>
               <CollapsibleRow
                 emoji="🏦"
-                title="Funding available"
+                title="Funding opportunities"
                 subtitle={matchingOpps.length > 0 ? `${matchingOpps.length} matching from GEM partners` : 'No matching opportunities'}
                 value={matchingOpps.length > 0 ? fmtShort(matchingOpps.reduce((s, o) => s + o.funding_amount, 0)) : '$0'}
                 valueColor={matchingOpps.length > 0 ? '#534AB7' : '#78716C'}
@@ -1011,7 +1014,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               </CollapsibleRow>
               <CollapsibleRow
                 emoji="📈"
-                title="Revenue plan"
+                title="Revenue projection"
                 subtitle={revenuePlan?.sources?.length ? `${revenuePlan.sources.length} source${revenuePlan.sources.length !== 1 ? 's' : ''}` : 'No sources added yet'}
                 value={revenuePlan?.total ? fmtShort(revenuePlan.total) : '$0'}
                 valueColor={revenuePlan?.total ? '#0F6E56' : '#78716C'}

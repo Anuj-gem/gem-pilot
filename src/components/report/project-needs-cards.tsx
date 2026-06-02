@@ -42,7 +42,7 @@ export function ProjectNeedsCards({
     return investmentSummary || null
   })()
 
-  const tabs: { key: CardKey; emoji: string; title: string; summary: string | null }[] = [
+  const tabs: { key: CardKey; emoji: string; title: string; summary: string | null; highlightColor?: string }[] = [
     { key: 'investment', emoji: '💰', title: 'Funding', summary: investmentLine },
     { key: 'crew', emoji: '🎬', title: 'Crew', summary: crewSummary },
     { key: 'cast', emoji: '🎭', title: 'Cast', summary: castSummary },
