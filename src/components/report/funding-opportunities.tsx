@@ -156,6 +156,13 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
                       {opp.subtitle && (
                         <p className="text-[12px] m-0 mt-0.5 truncate" style={{ color: '#78716C' }}>{opp.subtitle}</p>
                       )}
+                      {r?.feedback_tags && r.feedback_tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-1.5">
+                          {r.feedback_tags.map((tag, i) => (
+                            <span key={i} className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: '#EEEDFE', color: '#534AB7' }}>{tag}</span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(opp.funding_amount)}</span>
                     {r?.feedback || r?.feedback_tags?.length ? (

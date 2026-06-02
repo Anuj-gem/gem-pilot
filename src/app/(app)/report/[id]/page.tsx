@@ -1014,13 +1014,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   currentUserId={user?.id ?? null}
                   ownerName={ownerProfile?.full_name ?? null}
                 />
-                {matchingOpps.length > 0 && (
+                {(isOwner || isAdmin) && matchingOpps.length > 0 && (
                   <div style={{ borderTop: '1px solid #f0f0f0', marginTop: 16, paddingTop: 16 }}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                      <span className="text-[11px]" style={{ color: '#A8A29E' }}>Private to you</span>
+                    </div>
                     <FundingOpportunities
                       matchingOpps={matchingOpps}
                       considerationResults={considerationResults}
                       submissionId={submission.id}
-                      isOwner={isOwner || isAdmin}
+                      isOwner={true}
                       budgetTotal={0}
                       securedAmount={0}
                     />
