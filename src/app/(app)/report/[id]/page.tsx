@@ -676,15 +676,37 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
       </div>
 
-      {/* Override the (app) layout background to light for report */}
+      {/* Override the (app) layout background to dark gradient for report */}
       <style>{`
-        .min-h-screen { background: #F5F5F4 !important; }
+        .min-h-screen { background: linear-gradient(180deg, #1a1035 0%, #2b1a55 40%, #322060 100%) !important; }
+        .gem-floating-card {
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.10);
+          border-radius: 16px;
+          padding: 24px;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+        }
       `}</style>
 
       <div
         className="max-w-3xl mx-auto pb-24 pt-6"
+        style={{
+          '--gem-gray-50': '#FFFFFF',
+          '--gem-gray-100': 'rgba(255,255,255,0.92)',
+          '--gem-gray-200': 'rgba(255,255,255,0.80)',
+          '--gem-gray-300': 'rgba(255,255,255,0.65)',
+          '--gem-gray-400': 'rgba(255,255,255,0.50)',
+          '--gem-gray-500': 'rgba(255,255,255,0.35)',
+          '--gem-gray-600': 'rgba(255,255,255,0.15)',
+          '--gem-gray-700': 'rgba(255,255,255,0.12)',
+          '--gem-gray-800': 'rgba(255,255,255,0.06)',
+          '--gem-gray-900': 'rgba(255,255,255,0.03)',
+          '--gem-gold': '#E8B825',
+        } as React.CSSProperties}
       >
-        <div className="space-y-12">
+        <div className="space-y-4">
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
@@ -718,10 +740,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Stat cards removed — GEM Score + Heat now rendered in hero above */}
 
-        {/* ═══ HERO — dark 16:9 area with poster bg + overlay metadata ═══ */}
+        {/* ═══ HERO — big cinematic poster, flush to edges ═══ */}
         <div
-          className="relative w-full rounded-2xl overflow-hidden"
-          style={{ aspectRatio: '2.2/1', background: '#1a1a1a' }}
+          className="relative w-full overflow-hidden -mx-4 sm:-mx-6"
+          style={{ aspectRatio: '16/9', background: '#1a1a1a', width: 'calc(100% + 2rem)' }}
         >
           {/* Poster background */}
           {submission.poster_url && (
@@ -805,7 +827,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           </div>
         </div>
 
-        {/* ═══ CONTENT BELOW HERO — flows on light background ═══ */}
+        {/* ═══ CONTENT BELOW HERO — floating cards on dark gradient ═══ */}
 
         {/* ═══ TOOLBAR — owner actions ═══ */}
         {(isOwner || isAdmin) && (
@@ -825,7 +847,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         )}
 
         {/* ═══ PITCH + PLOT SUMMARY ═══ */}
-        <div className="px-6 sm:px-8 py-6 space-y-5">
+        <div className="gem-floating-card space-y-5">
           {/* Why This Can Be a Hit */}
           <SectionGate
             section="whats_working"
@@ -837,10 +859,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           >
             {whatsSpecial.headline && (
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
                   Why This Can Be a Hit
                 </p>
-                <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: '#44403C' }}>
+                <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: 'rgba(255,255,255,0.88)' }}>
                   {whatsSpecial.headline}
                 </p>
               </div>
@@ -850,25 +872,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           {/* PLOT SUMMARY — collapsed by default */}
           {plotSummary && (
             <details>
-              <summary className="text-[11px] font-semibold uppercase tracking-[0.12em] cursor-pointer select-none list-none" style={{ color: '#78716C' }}>
+              <summary className="text-[11px] font-semibold uppercase tracking-[0.12em] cursor-pointer select-none list-none" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 <span className="flex items-center gap-1.5">
                   Plot Summary
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="inline-block transition-transform [[open]>&]:rotate-180">
-                    <path d="M3 4.5L6 7.5L9 4.5" stroke="#78716C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </summary>
-              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2" style={{ color: '#57534E' }}>
+              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 {plotSummary}
               </p>
             </details>
           )}
         </div>
 
-        <div style={{ borderTop: '1px solid #E7E5E4' }} />
-
         {/* ═══ WHAT THIS PROJECT NEEDS — expandable cards ═══ */}
-        <div className="px-6 sm:px-8 py-6">
+        <div className="gem-floating-card">
         <ProjectNeedsCards
           investmentSummary={
             totalBacking > 0
@@ -946,12 +966,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           }
         />
-        </div>{/* close project needs padding wrapper */}
-
-        <div style={{ borderTop: '1px solid #E7E5E4' }} />
+        </div>{/* close project needs floating card */}
 
         {/* ═══ GEM ANALYSIS — collapsible card with inline score ═══ */}
-        <div className="px-6 sm:px-8 py-6">
+        <div className="gem-floating-card">
         <GemAnalysisCard
           score={typeof commercialScore === 'number' ? Math.round(commercialScore) : null}
           tier={designation ? DESIGNATION_STYLE[designation].label : null}
@@ -960,8 +978,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         {/* ═══ GEM ANALYSIS CONTENT ═══ */}
         <div className="relative space-y-8">
         {!viewerHasFullAccess && (
-          <div className="absolute inset-0 z-20 rounded-2xl flex items-center justify-center" style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(250,248,255,0.6)' }}>
-            <p className="text-[20px] sm:text-[24px] font-bold text-center m-0 px-6" style={{ color: '#6B46C1' }}>
+          <div className="absolute inset-0 z-20 rounded-2xl flex items-center justify-center" style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(26,16,53,0.7)' }}>
+            <p className="text-[20px] sm:text-[24px] font-bold text-center m-0 px-6" style={{ color: '#A78BFA' }}>
               Visible to collaborators only
             </p>
           </div>
@@ -969,15 +987,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Score display */}
         {typeof commercialScore === 'number' && (
-          <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(107,70,193,0.10)' }}>
+          <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(167,139,250,0.15)' }}>
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: '#78716C' }}>
+              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 Overall Score
               </span>
-              <span className="text-[40px] sm:text-[48px] font-bold leading-none" style={{ color: '#6B46C1' }}>
+              <span className="text-[40px] sm:text-[48px] font-bold leading-none" style={{ color: '#A78BFA' }}>
                 {Math.round(commercialScore)}
               </span>
-              <span className="text-[15px] font-bold" style={{ color: '#A78BFA' }}>
+              <span className="text-[15px] font-bold" style={{ color: 'rgba(167,139,250,0.6)' }}>
                 / 100
               </span>
             </div>
@@ -1008,27 +1026,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {allStrengths.map((s, i) => (
                       <li key={i}>
                         <details className="group [&_summary::-webkit-details-marker]:hidden">
-                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(0,0,0,0.03)] transition-colors -mx-2">
+                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.05)] transition-colors -mx-2">
                             <span
                               className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
                               style={{ color: 'var(--gem-gold)' }}
                             >
                               {String(i + 1).padStart(2, '0')}
                             </span>
-                            <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: '#1C1917' }}>
+                            <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: 'rgba(255,255,255,0.9)' }}>
                               {s.dimension_or_area}
                             </p>
                             <span
                               aria-hidden
                               className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                              style={{ color: '#A8A29E' }}
+                              style={{ color: 'rgba(255,255,255,0.4)' }}
                             >
                               ▾
                             </span>
                           </summary>
                           <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
                             <div />
-                            <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#57534E' }}>
+                            <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
                               {s.what_it_means}
                             </p>
                           </div>
@@ -1080,27 +1098,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         {ordered.map((c, i) => (
                           <li key={i}>
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(0,0,0,0.03)] transition-colors -mx-2">
+                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.05)] transition-colors -mx-2">
                                 <span
                                   className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
                                   style={{ color: 'var(--gem-gold)' }}
                                 >
                                   {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: '#1C1917' }}>
+                                <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: 'rgba(255,255,255,0.9)' }}>
                                   {c.area}
                                 </p>
                                 <span
                                   aria-hidden
                                   className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                                  style={{ color: '#A8A29E' }}
+                                  style={{ color: 'rgba(255,255,255,0.4)' }}
                                 >
                                   ▾
                                 </span>
                               </summary>
                               <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
                                 <div />
-                                <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#57534E' }}>
+                                <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
                                   {c.detail}
                                 </p>
                               </div>
@@ -1124,7 +1142,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         >
                           Craft note
                         </p>
-                        <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#44403C' }}>
+                        <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: 'rgba(255,255,255,0.75)' }}>
                           {craftNote}
                         </p>
                       </div>
@@ -1204,18 +1222,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       </span>
                     </div>
                     {packaging.budget_tier.range && (
-                      <p className="text-[18px] sm:text-[20px] font-bold m-0 mb-1" style={{ color: '#1C1917' }}>
+                      <p className="text-[18px] sm:text-[20px] font-bold m-0 mb-1" style={{ color: 'rgba(255,255,255,0.95)' }}>
                         {packaging.budget_tier.range}
                       </p>
                     )}
                     {packaging.budget_tier.per_episode && (
-                      <p className="text-[14px] m-0 mb-1" style={{ color: '#78716C' }}>
+                      <p className="text-[14px] m-0 mb-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
                         {packaging.budget_tier.per_episode} per episode
                         {packaging.budget_tier.season_total ? ` · ${packaging.budget_tier.season_total} season total` : ''}
                       </p>
                     )}
                     {packaging.budget_tier.note && (
-                      <p className="text-[14px] sm:text-[15px] leading-[1.55] m-0 mt-2" style={{ color: '#57534E' }}>
+                      <p className="text-[14px] sm:text-[15px] leading-[1.55] m-0 mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
                         {packaging.budget_tier.note}
                       </p>
                     )}
@@ -1226,7 +1244,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 {riskDetails && (
                   <div
                     className="p-5 sm:p-6"
-                    style={{ borderTop: packaging?.budget_tier ? '1px solid #E7E5E3' : undefined }}
+                    style={{ borderTop: packaging?.budget_tier ? '1px solid rgba(255,255,255,0.08)' : undefined }}
                   >
                     <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
                       Complexity
