@@ -165,12 +165,12 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
                       )}
                     </div>
                     <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(opp.funding_amount)}</span>
-                    {r?.feedback || r?.feedback_tags?.length ? (
+                    {r?.feedback || (r?.feedback_tags && r.feedback_tags.length > 0) ? (
                       isExpanded ? <ChevronUp size={14} style={{ color: '#78716C' }} /> : <ChevronDown size={14} style={{ color: '#78716C' }} />
                     ) : null}
                   </div>
                   {/* Expanded feedback */}
-                  {isExpanded && r && (r.feedback || r.feedback_tags?.length) && (
+                  {isExpanded && r && (r.feedback || (r.feedback_tags && r.feedback_tags.length > 0)) && (
                     <div className="ml-4 mt-1 px-4 py-3 rounded-lg" style={{ background: '#fafaf9', border: '1px solid #e7e5e4' }}>
                       {r.feedback_tags && r.feedback_tags.length > 0 && (
                         <div className="flex flex-wrap gap-1 mb-2">

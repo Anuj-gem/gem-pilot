@@ -1015,10 +1015,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   ownerName={ownerProfile?.full_name ?? null}
                 />
                 {(isOwner || isAdmin) && matchingOpps.length > 0 && (
-                  <div style={{ borderTop: '1px solid #f0f0f0', marginTop: 16, paddingTop: 16 }}>
+                  <div style={{ background: '#F5F3FF', margin: '16px -20px 0', padding: '16px 20px 20px', borderTop: '1px solid #EEEDFE' }}>
                     <div className="flex items-center gap-2 mb-3">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                       <span className="text-[11px]" style={{ color: '#A8A29E' }}>Private to you</span>
+                    </div>
+                    <div className="flex items-baseline justify-between mb-3">
+                      <span className="text-[13px] font-semibold" style={{ color: '#1C1917' }}>Funding pipeline</span>
                     </div>
                     <FundingOpportunities
                       matchingOpps={matchingOpps}
