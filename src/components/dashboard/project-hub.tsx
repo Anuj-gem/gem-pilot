@@ -53,7 +53,7 @@ interface Props {
 /* ── Helpers ── */
 
 type FilterKey = 'all' | 'creator' | 'collaborator' | 'needs_funding' | 'pending_apps'
-type SortKey = 'date' | 'score' | 'heat'
+type SortKey = 'date' | 'funding' | 'collabs'
 
 const FILTER_LABELS: Record<FilterKey, string> = {
   all: 'All',
@@ -65,8 +65,8 @@ const FILTER_LABELS: Record<FilterKey, string> = {
 
 const SORT_LABELS: Record<SortKey, string> = {
   date: 'Newest',
-  score: 'Score',
-  heat: 'Heat',
+  funding: 'Most Funding',
+  collabs: 'Most Collaborators',
 }
 
 /* ── Main ── */
@@ -91,8 +91,8 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
 
   // Sort
   const sorted = [...filtered].sort((a, b) => {
-    if (sort === 'score') return (b.score ?? -1) - (a.score ?? -1)
-    if (sort === 'heat') return b.heat_score - a.heat_score
+    if (sort === 'funding') return (b.backing_total + b.following_total) - (a.backing_total + a.following_total)
+    if (sort === 'collabs') return b.crew_count - a.crew_count
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   })
 
@@ -282,7 +282,7 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
               Your projects
             </p>
           )}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div style={{ display: 'grid', gap: 12 }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {sorted.map(p => (
               <ProjectTile
                 key={p.id}
@@ -459,7 +459,7 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
         borderTop: '0.5px solid #f0f0f0',
       }}>
         <span style={{ color: p.backing_total > 0 ? '#15803d' : '#A8A29E' }}>
-          💰 {p.backing_total > 0 ? `${fmtK(p.backing_total)} secured` : 'Secured 0'}
+          💰 Funding {p.backing_total > 0 ? `$${fmtK(p.backing_total)}` : '$0'}
         </span>
         {p.following_total > 0 && (
           <span style={{ color: '#534AB7' }}>
