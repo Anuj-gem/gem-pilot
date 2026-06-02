@@ -15,6 +15,7 @@ interface HeroMediaCarouselProps {
   posterUrl: string | null
   initialMedia: MediaItem[]
   isOwner: boolean
+  onFocusChange?: (focused: boolean) => void
 }
 
 export default function HeroMediaCarousel({
@@ -22,6 +23,7 @@ export default function HeroMediaCarousel({
   posterUrl,
   initialMedia,
   isOwner,
+  onFocusChange,
 }: HeroMediaCarouselProps) {
   const router = useRouter()
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -38,7 +40,7 @@ export default function HeroMediaCarousel({
   const [showAddMenu, setShowAddMenu] = useState(false)
   const [showYoutubeInput, setShowYoutubeInput] = useState(false)
   const [youtubeUrl, setYoutubeUrl] = useState('')
-  const [lightboxUrl, setLightboxUrl] = useState<string | null>(null)
+  const [focused, setFocused] = useState(false)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -71,6 +73,24 @@ export default function HeroMediaCarousel({
   const goTo = useCallback((idx: number) => setCurrentIndex(Math.max(0, Math.min(idx, slides.length - 1))), [slides.length])
   const goPrev = useCallback(() => setCurrentIndex(i => i > 0 ? i - 1 : i), [])
   const goNext = useCallback(() => setCurrentIndex(i => i < slides.length - 1 ? i + 1 : i), [slides.length])
+
+  const enterFocus = useCallback(() => {
+    setFocused(true)
+    onFocusChange?.(true)
+  }, [onFocusChange])
+
+  const exitFocus = useCallback(() => {
+    setFocused(false)
+    onFocusChange?.(false)
+  }, [onFocusChange])
+
+  // Escape key exits focused mode
+  useEffect(() => {
+    if (!focused) return
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') exitFocus() }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [focused, exitFocus])
 
   // Upload — all media goes through the same /api/scripts/[id]/media endpoint
   const uploadFile = useCallback(async (file: File) => {
@@ -180,7 +200,7 @@ export default function HeroMediaCarousel({
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
               </svg>
-              <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>Add a photo or video</span>
+              <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>Add a photo or YouTube video</span>
             </>
           )}
         </button>
@@ -203,9 +223,9 @@ export default function HeroMediaCarousel({
             <div key={slide.url + i} className="w-full h-full flex-shrink-0 relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={slide.url} alt={slide.label} className="w-full h-full object-cover" />
-              {slide.type === 'youtube' && (
+              {slide.type === 'youtube' && !focused && (
                 <button
-                  onClick={() => setLightboxUrl(slide.embedUrl || slide.url)}
+                  onClick={enterFocus}
                   className="absolute inset-0 flex items-center justify-center z-[5] border-0 bg-transparent cursor-pointer"
                 >
                   <div className="w-16 h-16 rounded-full flex items-center justify-center transition-transform hover:scale-110" style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}>
@@ -315,17 +335,45 @@ export default function HeroMediaCarousel({
       {/* Hidden file input */}
       <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
 
-      {/* Video lightbox */}
-      {lightboxUrl && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.85)' }} onClick={() => setLightboxUrl(null)}>
-          <button onClick={() => setLightboxUrl(null)} className="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center border-0 cursor-pointer z-10" style={{ background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-          </button>
-          <div className="w-full max-w-4xl" style={{ aspectRatio: '16/9' }} onClick={e => e.stopPropagation()}>
-            <iframe src={lightboxUrl + (lightboxUrl.includes('?') ? '&' : '?') + 'autoplay=1'} className="w-full h-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Video player" />
+      {/* Focused mode: covers parent's text overlay with translucent dark layer */}
+      {focused && (
+        <>
+          {/* Full overlay to capture clicks — exits focused mode */}
+          <div
+            className="fixed inset-0 z-[50]"
+            style={{ background: 'transparent' }}
+            onClick={exitFocus}
+          />
+          {/* Dark layer over the bottom half where text lives */}
+          <div
+            className="fixed inset-0 z-[51] pointer-events-none transition-opacity duration-300"
+            style={{ background: 'rgba(0,0,0,0.7)' }}
+          />
+          {/* The video iframe sits above the dark overlay */}
+          <div className="fixed inset-0 z-[52] flex items-center justify-center pointer-events-none">
+            <div className="w-full h-full pointer-events-auto" style={{ maxWidth: '100%', maxHeight: '100%' }}>
+              {slides[currentIndex]?.type === 'youtube' && slides[currentIndex]?.embedUrl && (
+                <iframe
+                  src={slides[currentIndex].embedUrl + '?autoplay=1&modestbranding=1&rel=0'}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={slides[currentIndex].label}
+                />
+              )}
+            </div>
           </div>
-        </div>
+          {/* Exit button */}
+          <button
+            onClick={exitFocus}
+            className="fixed top-20 right-6 w-10 h-10 rounded-full flex items-center justify-center border-0 cursor-pointer z-[53]"
+            style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)' }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </>
       )}
     </div>
   )
