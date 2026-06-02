@@ -754,6 +754,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           background: #ffffff;
           padding: 28px 32px;
           margin-bottom: 12px;
+          margin-left: -1rem;
+          margin-right: -1rem;
+        }
+        @media (min-width: 640px) {
+          .gem-floating-card {
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+          }
         }
         /* Hide the nav bottom border on report pages — it creates a
            visible seam between the white nav and the dark gradient. */
@@ -855,28 +863,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scoreShownToIndustry={isScoreVisible(privacy)}
               isProSubscriber={true}
             />
-            {/* Classification pills + following */}
+            {/* Classification pills */}
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               {report.classification?.format && (
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium" style={{ background: 'rgba(124,58,237,0.9)', color: '#fff' }}>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold" style={{ background: 'rgba(124,58,237,0.9)', color: '#fff' }}>
                   {report.classification.format}
                 </span>
               )}
               {report.classification?.genre_primary && (
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold" style={{ background: 'rgba(43,26,85,0.85)', color: '#fff', border: '1px solid rgba(124,58,237,0.4)' }}>
                   {report.classification.genre_primary}
                 </span>
               )}
               {(report.classification?.genre_secondary ?? []).map((g: string, i: number) => (
-                <span key={`gs-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                <span key={`gs-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold" style={{ background: 'rgba(43,26,85,0.85)', color: '#fff', border: '1px solid rgba(124,58,237,0.4)' }}>
                   {g}
                 </span>
               ))}
-              {followerCount > 0 && (
-                <span className="text-[12px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.7)' }}>
-                  {followerCount} following
-                </span>
-              )}
             </div>
           </div>
         </div>

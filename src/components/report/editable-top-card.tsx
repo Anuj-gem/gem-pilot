@@ -187,12 +187,12 @@ export function EditableTopCard({
   // Hero overlay mode — title + logline + author on dark bg (genre pills moved to stat row)
   if (heroOverlay && !isEditing) {
     return (
-      <div ref={cardRef}>
-        <h1 className="text-[34px] sm:text-[40px] font-semibold text-white tracking-tight leading-[1.08] m-0 mb-2">
+      <div ref={cardRef} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5), 0 2px 12px rgba(0,0,0,0.3)' }}>
+        <h1 className="text-[34px] sm:text-[40px] font-bold text-white tracking-tight leading-[1.08] m-0 mb-2">
           {displayTitle}
         </h1>
         {displayLogline && (
-          <p className="text-[15px] sm:text-[16px] leading-[1.5] m-0 mb-3" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <p className="text-[15px] sm:text-[16px] leading-[1.5] m-0 mb-3 font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
             {displayLogline}
           </p>
         )}
@@ -203,6 +203,7 @@ export function EditableTopCard({
               src={authorAvatar}
               alt=""
               className="w-6 h-6 rounded-full object-cover"
+              style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
             />
           ) : authorInitials ? (
             <div
@@ -214,8 +215,8 @@ export function EditableTopCard({
           ) : null}
           {authorName && (
             <span
-              className="text-[13px]"
-              style={{ color: 'rgba(255,255,255,0.8)' }}
+              className="text-[13px] font-medium"
+              style={{ color: 'rgba(255,255,255,0.9)' }}
             >
               {authorName}
             </span>
@@ -223,7 +224,7 @@ export function EditableTopCard({
           {postedAt && (
             <span
               className="text-[13px]"
-              style={{ color: 'rgba(255,255,255,0.4)' }}
+              style={{ color: 'rgba(255,255,255,0.6)' }}
             >
               {new Date(postedAt).toLocaleDateString('en-US', {
                 month: 'short',
