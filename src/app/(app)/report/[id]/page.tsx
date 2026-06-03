@@ -537,7 +537,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       const conIds = csLinks.map(l => l.consideration_id)
       const { data: cons } = await serviceClient
         .from('considerations')
-        .select('id, opportunity_id, backing_status, backing_amount, review_stage, feedback, feedback_tags')
+        .select('id, opportunity_id, backing_status, backing_amount, review_stage, feedback, feedback_tags, triage_feedback_tags')
         .in('id', conIds)
       if (cons) {
         // Map review_stage to outcome for display
@@ -551,7 +551,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             : c.review_stage === 'complete' && !c.backing_status ? 'pass'
             : null,
           feedback: c.feedback,
-          feedback_tags: c.feedback_tags,
+          feedback_tags: (c.feedback_tags && c.feedback_tags.length > 0) ? c.feedback_tags : (c as any).triage_feedback_tags || [],
         }))
       }
     }
