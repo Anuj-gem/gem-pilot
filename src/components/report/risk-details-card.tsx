@@ -87,20 +87,17 @@ function ComplexityCard({
   // red-100.
   const pill =
     axis.level === 'low'
-      ? { bg: 'rgba(16,185,129,0.15)', fg: '#6ee7b7', border: 'rgba(16,185,129,0.4)' }
+      ? { bg: '#ecfdf5', fg: '#15803d', border: '#6ee7b7' }
       : axis.level === 'medium'
-        ? { bg: 'rgba(250,204,21,0.15)', fg: '#fde68a', border: 'rgba(250,204,21,0.4)' }
-        : { bg: 'rgba(239,68,68,0.15)', fg: '#fca5a5', border: 'rgba(239,68,68,0.4)' }
-  const palette = {
-    border: 'var(--gem-gray-700)',
-  }
+        ? { bg: '#fefce8', fg: '#854d0e', border: '#fde68a' }
+        : { bg: '#fef2f2', fg: '#991b1b', border: '#fca5a5' }
   return (
     <div
       className="rounded-xl p-5 flex flex-col"
-      style={{ border: `1px solid ${palette.border}`, background: 'rgba(255,255,255,0.04)' }}
+      style={{ border: '1px solid #e7e5e4', background: '#fafaf9' }}
     >
       <div className="flex items-baseline justify-between gap-2 mb-3">
-        <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0">
+        <p className="text-[11px] uppercase tracking-[0.2em] font-bold m-0" style={{ color: '#78716C' }}>
           {title}
         </p>
         <span
@@ -114,21 +111,22 @@ function ComplexityCard({
           {LEVEL_LABEL[axis.level]}
         </span>
       </div>
-      <p className="text-[15.5px] sm:text-[16px] font-medium text-[var(--gem-gray-50)] leading-[1.5] m-0 flex-1">
+      <p className="text-[15.5px] sm:text-[16px] font-medium leading-[1.5] m-0 flex-1" style={{ color: '#1C1917' }}>
         {axis.note}
       </p>
       {details && (
         <details className="group mt-4 [&_summary::-webkit-details-marker]:hidden">
           <summary
             className="cursor-pointer list-none flex items-center justify-between gap-2 pt-3 border-t"
-            style={{ borderColor: palette.border }}
+            style={{ borderColor: '#e7e5e4' }}
           >
-            <span className="text-[11.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] group-hover:text-[var(--gem-gray-300)]">
+            <span className="text-[11.5px] uppercase tracking-[0.15em] font-bold" style={{ color: '#78716C' }}>
               Details
             </span>
             <span
               aria-hidden
-              className="text-[var(--gem-gray-500)] transition-transform duration-150 group-open:rotate-180 text-[12px]"
+              className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
+              style={{ color: '#78716C' }}
             >
               ▾
             </span>
@@ -146,8 +144,8 @@ function FactRow({ k, v }: { k: string; v: string | number | null | undefined })
   if (v === null || v === undefined || v === '') return null
   return (
     <div className="flex justify-between gap-3 text-[13.5px] py-1">
-      <span className="text-[var(--gem-gray-500)] flex-shrink-0">{k}</span>
-      <span className="text-[var(--gem-gray-100)] text-right font-medium">
+      <span className="text-[#78716C] flex-shrink-0">{k}</span>
+      <span className="text-[#1C1917] text-right font-medium">
         {String(v)}
       </span>
     </div>
@@ -162,7 +160,7 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
   const ier = loc?.interior_exterior_ratio ?? loc?.interior_exterior_mix
   return (
     <div>
-      <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
+      <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[#78716C] m-0 mb-1.5">
         Locations & Scale
       </p>
       <div className="mb-3">
@@ -173,7 +171,7 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
           <FactRow k="Notable" v={loc.expensive_flags.join(', ')} />
         ) : null}
       </div>
-      <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
+      <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[#78716C] m-0 mb-1.5">
         Technical
       </p>
       <div className="mb-3">
@@ -191,7 +189,7 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
       </div>
       {(platform?.content_level || rights.length > 0) && (
         <>
-          <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[var(--gem-gray-500)] m-0 mb-1.5">
+          <p className="text-[10.5px] uppercase tracking-[0.15em] font-bold text-[#78716C] m-0 mb-1.5">
             Rights & Clearance
           </p>
           <div className="mb-1">
@@ -207,10 +205,10 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
                 return (
                   <li
                     key={i}
-                    className="flex gap-2 text-[13.5px] text-[var(--gem-gray-100)] leading-snug"
+                    className="flex gap-2 text-[13.5px] text-[#1C1917] leading-snug"
                   >
                     <span
-                      className="text-[var(--gem-gold)] flex-shrink-0"
+                      className="text-[#534AB7] flex-shrink-0"
                       aria-hidden
                     >
                       •
@@ -221,7 +219,7 @@ function ProductionDetails({ production }: { production: ProductionReality }) {
               })}
             </ul>
           ) : (
-            <p className="text-[12.5px] italic text-[var(--gem-gray-500)] m-0 mt-1.5">
+            <p className="text-[12.5px] italic text-[#78716C] m-0 mt-1.5">
               No clearance flags on the script.
             </p>
           )}
@@ -262,10 +260,10 @@ export function ProductionFactsSection({ data, production }: Props) {
         {/* Production note */}
         {data.budget?.note && (
           <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[#78716C] m-0 mb-2">
               Production
             </p>
-            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0 max-w-[62ch]">
+            <p className="text-[15px] sm:text-[16px] text-[#1C1917] leading-[1.6] m-0 max-w-[62ch]">
               {data.budget.note}
             </p>
             {production && (
@@ -278,10 +276,10 @@ export function ProductionFactsSection({ data, production }: Props) {
         {/* Cast note */}
         {data.casting?.note && (
           <div>
-            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+            <p className="text-[11px] uppercase tracking-[0.18em] font-bold text-[#78716C] m-0 mb-2">
               Cast
             </p>
-            <p className="text-[15px] sm:text-[16px] text-[var(--gem-gray-100)] leading-[1.6] m-0 max-w-[62ch]">
+            <p className="text-[15px] sm:text-[16px] text-[#1C1917] leading-[1.6] m-0 max-w-[62ch]">
               {data.casting.note}
             </p>
             {production && (
