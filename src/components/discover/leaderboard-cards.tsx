@@ -275,6 +275,18 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
             </div>
           )}
 
+          {/* Format badge — bottom left of image */}
+          {c.format && (
+            <div style={{ position: 'absolute', bottom: 10, left: 10 }}>
+              <span style={{
+                fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
+                background: 'rgba(83,74,183,0.85)', color: '#fff', backdropFilter: 'blur(4px)',
+              }}>
+                {c.format}
+              </span>
+            </div>
+          )}
+
           {/* Title + author overlay */}
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
@@ -302,19 +314,19 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           fontSize: 12,
           borderTop: '0.5px solid #f0f0f0',
         }}>
-          <span style={{ color: crewCount > 0 ? '#57534E' : '#A8A29E' }}>
-            Crew {crewCount}
-          </span>
-          <span style={{ color: castCount > 0 ? '#57534E' : '#A8A29E' }}>
-            Cast {castCount}
-          </span>
-          {c.format && (
-            <span style={{
-              fontSize: 10, fontWeight: 500, padding: '2px 8px', borderRadius: 4,
-              background: '#EEEDFE', color: '#534AB7',
-            }}>
-              {c.format}
-            </span>
+          {c.budget ? (
+            <span style={{ color: '#57534E' }}>💰 {c.budget}</span>
+          ) : (
+            <span style={{ color: '#A8A29E' }}>💰 Funding TBD</span>
+          )}
+          {crewCount > 0 && (
+            <span style={{ color: '#57534E' }}>🎬 {crewCount} crew</span>
+          )}
+          {castCount > 0 && (
+            <span style={{ color: '#57534E' }}>🎭 {castCount} cast</span>
+          )}
+          {crewCount === 0 && castCount === 0 && (
+            <span style={{ color: '#A8A29E' }}>🎬 Open roles</span>
           )}
           <span style={{
             marginLeft: 'auto',

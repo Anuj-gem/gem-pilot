@@ -199,6 +199,8 @@ export default async function DashboardPage() {
 
   type CollabInfo = { id: string; email: string; name: string | null; avatarUrl: string | null; role: string; status: string }
   const collabCountByScript = new Map<string, number>()
+  const crewCountByScript = new Map<string, number>()
+  const castCountByScript = new Map<string, number>()
   const collabsByScript = new Map<string, CollabInfo[]>()
 
   if (user && submissionIds.length > 0) {
@@ -242,6 +244,13 @@ export default async function DashboardPage() {
 
       if (c.status === 'accepted') {
         collabCountByScript.set(c.submission_id, (collabCountByScript.get(c.submission_id) || 0) + 1)
+        const roleLC = (c.role || '').toLowerCase()
+        const isCast = roleLC === 'actor' || roleLC === 'actress' || roleLC === 'cast'
+        if (isCast) {
+          castCountByScript.set(c.submission_id, (castCountByScript.get(c.submission_id) || 0) + 1)
+        } else {
+          crewCountByScript.set(c.submission_id, (crewCountByScript.get(c.submission_id) || 0) + 1)
+        }
       }
     }
   }
@@ -572,7 +581,8 @@ export default async function DashboardPage() {
       }
     }
 
-    const crewCount = collabCountByScript.get(s.id) ?? 0
+    const crewCount = crewCountByScript.get(s.id) ?? 0
+    const castCount = castCountByScript.get(s.id) ?? 0
     const backing = s.total_backing ?? 0
 
     let status: 'processing' | 'completed' | 'error' = 'completed'
@@ -592,7 +602,7 @@ export default async function DashboardPage() {
       heat_score: s.heat_score ?? 0,
       budget_display: budgetDisplay,
       crew_count: crewCount,
-      cast_count: 0,
+      cast_count: castCount,
       backing_total: backing,
       following_total: s.total_following ?? 0,
       role: 'creator',

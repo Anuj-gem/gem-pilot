@@ -494,20 +494,20 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
         fontSize: 11,
         borderTop: '0.5px solid #f0f0f0',
       }}>
-        <span style={{ color: p.backing_total > 0 ? '#15803d' : '#A8A29E' }}>
-          💰 Funding {p.backing_total > 0 ? `$${fmtK(p.backing_total)}` : '$0'}
-        </span>
-        {p.following_total > 0 && (
-          <span style={{ color: '#534AB7' }}>
-            {fmtK(p.following_total)} pending
-          </span>
+        {p.budget_display ? (
+          <span style={{ color: '#57534E' }}>💰 {p.budget_display}</span>
+        ) : (
+          <span style={{ color: '#A8A29E' }}>💰 Funding TBD</span>
         )}
-        <span style={{ color: p.crew_count > 0 ? '#57534E' : '#A8A29E' }}>
-          🎬 Crew {p.crew_count}
-        </span>
-        <span style={{ color: p.cast_count > 0 ? '#57534E' : '#A8A29E' }}>
-          🎭 Cast {p.cast_count}
-        </span>
+        {p.crew_count > 0 && (
+          <span style={{ color: '#57534E' }}>🎬 {p.crew_count} crew</span>
+        )}
+        {p.cast_count > 0 && (
+          <span style={{ color: '#57534E' }}>🎭 {p.cast_count} cast</span>
+        )}
+        {p.crew_count === 0 && p.cast_count === 0 && (
+          <span style={{ color: '#A8A29E' }}>🎬 Open roles</span>
+        )}
       </div>
 
       {/* Action row: Discover toggle + View project */}
