@@ -35,6 +35,8 @@ export type LeaderboardCard = {
   collaboratorCount: number
   collaborators: CollabDetail[]
   writer: { handle: string | null; fullName: string | null; avatarUrl: string | null; headline: string | null } | null
+  fundingNeeded: number
+  leadCharCount: number
 }
 
 type FilterKey = 'all' | 'funding' | 'open_roles'
@@ -242,16 +244,25 @@ function Chip({ label, active, onClick }: { label: string; active: boolean; onCl
 
 /* ── Tile ── */
 
+function fmtShort(n: number): string {
+  if (n >= 1e9) return `$${(n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1)}B`
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+  if (n >= 1e3) return `$${Math.round(n / 1e3)}K`
+  return `$${n}`
+}
+
 export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
   const href = `/report/${c.evaluationId}`
   const authorName = c.writer?.fullName || 'Anonymous'
 
-  const crewCount = c.collaborators.filter(
+  const crewCollabCount = c.collaborators.filter(
     col => col.status === 'accepted' && !['actor', 'actress', 'cast'].includes(col.role.toLowerCase())
   ).length
-  const castCount = c.collaborators.filter(
+  const castCollabCount = c.collaborators.filter(
     col => col.status === 'accepted' && ['actor', 'actress', 'cast'].includes(col.role.toLowerCase())
   ).length
+  const crewOpen = Math.max(0, 3 - crewCollabCount)
+  const castOpen = Math.max(0, c.leadCharCount - castCollabCount)
 
   return (
     <Link href={href} style={{ textDecoration: 'none', display: 'block' }}>
@@ -315,17 +326,13 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           fontSize: 12,
           borderTop: '0.5px solid #f0f0f0',
         }}>
-          {c.budgetDisplay ? (
-            <span style={{ color: '#57534E' }}>💰 {c.budgetDisplay}</span>
+          {c.fundingNeeded > 0 ? (
+            <span style={{ color: '#57534E' }}>💰 Funding needed {fmtShort(c.fundingNeeded)}</span>
           ) : (
-            <span style={{ color: '#A8A29E' }}>💰 Funding TBD</span>
+            <span style={{ color: '#57534E' }}>💰 Funded</span>
           )}
-          {crewCount > 0 && (
-            <span style={{ color: '#57534E' }}>🎬 {crewCount} open</span>
-          )}
-          {castCount > 0 && (
-            <span style={{ color: '#57534E' }}>🎭 {castCount} open</span>
-          )}
+          <span style={{ color: '#57534E' }}>🎬 {crewOpen} open</span>
+          <span style={{ color: '#57534E' }}>🎭 {castOpen} open</span>
           <span style={{
             marginLeft: 'auto',
             fontSize: 12,

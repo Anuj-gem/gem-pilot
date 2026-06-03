@@ -86,7 +86,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   // All public completed scripts
   const { data: rows } = await service
     .from('script_submissions')
-    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry, heat_score, poster_url')
+    .select('id, title, declared_format, created_at, user_id, report_privacy, allow_reviews, allow_industry, heat_score, poster_url, total_backing')
     .eq('status', 'completed')
     .eq('is_public', true)
     .is('hidden_at', null)
@@ -96,7 +96,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     id: string; title: string; declared_format: string | null; created_at: string
     user_id: string | null; report_privacy: { show_score?: boolean } | null
     allow_reviews: boolean | null; allow_industry: boolean | null
-    heat_score: number | null; poster_url: string | null
+    heat_score: number | null; poster_url: string | null; total_backing: number | null
   }
   const scripts = (rows as SubRow[] | null) || []
   const submissionIds = scripts.map((s) => s.id)
@@ -106,7 +106,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const [{ data: evs }, { data: writers }, stats] = await Promise.all([
     service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier, budget_range:evaluation->packaging->budget_tier->>range, budget_per_ep:evaluation->packaging->budget_tier->>per_episode')
+      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier, budget_range:evaluation->packaging->budget_tier->>range, budget_per_ep:evaluation->packaging->budget_tier->>per_episode, lead_chars:evaluation->lead_characters')
       .in('submission_id', submissionIds),
     service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
     getScriptStats(submissionIds),
@@ -126,24 +126,41 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   }
 
   // Format a budget range string for display, stripping "/ep" suffixes for cleanliness
-  function formatBudgetDisplay(rangeStr: string | null | undefined, perEpStr: string | null | undefined): string | null {
-    // Prefer per-episode if it has content (series), else use range (features)
+  function parseBudgetHigh(rangeStr: string | null | undefined, perEpStr: string | null | undefined): number {
     const raw = perEpStr?.trim() || rangeStr?.trim()
-    if (!raw) return null
-    // Remove trailing "/ep" or "/episode" variants for compact display
-    return raw.replace(/\/ep(isode)?\.?/i, '/ep')
+    if (!raw) return 0
+    const matches = raw.match(/\$([0-9.]+)\s*(K|M|B)?/gi)
+    if (!matches || matches.length === 0) return 0
+    function parse(m: string): number {
+      const r = m.match(/\$([0-9.]+)\s*(K|M|B)?/i)
+      if (!r) return 0
+      const n = parseFloat(r[1])
+      const u = (r[2] || '').toUpperCase()
+      return Math.round(u === 'B' ? n * 1e9 : u === 'M' ? n * 1e6 : u === 'K' ? n * 1e3 : n)
+    }
+    // Return the highest dollar figure found
+    return Math.max(...matches.map(parse))
   }
 
-  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null; budgetDisplay: string | null }
+  function fmtShort(n: number): string {
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1)}B`
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+    if (n >= 1e3) return `$${Math.round(n / 1e3)}K`
+    return `$${n}`
+  }
+
+  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null; budgetDisplay: string | null; budgetHigh: number; leadCharCount: number }
   const evalBySubmission = new Map<string, EvalRow>()
-  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null; budget_range: string | null; budget_per_ep: string | null }[] | null) || []) {
+  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null; budget_range: string | null; budget_per_ep: string | null; lead_chars: unknown }[] | null) || []) {
     const genre = e.genre_cls || e.genre_fmt || null
     const genreKey = genre ? genre.toLowerCase().replace(/[^a-z]/g, '') : null
     const rawBudget = e.budget_raw?.toLowerCase() ?? null
     const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
-    const budgetDisplay = formatBudgetDisplay(e.budget_range, e.budget_per_ep)
+    const budgetHigh = parseBudgetHigh(e.budget_range, e.budget_per_ep)
+    const budgetDisplay = budgetHigh > 0 ? fmtShort(budgetHigh) : null
+    const leadCharCount = Array.isArray(e.lead_chars) ? e.lead_chars.length : 0
     evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, budgetDisplay,
+      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, budgetDisplay, budgetHigh, leadCharCount,
     })
   }
 
@@ -243,6 +260,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     collaboratorCount: number
     collaborators: CollabDetail[]
     writer: { handle: string | null; fullName: string | null; avatarUrl: string | null; headline: string | null } | null
+    fundingNeeded: number
+    leadCharCount: number
   }
 
   const cards: LeaderboardCard[] = scripts
@@ -252,6 +271,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
       const wp = s.user_id ? writerById.get(s.user_id) : null
       const st = stats.get(s.id)
       const scoreVisible = s.report_privacy?.show_score !== false
+      const totalBacking = (s as SubRow).total_backing ?? 0
+      const fundingNeeded = Math.max(0, ev.budgetHigh - totalBacking)
       return {
         submissionId: s.id,
         evaluationId: ev.id,
@@ -273,6 +294,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         collaboratorCount: collabCountByScript.get(s.id) ?? 0,
         collaborators: collabsByScript.get(s.id) ?? [],
         writer: wp ? { handle: wp.handle, fullName: wp.full_name, avatarUrl: wp.avatar_url, headline: wp.headline } : null,
+        fundingNeeded,
+        leadCharCount: ev.leadCharCount,
       }
     })
     .filter((c): c is LeaderboardCard => c !== null)

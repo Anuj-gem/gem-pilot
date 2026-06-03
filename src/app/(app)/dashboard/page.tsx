@@ -32,6 +32,21 @@ function fmtShort(n: number): string {
   return `$${n.toLocaleString()}`
 }
 
+function parseBudgetHigh(rangeStr: string | null | undefined, perEpStr: string | null | undefined): number {
+  const raw = perEpStr?.trim() || rangeStr?.trim()
+  if (!raw) return 0
+  const matches = raw.match(/\$([0-9.]+)\s*(K|M|B)?/gi)
+  if (!matches || matches.length === 0) return 0
+  function parse(m: string): number {
+    const r = m.match(/\$([0-9.]+)\s*(K|M|B)?/i)
+    if (!r) return 0
+    const n = parseFloat(r[1])
+    const u = (r[2] || '').toUpperCase()
+    return Math.round(u === 'B' ? n * 1e9 : u === 'M' ? n * 1e6 : u === 'K' ? n * 1e3 : n)
+  }
+  return Math.max(...matches.map(parse))
+}
+
 function tierFromScore(s: number | null): string | null {
   if (s == null) return null
   if (s >= 80) return 'Exceptional'
@@ -63,7 +78,7 @@ export default async function DashboardPage() {
   let visible: MySubRow[] = []
   let submissionIds: string[] = []
 
-  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null; budget: string | null; budgetRange: string | null; budgetPerEp: string | null; tags: string[] }
+  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null; budget: string | null; budgetRange: string | null; budgetPerEp: string | null; tags: string[]; leadCharCount: number }
   const myEvalBySub = new Map<string, FeedEval>()
 
   type AppRow = {
@@ -106,7 +121,8 @@ export default async function DashboardPage() {
         const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
         const budgetRange = (budgetTier?.range as string) || null
         const budgetPerEp = (budgetTier?.per_episode as string) || null
-        myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, budgetRange, budgetPerEp, tags: matchData.tags })
+        const leadChars = Array.isArray((evJson as any)?.lead_characters) ? (evJson as any).lead_characters : []
+        myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, budgetRange, budgetPerEp, tags: matchData.tags, leadCharCount: leadChars.length })
       }
     }
 
@@ -147,7 +163,8 @@ export default async function DashboardPage() {
             const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
             const budgetRange = (budgetTier?.range as string) || null
             const budgetPerEp = (budgetTier?.per_episode as string) || null
-            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, budgetRange, budgetPerEp, tags: matchData.tags })
+            const leadChars = Array.isArray((evJson as any)?.lead_characters) ? (evJson as any).lead_characters : []
+            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, budgetRange, budgetPerEp, tags: matchData.tags, leadCharCount: leadChars.length })
           }
         }
       }
@@ -584,6 +601,9 @@ export default async function DashboardPage() {
     const crewCount = crewCountByScript.get(s.id) ?? 0
     const castCount = castCountByScript.get(s.id) ?? 0
     const backing = s.total_backing ?? 0
+    const budgetHigh = parseBudgetHigh(ev?.budgetRange, ev?.budgetPerEp)
+    const fundingNeeded = Math.max(0, budgetHigh - backing)
+    const leadCharCount = ev?.leadCharCount ?? 0
 
     let status: 'processing' | 'completed' | 'error' = 'completed'
     if (s.status === 'processing' || s.status === 'queued') status = 'processing'
@@ -605,6 +625,8 @@ export default async function DashboardPage() {
       cast_count: castCount,
       backing_total: backing,
       following_total: s.total_following ?? 0,
+      funding_needed: fundingNeeded,
+      lead_char_count: leadCharCount,
       role: 'creator',
       collab_role_label: null,
       status,
@@ -635,6 +657,8 @@ export default async function DashboardPage() {
       cast_count: 0,
       backing_total: s.totalBacking,
       following_total: s.totalFollowing,
+      funding_needed: 0,
+      lead_char_count: 0,
       role: 'collaborator',
       collab_role_label: s.collabRole,
       status: 'completed',

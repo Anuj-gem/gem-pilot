@@ -23,6 +23,8 @@ export interface ProjectCard {
   cast_count: number
   backing_total: number
   following_total: number
+  funding_needed: number
+  lead_char_count: number
   role: 'creator' | 'collaborator'
   collab_role_label: string | null
   status: 'processing' | 'completed' | 'error'
@@ -390,6 +392,13 @@ function fmtK(n: number): string {
   return n.toLocaleString()
 }
 
+function fmtShort(n: number): string {
+  if (n >= 1e9) return `$${(n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1)}B`
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+  if (n >= 1e3) return `$${Math.round(n / 1e3)}K`
+  return `$${n}`
+}
+
 /* ── Project tile ── */
 
 function ProjectTile({ project: p, isSelected, onToggleSelect }: {
@@ -494,17 +503,13 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
         fontSize: 11,
         borderTop: '0.5px solid #f0f0f0',
       }}>
-        {p.budget_display ? (
-          <span style={{ color: '#57534E' }}>💰 {p.budget_display}</span>
+        {p.funding_needed > 0 ? (
+          <span style={{ color: '#57534E' }}>💰 Funding needed {fmtShort(p.funding_needed)}</span>
         ) : (
-          <span style={{ color: '#A8A29E' }}>💰 Funding TBD</span>
+          <span style={{ color: '#57534E' }}>💰 Funded</span>
         )}
-        {p.crew_count > 0 && (
-          <span style={{ color: '#57534E' }}>🎬 {p.crew_count} open</span>
-        )}
-        {p.cast_count > 0 && (
-          <span style={{ color: '#57534E' }}>🎭 {p.cast_count} open</span>
-        )}
+        <span style={{ color: '#57534E' }}>🎬 {Math.max(0, 3 - p.crew_count)} open</span>
+        <span style={{ color: '#57534E' }}>🎭 {Math.max(0, p.lead_char_count - p.cast_count)} open</span>
       </div>
 
       {/* Action row: Discover toggle + View project */}

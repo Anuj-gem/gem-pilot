@@ -150,6 +150,8 @@ export default async function Home({
         collaboratorCount: 0,
         collaborators: [],
         writer: writer ? { handle: writer.handle, fullName: writer.full_name, avatarUrl: writer.avatar_url, headline: writer.headline } : null,
+        fundingNeeded: 0,
+        leadCharCount: 0,
       } satisfies LeaderboardCard
     })
   }
