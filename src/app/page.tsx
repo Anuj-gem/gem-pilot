@@ -7,7 +7,7 @@
 import { redirect } from 'next/navigation'
 import { createServerClient } from '@supabase/ssr'
 import { LandingTracking } from '@/components/landing-tracking'
-import { LandingNav } from '@/components/landing/landing-nav'
+import Nav from '@/components/nav'
 import { LandingPageV21 } from '@/components/landing/landing-page-v21'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
 import { SiteFooter } from '@/components/site-footer'
@@ -159,7 +159,7 @@ export default async function Home({
   return (
     <div className="min-h-screen text-white" style={{ background: '#2b1a55' }}>
       <LandingTracking />
-      <LandingNav />
+      <Nav />
 
       <LandingPageV21 opportunities={opportunities} discoverScripts={discoverScripts} />
 
