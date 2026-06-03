@@ -583,7 +583,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
     return `$${n}`
   }
 
-  const investmentProjectCost = budgetPlan?.total ? fmtShort(budgetPlan.total) : gemEstimate || null
+  const investmentProjectCost = budgetPlan?.budget_low && budgetPlan?.budget_high && budgetPlan.budget_low !== budgetPlan.budget_high
+    ? `${fmtShort(budgetPlan.budget_low)}-${fmtShort(budgetPlan.budget_high)}`
+    : budgetPlan?.total ? fmtShort(budgetPlan.total)
+    : gemEstimate || null
 
   // All evals unlocked — redirect removed.
 
@@ -996,7 +999,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             const roles = leadCharacters.length
             const cast = castCollabs.length
             if (roles === 0 && cast === 0) return null
-            return cast > 0 ? `${roles} roles · ${cast} cast` : `${roles} roles`
+            const open = Math.max(0, roles - cast)
+            return `${open} open · ${cast} cast`
           })()}
           investmentChildren={
             <div>
@@ -1063,8 +1067,13 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 subtitle={(() => {
                   const parts: string[] = []
                   if (revenuePlan?.sources?.length) parts.push(`${revenuePlan.sources.length} source${revenuePlan.sources.length !== 1 ? 's' : ''}`)
-                  if ((budgetPlan?.total ?? 0) > 0 && (revenuePlan?.total ?? 0) > 0) {
-                    parts.push(`${((revenuePlan?.total ?? 0) / (budgetPlan?.total ?? 1)).toFixed(1)}x return`)
+                  const rev = revenuePlan?.total ?? 0
+                  const bLow = budgetPlan?.budget_low ?? 0
+                  const bHigh = budgetPlan?.budget_high ?? budgetPlan?.total ?? 0
+                  if (bLow > 0 && bHigh > 0 && rev > 0 && bLow !== bHigh) {
+                    parts.push(`${(rev / bHigh).toFixed(1)}x-${(rev / bLow).toFixed(1)}x return`)
+                  } else if ((budgetPlan?.total ?? 0) > 0 && rev > 0) {
+                    parts.push(`${(rev / (budgetPlan?.total ?? 1)).toFixed(1)}x return`)
                   }
                   return parts.length > 0 ? parts.join(' · ') : 'No sources added yet'
                 })()}
@@ -1077,13 +1086,23 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 />
                 {/* Returns summary */}
                 <div className="flex items-center justify-center gap-4 py-4 mt-3 text-[14px]" style={{ borderTop: '1px solid #f5f5f4' }}>
-                  <span style={{ color: '#78716C' }}>{fmtShort(budgetPlan?.total ?? 0)} cost</span>
+                  <span style={{ color: '#78716C' }}>{investmentProjectCost || fmtShort(budgetPlan?.total ?? 0)} cost</span>
                   <span style={{ color: '#A8A29E' }}>→</span>
                   <span style={{ color: '#0F6E56', fontWeight: 500 }}>{fmtShort(revenuePlan?.total ?? 0)} revenue</span>
                   {(budgetPlan?.total ?? 0) > 0 && (revenuePlan?.total ?? 0) > 0 && (
                     <>
                       <span style={{ color: '#A8A29E' }}>→</span>
-                      <span style={{ color: '#534AB7', fontWeight: 500 }}>{((revenuePlan?.total ?? 0) / (budgetPlan?.total ?? 1)).toFixed(1)}x</span>
+                      <span style={{ color: '#534AB7', fontWeight: 500 }}>
+                        {(() => {
+                          const rev = revenuePlan?.total ?? 0
+                          const bLow = budgetPlan?.budget_low ?? 0
+                          const bHigh = budgetPlan?.budget_high ?? budgetPlan?.total ?? 0
+                          if (bLow > 0 && bHigh > 0 && bLow !== bHigh) {
+                            return `${(rev / bHigh).toFixed(1)}x-${(rev / bLow).toFixed(1)}x`
+                          }
+                          return `${(rev / (budgetPlan?.total ?? 1)).toFixed(1)}x`
+                        })()}
+                      </span>
                     </>
                   )}
                 </div>

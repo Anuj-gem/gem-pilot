@@ -91,7 +91,16 @@ export function ProjectNeedsCards({
                   className="text-[12px] m-0 mt-1"
                   style={{ color: isActive ? '#534AB7' : '#78716C' }}
                 >
-                  {tab.summary}
+                  {!isActive && tab.summary.includes('open') ? (
+                    <>
+                      {tab.summary.split(' · ').map((part, pi) => (
+                        <span key={pi}>
+                          {pi > 0 && <span> · </span>}
+                          <span style={{ color: part.includes('open') ? '#15803d' : '#78716C' }}>{part}</span>
+                        </span>
+                      ))}
+                    </>
+                  ) : tab.summary}
                 </div>
               ) : null}
             </button>
