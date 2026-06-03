@@ -218,11 +218,11 @@ function PositionSection() {
               ))}
             </div>
 
-            {/* GEM Score row */}
+            {/* GEM Evaluation row */}
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg" style={{ background: '#F5F3FF' }}>
               <GemDiamond size={14} />
-              <span className="text-[12px] font-semibold" style={{ color: '#7c3aed' }}>GEM Score</span>
-              <span className="text-[26px] font-extrabold ml-auto" style={{ color: '#7c3aed' }}>85</span>
+              <span className="text-[12px] font-semibold" style={{ color: '#7c3aed' }}>GEM Evaluation</span>
+              <svg className="ml-auto" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
             </div>
           </div>
 
@@ -422,31 +422,19 @@ const NETWORK_COMPANIES = [
 function NetworkSection() {
   return (
     <SectionWrapper>
-      <div className="text-center">
+      <div className="text-center max-w-xl mx-auto">
         <h2
           className="font-bold leading-[1.15] tracking-tight m-0 mb-4"
           style={{ fontSize: 'clamp(26px, 4vw, 36px)', color: '#ffffff' }}
         >
-          The GEM <span style={{ color: GOLD }}>network</span>
+          GEM <span style={{ color: GOLD }}>Partners</span>
         </h2>
-        <p className="text-[15px] m-0 mb-10 max-w-xl mx-auto" style={{ color: MUTED }}>
-          Not just Hollywood — people from all industries who believe in the next generation of independent creators.
+        <p className="text-[15px] m-0 mb-4" style={{ color: MUTED }}>
+          We&apos;re assembling a network of partners who are looking to support creators with funding and resources to make their projects a reality — not just from Hollywood, but from all industries. People committed to the next generation of independent creators.
         </p>
-        <div className="flex flex-wrap gap-3 justify-center">
-          {NETWORK_COMPANIES.map(c => (
-            <div
-              key={c}
-              className="px-4 py-2 rounded-lg text-[13px] font-medium"
-              style={{
-                border: '1px solid rgba(255,255,255,0.18)',
-                color: 'rgba(255,255,255,0.6)',
-                background: 'rgba(255,255,255,0.04)',
-              }}
-            >
-              {c}
-            </div>
-          ))}
-        </div>
+        <p className="text-[13px] m-0" style={{ color: VERY_MUTED }}>
+          Our focus right now is funding, with more ways to support creators coming soon.
+        </p>
       </div>
     </SectionWrapper>
   )
