@@ -351,7 +351,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     )}
                   </div>
                   <Link
-                    href="/signup"
+                    href="/get-started"
                     className="ml-2 text-[12px] font-semibold px-3 py-1.5 rounded-lg text-white no-underline transition-all duration-150 hover:brightness-110"
                     style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
                   >
@@ -440,7 +440,7 @@ export default function Nav({ userData }: NavProps = {}) {
                     Log in
                   </Link>
                   <Link
-                    href="/signup"
+                    href="/get-started"
                     className="flex items-center justify-center px-3 py-2.5 rounded-lg text-[14px] font-semibold text-white no-underline"
                     style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
                   >
