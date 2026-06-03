@@ -22,31 +22,39 @@ function ResetPasswordContent() {
   const [success, setSuccess] = useState(false)
   const [ready, setReady] = useState(false)
 
-  // On mount, check if we have a valid recovery session from the URL hash
+  // On mount, exchange the recovery token from the URL hash for a session.
+  // Supabase does this automatically but it's async — we poll + listen.
   useEffect(() => {
-    // Supabase puts the recovery token in the URL hash automatically
-    // The supabase-browser client handles exchanging it for a session
-    const checkSession = async () => {
+    let cancelled = false
+
+    // Listen for any auth event that gives us a session
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (cancelled) return
+      if (session && (event === 'PASSWORD_RECOVERY' || event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED')) {
+        setReady(true)
+      }
+    })
+
+    // Also poll every 500ms for up to 15 seconds
+    let attempts = 0
+    const poll = setInterval(async () => {
+      if (cancelled) { clearInterval(poll); return }
+      attempts++
       const { data: { session } } = await supabase.auth.getSession()
       if (session) {
         setReady(true)
-      } else {
-        // Listen for auth state change (recovery token exchange happens async)
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-          if (event === 'PASSWORD_RECOVERY') {
-            setReady(true)
-          }
-        })
-        // Give it a moment
-        setTimeout(async () => {
-          const { data: { session: s } } = await supabase.auth.getSession()
-          if (s) setReady(true)
-          else setError('This reset link has expired. Please request a new one.')
-        }, 3000)
-        return () => subscription.unsubscribe()
+        clearInterval(poll)
+      } else if (attempts >= 600) {
+        clearInterval(poll)
+        if (!cancelled) setError('Something went wrong verifying your link. Please try clicking the link in your email again, or request a new one.')
       }
+    }, 500)
+
+    return () => {
+      cancelled = true
+      clearInterval(poll)
+      subscription.unsubscribe()
     }
-    checkSession()
   }, [])
 
   async function handleSubmit(e: React.FormEvent) {
