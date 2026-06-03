@@ -134,13 +134,21 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
   const progressPct = budgetTotal > 0 ? Math.min(100, Math.round((securedAmount / budgetTotal) * 100)) : 0
   const consideringPct = budgetTotal > 0 ? Math.min(100 - progressPct, Math.round((consideringTotal / budgetTotal) * 100)) : 0
 
+  // Status summary counts
+  const statusParts: string[] = []
+  if (pending.length > 0) statusParts.push(`${pending.length} pending`)
+  if (following.length > 0) statusParts.push(`${following.length} following`)
+  if (backed.length > 0) statusParts.push(`${backed.length} backed`)
+  if (available.length > 0 && isOwner) statusParts.push(`${available.length} available`)
+
   return (
     <div>
       <div className="flex items-start justify-between mb-1">
-        <div>
-          <h3 className="text-xs uppercase tracking-wider text-gray-600 font-medium m-0">GEM funding opportunities</h3>
+        <div className="flex items-center gap-2">
+          <span aria-hidden="true" className="text-[14px]">💎</span>
+          <h3 className="text-[13px] font-semibold m-0" style={{ color: '#1C1917' }}>Opportunities from GEM partners</h3>
         </div>
-        <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(totalAvailable)}</span>
+        <span className="text-[12px] shrink-0" style={{ color: '#78716C' }}>{statusParts.join(' · ')}</span>
       </div>
 
       {/* Progress bar */}

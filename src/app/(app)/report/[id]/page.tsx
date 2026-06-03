@@ -1027,9 +1027,17 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 subtitle={(() => {
                   const parts: string[] = []
                   if (totalBacking > 0) parts.push(`${fmtShort(totalBacking)} secured`)
-                  if (investmentConsideringAmount > 0) parts.push(`${fmtShort(investmentConsideringAmount)} pending`)
-                  const availableOppAmount = matchingOpps.filter(o => !considerationResults.some(r => r.opportunity_id === o.id)).reduce((s, o) => s + o.funding_amount, 0)
-                  if (availableOppAmount > 0) parts.push(`${fmtShort(availableOppAmount)} available`)
+                  // Count actual pending (applied, not yet reviewed)
+                  const pendingOpps = considerationResults.filter(r => !r.outcome || r.outcome === '')
+                  const pendingAmt = pendingOpps.reduce((s, r) => {
+                    const opp = matchingOpps.find(o => o.id === r.opportunity_id)
+                    return s + (opp?.funding_amount || 0)
+                  }, 0)
+                  if (pendingAmt > 0) parts.push(`${fmtShort(pendingAmt)} pending`)
+                  const followingOpps = considerationResults.filter(r => r.outcome === 'follow' || r.backing_status === 'following')
+                  if (followingOpps.length > 0) parts.push(`${followingOpps.length} following`)
+                  const availableOppCount = matchingOpps.filter(o => !considerationResults.some(r => r.opportunity_id === o.id)).length
+                  if (availableOppCount > 0) parts.push(`${availableOppCount} available`)
                   return parts.length > 0 ? parts.join(' · ') : 'No funding yet'
                 })()}
                 value={totalBacking > 0 ? fmtShort(totalBacking) : '$0'}
@@ -1046,10 +1054,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <div style={{ background: '#F5F3FF', margin: '16px -20px 0', padding: '16px 20px 20px', borderTop: '1px solid #EEEDFE' }}>
                     <div className="flex items-center gap-2 mb-3">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                      <span className="text-[11px]" style={{ color: '#A8A29E' }}>Private to you</span>
-                    </div>
-                    <div className="flex items-baseline justify-between mb-3">
-                      <span className="text-[13px] font-semibold" style={{ color: '#1C1917' }}>Funding pipeline</span>
+                      <span className="text-[11px]" style={{ color: '#A8A29E' }}>Only you can see this</span>
                     </div>
                     <FundingOpportunities
                       matchingOpps={matchingOpps}
