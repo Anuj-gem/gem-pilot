@@ -71,7 +71,7 @@ export default async function DashboardPage() {
   type MySubRow = {
     id: string; title: string; status: string; declared_format: string | null
     created_at: string; hidden_at: string | null; is_public: boolean | null
-    heat_score: number | null; poster_url: string | null
+    heat_score: number | null; poster_url: string | null; media_urls: any[] | null
     total_backing: number | null; backer_count: number | null
     total_following: number | null; follower_count: number | null
   }
@@ -102,7 +102,7 @@ export default async function DashboardPage() {
 
     const { data: mySubs } = await supabase
       .from('script_submissions')
-      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, total_backing, backer_count, total_following, follower_count, poster_url')
+      .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, media_urls')
       .eq('user_id', user.id)
       .order('created_at', { ascending: false })
     visible = ((mySubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -144,7 +144,7 @@ export default async function DashboardPage() {
       if (anonIds.length > 0) {
         const { data: anonSubs } = await service
           .from('script_submissions')
-          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, total_backing, backer_count, total_following, follower_count, poster_url')
+          .select('id, title, status, declared_format, created_at, hidden_at, is_public, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, media_urls')
           .in('id', anonIds)
           .order('created_at', { ascending: false })
         visible = ((anonSubs as MySubRow[] | null) || []).filter((s) => !s.hidden_at)
@@ -323,7 +323,7 @@ export default async function DashboardPage() {
       if (acceptedSubIds.length > 0) {
         const { data: collabSubs } = await service
           .from('script_submissions')
-          .select('id, title, declared_format, status, created_at, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, is_public')
+          .select('id, title, declared_format, status, created_at, heat_score, total_backing, backer_count, total_following, follower_count, poster_url, media_urls, is_public')
           .in('id', acceptedSubIds)
           .eq('status', 'completed')
 
@@ -360,7 +360,7 @@ export default async function DashboardPage() {
             backerCount: s.backer_count ?? 0,
             totalFollowing: s.total_following ?? 0,
             followerCount: s.follower_count ?? 0,
-            posterUrl: s.poster_url ?? null,
+            posterUrl: s.poster_url ?? (Array.isArray(s.media_urls) && s.media_urls.length > 0 && s.media_urls[0]?.type === 'image' ? s.media_urls[0].url : null),
             collabRole: roleBySubId.get(s.id) || 'Collaborator',
             heatScore: s.heat_score ?? 0,
           }
@@ -377,7 +377,7 @@ export default async function DashboardPage() {
     // Fetch submission details for pending invites
     const { data: pendingSubs } = await service
       .from('script_submissions')
-      .select('id, title, poster_url, user_id')
+      .select('id, title, poster_url, media_urls, user_id')
       .in('id', pendingCollabSubIds)
 
     // Fetch owner profiles
@@ -424,7 +424,7 @@ export default async function DashboardPage() {
         id: row.id,
         submission_id: row.submission_id,
         title: sub.title,
-        poster_url: sub.poster_url ?? null,
+        poster_url: sub.poster_url ?? (Array.isArray(sub.media_urls) && sub.media_urls.length > 0 && sub.media_urls[0]?.type === 'image' ? sub.media_urls[0].url : null),
         owner_name: ownerNames[sub.user_id] || 'Unknown',
         role_type: roleType,
         role_name: roleName,
@@ -614,7 +614,7 @@ export default async function DashboardPage() {
       eval_id: ev?.id ?? null,
       title: s.title,
       logline: ev?.logline ?? null,
-      poster_url: s.poster_url ?? null,
+      poster_url: s.poster_url ?? (Array.isArray(s.media_urls) && s.media_urls.length > 0 && s.media_urls[0]?.type === 'image' ? s.media_urls[0].url : null),
       score: rounded,
       tier: tierFromScore(rounded),
       format: ev?.format || s.declared_format,
