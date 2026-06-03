@@ -503,13 +503,9 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
         fontSize: 11,
         borderTop: '0.5px solid #f0f0f0',
       }}>
-        {p.funding_needed > 0 ? (
-          <span style={{ color: '#57534E' }}>💰 Funding needed {fmtShort(p.funding_needed)}</span>
-        ) : (
-          <span style={{ color: '#57534E' }}>💰 Funded</span>
-        )}
-        <span style={{ color: '#57534E' }}>🎬 {Math.max(0, 3 - p.crew_count)} open</span>
-        <span style={{ color: '#57534E' }}>🎭 {Math.max(0, p.lead_char_count - p.cast_count)} open</span>
+        <span style={{ color: '#57534E' }}>💰 Need: {fmtShort(p.funding_needed)}</span>
+        <span style={{ color: '#57534E' }}>🎬 Crew: {Math.max(0, 3 - p.crew_count)} open</span>
+        <span style={{ color: '#57534E' }}>🎭 Cast: {Math.max(0, p.lead_char_count - p.cast_count)} open</span>
       </div>
 
       {/* Action row: Discover toggle + View project */}

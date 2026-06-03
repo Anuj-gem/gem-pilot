@@ -326,13 +326,9 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           fontSize: 12,
           borderTop: '0.5px solid #f0f0f0',
         }}>
-          {c.fundingNeeded > 0 ? (
-            <span style={{ color: '#57534E' }}>💰 Funding needed {fmtShort(c.fundingNeeded)}</span>
-          ) : (
-            <span style={{ color: '#57534E' }}>💰 Funded</span>
-          )}
-          <span style={{ color: '#57534E' }}>🎬 {crewOpen} open</span>
-          <span style={{ color: '#57534E' }}>🎭 {castOpen} open</span>
+          <span style={{ color: '#57534E' }}>💰 Need: {fmtShort(c.fundingNeeded)}</span>
+          <span style={{ color: '#57534E' }}>🎬 Crew: {crewOpen} open</span>
+          <span style={{ color: '#57534E' }}>🎭 Cast: {castOpen} open</span>
           <span style={{
             marginLeft: 'auto',
             fontSize: 12,
