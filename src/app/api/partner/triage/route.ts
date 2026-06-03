@@ -20,10 +20,11 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const body = await req.json()
-  const { consideration_id, action, feedback_tags, heat_override, backing_conditions } = body as {
+  const { consideration_id, action, feedback_tags, feedback, heat_override, backing_conditions } = body as {
     consideration_id: string
     action: 'pass' | 'watchlist' | 'meet' | 'follow'
     feedback_tags?: string[]
+    feedback?: string
     heat_override?: number
     backing_conditions?: string[]
   }
@@ -71,20 +72,12 @@ export async function POST(req: NextRequest) {
     updateData.status = 'reviewed'
     updateData.reviewed_at = new Date().toISOString()
 
-    // Split tags: +Tag → feedback_tags (positive), -Tag → next_steps_tags (reasons)
+    // Save tags directly to feedback_tags
     if (feedback_tags?.length) {
       updateData.triage_feedback_tags = feedback_tags
-      const positive = feedback_tags.filter(t => t.startsWith('+')).map(t => t.slice(1))
-      const negative = feedback_tags.filter(t => t.startsWith('-')).map(t => t.slice(1))
-      if (positive.length > 0) updateData.feedback_tags = positive
-      if (negative.length > 0) updateData.next_steps_tags = negative
-
-      // Heat: use override if provided, else +1 per positive signal tag
-      const heatValue = heat_override !== undefined ? heat_override : positive.length
-      if (heatValue > 0) {
-        updateData.heat_earned = heatValue
-      }
+      updateData.feedback_tags = feedback_tags
     }
+    if (feedback) updateData.feedback = feedback
   }
 
   if (action === 'meet') {
@@ -99,19 +92,12 @@ export async function POST(req: NextRequest) {
     updateData.backing_status = 'following'
     updateData.backing_conditions = backing_conditions || []
 
-    // Split tags same as pass
+    // Save tags directly to feedback_tags
     if (feedback_tags?.length) {
       updateData.triage_feedback_tags = feedback_tags
-      const positive = feedback_tags.filter(t => t.startsWith('+')).map(t => t.slice(1))
-      const negative = feedback_tags.filter(t => t.startsWith('-')).map(t => t.slice(1))
-      if (positive.length > 0) updateData.feedback_tags = positive
-      if (negative.length > 0) updateData.next_steps_tags = negative
-
-      const heatValue = heat_override !== undefined ? heat_override : positive.length
-      if (heatValue > 0) {
-        updateData.heat_earned = heatValue
-      }
+      updateData.feedback_tags = feedback_tags
     }
+    if (feedback) updateData.feedback = feedback
   }
 
   await service
