@@ -4,6 +4,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 import { PostHogProvider } from "@/components/posthog-provider"
 import { GoogleAdsScript } from "@/components/google-ads-script"
 import { IntercomWidget } from "@/components/intercom-widget"
+import { RecoveryRedirect } from "@/components/auth/recovery-redirect"
 import "./globals.css"
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-[var(--gem-black)] text-[var(--gem-white)] antialiased">
         <GoogleAdsScript />
         <IntercomWidget />
+        <RecoveryRedirect />
         <Suspense fallback={null}>
           <PostHogProvider />
         </Suspense>
