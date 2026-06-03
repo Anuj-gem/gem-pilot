@@ -80,8 +80,6 @@ function ResetPasswordContent() {
 
     return () => {
       cancelled = true
-      clearInterval(poll)
-      subscription.unsubscribe()
     }
   }, [])
 
