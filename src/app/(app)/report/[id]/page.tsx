@@ -498,7 +498,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const followerCount: number = (submission as any).follower_count ?? 0
   const budgetPlan: BudgetPlan | null = (submission as any).budget_plan ?? null
   const revenuePlan: RevenuePlan | null = (submission as any).revenue_plan ?? null
-  const gemEstimate: string | null = packaging?.budget_tier?.range ?? null
+  // Extract just the dollar range from the raw budget string (strip "total negative cost" etc.)
+  const gemEstimateRaw: string | null = packaging?.budget_tier?.range ?? packaging?.budget_tier?.per_episode ?? null
+  const gemEstimate: string | null = (() => {
+    if (!gemEstimateRaw) return null
+    const matches = gemEstimateRaw.match(/\$[0-9.]+[KMB]?/gi)
+    if (!matches) return null
+    return matches.length >= 2 ? `${matches[0]}-${matches[1]}` : matches[0]
+  })()
 
   // ── Matching opportunities + consideration results for Investment section ──
   const matchData = extractMatchData(report as unknown as Record<string, unknown>)
