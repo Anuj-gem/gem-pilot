@@ -245,16 +245,8 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     opp.tags.forEach((t: string) => lookingForPills.push(t))
   }
 
-  const howWeHelpRaw: Array<{ icon: string; title: string; description: string }> =
+  const howWeHelp: Array<{ icon: string; title: string; description: string }> =
     Array.isArray(opp.how_we_help) ? opp.how_we_help : []
-
-  // Override financing description with the real funding_amount
-  const howWeHelp = howWeHelpRaw.map(item => {
-    if (opp.funding_amount && item.icon === 'financing') {
-      return { ...item, description: `Up to ${formatFunding(opp.funding_amount)} direct investment` }
-    }
-    return item
-  })
 
   return (
     <div style={{
