@@ -73,7 +73,7 @@ interface Props {
   isInsider?: boolean
 }
 
-export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/leaderboard', isInsider = false }: Props) {
+export function DiscoverGrid({ cards, initialSort, initialFilters, basePath = '/discover', isInsider = false }: Props) {
   const router = useRouter()
   const sp = useSearchParams()
   const [sort, setSort] = useState<SortId>(initialSort)

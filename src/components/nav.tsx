@@ -66,7 +66,7 @@ export default function Nav({ userData }: NavProps = {}) {
     : [] // Writers: no dropdown — flat "My Projects" link replaces it
 
   const navLinks = [
-    { href: '/leaderboard', label: 'Leaderboard', icon: null, emoji: '🏆' },
+    { href: '/discover', label: 'Discover', icon: null, emoji: '🔍' },
     { href: '/opportunities', label: 'Opportunities', icon: null, emoji: '💼' },
   ]
 

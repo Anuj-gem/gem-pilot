@@ -214,20 +214,20 @@ export function GrowHeatSection({
           )}
         </div>
 
-        {/* Leaderboard toggle */}
+        {/* Discover toggle */}
         {!isCollab && (
           <div className="px-2.5 py-1.5" style={{ background: '#fafafa', borderRadius: 6 }}>
             <div className="flex items-center gap-2.5">
-              <span className="text-[13px] shrink-0">🏆</span>
+              <span className="text-[13px] shrink-0">🔍</span>
               <div className="flex-1 min-w-0">
-                <p className="text-[12px] font-semibold m-0" style={{ color: '#111827' }}>Leaderboard</p>
+                <p className="text-[12px] font-semibold m-0" style={{ color: '#111827' }}>Discover</p>
                 <p className="text-[11px] m-0 mt-0.5" style={{ color: '#6b7280' }}>Get ranked and seen by industry professionals</p>
               </div>
               <DiscoverToggle scriptId={scriptId} isPublic={isPublic} isAnon={isAnon} />
             </div>
             {!isPublic && (
               <p className="text-[11px] m-0 mt-1.5 ml-[27px]" style={{ color: '#9ca3af' }}>
-                Turn on to get ranked on the leaderboard
+                Turn on to appear in Discover
               </p>
             )}
           </div>

@@ -10,7 +10,7 @@ import { Menu, X } from 'lucide-react'
 import { trackEvent } from '@/lib/posthog'
 
 const NAV_LINKS = [
-  { href: '/leaderboard', label: 'Leaderboard', emoji: '🏆' },
+  { href: '/discover', label: 'Discover', emoji: '🔍' },
   { href: '/opportunities', label: 'Opportunities', emoji: '💼' },
 ]
 

@@ -46,7 +46,7 @@ export function SearchBar({
       else params.delete(k)
     })
     const qs = params.toString()
-    router.push(qs ? `/leaderboard?${qs}` : '/leaderboard')
+    router.push(qs ? `/discover?${qs}` : '/discover')
   }
 
   const handleSearch = (e: React.FormEvent) => {

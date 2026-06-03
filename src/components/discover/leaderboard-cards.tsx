@@ -65,11 +65,11 @@ export function LeaderboardCards({
   const [filter, setFilter] = useState<FilterKey>('all')
   const [format, setFormat] = useState<FormatKey>('all')
   const [genre, setGenre] = useState<string | null>(null)
-  const [sort, setSort] = useState<SortKey>('heat')
+  const [sort, setSort] = useState<SortKey>('recent')
 
   // Filter
   const filtered = cards.filter(c => {
-    if (filter === 'funding') { if (c.budget == null) return false }
+    if (filter === 'funding') { if (c.collaboratorCount < 0) return false } // "Need funding" = show all (every project needs funding)
     if (filter === 'open_roles') { if (c.collaboratorCount <= 0) return false }
     if (format === 'feature') { if (c.format !== 'Feature') return false }
     if (format === 'series') { if (c.format !== 'Series') return false }
@@ -92,19 +92,24 @@ export function LeaderboardCards({
   })
 
   // Counts
-  const fundingCount = cards.filter(c => c.budget != null).length
+  const fundingCount = cards.length // every project needs funding
   const openRolesCount = cards.filter(c => c.collaboratorCount > 0).length
   const featureCount = cards.filter(c => c.format === 'Feature').length
   const seriesCount = cards.filter(c => c.format === 'Series').length
+
+  // Handlers — All is mutually exclusive with funding/open_roles
+  function handleAllClick() { setFilter('all') }
+  function handleFundingClick() { setFilter(filter === 'funding' ? 'all' : 'funding') }
+  function handleOpenRolesClick() { setFilter(filter === 'open_roles' ? 'all' : 'open_roles') }
 
   return (
     <div>
       {/* Row 1: Main filters + sort */}
       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10, alignItems: 'center' }}>
-        {/* Filter chips */}
-        <Chip label={`All ${cards.length}`} active={filter === 'all'} onClick={() => setFilter('all')} />
-        {fundingCount > 0 && <Chip label={`Looking for funding ${fundingCount}`} active={filter === 'funding'} onClick={() => setFilter('funding')} />}
-        {openRolesCount > 0 && <Chip label={`Open roles ${openRolesCount}`} active={filter === 'open_roles'} onClick={() => setFilter('open_roles')} />}
+        {/* Filter chips — All is mutually exclusive with funding/open_roles */}
+        <Chip label={`All ${cards.length}`} active={filter === 'all'} onClick={handleAllClick} />
+        {fundingCount > 0 && <Chip label={`Need funding ${fundingCount}`} active={filter === 'funding'} onClick={handleFundingClick} />}
+        {openRolesCount > 0 && <Chip label={`Open roles ${openRolesCount}`} active={filter === 'open_roles'} onClick={handleOpenRolesClick} />}
 
         <span style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.1)', margin: '0 4px' }} />
 
@@ -219,13 +224,14 @@ function Chip({ label, active, onClick }: { label: string; active: boolean; onCl
       onClick={onClick}
       style={{
         fontSize: 12,
-        fontWeight: active ? 500 : 400,
-        color: active ? '#fff' : 'rgba(255,255,255,0.5)',
-        background: active ? 'rgba(124,58,237,0.4)' : 'rgba(255,255,255,0.04)',
-        border: `0.5px solid ${active ? 'rgba(124,58,237,0.6)' : 'rgba(255,255,255,0.08)'}`,
+        fontWeight: active ? 600 : 400,
+        color: active ? '#fff' : 'rgba(255,255,255,0.7)',
+        background: active ? '#534AB7' : 'rgba(255,255,255,0.08)',
+        border: `1px solid ${active ? '#534AB7' : 'rgba(255,255,255,0.15)'}`,
         padding: '6px 14px',
         borderRadius: 18,
         cursor: 'pointer',
+        transition: 'background 0.15s, color 0.15s',
       }}
     >
       {label}

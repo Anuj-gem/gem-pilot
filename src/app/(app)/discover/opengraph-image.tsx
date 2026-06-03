@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'GEM — The Leaderboard'
+export const alt = 'GEM — Discover'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -54,7 +54,7 @@ export default async function DiscoverOpengraphImage() {
             color: GOLD,
           }}
         >
-          The Leaderboard
+          Discover
         </div>
         <div
           style={{

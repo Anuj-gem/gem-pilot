@@ -3,7 +3,7 @@
 // MobileTabBar — fixed bottom navigation for mobile/tablet users.
 // Visible below `lg`, hidden above. Works for both anon and authed.
 //
-// Tabs: Dashboard · Leaderboard · Opportunities · Profile (avatar sheet)
+// Tabs: Dashboard · Discover · Opportunities · Profile (avatar sheet)
 //
 // The Profile tab opens a slide-up sheet instead of navigating.
 // All props are server-provided via layout.tsx — no client auth calls.
@@ -36,7 +36,7 @@ export function MobileTabBar({
 
   const tabs = [
     { href: '/dashboard',     label: 'Home',          icon: Home,     match: (p: string) => p === '/dashboard' || p === '/' },
-    { href: '/leaderboard',   label: 'Leaderboard',   icon: Compass,  match: (p: string) => p.startsWith('/leaderboard') },
+    { href: '/discover',      label: 'Discover',      icon: Compass,  match: (p: string) => p.startsWith('/discover') || p.startsWith('/leaderboard') },
     { href: '/opportunities', label: 'Opportunities', icon: Briefcase, match: (p: string) => p.startsWith('/opportunities') },
   ] as const
 
