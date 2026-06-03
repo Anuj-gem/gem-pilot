@@ -1,14 +1,13 @@
 // /opportunities/[slug] — individual opportunity detail page.
-// v6 — matches the approved mockup exactly: dark header with partner strip,
-//       title, CTA buttons; white card below with stats, deal type, looking for,
-//       how we work, top submissions.
+// v7 — dark background throughout, big funding number, "What we look for" / "How we can help" / "Terms" cards.
+//       Stats: 2 boxes (Submitted + Most recent). Keeps all auth/qualifying/CTA logic.
 
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, FileText, Building2, CheckCircle2, Flame, Users, Diamond } from 'lucide-react'
+import { ArrowRight, DollarSign, Users, Mic } from 'lucide-react'
 import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
 import { NoScriptsApplyButton } from '@/components/opportunities/no-scripts-apply-button'
 import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
@@ -26,27 +25,6 @@ const BUDGET_LABELS: Record<string, string> = {
 const FORMAT_LABELS: Record<string, string> = {
   Feature: 'Feature', Series: 'Series',
 }
-const DEAL_TYPE_LABELS: Record<string, string> = {
-  representation: 'Representation',
-  option: 'Option',
-  development_deal: 'Development Deal',
-  production_partnership: 'Production Partnership',
-}
-const DEAL_TYPE_DESCRIPTIONS: Record<string, string> = {
-  representation: 'We sign writers and take their material to market. Standard GEM representation terms.',
-  option: 'We option scripts for development with an exclusive window.',
-  development_deal: 'We partner with writers to develop material for specific buyers.',
-  production_partnership: 'We attach as producers and package the project together.',
-}
-
-// Poster gradient colors for top submissions
-const POSTER_GRADIENTS = [
-  'linear-gradient(135deg, #ddd6fe, #c4b5fd)',
-  'linear-gradient(135deg, #c7d2fe, #a5b4fc)',
-  'linear-gradient(135deg, #e9d5ff, #d8b4fe)',
-  'linear-gradient(135deg, #fde68a, #fbbf24)',
-  'linear-gradient(135deg, #a7f3d0, #6ee7b7)',
-]
 
 function svc() {
   return createServerClient(
@@ -80,6 +58,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
+// Icon lookup for how_we_help rows
+function HelpIcon({ icon }: { icon: string }) {
+  const cls = "text-purple-300"
+  if (icon === 'cash') return <DollarSign size={16} className={cls} />
+  if (icon === 'users') return <Users size={16} className={cls} />
+  if (icon === 'microphone') return <Mic size={16} className={cls} />
+  return <DollarSign size={16} className={cls} />
+}
+
+function formatFunding(amount: number): string {
+  if (amount >= 1_000_000) {
+    const m = amount / 1_000_000
+    return `$${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)}M`
+  }
+  if (amount >= 1_000) {
+    const k = amount / 1_000
+    return `$${k % 1 === 0 ? k.toFixed(0) : k.toFixed(1)}K`
+  }
+  return `$${amount.toLocaleString()}`
+}
+
 export default async function OpportunityDetailPage({ params }: PageProps) {
   const { slug } = await params
   const service = svc()
@@ -102,93 +101,13 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     .eq('opportunity_id', opp.id)
 
   const conIds = ((considerations || []) as any[]).map((c: any) => c.id)
-  let avgScore: number | null = null
-  // Heat granted = sum of heat the partner gave via reviews on this opportunity
-  let totalHeat = 0
-  for (const c of (considerations || []) as any[]) {
-    totalHeat += c.heat ?? 0
-  }
   let lastApplicationDate: string | null = null
-  type TopSub = { format: string | null; genres: string[]; score: number | null; heat: number; collaborators: number }
-  let topSubmissions: TopSub[] = []
 
   if (conIds.length > 0) {
     const sorted = ((considerations || []) as any[]).sort((a: any, b: any) =>
       new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     )
     lastApplicationDate = sorted[0]?.created_at || null
-
-    const { data: conScripts } = await service
-      .from('consideration_scripts')
-      .select('consideration_id, script_submission_id')
-      .in('consideration_id', conIds)
-
-    const scriptIds = [...new Set(((conScripts || []) as any[]).map((cs: any) => cs.script_submission_id))]
-
-    if (scriptIds.length > 0) {
-      const { data: subs } = await service
-        .from('script_submissions')
-        .select('id, declared_format, heat_score')
-        .in('id', scriptIds)
-
-      const { data: evals } = await service
-        .from('script_evaluations')
-        .select('submission_id, weighted_score, evaluation')
-        .in('submission_id', scriptIds)
-
-      const { data: collabs } = await service
-        .from('script_collaborators')
-        .select('script_id')
-        .in('script_id', scriptIds)
-        .eq('status', 'accepted')
-
-      const collabCounts = new Map<string, number>()
-      for (const c of (collabs || []) as any[]) {
-        collabCounts.set(c.script_id, (collabCounts.get(c.script_id) || 0) + 1)
-      }
-
-      const scores: number[] = []
-      const subMap = new Map<string, any>()
-      for (const s of (subs || []) as any[]) subMap.set(s.id, s)
-
-      for (const ev of (evals || []) as any[]) {
-        if (ev.weighted_score != null) scores.push(ev.weighted_score)
-        const sub = subMap.get(ev.submission_id)
-
-        const evJson = ev.evaluation as Record<string, unknown> | null
-        const cls = (evJson?.classification as Record<string, unknown>) || {}
-        const genres = [
-          cls.genre_primary as string,
-          ...((cls.genre_secondary as string[]) || []),
-        ].filter(Boolean)
-
-        topSubmissions.push({
-          format: sub?.declared_format || null,
-          genres,
-          score: ev.weighted_score,
-          heat: sub?.heat_score ?? 0,
-          collaborators: collabCounts.get(ev.submission_id) || 0,
-        })
-      }
-
-      if (scores.length > 0) {
-        avgScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-      }
-
-      topSubmissions.sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
-      topSubmissions = topSubmissions.slice(0, 5)
-    }
-  }
-
-  // ── Partner activity stats ──
-  let reviewedCount = 0
-  if (opp.owner_id) {
-    const { count: revCount } = await service
-      .from('considerations')
-      .select('id', { count: 'exact', head: true })
-      .eq('opportunity_id', opp.id)
-      .eq('review_stage', 'complete')
-    reviewedCount = revCount ?? 0
   }
 
   // ── Auth + user-specific data ──
@@ -309,7 +228,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     }
   }
 
-  const postedDate = opp.created_at ? new Date(opp.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : null
+  const postedDate = opp.created_at
+    ? new Date(opp.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : null
 
   function timeAgo(dateStr: string): string {
     const diff = Date.now() - new Date(dateStr).getTime()
@@ -322,7 +243,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     return `${Math.floor(days / 30)}mo ago`
   }
 
-  // Build "looking for" pills
+  // Build "what we look for" pills
   const lookingForPills: string[] = []
   if (opp.formats?.length > 0) {
     opp.formats.forEach((f: string) => lookingForPills.push(FORMAT_LABELS[f] ?? f))
@@ -343,6 +264,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     opp.tags.forEach((t: string) => lookingForPills.push(t))
   }
 
+  const howWeHelp: Array<{ icon: string; title: string; description: string }> =
+    Array.isArray(opp.how_we_help) ? opp.how_we_help : []
+
   return (
     <div style={{
       background: '#2b1a55',
@@ -354,89 +278,179 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       marginTop: '-24px',
       paddingTop: '24px',
       marginBottom: '-64px',
-      paddingBottom: '64px',
+      paddingBottom: '80px',
     }}>
-    <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-2xl mx-auto px-4">
 
-      {/* ── Back link ── */}
-      <div style={{ padding: '12px 0', marginBottom: '4px' }}>
-        <Link
-          href="/opportunities"
-          className="text-[13px] text-white/50 hover:text-white/70 transition-colors"
-          style={{ textDecoration: 'none' }}
-        >
-          &larr; All opportunities
-        </Link>
-      </div>
-
-      {/* ── DARK HEADER SECTION ── */}
-      <div style={{ padding: '28px 32px 0' }}>
-
-        {/* Partner strip */}
-        <div className="flex items-center gap-2.5 mb-5">
-          <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center"
-            style={{ background: 'rgba(255,255,255,0.08)' }}
+        {/* ── Back link ── */}
+        <div style={{ padding: '12px 0', marginBottom: '8px' }}>
+          <Link
+            href="/opportunities"
+            className="text-[13px] text-white/50 hover:text-white/70 transition-colors"
+            style={{ textDecoration: 'none' }}
           >
-            <Building2 size={18} className="text-white/50" />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[13px] font-medium text-white/85">GEM Partner</span>
-              <span
-                className="text-[10px] font-medium uppercase tracking-wide px-1.5 py-0.5 rounded"
-                style={{ color: '#d4a843', background: 'rgba(212,168,67,0.12)', letterSpacing: '0.05em' }}
-              >
-                Verified
-              </span>
-            </div>
-            <span className="text-[11px] text-white/40">{opp.perspective === 'lit_rep' ? 'Talent Representative' : 'Producer'}</span>
-          </div>
-          {reviewedCount > 0 && (
-            <div className="ml-auto flex items-center gap-3">
-              <span className="text-[11px] text-white/45">{reviewedCount} reviewed</span>
-            </div>
-          )}
+            &larr; All opportunities
+          </Link>
         </div>
 
-        {/* Status line */}
-        <div className="flex items-center gap-2 mb-3.5">
+        {/* ── Partner strip ── */}
+        <div className="flex items-center gap-2.5 mb-5">
+          <div
+            className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-[15px]"
+            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+          >
+            G
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-[13px] font-medium text-white/85">GEM Partner</span>
+            <span
+              className="text-[10px] font-medium px-1.5 py-0.5 rounded"
+              style={{ color: '#4ade80', background: 'rgba(74,222,128,0.12)', letterSpacing: '0.03em' }}
+            >
+              Verified
+            </span>
+          </div>
+        </div>
+
+        {/* ── Status line ── */}
+        <div className="flex items-center gap-2 mb-6">
           {isClosed ? (
-            <span className="flex items-center gap-1 text-[11px] font-medium text-red-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-400 inline-block" /> Closed
+            <span className="flex items-center gap-1.5 text-[12px] font-medium text-red-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-400 inline-block" />
+              Closed
             </span>
           ) : (
-            <span className="flex items-center gap-1 text-[11px] font-medium text-green-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" /> Accepting submissions
+            <span className="flex items-center gap-1.5 text-[12px] font-medium text-green-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
+              Open
             </span>
           )}
           {postedDate && (
             <>
-              <span className="text-[11px] text-white/30">·</span>
-              <span className="text-[11px] text-white/40">Posted {postedDate}</span>
+              <span className="text-[12px] text-white/30">·</span>
+              <span className="text-[12px] text-white/45">Posted {postedDate}</span>
             </>
           )}
         </div>
 
-        {/* Title */}
-        <h1
-          className="text-[30px] font-medium text-white m-0 mb-2.5"
-          style={{ fontFamily: 'Georgia, serif', lineHeight: 1.25 }}
-        >
-          {opp.title}
-        </h1>
+        {/* ── Funding amount ── */}
+        {opp.funding_amount && (
+          <div className="mb-4">
+            <div
+              className="font-bold text-white leading-none"
+              style={{ fontSize: '52px', letterSpacing: '-0.02em' }}
+            >
+              {formatFunding(opp.funding_amount)}
+            </div>
+            <div className="text-[13px] text-white/45 mt-1.5">per project</div>
+          </div>
+        )}
 
-        {/* Subtitle */}
-        {opp.subtitle && (
-          <p className="text-[14px] text-white/50 m-0 mb-6" style={{ lineHeight: 1.6, maxWidth: '540px' }}>
-            {opp.subtitle}
+        {/* ── Description ── */}
+        {opp.description && (
+          <p
+            className="text-white/70 mb-8"
+            style={{ fontSize: '15px', lineHeight: 1.65 }}
+          >
+            {opp.description}
           </p>
         )}
 
-        {/* CTA buttons row */}
-        <div className="flex items-center gap-3 mb-8">
+        {/* ── Two stat boxes ── */}
+        <div className="grid grid-cols-2 gap-3 mb-8">
+          <div
+            className="rounded-xl px-4 py-4 text-center"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            <div className="text-[28px] font-semibold text-white leading-none mb-1">
+              {applicantCount ?? 0}
+            </div>
+            <div className="text-[12px] text-white/45">Submitted</div>
+          </div>
+          <div
+            className="rounded-xl px-4 py-4 text-center"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            <div className="text-[18px] font-semibold text-green-400 leading-none mb-1">
+              {lastApplicationDate ? timeAgo(lastApplicationDate) : '—'}
+            </div>
+            <div className="text-[12px] text-white/45">Most recent</div>
+          </div>
+        </div>
+
+        {/* ── What we look for ── */}
+        <div
+          className="rounded-xl p-5 mb-4"
+          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+        >
+          <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-3.5">
+            What we look for
+          </div>
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {lookingForPills.map((pill, i) => (
+              <span
+                key={i}
+                className="text-[12px] font-medium px-2.5 py-1 rounded-lg"
+                style={{ color: '#c4b5fd', background: 'rgba(167,139,250,0.15)' }}
+              >
+                {pill}
+              </span>
+            ))}
+          </div>
+          {opp.what_we_look_for && (
+            <p className="text-[13px] text-white/55 leading-relaxed m-0">
+              {opp.what_we_look_for}
+            </p>
+          )}
+        </div>
+
+        {/* ── How we can help ── */}
+        {howWeHelp.length > 0 && (
+          <div
+            className="rounded-xl p-5 mb-4"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-4">
+              How we can help
+            </div>
+            <div className="flex flex-col gap-3.5">
+              {howWeHelp.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                    style={{ background: 'rgba(167,139,250,0.15)' }}
+                  >
+                    <HelpIcon icon={item.icon} />
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-medium text-white/85 mb-0.5">{item.title}</div>
+                    <div className="text-[12px] text-white/50 leading-relaxed">{item.description}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── Terms ── */}
+        {opp.terms && (
+          <div
+            className="rounded-xl p-5 mb-8"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-3">
+              Terms
+            </div>
+            <p className="text-[13px] text-white/55 leading-relaxed m-0">
+              {opp.terms}
+            </p>
+          </div>
+        )}
+
+        {/* ── Apply CTA ── */}
+        <div className="mb-6">
           {isClosed ? (
-            <div className="text-[13px] text-white/50">
+            <div className="text-[13px] text-white/50 text-center">
               This opportunity has closed.{' '}
               <Link href="/opportunities" className="text-purple-400 hover:text-purple-300 font-medium">
                 Browse open opportunities &rarr;
@@ -446,211 +460,50 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
             considerationId ? (
               <Link
                 href={`/applications/${considerationId}`}
-                className="inline-flex items-center gap-2 rounded-xl px-7 py-2.5 text-[14px] font-medium text-white"
+                className="flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-[15px] font-medium text-white w-full"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', textDecoration: 'none' }}
               >
-                View your application <ArrowRight size={14} />
+                View your application <ArrowRight size={15} />
               </Link>
             ) : (
-              <>
+              <div className="flex flex-col gap-2.5">
                 {totalVisibleScripts === 0 ? (
                   <NoScriptsApplyButton />
                 ) : isPro ? (
                   <Link
                     href={`/opportunities/${opp.slug}/apply`}
-                    className="inline-flex items-center gap-2 rounded-xl px-7 py-2.5 text-[14px] font-medium text-white"
+                    className="flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-[15px] font-medium text-white w-full"
                     style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', textDecoration: 'none' }}
                   >
-                    Apply now <ArrowRight size={14} />
+                    Apply with your script <ArrowRight size={15} />
                   </Link>
                 ) : (
                   <ApplyUpgradeButton freeRemaining={freeRemaining} applyHref={`/opportunities/${opp.slug}/apply`} />
                 )}
                 {qualifyingScripts.length > 0 && (
-                  <span className="text-[12px] font-medium text-green-400">
-                    ✓ {qualifyingScripts.length} of your scripts match
-                  </span>
+                  <div className="text-center text-[12px] font-medium text-green-400">
+                    {qualifyingScripts.length} of your scripts match this opportunity
+                  </div>
                 )}
-              </>
+              </div>
             )
           ) : (
             <Link
               href="/get-started"
-              className="inline-flex items-center gap-2 rounded-xl px-7 py-2.5 text-[14px] font-medium text-white"
+              className="flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-[15px] font-medium text-white w-full"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', textDecoration: 'none' }}
             >
-              Apply now <ArrowRight size={14} />
+              Apply with your script <ArrowRight size={15} />
             </Link>
           )}
         </div>
+
+        {/* ── Disclaimer ── */}
+        <p className="text-center text-[11px] text-white/30 leading-relaxed">
+          GEM connects creators with partners. All deals are negotiated directly between parties.
+        </p>
+
       </div>
-
-      {/* ── WHITE CARD SECTION ── */}
-      <div style={{ padding: '0 32px 32px' }}>
-        <div className="bg-white rounded-xl overflow-hidden">
-
-          {/* Stats bar */}
-          <div className="grid grid-cols-2" style={{ borderBottom: '1px solid #f3f4f6' }}>
-            <div className="py-4 px-4 text-center" style={{ borderRight: '1px solid #f3f4f6' }}>
-              <div className="text-[22px] font-medium text-gray-900">{applicantCount ?? 0}</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Writers applied</div>
-            </div>
-            <div className="py-4 px-4 text-center">
-              <div className="text-[13px] font-medium text-green-600">
-                {lastApplicationDate ? timeAgo(lastApplicationDate) : '—'}
-              </div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Last application</div>
-            </div>
-          </div>
-
-          {/* Content area */}
-          <div className="p-6">
-
-            {/* Deal type + Looking for — side by side */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {/* Deal type */}
-              <div className="rounded-lg p-3.5" style={{ background: '#f9fafb' }}>
-                <div className="text-[11px] font-medium text-gray-500 mb-2">Deal type</div>
-                <div className="text-[14px] font-medium text-gray-900 mb-2">
-                  {opp.deal_type ? (DEAL_TYPE_LABELS[opp.deal_type] || opp.deal_type) : '—'}
-                </div>
-                {opp.deal_type && (
-                  <div className="text-[12px] text-gray-500 leading-relaxed">
-                    {DEAL_TYPE_DESCRIPTIONS[opp.deal_type] || ''}
-                  </div>
-                )}
-              </div>
-
-              {/* Looking for */}
-              <div className="rounded-lg p-3.5" style={{ background: '#f9fafb' }}>
-                <div className="text-[11px] font-medium text-gray-500 mb-2">Looking for</div>
-                <div className="flex flex-wrap gap-1.5">
-                  {lookingForPills.map((pill, i) => (
-                    <span
-                      key={i}
-                      className="text-[12px] font-medium px-2.5 py-0.5 rounded"
-                      style={{ color: '#534AB7', background: '#EEEDFE' }}
-                    >
-                      {pill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* How we work */}
-            <div className="rounded-lg p-3.5 mb-6" style={{ background: '#f9fafb' }}>
-              <div className="text-[11px] font-medium text-gray-500 mb-2.5">How we work</div>
-              <div className="text-[13px] text-gray-700 leading-relaxed whitespace-pre-line">
-                {opp.description}
-              </div>
-            </div>
-
-            {/* Investor details (shown when any investor field is populated) */}
-            {(opp.investment_range || opp.investment_thesis || (opp.investment_requirements?.length > 0)) && (
-              <div className="rounded-lg p-3.5 mb-6" style={{ background: '#f0fdf4', border: '1px solid #bbf7d0' }}>
-                <div className="text-[11px] font-medium text-green-700 mb-3">Investment details</div>
-                {opp.investment_range && (
-                  <div className="mb-2.5">
-                    <div className="text-[11px] font-medium text-gray-500 mb-0.5">Range</div>
-                    <div className="text-[14px] font-medium text-gray-900">{opp.investment_range}</div>
-                  </div>
-                )}
-                {opp.investment_thesis && (
-                  <div className="mb-2.5">
-                    <div className="text-[11px] font-medium text-gray-500 mb-0.5">Thesis</div>
-                    <div className="text-[13px] text-gray-700 leading-relaxed">{opp.investment_thesis}</div>
-                  </div>
-                )}
-                {opp.investment_requirements?.length > 0 && (
-                  <div>
-                    <div className="text-[11px] font-medium text-gray-500 mb-1.5">Requirements</div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {opp.investment_requirements.map((req: string, i: number) => (
-                        <span
-                          key={i}
-                          className="text-[12px] font-medium px-2.5 py-0.5 rounded"
-                          style={{ color: '#166534', background: '#dcfce7' }}
-                        >
-                          {req}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Top submissions */}
-            {topSubmissions.length > 0 && (
-              <div style={{ borderTop: '1px solid #f3f4f6', paddingTop: '20px' }}>
-                <div className="text-[11px] font-medium uppercase tracking-wider text-gray-500 mb-3.5">
-                  Top submissions
-                </div>
-                <div className="flex flex-col gap-2">
-                  {topSubmissions.map((sub, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between rounded-lg px-3.5 py-2.5"
-                      style={{ background: '#f9fafb' }}
-                    >
-                      <div className="flex items-center gap-3">
-                        {/* Poster thumbnail */}
-                        <div
-                          className="rounded shrink-0"
-                          style={{
-                            width: 32, height: 40,
-                            background: POSTER_GRADIENTS[i % POSTER_GRADIENTS.length],
-                          }}
-                        />
-                        <div>
-                          <div
-                            className="text-[13px] font-medium text-gray-500"
-                            style={{ filter: 'blur(4px)', userSelect: 'none' }}
-                          >
-                            Hidden Title
-                          </div>
-                          <div className="text-[11px] text-gray-500">
-                            {[
-                              sub.format === 'Feature film' ? 'Feature' : sub.format,
-                              ...sub.genres.slice(0, 2),
-                            ].filter(Boolean).join(' · ')}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        {sub.score != null && (
-                          <span className="text-[13px] font-medium flex items-center gap-0.5" style={{ color: '#534AB7' }}>
-                            <Diamond size={13} /> {Math.round(sub.score)}
-                          </span>
-                        )}
-                        {sub.heat > 0 && (
-                          <span className="text-[12px] text-orange-500 flex items-center gap-0.5">
-                            <Flame size={12} /> {sub.heat}
-                          </span>
-                        )}
-                        {sub.collaborators > 0 && (
-                          <span className="text-[11px] text-gray-500 flex items-center gap-0.5">
-                            <Users size={12} /> {sub.collaborators}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {(applicantCount ?? 0) > topSubmissions.length && (
-                  <div className="text-center mt-3">
-                    <span className="text-[12px] text-gray-500">
-                      + {(applicantCount ?? 0) - topSubmissions.length} more submissions
-                    </span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
     </div>
   )
 }
