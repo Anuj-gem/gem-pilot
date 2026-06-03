@@ -498,7 +498,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const budgetPlan: BudgetPlan | null = (submission as any).budget_plan ?? null
   const revenuePlan: RevenuePlan | null = (submission as any).revenue_plan ?? null
   // Extract just the dollar range from the raw budget string (strip "total negative cost" etc.)
-  const gemEstimateRaw: string | null = packaging?.budget_tier?.range ?? packaging?.budget_tier?.per_episode ?? null
+  const gemEstimateRaw: string | null = packaging?.budget_tier?.range || packaging?.budget_tier?.per_episode || null
   const gemEstimate: string | null = (() => {
     if (!gemEstimateRaw) return null
     const matches = gemEstimateRaw.match(/\$[0-9.]+[KMB]?/gi)
