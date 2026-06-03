@@ -97,44 +97,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ── UPLOAD LIMIT: 2 scripts for anonymous + free users ──
-    const FREE_EVAL_LIMIT = 2
-
-    if (!resumeSubmissionId) {
-      if (user) {
-        // Logged-in: check if Pro
-        const { data: prof } = await serviceClient
-          .from('profiles')
-          .select('subscription_status')
-          .eq('id', user.id)
-          .single()
-        const userIsPro = prof?.subscription_status === 'active' || prof?.subscription_status === 'trialing'
-        if (!userIsPro) {
-          const { count } = await serviceClient
-            .from('script_submissions')
-            .select('id', { count: 'exact', head: true })
-            .eq('user_id', user.id)
-            .neq('status', 'failed')
-          if ((count ?? 0) >= FREE_EVAL_LIMIT) {
-            return NextResponse.json(
-              { error: 'limit_reached' },
-              { status: 402 }
-            )
-          }
-        }
-      } else {
-        // Anonymous: count from cookie
-        const cookieStore = await cookies()
-        const anonCookie = cookieStore.get('gem_anon_scripts')?.value
-        const anonIds = anonCookie ? anonCookie.split(',').filter(Boolean) : []
-        if (anonIds.length >= FREE_EVAL_LIMIT) {
-          return NextResponse.json(
-            { error: 'limit_reached' },
-            { status: 402 }
-          )
-        }
-      }
-    }
+    // Upload limits removed — all users can upload unlimited scripts.
 
     // Resume path: writer clicked "Upload PDF" on a saved draft from the
     // dashboard. We update the existing awaiting_pdf row in place instead

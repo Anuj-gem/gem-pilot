@@ -1120,6 +1120,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CrewSection
                 submissionId={submission.id}
                 isOwner={isOwner || isAdmin}
+                isPro={isOwner ? viewerIsSubscribed : true}
                 currentUserId={user?.id ?? null}
                 currentUserEmail={user?.email ?? null}
                 ownerProfile={ownerProfile ? {
@@ -1135,6 +1136,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CrewSection
                 submissionId={submission.id}
                 isOwner={isOwner || isAdmin}
+                isPro={isOwner ? viewerIsSubscribed : true}
                 currentUserId={user?.id ?? null}
                 currentUserEmail={user?.email ?? null}
                 ownerProfile={ownerProfile ? {

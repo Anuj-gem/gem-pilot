@@ -45,6 +45,7 @@ interface CharacterInfo {
 interface Props {
   submissionId: string
   isOwner: boolean
+  isPro?: boolean
   currentUserId: string | null
   currentUserEmail: string | null
   ownerProfile: {
@@ -64,6 +65,7 @@ interface Props {
 export function CrewSection({
   submissionId,
   isOwner,
+  isPro = true,
   currentUserId,
   currentUserEmail,
   ownerProfile,
@@ -354,6 +356,7 @@ export function CrewSection({
             key={role.id}
             role={role}
             isOwner={isOwner}
+            isPro={isPro}
             currentUserId={currentUserId}
             isMyPending={isMyPendingInvite(role)}
             characterInfo={category === 'cast' ? characterByName.get(role.role_name.toLowerCase().trim()) : undefined}
@@ -431,6 +434,7 @@ export function CrewSection({
 function RoleSlot({
   role,
   isOwner,
+  isPro,
   currentUserId,
   isMyPending,
   characterInfo,
@@ -444,6 +448,7 @@ function RoleSlot({
 }: {
   role: CrewRole
   isOwner: boolean
+  isPro?: boolean
   currentUserId: string | null
   isMyPending?: boolean
   characterInfo?: CharacterInfo
@@ -685,7 +690,15 @@ function RoleSlot({
           {/* Invite new person */}
           {!inviteMode ? (
             <button
-              onClick={() => setInviteMode(true)}
+              onClick={() => {
+                if (!isPro) {
+                  window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
+                    detail: { contextMessage: 'GEM Pro membership is required to invite collaborators.' },
+                  }))
+                  return
+                }
+                setInviteMode(true)
+              }}
               className="w-full flex items-center gap-3 px-4 py-2.5 cursor-pointer border-0 bg-transparent text-left transition-colors hover:bg-stone-50"
             >
               <div

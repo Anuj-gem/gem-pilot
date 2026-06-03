@@ -73,27 +73,25 @@ export function PaywallModal({ onClose, evalsUsed = 0, appsUsed = 0, contextMess
           {/* Three benefit cards */}
           <div className="space-y-3 text-left mb-5">
             <BenefitCard
-              emoji="📄"
+              emoji="🤝"
               bgColor="#ecfdf5"
               borderColor="#d1fae5"
-              title="Unlimited evaluations"
-              description="Get scored reports on every script you write"
-              usage={evalsUsed > 0 ? `${evalsUsed} of ${FREE_EVAL_LIMIT} free used` : undefined}
+              title="Access the GEM Partner network"
+              description="Apply to funding opportunities from verified industry partners"
             />
             <BenefitCard
-              emoji="💰"
+              emoji="🎬"
               bgColor="#fefce8"
               borderColor="#fef08a"
-              title="Unlimited opportunities"
-              description="Apply to every opportunity that drops"
-              usage={appsUsed > 0 ? `${appsUsed} of ${FREE_APP_LIMIT} free used` : undefined}
+              title="Build your team"
+              description="Invite collaborators, crew, and cast to join your projects"
             />
             <BenefitCard
-              emoji="🔥"
-              bgColor="#fff7ed"
-              borderColor="#fed7aa"
-              title="Build heat"
-              description="Get discovered as industry finds top-scoring work"
+              emoji="⭐"
+              bgColor="#f5f3ff"
+              borderColor="#ede9fe"
+              title="Exclusive member perks"
+              description="Priority support, early access to new features, and more"
             />
           </div>
         </div>

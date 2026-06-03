@@ -224,8 +224,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           {children}
         </main>
       </div>
-      <ScriptUploadModal redirectTo="/dashboard" guestEvalsUsed={isPro ? undefined : (totalSubmissions ?? 0)} />
-      {!isPro && <UpgradeModalListener evalsUsed={totalSubmissions ?? 0} appsUsed={appCount ?? 0} />}
+      <ScriptUploadModal redirectTo="/dashboard" />
+      {!isPro && <UpgradeModalListener evalsUsed={0} appsUsed={appCount ?? 0} />}
       <InsiderGateModal />
       <IntercomIdentity
         name={profile?.full_name}

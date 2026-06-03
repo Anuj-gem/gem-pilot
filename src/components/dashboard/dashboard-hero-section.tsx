@@ -12,10 +12,9 @@ import { FormatSelectorHero } from './format-selector-hero'
 
 type Props = {
   showLanding: boolean
-  evalsRemaining: number
 }
 
-export function DashboardHeroSection({ showLanding, evalsRemaining }: Props) {
+export function DashboardHeroSection({ showLanding }: Props) {
   const [phase, setPhase] = useState<'landing' | 'sliding-out' | 'sliding-in' | 'upload'>(
     showLanding ? 'landing' : 'upload'
   )
@@ -37,7 +36,7 @@ export function DashboardHeroSection({ showLanding, evalsRemaining }: Props) {
 
   // Logged-in or returning anon — no animation wrapper
   if (!showLanding && phase === 'upload') {
-    return <FormatSelectorHero evalsRemaining={evalsRemaining} />
+    return <FormatSelectorHero />
   }
 
   return (
@@ -65,7 +64,7 @@ export function DashboardHeroSection({ showLanding, evalsRemaining }: Props) {
             animation: phase === 'sliding-in' ? 'slideInFromRight 0.4s ease-out forwards' : 'none',
           }}
         >
-          <FormatSelectorHero evalsRemaining={evalsRemaining} />
+          <FormatSelectorHero />
         </div>
       )}
 

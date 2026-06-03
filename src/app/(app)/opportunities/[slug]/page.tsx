@@ -121,7 +121,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   let reviewStage: string | null = null
   let considerationId: string | null = null
   let isPro = false
-  let freeRemaining = 2
   let totalVisibleScripts = 0
 
   if (user) {
@@ -131,18 +130,6 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .eq('id', user.id)
       .single()
     isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
-
-    if (!isPro) {
-      const now = new Date()
-      const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()
-      const { count } = await service
-        .from('opportunity_submissions')
-        .select('id', { count: 'exact', head: true })
-        .eq('writer_id', user.id)
-        .neq('status', 'withdrawn')
-        .gte('submitted_at', monthStart)
-      freeRemaining = Math.max(0, 2 - (count ?? 0))
-    }
 
     const { data: userCons } = await service
       .from('considerations')
@@ -421,7 +408,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     Apply <ArrowRight size={15} />
                   </Link>
                 ) : (
-                  <ApplyUpgradeButton freeRemaining={freeRemaining} applyHref={`/opportunities/${opp.slug}/apply`} />
+                  <ApplyUpgradeButton applyHref={`/opportunities/${opp.slug}/apply`} />
                 )}
                 {qualifyingScripts.length > 0 && (
                   <div className="text-center text-[12px] font-medium text-green-400">
