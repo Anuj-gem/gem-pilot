@@ -282,35 +282,54 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     }}>
       <div className="max-w-2xl mx-auto px-4">
 
-        {/* ── Back link ── */}
-        <div style={{ padding: '12px 0', marginBottom: '8px' }}>
+        {/* ── Top bar: back link + partner badge ── */}
+        <div className="flex items-center justify-between mb-6" style={{ padding: '8px 0' }}>
           <Link
             href="/opportunities"
-            className="text-[13px] text-white/50 hover:text-white/70 transition-colors"
+            className="text-[12px] text-white/40 hover:text-white/60 transition-colors"
             style={{ textDecoration: 'none' }}
           >
             &larr; All opportunities
           </Link>
-        </div>
-
-        {/* ── Partner strip ── */}
-        <div className="flex items-center gap-2.5 mb-5">
-          <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-[15px]"
-            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
-          >
-            G
-          </div>
           <div className="flex items-center gap-2">
-            <span className="text-[13px] font-medium text-white/85">GEM Partner</span>
+            <span
+              className="inline-block w-2.5 h-2.5 shrink-0"
+              style={{
+                transform: 'rotate(45deg)',
+                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                borderRadius: 1,
+              }}
+            />
+            <span className="text-[12px] text-white/50">GEM Partner</span>
             <span
               className="text-[10px] font-medium px-1.5 py-0.5 rounded"
-              style={{ color: '#4ade80', background: 'rgba(74,222,128,0.12)', letterSpacing: '0.03em' }}
+              style={{ color: '#4ade80', background: 'rgba(74,222,128,0.12)' }}
             >
               Verified
             </span>
           </div>
         </div>
+
+        {/* ── Funding amount — big and green ── */}
+        {opp.funding_amount && (
+          <div className="mb-2">
+            <div
+              className="font-bold leading-none"
+              style={{ fontSize: '52px', letterSpacing: '-0.02em', color: '#4ade80' }}
+            >
+              {formatFunding(opp.funding_amount)}
+            </div>
+            <div className="text-[13px] text-white/40 mt-1.5">per project</div>
+          </div>
+        )}
+
+        {/* ── Title ── */}
+        <h1
+          className="text-[28px] font-bold text-white m-0 mb-2"
+          style={{ lineHeight: 1.2 }}
+        >
+          {opp.title}
+        </h1>
 
         {/* ── Status line ── */}
         <div className="flex items-center gap-2 mb-6">
@@ -327,24 +346,11 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           )}
           {postedDate && (
             <>
-              <span className="text-[12px] text-white/30">·</span>
-              <span className="text-[12px] text-white/45">Posted {postedDate}</span>
+              <span className="text-[12px] text-white/25">·</span>
+              <span className="text-[12px] text-white/40">Posted {postedDate}</span>
             </>
           )}
         </div>
-
-        {/* ── Funding amount ── */}
-        {opp.funding_amount && (
-          <div className="mb-4">
-            <div
-              className="font-bold text-white leading-none"
-              style={{ fontSize: '52px', letterSpacing: '-0.02em' }}
-            >
-              {formatFunding(opp.funding_amount)}
-            </div>
-            <div className="text-[13px] text-white/45 mt-1.5">per project</div>
-          </div>
-        )}
 
         {/* ── Description ── */}
         {opp.description && (
