@@ -37,8 +37,23 @@ function fmt(n: number): string {
   return `$${n.toLocaleString()}`
 }
 
-export function FundingOpportunities({ matchingOpps, considerationResults, submissionId, isOwner, budgetTotal = 0, securedAmount = 0 }: Props) {
+export function FundingOpportunities({ matchingOpps, considerationResults, submissionId, isOwner, budgetTotal: initialBudgetTotal = 0, securedAmount = 0 }: Props) {
   const [expandedOpp, setExpandedOpp] = useState<string | null>(null)
+  const [budgetTotal, setBudgetTotal] = useState(initialBudgetTotal)
+
+  // Listen for live budget edits so the funding goal stays in sync
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const d = (e as CustomEvent).detail
+      if (d) {
+        const tHigh = d.totalHigh as number
+        const tLow = d.totalLow as number
+        setBudgetTotal(tHigh || tLow || 0)
+      }
+    }
+    window.addEventListener('budget-updated', handler)
+    return () => window.removeEventListener('budget-updated', handler)
+  }, [])
 
   // Build a map from opportunity_id to consideration result
   const resultMap = new Map<string, ConsiderationResult>()

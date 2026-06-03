@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 type CardKey = 'investment' | 'crew' | 'cast'
@@ -32,9 +32,33 @@ export function ProjectNeedsCards({
     cast: castChildren,
   }
 
+  // Listen for live budget edits from BudgetEditor
+  const fmtShort = (n: number) => {
+    if (n >= 1e9) return `$${(n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1)}B`
+    if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
+    if (n >= 1e3) return `$${Math.round(n / 1e3).toLocaleString()}K`
+    return `$${n.toLocaleString()}`
+  }
+  const [liveBudget, setLiveBudget] = useState<string | null>(null)
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const d = (e as CustomEvent).detail
+      if (d) {
+        const tLow = d.totalLow as number
+        const tHigh = d.totalHigh as number
+        const label = tLow > 0 && tHigh > 0 && tLow !== tHigh
+          ? `${fmtShort(tLow)}-${fmtShort(tHigh)}`
+          : fmtShort(tHigh || tLow)
+        setLiveBudget(label)
+      }
+    }
+    window.addEventListener('budget-updated', handler)
+    return () => window.removeEventListener('budget-updated', handler)
+  }, [])
+
   // Always-visible one-line summary: "Funding $XX · Budget $XX"
   const fundingLabel = investmentMetrics?.secured || '$0'
-  const budgetLabel = investmentMetrics?.projectCost || '$0'
+  const budgetLabel = liveBudget || investmentMetrics?.projectCost || '$0'
 
   const tabs: { key: CardKey; emoji: string; title: string; summary: string | null; highlightColor?: string }[] = [
     { key: 'investment', emoji: '💰', title: 'Finances', summary: null },

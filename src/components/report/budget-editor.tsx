@@ -158,9 +158,19 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
   const totalLow = isSeries ? low * eps : low
   const totalHigh = isSeries ? high * eps : high
 
+  // Broadcast budget changes so sibling components (tab summary, funding goal) stay in sync
+  const broadcast = useCallback((l: number, h: number, e: number) => {
+    const tLow = isSeries ? l * e : l
+    const tHigh = isSeries ? h * e : h
+    window.dispatchEvent(new CustomEvent('budget-updated', {
+      detail: { low: l, high: h, eps: e, totalLow: tLow, totalHigh: tHigh },
+    }))
+  }, [isSeries])
+
   const save = useCallback(async (l: number, h: number, e: number) => {
     const total = isSeries ? (h || l) * e : (h || l)
     const plan: BudgetPlan = { line_items: [], explanation: '', total, budget_low: l, budget_high: h, episodes: e }
+    broadcast(l, h, e)
     setSaving(true)
     try {
       const res = await fetch('/api/report/financial-plan', {
@@ -172,12 +182,13 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
     } finally {
       setSaving(false)
     }
-  }, [submissionId, onSave, isSeries])
+  }, [submissionId, onSave, isSeries, broadcast])
 
   function handleRevert() {
     setLow(gemLow)
     setHigh(gemHigh)
     setEps(1)
+    broadcast(gemLow, gemHigh, 1)
     save(gemLow, gemHigh, 1)
   }
 
