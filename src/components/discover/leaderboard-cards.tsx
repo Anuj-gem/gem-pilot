@@ -14,7 +14,7 @@ type CollabDetail = {
   status: string
 }
 
-type LeaderboardCard = {
+export type LeaderboardCard = {
   submissionId: string
   evaluationId: string
   title: string
@@ -235,7 +235,7 @@ function Chip({ label, active, onClick }: { label: string; active: boolean; onCl
 
 /* ── Tile ── */
 
-function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
+export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
   const href = `/report/${c.evaluationId}`
   const authorName = c.writer?.fullName || 'Anonymous'
 

@@ -5,6 +5,8 @@
 
 import Link from 'next/link'
 import { trackEvent } from '@/lib/posthog'
+import { OpportunityCard, type OpportunityCardProps } from '@/components/opportunities/opportunity-card'
+import { DiscoverTile, type LeaderboardCard } from '@/components/discover/leaderboard-cards'
 
 // ─── Shared primitives ───────────────────────────────────────────────
 
@@ -442,16 +444,8 @@ function NetworkSection() {
 
 // ─── Section 6: OPEN FUNDING OPPORTUNITIES ───────────────────────────
 
-const FUNDING_OPPS = [
-  { title: 'Producible Thrillers', subtitle: 'Contained budget, high tension', amount: '$100K' },
-  { title: 'Character-Driven Dramas', subtitle: 'Strong voices, modest budgets', amount: '$100K' },
-  { title: 'Writers who think differently', subtitle: 'Bold, original perspectives', amount: '$100K' },
-  { title: 'Sci-fi with social edge', subtitle: 'Speculative worlds, real themes', amount: '$100K' },
-  { title: 'Comedy with heart', subtitle: 'Funny, grounded, relatable', amount: '$100K' },
-  { title: 'Elevated horror', subtitle: 'Smart scares, deeper meaning', amount: '$100K' },
-]
-
-function OpportunitiesSection() {
+function OpportunitiesSection({ opportunities }: { opportunities: OpportunityCardProps[] }) {
+  if (opportunities.length === 0) return null
   return (
     <SectionWrapper>
       {/* Header row */}
@@ -473,21 +467,8 @@ function OpportunitiesSection() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {FUNDING_OPPS.map(opp => (
-          <div
-            key={opp.title}
-            className="px-4 py-4 rounded-xl flex items-center justify-between gap-4"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '0.5px solid rgba(255,255,255,0.08)',
-            }}
-          >
-            <div>
-              <div className="text-[14px] font-semibold" style={{ color: '#ffffff' }}>{opp.title}</div>
-              <div className="text-[12px] mt-0.5" style={{ color: VERY_MUTED }}>{opp.subtitle}</div>
-            </div>
-            <div className="text-[14px] font-bold shrink-0" style={{ color: GOLD }}>{opp.amount}</div>
-          </div>
+        {opportunities.map(opp => (
+          <OpportunityCard key={opp.id} {...opp} />
         ))}
       </div>
     </SectionWrapper>
@@ -496,13 +477,8 @@ function OpportunitiesSection() {
 
 // ─── Section 7: DISCOVER PROJECTS ────────────────────────────────────
 
-const DISCOVER_CARDS = [
-  { title: 'Nightfall', format: 'Series · Thriller', score: 85, gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)' },
-  { title: 'The Last Exit', format: 'Feature · Drama', score: 78, gradient: 'linear-gradient(135deg, #14532d 0%, #166534 100%)' },
-  { title: 'Boundless', format: 'Series · Sci-fi', score: 82, gradient: 'linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 100%)' },
-]
-
-function DiscoverSection() {
+function DiscoverSection({ discoverScripts }: { discoverScripts: LeaderboardCard[] }) {
+  if (discoverScripts.length === 0) return null
   return (
     <SectionWrapper>
       {/* Header */}
@@ -529,27 +505,8 @@ function DiscoverSection() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-        {DISCOVER_CARDS.map(card => (
-          <div
-            key={card.title}
-            className="rounded-xl overflow-hidden"
-            style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.08)' }}
-          >
-            {/* Poster placeholder */}
-            <div
-              className="w-full h-[140px]"
-              style={{ background: card.gradient }}
-            />
-            {/* Info */}
-            <div className="px-4 py-3">
-              <div className="text-[15px] font-bold mb-0.5" style={{ color: '#ffffff' }}>{card.title}</div>
-              <div className="text-[12px] mb-2" style={{ color: VERY_MUTED }}>{card.format}</div>
-              <div className="flex items-center gap-1.5">
-                <GemDiamond size={9} />
-                <span className="text-[13px] font-bold" style={{ color: '#a78bfa' }}>{card.score}</span>
-              </div>
-            </div>
-          </div>
+        {discoverScripts.map(card => (
+          <DiscoverTile key={card.submissionId} card={card} />
         ))}
       </div>
     </SectionWrapper>
@@ -650,7 +607,13 @@ function ProAndFinalCTASection() {
 
 // ─── Root export ─────────────────────────────────────────────────────
 
-export function LandingPageV21() {
+export function LandingPageV21({
+  opportunities = [],
+  discoverScripts = [],
+}: {
+  opportunities?: OpportunityCardProps[]
+  discoverScripts?: LeaderboardCard[]
+}) {
   return (
     <>
       <HeroSection />
@@ -658,8 +621,8 @@ export function LandingPageV21() {
       <BuildTeamSection />
       <FindFundingSection />
       <NetworkSection />
-      <OpportunitiesSection />
-      <DiscoverSection />
+      <OpportunitiesSection opportunities={opportunities} />
+      <DiscoverSection discoverScripts={discoverScripts} />
       <ProAndFinalCTASection />
     </>
   )
