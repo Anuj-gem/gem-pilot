@@ -276,28 +276,27 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           )}
 
           {/* Genre pill top-right */}
-          {c.genre && (
-            <div style={{ position: 'absolute', top: 10, right: 10 }}>
-              <span style={{
-                fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
-                background: 'rgba(0,0,0,0.5)', color: '#fff', backdropFilter: 'blur(4px)',
-              }}>
-                {c.genre}
-              </span>
+          {(c.format || c.genre) && (
+            <div style={{ position: 'absolute', top: 10, right: 10, display: 'flex', gap: 4 }}>
+              {c.format && (
+                <span style={{
+                  fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
+                  background: 'rgba(83,74,183,0.85)', color: '#fff', backdropFilter: 'blur(4px)',
+                }}>
+                  {c.format}
+                </span>
+              )}
+              {c.genre && (
+                <span style={{
+                  fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
+                  background: 'rgba(0,0,0,0.5)', color: '#fff', backdropFilter: 'blur(4px)',
+                }}>
+                  {c.genre}
+                </span>
+              )}
             </div>
           )}
 
-          {/* Format badge — bottom left of image */}
-          {c.format && (
-            <div style={{ position: 'absolute', bottom: 10, left: 10 }}>
-              <span style={{
-                fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
-                background: 'rgba(83,74,183,0.85)', color: '#fff', backdropFilter: 'blur(4px)',
-              }}>
-                {c.format}
-              </span>
-            </div>
-          )}
 
           {/* Title + author overlay */}
           <div style={{
@@ -317,9 +316,9 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           </div>
         </div>
 
-        {/* Status bar */}
+        {/* Stats row */}
         <div style={{
-          padding: '10px 14px',
+          padding: '10px 14px 6px',
           display: 'flex',
           alignItems: 'center',
           gap: 12,
@@ -329,8 +328,15 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           <span style={{ color: '#57534E' }}>💰 Need: {fmtShort(c.fundingNeeded)}</span>
           <span style={{ color: '#57534E' }}>🎬 Crew: {crewOpen} open</span>
           <span style={{ color: '#57534E' }}>🎭 Cast: {castOpen} open</span>
+        </div>
+        {/* Action row */}
+        <div style={{
+          padding: '4px 14px 10px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}>
           <span style={{
-            marginLeft: 'auto',
             fontSize: 12,
             fontWeight: 500,
             color: '#534AB7',
