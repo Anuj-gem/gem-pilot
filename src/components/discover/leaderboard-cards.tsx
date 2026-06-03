@@ -22,6 +22,7 @@ export type LeaderboardCard = {
   genre: string | null
   genreKey: string | null
   budget: string | null
+  budgetDisplay: string | null
   score: number | null
   scoreVisible: boolean
   heat: number
@@ -314,19 +315,16 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
           fontSize: 12,
           borderTop: '0.5px solid #f0f0f0',
         }}>
-          {c.budget ? (
-            <span style={{ color: '#57534E' }}>💰 {c.budget}</span>
+          {c.budgetDisplay ? (
+            <span style={{ color: '#57534E' }}>💰 {c.budgetDisplay}</span>
           ) : (
             <span style={{ color: '#A8A29E' }}>💰 Funding TBD</span>
           )}
           {crewCount > 0 && (
-            <span style={{ color: '#57534E' }}>🎬 {crewCount} crew</span>
+            <span style={{ color: '#57534E' }}>🎬 {crewCount} open</span>
           )}
           {castCount > 0 && (
-            <span style={{ color: '#57534E' }}>🎭 {castCount} cast</span>
-          )}
-          {crewCount === 0 && castCount === 0 && (
-            <span style={{ color: '#A8A29E' }}>🎬 Open roles</span>
+            <span style={{ color: '#57534E' }}>🎭 {castCount} open</span>
           )}
           <span style={{
             marginLeft: 'auto',

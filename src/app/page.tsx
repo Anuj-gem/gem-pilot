@@ -137,6 +137,7 @@ export default async function Home({
         genre: ev?.genre || null,
         genreKey: ev?.genre ? ev.genre.toLowerCase().replace(/[^a-z]/g, '') : null,
         budget: null,
+        budgetDisplay: null,
         score: ev?.score ?? null,
         scoreVisible: true,
         heat: s.heat_score ?? 0,

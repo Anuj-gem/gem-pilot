@@ -63,7 +63,7 @@ export default async function DashboardPage() {
   let visible: MySubRow[] = []
   let submissionIds: string[] = []
 
-  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null; budget: string | null; tags: string[] }
+  type FeedEval = { id: string; weighted_score: number | null; genres: string[]; format: string | null; logline: string | null; budget: string | null; budgetRange: string | null; budgetPerEp: string | null; tags: string[] }
   const myEvalBySub = new Map<string, FeedEval>()
 
   type AppRow = {
@@ -102,7 +102,11 @@ export default async function DashboardPage() {
         const evJson = e.evaluation as Record<string, unknown> | null
         const matchData = extractMatchData(evJson)
         const logline = (evJson?.positioning_hook as string) || ((evJson?.classification as Record<string, unknown>)?.logline as string) || null
-        myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, tags: matchData.tags })
+        const packaging = (evJson?.packaging as Record<string, unknown>) || {}
+        const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
+        const budgetRange = (budgetTier?.range as string) || null
+        const budgetPerEp = (budgetTier?.per_episode as string) || null
+        myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, budgetRange, budgetPerEp, tags: matchData.tags })
       }
     }
 
@@ -139,7 +143,11 @@ export default async function DashboardPage() {
             const evJson = e.evaluation as Record<string, unknown> | null
             const matchData = extractMatchData(evJson)
             const logline = (evJson?.positioning_hook as string) || ((evJson?.classification as Record<string, unknown>)?.logline as string) || null
-            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, tags: matchData.tags })
+            const packaging = (evJson?.packaging as Record<string, unknown>) || {}
+            const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
+            const budgetRange = (budgetTier?.range as string) || null
+            const budgetPerEp = (budgetTier?.per_episode as string) || null
+            myEvalBySub.set(e.submission_id, { id: e.id, weighted_score: e.weighted_score, genres: matchData.genres, format: matchData.format, logline, budget: matchData.budget, budgetRange, budgetPerEp, tags: matchData.tags })
           }
         }
       }
@@ -564,21 +572,13 @@ export default async function DashboardPage() {
     const score = ev?.weighted_score ?? null
     const rounded = score != null ? Math.round(score) : null
 
-    // Determine budget display from evaluation budget string
+    // Determine budget display — prefer actual dollar range from eval JSON
     let budgetDisplay: string | null = null
-    if (ev?.budget) {
-      // budget is typically a string like "micro" / "low" / "mid" / "high" / "blockbuster"
-      // or a number string — try to parse
-      const budgetLC = ev.budget.toLowerCase()
-      if (budgetLC.includes('micro')) budgetDisplay = 'Under $1M'
-      else if (budgetLC.includes('low') || budgetLC.includes('indie')) budgetDisplay = '$1-5M'
-      else if (budgetLC.includes('mid')) budgetDisplay = '$5-30M'
-      else if (budgetLC.includes('high') || budgetLC.includes('studio')) budgetDisplay = '$30-100M'
-      else if (budgetLC.includes('block') || budgetLC.includes('tent')) budgetDisplay = '$100M+'
-      else {
-        const parsed = parseFloat(ev.budget.replace(/[^0-9.]/g, ''))
-        if (!isNaN(parsed) && parsed > 0) budgetDisplay = fmtShort(parsed)
-      }
+    if (ev?.budgetPerEp) {
+      // Series: show per-episode range, strip verbose "/episode" suffix
+      budgetDisplay = ev.budgetPerEp.trim().replace(/\/ep(isode)?\.?/i, '/ep')
+    } else if (ev?.budgetRange) {
+      budgetDisplay = ev.budgetRange.trim()
     }
 
     const crewCount = crewCountByScript.get(s.id) ?? 0

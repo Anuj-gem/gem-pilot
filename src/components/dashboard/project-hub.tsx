@@ -500,13 +500,10 @@ function ProjectTile({ project: p, isSelected, onToggleSelect }: {
           <span style={{ color: '#A8A29E' }}>💰 Funding TBD</span>
         )}
         {p.crew_count > 0 && (
-          <span style={{ color: '#57534E' }}>🎬 {p.crew_count} crew</span>
+          <span style={{ color: '#57534E' }}>🎬 {p.crew_count} open</span>
         )}
         {p.cast_count > 0 && (
-          <span style={{ color: '#57534E' }}>🎭 {p.cast_count} cast</span>
-        )}
-        {p.crew_count === 0 && p.cast_count === 0 && (
-          <span style={{ color: '#A8A29E' }}>🎬 Open roles</span>
+          <span style={{ color: '#57534E' }}>🎭 {p.cast_count} open</span>
         )}
       </div>
 

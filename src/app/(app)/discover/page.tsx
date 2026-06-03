@@ -106,21 +106,44 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
   const [{ data: evs }, { data: writers }, stats] = await Promise.all([
     service
       .from('script_evaluations')
-      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier')
+      .select('id, submission_id, weighted_score, genre_cls:evaluation->classification->>genre_primary, genre_fmt:evaluation->format_detection->>genre_primary, budget_raw:evaluation->packaging->budget_tier->>tier, budget_range:evaluation->packaging->budget_tier->>range, budget_per_ep:evaluation->packaging->budget_tier->>per_episode')
       .in('submission_id', submissionIds),
     service.from('profiles').select('id, handle, full_name, avatar_url, headline').in('id', writerIds),
     getScriptStats(submissionIds),
   ])
 
-  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null }
+  // Parse a dollar range string like "$3M-$6M" and return the high-end number in dollars
+  function parseHighEnd(rangeStr: string | null | undefined): number | null {
+    if (!rangeStr) return null
+    // Match patterns like "$3M", "$500K", "$1.5M"
+    const parts = rangeStr.replace(/[^0-9.KkMm\-–]/g, ' ').trim().split(/[\-–]/).map(s => s.trim())
+    const highStr = parts[parts.length - 1]
+    const num = parseFloat(highStr)
+    if (isNaN(num)) return null
+    if (/[Mm]/.test(highStr)) return num * 1_000_000
+    if (/[Kk]/.test(highStr)) return num * 1_000
+    return num
+  }
+
+  // Format a budget range string for display, stripping "/ep" suffixes for cleanliness
+  function formatBudgetDisplay(rangeStr: string | null | undefined, perEpStr: string | null | undefined): string | null {
+    // Prefer per-episode if it has content (series), else use range (features)
+    const raw = perEpStr?.trim() || rangeStr?.trim()
+    if (!raw) return null
+    // Remove trailing "/ep" or "/episode" variants for compact display
+    return raw.replace(/\/ep(isode)?\.?/i, '/ep')
+  }
+
+  type EvalRow = { id: string; weighted_score: number | null; genre: string | null; genreKey: string | null; budget: BudgetId | null; budgetDisplay: string | null }
   const evalBySubmission = new Map<string, EvalRow>()
-  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null }[] | null) || []) {
+  for (const e of (evs as { id: string; submission_id: string; weighted_score: number | null; genre_cls: string | null; genre_fmt: string | null; budget_raw: string | null; budget_range: string | null; budget_per_ep: string | null }[] | null) || []) {
     const genre = e.genre_cls || e.genre_fmt || null
     const genreKey = genre ? genre.toLowerCase().replace(/[^a-z]/g, '') : null
     const rawBudget = e.budget_raw?.toLowerCase() ?? null
     const budget = (rawBudget && (VALID_BUDGET_IDS as readonly string[]).includes(rawBudget)) ? (rawBudget as BudgetId) : null
+    const budgetDisplay = formatBudgetDisplay(e.budget_range, e.budget_per_ep)
     evalBySubmission.set(e.submission_id, {
-      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget,
+      id: e.id, weighted_score: e.weighted_score, genre, genreKey, budget, budgetDisplay,
     })
   }
 
@@ -207,6 +230,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     genre: string | null
     genreKey: string | null
     budget: BudgetId | null
+    budgetDisplay: string | null
     score: number | null
     scoreVisible: boolean
     heat: number
@@ -236,6 +260,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         genre: ev.genre,
         genreKey: ev.genreKey,
         budget: ev.budget,
+        budgetDisplay: ev.budgetDisplay,
         score: ev.weighted_score,
         scoreVisible,
         heat: s.heat_score ?? 0,
