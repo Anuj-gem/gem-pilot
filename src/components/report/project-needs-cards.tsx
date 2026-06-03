@@ -32,15 +32,9 @@ export function ProjectNeedsCards({
     cast: castChildren,
   }
 
-  // Structured investment lines for multi-line colored display
-  const investmentLines: { text: string; color: string }[] = (() => {
-    if (!investmentMetrics) return investmentSummary ? [{ text: investmentSummary, color: '#78716C' }] : []
-    const lines: { text: string; color: string }[] = []
-    if (investmentMetrics.projectCost) lines.push({ text: `Budget ${investmentMetrics.projectCost}`, color: '#78716C' })
-    if (investmentMetrics.secured) lines.push({ text: `${investmentMetrics.secured} secured`, color: '#15803d' })
-    if (investmentMetrics.considering) lines.push({ text: `${investmentMetrics.considering} pending`, color: '#d97706' })
-    return lines
-  })()
+  // Always-visible one-line summary: "Funding $XX · Budget $XX"
+  const fundingLabel = investmentMetrics?.secured || '$0'
+  const budgetLabel = investmentMetrics?.projectCost || '$0'
 
   const tabs: { key: CardKey; emoji: string; title: string; summary: string | null; highlightColor?: string }[] = [
     { key: 'investment', emoji: '💰', title: 'Finances', summary: null },
@@ -74,17 +68,10 @@ export function ProjectNeedsCards({
               >
                 {tab.title}
               </div>
-              {tab.key === 'investment' && investmentLines.length > 0 ? (
-                <div className="m-0 mt-1">
-                  {investmentLines.map((line, li) => (
-                    <div
-                      key={li}
-                      className="text-[12px] leading-[1.4]"
-                      style={{ color: isActive ? '#534AB7' : line.color }}
-                    >
-                      {line.text}
-                    </div>
-                  ))}
+              {tab.key === 'investment' ? (
+                <div className="text-[12px] m-0 mt-1 leading-[1.4]">
+                  <span style={{ color: isActive ? '#534AB7' : '#15803d' }}>Funding {fundingLabel}</span>
+                  <span style={{ color: isActive ? '#534AB7' : '#78716C' }}> · Budget {budgetLabel}</span>
                 </div>
               ) : tab.summary ? (
                 <div

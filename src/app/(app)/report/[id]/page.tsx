@@ -982,8 +982,8 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 return s + (opp?.funding_amount || 0)
               }, 0)
             return {
-              projectCost: investmentProjectCost,
-              secured: totalBacking > 0 ? fmtShort(totalBacking) : null,
+              projectCost: investmentProjectCost || fmtShort(budgetPlan?.total ?? 0),
+              secured: fmtShort(totalBacking),
               considering: pendingFromOpps > 0 ? fmtShort(pendingFromOpps) : null,
             }
           })()}
