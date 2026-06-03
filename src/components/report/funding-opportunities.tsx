@@ -145,7 +145,14 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
     <div>
       <div className="flex items-start justify-between mb-1">
         <div className="flex items-center gap-2">
-          <span aria-hidden="true" className="text-[14px]">💎</span>
+          <span
+            aria-hidden="true"
+            className="inline-block w-2.5 h-2.5 rotate-45 shrink-0"
+            style={{
+              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+              borderRadius: 1,
+            }}
+          />
           <h3 className="text-[13px] font-semibold m-0" style={{ color: '#1C1917' }}>Opportunities from GEM partners</h3>
         </div>
         <span className="text-[12px] shrink-0" style={{ color: '#78716C' }}>{statusParts.join(' · ')}</span>
