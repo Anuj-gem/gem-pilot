@@ -226,6 +226,7 @@ export default async function OpportunitiesPage() {
                 lastApplicationAt={lastAppMap.get(opp.id) ?? null}
                 dealType={opp.deal_type}
                 fundingAmount={opp.funding_amount}
+                isPro={isPro}
               />
             )
           })

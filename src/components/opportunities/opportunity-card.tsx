@@ -41,6 +41,7 @@ export interface OpportunityCardProps {
   lastApplicationAt?: string | null
   dealType?: string | null
   fundingAmount?: number | null
+  isPro?: boolean
 }
 
 function timeAgo(dateStr: string): string {
@@ -61,7 +62,7 @@ function timeAgo(dateStr: string): string {
 export function OpportunityCard({
   id, slug, title, subtitle, description, genres, formats,
   createdAt, deadline, status, matchingScriptCount, isAnon, applicationCount,
-  writersApplied, lastApplicationAt, dealType, fundingAmount,
+  writersApplied, lastApplicationAt, dealType, fundingAmount, isPro = true,
 }: OpportunityCardProps) {
   const href = `/opportunities/${slug ?? id}`
   const applyHref = `/opportunities/${slug ?? id}/apply`
@@ -154,7 +155,15 @@ export function OpportunityCard({
           {/* Right: Apply/Reapply + View details */}
           <div className="flex items-center gap-2 shrink-0">
             {!isAnon && !hasPending && (
-              canApply ? (
+              !isPro ? (
+                <button
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-paywall', { detail: { reason: 'GEM Pro required to apply' } })) }}
+                  className="inline-flex items-center gap-1 text-[13px] font-bold text-white px-3 py-1.5 rounded-lg cursor-pointer border-0"
+                  style={{ background: '#7c3aed' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  Apply
+                </button>
+              ) : canApply ? (
                 <Link href={applyHref}
                   className="inline-flex items-center gap-1 text-[13px] font-bold text-white px-3 py-1.5 rounded-lg transition-colors"
                   style={{ background: '#7c3aed' }}>
