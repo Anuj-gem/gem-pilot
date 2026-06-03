@@ -175,17 +175,24 @@ export default async function OpportunitiesPage() {
       marginBottom: '-64px',
       paddingBottom: '64px',
     }}>
-    <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6">
       {/* Header */}
-      <div className="mb-6">
-        <h1
-          className="text-[28px] font-bold text-white m-0 mb-2"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          Open Opportunities
+      <div className="mb-8">
+        {(() => {
+          const totalFunding = opportunities.reduce((s, o) => s + ((o as any).funding_amount || 0), 0)
+          const fmt = (n: number) => n >= 1_000_000 ? `$${(n / 1_000_000) % 1 === 0 ? (n / 1_000_000).toFixed(0) : (n / 1_000_000).toFixed(1)}M` : n >= 1_000 ? `$${Math.round(n / 1_000)}K` : `$${n}`
+          return totalFunding > 0 ? (
+            <div className="text-[42px] font-bold mb-2" style={{ color: '#4ade80', letterSpacing: '-0.02em' }}>
+              {fmt(totalFunding)}
+              <span className="text-[14px] font-normal text-white/40 ml-2">available</span>
+            </div>
+          ) : null
+        })()}
+        <h1 className="text-[22px] font-bold text-white m-0 mb-2">
+          Funding Opportunities
         </h1>
-        <p className="text-[14px] text-white/70 m-0 leading-relaxed">
-          From verified reps and producers in our network. {opportunities.length} open now.
+        <p className="text-[14px] text-white/60 m-0 leading-relaxed">
+          Real opportunities to fund your project through the GEM partner network. {opportunities.length} open now.
         </p>
       </div>
 
