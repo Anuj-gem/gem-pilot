@@ -82,27 +82,22 @@ export function OpportunityCard({
       {/* Card body */}
       <div className="relative z-10 p-4 flex-1 flex flex-col pointer-events-none">
 
-        {/* Top row: Partner badge + deal type */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-[11px] font-bold px-2 py-0.5 rounded"
-            style={{ background: 'rgba(124,58,237,0.08)', color: '#7c3aed' }}>
-            Verified GEM Partner
-          </span>
-          {dealType && (
-            <span className="text-[11px] font-semibold px-2 py-0.5 rounded"
-              style={{ background: 'rgba(124,58,237,0.05)', color: '#7c3aed' }}>
-              {dealType}
-            </span>
-          )}
-        </div>
-
-        {/* Funding amount */}
-        {fundingAmount && fundingAmount > 0 && (
-          <div className="text-[22px] font-bold mb-1" style={{ color: '#0F6E56' }}>
-            {fundingAmount >= 1_000_000 ? `$${(fundingAmount / 1_000_000) % 1 === 0 ? (fundingAmount / 1_000_000).toFixed(0) : (fundingAmount / 1_000_000).toFixed(1)}M` : fundingAmount >= 1_000 ? `$${Math.round(fundingAmount / 1_000)}K` : `$${fundingAmount}`}
-            <span className="text-[12px] font-normal text-gray-500 ml-1.5">per project</span>
+        {/* Top row: Funding left, GEM Partner right */}
+        <div className="flex items-start justify-between gap-2 mb-1">
+          {fundingAmount && fundingAmount > 0 ? (
+            <div className="text-[20px] font-bold" style={{ color: '#0F6E56' }}>
+              {fundingAmount >= 1_000_000 ? `$${(fundingAmount / 1_000_000) % 1 === 0 ? (fundingAmount / 1_000_000).toFixed(0) : (fundingAmount / 1_000_000).toFixed(1)}M` : fundingAmount >= 1_000 ? `$${Math.round(fundingAmount / 1_000)}K` : `$${fundingAmount}`}
+              <span className="text-[11px] font-normal text-gray-500 ml-1">per project</span>
+            </div>
+          ) : <div />}
+          <div className="flex items-center gap-1.5 shrink-0 pt-0.5">
+            <span
+              className="inline-block w-2 h-2 shrink-0"
+              style={{ transform: 'rotate(45deg)', background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', borderRadius: 1 }}
+            />
+            <span className="text-[11px] text-gray-500">GEM Partner</span>
           </div>
-        )}
+        </div>
 
         {/* Title */}
         <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-1 leading-snug group-hover:text-purple-700 transition-colors">

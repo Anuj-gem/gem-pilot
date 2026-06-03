@@ -234,18 +234,12 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const lookingForPills: string[] = []
   if (opp.formats?.length > 0) {
     opp.formats.forEach((f: string) => lookingForPills.push(FORMAT_LABELS[f] ?? f))
-  } else {
-    lookingForPills.push('All formats')
   }
   if (opp.genres?.length > 0) {
     opp.genres.forEach((g: string) => lookingForPills.push(GENRE_LABELS[g] ?? g))
-  } else {
-    lookingForPills.push('All genres')
   }
   if (opp.budget_tiers?.length > 0) {
     opp.budget_tiers.forEach((b: string) => lookingForPills.push(BUDGET_LABELS[b] ?? b))
-  } else {
-    lookingForPills.push('All budgets')
   }
   if (opp.tags?.length > 0) {
     opp.tags.forEach((t: string) => lookingForPills.push(t))
@@ -441,17 +435,19 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
             >
               What we look for
             </div>
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              {lookingForPills.map((pill, i) => (
-                <span
-                  key={i}
-                  className="text-[12px] font-medium px-2.5 py-1 rounded-lg"
-                  style={{ color: '#534AB7', background: '#F5F3FF' }}
-                >
-                  {pill}
-                </span>
-              ))}
-            </div>
+            {lookingForPills.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {lookingForPills.map((pill, i) => (
+                  <span
+                    key={i}
+                    className="text-[12px] font-medium px-2.5 py-1 rounded-lg"
+                    style={{ color: '#534AB7', background: '#F5F3FF' }}
+                  >
+                    {pill}
+                  </span>
+                ))}
+              </div>
+            )}
             {opp.what_we_look_for && (
               <p className="text-[13px] leading-relaxed m-0" style={{ color: '#57534E' }}>
                 {opp.what_we_look_for}
