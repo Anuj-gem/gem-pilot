@@ -44,6 +44,7 @@ type OppRow = {
   deadline: string | null; status: string
   posted_by: string | null; subtitle: string | null; created_at: string
   deal_type: string | null
+  funding_amount: number | null
 }
 
 export default async function OpportunitiesPage() {
@@ -188,28 +189,6 @@ export default async function OpportunitiesPage() {
         </p>
       </div>
 
-      {/* Logged-out CTA */}
-      {!user && (
-        <div
-          className="rounded-2xl px-6 py-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
-          style={{
-            background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.05) 65%), rgba(255,255,255,0.05)',
-            border: '1.5px solid rgba(124,58,237,0.3)',
-          }}
-        >
-          <p className="text-[15px] font-bold text-white m-0 leading-snug">
-            Upload your script to see which opportunities you qualify for
-          </p>
-          <Link
-            href="/get-started"
-            className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-[14px] font-bold text-white transition-all hover:brightness-110"
-            style={{ background: '#7c3aed' }}
-          >
-            Get started <ArrowRight size={15} />
-          </Link>
-        </div>
-      )}
-
       {/* Opportunity cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {opportunities.length === 0 ? (
@@ -239,6 +218,7 @@ export default async function OpportunitiesPage() {
                 writersApplied={writersAppliedMap.get(opp.id) ?? 0}
                 lastApplicationAt={lastAppMap.get(opp.id) ?? null}
                 dealType={opp.deal_type}
+                fundingAmount={opp.funding_amount}
               />
             )
           })

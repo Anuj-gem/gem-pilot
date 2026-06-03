@@ -40,6 +40,7 @@ export interface OpportunityCardProps {
   writersApplied?: number
   lastApplicationAt?: string | null
   dealType?: string | null
+  fundingAmount?: number | null
 }
 
 function timeAgo(dateStr: string): string {
@@ -60,7 +61,7 @@ function timeAgo(dateStr: string): string {
 export function OpportunityCard({
   id, slug, title, subtitle, description, genres, formats,
   createdAt, deadline, status, matchingScriptCount, isAnon, applicationCount,
-  writersApplied, lastApplicationAt, dealType,
+  writersApplied, lastApplicationAt, dealType, fundingAmount,
 }: OpportunityCardProps) {
   const href = `/opportunities/${slug ?? id}`
   const applyHref = `/opportunities/${slug ?? id}/apply`
@@ -92,6 +93,14 @@ export function OpportunityCard({
             </span>
           )}
         </div>
+
+        {/* Funding amount */}
+        {fundingAmount && fundingAmount > 0 && (
+          <div className="text-[22px] font-bold mb-1" style={{ color: '#0F6E56' }}>
+            {fundingAmount >= 1_000_000 ? `$${(fundingAmount / 1_000_000) % 1 === 0 ? (fundingAmount / 1_000_000).toFixed(0) : (fundingAmount / 1_000_000).toFixed(1)}M` : fundingAmount >= 1_000 ? `$${Math.round(fundingAmount / 1_000)}K` : `$${fundingAmount}`}
+            <span className="text-[12px] font-normal text-gray-500 ml-1.5">per project</span>
+          </div>
+        )}
 
         {/* Title */}
         <h3 className="text-[15px] font-bold text-gray-900 m-0 mb-1 leading-snug group-hover:text-purple-700 transition-colors">

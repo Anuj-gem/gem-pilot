@@ -45,7 +45,7 @@ export default async function Home({
   // ── Fetch 6 most recent active opportunities ──────────────────────
   const { data: oppsRaw } = await service
     .from('opportunities')
-    .select('id, slug, title, subtitle, description, genres, formats, created_at, deadline, status, deal_type')
+    .select('id, slug, title, subtitle, description, genres, formats, created_at, deadline, status, deal_type, funding_amount')
     .eq('status', 'active')
     .order('created_at', { ascending: false })
     .limit(6)
@@ -53,7 +53,7 @@ export default async function Home({
   const opportunities: OpportunityCardProps[] = ((oppsRaw || []) as {
     id: string; slug: string | null; title: string; subtitle: string | null
     description: string | null; genres: string[] | null; formats: string[] | null
-    created_at: string; deadline: string | null; status: string; deal_type: string | null
+    created_at: string; deadline: string | null; status: string; deal_type: string | null; funding_amount: number | null
   }[]).map(o => ({
     id: o.id,
     slug: o.slug,
@@ -68,6 +68,7 @@ export default async function Home({
     matchingScriptCount: 0,
     isAnon: true,
     dealType: o.deal_type,
+    fundingAmount: o.funding_amount,
   }))
 
   // ── Fetch 3 most recent public scripts with media ─────────────────
