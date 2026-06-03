@@ -22,33 +22,61 @@ function ResetPasswordContent() {
   const [success, setSuccess] = useState(false)
   const [ready, setReady] = useState(false)
 
-  // On mount, exchange the recovery token from the URL hash for a session.
-  // Supabase does this automatically but it's async — we poll + listen.
+  // On mount, manually parse the recovery token from the URL hash
+  // and set the session. Supabase auto-detection doesn't always work
+  // after a client-side redirect.
   useEffect(() => {
     let cancelled = false
 
-    // Listen for any auth event that gives us a session
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      if (cancelled) return
-      if (session && (event === 'PASSWORD_RECOVERY' || event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED')) {
-        setReady(true)
-      }
-    })
+    async function init() {
+      // First check if we already have a session
+      const { data: { session: existing } } = await supabase.auth.getSession()
+      if (existing) { setReady(true); return }
 
-    // Also poll every 500ms for up to 15 seconds
-    let attempts = 0
-    const poll = setInterval(async () => {
-      if (cancelled) { clearInterval(poll); return }
-      attempts++
-      const { data: { session } } = await supabase.auth.getSession()
-      if (session) {
-        setReady(true)
-        clearInterval(poll)
-      } else if (attempts >= 600) {
-        clearInterval(poll)
-        if (!cancelled) setError('Something went wrong verifying your link. Please try clicking the link in your email again, or request a new one.')
+      // Parse the hash fragment manually
+      const hash = window.location.hash.substring(1) // remove #
+      const params = new URLSearchParams(hash)
+      const accessToken = params.get('access_token')
+      const refreshToken = params.get('refresh_token')
+
+      if (accessToken && refreshToken) {
+        // Manually set the session from the hash tokens
+        const { data, error: sessionError } = await supabase.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        })
+        if (data.session && !cancelled) {
+          setReady(true)
+          // Clean up the hash from the URL
+          window.history.replaceState(null, '', '/reset-password')
+          return
+        }
+        if (sessionError && !cancelled) {
+          setError('This reset link has expired or already been used. Please request a new one.')
+          return
+        }
       }
-    }, 500)
+
+      // Fallback: listen for auth events
+      const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+        if (cancelled) return
+        if (session) setReady(true)
+      })
+
+      // Give it 30 seconds then show error
+      setTimeout(() => {
+        if (!cancelled) {
+          supabase.auth.getSession().then(({ data: { session } }) => {
+            if (session) setReady(true)
+            else setError('Something went wrong verifying your link. Please try clicking the link in your email again, or request a new one.')
+          })
+        }
+      }, 30000)
+
+      return () => subscription.unsubscribe()
+    }
+
+    init()
 
     return () => {
       cancelled = true
