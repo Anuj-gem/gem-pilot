@@ -155,19 +155,6 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
         <p style={{ fontSize: 20, fontWeight: 500, color: '#fff', margin: 0 }}>Your projects</p>
-        <Link
-          href="/dashboard/settings"
-          style={{
-            fontSize: 11,
-            color: 'rgba(255,255,255,0.45)',
-            padding: '5px 10px',
-            border: '0.5px solid rgba(255,255,255,0.1)',
-            borderRadius: 6,
-            textDecoration: 'none',
-          }}
-        >
-          <span style={{ marginRight: 4 }}>⚙</span>Account
-        </Link>
       </div>
 
       {/* Filter chips + sort */}
