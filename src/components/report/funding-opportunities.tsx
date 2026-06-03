@@ -150,7 +150,13 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-[14px] font-medium text-gray-900 truncate">{opp.title}</span>
+                        <a
+                          href={`/opportunities/${opp.slug}`}
+                          className="text-[14px] font-medium text-gray-900 truncate no-underline hover:underline"
+                          onClick={e => e.stopPropagation()}
+                        >
+                          {opp.title}
+                        </a>
                         {getStatusBadge(opp.id)}
                       </div>
                       {opp.subtitle && (
@@ -203,7 +209,7 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
                 style={{ background: 'rgba(0,0,0,0.015)', border: '1px dashed rgba(0,0,0,0.12)' }}
               >
                 <div className="flex-1 min-w-0">
-                  <span className="text-[14px] font-medium text-gray-900 truncate block">{opp.title}</span>
+                  <a href={`/opportunities/${opp.slug}`} className="text-[14px] font-medium text-gray-900 truncate block no-underline hover:underline">{opp.title}</a>
                   {opp.subtitle && (
                     <p className="text-[12px] m-0 mt-0.5 truncate" style={{ color: '#78716C' }}>{opp.subtitle}</p>
                   )}
