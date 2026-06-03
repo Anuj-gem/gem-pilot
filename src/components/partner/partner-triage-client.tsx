@@ -8,9 +8,9 @@ import Link from 'next/link'
 import type { PartnerApp, PartnerOpp, ScriptSentiment } from '@/app/partner/page'
 import { OpportunitySettings } from './opportunity-settings'
 
-const LIKED_TAGS = ['Interesting idea', 'Strong voice', 'Producible']
-const PASS_REASONS = ['Unoriginal idea', 'Hard to produce', 'Hard to develop', 'Budget concerns', 'Hard to market', 'Bad story']
-const GAP_CLOSING_TAGS = [
+const TAG_PRESETS = [
+  'Interesting idea', 'Strong voice', 'Producible',
+  'Unoriginal idea', 'Hard to produce', 'Hard to develop', 'Budget concerns', 'Hard to market', 'Bad story',
   'Needs director attached', 'Needs talent attached', 'Needs production plan',
   'Needs budget breakdown', 'Needs showrunner', 'Needs network/platform interest',
   'Needs revised pilot', 'Needs series bible', 'Needs proof of concept',
@@ -46,8 +46,8 @@ export function PartnerTriageClient({
   const [activeOppId, setActiveOppId] = useState(opportunities[0]?.id || '')
   const [selectedAppId, setSelectedAppId] = useState<string | null>(null)
   const [sortMode, setSortMode] = useState<SortMode>('score')
-  const [triageState, setTriageState] = useState<Record<string, { status: string; tags?: string[]; gapTags?: string[] }>>(() => {
-    const initial: Record<string, { status: string; tags?: string[]; gapTags?: string[] }> = {}
+  const [triageState, setTriageState] = useState<Record<string, { status: string; tags?: string[] }>>(() => {
+    const initial: Record<string, { status: string; tags?: string[] }> = {}
     for (const app of applications) {
       if (app.triage_status === 'pass' || app.triage_status === 'meet' || app.triage_status === 'follow') {
         initial[app.id] = { status: app.triage_status, tags: app.triage_feedback_tags || undefined }
@@ -56,25 +56,17 @@ export function PartnerTriageClient({
     return initial
   })
   const [showFeedback, setShowFeedback] = useState<string | null>(null)
-  const [likedTags, setLikedTags] = useState<string[]>([])
-  const [reasonTags, setReasonTags] = useState<string[]>([])
-  const [gapTags, setGapTags] = useState<string[]>([])
-  const [customLiked, setCustomLiked] = useState('')
-  const [customReason, setCustomReason] = useState('')
-  const [customGap, setCustomGap] = useState('')
-  const [addingCustomLiked, setAddingCustomLiked] = useState(false)
-  const [addingCustomReason, setAddingCustomReason] = useState(false)
-  const [addingCustomGap, setAddingCustomGap] = useState(false)
-  const [heatOverride, setHeatOverride] = useState(0)
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [customTag, setCustomTag] = useState('')
+  const [addingCustomTag, setAddingCustomTag] = useState(false)
+  const [triageNote, setTriageNote] = useState('')
   const [triaging, setTriaging] = useState(false)
   const [showOppDropdown, setShowOppDropdown] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
   const [noteExpanded, setNoteExpanded] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [listTab, setListTab] = useState<'pending' | 'reviewed'>('pending')
-  const customLikedRef = useRef<HTMLInputElement>(null)
-  const customReasonRef = useRef<HTMLInputElement>(null)
-  const customGapRef = useRef<HTMLInputElement>(null)
+  const customTagRef = useRef<HTMLInputElement>(null)
 
   // Filter apps for active opportunity
   const oppApps = useMemo(() => {
@@ -135,7 +127,7 @@ export function PartnerTriageClient({
 
   const activeOpp = opportunities.find(o => o.id === activeOppId)
 
-  async function handleTriage(action: 'pass' | 'meet' | 'follow', tags?: string[], heat?: number, backingConditions?: string[]) {
+  async function handleTriage(action: 'pass' | 'meet' | 'follow', tags?: string[], noteText?: string) {
     if (!selectedApp || triaging) return
     setTriaging(true)
 
@@ -147,15 +139,14 @@ export function PartnerTriageClient({
           consideration_id: selectedApp.id,
           action,
           feedback_tags: tags?.length ? tags : undefined,
-          ...(heat !== undefined ? { heat_override: heat } : {}),
-          ...(backingConditions?.length ? { backing_conditions: backingConditions } : {}),
+          feedback: noteText?.trim() || undefined,
         }),
       })
 
       if (res.ok) {
         setTriageState(prev => ({
           ...prev,
-          [selectedApp.id]: { status: action, tags, gapTags: backingConditions },
+          [selectedApp.id]: { status: action, tags },
         }))
         setShowFeedback(null)
         resetFeedback()
@@ -170,27 +161,16 @@ export function PartnerTriageClient({
   }
 
   function resetFeedback() {
-    setLikedTags([])
-    setReasonTags([])
-    setGapTags([])
-    setHeatOverride(0)
-    setCustomLiked('')
-    setCustomReason('')
-    setCustomGap('')
-    setAddingCustomLiked(false)
-    setAddingCustomReason(false)
-    setAddingCustomGap(false)
+    setSelectedTags([])
+    setCustomTag('')
+    setAddingCustomTag(false)
+    setTriageNote('')
   }
 
-  function toggleLikedTag(tag: string) {
-    setLikedTags(prev => {
-      const removing = prev.includes(tag)
-      const next = removing ? prev.filter(t => t !== tag) : [...prev, tag]
-      // Auto-bump heat to 1 when first positive tag added, drop to 0 when all removed
-      if (!removing && prev.length === 0) setHeatOverride(h => Math.max(h, 1))
-      if (removing && next.length === 0) setHeatOverride(0)
-      return next
-    })
+  function toggleTag(tag: string) {
+    setSelectedTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    )
   }
 
   function handleShowFeedback() {
@@ -199,49 +179,20 @@ export function PartnerTriageClient({
   }
 
   function submitPass() {
-    const allTags = [
-      ...likedTags.map(t => `+${t}`),
-      ...reasonTags.map(t => `-${t}`),
-    ]
-    handleTriage('pass', allTags.length > 0 ? allTags : undefined, heatOverride)
+    handleTriage('pass', selectedTags.length > 0 ? selectedTags : undefined, triageNote)
   }
 
   function submitFollow() {
-    const allTags = [
-      ...likedTags.map(t => `+${t}`),
-      ...reasonTags.map(t => `-${t}`),
-    ]
-    handleTriage('follow', allTags.length > 0 ? allTags : undefined, heatOverride, gapTags.length > 0 ? gapTags : undefined)
+    handleTriage('follow', selectedTags.length > 0 ? selectedTags : undefined, triageNote)
   }
 
-  function addCustomLikedTag() {
-    const val = customLiked.trim()
-    if (val && !likedTags.includes(val)) {
-      setLikedTags(prev => {
-        if (prev.length === 0) setHeatOverride(h => Math.max(h, 1))
-        return [...prev, val]
-      })
+  function addCustomTagFn() {
+    const val = customTag.trim()
+    if (val && !selectedTags.includes(val)) {
+      setSelectedTags(prev => [...prev, val])
     }
-    setCustomLiked('')
-    setAddingCustomLiked(false)
-  }
-
-  function addCustomReasonTag() {
-    const val = customReason.trim()
-    if (val && !reasonTags.includes(val)) {
-      setReasonTags(prev => [...prev, val])
-    }
-    setCustomReason('')
-    setAddingCustomReason(false)
-  }
-
-  function addCustomGapTag() {
-    const val = customGap.trim()
-    if (val && !gapTags.includes(val)) {
-      setGapTags(prev => [...prev, val])
-    }
-    setCustomGap('')
-    setAddingCustomGap(false)
+    setCustomTag('')
+    setAddingCustomTag(false)
   }
 
   const fmtDate = (d: string) => {
@@ -687,166 +638,52 @@ export function PartnerTriageClient({
                     ) : (
                       /* Unified feedback form — all fields, Pass/Follow at bottom */
                       <div className="space-y-4">
-                        {/* Liked section */}
+                        {/* Tags — single merged group */}
                         <div>
-                          <span className="text-[12px] text-white/40 mb-2 block">Anything you liked?</span>
+                          <span className="text-[12px] text-white/40 mb-2 block">Tags</span>
                           <div className="flex flex-wrap items-center gap-1.5">
-                            {LIKED_TAGS.map(tag => (
+                            {TAG_PRESETS.map(tag => (
                               <button
                                 key={tag}
-                                onClick={() => toggleLikedTag(tag)}
+                                onClick={() => toggleTag(tag)}
                                 className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
-                                  likedTags.includes(tag)
-                                    ? 'text-green-300'
-                                    : 'text-white/40 hover:text-white/60'
-                                }`}
-                                style={{
-                                  background: likedTags.includes(tag) ? 'rgba(74,222,128,0.12)' : 'rgba(255,255,255,0.06)',
-                                }}
-                              >
-                                {tag}
-                              </button>
-                            ))}
-                            {likedTags.filter(t => !LIKED_TAGS.includes(t)).map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => toggleLikedTag(tag)}
-                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-green-300"
-                                style={{ background: 'rgba(74,222,128,0.12)' }}
-                              >
-                                {tag} ×
-                              </button>
-                            ))}
-                            {addingCustomLiked ? (
-                              <input
-                                ref={customLikedRef}
-                                autoFocus
-                                type="text"
-                                value={customLiked}
-                                onChange={e => setCustomLiked(e.target.value)}
-                                onKeyDown={e => { if (e.key === 'Enter') addCustomLikedTag(); if (e.key === 'Escape') { setAddingCustomLiked(false); setCustomLiked('') } }}
-                                onBlur={addCustomLikedTag}
-                                placeholder="Type and press Enter"
-                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
-                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
-                              />
-                            ) : (
-                              <button
-                                onClick={() => { setAddingCustomLiked(true); setTimeout(() => customLikedRef.current?.focus(), 50) }}
-                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
-                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
-                              >
-                                + Other
-                              </button>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Feedback / reason tags */}
-                        <div>
-                          <span className="text-[12px] text-white/40 mb-2 block">Feedback</span>
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {PASS_REASONS.map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => setReasonTags(prev =>
-                                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-                                )}
-                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
-                                  reasonTags.includes(tag)
-                                    ? 'text-red-300'
-                                    : 'text-white/40 hover:text-white/60'
-                                }`}
-                                style={{
-                                  background: reasonTags.includes(tag) ? 'rgba(248,113,113,0.12)' : 'rgba(255,255,255,0.06)',
-                                }}
-                              >
-                                {tag}
-                              </button>
-                            ))}
-                            {reasonTags.filter(t => !PASS_REASONS.includes(t)).map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => setReasonTags(prev => prev.filter(t => t !== tag))}
-                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-red-300"
-                                style={{ background: 'rgba(248,113,113,0.12)' }}
-                              >
-                                {tag} ×
-                              </button>
-                            ))}
-                            {addingCustomReason ? (
-                              <input
-                                ref={customReasonRef}
-                                autoFocus
-                                type="text"
-                                value={customReason}
-                                onChange={e => setCustomReason(e.target.value)}
-                                onKeyDown={e => { if (e.key === 'Enter') addCustomReasonTag(); if (e.key === 'Escape') { setAddingCustomReason(false); setCustomReason('') } }}
-                                onBlur={addCustomReasonTag}
-                                placeholder="Type and press Enter"
-                                className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
-                                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
-                              />
-                            ) : (
-                              <button
-                                onClick={() => { setAddingCustomReason(true); setTimeout(() => customReasonRef.current?.focus(), 50) }}
-                                className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
-                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
-                              >
-                                + Other
-                              </button>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Gap-closing tags */}
-                        <div>
-                          <span className="text-[12px] text-white/40 mb-2 block">What would close the gap?</span>
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {GAP_CLOSING_TAGS.map(tag => (
-                              <button
-                                key={tag}
-                                onClick={() => setGapTags(prev =>
-                                  prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
-                                )}
-                                className={`text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 ${
-                                  gapTags.includes(tag)
+                                  selectedTags.includes(tag)
                                     ? 'text-purple-300'
                                     : 'text-white/40 hover:text-white/60'
                                 }`}
                                 style={{
-                                  background: gapTags.includes(tag) ? 'rgba(124,58,237,0.15)' : 'rgba(255,255,255,0.06)',
+                                  background: selectedTags.includes(tag) ? 'rgba(124,58,237,0.15)' : 'rgba(255,255,255,0.06)',
                                 }}
                               >
                                 {tag}
                               </button>
                             ))}
-                            {gapTags.filter(t => !GAP_CLOSING_TAGS.includes(t)).map(tag => (
+                            {selectedTags.filter(t => !TAG_PRESETS.includes(t)).map(tag => (
                               <button
                                 key={tag}
-                                onClick={() => setGapTags(prev => prev.filter(t => t !== tag))}
+                                onClick={() => toggleTag(tag)}
                                 className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-purple-300"
                                 style={{ background: 'rgba(124,58,237,0.15)' }}
                               >
                                 {tag} ×
                               </button>
                             ))}
-                            {addingCustomGap ? (
+                            {addingCustomTag ? (
                               <input
-                                ref={customGapRef}
+                                ref={customTagRef}
                                 autoFocus
                                 type="text"
-                                value={customGap}
-                                onChange={e => setCustomGap(e.target.value)}
-                                onKeyDown={e => { if (e.key === 'Enter') addCustomGapTag(); if (e.key === 'Escape') { setAddingCustomGap(false); setCustomGap('') } }}
-                                onBlur={addCustomGapTag}
+                                value={customTag}
+                                onChange={e => setCustomTag(e.target.value)}
+                                onKeyDown={e => { if (e.key === 'Enter') addCustomTagFn(); if (e.key === 'Escape') { setAddingCustomTag(false); setCustomTag('') } }}
+                                onBlur={addCustomTagFn}
                                 placeholder="Type and press Enter"
                                 className="text-[12px] px-3 py-1.5 rounded-full outline-none text-white/70 w-[160px]"
                                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(124,58,237,0.3)' }}
                               />
                             ) : (
                               <button
-                                onClick={() => { setAddingCustomGap(true); setTimeout(() => customGapRef.current?.focus(), 50) }}
+                                onClick={() => { setAddingCustomTag(true); setTimeout(() => customTagRef.current?.focus(), 50) }}
                                 className="text-[12px] px-3 py-1.5 rounded-full cursor-pointer transition-all border-0 text-white/25 hover:text-white/40"
                                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.1)' }}
                               >
@@ -856,26 +693,17 @@ export function PartnerTriageClient({
                           </div>
                         </div>
 
-                        {/* Heat stepper */}
-                        <div className="flex items-center gap-3">
-                          <span className="text-[12px] text-white/40">🔥 Heat</span>
-                          <div className="flex items-center gap-0 rounded-lg overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                            <button
-                              onClick={() => setHeatOverride(h => Math.max(0, h - 1))}
-                              className="text-[14px] px-2.5 py-1 text-white/40 hover:text-white/70 cursor-pointer bg-transparent border-0 transition-colors"
-                            >
-                              −
-                            </button>
-                            <span className={`text-[14px] font-bold min-w-[28px] text-center ${heatOverride > 0 ? 'text-orange-400' : 'text-white/20'}`}>
-                              {heatOverride}
-                            </span>
-                            <button
-                              onClick={() => setHeatOverride(h => h + 1)}
-                              className="text-[14px] px-2.5 py-1 text-white/40 hover:text-white/70 cursor-pointer bg-transparent border-0 transition-colors"
-                            >
-                              +
-                            </button>
-                          </div>
+                        {/* Note */}
+                        <div>
+                          <span className="text-[12px] text-white/40 mb-2 block">Note</span>
+                          <textarea
+                            value={triageNote}
+                            onChange={e => setTriageNote(e.target.value)}
+                            placeholder="Add a personal note (optional)"
+                            className="w-full text-[13px] px-3 py-2.5 rounded-lg resize-none outline-none text-white/80 placeholder-white/25"
+                            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+                            rows={3}
+                          />
                         </div>
 
                         {/* Pass / Follow / Cancel */}
@@ -911,8 +739,7 @@ export function PartnerTriageClient({
                 {(() => {
                   const st = triageState[selectedApp.id]?.status || selectedApp.triage_status || (selectedApp.review_stage === 'complete' ? 'pass' : null)
                   if (!st || (st !== 'pass' && st !== 'meet' && st !== 'follow')) return null
-                  const tags = triageState[selectedApp.id]?.tags || selectedApp.triage_feedback_tags || []
-                  const gaps = triageState[selectedApp.id]?.gapTags || (selectedApp as any).backing_conditions || []
+                  const reviewTags = triageState[selectedApp.id]?.tags || selectedApp.triage_feedback_tags || []
                   return (
                     <div className="py-3 space-y-2">
                       <div className="flex items-center gap-3">
@@ -936,25 +763,13 @@ export function PartnerTriageClient({
                           </button>
                         )}
                       </div>
-                      {tags.length > 0 && (
+                      {reviewTags.length > 0 && (
                         <div className="flex flex-wrap gap-1.5">
-                          {tags.map(tag => (
+                          {reviewTags.map(tag => (
                             <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
                               {tag.replace(/^[+-]/, '')}
                             </span>
                           ))}
-                        </div>
-                      )}
-                      {gaps.length > 0 && (
-                        <div>
-                          <span className="text-[11px] text-white/40">Gap-closing:</span>
-                          <div className="flex flex-wrap gap-1.5 mt-1">
-                            {gaps.map((tag: string) => (
-                              <span key={tag} className="text-[11px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(124,58,237,0.1)', color: 'rgba(167,139,250,0.8)' }}>
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
                         </div>
                       )}
                     </div>

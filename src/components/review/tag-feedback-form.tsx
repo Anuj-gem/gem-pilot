@@ -3,46 +3,27 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 
-// Presets — "What stood out" (positive signals)
-const POSITIVE_PRESETS = [
+// All tag presets — single merged list
+const TAG_PRESETS = [
+  'Interesting idea',
   'Strong voice',
-  'Compelling lead',
-  'Fresh concept',
-  'Great dialogue',
-  'Clear market',
-  'Timely concept',
-  'Castable roles',
-  'Low budget friendly',
-  'Strong ensemble',
-  'Visual storytelling',
-]
-
-// Presets — "Why passing"
-const PASS_REASON_PRESETS = [
-  'Conflicting project',
-  'Similar to something in development',
-  'Crowded space',
+  'Producible',
+  'Unoriginal idea',
+  'Hard to produce',
+  'Hard to develop',
   'Budget concerns',
-  'Slate full',
-  'Not our genre',
-  'Casting difficult',
-  'Needs development',
-  'Pacing issues',
-  'Concept unclear',
-]
-
-// Presets — investor conditions (for Follow / Back)
-const CONDITION_PRESETS = [
+  'Hard to market',
+  'Bad story',
   'Needs director attached',
   'Needs talent attached',
   'Needs production plan',
-  'Needs proof of concept',
-  'Needs sizzle reel',
-  'Needs script revision',
-  'Needs showrunner',
   'Needs budget breakdown',
-  'Needs distribution strategy',
-  'Market timing dependent',
+  'Needs showrunner',
+  'Needs network/platform interest',
+  'Needs revised pilot',
+  'Needs series bible',
+  'Needs proof of concept',
+  'Want to see more work from this writer',
 ]
 
 // Combo tag input — type to add custom, presets as suggestions
@@ -174,15 +155,15 @@ export function TagFeedbackForm({
   currentBackingNote = '',
 }: TagFeedbackFormProps) {
   const [outcome, setOutcome] = useState<BackingStatus | null>(currentBackingStatus)
-  const [feedbackTags, setFeedbackTags] = useState<string[]>(currentFeedbackTags)
-  const [passReasonTags, setPassReasonTags] = useState<string[]>(currentNextStepsTags)
-  const [conditionTags, setConditionTags] = useState<string[]>(currentBackingConditions)
+  // Merge all existing tags into a single flat list
+  const [tags, setTags] = useState<string[]>([...new Set([...currentFeedbackTags, ...currentNextStepsTags, ...currentBackingConditions])])
   const [amount, setAmount] = useState(currentBackingAmount > 0 ? String(currentBackingAmount) : '')
   const [note, setNote] = useState(currentFeedback || currentBackingNote || '')
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [validationError, setValidationError] = useState<string | null>(null)
   const router = useRouter()
+  const allUsedTags = [...new Set([...allUsedFeedbackTags, ...allUsedNextStepsTags])]
 
   const isAlreadyComplete = currentReviewStage === 'complete'
   const showAmountAndConditions = outcome === 'following' || outcome === 'attached'
@@ -193,7 +174,7 @@ export function TagFeedbackForm({
       return
     }
     // Pass requires some form of feedback
-    if (outcome === 'pass' && feedbackTags.length === 0 && passReasonTags.length === 0 && !note.trim()) {
+    if (outcome === 'pass' && tags.length === 0 && !note.trim()) {
       setValidationError('Add at least one tag or a note before passing.')
       return
     }
@@ -207,10 +188,10 @@ export function TagFeedbackForm({
         consideration_id: considerationId,
         backing_status: outcome,
         backing_amount: showAmountAndConditions ? (parseFloat(amount) || 0) : 0,
-        backing_conditions: showAmountAndConditions ? conditionTags : [],
+        backing_conditions: showAmountAndConditions ? tags : [],
         backing_note: note.trim() || undefined,
-        feedback_tags: feedbackTags,
-        next_steps_tags: passReasonTags,
+        feedback_tags: tags,
+        next_steps_tags: [],
         feedback: note.trim() || undefined,
       }),
     })
@@ -228,9 +209,9 @@ export function TagFeedbackForm({
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         consideration_id: considerationId,
-        feedback_tags: feedbackTags,
-        next_steps_tags: passReasonTags,
-        backing_conditions: conditionTags,
+        feedback_tags: tags,
+        next_steps_tags: [],
+        backing_conditions: tags,
         backing_amount: parseFloat(amount) || 0,
         backing_note: note.trim() || undefined,
         feedback: note.trim() || undefined,
@@ -336,52 +317,18 @@ export function TagFeedbackForm({
         </div>
       )}
 
-      {/* Conditions — only for Follow / Back */}
-      {showAmountAndConditions && (
-        <div>
-          <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
-            Conditions <span className="text-[11px] font-normal text-gray-500">(what would need to happen)</span>
-          </label>
-          <TagComboInput
-            tags={conditionTags}
-            setTags={(t) => { setConditionTags(t); setSaved(false) }}
-            presets={CONDITION_PRESETS}
-            allUsed={[]}
-            placeholder="Select or type conditions..."
-            accentColor="amber"
-          />
-        </div>
-      )}
-
-      {/* What stood out — positive tags (available for all outcomes) */}
+      {/* Tags — single merged group */}
       <div>
-        <label className="text-[13px] font-bold text-gray-900 block mb-1.5">What stood out</label>
+        <label className="text-[13px] font-bold text-gray-900 block mb-1.5">Tags</label>
         <TagComboInput
-          tags={feedbackTags}
-          setTags={(t) => { setFeedbackTags(t); setSaved(false) }}
-          presets={POSITIVE_PRESETS}
-          allUsed={allUsedFeedbackTags}
-          placeholder="Select or type what stood out..."
+          tags={tags}
+          setTags={(t) => { setTags(t); setSaved(false) }}
+          presets={TAG_PRESETS}
+          allUsed={allUsedTags}
+          placeholder="Select or type tags..."
           accentColor="purple"
         />
       </div>
-
-      {/* Why passing — only shown for Pass */}
-      {outcome === 'pass' && (
-        <div>
-          <label className="text-[13px] font-bold text-gray-900 block mb-1.5">
-            Why passing <span className="text-[11px] font-normal text-gray-500">(if applicable)</span>
-          </label>
-          <TagComboInput
-            tags={passReasonTags}
-            setTags={(t) => { setPassReasonTags(t); setSaved(false) }}
-            presets={PASS_REASON_PRESETS}
-            allUsed={allUsedNextStepsTags}
-            placeholder="Select or type reason..."
-            accentColor="gray"
-          />
-        </div>
-      )}
 
       {/* Note */}
       <div>
@@ -391,7 +338,7 @@ export function TagFeedbackForm({
         <textarea
           value={note}
           onChange={e => { setNote(e.target.value); setSaved(false) }}
-          placeholder="Any additional context, encouragement, or guidance..."
+          placeholder="Add a personal note (optional)"
           className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-[13px] text-gray-700 placeholder-gray-400 resize-none focus:outline-none focus:border-purple-300 focus:ring-1 focus:ring-purple-200"
           rows={3}
         />
