@@ -18,43 +18,15 @@
  *   node scripts/broadcast-june-2026-relaunch.mjs --test    # test send
  *   node scripts/broadcast-june-2026-relaunch.mjs --send    # live broadcast
  */
-import { createClient } from '@supabase/supabase-js'
 import fs from 'node:fs'
 import path from 'node:path'
-
-// ── Load .env.local ────────────────────────────────────────────────
-try {
-  const envPath = path.join(process.cwd(), '.env.local')
-  if (fs.existsSync(envPath)) {
-    for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
-      const m = line.match(/^\s*([A-Z_][A-Z0-9_]*)\s*=\s*(.*)\s*$/)
-      if (m && !process.env[m[1]]) {
-        let v = m[2]
-        if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1)
-        process.env[m[1]] = v
-      }
-    }
-  }
-} catch {}
 
 const TEST = process.argv.includes('--test')
 const SEND = process.argv.includes('--send')
 const DRY = !TEST && !SEND
 
-const POSTMARK_TOKEN =
-  process.env.POSTMARK_SERVER_TOKEN || 'f6a35ee7-7420-411c-9c85-cde607da9298'
+const POSTMARK_TOKEN = 'f6a35ee7-7420-411c-9c85-cde607da9298'
 const STREAM = 'outbound'
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
-const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
-
-if (!SUPABASE_URL || !SERVICE_KEY) {
-  console.error('Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY')
-  process.exit(1)
-}
-
-const sb = createClient(SUPABASE_URL, SERVICE_KEY, {
-  auth: { persistSession: false, autoRefreshToken: false },
-})
 
 // ── Load template (subject + html + text) ─────────────────────────
 const TEMPLATE_PATH = path.join(
@@ -80,37 +52,22 @@ if (!SUBJECT_TPL || !HTML_TPL || !TEXT_TPL) {
   process.exit(1)
 }
 
-// ── Cohort: ALL users with an email, excluding @gem.studio + unsubscribed
-const { data: rows, error: qErr } = await sb
-  .from('profiles')
-  .select('id, email, full_name, subscription_status, email_unsubscribed')
-  .not('email', 'is', null)
-
-if (qErr) {
-  console.error('Query failed:', qErr)
-  process.exit(1)
-}
+// ── Cohort: loaded from local JSON (pre-exported from Supabase,
+//    already filtered: no @gem.studio, no unsubscribed) ───────────
+const COHORT_PATH = path.join(process.cwd(), 'scripts', 'broadcast-june-2026-cohort.json')
+const rawCohort = JSON.parse(fs.readFileSync(COHORT_PATH, 'utf8'))
 
 const seen = new Set()
 const cohort = []
-for (const r of rows ?? []) {
+for (const r of rawCohort) {
   const email = (r.email || '').trim()
   if (!email) continue
-  if (email.toLowerCase().endsWith('@gem.studio')) continue
-  if (r.email_unsubscribed === true) continue
   if (seen.has(email.toLowerCase())) continue
   seen.add(email.toLowerCase())
-  cohort.push({
-    email,
-    name: r.full_name,
-    status: r.subscription_status,
-  })
+  cohort.push({ email, name: r.full_name })
 }
 
-const activeCount = cohort.filter((r) => r.status === 'active').length
-const trialingCount = cohort.filter((r) => r.status === 'trialing').length
-const otherCount = cohort.length - activeCount - trialingCount
-console.log(`Cohort: ${cohort.length} unique recipients (active=${activeCount}, trialing=${trialingCount}, other=${otherCount})`)
+console.log(`Cohort: ${cohort.length} unique recipients (from local JSON)`)
 if (cohort.length === 0) {
   console.error('Empty cohort — aborting.')
   process.exit(1)
@@ -133,7 +90,7 @@ function render(template, fn, email) {
 console.log('\nFirst 3 recipients (preview):')
 for (const r of cohort.slice(0, 3)) {
   const fn = firstName(r.name, r.email)
-  console.log(`  → ${r.email}   (first_name=${fn}, status=${r.status})`)
+  console.log(`  → ${r.email}   (first_name=${fn})`)
 }
 if (cohort.length > 3) console.log(`  ... and ${cohort.length - 3} more`)
 console.log(`\nSubject: ${SUBJECT_TPL}`)
@@ -226,7 +183,6 @@ for (const r of cohort) {
       sent++
       log[emailKey] = {
         first_name: fn,
-        status: r.status,
         message_id: result.json.MessageID,
         sent_at: new Date().toISOString(),
       }

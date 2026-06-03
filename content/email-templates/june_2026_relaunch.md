@@ -1,5 +1,5 @@
 <!-- SUBJECT -->
-GEM just changed — here's what it means for your project
+GEM just took a big leap 💵💵
 
 <!-- HTML -->
 <!DOCTYPE html>
@@ -19,8 +19,8 @@ GEM just changed — here's what it means for your project
           <tr>
             <td style="padding:44px 36px 40px;background:linear-gradient(135deg,#5b21b6 0%,#7c3aed 40%,#a78bfa 100%);">
               <div style="font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.92);font-weight:800;margin-bottom:14px;">Product Update</div>
-              <div style="font-size:34px;line-height:1.05;color:#ffffff;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px;">GEM is becoming a development hub.</div>
-              <div style="font-size:17px;line-height:1.4;color:rgba(255,255,255,0.95);font-weight:500;">New tools to fund, build, and package your project.</div>
+              <div style="font-size:34px;line-height:1.05;color:#ffffff;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px;">Turning scripts into real projects. 💵</div>
+              <div style="font-size:17px;line-height:1.4;color:rgba(255,255,255,0.95);font-weight:500;">New partners, $1.2M in project financing available, and new tools to develop your project from page to production.</div>
             </td>
           </tr>
 
@@ -28,8 +28,9 @@ GEM just changed — here's what it means for your project
           <tr>
             <td style="padding:32px 36px 8px;">
               <p style="font-size:15px;color:#111827;line-height:1.55;margin:0 0 14px;font-weight:500;">Hey {{first_name}},</p>
-              <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 14px;">Hollywood is changing. The traditional walls between &ldquo;writer&rdquo; and &ldquo;producer&rdquo; are breaking down &mdash; and we think that&rsquo;s a massive opportunity for independent creators who have the grit to see their projects through.</p>
-              <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 24px;">We&rsquo;ve rebuilt GEM around one idea: helping you develop your project into something real. Not just a score. A funded, staffed, packaged project that&rsquo;s ready for the market.</p>
+              <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 14px;">We started GEM with one goal: help ambitious creators turn their ideas into real entertainment. Today we&rsquo;re taking a big step in that direction.</p>
+              <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 14px;">The response to our opportunities from the GEM network has blown us away. So we&rsquo;ve doubled down &mdash; refocusing our partner network around helping creators raise real money, build their teams, and take control of getting their projects made.</p>
+              <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 24px;">There&rsquo;s a lot of momentum here. And we think together &mdash; writers, partners, and the whole GEM community &mdash; we can start seeing projects actually get off the ground. Here&rsquo;s what&rsquo;s new.</p>
             </td>
           </tr>
 
@@ -88,20 +89,20 @@ GEM just changed — here's what it means for your project
               <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ecfdf5;border-radius:14px;border:1px solid #a7f3d0;">
                 <tr>
                   <td style="padding:30px 30px 26px;">
-                    <div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:16px;letter-spacing:-0.02em;line-height:1.15;">&#128181; $1.2M in funding from GEM partners</div>
-                    <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 18px;">Our opportunities have been refocused. GEM partners are putting real dollars behind projects &mdash; direct investment for proof of concept, early development, and production. When you apply, there&rsquo;s actual funding on the other side.</p>
+                    <div style="font-size:22px;font-weight:800;color:#111827;margin-bottom:16px;letter-spacing:-0.02em;line-height:1.15;">&#128181; We&rsquo;ve reset our opportunities</div>
 
-                    <!-- Opportunity card mockup -->
-                    <div style="background:#1a1625;border-radius:10px;padding:18px 22px;">
-                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                        <tr>
-                          <td>
-                            <div style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:6px;">$300K per project</div>
-                            <div style="font-size:13px;color:rgba(255,255,255,0.55);font-weight:600;">GEM Partner &nbsp;&middot;&nbsp; Early Development</div>
-                          </td>
-                        </tr>
-                      </table>
+                    <!-- Big $1.2M callout -->
+                    <div style="background:#1a1625;border-radius:10px;padding:28px 24px;text-align:center;margin-bottom:18px;">
+                      <div style="font-size:48px;font-weight:800;color:#34d399;letter-spacing:-0.03em;line-height:1;margin-bottom:6px;">$1.2M</div>
+                      <div style="font-size:15px;color:rgba(255,255,255,0.7);font-weight:600;">available from GEM partners &nbsp;&middot;&nbsp; 7 open opportunities</div>
                     </div>
+
+                    <p style="font-size:15px;color:#374151;line-height:1.65;margin:0 0 14px;">If you had anything pending under the old system &mdash; we&rsquo;ve wiped the slate. We&rsquo;ve changed up our partner network and added new partners who are focused on one thing: putting real dollars behind projects they believe in.</p>
+                    <table cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px;">
+                      <tr><td style="padding:5px 0;font-size:14.5px;color:#111827;line-height:1.55;"><span style="color:#059669;font-weight:800;margin-right:10px;">&#10003;</span><strong>Direct investment</strong> &mdash; real money for proof of concept and early development</td></tr>
+                      <tr><td style="padding:5px 0;font-size:14.5px;color:#111827;line-height:1.55;"><span style="color:#059669;font-weight:800;margin-right:10px;">&#10003;</span><strong>Beyond funding</strong> &mdash; partners can support you with packaging, introductions, and distribution</td></tr>
+                      <tr><td style="padding:5px 0;font-size:14.5px;color:#111827;line-height:1.55;"><span style="color:#059669;font-weight:800;margin-right:10px;">&#10003;</span><strong>Really special projects</strong> get noticed &mdash; stand out and partners will find ways to get involved</td></tr>
+                    </table>
                   </td>
                 </tr>
               </table>
@@ -219,9 +220,11 @@ GEM just changed — here's what it means for your project
 <!-- TEXT -->
 Hey {{first_name}},
 
-Hollywood is changing. The traditional walls between "writer" and "producer" are breaking down — and we think that's a massive opportunity for independent creators who have the grit to see their projects through.
+We started GEM with one goal: help ambitious creators turn their ideas into real entertainment. Today we're taking a big step in that direction.
 
-We've rebuilt GEM around one idea: helping you develop your project into something real. Not just a score. A funded, staffed, packaged project that's ready for the market.
+The response to our opportunities from the GEM network has blown us away. So we've doubled down — refocusing our partner network around helping creators raise real money, build their teams, and take control of getting their projects made.
+
+There's a lot of momentum here. And we think together — writers, partners, and the whole GEM community — we can start seeing projects actually get off the ground. Here's what's new.
 
 ---
 
@@ -229,9 +232,15 @@ HEAT IS GONE. REAL SIGNALS ARE HERE.
 
 The abstract heat score is gone. Your project now shows exactly what matters: funding needed, open crew roles, and open cast roles. Partners see concrete information, not a mystery number.
 
-$1.2M IN FUNDING FROM GEM PARTNERS
+WE'VE RESET OUR OPPORTUNITIES
 
-Our opportunities have been refocused. GEM partners are putting real dollars behind projects — direct investment for proof of concept, early development, and production. When you apply, there's actual funding on the other side.
+If you had anything pending under the old system — we've wiped the slate. We've changed up our partner network and added new partners who are focused on putting real dollars behind projects they believe in.
+
+Here's what that means:
+- $1.2M in available funding across 7 active opportunities
+- Direct investment — real money for proof of concept and early development
+- Beyond funding — partners can support you with packaging, introductions, and distribution
+- Really special projects get noticed — stand out and partners will find ways to get involved
 
 YOUR PROJECT PAGE IS NOW A WORKSPACE
 
