@@ -1,6 +1,7 @@
+'use client'
+
 // OpportunityCard — unified card for opportunity display.
 // Used identically on dashboard AND opportunities listing page.
-// Pure server component — Apply links to detail page, no inline actions.
 
 import Link from 'next/link'
 
