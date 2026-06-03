@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ExternalLink, ChevronDown, ChevronUp } from 'lucide-react'
 
 interface MatchingOpp {
   id: string
@@ -94,20 +93,40 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
 
   if (matchingOpps.length === 0) return null
 
-  function getStatusBadge(oppId: string) {
+  function getStatusLine(oppId: string) {
     const r = resultMap.get(oppId)
     if (!r) return null
 
     if (r.backing_status === 'attached' || r.outcome === 'back') {
-      return <span className="text-[11px] font-semibold px-2 py-0.5 rounded" style={{ background: '#ecfdf5', color: '#15803d', border: '1px solid #6ee7b7' }}>Backed</span>
+      return (
+        <div className="text-[12px] mt-1">
+          <span className="font-semibold" style={{ color: '#15803d' }}>Backed</span>
+          <span style={{ color: '#78716C' }}> — Committed to investing in this project.</span>
+        </div>
+      )
     }
     if (r.backing_status === 'following' || r.outcome === 'follow') {
-      return <span className="text-[11px] font-semibold px-2 py-0.5 rounded" style={{ background: '#EEEDFE', color: '#534AB7' }}>Following</span>
+      return (
+        <div className="text-[12px] mt-1">
+          <span className="font-semibold" style={{ color: '#534AB7' }}>Following</span>
+          <span style={{ color: '#78716C' }}> — Not ready to invest yet, but they'll follow this project and get updates on your progress.</span>
+        </div>
+      )
     }
     if (r.outcome === 'pass') {
-      return <span className="text-[11px] font-semibold px-2 py-0.5 rounded" style={{ background: '#fef2f2', color: '#991b1b' }}>Passed</span>
+      return (
+        <div className="text-[12px] mt-1">
+          <span className="font-semibold" style={{ color: '#78716C' }}>Pass</span>
+          <span style={{ color: '#78716C' }}> — This project wasn't the right fit for this opportunity, but your feedback is below.</span>
+        </div>
+      )
     }
-    return <span className="text-[11px] font-semibold px-2 py-0.5 rounded" style={{ background: '#fffbeb', color: '#92400e' }}>Pending</span>
+    return (
+      <div className="text-[12px] mt-1">
+        <span className="font-semibold" style={{ color: '#92400e' }}>Applied</span>
+        <span style={{ color: '#78716C' }}> — Your script is being reviewed.</span>
+      </div>
+    )
   }
 
   const consideringTotal = followingAmount + pending.reduce((s, o) => s + (o.funding_amount || 0), 0)
@@ -151,60 +170,60 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
       {/* Applied opportunities (with results) */}
       {applied.length > 0 && (
         <div className="mb-3">
-          <p className="text-[11px] uppercase tracking-wider text-gray-600 mb-2">Applied</p>
           <div className="flex flex-col gap-2">
             {applied.map(opp => {
               const r = resultMap.get(opp.id)
               const isExpanded = expandedOpp === opp.id
+              const hasFeedback = r?.feedback || (r?.feedback_tags && r.feedback_tags.length > 0)
               return (
-                <div key={opp.id}>
-                  <div
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer"
-                    style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.06)' }}
-                    onClick={() => setExpandedOpp(isExpanded ? null : opp.id)}
-                  >
+                <div
+                  key={opp.id}
+                  className="px-4 py-3 rounded-xl"
+                  style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.06)' }}
+                >
+                  <div className="flex items-start gap-3">
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <a
-                          href={`/opportunities/${opp.slug}`}
-                          className="text-[14px] font-medium text-gray-900 truncate no-underline hover:underline"
-                          onClick={e => e.stopPropagation()}
-                        >
-                          {opp.title}
-                        </a>
-                        {getStatusBadge(opp.id)}
-                      </div>
-                      {opp.subtitle && (
-                        <p className="text-[12px] m-0 mt-0.5 truncate" style={{ color: '#78716C' }}>{opp.subtitle}</p>
-                      )}
+                      <a
+                        href={`/opportunities/${opp.slug}`}
+                        className="text-[14px] font-medium text-gray-900 no-underline hover:underline"
+                      >
+                        {opp.title}
+                      </a>
+                      {getStatusLine(opp.id)}
                       {r?.feedback_tags && r.feedback_tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-1.5">
+                        <div className="flex flex-wrap gap-1 mt-2">
                           {r.feedback_tags.map((tag, i) => (
-                            <span key={i} className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: '#EEEDFE', color: '#534AB7' }}>{tag}</span>
+                            <span key={i} className="text-[11px] px-2 py-0.5 rounded" style={{ background: '#f5f5f4', color: '#78716C' }}>{tag}</span>
                           ))}
                         </div>
                       )}
+                      {r?.feedback && (
+                        <div className="mt-2">
+                          {!isExpanded ? (
+                            <button
+                              onClick={() => setExpandedOpp(opp.id)}
+                              className="text-[12px] border-0 bg-transparent cursor-pointer p-0 underline"
+                              style={{ color: '#534AB7' }}
+                            >
+                              View feedback
+                            </button>
+                          ) : (
+                            <>
+                              <p className="text-[13px] m-0 leading-relaxed" style={{ color: '#44403C' }}>{r.feedback}</p>
+                              <button
+                                onClick={() => setExpandedOpp(null)}
+                                className="text-[12px] border-0 bg-transparent cursor-pointer p-0 underline mt-1"
+                                style={{ color: '#78716C' }}
+                              >
+                                Hide
+                              </button>
+                            </>
+                          )}
+                        </div>
+                      )}
                     </div>
-                    <span className="text-[14px] font-semibold shrink-0" style={{ color: '#534AB7' }}>{fmt(opp.funding_amount)}</span>
-                    {r?.feedback || (r?.feedback_tags && r.feedback_tags.length > 0) ? (
-                      isExpanded ? <ChevronUp size={14} style={{ color: '#78716C' }} /> : <ChevronDown size={14} style={{ color: '#78716C' }} />
-                    ) : null}
+                    <span className="text-[14px] font-semibold shrink-0 pt-0.5" style={{ color: '#78716C' }}>{fmt(opp.funding_amount)}</span>
                   </div>
-                  {/* Expanded feedback */}
-                  {isExpanded && r && (r.feedback || (r.feedback_tags && r.feedback_tags.length > 0)) && (
-                    <div className="ml-4 mt-1 px-4 py-3 rounded-lg" style={{ background: '#fafaf9', border: '1px solid #e7e5e4' }}>
-                      {r.feedback_tags && r.feedback_tags.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mb-2">
-                          {r.feedback_tags.map((tag, i) => (
-                            <span key={i} className="text-[11px] px-2 py-0.5 rounded" style={{ background: '#EEEDFE', color: '#534AB7' }}>{tag}</span>
-                          ))}
-                        </div>
-                      )}
-                      {r.feedback && (
-                        <p className="text-[13px] m-0 leading-relaxed" style={{ color: '#44403C' }}>{r.feedback}</p>
-                      )}
-                    </div>
-                  )}
                 </div>
               )
             })}
