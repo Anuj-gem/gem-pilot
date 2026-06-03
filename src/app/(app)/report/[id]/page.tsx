@@ -93,7 +93,6 @@ import { IssuesSection } from '@/components/report/issues-block'
 import { ProjectNeedsCards, GemAnalysisCard } from '@/components/report/project-needs-cards'
 import { BudgetEditor, type BudgetPlan } from '@/components/report/budget-editor'
 import { RevenuePlanEditor, type RevenuePlan } from '@/components/report/revenue-plan-editor'
-import { ProjectedReturns } from '@/components/report/projected-returns'
 import { normalizeEvaluation, calculateWeightedScore, DIMENSION_META } from '@/types'
 import type { ScriptEvaluation, ScriptSubmission, GEMEvaluation, DimensionId } from '@/types'
 import { getDisplayTopCard, hasEdits } from '@/lib/edited-fields'
@@ -985,10 +984,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               considering: pendingFromOpps > 0 ? fmtShort(pendingFromOpps) : null,
             }
           })()}
-          crewSummary="Open roles"
+          crewSummary={collaboratorCount > 0 ? `${collaboratorCount} filled` : null}
           castSummary={
             leadCharacters.length > 0
-              ? `${leadCharacters.length} open`
+              ? `${leadCharacters.length} roles`
               : null
           }
           investmentChildren={
@@ -997,7 +996,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 emoji="📊"
                 title="Budget"
                 subtitle="Plan your project budget"
-                value={investmentProjectCost || ''}
+                value={gemEstimate || (budgetPlan?.total ? fmtShort(budgetPlan.total) : '')}
               >
                 <BudgetEditor
                   initial={budgetPlan}
@@ -1053,7 +1052,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               <CollapsibleRow
                 emoji="📈"
                 title="Revenue projection"
-                subtitle={revenuePlan?.sources?.length ? `${revenuePlan.sources.length} source${revenuePlan.sources.length !== 1 ? 's' : ''}` : 'No sources added yet'}
+                subtitle={(() => {
+                  const parts: string[] = []
+                  if (revenuePlan?.sources?.length) parts.push(`${revenuePlan.sources.length} source${revenuePlan.sources.length !== 1 ? 's' : ''}`)
+                  if ((budgetPlan?.total ?? 0) > 0 && (revenuePlan?.total ?? 0) > 0) {
+                    parts.push(`${((revenuePlan?.total ?? 0) / (budgetPlan?.total ?? 1)).toFixed(1)}x return`)
+                  }
+                  return parts.length > 0 ? parts.join(' · ') : 'No sources added yet'
+                })()}
                 value={revenuePlan?.total ? fmtShort(revenuePlan.total) : '$0'}
                 valueColor={revenuePlan?.total ? '#0F6E56' : '#78716C'}
               >
@@ -1061,19 +1067,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   initial={revenuePlan}
                   submissionId={submission.id}
                 />
+                {/* Returns summary */}
+                <div className="flex items-center justify-center gap-4 py-4 mt-3 text-[14px]" style={{ borderTop: '1px solid #f5f5f4' }}>
+                  <span style={{ color: '#78716C' }}>{fmtShort(budgetPlan?.total ?? 0)} cost</span>
+                  <span style={{ color: '#A8A29E' }}>→</span>
+                  <span style={{ color: '#0F6E56', fontWeight: 500 }}>{fmtShort(revenuePlan?.total ?? 0)} revenue</span>
+                  {(budgetPlan?.total ?? 0) > 0 && (revenuePlan?.total ?? 0) > 0 && (
+                    <>
+                      <span style={{ color: '#A8A29E' }}>→</span>
+                      <span style={{ color: '#534AB7', fontWeight: 500 }}>{((revenuePlan?.total ?? 0) / (budgetPlan?.total ?? 1)).toFixed(1)}x</span>
+                    </>
+                  )}
+                </div>
               </CollapsibleRow>
-              {/* Returns summary — always visible */}
-              <div className="flex items-center justify-center gap-4 py-4 text-[14px]">
-                <span style={{ color: '#78716C' }}>{fmtShort(budgetPlan?.total ?? 0)} cost</span>
-                <span style={{ color: '#A8A29E' }}>→</span>
-                <span style={{ color: '#0F6E56', fontWeight: 500 }}>{fmtShort(revenuePlan?.total ?? 0)} revenue</span>
-                {(budgetPlan?.total ?? 0) > 0 && (revenuePlan?.total ?? 0) > 0 && (
-                  <>
-                    <span style={{ color: '#A8A29E' }}>→</span>
-                    <span style={{ color: '#534AB7', fontWeight: 500 }}>{((revenuePlan?.total ?? 0) / (budgetPlan?.total ?? 1)).toFixed(1)}x</span>
-                  </>
-                )}
-              </div>
             </div>
           }
           crewChildren={

@@ -32,20 +32,18 @@ export function ProjectNeedsCards({
     cast: castChildren,
   }
 
-  // Build summary lines — show multiple stats so user sees preview without opening
-  const investmentLine = (() => {
-    if (investmentMetrics) {
-      const parts: string[] = []
-      if (investmentMetrics.projectCost) parts.push(`Budget ${investmentMetrics.projectCost}`)
-      if (investmentMetrics.secured) parts.push(`${investmentMetrics.secured} secured`)
-      if (investmentMetrics.considering) parts.push(`${investmentMetrics.considering} pending`)
-      if (parts.length > 0) return parts.join(' · ')
-    }
-    return investmentSummary || null
+  // Structured investment lines for multi-line colored display
+  const investmentLines: { text: string; color: string }[] = (() => {
+    if (!investmentMetrics) return investmentSummary ? [{ text: investmentSummary, color: '#78716C' }] : []
+    const lines: { text: string; color: string }[] = []
+    if (investmentMetrics.projectCost) lines.push({ text: `Budget ${investmentMetrics.projectCost}`, color: '#78716C' })
+    if (investmentMetrics.secured) lines.push({ text: `${investmentMetrics.secured} secured`, color: '#15803d' })
+    if (investmentMetrics.considering) lines.push({ text: `${investmentMetrics.considering} pending`, color: '#d97706' })
+    return lines
   })()
 
   const tabs: { key: CardKey; emoji: string; title: string; summary: string | null; highlightColor?: string }[] = [
-    { key: 'investment', emoji: '💰', title: 'Finances', summary: investmentLine },
+    { key: 'investment', emoji: '💰', title: 'Finances', summary: null },
     { key: 'crew', emoji: '🎬', title: 'Crew', summary: crewSummary },
     { key: 'cast', emoji: '🎭', title: 'Cast', summary: castSummary },
   ]
@@ -76,14 +74,26 @@ export function ProjectNeedsCards({
               >
                 {tab.title}
               </div>
-              {tab.summary && (
+              {tab.key === 'investment' && investmentLines.length > 0 ? (
+                <div className="m-0 mt-1">
+                  {investmentLines.map((line, li) => (
+                    <div
+                      key={li}
+                      className="text-[12px] leading-[1.4]"
+                      style={{ color: isActive ? '#534AB7' : line.color }}
+                    >
+                      {line.text}
+                    </div>
+                  ))}
+                </div>
+              ) : tab.summary ? (
                 <div
                   className="text-[12px] m-0 mt-1"
                   style={{ color: isActive ? '#534AB7' : '#78716C' }}
                 >
                   {tab.summary}
                 </div>
-              )}
+              ) : null}
             </button>
           )
         })}
