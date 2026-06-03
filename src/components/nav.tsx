@@ -246,7 +246,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       Become a Member
                     </button>
                   )}
-                  {userData?.profile.isPro && userData.profile.accountType !== 'producer' && (
+                  {(!userData || userData.profile.accountType !== 'producer') && (
                     <div className="ml-2">
                       <NewActionMenu />
                     </div>
