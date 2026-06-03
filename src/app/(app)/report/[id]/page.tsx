@@ -1009,6 +1009,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 title="Budget"
                 subtitle="Plan your project budget"
                 value={gemEstimate || (budgetPlan?.total ? fmtShort(budgetPlan.total) : '')}
+                listenBudgetUpdates
               >
                 <BudgetEditor
                   initial={budgetPlan}
