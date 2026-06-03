@@ -1,5 +1,5 @@
 // /opportunities/[slug] — individual opportunity detail page.
-// v7 — dark background throughout, big funding number, "What we look for" / "How we can help" / "Terms" cards.
+// v8 — dark header area + white floating cards on dark bg, matching report page style.
 //       Stats: 2 boxes (Submitted + Most recent). Keeps all auth/qualifying/CTA logic.
 
 import { notFound } from 'next/navigation'
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // Icon lookup for how_we_help rows
 function HelpIcon({ icon }: { icon: string }) {
-  const cls = "text-purple-300"
+  const cls = "text-purple-600"
   if (icon === 'cash') return <DollarSign size={16} className={cls} />
   if (icon === 'users') return <Users size={16} className={cls} />
   if (icon === 'microphone') return <Mic size={16} className={cls} />
@@ -282,7 +282,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
     }}>
       <div className="max-w-2xl mx-auto px-4">
 
-        {/* ── Top bar: back link + partner badge ── */}
+        {/* ── Dark header area: back link + partner badge ── */}
         <div className="flex items-center justify-between mb-6" style={{ padding: '8px 0' }}>
           <Link
             href="/opportunities"
@@ -310,9 +310,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* ── Funding amount — big and green ── */}
+        {/* ── Dark header area: funding amount ── */}
         {opp.funding_amount && (
-          <div className="mb-2">
+          <div className="mb-6">
             <div
               className="font-bold leading-none"
               style={{ fontSize: '52px', letterSpacing: '-0.02em', color: '#4ade80' }}
@@ -323,138 +323,75 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* ── Title ── */}
-        <h1
-          className="text-[28px] font-bold text-white m-0 mb-2"
-          style={{ lineHeight: 1.2 }}
-        >
-          {opp.title}
-        </h1>
-
-        {/* ── Status line ── */}
-        <div className="flex items-center gap-2 mb-6">
-          {isClosed ? (
-            <span className="flex items-center gap-1.5 text-[12px] font-medium text-red-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-400 inline-block" />
-              Closed
-            </span>
-          ) : (
-            <span className="flex items-center gap-1.5 text-[12px] font-medium text-green-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-              Open
-            </span>
-          )}
-          {postedDate && (
-            <>
-              <span className="text-[12px] text-white/25">·</span>
-              <span className="text-[12px] text-white/40">Posted {postedDate}</span>
-            </>
-          )}
-        </div>
-
-        {/* ── Description ── */}
-        {opp.description && (
-          <p
-            className="text-white/70 mb-8"
-            style={{ fontSize: '15px', lineHeight: 1.65 }}
-          >
-            {opp.description}
-          </p>
-        )}
-
-        {/* ── Two stat boxes ── */}
-        <div className="grid grid-cols-2 gap-3 mb-8">
-          <div
-            className="rounded-xl px-4 py-4 text-center"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
-          >
-            <div className="text-[28px] font-semibold text-white leading-none mb-1">
-              {applicantCount ?? 0}
-            </div>
-            <div className="text-[12px] text-white/45">Submitted</div>
-          </div>
-          <div
-            className="rounded-xl px-4 py-4 text-center"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
-          >
-            <div className="text-[18px] font-semibold text-green-400 leading-none mb-1">
-              {lastApplicationDate ? timeAgo(lastApplicationDate) : '—'}
-            </div>
-            <div className="text-[12px] text-white/45">Most recent</div>
-          </div>
-        </div>
-
-        {/* ── What we look for ── */}
+        {/* ── Card 1: Main info ── */}
         <div
-          className="rounded-xl p-5 mb-4"
-          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+          className="rounded-2xl p-6 mb-4"
+          style={{ background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
         >
-          <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-3.5">
-            What we look for
-          </div>
-          <div className="flex flex-wrap gap-1.5 mb-4">
-            {lookingForPills.map((pill, i) => (
-              <span
-                key={i}
-                className="text-[12px] font-medium px-2.5 py-1 rounded-lg"
-                style={{ color: '#c4b5fd', background: 'rgba(167,139,250,0.15)' }}
-              >
-                {pill}
+          {/* Title */}
+          <h1
+            className="font-bold m-0 mb-3"
+            style={{ fontSize: '22px', lineHeight: 1.2, color: '#1C1917' }}
+          >
+            {opp.title}
+          </h1>
+
+          {/* Status line */}
+          <div className="flex items-center gap-2 mb-5">
+            {isClosed ? (
+              <span className="flex items-center gap-1.5 text-[12px] font-medium text-red-500">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 inline-block" />
+                Closed
               </span>
-            ))}
+            ) : (
+              <span className="flex items-center gap-1.5 text-[12px] font-medium text-green-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
+                Open
+              </span>
+            )}
+            {postedDate && (
+              <>
+                <span className="text-[12px]" style={{ color: '#D6D3D1' }}>·</span>
+                <span className="text-[12px]" style={{ color: '#78716C' }}>Posted {postedDate}</span>
+              </>
+            )}
           </div>
-          {opp.what_we_look_for && (
-            <p className="text-[13px] text-white/55 leading-relaxed m-0">
-              {opp.what_we_look_for}
+
+          {/* Description */}
+          {opp.description && (
+            <p
+              className="mb-6"
+              style={{ fontSize: '15px', lineHeight: 1.65, color: '#44403C', margin: '0 0 24px 0' }}
+            >
+              {opp.description}
             </p>
           )}
+
+          {/* Two stat boxes */}
+          <div className="grid grid-cols-2 gap-3">
+            <div
+              className="rounded-xl px-4 py-4 text-center"
+              style={{ background: '#f9fafb', border: '1px solid #e7e5e4' }}
+            >
+              <div className="font-semibold leading-none mb-1" style={{ fontSize: '28px', color: '#1C1917' }}>
+                {applicantCount ?? 0}
+              </div>
+              <div className="text-[12px]" style={{ color: '#78716C' }}>Submitted</div>
+            </div>
+            <div
+              className="rounded-xl px-4 py-4 text-center"
+              style={{ background: '#f9fafb', border: '1px solid #e7e5e4' }}
+            >
+              <div className="font-semibold leading-none mb-1" style={{ fontSize: '18px', color: '#534AB7' }}>
+                {lastApplicationDate ? timeAgo(lastApplicationDate) : '—'}
+              </div>
+              <div className="text-[12px]" style={{ color: '#78716C' }}>Most recent</div>
+            </div>
+          </div>
         </div>
 
-        {/* ── How we can help ── */}
-        {howWeHelp.length > 0 && (
-          <div
-            className="rounded-xl p-5 mb-4"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
-          >
-            <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-4">
-              How we can help
-            </div>
-            <div className="flex flex-col gap-3.5">
-              {howWeHelp.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ background: 'rgba(167,139,250,0.15)' }}
-                  >
-                    <HelpIcon icon={item.icon} />
-                  </div>
-                  <div>
-                    <div className="text-[13px] font-medium text-white/85 mb-0.5">{item.title}</div>
-                    <div className="text-[12px] text-white/50 leading-relaxed">{item.description}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ── Terms ── */}
-        {opp.terms && (
-          <div
-            className="rounded-xl p-5 mb-8"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
-          >
-            <div className="text-[12px] font-semibold text-white/50 uppercase tracking-wider mb-3">
-              Terms
-            </div>
-            <p className="text-[13px] text-white/55 leading-relaxed m-0">
-              {opp.terms}
-            </p>
-          </div>
-        )}
-
-        {/* ── Apply CTA ── */}
-        <div className="mb-6">
+        {/* ── Apply CTA — on dark bg between cards ── */}
+        <div className="py-4">
           {isClosed ? (
             <div className="text-[13px] text-white/50 text-center">
               This opportunity has closed.{' '}
@@ -504,10 +441,85 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* ── Disclaimer ── */}
-        <p className="text-center text-[11px] text-white/30 leading-relaxed">
-          GEM connects creators with partners. All deals are negotiated directly between parties.
-        </p>
+        {/* ── Card 2: Details ── */}
+        <div
+          className="rounded-2xl p-6"
+          style={{ background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+        >
+          {/* What we look for */}
+          <div className="mb-6">
+            <div
+              className="text-[11px] font-semibold uppercase tracking-wider mb-3"
+              style={{ color: '#78716C' }}
+            >
+              What we look for
+            </div>
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {lookingForPills.map((pill, i) => (
+                <span
+                  key={i}
+                  className="text-[12px] font-medium px-2.5 py-1 rounded-lg"
+                  style={{ color: '#534AB7', background: '#F5F3FF' }}
+                >
+                  {pill}
+                </span>
+              ))}
+            </div>
+            {opp.what_we_look_for && (
+              <p className="text-[13px] leading-relaxed m-0" style={{ color: '#57534E' }}>
+                {opp.what_we_look_for}
+              </p>
+            )}
+          </div>
+
+          {/* How we can help */}
+          {howWeHelp.length > 0 && (
+            <div className="mb-6">
+              <div
+                className="text-[11px] font-semibold uppercase tracking-wider mb-4"
+                style={{ color: '#78716C' }}
+              >
+                How we can help
+              </div>
+              <div className="flex flex-col gap-3.5">
+                {howWeHelp.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                      style={{ background: '#F5F3FF' }}
+                    >
+                      <HelpIcon icon={item.icon} />
+                    </div>
+                    <div>
+                      <div className="text-[13px] font-medium mb-0.5" style={{ color: '#1C1917' }}>{item.title}</div>
+                      <div className="text-[12px] leading-relaxed" style={{ color: '#78716C' }}>{item.description}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Terms */}
+          {opp.terms && (
+            <div className="mb-6">
+              <div
+                className="text-[11px] font-semibold uppercase tracking-wider mb-3"
+                style={{ color: '#78716C' }}
+              >
+                Terms
+              </div>
+              <p className="text-[13px] leading-relaxed m-0" style={{ color: '#57534E' }}>
+                {opp.terms}
+              </p>
+            </div>
+          )}
+
+          {/* Disclaimer */}
+          <p className="text-center text-[11px] leading-relaxed m-0" style={{ color: '#A8A29E' }}>
+            GEM connects creators with partners. All deals are negotiated directly between parties.
+          </p>
+        </div>
 
       </div>
     </div>
