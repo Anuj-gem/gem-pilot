@@ -6,15 +6,7 @@
 import { redirect } from 'next/navigation'
 import { LandingTracking } from '@/components/landing-tracking'
 import { LandingNav } from '@/components/landing/landing-nav'
-import { LandingHero } from '@/components/landing/landing-hero'
-import { LandingJourney } from '@/components/landing/landing-journey'
-import { LandingCompare } from '@/components/landing/landing-compare'
-import { LandingPrivacy } from '@/components/landing/landing-privacy'
-import { LandingSteps } from '@/components/landing/landing-steps'
-import { LandingOpportunities } from '@/components/landing/landing-opportunities'
-import { LandingPartners } from '@/components/landing/landing-partners'
-import { LandingPro } from '@/components/landing/landing-pro'
-import { LandingFinalCTA } from '@/components/landing/landing-final-cta'
+import { LandingPageV21 } from '@/components/landing/landing-page-v21'
 import { ScriptUploadModal } from '@/components/script-upload-modal'
 import { SiteFooter } from '@/components/site-footer'
 import { createClient } from '@/lib/supabase-server'
@@ -39,15 +31,7 @@ export default async function Home({
       <LandingTracking />
       <LandingNav />
 
-      <LandingHero />
-      <LandingJourney />
-      <LandingCompare />
-      <LandingPrivacy />
-      <LandingSteps />
-      <LandingOpportunities />
-      <LandingPartners />
-      <LandingPro />
-      <LandingFinalCTA />
+      <LandingPageV21 />
 
       <SiteFooter />
       <ScriptUploadModal redirectTo="/evaluating" />
