@@ -70,6 +70,10 @@ export default function Nav({ userData }: NavProps = {}) {
     { href: '/opportunities', label: 'Opportunities', icon: null, emoji: '💼' },
   ]
 
+  // Resources dropdown state
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  useEffect(() => { setResourcesOpen(false) }, [pathname])
+
   return (
     <>
       {/* Spacer matching nav height — needed because the nav is `fixed`,
@@ -195,6 +199,42 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
+                  {/* Resources dropdown */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setResourcesOpen(v => !v)}
+                      className={`relative flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm transition-colors cursor-pointer border-0 bg-transparent ${
+                        pathname.startsWith('/blog')
+                          ? 'text-[var(--gem-white)] font-semibold'
+                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                      }`}
+                    >
+                      <span className="text-[15px] leading-none">📚</span>
+                      Resources
+                      <ChevronDown size={14} className={`transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
+                      {pathname.startsWith('/blog') && (
+                        <span aria-hidden className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }} />
+                      )}
+                    </button>
+                    {resourcesOpen && (
+                      <>
+                        <div className="fixed inset-0 z-40" onClick={() => setResourcesOpen(false)} />
+                        <div className="absolute left-0 top-full mt-2 bg-[#1e1b2e] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 min-w-[160px]">
+                          <Link
+                            href="/blog"
+                            className={`flex items-center gap-2.5 px-4 py-2.5 text-[13px] transition-colors no-underline ${
+                              pathname.startsWith('/blog')
+                                ? 'text-white font-semibold bg-white/10'
+                                : 'text-white/70 hover:text-white hover:bg-white/5'
+                            }`}
+                          >
+                            <span className="text-[14px]">📝</span>
+                            Blog
+                          </Link>
+                        </div>
+                      </>
+                    )}
+                  </div>
                   {userData && !userData.profile.isPro && userData.profile.accountType !== 'producer' && (
                     <button
                       onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
@@ -206,7 +246,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       Become a Member
                     </button>
                   )}
-                  {(!userData || userData.profile.accountType !== 'producer') && (
+                  {userData?.profile.isPro && userData.profile.accountType !== 'producer' && (
                     <div className="ml-2">
                       <NewActionMenu />
                     </div>
@@ -245,7 +285,7 @@ export default function Nav({ userData }: NavProps = {}) {
             </>
           ) : (
             <>
-              {/* Desktop logged-out — same links as logged-in + Sign up button */}
+              {/* Desktop logged-out */}
               <div className="hidden md:flex flex-1 items-center justify-end ml-6">
                 <div className="flex items-center gap-1">
                   {navLinks.map(link => {
@@ -274,6 +314,49 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
+                  {/* Resources dropdown */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setResourcesOpen(v => !v)}
+                      className={`relative flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm transition-colors cursor-pointer border-0 bg-transparent ${
+                        pathname.startsWith('/blog')
+                          ? 'text-[var(--gem-white)] font-semibold'
+                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
+                      }`}
+                    >
+                      <span className="text-[15px] leading-none">📚</span>
+                      Resources
+                      <ChevronDown size={14} className={`transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
+                      {pathname.startsWith('/blog') && (
+                        <span aria-hidden className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }} />
+                      )}
+                    </button>
+                    {resourcesOpen && (
+                      <>
+                        <div className="fixed inset-0 z-40" onClick={() => setResourcesOpen(false)} />
+                        <div className="absolute left-0 top-full mt-2 bg-[#1e1b2e] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 min-w-[160px]">
+                          <Link
+                            href="/blog"
+                            className={`flex items-center gap-2.5 px-4 py-2.5 text-[13px] transition-colors no-underline ${
+                              pathname.startsWith('/blog')
+                                ? 'text-white font-semibold bg-white/10'
+                                : 'text-white/70 hover:text-white hover:bg-white/5'
+                            }`}
+                          >
+                            <span className="text-[14px]">📝</span>
+                            Blog
+                          </Link>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  <Link
+                    href="/signup"
+                    className="ml-2 text-[12px] font-semibold px-3 py-1.5 rounded-lg text-white no-underline transition-all duration-150 hover:brightness-110"
+                    style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)' }}
+                  >
+                    Get started
+                  </Link>
                   <Link
                     href="/login"
                     className="ml-1 text-sm text-[var(--gem-gray-400)] hover:text-[var(--gem-white)] transition-colors"
@@ -339,6 +422,17 @@ export default function Nav({ userData }: NavProps = {}) {
                   </Link>
                 )
               })}
+              {/* Resources links (mobile) */}
+              <div className="border-t border-white/10 my-1" />
+              <Link
+                href="/blog"
+                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-[14px] transition-colors ${
+                  pathname.startsWith('/blog') ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span className="text-[15px] leading-none">📝</span>
+                Blog
+              </Link>
               {!user && (
                 <>
                   <div className="border-t border-white/10 my-1" />
