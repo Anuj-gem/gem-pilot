@@ -240,15 +240,6 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
           )}
         </div>
 
-        {/* Right — total (only for series with >1 episode where it's a calculated total) */}
-        {isSeries && eps > 1 && (totalHigh > 0 || totalLow > 0) && (
-          <div className="text-right shrink-0 pt-1">
-            <div className="text-[20px] font-bold" style={{ color: '#534AB7' }}>
-              {totalDisplay}
-            </div>
-            <div className="text-[12px]" style={{ color: '#78716C' }}>total</div>
-          </div>
-        )}
       </div>
 
       {/* GEM note */}
