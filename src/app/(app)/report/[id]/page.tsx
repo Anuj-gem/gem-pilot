@@ -984,12 +984,20 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               considering: pendingFromOpps > 0 ? fmtShort(pendingFromOpps) : null,
             }
           })()}
-          crewSummary={collaboratorCount > 0 ? `${collaboratorCount} filled` : null}
-          castSummary={
-            leadCharacters.length > 0
-              ? `${leadCharacters.length} roles`
-              : null
-          }
+          crewSummary={(() => {
+            const crewCollabs = (collaboratorRows ?? []).filter((c: any) => c.role !== 'cast')
+            const filled = crewCollabs.length
+            const open = Math.max(0, 3 - filled)
+            if (filled === 0 && open === 0) return null
+            return `${open} open · ${filled} filled`
+          })()}
+          castSummary={(() => {
+            const castCollabs = (collaboratorRows ?? []).filter((c: any) => c.role === 'cast')
+            const roles = leadCharacters.length
+            const cast = castCollabs.length
+            if (roles === 0 && cast === 0) return null
+            return cast > 0 ? `${roles} roles · ${cast} cast` : `${roles} roles`
+          })()}
           investmentChildren={
             <div>
               <CollapsibleRow
@@ -1142,15 +1150,15 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
 
         {/* Score display */}
         {typeof commercialScore === 'number' && (
-          <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid rgba(167,139,250,0.15)' }}>
+          <div className="text-center pb-4 mb-2" style={{ borderBottom: '1px solid #E7E5E4' }}>
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <span className="text-[13px] uppercase tracking-[0.12em] font-bold" style={{ color: '#78716C' }}>
                 Overall Score
               </span>
-              <span className="text-[40px] sm:text-[48px] font-bold leading-none" style={{ color: '#A78BFA' }}>
+              <span className="text-[40px] sm:text-[48px] font-bold leading-none" style={{ color: '#7C3AED' }}>
                 {Math.round(commercialScore)}
               </span>
-              <span className="text-[15px] font-bold" style={{ color: 'rgba(167,139,250,0.6)' }}>
+              <span className="text-[15px] font-bold" style={{ color: '#A78BFA' }}>
                 / 100
               </span>
             </div>
@@ -1173,7 +1181,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <div>
                   <h2
                     className="text-[14px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-                    style={{ color: 'var(--gem-gold)' }}
+                    style={{ color: '#1C1917' }}
                   >
                     Why This Can Be a Hit
                   </h2>
@@ -1181,27 +1189,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                     {allStrengths.map((s, i) => (
                       <li key={i}>
                         <details className="group [&_summary::-webkit-details-marker]:hidden">
-                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.05)] transition-colors -mx-2">
+                          <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(0,0,0,0.03)] transition-colors -mx-2">
                             <span
                               className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
-                              style={{ color: 'var(--gem-gold)' }}
+                              style={{ color: '#7C3AED' }}
                             >
                               {String(i + 1).padStart(2, '0')}
                             </span>
-                            <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                            <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: '#1C1917' }}>
                               {s.dimension_or_area}
                             </p>
                             <span
                               aria-hidden
                               className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                              style={{ color: 'rgba(255,255,255,0.4)' }}
+                              style={{ color: '#78716C' }}
                             >
                               ▾
                             </span>
                           </summary>
                           <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
                             <div />
-                            <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                            <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#44403C' }}>
                               {s.what_it_means}
                             </p>
                           </div>
@@ -1244,7 +1252,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   <div>
                     <h2
                       className="text-[14px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-                      style={{ color: 'var(--gem-gold)' }}
+                      style={{ color: '#1C1917' }}
                     >
                       What to Consider
                     </h2>
@@ -1253,27 +1261,27 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         {ordered.map((c, i) => (
                           <li key={i}>
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
-                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(255,255,255,0.05)] transition-colors -mx-2">
+                              <summary className="cursor-pointer list-none grid grid-cols-[24px_1fr_auto] gap-x-2 items-center py-2 px-2 rounded-lg hover:bg-[rgba(0,0,0,0.03)] transition-colors -mx-2">
                                 <span
                                   className="text-[14px] sm:text-[16px] font-bold tabular-nums leading-tight"
-                                  style={{ color: 'var(--gem-gold)' }}
+                                  style={{ color: '#7C3AED' }}
                                 >
                                   {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                                <p className="text-[14px] sm:text-[15px] font-semibold m-0 leading-snug min-w-0" style={{ color: '#1C1917' }}>
                                   {c.area}
                                 </p>
                                 <span
                                   aria-hidden
                                   className="transition-transform duration-150 group-open:rotate-180 text-[12px]"
-                                  style={{ color: 'rgba(255,255,255,0.4)' }}
+                                  style={{ color: '#78716C' }}
                                 >
                                   ▾
                                 </span>
                               </summary>
                               <div className="grid grid-cols-[24px_1fr] gap-x-2 pt-1 pb-1">
                                 <div />
-                                <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                                <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#44403C' }}>
                                   {c.detail}
                                 </p>
                               </div>
@@ -1297,7 +1305,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                         >
                           Craft note
                         </p>
-                        <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                        <p className="text-[13px] sm:text-[14px] leading-[1.6] m-0" style={{ color: '#44403C' }}>
                           {craftNote}
                         </p>
                       </div>
@@ -1314,7 +1322,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           <div>
             <h2
               className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-4"
-              style={{ color: 'var(--gem-gold)' }}
+              style={{ color: '#1C1917' }}
             >
               Narrative Breakdown
             </h2>
@@ -1350,7 +1358,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             <div data-pdf-section="project_complexity">
               <h2
                 className="text-[15px] uppercase tracking-[0.2em] font-bold m-0 mb-5"
-                style={{ color: 'var(--gem-gold)' }}
+                style={{ color: '#1C1917' }}
               >
                 Production
               </h2>
@@ -1377,18 +1385,18 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                       </span>
                     </div>
                     {packaging.budget_tier.range && (
-                      <p className="text-[18px] sm:text-[20px] font-bold m-0 mb-1" style={{ color: 'rgba(255,255,255,0.95)' }}>
+                      <p className="text-[18px] sm:text-[20px] font-bold m-0 mb-1" style={{ color: '#1C1917' }}>
                         {packaging.budget_tier.range}
                       </p>
                     )}
                     {packaging.budget_tier.per_episode && (
-                      <p className="text-[14px] m-0 mb-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                      <p className="text-[14px] m-0 mb-1" style={{ color: '#78716C' }}>
                         {packaging.budget_tier.per_episode} per episode
                         {packaging.budget_tier.season_total ? ` · ${packaging.budget_tier.season_total} season total` : ''}
                       </p>
                     )}
                     {packaging.budget_tier.note && (
-                      <p className="text-[14px] sm:text-[15px] leading-[1.55] m-0 mt-2" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                      <p className="text-[14px] sm:text-[15px] leading-[1.55] m-0 mt-2" style={{ color: '#44403C' }}>
                         {packaging.budget_tier.note}
                       </p>
                     )}
@@ -1399,7 +1407,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 {riskDetails && (
                   <div
                     className="p-5 sm:p-6"
-                    style={{ borderTop: packaging?.budget_tier ? '1px solid rgba(255,255,255,0.08)' : undefined }}
+                    style={{ borderTop: packaging?.budget_tier ? '1px solid #E7E5E4' : undefined }}
                   >
                     <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[var(--gem-gray-500)] m-0 mb-3">
                       Complexity
@@ -1531,14 +1539,14 @@ function DimensionRow({
       style={{ border: 'none', background: 'transparent' }}
     >
       <div className="flex items-baseline justify-between gap-4 mb-3">
-        <p className="text-[17px] font-semibold text-[var(--gem-gray-50)] m-0 leading-tight">
+        <p className="text-[17px] font-semibold m-0 leading-tight" style={{ color: '#1C1917' }}>
           {label}
         </p>
         <div className="flex items-baseline gap-1 flex-shrink-0">
           {locked ? (
             <span
-              className="text-[26px] font-bold tabular-nums text-[var(--gem-gray-500)]"
-              style={{ filter: 'blur(3px)', userSelect: 'none' }}
+              className="text-[26px] font-bold tabular-nums"
+              style={{ color: '#A8A29E', filter: 'blur(3px)', userSelect: 'none' }}
               aria-hidden
             >
               ?
@@ -1548,26 +1556,26 @@ function DimensionRow({
               {score}
             </span>
           )}
-          <span className="text-[13px] text-[var(--gem-gray-400)]">/ 10</span>
+          <span className="text-[13px]" style={{ color: '#78716C' }}>/ 10</span>
         </div>
       </div>
       <div
         className="h-1.5 rounded-full mb-4 overflow-hidden"
-        style={{ background: 'var(--gem-gray-800)' }}
+        style={{ background: '#F5F5F4' }}
       >
         <div
           className="h-full rounded-full"
           style={{
             width: `${pct}%`,
-            background: locked ? 'var(--gem-gray-500)' : palette.fill,
+            background: locked ? '#A8A29E' : palette.fill,
             filter: locked ? 'blur(4px)' : undefined,
           }}
         />
       </div>
       {reasoning && (
         <p
-          className="text-[15px] text-[var(--gem-gray-200)] leading-[1.6] m-0"
-          style={locked ? blurStyle : undefined}
+          className="text-[15px] leading-[1.6] m-0"
+          style={{ color: '#44403C', ...(locked ? blurStyle : {}) }}
         >
           {reasoning}
         </p>

@@ -137,17 +137,8 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
           <span className="absolute rotate-0" style={{ width: 15, height: 15, background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', borderRadius: 1 }} />
         </span>
         <div className="flex-1 min-w-0">
-          <h3 className="text-[17px] font-bold m-0" style={{ color: '#1C1917' }}>GEM Analysis</h3>
-          <p className="text-[13px] m-0 mt-0.5" style={{ color: '#78716C' }}>Score breakdown, strengths, and development notes</p>
+          <h3 className="text-[20px] font-bold m-0" style={{ color: '#1C1917' }}>GEM Analysis</h3>
         </div>
-        {score != null && (
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="text-right">
-              <span className="text-[28px] font-bold" style={{ color: '#7C3AED' }}>{score}</span>
-              {tier && <p className="text-[11px] font-medium m-0 uppercase tracking-wider" style={{ color: '#78716C' }}>{tier}</p>}
-            </div>
-          </div>
-        )}
         <ChevronDown
           size={18}
           className="shrink-0 transition-transform duration-200"
