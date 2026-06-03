@@ -280,7 +280,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       marginBottom: '-64px',
       paddingBottom: '80px',
     }}>
-      <div className="max-w-2xl mx-auto px-4">
+      <div className="max-w-3xl mx-auto px-4">
 
         {/* ── Dark header area: back link + partner badge ── */}
         <div className="flex items-center justify-between mb-6" style={{ padding: '8px 0' }}>
@@ -325,7 +325,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
         {/* ── Card 1: Main info ── */}
         <div
-          className="rounded-2xl p-6 mb-4"
+          className="rounded-none p-6 mb-4"
           style={{ background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
         >
           {/* Title */}
@@ -418,7 +418,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                     className="flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-[15px] font-medium text-white w-full"
                     style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', textDecoration: 'none' }}
                   >
-                    Apply with your script <ArrowRight size={15} />
+                    Apply <ArrowRight size={15} />
                   </Link>
                 ) : (
                   <ApplyUpgradeButton freeRemaining={freeRemaining} applyHref={`/opportunities/${opp.slug}/apply`} />
@@ -436,14 +436,14 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               className="flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-[15px] font-medium text-white w-full"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)', textDecoration: 'none' }}
             >
-              Apply with your script <ArrowRight size={15} />
+              Apply <ArrowRight size={15} />
             </Link>
           )}
         </div>
 
         {/* ── Card 2: Details ── */}
         <div
-          className="rounded-2xl p-6"
+          className="rounded-none p-6"
           style={{ background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
         >
           {/* What we look for */}
