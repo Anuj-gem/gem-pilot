@@ -27,13 +27,35 @@ interface Props {
   initial: RevenuePlan | null
   submissionId: string
   onSave?: (plan: RevenuePlan) => void
+  readOnly?: boolean
 }
 
 function fmtFull(n: number): string {
   return `$${n.toLocaleString()}`
 }
 
-export function RevenuePlanEditor({ initial, submissionId, onSave }: Props) {
+export function RevenuePlanEditor({ initial, submissionId, onSave, readOnly = false }: Props) {
+  // Read-only mode for non-owners
+  if (readOnly) {
+    const sources = initial?.sources ?? []
+    const total = sources.reduce((s, src) => s + src.projection, 0)
+    if (sources.length === 0) return <p className="text-[13px] m-0" style={{ color: '#78716C' }}>No revenue sources added yet.</p>
+    return (
+      <div>
+        {sources.map((src, i) => (
+          <div key={i} className="flex items-center justify-between py-2" style={{ borderBottom: i < sources.length - 1 ? '1px solid #f0f0f0' : 'none' }}>
+            <span className="text-[14px]" style={{ color: '#1C1917' }}>{src.label}</span>
+            <span className="text-[14px] font-medium" style={{ color: '#534AB7' }}>{fmtFull(src.projection)}</span>
+          </div>
+        ))}
+        <div className="flex items-center justify-between pt-3 mt-2" style={{ borderTop: '1px solid #e7e5e4' }}>
+          <span className="text-[14px] font-semibold" style={{ color: '#1C1917' }}>Total</span>
+          <span className="text-[14px] font-semibold" style={{ color: '#534AB7' }}>{fmtFull(total)}</span>
+        </div>
+      </div>
+    )
+  }
+
   const [sources, setSources] = useState<RevenueSource[]>(initial?.sources ?? [])
   const [saving, setSaving] = useState(false)
   const [addingSource, setAddingSource] = useState(false)

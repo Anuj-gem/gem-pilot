@@ -25,6 +25,7 @@ interface Props {
   gemSeasonTotal?: string | null
   submissionId: string
   onSave?: (plan: BudgetPlan) => void
+  readOnly?: boolean
 }
 
 /* ── Parse "$3M", "$500K", "3000000" → number ── */
@@ -141,7 +142,7 @@ function EditableNum({ value, onChange, isDollar = true, fontSize = '22px' }: {
 }
 
 /* ── Main ── */
-export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave }: Props) {
+export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpisode, gemSeasonTotal, submissionId, onSave, readOnly = false }: Props) {
   const isSeries = !!gemPerEpisode
   const gemParsed = parseBudgetStr(isSeries ? gemPerEpisode : gemEstimate)
   const gemLow = gemParsed?.low || 0
@@ -196,6 +197,31 @@ export function BudgetEditor({ initial, gemEstimate, gemNote, gemTier, gemPerEpi
   const totalDisplay = totalLow > 0 && totalHigh > 0 && totalLow !== totalHigh
     ? `${fmtShort(totalLow)}–${fmtShort(totalHigh)}`
     : fmtShort(totalHigh || totalLow)
+
+  // Read-only view for non-owners
+  if (readOnly) {
+    const rangeStr = low > 0 && high > 0 && low !== high
+      ? `${fmtShort(low)}–${fmtShort(high)}`
+      : fmtShort(high || low)
+    return (
+      <div>
+        <div className="text-[20px] font-semibold" style={{ color: '#1C1917' }}>
+          {rangeStr || 'Not set'}
+          {isSeries && <span className="text-[14px] font-normal" style={{ color: '#78716C' }}> per episode</span>}
+        </div>
+        {isSeries && eps > 1 && (
+          <div className="text-[14px] mt-1" style={{ color: '#78716C' }}>
+            × {eps} episodes · {totalDisplay} total
+          </div>
+        )}
+        {gemNote && (
+          <div className="rounded-lg px-4 py-3 mt-3" style={{ background: '#fafaf9' }}>
+            <p className="text-[13px] m-0 leading-relaxed" style={{ color: '#44403C' }}>{gemNote}</p>
+          </div>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div>

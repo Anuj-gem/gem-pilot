@@ -1019,6 +1019,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   gemPerEpisode={packaging?.budget_tier?.per_episode ?? null}
                   gemSeasonTotal={packaging?.budget_tier?.season_total ?? null}
                   submissionId={submission.id}
+                  readOnly={!isOwner && !isAdmin}
                 />
               </CollapsibleRow>
               <CollapsibleRow
@@ -1089,6 +1090,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                 <RevenuePlanEditor
                   initial={revenuePlan}
                   submissionId={submission.id}
+                  readOnly={!isOwner && !isAdmin}
                 />
                 {/* Returns summary */}
                 <div className="flex items-center justify-center gap-4 py-4 mt-3 text-[14px]" style={{ borderTop: '1px solid #f5f5f4' }}>
