@@ -69,23 +69,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Already assigned" }, { status: 400 });
     }
 
-    // Assign to user, clear expiry. is_public defaults to true ONLY for
-    // Pro subscribers — free writers' scripts stay private until they
-    // upgrade and publish. Anuj 2026-04-28: publishing is Pro-gated;
-    // auto-publishing on claim left free users with a "Published" report
-    // they couldn't unpublish without paying.
-    const { data: ownerProfile } = await serviceClient
-      .from("profiles")
-      .select("subscription_status")
-      .eq("id", user.id)
-      .single();
-    const ownerIsPro = ownerProfile?.subscription_status === "active" || ownerProfile?.subscription_status === "trialing";
+    // Assign to user, clear expiry. Scripts are private by default for
+    // everyone (Anuj 2026-06-05) — claiming never auto-publishes. The
+    // writer publishes to Discover via the dashboard toggle (Pro-gated).
     await serviceClient
       .from("script_submissions")
       .update({
         user_id: user.id,
         expires_at: null,
-        ...(ownerIsPro ? { is_public: true } : {}),
       })
       .eq("id", submission_id);
 

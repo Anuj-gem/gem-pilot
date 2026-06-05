@@ -34,6 +34,29 @@ export async function PATCH(
   const body = await request.json()
   const is_public = Boolean(body.is_public)
 
+  // Publishing to Discover is Pro-gated. Block non-Pro (non-admin) users
+  // from setting is_public = true; unpublishing is always allowed.
+  // Anuj 2026-06-05.
+  if (is_public) {
+    const isAdmin = user.email === 'anuj@gem.studio'
+    if (!isAdmin) {
+      const { data: callerProfile } = await supabase
+        .from('profiles')
+        .select('subscription_status')
+        .eq('id', user.id)
+        .single()
+      const isPro =
+        callerProfile?.subscription_status === 'active' ||
+        callerProfile?.subscription_status === 'trialing'
+      if (!isPro) {
+        return NextResponse.json(
+          { error: 'Upgrade to Pro to publish on Discover.' },
+          { status: 403 }
+        )
+      }
+    }
+  }
+
   // Update — RLS ensures only the owner can update
   const { data, error } = await supabase
     .from('script_submissions')

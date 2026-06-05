@@ -37,6 +37,11 @@ export function DiscoverToggle({ scriptId, isPublic, isAnon }: Props) {
       if (res.ok) {
         setOn(!on)
         startTransition(() => router.refresh())
+      } else if (res.status === 403) {
+        // Publishing to Discover is Pro-gated — open the upgrade modal.
+        window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal', {
+          detail: { contextMessage: 'Publishing to Discover is a Pro feature — upgrade to share your script publicly.' },
+        }))
       }
     } finally {
       setBusy(false)
