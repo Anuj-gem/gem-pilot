@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { DiscoverToggle } from '@/components/dashboard/discover-toggle'
@@ -81,6 +81,13 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
   const [pendingRequests, setPendingRequests] = useState(initialRequests)
   const [projects, setProjects] = useState(initialProjects)
   const [accepting, setAccepting] = useState<Set<string>>(new Set())
+
+  // Re-sync from server props on every dashboard re-fetch — router.refresh()
+  // after a submit, and the 3s ProcessingPoller. Without this, useState keeps
+  // the first snapshot, so a new processing card never appears and a finished
+  // eval never flips to "completed" until a full page reload. Anuj 2026-06-05.
+  useEffect(() => { setProjects(initialProjects) }, [initialProjects])
+  useEffect(() => { setPendingRequests(initialRequests) }, [initialRequests])
 
   // Filter
   const filtered = projects.filter(p => {
