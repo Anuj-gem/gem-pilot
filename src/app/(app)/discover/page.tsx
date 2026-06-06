@@ -10,6 +10,7 @@ import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import { getScriptStats } from '@/lib/script-stats'
+import { isProStatus } from '@/lib/subscription'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { LeaderboardCards } from '@/components/discover/leaderboard-cards'
@@ -68,7 +69,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
       .select('subscription_status, account_type')
       .eq('id', user.id)
       .single()
-    isInsider = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing' || profile?.account_type === 'producer' || profile?.account_type === 'admin'
+    isInsider = isProStatus(profile?.subscription_status) || profile?.account_type === 'producer' || profile?.account_type === 'admin'
   }
 
   const sp = await searchParams

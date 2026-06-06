@@ -4,6 +4,7 @@
 
 import { redirect, notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
+import { isProStatus } from '@/lib/subscription'
 import { createServerClient } from '@supabase/ssr'
 import { ReviewDetail } from '@/components/review/review-detail'
 
@@ -130,7 +131,7 @@ export default async function ReviewDetailPage({ params }: PageProps) {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = writerProfile?.subscription_status === 'active' || writerProfile?.subscription_status === 'trialing'
+  const isPro = isProStatus(writerProfile?.subscription_status)
   const isTrial = !isPro
 
   // Open opportunities for matching

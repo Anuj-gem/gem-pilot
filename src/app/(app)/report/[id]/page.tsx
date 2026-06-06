@@ -69,6 +69,7 @@ import { FundingOpportunities } from '@/components/report/funding-opportunities'
 import { FundingProgressBar } from '@/components/report/funding-progress-bar'
 import { CollapsibleRow } from '@/components/report/collapsible-row'
 import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
+import { isProStatus } from '@/lib/subscription'
 // GemAnalysisTabs retired 2026-05-25 — replaced with flat card layout
 // DashboardPrivacyButton retired from the report status line on
 // 2026-04-30 (v0.10) — privacy now lives in the triple-dot menu via
@@ -282,7 +283,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .eq('id', submission.user_id)
       .single()
     ownerProfile = op
-    ownerIsSubscribed = ownerProfile?.subscription_status === 'active' || ownerProfile?.subscription_status === 'trialing'
+    ownerIsSubscribed = isProStatus(ownerProfile?.subscription_status)
     ownerIsProducer = ownerProfile?.account_type === 'producer'
   }
 
@@ -295,7 +296,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       .select('subscription_status, is_reviewer, account_type')
       .eq('id', user.id)
       .single()
-    viewerIsSubscribed = viewerProfile?.subscription_status === 'active' || viewerProfile?.subscription_status === 'trialing'
+    viewerIsSubscribed = isProStatus(viewerProfile?.subscription_status)
     viewerIsReviewer = viewerProfile?.is_reviewer === true
     viewerIsProducer = viewerProfile?.account_type === 'producer'
   }

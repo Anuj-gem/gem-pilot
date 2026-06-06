@@ -5,6 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { isProStatus } from '@/lib/subscription'
 
 function svc() {
   return createServerClient(
@@ -43,7 +44,7 @@ export async function POST(req: NextRequest) {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  const isPro = isProStatus(profile?.subscription_status)
   if (!isPro) {
     const now = new Date()
     const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString()

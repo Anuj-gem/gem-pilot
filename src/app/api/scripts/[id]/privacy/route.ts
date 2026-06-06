@@ -20,6 +20,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
+import { isProStatus } from '@/lib/subscription'
 import {
   normalizePrivacy,
   SECTION_KEYS,
@@ -119,7 +120,7 @@ export async function PATCH(
       .select('subscription_status')
       .eq('id', user.id)
       .single()
-    if (callerProfile?.subscription_status !== 'active' && callerProfile?.subscription_status !== 'trialing') {
+    if (!isProStatus(callerProfile?.subscription_status)) {
       return NextResponse.json(
         { error: 'Upgrade to Pro to publish on Discover.' },
         { status: 403 }

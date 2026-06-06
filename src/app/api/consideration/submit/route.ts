@@ -5,6 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { isProStatus } from '@/lib/subscription'
 import { CURRENT_PROMPT_VERSION } from '@/lib/evaluation-prompt'
 // sendEmail import removed — consideration_submitted template deleted (May 2026)
 
@@ -52,7 +53,7 @@ export async function POST(req: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (profileCheck?.subscription_status !== 'active' && profileCheck?.subscription_status !== 'trialing') {
+  if (!isProStatus(profileCheck?.subscription_status)) {
     const { data: pastReview } = await service
       .from('considerations')
       .select('id')
@@ -83,7 +84,7 @@ export async function POST(req: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing' && userScripts && userScripts.length > 0) {
+  if (!isProStatus(profile?.subscription_status) && userScripts && userScripts.length > 0) {
     // Get the user's very first script (oldest created_at across ALL their scripts)
     const { data: firstScript } = await supabase
       .from('script_submissions')

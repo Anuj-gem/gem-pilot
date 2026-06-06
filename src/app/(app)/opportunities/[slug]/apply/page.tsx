@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { useRouter, useParams, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase-browser'
 import { scriptMatchesOpportunity, normGenre, collectGenres } from '@/lib/opportunity-matching'
+import { isProStatus } from '@/lib/subscription'
 import Link from 'next/link'
 
 type Script = {
@@ -63,7 +64,7 @@ export default function ApplyPage() {
         .select('subscription_status')
         .eq('id', user.id)
         .single()
-      const pro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+      const pro = isProStatus(profile?.subscription_status)
       setIsPro(pro)
       if (!pro) {
         const now = new Date()

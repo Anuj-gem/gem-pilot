@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
+import { isProStatus } from '@/lib/subscription'
 
 export async function PATCH(
   request: NextRequest,
@@ -45,9 +46,7 @@ export async function PATCH(
         .select('subscription_status')
         .eq('id', user.id)
         .single()
-      const isPro =
-        callerProfile?.subscription_status === 'active' ||
-        callerProfile?.subscription_status === 'trialing'
+      const isPro = isProStatus(callerProfile?.subscription_status)
       if (!isPro) {
         return NextResponse.json(
           { error: 'Upgrade to Pro to publish on Discover.' },

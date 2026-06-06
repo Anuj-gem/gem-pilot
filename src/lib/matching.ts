@@ -30,6 +30,7 @@
 // the (producer_id, submission_id) UNIQUE constraint — dup catches are silent.
 
 import type { SupabaseClient } from "@supabase/supabase-js"
+import { isProStatus } from "@/lib/subscription"
 
 // Anuj 2026-04-29: caps removed. The producer dashboard is now a "show
 // every eligible script in your lane" view, not a curated 50-match
@@ -267,7 +268,7 @@ export async function createMatchesForSubmission(
     if (writerProfile?.account_type === 'producer') {
       return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
     }
-    if (writerProfile?.subscription_status !== "active" && writerProfile?.subscription_status !== "trialing") {
+    if (!isProStatus(writerProfile?.subscription_status)) {
       return { matchesCreated: 0, matchesSkipped: 0, candidatesEvaluated: 0 }
     }
   }
@@ -427,7 +428,7 @@ export async function createMatchesForProducer(
       id: string
       subscription_status: string | null
     }>) {
-      if (row.subscription_status === "active" || row.subscription_status === "trialing") proWriterIds.add(row.id)
+      if (isProStatus(row.subscription_status)) proWriterIds.add(row.id)
     }
   }
 

@@ -8,6 +8,7 @@ import { OpportunityCard, type OppStatus } from '@/components/opportunities/oppo
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
+import { isProStatus } from '@/lib/subscription'
 
 function svc() {
   return createServerClient(
@@ -60,7 +61,7 @@ export default async function OpportunitiesPage() {
       .select('subscription_status')
       .eq('id', user.id)
       .single()
-    isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    isPro = isProStatus(profile?.subscription_status)
   }
 
   const { data: opps } = await service

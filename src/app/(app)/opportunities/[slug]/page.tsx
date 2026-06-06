@@ -11,6 +11,7 @@ import { ArrowRight, DollarSign, Users, Mic } from 'lucide-react'
 import { ApplyUpgradeButton } from '@/components/opportunities/apply-upgrade-button'
 import { NoScriptsApplyButton } from '@/components/opportunities/no-scripts-apply-button'
 import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
+import { isProStatus } from '@/lib/subscription'
 
 const GENRE_LABELS: Record<string, string> = {
   Drama: 'Drama', Comedy: 'Comedy', Thriller: 'Thriller', Horror: 'Horror',
@@ -129,7 +130,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
       .select('subscription_status')
       .eq('id', user.id)
       .single()
-    isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    isPro = isProStatus(profile?.subscription_status)
 
     const { data: userCons } = await service
       .from('considerations')

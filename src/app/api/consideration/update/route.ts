@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { isProStatus } from '@/lib/subscription'
 
 function svc() {
   return createServerClient(
@@ -76,7 +77,7 @@ export async function PATCH(req: NextRequest) {
     .eq('id', user.id)
     .single()
 
-  if (profile?.subscription_status !== 'active' && profile?.subscription_status !== 'trialing' && userScripts && userScripts.length > 0) {
+  if (!isProStatus(profile?.subscription_status) && userScripts && userScripts.length > 0) {
     const { data: firstScript } = await supabase
       .from('script_submissions')
       .select('id')

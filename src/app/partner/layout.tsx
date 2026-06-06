@@ -5,6 +5,7 @@
 import Nav from '@/components/nav'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { isProStatus } from '@/lib/subscription'
 
 function svc() {
   return createServerClient(
@@ -46,7 +47,7 @@ export default async function PartnerLayout({ children }: { children: React.Reac
     service.from('script_submissions').select('id', { count: 'exact', head: true }).eq('user_id', user.id).is('hidden_at', null).eq('status', 'completed'),
   ])
 
-  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  const isPro = isProStatus(profile?.subscription_status)
 
   // Derive total heat from sum of all script heat scores
   const { data: heatSubs } = await service

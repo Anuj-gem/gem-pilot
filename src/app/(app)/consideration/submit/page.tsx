@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
+import { isProStatus } from '@/lib/subscription'
 import { createServerClient } from '@supabase/ssr'
 import { ConsiderationForm } from '@/components/consideration/consideration-form'
 import { UpgradeModalListener } from '@/components/dashboard/upgrade-modal-listener'
@@ -41,7 +42,7 @@ export default async function ConsiderationSubmitPage() {
     .select('subscription_status')
     .eq('id', user.id)
     .single()
-  const isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+  const isPro = isProStatus(profile?.subscription_status)
 
   if (isEditing) {
     // Load current scripts for this consideration

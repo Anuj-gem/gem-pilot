@@ -11,6 +11,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { generateReportPdf, type PdfScope } from '@/lib/report-pdf'
+import { isProStatus } from '@/lib/subscription'
 
 export const runtime = 'nodejs'
 export const maxDuration = 30
@@ -92,7 +93,7 @@ export async function GET(
       .select('subscription_status')
       .eq('id', submission.user_id)
       .maybeSingle()
-    isSubscribed = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    isSubscribed = isProStatus(profile?.subscription_status)
   }
 
   // 5. Pick scope. Free writers ALWAYS get 'free' regardless of requested type.

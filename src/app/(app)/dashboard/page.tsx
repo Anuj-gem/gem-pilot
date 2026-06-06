@@ -13,6 +13,7 @@ import { ProjectHub } from '@/components/dashboard/project-hub'
 import type { ProjectCard, CollabRequest } from '@/components/dashboard/project-hub'
 import Link from 'next/link'
 import { extractMatchData } from '@/lib/opportunity-matching'
+import { isProStatus } from '@/lib/subscription'
 
 export const dynamic = 'force-dynamic'
 
@@ -97,7 +98,7 @@ export default async function DashboardPage() {
       .eq('id', user.id)
       .single()
     profile = p as ProfileRow | null
-    isPro = profile?.subscription_status === 'active' || profile?.subscription_status === 'trialing'
+    isPro = isProStatus(profile?.subscription_status)
     accountType = profile?.account_type ?? 'writer'
 
     const { data: mySubs } = await supabase
