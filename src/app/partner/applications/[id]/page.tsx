@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
 import Link from 'next/link'
 import { TagFeedbackForm } from '@/components/review/tag-feedback-form'
+import { ScriptReviewBlock } from '@/components/producer/script-review-block'
 
 export const dynamic = 'force-dynamic'
 
@@ -63,11 +64,17 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
   // Load scripts
   const { data: scriptLinks } = await service
     .from('consideration_scripts')
-    .select('script_submission_id')
+    .select('script_submission_id, outcome, feedback, feedback_tags')
     .eq('consideration_id', app.id)
 
+  const reviewByScript = new Map(
+    ((scriptLinks || []) as any[]).map((l) => [
+      l.script_submission_id,
+      { outcome: l.outcome ?? null, feedback: l.feedback ?? null, tags: l.feedback_tags ?? [] },
+    ])
+  )
   const scriptIds = (scriptLinks || []).map((l: { script_submission_id: string }) => l.script_submission_id)
-  let scripts: { id: string; title: string; score: number | null; evalId: string | null }[] = []
+  let scripts: { id: string; title: string; score: number | null; evalId: string | null; outcome: string | null; feedback: string | null; tags: string[] }[] = []
   if (scriptIds.length > 0) {
     const { data: subs } = await service
       .from('script_submissions')
@@ -83,6 +90,9 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
       title: s.title,
       score: evalMap.get(s.id)?.score ?? null,
       evalId: evalMap.get(s.id)?.evalId ?? null,
+      outcome: reviewByScript.get(s.id)?.outcome ?? null,
+      feedback: reviewByScript.get(s.id)?.feedback ?? null,
+      tags: reviewByScript.get(s.id)?.tags ?? [],
     }))
   }
 
@@ -155,29 +165,23 @@ export default async function PartnerApplicationPage({ params }: { params: Promi
           </div>
         </section>
 
-        {/* Script */}
+        {/* Scripts — per-script review (tags + note + Pass) */}
         <section>
-          <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-2">Script</h2>
+          <h2 className="text-[14px] font-bold text-gray-900 m-0 mb-2">
+            {scripts.length === 1 ? 'Script' : 'Scripts'}
+          </h2>
           {scripts.map(s => (
-            <div key={s.id} className="rounded-xl border border-gray-200 bg-white px-4 py-3 flex items-center justify-between gap-3">
-              <div className="min-w-0 flex-1">
-                <p className="text-[14px] font-semibold text-gray-900 m-0 truncate">{s.title}</p>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                {s.score && (
-                  <span className={`text-[12px] font-bold px-1.5 py-0.5 rounded ${
-                    s.score >= 80 ? 'bg-green-50 text-green-700' :
-                    s.score >= 70 ? 'bg-blue-50 text-blue-700' :
-                    'bg-yellow-50 text-yellow-700'
-                  }`}>{Math.round(s.score)}</span>
-                )}
-                {s.evalId && (
-                  <Link href={`/report/${s.evalId}`} className="text-[12px] text-purple-600 hover:text-purple-700 font-semibold">
-                    View report →
-                  </Link>
-                )}
-              </div>
-            </div>
+            <ScriptReviewBlock
+              key={s.id}
+              considerationId={app.id}
+              scriptId={s.id}
+              title={s.title}
+              score={s.score}
+              evalId={s.evalId}
+              initialOutcome={s.outcome}
+              initialFeedback={s.feedback}
+              initialTags={s.tags}
+            />
           ))}
         </section>
 
