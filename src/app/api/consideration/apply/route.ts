@@ -59,16 +59,17 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Verify opportunity exists and is active
+  // Verify opportunity exists. Status is intentionally NOT required: the
+  // single "partner" opportunity is kept non-active so it never surfaces on
+  // public listings, but writer applications still attach to it.
   const { data: opp } = await service
     .from('opportunities')
     .select('id, title, min_score')
     .eq('id', opportunity_id)
-    .eq('status', 'active')
     .single()
 
   if (!opp) {
-    return NextResponse.json({ error: 'Opportunity not found or closed' }, { status: 404 })
+    return NextResponse.json({ error: 'Opportunity not found' }, { status: 404 })
   }
 
   // Check no existing pending application to this same opportunity

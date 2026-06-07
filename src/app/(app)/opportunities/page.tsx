@@ -1,14 +1,11 @@
-// /opportunities — browse open calls. PUBLIC page (no login required).
-// v4 — vivid card redesign: color-coded deal badges, real status pills,
-//       qualifying scripts dropdown, prominent score requirements.
+// /opportunities — the single "Partner with GEM" page. PUBLIC (no login required).
+// Replaces the old multi-opportunity listing. One partnership, one inline apply.
+// The apply attaches to a fixed opportunity (slug "partner") that is kept
+// non-active/unpublished so it never surfaces on any public listing.
 
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
-import { OpportunityCard, type OppStatus } from '@/components/opportunities/opportunity-card'
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
-import { normGenre, collectGenres, scriptMatchesOpportunity } from '@/lib/opportunity-matching'
-import { isProStatus } from '@/lib/subscription'
+import { InlineApply } from '@/components/opportunities/inline-apply'
 
 function svc() {
   return createServerClient(
@@ -18,222 +15,197 @@ function svc() {
   )
 }
 
-export const revalidate = 60
+export const revalidate = 0
+
+const PARTNER_SLUG = 'partner'
 
 export const metadata = {
-  title: 'Opportunities — GEM',
-  description:
-    "Opportunities from our partner network. See what's looking for scripts like yours.",
+  title: 'Make it with us — GEM',
+  description: 'GEM partners with a small number of filmmakers to get great work made. Apply with a script.',
   openGraph: {
-    title: 'Opportunities — GEM',
-    description:
-      "Opportunities from our partner network. See what's looking for scripts like yours.",
+    title: 'Make it with us — GEM',
+    description: 'GEM partners with a small number of filmmakers to get great work made. Apply with a script.',
     type: 'website' as const,
     siteName: 'GEM',
   },
-  twitter: {
-    card: 'summary_large_image' as const,
-    title: 'Opportunities — GEM',
-    description:
-      "Opportunities from our partner network. See what's looking for scripts like yours.",
-  },
 }
 
-type OppRow = {
-  id: string; title: string; description: string; slug: string | null
-  formats: string[]; genres: string[]; budget_tiers: string[]; tags: string[]
-  deadline: string | null; status: string
-  posted_by: string | null; subtitle: string | null; created_at: string
-  deal_type: string | null
-  funding_amount: number | null
+type Script = { id: string; title: string; score: number | null }
+
+const INK = '#1C1917'
+const MUTED = '#57534E'
+const FAINT = '#9b958c'
+const LINE = '#ece8e1'
+
+function Diamond({ size = 11, dark = false }: { size?: number; dark?: boolean }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-block rotate-45 shrink-0"
+      style={{
+        width: size,
+        height: size,
+        background: dark ? 'linear-gradient(135deg,#c4b5fd,#a855f7)' : 'linear-gradient(135deg,#a78bfa,#7c3aed)',
+        borderRadius: 1,
+        verticalAlign: 'middle',
+      }}
+    />
+  )
 }
+
+function Rule() {
+  return <div style={{ height: 1, background: LINE, margin: '40px 0' }} />
+}
+
+const WAYS: { title: string; body: React.ReactNode }[] = [
+  {
+    title: 'Put it in front of our audience',
+    body: (
+      <>
+        We&apos;ll showcase the work — and the people behind it — to our community of{' '}
+        <span style={{ color: '#534AB7', fontWeight: 600 }}>400K+ followers</span>, and growing.
+      </>
+    ),
+  },
+  {
+    title: 'Help you prove it out',
+    body: <>When we believe in something, we&apos;ll help you make and test proof of concept — before anyone&apos;s spent real money.</>,
+  },
+  {
+    title: 'Help fund it',
+    body: <>We&apos;re willing to put money in ourselves, and help you raise the rest of what production needs.</>,
+  },
+  {
+    title: 'Produce it with you',
+    body: <>When we really love something, we&apos;ll come on as a producer and help get it made.</>,
+  },
+]
+
+const EXCITES: { lead: string; rest: string }[] = [
+  { lead: 'Proof of concept.', rest: 'Something that already shows it works.' },
+  { lead: 'Many possible pathways.', rest: 'A story that could take more than one shape or format.' },
+  { lead: 'A big win on a small budget.', rest: 'The kind of breakout we can scale into something bigger.' },
+]
 
 export default async function OpportunitiesPage() {
   const auth = await createClient()
   const { data: { user } } = await auth.auth.getUser()
   const service = svc()
 
-  // Check Pro status
-  let isPro = false
-  if (user) {
-    const { data: profile } = await service
-      .from('profiles')
-      .select('subscription_status')
-      .eq('id', user.id)
-      .single()
-    isPro = isProStatus(profile?.subscription_status)
-  }
-
-  const { data: opps } = await service
+  const { data: opp } = await service
     .from('opportunities')
-    .select('*')
-    .eq('status', 'active')
-    .eq('published', true)
-    .order('created_at', { ascending: false })
+    .select('id, slug')
+    .eq('slug', PARTNER_SLUG)
+    .maybeSingle()
 
-  const opportunities = (opps || []) as OppRow[]
+  let scripts: Script[] = []
+  let alreadyApplied = false
 
-  // Fetch total writers applied + last application per opportunity
-  const oppIds = opportunities.map(o => o.id)
-  const writersAppliedMap = new Map<string, number>()
-  const lastAppMap = new Map<string, string>()
-  if (oppIds.length > 0) {
-    const { data: allCons } = await service
-      .from('considerations')
-      .select('opportunity_id, created_at')
-      .in('opportunity_id', oppIds)
-    for (const c of (allCons || []) as { opportunity_id: string; created_at: string }[]) {
-      writersAppliedMap.set(c.opportunity_id, (writersAppliedMap.get(c.opportunity_id) || 0) + 1)
-      const existing = lastAppMap.get(c.opportunity_id)
-      if (!existing || c.created_at > existing) lastAppMap.set(c.opportunity_id, c.created_at)
-    }
-  }
-
-  // For logged-in users: qualification + application status
-  const oppMatchCount = new Map<string, number>()
-  const oppStage = new Map<string, string>() // opp_id → review_stage
-  const oppAppCount = new Map<string, number>() // opp_id → total application count
-
-  if (user) {
-    // Get non-hidden completed scripts
-    const { data: userSubs } = await service
+  if (user && opp) {
+    const { data: subs } = await service
       .from('script_submissions')
-      .select('id, title, declared_format, hidden_at')
+      .select('id, title, status, hidden_at, script_evaluations(weighted_score)')
       .eq('user_id', user.id)
       .eq('status', 'completed')
+      .is('hidden_at', null)
+      .order('created_at', { ascending: false })
 
-    const visibleSubs = ((userSubs || []) as any[]).filter((s: any) => !s.hidden_at)
-    const subIds = visibleSubs.map((s: any) => s.id)
+    scripts = ((subs || []) as any[]).map((s) => {
+      const ev = Array.isArray(s.script_evaluations) ? s.script_evaluations[0] : s.script_evaluations
+      return { id: s.id, title: s.title, score: ev?.weighted_score ?? null }
+    })
 
-    if (subIds.length > 0) {
-      const { data: evals } = await service
-        .from('script_evaluations')
-        .select('id, submission_id, weighted_score, evaluation')
-        .in('submission_id', subIds)
-
-      const evalMap = new Map<string, { weighted_score: number | null; genres: string[]; budget: string | null; tags: string[] }>()
-      for (const ev of (evals || []) as any[]) {
-        const evJson = ev.evaluation as Record<string, unknown> | null
-        const cls = (evJson?.classification as Record<string, unknown>) || {}
-        const genres = collectGenres(
-          cls.genre_primary as string,
-          cls.genre_secondary as string[],
-          cls.genre_tags as string[],
-        )
-        const packaging = (evJson?.packaging as Record<string, unknown>) || {}
-        const budgetTier = packaging.budget_tier as Record<string, unknown> | undefined
-        const budget = (budgetTier?.tier as string)?.toLowerCase() ?? null
-        const tags = ((cls.tags as string[]) || []).map((t: string) => t.toLowerCase().replace(/\s+/g, '-'))
-        evalMap.set(ev.submission_id, { weighted_score: ev.weighted_score, genres, budget, tags })
-      }
-
-      // Count qualifying scripts per opportunity
-      for (const opp of opportunities) {
-        let count = 0
-        for (const sub of visibleSubs) {
-          const ev = evalMap.get(sub.id)
-          if (!ev) continue
-          const declNorm = sub.declared_format === 'Feature film' ? 'Feature' : sub.declared_format
-          const matches = scriptMatchesOpportunity(
-            { format: declNorm, genres: ev.genres, budget: ev.budget, tags: ev.tags, score: ev.weighted_score },
-            opp
-          )
-          if (matches) count++
-        }
-        oppMatchCount.set(opp.id, count)
-      }
-    }
-
-    // Get consideration statuses per opportunity
-    const { data: considerations } = await service
+    const { data: existing } = await service
       .from('considerations')
-      .select('opportunity_id, review_stage')
+      .select('id')
       .eq('writer_id', user.id)
-      .not('opportunity_id', 'is', null)
-
-    for (const c of (considerations || []) as any[]) {
-      if (c.opportunity_id) {
-        oppAppCount.set(c.opportunity_id, (oppAppCount.get(c.opportunity_id) || 0) + 1)
-        const existing = oppStage.get(c.opportunity_id)
-        // Non-complete stages take priority (writer has an active application)
-        if (!existing || (existing === 'complete' && c.review_stage !== 'complete')) {
-          oppStage.set(c.opportunity_id, c.review_stage || 'submitted')
-        }
-      }
-    }
+      .eq('opportunity_id', opp.id)
+      .eq('status', 'pending')
+      .limit(1)
+    alreadyApplied = !!(existing && existing.length > 0)
   }
 
   return (
-    <div style={{
-      background: '#2b1a55',
-      minHeight: '100vh',
-      width: '100vw',
-      position: 'relative',
-      left: '50%',
-      marginLeft: '-50vw',
-      marginTop: '-24px',
-      paddingTop: '24px',
-      marginBottom: '-64px',
-      paddingBottom: '64px',
-    }}>
-    <div className="max-w-5xl mx-auto px-4 sm:px-6">
-      {/* Header */}
-      <div className="mb-8">
-        {(() => {
-          const totalFunding = opportunities.reduce((s, o) => s + ((o as any).funding_amount || 0), 0)
-          const fmt = (n: number) => n >= 1_000_000 ? `$${(n / 1_000_000) % 1 === 0 ? (n / 1_000_000).toFixed(0) : (n / 1_000_000).toFixed(1)}M` : n >= 1_000 ? `$${Math.round(n / 1_000)}K` : `$${n}`
-          return totalFunding > 0 ? (
-            <div className="text-[42px] font-bold mb-2" style={{ color: '#4ade80', letterSpacing: '-0.02em' }}>
-              {fmt(totalFunding)}
-              <span className="text-[14px] font-normal text-white/40 ml-2">available</span>
-            </div>
-          ) : null
-        })()}
-        <h1 className="text-[22px] font-bold text-white m-0 mb-2">
-          Funding Opportunities
+    <div
+      style={{
+        background: '#f7f5f1',
+        minHeight: '100vh',
+        width: '100vw',
+        position: 'relative',
+        left: '50%',
+        marginLeft: '-50vw',
+        marginTop: '-24px',
+        paddingTop: '40px',
+        marginBottom: '-64px',
+        paddingBottom: '80px',
+        color: INK,
+      }}
+    >
+      <div className="mx-auto px-4" style={{ maxWidth: 720 }}>
+        {/* Hero */}
+        <div className="flex items-center gap-2" style={{ fontSize: 12, fontWeight: 800, letterSpacing: 1.5, textTransform: 'uppercase', color: '#534AB7', marginBottom: 18 }}>
+          <Diamond /> GEM Studio
+        </div>
+        <h1 style={{ fontSize: 42, lineHeight: 1.05, letterSpacing: '-1.5px', fontWeight: 800, marginBottom: 16 }}>
+          Make it with us.
         </h1>
-        <p className="text-[14px] text-white/60 m-0 leading-relaxed">
-          Real opportunities to fund your project through the GEM partner network. {opportunities.length} open now.
+        <p style={{ fontSize: 18, lineHeight: 1.5, color: MUTED, maxWidth: 610 }}>
+          We take open applications from filmmakers we&apos;d want to back. Fall for a project and we&apos;ll get
+          behind it — however it needs us.{' '}
+          <b style={{ color: INK, fontWeight: 700 }}>
+            This isn&apos;t a contest or coverage. It&apos;s a partnership — and we&apos;re very selective about who we offer it to.
+          </b>
         </p>
-      </div>
 
-      {/* Opportunity cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {opportunities.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-[15px] text-white/40">No open opportunities right now. Check back soon.</p>
+        <Rule />
+
+        {/* Ways we can help */}
+        <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.5, textTransform: 'uppercase', color: FAINT, marginBottom: 20 }}>
+          Ways we can help
+        </div>
+        {WAYS.map((w, i) => (
+          <div
+            key={w.title}
+            className="flex gap-3.5"
+            style={{ padding: '18px 0', borderBottom: i < WAYS.length - 1 ? `1px solid ${LINE}` : 'none' }}
+          >
+            <span style={{ marginTop: 7 }}><Diamond /></span>
+            <div>
+              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 5 }}>{w.title}</h3>
+              <p style={{ fontSize: 15, lineHeight: 1.55, color: MUTED }}>{w.body}</p>
+            </div>
           </div>
-        ) : (
-          opportunities.map((opp) => {
-            const stage = oppStage.get(opp.id)
-            const status: OppStatus = stage ? (stage === 'complete' ? 'previously_applied' : 'pending') : 'available'
-            return (
-              <OpportunityCard
-                key={opp.id}
-                id={opp.id}
-                slug={opp.slug}
-                title={opp.title}
-                subtitle={opp.subtitle}
-                description={opp.description}
-                genres={opp.genres || []}
-                formats={opp.formats || []}
-                createdAt={opp.created_at}
-                deadline={opp.deadline}
-                status={status}
-                matchingScriptCount={oppMatchCount.get(opp.id) ?? 0}
-                isAnon={!user}
-                applicationCount={oppAppCount.get(opp.id) ?? 0}
-                writersApplied={writersAppliedMap.get(opp.id) ?? 0}
-                lastApplicationAt={lastAppMap.get(opp.id) ?? null}
-                dealType={opp.deal_type}
-                fundingAmount={opp.funding_amount}
-                isPro={isPro}
-              />
-            )
-          })
-        )}
+        ))}
+
+        <Rule />
+
+        {/* What gets our attention */}
+        <div style={{ background: '#fff', border: '1px solid #e6e0ff', borderRadius: 16, padding: '24px 26px' }}>
+          <h2 className="flex items-center gap-2" style={{ fontSize: 19, fontWeight: 800, marginBottom: 14 }}>
+            <Diamond /> What gets our attention
+          </h2>
+          <div>
+            {EXCITES.map((e) => (
+              <div key={e.lead} className="flex gap-3" style={{ fontSize: 15, lineHeight: 1.55, color: MUTED, padding: '7px 0' }}>
+                <span style={{ marginTop: 6 }}><Diamond /></span>
+                <span>
+                  <b style={{ color: INK, fontWeight: 700 }}>{e.lead}</b> {e.rest}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Rule />
+
+        {/* Apply */}
+        <InlineApply
+          opportunityId={opp?.id ?? null}
+          signedIn={!!user}
+          scripts={scripts}
+          alreadyApplied={alreadyApplied}
+        />
       </div>
-    </div>
     </div>
   )
 }
