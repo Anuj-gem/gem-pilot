@@ -7,27 +7,39 @@ import Link from 'next/link'
 type Script = { id: string; title: string; score: number | null }
 
 /**
- * Inline apply for the single "Partner with GEM" opportunity. The writer never
- * leaves the page: click Apply → a panel opens below with their completed
- * scripts → multi-select → submit. Signed-out writers are sent to get started.
+ * Inline apply / edit for the single "Partner with GEM" opportunity. The writer
+ * never leaves the page. Scripts fall into three buckets:
+ *   - pending     → already in their open application (read-only here)
+ *   - considered  → already reviewed to completion for this opportunity
+ *   - available   → completed scripts they can add and submit
+ * Submitting adds the selected available scripts to their application (creating
+ * one if needed) and re-queues it for review.
  */
 export function InlineApply({
   opportunityId,
   signedIn,
   scripts,
-  alreadyApplied,
+  pendingScriptIds,
+  consideredScriptIds,
 }: {
   opportunityId: string | null
   signedIn: boolean
   scripts: Script[]
-  alreadyApplied: boolean
+  pendingScriptIds: string[]
+  consideredScriptIds: string[]
 }) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
-  const [done, setDone] = useState(false)
+
+  const pendingSet = new Set(pendingScriptIds)
+  const consideredSet = new Set(consideredScriptIds)
+  const pendingScripts = scripts.filter((s) => pendingSet.has(s.id))
+  const consideredScripts = scripts.filter((s) => consideredSet.has(s.id) && !pendingSet.has(s.id))
+  const availableScripts = scripts.filter((s) => !pendingSet.has(s.id) && !consideredSet.has(s.id))
+  const hasPending = pendingScripts.length > 0
 
   const card: React.CSSProperties = {
     background: 'linear-gradient(160deg,#241646,#3a2470)',
@@ -43,20 +55,6 @@ export function InlineApply({
     />
   )
 
-  // Already applied (pending) or just submitted → confirmation state.
-  if (alreadyApplied || done) {
-    return (
-      <div style={card}>
-        <h2 className="flex items-center gap-2 m-0" style={{ fontSize: 21, fontWeight: 800, marginBottom: 10 }}>
-          {diamond} Your application is in
-        </h2>
-        <p className="m-0" style={{ fontSize: 14.5, lineHeight: 1.6, color: 'rgba(255,255,255,.78)' }}>
-          Our team reads every application. We&apos;ll be in touch — and you&apos;ll always hear back, either way.
-        </p>
-      </div>
-    )
-  }
-
   const toggle = (id: string) =>
     setSelected((prev) => {
       const n = new Set(prev)
@@ -65,10 +63,9 @@ export function InlineApply({
       return n
     })
 
-  const onApplyClick = () => {
+  const onPrimaryClick = () => {
     if (!signedIn) {
-      // Send them through the get-started flow.
-      router.push('/')
+      router.push('/') // get-started flow
       return
     }
     setOpen((o) => !o)
@@ -92,21 +89,71 @@ export function InlineApply({
       setSubmitting(false)
       return
     }
-    setDone(true)
+    setSelected(new Set())
+    setOpen(false)
+    setSubmitting(false)
+    router.refresh() // re-pull server data so the buckets update
   }
+
+  // A small read-only script chip (pending / considered).
+  const ChipRow = ({ s, tag, tagColor }: { s: Script; tag: string; tagColor: string }) => (
+    <div
+      className="flex items-center gap-3"
+      style={{ border: '1px solid #ece8e1', background: '#fff', borderRadius: 11, padding: '11px 14px', marginBottom: 8 }}
+    >
+      <span className="flex-1 min-w-0" style={{ fontSize: 14.5, fontWeight: 600, color: '#1C1917' }}>
+        {s.title}
+      </span>
+      {s.score != null && <span style={{ fontSize: 13, fontWeight: 800, color: '#534AB7' }}>{Math.round(s.score)}</span>}
+      <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: tagColor }}>{tag}</span>
+    </div>
+  )
 
   return (
     <div style={card}>
       <h2 className="flex items-center gap-2 m-0" style={{ fontSize: 21, fontWeight: 800, marginBottom: 10 }}>
-        {diamond} Apply to partner with us
+        {diamond} {hasPending ? 'Your application' : 'Apply to partner with us'}
       </h2>
-      <p className="m-0" style={{ fontSize: 14.5, lineHeight: 1.6, color: 'rgba(255,255,255,.78)', maxWidth: 560, marginBottom: 20 }}>
-        Applications are open, and every one is read by our team. We work with only a handful — most
-        won&apos;t be the right fit, and that&apos;s okay. You&apos;ll always hear back.
-      </p>
 
+      {hasPending ? (
+        <p className="m-0" style={{ fontSize: 14.5, lineHeight: 1.6, color: 'rgba(255,255,255,.78)', maxWidth: 560, marginBottom: 18 }}>
+          Your application is in and our team is reviewing it — you&apos;ll always hear back. You can add more
+          scripts anytime; doing so puts you back at the front of the queue.
+        </p>
+      ) : (
+        <p className="m-0" style={{ fontSize: 14.5, lineHeight: 1.6, color: 'rgba(255,255,255,.78)', maxWidth: 560, marginBottom: 18 }}>
+          Applications are open, and every one is read by our team. We work with only a handful — most won&apos;t be
+          the right fit, and that&apos;s okay. You&apos;ll always hear back.
+        </p>
+      )}
+
+      {/* Pending bucket — read-only */}
+      {hasPending && (
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: 0.5, textTransform: 'uppercase', color: 'rgba(255,255,255,.55)', marginBottom: 8 }}>
+            In review
+          </div>
+          {pendingScripts.map((s) => (
+            <ChipRow key={s.id} s={s} tag="Pending" tagColor="#92400e" />
+          ))}
+        </div>
+      )}
+
+      {/* Considered bucket — read-only */}
+      {consideredScripts.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: 0.5, textTransform: 'uppercase', color: 'rgba(255,255,255,.55)', marginBottom: 8 }}>
+            Already considered
+          </div>
+          {consideredScripts.map((s) => (
+            <ChipRow key={s.id} s={s} tag="Reviewed" tagColor="#57534E" />
+          ))}
+        </div>
+      )}
+
+      {/* Primary action */}
       <button
-        onClick={onApplyClick}
+        onClick={onPrimaryClick}
         className="inline-flex items-center gap-2 cursor-pointer"
         style={{
           background: 'linear-gradient(135deg,#7c3aed,#a855f7)',
@@ -119,29 +166,31 @@ export function InlineApply({
           opacity: open ? 0.6 : 1,
         }}
       >
-        Apply with a script <span style={{ fontSize: 12 }}>{open ? '▴' : '▾'}</span>
+        {hasPending ? 'Add more scripts' : 'Apply with a script'} <span style={{ fontSize: 12 }}>{open ? '▴' : '▾'}</span>
       </button>
 
       {open && (
         <div style={{ background: '#fff', borderRadius: 14, padding: '20px', marginTop: 14, color: '#1C1917' }}>
-          {scripts.length === 0 ? (
+          {availableScripts.length === 0 ? (
             <div className="text-center" style={{ padding: '14px 0' }}>
               <p className="m-0" style={{ fontSize: 13.5, color: '#57534E' }}>
-                You don&apos;t have a scored script yet.
+                {scripts.length === 0 ? "You don't have a scored script yet." : 'All your scored scripts are already in your application.'}
               </p>
               <Link href="/" className="font-semibold" style={{ fontSize: 13, color: '#534AB7' }}>
-                Score a script first →
+                Score another script →
               </Link>
             </div>
           ) : (
             <>
-              <div style={{ fontSize: 13.5, fontWeight: 700, marginBottom: 3 }}>Which scripts should we consider?</div>
+              <div style={{ fontSize: 13.5, fontWeight: 700, marginBottom: 3 }}>
+                {hasPending ? 'Add scripts to your application' : 'Which scripts should we consider?'}
+              </div>
               <div style={{ fontSize: 12.5, color: '#9b958c', marginBottom: 14 }}>
                 Pick as many as you like. Only your completed scripts show here.
               </div>
 
               <div>
-                {scripts.map((s) => {
+                {availableScripts.map((s) => {
                   const sel = selected.has(s.id)
                   return (
                     <button
@@ -203,7 +252,7 @@ export function InlineApply({
               >
                 {submitting
                   ? 'Submitting…'
-                  : `Submit ${selected.size > 0 ? `${selected.size} script${selected.size > 1 ? 's' : ''}` : ''} →`}
+                  : `${hasPending ? 'Add' : 'Submit'} ${selected.size > 0 ? `${selected.size} script${selected.size > 1 ? 's' : ''}` : ''} →`}
               </button>
               <div style={{ fontSize: 11.5, color: '#9b958c', textAlign: 'center', marginTop: 11 }}>
                 Applying starts a conversation — we&apos;ll be in touch.

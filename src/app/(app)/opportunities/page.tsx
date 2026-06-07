@@ -99,7 +99,8 @@ export default async function OpportunitiesPage() {
     .maybeSingle()
 
   let scripts: Script[] = []
-  let alreadyApplied = false
+  let pendingScriptIds: string[] = []
+  let consideredScriptIds: string[] = []
 
   if (user && opp) {
     const { data: subs } = await service
@@ -115,14 +116,38 @@ export default async function OpportunitiesPage() {
       return { id: s.id, title: s.title, score: ev?.weighted_score ?? null }
     })
 
-    const { data: existing } = await service
+    // Scripts already in the writer's pending application to this opportunity.
+    const { data: pend } = await service
       .from('considerations')
       .select('id')
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
       .eq('status', 'pending')
       .limit(1)
-    alreadyApplied = !!(existing && existing.length > 0)
+      .maybeSingle()
+    if (pend) {
+      const { data: ps } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .eq('consideration_id', pend.id)
+      pendingScriptIds = ((ps || []) as any[]).map((r) => r.script_submission_id)
+    }
+
+    // Scripts that have already been reviewed to completion for this opportunity.
+    const { data: comp } = await service
+      .from('considerations')
+      .select('id')
+      .eq('writer_id', user.id)
+      .eq('opportunity_id', opp.id)
+      .eq('review_stage', 'complete')
+    const compIds = ((comp || []) as any[]).map((c) => c.id)
+    if (compIds.length > 0) {
+      const { data: cs } = await service
+        .from('consideration_scripts')
+        .select('script_submission_id')
+        .in('consideration_id', compIds)
+      consideredScriptIds = [...new Set(((cs || []) as any[]).map((r) => r.script_submission_id))]
+    }
   }
 
   return (
@@ -203,7 +228,8 @@ export default async function OpportunitiesPage() {
           opportunityId={opp?.id ?? null}
           signedIn={!!user}
           scripts={scripts}
-          alreadyApplied={alreadyApplied}
+          pendingScriptIds={pendingScriptIds}
+          consideredScriptIds={consideredScriptIds}
         />
       </div>
     </div>

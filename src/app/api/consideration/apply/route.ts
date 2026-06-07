@@ -72,19 +72,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Opportunity not found' }, { status: 404 })
   }
 
-  // Check no existing pending application to this same opportunity
-  const { data: existing } = await service
-    .from('considerations')
-    .select('id')
-    .eq('writer_id', user.id)
-    .eq('opportunity_id', opportunity_id)
-    .eq('status', 'pending')
-    .limit(1)
-
-  if (existing && existing.length > 0) {
-    return NextResponse.json({ error: 'You already have a pending application for this opportunity' }, { status: 409 })
-  }
-
   // Verify scripts belong to this user and are completed
   const { data: userScripts } = await supabase
     .from('script_submissions')
@@ -98,7 +85,39 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'No valid scripts found' }, { status: 400 })
   }
 
-  // Create consideration with opportunity_id
+  // If the writer already has a pending application to this opportunity, ADD
+  // the newly selected scripts to it (deduped) and re-queue it for review —
+  // editing an application instead of rejecting a second submission.
+  const { data: existing } = await service
+    .from('considerations')
+    .select('id')
+    .eq('writer_id', user.id)
+    .eq('opportunity_id', opportunity_id)
+    .eq('status', 'pending')
+    .limit(1)
+    .maybeSingle()
+
+  if (existing) {
+    const { data: have } = await service
+      .from('consideration_scripts')
+      .select('script_submission_id')
+      .eq('consideration_id', existing.id)
+    const haveIds = new Set((have || []).map((r: { script_submission_id: string }) => r.script_submission_id))
+    const toAdd = validIds.filter((id) => !haveIds.has(id))
+    if (toAdd.length > 0) {
+      const rows = toAdd.map((scriptId) => ({ consideration_id: existing.id, script_submission_id: scriptId, carried_forward: false }))
+      const { error: addErr } = await service.from('consideration_scripts').insert(rows)
+      if (addErr) return NextResponse.json({ error: addErr.message }, { status: 500 })
+    }
+    // Re-queue so it goes back to the front of review.
+    await service
+      .from('considerations')
+      .update({ submitted_at: new Date().toISOString(), review_stage: 'draft', status: 'pending' })
+      .eq('id', existing.id)
+    return NextResponse.json({ ok: true, consideration_id: existing.id, updated: true })
+  }
+
+  // Otherwise create a fresh consideration with the selected scripts.
   const fitOriginality = application_responses?.fit_originality?.trim()
   const { data: consideration, error: createError } = await service
     .from('considerations')
