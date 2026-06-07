@@ -66,7 +66,7 @@ import { CrewSection } from '@/components/report/crew-section'
 import { FollowersSection } from '@/components/report/followers-section'
 import { BackersList } from '@/components/report/backers-list'
 import { FundingOpportunities } from '@/components/report/funding-opportunities'
-import { ReportApplyBanner } from '@/components/report/report-apply-banner'
+import { ReportPartnerStatus } from '@/components/report/report-partner-status'
 import { FundingProgressBar } from '@/components/report/funding-progress-bar'
 import { CollapsibleRow } from '@/components/report/collapsible-row'
 import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
@@ -216,6 +216,35 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   let isOwnerOrAdmin = isOwner || isAdmin
   const isAnonymousSubmission = !submission.user_id
   const isStaleEval = isOwner && (eval_ as any).prompt_version !== CURRENT_PROMPT_VERSION
+
+  // Partner-program status for THIS script: none (apply) / pending (under
+  // review) / reviewed (outcome + feedback). Drives the top-of-report banner.
+  type PartnerStatus =
+    | { kind: 'none' }
+    | { kind: 'pending' }
+    | { kind: 'reviewed'; outcome: string; feedback: string | null; tags: string[] }
+  let partnerStatus: PartnerStatus = { kind: 'none' }
+  if (isOwner && submission.user_id) {
+    const { data: partnerOpp } = await serviceClient
+      .from('opportunities')
+      .select('id')
+      .eq('slug', 'partner')
+      .maybeSingle()
+    if (partnerOpp) {
+      const { data: rows } = await serviceClient
+        .from('consideration_scripts')
+        .select('outcome, feedback, feedback_tags, considerations!inner(writer_id, opportunity_id, status)')
+        .eq('script_submission_id', submission.id)
+        .eq('considerations.opportunity_id', partnerOpp.id)
+        .eq('considerations.writer_id', submission.user_id)
+      const reviewedRow = ((rows || []) as any[]).find((r) => r.outcome)
+      if (reviewedRow) {
+        partnerStatus = { kind: 'reviewed', outcome: reviewedRow.outcome, feedback: reviewedRow.feedback ?? null, tags: reviewedRow.feedback_tags || [] }
+      } else if ((rows || []).length > 0) {
+        partnerStatus = { kind: 'pending' }
+      }
+    }
+  }
 
   // Producer-mode detection (Anuj 2026-04-29). If a logged-in non-owner
   // has a script_match for this submission AND it isn't unmatched, render
@@ -810,9 +839,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       >
         <div className="space-y-4">
 
-        {/* Floating, dismissible apply banner — surfaces the GEM support
-            offer up top so it doesn't get buried in the report. Owner-only. */}
-        {(isOwner || isAdmin) && <ReportApplyBanner />}
+        {/* Top-of-report partner status: apply (default) → under review →
+            reviewed with feedback. Owner-only. */}
+        {(isOwner || isAdmin) && <ReportPartnerStatus status={partnerStatus} />}
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}

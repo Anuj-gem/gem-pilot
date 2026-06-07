@@ -15,30 +15,35 @@ type Script = { id: string; title: string; score: number | null }
  * Submitting adds the selected available scripts to their application (creating
  * one if needed) and re-queues it for review.
  */
+type Reviewed = { id: string; outcome: string; tags: string[] }
+
+const OUTCOME_LABEL: Record<string, string> = { pass: 'Pass', developing: 'Developing', advancing: 'Advancing' }
+
 export function InlineApply({
   opportunityId,
   signedIn,
   scripts,
   pendingScriptIds,
-  consideredScriptIds,
+  reviewed,
 }: {
   opportunityId: string | null
   signedIn: boolean
   scripts: Script[]
   pendingScriptIds: string[]
-  consideredScriptIds: string[]
+  reviewed: Reviewed[]
 }) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const [withdrawing, setWithdrawing] = useState<string | null>(null)
 
   const pendingSet = new Set(pendingScriptIds)
-  const consideredSet = new Set(consideredScriptIds)
-  const pendingScripts = scripts.filter((s) => pendingSet.has(s.id))
-  const consideredScripts = scripts.filter((s) => consideredSet.has(s.id) && !pendingSet.has(s.id))
-  const availableScripts = scripts.filter((s) => !pendingSet.has(s.id) && !consideredSet.has(s.id))
+  const reviewedMap = new Map(reviewed.map((r) => [r.id, r]))
+  const pendingScripts = scripts.filter((s) => pendingSet.has(s.id) && !reviewedMap.has(s.id))
+  const consideredScripts = scripts.filter((s) => reviewedMap.has(s.id))
+  const availableScripts = scripts.filter((s) => !pendingSet.has(s.id) && !reviewedMap.has(s.id))
   const hasPending = pendingScripts.length > 0
 
   const card: React.CSSProperties = {
@@ -95,17 +100,64 @@ export function InlineApply({
     router.refresh() // re-pull server data so the buckets update
   }
 
-  // A small read-only script chip (pending / considered).
-  const ChipRow = ({ s, tag, tagColor }: { s: Script; tag: string; tagColor: string }) => (
-    <div
-      className="flex items-center gap-3"
-      style={{ border: '1px solid #ece8e1', background: '#fff', borderRadius: 11, padding: '11px 14px', marginBottom: 8 }}
-    >
-      <span className="flex-1 min-w-0" style={{ fontSize: 14.5, fontWeight: 600, color: '#1C1917' }}>
-        {s.title}
-      </span>
-      {s.score != null && <span style={{ fontSize: 13, fontWeight: 800, color: '#534AB7' }}>{Math.round(s.score)}</span>}
-      <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: tagColor }}>{tag}</span>
+  const withdraw = async (scriptId: string) => {
+    setWithdrawing(scriptId)
+    const res = await fetch('/api/consideration/withdraw-script', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ opportunity_id: opportunityId, script_id: scriptId }),
+    })
+    if (res.ok) router.refresh()
+    else setWithdrawing(null)
+  }
+
+  // A small read-only script chip (pending / considered). Pending rows get a
+  // Withdraw action so a writer can drop a stale draft and add a new one.
+  const ChipRow = ({
+    s,
+    tag,
+    tagColor,
+    onWithdraw,
+    busy,
+    pills,
+  }: {
+    s: Script
+    tag: string
+    tagColor: string
+    onWithdraw?: () => void
+    busy?: boolean
+    pills?: string[]
+  }) => (
+    <div style={{ border: '1px solid #ece8e1', background: '#fff', borderRadius: 11, padding: '11px 14px', marginBottom: 8 }}>
+      <div className="flex items-center gap-3">
+        <span className="flex-1 min-w-0" style={{ fontSize: 14.5, fontWeight: 600, color: '#1C1917' }}>
+          {s.title}
+        </span>
+        {s.score != null && <span style={{ fontSize: 13, fontWeight: 800, color: '#534AB7' }}>{Math.round(s.score)}</span>}
+        <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: tagColor }}>{tag}</span>
+        {onWithdraw && (
+          <button
+            onClick={onWithdraw}
+            disabled={busy}
+            className="cursor-pointer"
+            style={{ background: 'none', border: 0, fontSize: 12, fontWeight: 600, color: '#b4525a', textDecoration: 'underline', padding: 0 }}
+          >
+            {busy ? 'Withdrawing…' : 'Withdraw'}
+          </button>
+        )}
+      </div>
+      {pills && pills.length > 0 && (
+        <div className="flex flex-wrap gap-1.5" style={{ marginTop: 8 }}>
+          {pills.map((p) => (
+            <span
+              key={p}
+              style={{ fontSize: 11, fontWeight: 600, color: '#534AB7', background: '#F0EDFB', borderRadius: 99, padding: '2px 9px' }}
+            >
+              {p}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   )
 
@@ -134,7 +186,7 @@ export function InlineApply({
             In review
           </div>
           {pendingScripts.map((s) => (
-            <ChipRow key={s.id} s={s} tag="Pending" tagColor="#92400e" />
+            <ChipRow key={s.id} s={s} tag="Pending" tagColor="#92400e" onWithdraw={() => withdraw(s.id)} busy={withdrawing === s.id} />
           ))}
         </div>
       )}
@@ -145,9 +197,10 @@ export function InlineApply({
           <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: 0.5, textTransform: 'uppercase', color: 'rgba(255,255,255,.55)', marginBottom: 8 }}>
             Already considered
           </div>
-          {consideredScripts.map((s) => (
-            <ChipRow key={s.id} s={s} tag="Reviewed" tagColor="#57534E" />
-          ))}
+          {consideredScripts.map((s) => {
+            const r = reviewedMap.get(s.id)!
+            return <ChipRow key={s.id} s={s} tag={OUTCOME_LABEL[r.outcome] || 'Reviewed'} tagColor="#57534E" pills={r.tags} />
+          })}
         </div>
       )}
 

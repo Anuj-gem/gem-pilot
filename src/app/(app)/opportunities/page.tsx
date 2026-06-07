@@ -100,7 +100,7 @@ export default async function OpportunitiesPage() {
 
   let scripts: Script[] = []
   let pendingScriptIds: string[] = []
-  let consideredScriptIds: string[] = []
+  let reviewed: { id: string; outcome: string; tags: string[] }[] = []
 
   if (user && opp) {
     const { data: subs } = await service
@@ -116,37 +116,27 @@ export default async function OpportunitiesPage() {
       return { id: s.id, title: s.title, score: ev?.weighted_score ?? null }
     })
 
-    // Scripts already in the writer's pending application to this opportunity.
-    const { data: pend } = await service
+    // All of the writer's applications to this opportunity, with per-script
+    // review state. A script is "reviewed" once its row has an outcome;
+    // otherwise it's "pending" (in an open application).
+    const { data: cons } = await service
       .from('considerations')
-      .select('id')
+      .select('status, consideration_scripts(script_submission_id, outcome, feedback_tags)')
       .eq('writer_id', user.id)
       .eq('opportunity_id', opp.id)
-      .eq('status', 'pending')
-      .limit(1)
-      .maybeSingle()
-    if (pend) {
-      const { data: ps } = await service
-        .from('consideration_scripts')
-        .select('script_submission_id')
-        .eq('consideration_id', pend.id)
-      pendingScriptIds = ((ps || []) as any[]).map((r) => r.script_submission_id)
-    }
 
-    // Scripts that have already been reviewed to completion for this opportunity.
-    const { data: comp } = await service
-      .from('considerations')
-      .select('id')
-      .eq('writer_id', user.id)
-      .eq('opportunity_id', opp.id)
-      .eq('review_stage', 'complete')
-    const compIds = ((comp || []) as any[]).map((c) => c.id)
-    if (compIds.length > 0) {
-      const { data: cs } = await service
-        .from('consideration_scripts')
-        .select('script_submission_id')
-        .in('consideration_id', compIds)
-      consideredScriptIds = [...new Set(((cs || []) as any[]).map((r) => r.script_submission_id))]
+    const reviewedIds = new Set<string>()
+    for (const c of (cons || []) as any[]) {
+      for (const cs of (c.consideration_scripts || []) as any[]) {
+        if (cs.outcome) {
+          if (!reviewedIds.has(cs.script_submission_id)) {
+            reviewedIds.add(cs.script_submission_id)
+            reviewed.push({ id: cs.script_submission_id, outcome: cs.outcome, tags: cs.feedback_tags || [] })
+          }
+        } else if (c.status === 'pending') {
+          pendingScriptIds.push(cs.script_submission_id)
+        }
+      }
     }
   }
 
@@ -229,7 +219,7 @@ export default async function OpportunitiesPage() {
           signedIn={!!user}
           scripts={scripts}
           pendingScriptIds={pendingScriptIds}
-          consideredScriptIds={consideredScriptIds}
+          reviewed={reviewed}
         />
       </div>
     </div>
