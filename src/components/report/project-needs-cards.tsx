@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 type CardKey = 'investment' | 'crew' | 'cast'
@@ -19,12 +19,12 @@ export function ProjectNeedsCards({
   investmentChildren,
   crewChildren,
   castChildren,
-  investmentSummary,
-  investmentMetrics,
   crewSummary,
   castSummary,
 }: ProjectNeedsCardsProps) {
-  const [activeTab, setActiveTab] = useState<CardKey | null>(null)
+  // One tab is always open (Finances by default) so the section is never an
+  // empty, missable row of boxes. Familiar tab-menu pattern.
+  const [activeTab, setActiveTab] = useState<CardKey>('investment')
 
   const childrenMap: Record<CardKey, React.ReactNode> = {
     investment: investmentChildren,
@@ -32,101 +32,70 @@ export function ProjectNeedsCards({
     cast: castChildren,
   }
 
-  // Listen for live budget edits from BudgetEditor
-  const fmtShort = (n: number) => {
-    if (n >= 1e9) return `$${(n / 1e9).toFixed(n % 1e9 === 0 ? 0 : 1)}B`
-    if (n >= 1e6) return `$${(n / 1e6).toFixed(n % 1e6 === 0 ? 0 : 1)}M`
-    if (n >= 1e3) return `$${Math.round(n / 1e3).toLocaleString()}K`
-    return `$${n.toLocaleString()}`
-  }
-  const [liveBudget, setLiveBudget] = useState<string | null>(null)
-  useEffect(() => {
-    const handler = (e: Event) => {
-      const d = (e as CustomEvent).detail
-      if (d) {
-        const tLow = d.totalLow as number
-        const tHigh = d.totalHigh as number
-        const label = tLow > 0 && tHigh > 0 && tLow !== tHigh
-          ? `${fmtShort(tLow)}-${fmtShort(tHigh)}`
-          : fmtShort(tHigh || tLow)
-        setLiveBudget(label)
-      }
-    }
-    window.addEventListener('budget-updated', handler)
-    return () => window.removeEventListener('budget-updated', handler)
-  }, [])
-
-  // Always-visible one-line summary: "Funding $XX · Budget $XX"
-  const fundingLabel = investmentMetrics?.secured || '$0'
-  const budgetLabel = liveBudget || investmentMetrics?.projectCost || '$0'
-
-  const tabs: { key: CardKey; emoji: string; title: string; summary: string | null; highlightColor?: string }[] = [
-    { key: 'investment', emoji: '💰', title: 'Finances', summary: null },
-    { key: 'crew', emoji: '🎬', title: 'Crew', summary: crewSummary },
-    { key: 'cast', emoji: '🎭', title: 'Cast', summary: castSummary },
+  const tabs: { key: CardKey; title: string; summary: string | null }[] = [
+    { key: 'investment', title: 'Finances', summary: null },
+    { key: 'crew', title: 'Crew', summary: crewSummary },
+    { key: 'cast', title: 'Cast', summary: castSummary },
   ]
+
+  // Pull the leading "N open" count out of a summary for the tab pill.
+  const openCount = (summary: string | null): string | null => {
+    if (!summary) return null
+    const m = summary.match(/(\d+)\s*open/i)
+    return m ? m[1] : null
+  }
 
   return (
     <div>
-      {/* Tab strip — no wrapper title, tabs ARE the section */}
-      <div className="flex" style={{ background: '#fff' }}>
-        {tabs.map((tab, i) => {
+      {/* Tab menu — familiar pattern, one tab always open */}
+      <div className="flex" style={{ borderBottom: '1px solid #eee9e1', padding: '0 18px', background: '#fff' }}>
+        {tabs.map((tab) => {
           const isActive = activeTab === tab.key
+          const count = tab.key === 'investment' ? null : openCount(tab.summary)
           return (
             <button
               key={tab.key}
-              onClick={() => setActiveTab(isActive ? null : tab.key)}
-              className="flex-1 cursor-pointer text-center transition-colors"
+              onClick={() => setActiveTab(tab.key)}
+              className="cursor-pointer"
               style={{
-                padding: '16px 12px 14px',
-                border: 'none',
-                borderLeft: i > 0 ? '1px solid #f0f0f0' : 'none',
+                appearance: 'none',
+                background: 'none',
+                border: 0,
+                padding: '16px 4px 13px',
+                marginRight: 22,
+                fontSize: 15,
+                fontWeight: 600,
+                color: isActive ? '#1C1917' : '#78716C',
                 borderBottom: isActive ? '2px solid #534AB7' : '2px solid transparent',
-                background: isActive ? '#F5F3FF' : '#fff',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 7,
               }}
             >
-              <div className="text-[20px] m-0 mb-1">{tab.emoji}</div>
-              <div
-                className="text-[14px] font-semibold m-0"
-                style={{ color: isActive ? '#534AB7' : '#78716C' }}
-              >
-                {tab.title}
-              </div>
-              {tab.key === 'investment' ? (
-                <div className="text-[12px] m-0 mt-1 leading-[1.4]">
-                  <span style={{ color: isActive ? '#534AB7' : '#15803d' }}>Funding {fundingLabel}</span>
-                  <span style={{ color: isActive ? '#534AB7' : '#78716C' }}> · Budget {budgetLabel}</span>
-                </div>
-              ) : tab.summary ? (
-                <div
-                  className="text-[12px] m-0 mt-1"
-                  style={{ color: isActive ? '#534AB7' : '#78716C' }}
+              {tab.title}
+              {count != null && (
+                <span
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 800,
+                    color: isActive ? '#fff' : '#534AB7',
+                    background: isActive ? '#534AB7' : '#F0EDFB',
+                    borderRadius: 99,
+                    padding: '1px 8px',
+                  }}
                 >
-                  {!isActive && tab.summary.includes('open') ? (
-                    <>
-                      {tab.summary.split(' · ').map((part, pi) => (
-                        <span key={pi}>
-                          {pi > 0 && <span> · </span>}
-                          <span style={{ color: part.includes('open') ? '#15803d' : '#78716C' }}>{part}</span>
-                        </span>
-                      ))}
-                    </>
-                  ) : tab.summary}
-                </div>
-              ) : null}
+                  {count}
+                </span>
+              )}
             </button>
           )
         })}
       </div>
 
-      {/* Body panel */}
-      {activeTab && (
-        <div style={{ borderTop: '1px solid #f0f0f0', background: '#FFFFFF' }}>
-          <div className="px-5 sm:px-7 py-5 sm:py-6">
-            {childrenMap[activeTab]}
-          </div>
-        </div>
-      )}
+      {/* Body panel — one tab always open */}
+      <div style={{ background: '#FFFFFF' }}>
+        <div className="px-5 sm:px-7 py-5 sm:py-6">{childrenMap[activeTab]}</div>
+      </div>
     </div>
   )
 }
