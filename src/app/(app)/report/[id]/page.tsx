@@ -66,6 +66,7 @@ import { CrewSection } from '@/components/report/crew-section'
 import { FollowersSection } from '@/components/report/followers-section'
 import { BackersList } from '@/components/report/backers-list'
 import { FundingOpportunities } from '@/components/report/funding-opportunities'
+import { ReportApplyBanner } from '@/components/report/report-apply-banner'
 import { FundingProgressBar } from '@/components/report/funding-progress-bar'
 import { CollapsibleRow } from '@/components/report/collapsible-row'
 import { scriptMatchesOpportunity, extractMatchData } from '@/lib/opportunity-matching'
@@ -808,6 +809,10 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         } as React.CSSProperties}
       >
         <div className="space-y-4">
+
+        {/* Floating, dismissible apply banner — surfaces the GEM support
+            offer up top so it doesn't get buried in the report. Owner-only. */}
+        {(isOwner || isAdmin) && <ReportApplyBanner />}
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
