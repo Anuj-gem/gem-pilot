@@ -1,7 +1,7 @@
 'use client'
 
-// LandingPageV21 — complete landing page body (v21, rebuilt to match landing-free-v8 mockup).
-// Sections: Hero → The Read → Funding Opportunities (live) → Funding Band → How We Work → The Math → Why It's Free → Final CTA
+// LandingPageV21 — mission-first landing (gem-refresh).
+// Sections: Hero → Who We Are → What We Do → Funding Opportunities (live) → The Math → Straight With You → Final CTA
 // Outer page (src/app/page.tsx) provides the #2b1a55 background + Nav.
 
 import Link from 'next/link'
@@ -81,7 +81,6 @@ function HeroSection() {
   return (
     <section className="px-5 sm:px-8 pt-12 sm:pt-16 pb-12 text-center">
       <div className="mx-auto max-w-5xl">
-        {/* 100% free pill */}
         <div
           className="inline-flex items-center gap-2 mb-6 rounded-full"
           style={{
@@ -108,7 +107,7 @@ function HeroSection() {
         </h1>
 
         <p className="m-0 mb-8 mx-auto" style={{ fontSize: 'clamp(16px, 2vw, 20px)', color: MUTED, maxWidth: 660, lineHeight: 1.55 }}>
-          Develop your project on GEM, in the open. We find the ones we believe in and put real capital and connections behind them — and it&apos;s free for every creator.
+          We&apos;re creators who love great stories. We built GEM to find the next great filmmakers and help get their work made — and it&apos;s free for everyone.
         </p>
 
         <div className="flex gap-3.5 justify-center flex-wrap">
@@ -126,7 +125,7 @@ function HeroSection() {
             className="inline-block text-white no-underline transition-all hover:bg-white/10 active:scale-[0.98]"
             style={{ border: '1px solid rgba(255,255,255,0.35)', padding: '15px 34px', borderRadius: 12, fontWeight: 600, fontSize: 17 }}
           >
-            Browse funding opportunities
+            Browse opportunities
           </Link>
         </div>
 
@@ -138,100 +137,81 @@ function HeroSection() {
   )
 }
 
-// ─── Section 2: THE READ ────────────────────────────────────────────
+// ─── Section 2: WHO WE ARE ──────────────────────────────────────────
 
-function TheReadSection() {
+function WhoWeAreSection() {
   return (
     <SectionWrapper>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Left — copy */}
-        <div>
-          <div className="mb-3.5" style={eyebrowStyle}>The read</div>
-          <h2 className="m-0 mb-4" style={h2Style}>A real analysis of your script</h2>
-          <p className="m-0" style={{ ...leadStyle, maxWidth: 680 }}>
-            Upload a screenplay and GEM gives it a score, calls out its real strengths and where it needs work, and estimates the budget. The kind of read that usually costs hundreds — free, every time.
-          </p>
-        </div>
+      <div className="mb-3.5" style={eyebrowStyle}>Who we are</div>
+      <h2 className="m-0 mb-4" style={h2Style}>We come from the creator world</h2>
+      <p className="m-0 mb-4" style={{ ...leadStyle, maxWidth: 720 }}>
+        We&apos;re creators ourselves — we&apos;ve spent years making entertainment and building our social channels, and we love this stuff. We built GEM as a resource for writers and for filmmakers far more talented than us: a way to use our reach, our tools, and what we&apos;ve learned to help the next generation of filmmakers get their work made.
+      </p>
+      <p className="m-0" style={{ ...leadStyle, maxWidth: 720 }}>
+        <a href="https://www.tiktok.com/@YOUR_TIKTOK" style={{ color: '#c4b5fd', fontWeight: 600 }}>TikTok</a>
+        {' · '}
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM" style={{ color: '#c4b5fd', fontWeight: 600 }}>Instagram</a>
+        {' · '}
+        <span style={{ color: GOLD, fontWeight: 600 }}>500K+ followers · nearly a billion views</span>
+      </p>
+    </SectionWrapper>
+  )
+}
 
-        {/* Right — static report card */}
-        <div
-          className="w-full"
-          style={{ background: '#fff', color: '#1C1917', borderRadius: 18, boxShadow: '0 16px 48px rgba(0,0,0,0.34)', padding: 22 }}
-        >
-          <div style={{ fontSize: 21, fontWeight: 800, fontFamily: 'Georgia, serif' }}>Nightfall</div>
-          <div style={{ fontSize: 12.5, color: '#9ca3af', marginBottom: 16 }}>Series · Thriller · Drama</div>
+// ─── Section 3: WHAT WE DO ──────────────────────────────────────────
 
-          {/* GEM Score box */}
-          <div style={{ background: '#F5F3FF', border: '1px solid #e6e0ff', borderRadius: 14, padding: '15px 16px', marginBottom: 18 }}>
-            <div
-              className="flex items-center gap-2"
-              style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 2, textTransform: 'uppercase', color: PURPLE, marginBottom: 6 }}
-            >
-              <GemDiamond size={9} /> GEM Score
-            </div>
-            <div style={{ fontSize: 54, fontWeight: 800, lineHeight: 0.9, color: PURPLE, letterSpacing: '-1px' }}>
-              88
-              <span style={{ fontSize: 17, color: '#a78bfa', fontWeight: 600, marginLeft: 4 }}>/ 100</span>
-            </div>
-            <div style={{ height: 7, background: '#ece8ff', borderRadius: 99, overflow: 'hidden', marginTop: 10 }}>
-              <div style={{ display: 'block', height: 7, background: PURPLE, borderRadius: 99, width: '88%' }} />
-            </div>
-          </div>
+function WhatWeDoCard({ title, body }: { title: string; body: string }) {
+  return (
+    <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 16, padding: '24px 22px' }}>
+      <div className="flex items-center gap-2 mb-2.5">
+        <GemDiamond size={10} />
+        <span style={{ fontSize: 17, fontWeight: 700, color: '#ffffff' }}>{title}</span>
+      </div>
+      <p className="m-0" style={{ fontSize: 14.5, color: MUTED, lineHeight: 1.55 }}>{body}</p>
+    </div>
+  )
+}
 
-          {/* Strengths */}
-          <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 2, textTransform: 'uppercase', color: '#1C1917', margin: '14px 0 8px' }}>Strengths</div>
-          <ul className="list-none m-0 p-0 flex flex-col" style={{ gap: 6 }}>
-            {[
-              'Breakout central character with a real contradiction at the core',
-              'The hook lands inside the first ten pages and keeps pulling',
-              'An ownable tone — you’d know this show from a single scene',
-            ].map((s, i) => (
-              <li key={i} className="flex" style={{ gap: 9, fontSize: 13, color: '#44403C', lineHeight: 1.4 }}>
-                <span className="shrink-0" style={{ fontWeight: 800, color: '#059669' }}>+</span>
-                {s}
-              </li>
-            ))}
-          </ul>
-
-          {/* Where it needs work */}
-          <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 2, textTransform: 'uppercase', color: '#1C1917', margin: '14px 0 8px' }}>Where it needs work</div>
-          <ul className="list-none m-0 p-0 flex flex-col" style={{ gap: 6 }}>
-            {[
-              'Momentum sags through the midpoint of the pilot',
-              'The antagonist’s logic needs sharpening to match the lead',
-            ].map((s, i) => (
-              <li key={i} className="flex" style={{ gap: 9, fontSize: 13, color: '#44403C', lineHeight: 1.4 }}>
-                <span className="shrink-0" style={{ fontWeight: 800, color: '#d97706' }}>–</span>
-                {s}
-              </li>
-            ))}
-          </ul>
-
-          {/* Footer */}
-          <div
-            className="flex justify-between"
-            style={{ fontSize: 12.5, color: '#78716C', paddingTop: 14, marginTop: 16, borderTop: '1px solid #f3f4f6' }}
-          >
-            <span>Format · <b style={{ color: '#1C1917' }}>Series</b></span>
-            <span>Budget · <span style={{ color: GOLD, textTransform: 'capitalize', fontWeight: 800 }}>Indie</span> <b style={{ color: '#1C1917' }}>$1.5M–3M / ep</b></span>
-          </div>
-        </div>
+function WhatWeDoSection() {
+  return (
+    <SectionWrapper>
+      <div className="mb-3.5" style={eyebrowStyle}>Here&apos;s what we do</div>
+      <h2 className="m-0 mb-2" style={h2Style}>Everything we offer, free</h2>
+      <p className="m-0 mb-8" style={{ ...leadStyle, maxWidth: 680 }}>
+        Use as much or as little as you want. No subscription, no catch.
+      </p>
+      <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+        <WhatWeDoCard
+          title="Free screenplay analysis"
+          body="Upload your script and get a real read — a GEM score and a breakdown of what's working and what's not, built on our own in-house technology and a ton of research on what actually gets made."
+        />
+        <WhatWeDoCard
+          title="Perks & discounts"
+          body="We've aggregated discounts and benefits from tools and partners across the industry — yours to use as a GEM creator, at no cost."
+        />
+        <WhatWeDoCard
+          title="Get featured on our channels"
+          body="Apply to have your work shared to our audience, with full credit. Free exposure for you — and it helps us see what lands before anything goes further."
+        />
+        <WhatWeDoCard
+          title="Help getting it made"
+          body="We connect you to our network of partners to raise financing. And in select cases — when the work is excellent and you've shown real proof of concept — we'll back development and production ourselves, and bring the talent, distribution, and every other piece it takes to get made."
+        />
       </div>
     </SectionWrapper>
   )
 }
 
-// ─── Section 3: FUNDING OPPORTUNITIES (live data) ────────────────────
+// ─── Section 4: FUNDING OPPORTUNITIES (live data) ────────────────────
 
 function OpportunitiesSection({ opportunities }: { opportunities: OpportunityCardProps[] }) {
   if (opportunities.length === 0) return null
   return (
     <SectionWrapper>
-      {/* Header row */}
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <div className="mb-3.5" style={eyebrowStyle}>Open right now</div>
-          <h2 className="m-0" style={h2Style}>Funding opportunities</h2>
+          <h2 className="m-0" style={h2Style}>Opportunities</h2>
         </div>
         <Link
           href="/opportunities"
@@ -255,45 +235,7 @@ function OpportunitiesSection({ opportunities }: { opportunities: OpportunityCar
   )
 }
 
-// ─── Section 4: FUNDING BAND ─────────────────────────────────────────
-
-function FundingBandSection() {
-  return (
-    <section
-      className="text-center px-5 sm:px-8"
-      style={{ padding: '66px 24px', borderTop: DIVIDER, borderBottom: DIVIDER }}
-    >
-      <div className="mx-auto max-w-5xl">
-        <div style={{ fontSize: 'clamp(54px, 11vw, 116px)', fontWeight: 900, letterSpacing: '-3px', lineHeight: 1, color: GOLD }}>
-          $1,200,000
-        </div>
-        <div style={{ fontSize: 'clamp(19px, 3vw, 28px)', fontWeight: 800, letterSpacing: '-0.5px', marginTop: 8, color: '#ffffff' }}>
-          in funding, across our open opportunities
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── Section 5: HOW WE WORK ──────────────────────────────────────────
-
-function HowWeWorkSection() {
-  return (
-    <SectionWrapper center>
-      <div className="mb-3.5" style={eyebrowStyle}>How we work</div>
-      <h2 className="m-0 mb-4" style={h2Style}>
-        Capital and connections,
-        <br />
-        on your side
-      </h2>
-      <p className="m-0 mx-auto" style={{ ...leadStyle, maxWidth: 680 }}>
-        GEM works with a network of investors, producers, financiers, and partners — a real engine of capital and relationships built to get projects funded and made. When your project&apos;s ready, we put it in front of the people who can write the check.
-      </p>
-    </SectionWrapper>
-  )
-}
-
-// ─── Section 6: THE MATH ─────────────────────────────────────────────
+// ─── Section 5: THE MATH ─────────────────────────────────────────────
 
 function CompareRow({ mark, gold, label, price, priceFree }: { mark: '✕' | '✓'; gold?: boolean; label: string; price: string; priceFree?: boolean }) {
   return (
@@ -316,7 +258,6 @@ function TheMathSection() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        {/* Them */}
         <div style={{ borderRadius: 16, padding: '24px 22px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.10)' }}>
           <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 14, color: FAINT }}>
             Submit 10 scripts elsewhere
@@ -330,17 +271,16 @@ function TheMathSection() {
           </div>
         </div>
 
-        {/* Us */}
         <div style={{ borderRadius: 16, padding: '24px 22px', background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.35)' }}>
           <div style={{ fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 14, color: GOLD }}>
             Develop 10 projects on GEM
           </div>
           <CompareRow mark="✓" gold label="A real read on every one" price="Free" priceFree />
-          <CompareRow mark="✓" gold label="Seen by real industry" price="Free" priceFree />
-          <CompareRow mark="✓" gold label="Apply for real funding" price="Free" priceFree />
-          <CompareRow mark="✓" gold label="Real capital behind the winners" price="Up to $1M" priceFree />
+          <CompareRow mark="✓" gold label="Featured to our audience" price="Free" priceFree />
+          <CompareRow mark="✓" gold label="Perks &amp; discounts" price="Free" priceFree />
+          <CompareRow mark="✓" gold label="Real backing when we partner" price="Free" priceFree />
           <div style={{ color: GOLD, fontSize: 13, marginTop: 14, lineHeight: 1.5 }}>
-            Everything they charge for, connected to real money. <span style={{ fontWeight: 700 }}>$0.</span>
+            Everything they charge for, and a real company in your corner. <span style={{ fontWeight: 700 }}>$0.</span>
           </div>
         </div>
       </div>
@@ -348,32 +288,32 @@ function TheMathSection() {
   )
 }
 
-// ─── Section 7: WHY IT'S FREE ────────────────────────────────────────
+// ─── Section 6: STRAIGHT WITH YOU ────────────────────────────────────
 
-function WhyItsFreeSection() {
+function StraightWithYouSection() {
   return (
     <SectionWrapper>
-      <div className="mb-3.5" style={eyebrowStyle}>Why it&apos;s free</div>
+      <div className="mb-3.5" style={eyebrowStyle}>Straight with you</div>
       <h2 className="m-0 mb-4" style={h2Style}>
-        We&apos;re not coverage
+        We&apos;re not here
         <br />
-        you pay for
+        to sell you anything
       </h2>
-      <p className="m-0" style={{ ...leadStyle, maxWidth: 680 }}>
-        GEM is a studio built around creators owning their work. Send us what you&apos;ve got — if it&apos;s great, we&apos;ll tell you, and we&apos;ll help get it in front of the people who can make it real. We make our money finding and backing the winners, not charging you to play.
+      <p className="m-0" style={{ ...leadStyle, maxWidth: 720 }}>
+        Other places charge you hundreds for coverage and do nothing with it. We won&apos;t promise you a deal — honestly, most people won&apos;t qualify for the production help, and we&apos;ll tell you straight. But everything else is free: the read, the perks, the exposure. The only way we ever make money from you is if we partner to produce your work — case by case, only when we both believe in it. That&apos;s it. You&apos;ve got a company in your corner, not one trying to squeeze you.
       </p>
     </SectionWrapper>
   )
 }
 
-// ─── Section 8: FINAL CTA ────────────────────────────────────────────
+// ─── Section 7: FINAL CTA ────────────────────────────────────────────
 
 function FinalCTASection() {
   return (
     <section className="px-6" style={{ borderTop: DIVIDER, padding: '78px 24px' }}>
       <div className="max-w-2xl mx-auto text-center">
         <h2
-          className="m-0 mb-4.5"
+          className="m-0"
           style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 700, fontSize: 'clamp(30px, 5vw, 48px)', letterSpacing: '-1px', lineHeight: 1.15, color: '#ffffff', marginBottom: 18 }}
         >
           Your project deserves
@@ -381,7 +321,7 @@ function FinalCTASection() {
           to <span style={{ color: GOLD }}>be made.</span>
         </h2>
         <p className="m-0 mx-auto" style={{ ...leadStyle, marginBottom: 30 }}>
-          Start developing it with us — completely free.
+          Start with us — completely free.
         </p>
         <Link
           href="/get-started"
@@ -410,12 +350,11 @@ export function LandingPageV21({
   return (
     <>
       <HeroSection />
-      <TheReadSection />
+      <WhoWeAreSection />
+      <WhatWeDoSection />
       <OpportunitiesSection opportunities={opportunities} />
-      <FundingBandSection />
-      <HowWeWorkSection />
       <TheMathSection />
-      <WhyItsFreeSection />
+      <StraightWithYouSection />
       <FinalCTASection />
     </>
   )
