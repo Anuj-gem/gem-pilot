@@ -88,7 +88,7 @@ export default function Nav({ userData }: NavProps = {}) {
                 borderRadius: 1,
               }}
             />
-            <span className="text-lg font-bold tracking-tight">GEM</span>
+            <span className="text-lg font-bold tracking-tight" style={{ color: '#1C1917' }}>GEM</span>
           </Link>
 
           {user ? (
