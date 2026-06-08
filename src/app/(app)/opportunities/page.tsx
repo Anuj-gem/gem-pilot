@@ -50,13 +50,13 @@ function Diamond({ size = 12 }: { size?: number }) {
     <span
       aria-hidden="true"
       className="inline-block rotate-45 shrink-0"
-      style={{ width: size, height: size, background: 'linear-gradient(135deg,#a78bfa,#7c3aed)', borderRadius: 1, verticalAlign: 'middle' }}
+      style={{ width: size, height: size, background: '#7c3aed', borderRadius: 1, verticalAlign: 'middle' }}
     />
   )
 }
 
 const WAYS: { title: string; body: string }[] = [
-  { title: 'Champion your work', body: 'Put our name and our 400K+ audience behind you and the film.' },
+  { title: 'Champion your work', body: 'Put our name and our 350K+ audience behind you and the film.' },
   { title: 'Build proof of concept', body: 'Help you make a teaser, short, or vertical — and back that work.' },
   { title: 'Develop & package', body: 'Sharpen the script, and help attach the talent and team that make it real.' },
   { title: 'Help finance it', body: 'Put early money in, and connect you to partners to raise the rest.' },
@@ -64,7 +64,7 @@ const WAYS: { title: string; body: string }[] = [
   { title: 'Market it', body: 'Use our reach to get the finished work in front of an audience.' },
 ]
 
-const STAGES = ['Your script', 'Developed', 'Packaged', 'Backed', 'Seen by 400K+']
+const STAGES = ['Your script', 'Developed', 'Packaged', 'Backed', 'Seen by 350K+']
 
 const STEPS: { lead: string; rest: string }[] = [
   { lead: 'Every application is read by a human.', rest: 'No fees, no form into a void.' },
@@ -183,7 +183,7 @@ export default async function OpportunitiesPage() {
             <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: '#534AB7', marginBottom: 7 }}>Anuj Kommareddy · Founder</div>
             <p style={{ fontSize: 16.5, lineHeight: 1.5 }}>
               GEM is a small studio that backs a few filmmakers a year — all the way. We help develop and package the
-              film, open doors to the partners who can fund and distribute it, and put a <b style={{ fontWeight: 700 }}>400,000-person</b> audience
+              film, open doors to the partners who can fund and distribute it, and put a <b style={{ fontWeight: 700 }}>350,000-person</b> audience
               behind it. I read every application myself. We take very few, and you always hear back.
             </p>
           </div>

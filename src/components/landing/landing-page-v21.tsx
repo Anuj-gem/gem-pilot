@@ -26,7 +26,7 @@ function GemDiamond({ size = 11 }: { size?: number }) {
         width: size,
         height: size,
         transform: 'rotate(45deg)',
-        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+        background: '#7c3aed',
         borderRadius: 1,
         display: 'inline-block',
       }}
@@ -107,7 +107,7 @@ function HeroSection() {
         </h1>
 
         <p className="m-0 mb-8 mx-auto" style={{ fontSize: 'clamp(16px, 2vw, 20px)', color: MUTED, maxWidth: 660, lineHeight: 1.55 }}>
-          We&apos;re creators with an audience of half a million — and we built GEM to find the next great filmmakers the old industry overlooks, and help get their work made. Free for everyone.
+          We&apos;re creators with an audience of around 350,000 — and we built GEM to find the next great filmmakers the old industry overlooks, and help get their work made. Free for everyone.
         </p>
 
         <div className="flex gap-3.5 justify-center flex-wrap">
@@ -145,14 +145,14 @@ function WhoWeAreSection() {
       <div className="mb-3.5" style={eyebrowStyle}>Who we are</div>
       <h2 className="m-0 mb-4" style={h2Style}>We come from the creator world</h2>
       <p className="m-0 mb-4" style={{ ...leadStyle, maxWidth: 720 }}>
-        We&apos;ve spent years making entertainment and building an audience of 500,000+ — and we&apos;ve watched online media and Hollywood collide into one world. There&apos;s a generation of brilliant creators the old system keeps overlooking. GEM exists to change that: we put our reach, our technology, and our connections behind them. Today we work with hundreds of writers, producers, managers, and agents to get great work made.
+        We&apos;ve spent years making entertainment and building an audience of 350,000+ — and we&apos;ve watched online media and Hollywood collide into one world. There&apos;s a generation of brilliant creators the old system keeps overlooking. GEM exists to change that: we put our reach, our technology, and our connections behind them. Today we work with hundreds of writers, producers, managers, and agents to get great work made.
       </p>
       <p className="m-0" style={{ ...leadStyle, maxWidth: 720 }}>
-        <a href="https://www.tiktok.com/@YOUR_TIKTOK" style={{ color: '#c4b5fd', fontWeight: 600 }}>TikTok</a>
+        <a href="https://www.tiktok.com/@trygemstudios" style={{ color: '#c4b5fd', fontWeight: 600 }}>TikTok</a>
         {' · '}
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM" style={{ color: '#c4b5fd', fontWeight: 600 }}>Instagram</a>
+        <a href="https://www.instagram.com/trygemstudios" style={{ color: '#c4b5fd', fontWeight: 600 }}>Instagram</a>
         {' · '}
-        <span style={{ color: GOLD, fontWeight: 600 }}>500K+ followers · nearly a billion views</span>
+        <span style={{ color: GOLD, fontWeight: 600 }}>350K+ followers · nearly a billion views</span>
       </p>
     </SectionWrapper>
   )
