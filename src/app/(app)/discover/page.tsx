@@ -235,10 +235,6 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     heatRankMap.set(s.id, currentHeatRank)
   })
 
-  // 7-day new script count for header
-  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
-  const recentCount = scripts.filter(s => s.created_at >= sevenDaysAgo).length
-
   // Build card data
   type LeaderboardCard = {
     submissionId: string
@@ -263,6 +259,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
     writer: { handle: string | null; fullName: string | null; avatarUrl: string | null; headline: string | null } | null
     fundingNeeded: number
     leadCharCount: number
+    totalBacking: number
+    budgetHigh: number
   }
 
   const cards: LeaderboardCard[] = scripts
@@ -297,6 +295,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
         writer: wp ? { handle: wp.handle, fullName: wp.full_name, avatarUrl: wp.avatar_url, headline: wp.headline } : null,
         fundingNeeded,
         leadCharCount: ev.leadCharCount,
+        totalBacking,
+        budgetHigh: ev.budgetHigh,
       }
     })
     .filter((c): c is LeaderboardCard => c !== null)
@@ -328,13 +328,8 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
           Discover
         </h1>
         <p className="lb-subtitle text-[15px] text-white/60 mt-1.5 m-0">
-          Independent series and film projects
+          Projects in development by GEM writers
         </p>
-        {recentCount > 0 && (
-          <p className="lb-stats text-[12px] text-white/40 mt-1 m-0">
-            {recentCount} new this week
-          </p>
-        )}
       </div>
 
       {/* Logged-out CTA */}

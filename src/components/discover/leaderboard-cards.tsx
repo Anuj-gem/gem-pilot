@@ -37,29 +37,35 @@ export type LeaderboardCard = {
   writer: { handle: string | null; fullName: string | null; avatarUrl: string | null; headline: string | null } | null
   fundingNeeded: number
   leadCharCount: number
+  totalBacking?: number
+  budgetHigh?: number
 }
 
 type FilterKey = 'all' | 'funding' | 'open_roles'
 type FormatKey = 'all' | 'feature' | 'series'
-type SortKey = 'heat' | 'recent' | 'score'
+type SortKey = 'score' | 'recent' | 'funded'
 
 const GENRE_OPTIONS = [
   'Drama', 'Comedy', 'Thriller', 'Horror', 'Sci-Fi', 'Fantasy',
   'Crime', 'Romance', 'Action', 'Family',
 ] as const
 
+const SORTS: { key: SortKey; label: string; icon: string }[] = [
+  { key: 'score', label: 'Top GEM Score', icon: '◆' },
+  { key: 'recent', label: 'Newest', icon: '🕑' },
+  { key: 'funded', label: 'Most Funded', icon: '💰' },
+]
+
 /* ── Main ── */
 
 export function LeaderboardCards({
   cards,
-  initialSort,
   initialFilters,
-  basePath,
   isInsider,
   isLoggedIn,
 }: {
   cards: LeaderboardCard[]
-  initialSort: string
+  initialSort?: string
   initialFilters: { format: string; genres: string[]; budgets: string[] }
   basePath: string
   isInsider: boolean
@@ -68,11 +74,10 @@ export function LeaderboardCards({
   const [filter, setFilter] = useState<FilterKey>('all')
   const [format, setFormat] = useState<FormatKey>('all')
   const [genre, setGenre] = useState<string | null>(null)
-  const [sort, setSort] = useState<SortKey>('recent')
+  const [sort, setSort] = useState<SortKey>('score')
 
   // Filter
   const filtered = cards.filter(c => {
-    if (filter === 'funding') { if (c.collaboratorCount < 0) return false } // "Need funding" = show all (every project needs funding)
     if (filter === 'open_roles') { if (c.collaboratorCount <= 0) return false }
     if (format === 'feature') { if (c.format !== 'Feature') return false }
     if (format === 'series') { if (c.format !== 'Series') return false }
@@ -91,7 +96,10 @@ export function LeaderboardCards({
       return sb - sa
     }
     if (sort === 'recent') return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    return b.heat - a.heat
+    // funded: by funding attached, tie-break on budget size
+    const fa = a.totalBacking ?? 0, fb = b.totalBacking ?? 0
+    if (fb !== fa) return fb - fa
+    return (b.budgetHigh ?? 0) - (a.budgetHigh ?? 0)
   })
 
   // Counts
@@ -100,30 +108,51 @@ export function LeaderboardCards({
   const featureCount = cards.filter(c => c.format === 'Feature').length
   const seriesCount = cards.filter(c => c.format === 'Series').length
 
-  // Handlers — All is mutually exclusive with funding/open_roles
-  function handleAllClick() { setFilter('all') }
-  function handleFundingClick() { setFilter(filter === 'funding' ? 'all' : 'funding') }
-  function handleOpenRolesClick() { setFilter(filter === 'open_roles' ? 'all' : 'open_roles') }
-
   return (
     <div>
-      {/* Row 1: Main filters + sort */}
-      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10, alignItems: 'center' }}>
-        {/* Filter chips — All is mutually exclusive with funding/open_roles */}
-        <Chip label={`All ${cards.length}`} active={filter === 'all'} onClick={handleAllClick} />
-        {fundingCount > 0 && <Chip label={`Need funding ${fundingCount}`} active={filter === 'funding'} onClick={handleFundingClick} />}
-        {openRolesCount > 0 && <Chip label={`Open roles ${openRolesCount}`} active={filter === 'open_roles'} onClick={handleOpenRolesClick} />}
-
-        <span style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.1)', margin: '0 4px' }} />
-
-        <Chip label={`Feature ${featureCount}`} active={format === 'feature'} onClick={() => setFormat(format === 'feature' ? 'all' : 'feature')} />
-        <Chip label={`Series ${seriesCount}`} active={format === 'series'} onClick={() => setFormat(format === 'series' ? 'all' : 'series')} />
-
-        {/* Sort */}
-        <DiscoverSortDropdown value={sort} onChange={setSort} />
+      {/* Prominent sort — the ranking is the point */}
+      <p style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', margin: '0 0 9px' }}>
+        Ranked by
+      </p>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
+        {SORTS.map(s => {
+          const active = sort === s.key
+          return (
+            <button
+              key={s.key}
+              onClick={() => setSort(s.key)}
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                padding: '10px 18px',
+                borderRadius: 11,
+                border: active ? '1px solid transparent' : '1px solid rgba(255,255,255,0.1)',
+                background: active ? 'linear-gradient(135deg,#7c3aed,#a855f7)' : 'rgba(255,255,255,0.04)',
+                color: active ? '#fff' : 'rgba(255,255,255,0.55)',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 7,
+                boxShadow: active ? '0 6px 18px rgba(124,58,237,0.4)' : 'none',
+              }}
+            >
+              <span style={{ fontSize: 13 }}>{s.icon}</span> {s.label}
+            </button>
+          )
+        })}
       </div>
 
-      {/* Row 2: Genre chips */}
+      {/* Secondary filters */}
+      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10, alignItems: 'center' }}>
+        <Chip label={`All ${cards.length}`} active={filter === 'all'} onClick={() => setFilter('all')} />
+        {fundingCount > 0 && <Chip label={`Need funding ${fundingCount}`} active={filter === 'funding'} onClick={() => setFilter(filter === 'funding' ? 'all' : 'funding')} />}
+        {openRolesCount > 0 && <Chip label={`Open roles ${openRolesCount}`} active={filter === 'open_roles'} onClick={() => setFilter(filter === 'open_roles' ? 'all' : 'open_roles')} />}
+        <span style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.1)', margin: '0 4px' }} />
+        <Chip label={`Feature ${featureCount}`} active={format === 'feature'} onClick={() => setFormat(format === 'feature' ? 'all' : 'feature')} />
+        <Chip label={`Series ${seriesCount}`} active={format === 'series'} onClick={() => setFormat(format === 'series' ? 'all' : 'series')} />
+      </div>
+
+      {/* Genre chips */}
       <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', marginBottom: 20 }}>
         {GENRE_OPTIONS.map(g => (
           <button
@@ -144,19 +173,15 @@ export function LeaderboardCards({
         ))}
       </div>
 
-      {/* Cards grid — responsive 3-col on wide, 2-col on medium */}
+      {/* Cards grid */}
       {sorted.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '48px 0' }}>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)', margin: 0 }}>No projects match this filter.</p>
         </div>
       ) : (
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: 16,
-        }}>
-          {sorted.map(c => (
-            <DiscoverTile key={c.submissionId} card={c} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+          {sorted.map((c, i) => (
+            <DiscoverTile key={c.submissionId} card={c} rank={i + 1} />
           ))}
         </div>
       )}
@@ -165,61 +190,6 @@ export function LeaderboardCards({
 }
 
 /* ── Chip ── */
-
-const DISCOVER_SORT_LABELS: Record<SortKey, string> = { heat: 'Most funded', recent: 'Newest', score: 'Top score' }
-
-function DiscoverSortDropdown({ value, onChange }: { value: SortKey; onChange: (v: SortKey) => void }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div style={{ position: 'relative', marginLeft: 'auto' }}>
-      <button
-        onClick={() => setOpen(v => !v)}
-        style={{
-          fontSize: 12,
-          color: 'rgba(255,255,255,0.7)',
-          background: 'rgba(255,255,255,0.06)',
-          border: '0.5px solid rgba(255,255,255,0.15)',
-          borderRadius: 8,
-          padding: '6px 14px',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 6,
-        }}
-      >
-        Sort: {DISCOVER_SORT_LABELS[value]}
-        <span style={{ fontSize: 10, opacity: 0.5 }}>▾</span>
-      </button>
-      {open && (
-        <>
-          <div style={{ position: 'fixed', inset: 0, zIndex: 40 }} onClick={() => setOpen(false)} />
-          <div style={{
-            position: 'absolute', right: 0, top: '100%', marginTop: 4,
-            background: '#1e1b2e', border: '1px solid rgba(255,255,255,0.12)',
-            borderRadius: 10, padding: '4px 0', zIndex: 50, minWidth: 160,
-            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-          }}>
-            {(['heat', 'recent', 'score'] as SortKey[]).map(k => (
-              <button
-                key={k}
-                onClick={() => { onChange(k); setOpen(false) }}
-                style={{
-                  display: 'block', width: '100%', textAlign: 'left',
-                  fontSize: 13, padding: '8px 16px', border: 'none', cursor: 'pointer',
-                  background: k === value ? 'rgba(255,255,255,0.08)' : 'transparent',
-                  color: k === value ? '#fff' : 'rgba(255,255,255,0.6)',
-                  fontWeight: k === value ? 500 : 400,
-                }}
-              >
-                {DISCOVER_SORT_LABELS[k]}
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  )
-}
 
 function Chip({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (
@@ -251,7 +221,7 @@ function fmtShort(n: number): string {
   return `$${n}`
 }
 
-export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
+export function DiscoverTile({ card: c, rank }: { card: LeaderboardCard; rank?: number }) {
   const href = `/report/${c.evaluationId}`
   const authorName = c.writer?.fullName || 'Anonymous'
 
@@ -263,6 +233,7 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
   ).length
   const crewOpen = Math.max(0, 3 - crewCollabCount)
   const castOpen = Math.max(0, c.leadCharCount - castCollabCount)
+  const showScore = c.scoreVisible && c.score != null
 
   return (
     <Link href={href} style={{ textDecoration: 'none', display: 'block' }}>
@@ -270,80 +241,62 @@ export function DiscoverTile({ card: c }: { card: LeaderboardCard }) {
         {/* Image hero */}
         <div style={{ position: 'relative', height: 180, background: 'linear-gradient(135deg, #2a2040 0%, #1a1530 100%)', overflow: 'hidden' }}>
           {c.posterUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img src={c.posterUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
           ) : (
             <div style={{ width: '100%', height: '100%' }} />
+          )}
+
+          {/* Rank badge top-left */}
+          {rank != null && (
+            <div style={{
+              position: 'absolute', top: 10, left: 10,
+              minWidth: 30, height: 30, padding: '0 8px', borderRadius: 8,
+              background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(4px)',
+              color: '#fff', fontSize: 15, fontWeight: 800,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              {rank}
+            </div>
           )}
 
           {/* Genre pill top-right */}
           {(c.format || c.genre) && (
             <div style={{ position: 'absolute', top: 10, right: 10, display: 'flex', gap: 4 }}>
               {c.format && (
-                <span style={{
-                  fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
-                  background: 'rgba(83,74,183,0.85)', color: '#fff', backdropFilter: 'blur(4px)',
-                }}>
+                <span style={{ fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4, background: 'rgba(83,74,183,0.85)', color: '#fff', backdropFilter: 'blur(4px)' }}>
                   {c.format}
                 </span>
               )}
               {c.genre && (
-                <span style={{
-                  fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4,
-                  background: 'rgba(0,0,0,0.5)', color: '#fff', backdropFilter: 'blur(4px)',
-                }}>
+                <span style={{ fontSize: 10, fontWeight: 500, padding: '3px 8px', borderRadius: 4, background: 'rgba(0,0,0,0.5)', color: '#fff', backdropFilter: 'blur(4px)' }}>
                   {c.genre}
                 </span>
               )}
             </div>
           )}
 
-
           {/* Title + author overlay */}
-          <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0,
-            padding: '12px 14px',
-            background: c.posterUrl ? 'linear-gradient(transparent, rgba(0,0,0,0.8))' : 'none',
-          }}>
-            <p style={{
-              fontSize: 16, fontWeight: 500, margin: 0,
-              color: '#fff', lineHeight: 1.3,
-            }}>
-              {c.title || 'Untitled'}
-            </p>
-            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', margin: '3px 0 0' }}>
-              by {authorName}
-            </p>
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '12px 14px', background: c.posterUrl ? 'linear-gradient(transparent, rgba(0,0,0,0.8))' : 'none' }}>
+            <p style={{ fontSize: 16, fontWeight: 500, margin: 0, color: '#fff', lineHeight: 1.3 }}>{c.title || 'Untitled'}</p>
+            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', margin: '3px 0 0' }}>by {authorName}</p>
           </div>
         </div>
 
-        {/* Stats row */}
-        <div style={{
-          padding: '10px 14px 6px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 12,
-          fontSize: 12,
-          borderTop: '0.5px solid #f0f0f0',
-        }}>
-          <span style={{ color: '#57534E' }}>💰 Need: {fmtShort(c.fundingNeeded)}</span>
-          <span style={{ color: '#57534E' }}>🎬 Crew: {crewOpen} open</span>
-          <span style={{ color: '#57534E' }}>🎭 Cast: {castOpen} open</span>
+        {/* Stats row — GEM score resurfaced */}
+        <div style={{ padding: '10px 14px 6px', display: 'flex', alignItems: 'center', gap: 12, fontSize: 12, borderTop: '0.5px solid #f0f0f0' }}>
+          {showScore && (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 13, fontWeight: 800, color: '#534AB7' }}>
+              <span style={{ width: 9, height: 9, transform: 'rotate(45deg)', background: 'linear-gradient(135deg,#a78bfa,#7c3aed)', borderRadius: 1, display: 'inline-block' }} />
+              {Math.round(c.score as number)}
+            </span>
+          )}
+          <span style={{ color: '#57534E' }}>💰 {fmtShort(c.fundingNeeded)}</span>
+          <span style={{ color: '#57534E' }}>🎭 {castOpen} open</span>
         </div>
         {/* Action row */}
-        <div style={{
-          padding: '4px 14px 10px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-        }}>
-          <span style={{
-            fontSize: 12,
-            fontWeight: 500,
-            color: '#534AB7',
-            whiteSpace: 'nowrap',
-          }}>
-            View project →
-          </span>
+        <div style={{ padding: '4px 14px 10px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+          <span style={{ fontSize: 12, fontWeight: 500, color: '#534AB7', whiteSpace: 'nowrap' }}>View project →</span>
         </div>
       </div>
     </Link>
