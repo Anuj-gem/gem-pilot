@@ -78,7 +78,7 @@ export function OnboardingShell({
               aria-hidden="true"
               className="inline-block w-3 h-3 rotate-45"
               style={{
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                background: '#7c3aed',
                 boxShadow: '0 0 10px rgba(167, 139, 250, 0.5)',
               }}
             />

@@ -287,7 +287,7 @@ export function DiscoverTile({ card: c, rank }: { card: LeaderboardCard; rank?: 
         <div style={{ padding: '10px 14px 6px', display: 'flex', alignItems: 'center', gap: 12, fontSize: 12, borderTop: '0.5px solid #f0f0f0' }}>
           {showScore && (
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 13, fontWeight: 800, color: '#534AB7' }}>
-              <span style={{ width: 9, height: 9, transform: 'rotate(45deg)', background: 'linear-gradient(135deg,#a78bfa,#7c3aed)', borderRadius: 1, display: 'inline-block' }} />
+              <span style={{ width: 9, height: 9, transform: 'rotate(45deg)', background: '#7c3aed', borderRadius: 1, display: 'inline-block' }} />
               {Math.round(c.score as number)}
             </span>
           )}

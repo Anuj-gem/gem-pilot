@@ -28,7 +28,7 @@ export function BlogMasthead() {
             className="inline-block w-3.5 h-3.5 sm:w-4 sm:h-4 rotate-45"
             style={{
               background:
-                'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                '#7c3aed',
               boxShadow: '0 0 12px rgba(167,139,250,0.45)',
             }}
           />

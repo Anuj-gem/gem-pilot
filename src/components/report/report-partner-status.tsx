@@ -14,7 +14,7 @@ const Diamond = () => (
   <span
     aria-hidden="true"
     className="inline-block rotate-45 shrink-0"
-    style={{ width: 12, height: 12, background: 'linear-gradient(135deg,#a78bfa,#7c3aed)', borderRadius: 1 }}
+    style={{ width: 12, height: 12, background: '#7c3aed', borderRadius: 1 }}
   />
 )
 

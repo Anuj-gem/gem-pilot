@@ -22,7 +22,7 @@ export default function AppleIcon() {
           style={{
             width: 96,
             height: 96,
-            background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+            background: '#7c3aed',
             transform: 'rotate(45deg)',
             display: 'flex',
             boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)',

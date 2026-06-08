@@ -32,7 +32,7 @@ export default async function DiscoverOpengraphImage() {
               width: 24,
               height: 24,
               transform: 'rotate(45deg)',
-              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+              background: '#7c3aed',
               borderRadius: 3,
             }}
           />

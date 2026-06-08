@@ -118,13 +118,9 @@ export function GemAnalysisCard({ children, score, tier }: GemAnalysisCardProps)
       >
         <span
           aria-hidden="true"
-          className="inline-flex items-center justify-center shrink-0 rotate-45"
-          style={{ width: 28, height: 28 }}
-        >
-          <span className="absolute rotate-0" style={{ width: 28, height: 28, background: 'rgba(124, 58, 237, 0.08)', borderRadius: 2 }} />
-          <span className="absolute rotate-0" style={{ width: 21, height: 21, background: 'rgba(124, 58, 237, 0.20)', borderRadius: 1.5 }} />
-          <span className="absolute rotate-0" style={{ width: 15, height: 15, background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', borderRadius: 1 }} />
-        </span>
+          className="inline-block shrink-0 rotate-45"
+          style={{ width: 16, height: 16, background: '#7c3aed', borderRadius: 1 }}
+        />
         <div className="flex-1 min-w-0">
           <h3 className="text-[20px] font-bold m-0" style={{ color: '#1C1917' }}>GEM Analysis</h3>
         </div>

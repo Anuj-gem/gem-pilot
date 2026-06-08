@@ -35,7 +35,7 @@ export default async function OpengraphImage() {
               width: 28,
               height: 28,
               transform: 'rotate(45deg)',
-              background: 'linear-gradient(135deg, #a78bfa, #7c3aed)',
+              background: '#7c3aed',
               display: 'flex',
             }}
           />

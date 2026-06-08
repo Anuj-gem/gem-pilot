@@ -93,7 +93,7 @@ export function OpportunityCard({
           <div className="flex items-center gap-1.5 shrink-0 pt-0.5">
             <span
               className="inline-block w-2 h-2 shrink-0"
-              style={{ transform: 'rotate(45deg)', background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', borderRadius: 1 }}
+              style={{ transform: 'rotate(45deg)', background: '#7c3aed', borderRadius: 1 }}
             />
             <span className="text-[11px] text-gray-500">GEM Partner</span>
           </div>

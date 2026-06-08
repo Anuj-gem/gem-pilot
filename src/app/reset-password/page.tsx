@@ -129,7 +129,7 @@ function ResetPasswordContent() {
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             <div style={{
               width: 16, height: 16,
-              background: 'linear-gradient(135deg, #a78bfa, #7c3aed)',
+              background: '#7c3aed',
               transform: 'rotate(45deg)',
               borderRadius: 2,
             }} />

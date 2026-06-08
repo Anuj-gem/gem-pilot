@@ -278,7 +278,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               className="inline-block w-2.5 h-2.5 shrink-0"
               style={{
                 transform: 'rotate(45deg)',
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                background: '#7c3aed',
                 borderRadius: 1,
               }}
             />

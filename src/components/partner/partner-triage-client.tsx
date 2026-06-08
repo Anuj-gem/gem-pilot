@@ -29,7 +29,7 @@ function GemDiamond({ size = 12 }: { size?: number }) {
     >
       <span className="absolute" style={{ width: size * 1.6, height: size * 1.6, background: 'rgba(124,58,237,0.12)', borderRadius: size * 0.06 }} />
       <span className="absolute" style={{ width: size * 1.2, height: size * 1.2, background: 'rgba(124,58,237,0.22)', borderRadius: size * 0.05 }} />
-      <span className="absolute" style={{ width: size, height: size, background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)', borderRadius: size * 0.06 }} />
+      <span className="absolute" style={{ width: size, height: size, background: '#7c3aed', borderRadius: size * 0.06 }} />
     </span>
   )
 }

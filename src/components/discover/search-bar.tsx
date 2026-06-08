@@ -87,7 +87,7 @@ export function SearchBar({
               pillClass += ' text-white border-transparent'
               style = {
                 background:
-                  'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                  '#7c3aed',
                 boxShadow: '0 2px 10px rgba(124,58,237,0.35)',
               }
               countClass = 'text-white/80'

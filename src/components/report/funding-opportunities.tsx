@@ -149,7 +149,7 @@ export function FundingOpportunities({ matchingOpps, considerationResults, submi
             aria-hidden="true"
             className="inline-block w-2.5 h-2.5 rotate-45 shrink-0"
             style={{
-              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+              background: '#7c3aed',
               borderRadius: 1,
             }}
           />

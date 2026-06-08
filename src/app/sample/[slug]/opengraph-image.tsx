@@ -132,7 +132,7 @@ export default async function SampleOpengraphImage({
               style={{
                 width: 18,
                 height: 18,
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                background: '#7c3aed',
                 transform: 'rotate(45deg)',
                 display: 'flex',
               }}
@@ -169,7 +169,7 @@ export default async function SampleOpengraphImage({
               style={{
                 width: 14,
                 height: 14,
-                background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+                background: '#7c3aed',
                 transform: 'rotate(45deg)',
                 display: 'flex',
               }}
@@ -320,7 +320,7 @@ export default async function SampleOpengraphImage({
               alignItems: 'center',
               padding: '12px 22px',
               borderRadius: 999,
-              background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+              background: '#7c3aed',
               color: '#ffffff',
               fontSize: 18,
               fontWeight: 800,

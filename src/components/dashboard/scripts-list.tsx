@@ -71,7 +71,7 @@ function gemDiamond(size = 7) {
       }} />
       <span className="absolute rotate-0" style={{
         width: size, height: size,
-        background: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+        background: '#7c3aed',
         borderRadius: size * 0.06,
       }} />
     </span>
