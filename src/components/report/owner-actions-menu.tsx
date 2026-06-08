@@ -124,8 +124,11 @@ export function OwnerActionsMenu({
               setDeleting(true)
               setMenuOpen(false)
               try {
-                const res = await fetch(`/api/scripts/${submissionId}/hide`, { method: 'POST' })
-                if (res.ok) router.push('/dashboard')
+                const res = await fetch(`/api/scripts/${submissionId}/hide`, { method: 'DELETE' })
+                if (res.ok) {
+                  router.push('/dashboard')
+                  router.refresh()
+                }
               } finally {
                 setDeleting(false)
               }
