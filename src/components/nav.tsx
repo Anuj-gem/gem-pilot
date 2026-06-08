@@ -66,13 +66,9 @@ export default function Nav({ userData }: NavProps = {}) {
     : [] // Writers: no dropdown — flat "My Projects" link replaces it
 
   const navLinks = [
-    { href: '/discover', label: 'Discover', icon: null, emoji: '🔍' },
-    { href: '/opportunities', label: 'Partner', icon: null, emoji: '💼' },
+    { href: '/discover', label: 'Discover', icon: null, emoji: '🔍', diamond: false },
+    { href: '/opportunities', label: 'Partner with GEM', icon: null, emoji: '💼', diamond: true },
   ]
-
-  // Resources dropdown state
-  const [resourcesOpen, setResourcesOpen] = useState(false)
-  useEffect(() => { setResourcesOpen(false) }, [pathname])
 
   return (
     <>
@@ -187,7 +183,7 @@ export default function Nav({ userData }: NavProps = {}) {
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
-                        <span className="text-[15px] leading-none">{link.emoji}</span>
+                        {link.diamond ? <span aria-hidden className="inline-block rotate-45 shrink-0" style={{ width: 11, height: 11, background: '#7c3aed', borderRadius: 1 }} /> : <span className="text-[15px] leading-none">{link.emoji}</span>}
                         {link.label}
                         {active && (
                           <span
@@ -199,42 +195,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
-                  {/* Resources dropdown */}
-                  <div className="relative">
-                    <button
-                      onClick={() => setResourcesOpen(v => !v)}
-                      className={`relative flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm transition-colors cursor-pointer border-0 bg-transparent ${
-                        pathname.startsWith('/blog')
-                          ? 'text-[var(--gem-white)] font-semibold'
-                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
-                      }`}
-                    >
-                      <span className="text-[15px] leading-none">📚</span>
-                      Resources
-                      <ChevronDown size={14} className={`transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
-                      {pathname.startsWith('/blog') && (
-                        <span aria-hidden className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }} />
-                      )}
-                    </button>
-                    {resourcesOpen && (
-                      <>
-                        <div className="fixed inset-0 z-40" onClick={() => setResourcesOpen(false)} />
-                        <div className="absolute left-0 top-full mt-2 bg-[#1e1b2e] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 min-w-[160px]">
-                          <Link
-                            href="/blog"
-                            className={`flex items-center gap-2.5 px-4 py-2.5 text-[13px] transition-colors no-underline ${
-                              pathname.startsWith('/blog')
-                                ? 'text-white font-semibold bg-white/10'
-                                : 'text-white/70 hover:text-white hover:bg-white/5'
-                            }`}
-                          >
-                            <span className="text-[14px]">📝</span>
-                            Blog
-                          </Link>
-                        </div>
-                      </>
-                    )}
-                  </div>
+                  {/* Resources temporarily removed */}
                   {userData && !userData.profile.isPro && userData.profile.accountType !== 'producer' && (
                     <button
                       onClick={() => window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))}
@@ -302,7 +263,7 @@ export default function Nav({ userData }: NavProps = {}) {
                             : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
                         }`}
                       >
-                        <span className="text-[15px] leading-none">{link.emoji}</span>
+                        {link.diamond ? <span aria-hidden className="inline-block rotate-45 shrink-0" style={{ width: 11, height: 11, background: '#7c3aed', borderRadius: 1 }} /> : <span className="text-[15px] leading-none">{link.emoji}</span>}
                         {link.label}
                         {active && (
                           <span
@@ -314,42 +275,7 @@ export default function Nav({ userData }: NavProps = {}) {
                       </Link>
                     )
                   })}
-                  {/* Resources dropdown */}
-                  <div className="relative">
-                    <button
-                      onClick={() => setResourcesOpen(v => !v)}
-                      className={`relative flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm transition-colors cursor-pointer border-0 bg-transparent ${
-                        pathname.startsWith('/blog')
-                          ? 'text-[var(--gem-white)] font-semibold'
-                          : 'text-[var(--gem-gray-400)] hover:text-[var(--gem-white)]'
-                      }`}
-                    >
-                      <span className="text-[15px] leading-none">📚</span>
-                      Resources
-                      <ChevronDown size={14} className={`transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
-                      {pathname.startsWith('/blog') && (
-                        <span aria-hidden className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg,#a78bfa 0%,#7c3aed 100%)' }} />
-                      )}
-                    </button>
-                    {resourcesOpen && (
-                      <>
-                        <div className="fixed inset-0 z-40" onClick={() => setResourcesOpen(false)} />
-                        <div className="absolute left-0 top-full mt-2 bg-[#1e1b2e] border border-white/10 rounded-xl shadow-2xl py-1.5 z-50 min-w-[160px]">
-                          <Link
-                            href="/blog"
-                            className={`flex items-center gap-2.5 px-4 py-2.5 text-[13px] transition-colors no-underline ${
-                              pathname.startsWith('/blog')
-                                ? 'text-white font-semibold bg-white/10'
-                                : 'text-white/70 hover:text-white hover:bg-white/5'
-                            }`}
-                          >
-                            <span className="text-[14px]">📝</span>
-                            Blog
-                          </Link>
-                        </div>
-                      </>
-                    )}
-                  </div>
+                  {/* Resources temporarily removed */}
                   <Link
                     href="/get-started"
                     className="ml-2 text-[12px] font-semibold px-3 py-1.5 rounded-lg text-white no-underline transition-all duration-150 hover:brightness-110"
@@ -417,22 +343,12 @@ export default function Nav({ userData }: NavProps = {}) {
                       active ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    <span className="text-[15px] leading-none">{link.emoji}</span>
+                    {link.diamond ? <span aria-hidden className="inline-block rotate-45 shrink-0" style={{ width: 11, height: 11, background: '#7c3aed', borderRadius: 1 }} /> : <span className="text-[15px] leading-none">{link.emoji}</span>}
                     {link.label}
                   </Link>
                 )
               })}
-              {/* Resources links (mobile) */}
-              <div className="border-t border-white/10 my-1" />
-              <Link
-                href="/blog"
-                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-[14px] transition-colors ${
-                  pathname.startsWith('/blog') ? 'text-white font-semibold bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                <span className="text-[15px] leading-none">📝</span>
-                Blog
-              </Link>
+              {/* Resources temporarily removed */}
               {!user && (
                 <>
                   <div className="border-t border-white/10 my-1" />
