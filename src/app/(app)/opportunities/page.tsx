@@ -180,11 +180,16 @@ export default async function OpportunitiesPage() {
         <div className="flex gap-5 items-center" style={{ padding: '40px 0', borderBottom: `1px solid ${LINE}` }}>
           <div className="shrink-0 flex items-center justify-center" style={{ width: 84, height: 84, borderRadius: '50%', background: 'linear-gradient(135deg,#6d8bdc,#3b5bb5)', color: '#fff', fontSize: 30, fontWeight: 700 }}>A</div>
           <div>
-            <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: '#534AB7', marginBottom: 7 }}>Anuj Kommareddy · Founder</div>
+            <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: '#534AB7', marginBottom: 7 }}>
+              Founded by Anuj Kommareddy
+            </div>
             <p style={{ fontSize: 16.5, lineHeight: 1.5 }}>
-              GEM is a small studio that backs a few filmmakers a year — all the way. We help develop and package the
-              film, open doors to the partners who can fund and distribute it, and put a <b style={{ fontWeight: 700 }}>350,000-person</b> audience
-              behind it. I read every application myself. We take very few, and you always hear back.
+              We started as social media creators and built an audience of <b style={{ fontWeight: 700 }}>350,000+</b>. Since then
+              we&apos;ve built the technology and the partner network to take a project all the way from idea to screen —
+              that&apos;s GEM. Come see what we&apos;re about on{' '}
+              <a href="https://www.tiktok.com/@trygemstudios" target="_blank" rel="noopener noreferrer" style={{ color: '#534AB7', fontWeight: 600 }}>TikTok</a>
+              {' '}and{' '}
+              <a href="https://www.instagram.com/trygemstudios" target="_blank" rel="noopener noreferrer" style={{ color: '#534AB7', fontWeight: 600 }}>Instagram</a>.
             </p>
           </div>
         </div>

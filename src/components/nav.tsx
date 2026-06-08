@@ -67,7 +67,7 @@ export default function Nav({ userData }: NavProps = {}) {
 
   const navLinks = [
     { href: '/discover', label: 'Discover', icon: null, emoji: '🔍' },
-    { href: '/opportunities', label: 'Opportunities', icon: null, emoji: '💼' },
+    { href: '/opportunities', label: 'Partner', icon: null, emoji: '💼' },
   ]
 
   // Resources dropdown state
