@@ -197,12 +197,8 @@ export async function POST(req: NextRequest) {
       const feedbackUrl = `https://www.gem.studio/applications/${consideration_id}`
 
       if (writerProfile?.email) {
-        const emailAlias = heatEarned > 0
-          ? 'consideration_complete' as const
-          : 'consideration_complete_no_heat' as const
-
         await sendEmail({
-          templateAlias: emailAlias,
+          templateAlias: 'consideration_complete' as const,
           to: writerProfile.email,
           variables: {
             script_title: scriptTitle,
@@ -211,14 +207,10 @@ export async function POST(req: NextRequest) {
             opportunity_type: opportunityType,
             opportunity_badge_bg: opportunityBadgeBg,
             opportunity_badge_color: opportunityBadgeColor,
-            ...(heatEarned > 0 ? {
-              heat_earned: String(heatEarned),
-              total_heat: String(writerProfile.heat_score || 0),
-            } : {}),
             feedback_url: feedbackUrl,
           },
           dedupeKey: `consideration_complete_${consideration_id}`,
-          tag: emailAlias,
+          tag: 'consideration_complete',
           userId: consideration.writer_id,
         }, service)
       }

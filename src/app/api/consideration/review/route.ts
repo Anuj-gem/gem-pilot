@@ -211,7 +211,7 @@ export async function POST(req: NextRequest) {
 
         if (writerProfile?.email) {
           await sendEmail({
-            templateAlias: 'consideration_complete_no_heat' as const,
+            templateAlias: 'consideration_complete' as const,
             to: writerProfile.email,
             variables: {
               script_title: scriptTitle,
