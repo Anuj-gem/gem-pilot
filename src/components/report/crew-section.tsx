@@ -332,9 +332,27 @@ export function CrewSection({
 
   // Show ALL roles to everyone — including open/unfilled ones — so viewers
   // can see what roles are available (and, for cast, the model's character
-  // analysis on each). Only hide the section if there are no roles at all.
-  // Anuj 2026-06-05.
-  const visibleRoles = roles
+  // analysis on each). Crew/cast role "slots" only get seeded into the DB
+  // when the OWNER opens the tab, so a non-owner viewing a script the owner
+  // never opened would otherwise see an empty section. For non-owners with
+  // no seeded slots, synthesize read-only rows from the report data — the
+  // extracted characters for cast, the default crew roles for crew — so the
+  // section (and the character analysis) always renders. Anuj 2026-06-05.
+  const CREW_DEFAULTS = ['Producer', 'Director', 'Editor', 'DP']
+  let visibleRoles = roles
+  if (!isOwner && roles.length === 0) {
+    const names = category === 'cast' ? characters.map(c => c.name) : CREW_DEFAULTS
+    visibleRoles = names.map((name, i) => ({
+      id: `synthetic-${i}`,
+      role_name: name,
+      assigned_user_id: null,
+      collaborator_row_id: null,
+      sort_order: i,
+      role_category: category,
+      profile: null,
+      collaborator: null,
+    }))
+  }
   if (!isOwner && visibleRoles.length === 0) return null
 
   return (
@@ -349,7 +367,7 @@ export function CrewSection({
 
       {/* Role slots */}
       <div className="flex flex-col gap-2 mb-3">
-        {(isOwner ? roles : visibleRoles).map(role => (
+        {visibleRoles.map(role => (
           <RoleSlot
             key={role.id}
             role={role}
