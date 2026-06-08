@@ -58,6 +58,8 @@ import { EditWrapper } from '@/components/report/edit-wrapper'
 import { InlineCastField } from '@/components/report/inline-cast-editor'
 import { InlineElevatorPitch } from '@/components/report/inline-elevator-pitch'
 import { OwnerActionsMenu } from '@/components/report/owner-actions-menu'
+import { InlineEditable } from '@/components/report/inline-editable'
+import { GenreChipEditor } from '@/components/report/genre-chip-editor'
 import { ShareButtons } from '@/components/report/share-buttons'
 import { DangerZoneDelete } from '@/components/report/danger-zone-delete'
 import HeroMediaCarousel from '@/components/report/hero-media-carousel'
@@ -907,24 +909,14 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               scoreShownToIndustry={isScoreVisible(privacy)}
               isProSubscriber={true}
             />
-            {/* Classification pills */}
-            <div className="flex items-center gap-2 mt-3 flex-wrap">
-              {report.classification?.format && (
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold" style={{ background: 'rgba(124,58,237,0.9)', color: '#fff' }}>
-                  {report.classification.format}
-                </span>
-              )}
-              {report.classification?.genre_primary && (
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold" style={{ background: 'rgba(43,26,85,0.85)', color: '#fff', border: '1px solid rgba(124,58,237,0.4)' }}>
-                  {report.classification.genre_primary}
-                </span>
-              )}
-              {(report.classification?.genre_secondary ?? []).map((g: string, i: number) => (
-                <span key={`gs-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold" style={{ background: 'rgba(43,26,85,0.85)', color: '#fff', border: '1px solid rgba(124,58,237,0.4)' }}>
-                  {g}
-                </span>
-              ))}
-            </div>
+            {/* Classification pills — format locked, genres owner-editable */}
+            <GenreChipEditor
+              evaluationId={id}
+              isOwner={isOwner}
+              format={report.classification?.format ?? null}
+              initialPrimary={(editedFields as any)?.genre_primary ?? report.classification?.genre_primary ?? null}
+              initialSecondary={(editedFields as any)?.genre_secondary ?? report.classification?.genre_secondary ?? []}
+            />
           </div>
         </div>
 
@@ -961,21 +953,28 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             isPublic={submission.is_public ?? false}
             isProSubscriber={true}
           >
-            {whatsSpecial.headline && (
+            {(whatsSpecial.headline || isOwner) && (
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] m-0 mb-2" style={{ color: '#78716C' }}>
                   Why This Can Be a Hit
                 </p>
-                <p className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0" style={{ color: '#1C1917' }}>
-                  {whatsSpecial.headline}
-                </p>
+                <InlineEditable
+                  evaluationId={id}
+                  field="elevator_pitch"
+                  value={(editedFields as any)?.elevator_pitch ?? whatsSpecial.headline ?? ''}
+                  isOwner={isOwner}
+                  as="p"
+                  placeholder="Add a sentence on why this can be a hit…"
+                  className="text-[16px] sm:text-[17px] leading-[1.6] font-normal m-0"
+                  style={{ color: '#1C1917' }}
+                />
               </div>
             )}
           </SectionGate>
 
           {/* PLOT SUMMARY — collapsed by default */}
-          {plotSummary && (
-            <details>
+          {(plotSummary || isOwner) && (
+            <details open={isOwner && !plotSummary}>
               <summary className="text-[11px] font-semibold uppercase tracking-[0.12em] cursor-pointer select-none list-none" style={{ color: '#78716C' }}>
                 <span className="flex items-center gap-1.5">
                   Plot Summary
@@ -984,9 +983,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
                   </svg>
                 </span>
               </summary>
-              <p className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2" style={{ color: '#44403C' }}>
-                {plotSummary}
-              </p>
+              <InlineEditable
+                evaluationId={id}
+                field="plot_summary"
+                value={(editedFields as any)?.plot_summary ?? plotSummary ?? ''}
+                isOwner={isOwner}
+                as="p"
+                placeholder="Add a short plot summary…"
+                className="text-[15px] sm:text-[16px] leading-[1.6] m-0 mt-2"
+                style={{ color: '#44403C' }}
+              />
             </details>
           )}
           </div>{/* close content wrapper */}

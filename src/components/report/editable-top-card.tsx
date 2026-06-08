@@ -20,6 +20,7 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { Eye, EyeOff, ChevronDown, X } from 'lucide-react'
 import { useEditContextOptional } from './edit-context'
+import { InlineEditable } from './inline-editable'
 import {
   LOGLINE_WORD_CAP,
   LOCKED_GENRE_VOCAB,
@@ -188,13 +189,27 @@ export function EditableTopCard({
   if (heroOverlay && !isEditing) {
     return (
       <div ref={cardRef} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5), 0 2px 12px rgba(0,0,0,0.3)' }}>
-        <h1 className="text-[34px] sm:text-[40px] font-bold text-white tracking-tight leading-[1.08] m-0 mb-2">
-          {displayTitle}
-        </h1>
-        {displayLogline && (
-          <p className="text-[15px] sm:text-[16px] leading-[1.5] m-0 mb-3 font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
-            {displayLogline}
-          </p>
+        <InlineEditable
+          evaluationId={evaluationId}
+          field="title"
+          value={displayTitle}
+          isOwner={isOwner}
+          as="h1"
+          required
+          placeholder="Your script title"
+          className="text-[34px] sm:text-[40px] font-bold text-white tracking-tight leading-[1.08] m-0 mb-2"
+        />
+        {(displayLogline || isOwner) && (
+          <InlineEditable
+            evaluationId={evaluationId}
+            field="logline"
+            value={displayLogline}
+            isOwner={isOwner}
+            as="p"
+            placeholder="Add a one-line logline…"
+            className="text-[15px] sm:text-[16px] leading-[1.5] m-0 mb-3 font-medium"
+            style={{ color: 'rgba(255,255,255,0.9)' }}
+          />
         )}
         <div className="flex items-center gap-2">
           {authorAvatar ? (
