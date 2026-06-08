@@ -328,7 +328,7 @@ export default async function DiscoverPage({ searchParams }: PageProps) {
           Discover
         </h1>
         <p className="lb-subtitle text-[15px] text-white/60 mt-1.5 m-0">
-          Projects in development by GEM writers
+          The next great filmmakers, and the projects they&apos;re building with GEM
         </p>
       </div>
 

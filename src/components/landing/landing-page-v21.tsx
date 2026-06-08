@@ -107,7 +107,7 @@ function HeroSection() {
         </h1>
 
         <p className="m-0 mb-8 mx-auto" style={{ fontSize: 'clamp(16px, 2vw, 20px)', color: MUTED, maxWidth: 660, lineHeight: 1.55 }}>
-          We&apos;re creators who love great stories. We built GEM to find the next great filmmakers and help get their work made — and it&apos;s free for everyone.
+          We&apos;re creators with an audience of half a million — and we built GEM to find the next great filmmakers the old industry overlooks, and help get their work made. Free for everyone.
         </p>
 
         <div className="flex gap-3.5 justify-center flex-wrap">
@@ -145,7 +145,7 @@ function WhoWeAreSection() {
       <div className="mb-3.5" style={eyebrowStyle}>Who we are</div>
       <h2 className="m-0 mb-4" style={h2Style}>We come from the creator world</h2>
       <p className="m-0 mb-4" style={{ ...leadStyle, maxWidth: 720 }}>
-        We&apos;re creators ourselves — we&apos;ve spent years making entertainment and building our social channels, and we love this stuff. We built GEM as a resource for writers and for filmmakers far more talented than us: a way to use our reach, our tools, and what we&apos;ve learned to help the next generation of filmmakers get their work made.
+        We&apos;ve spent years making entertainment and building an audience of 500,000+ — and we&apos;ve watched online media and Hollywood collide into one world. There&apos;s a generation of brilliant creators the old system keeps overlooking. GEM exists to change that: we put our reach, our technology, and our connections behind them. Today we work with hundreds of writers, producers, managers, and agents to get great work made.
       </p>
       <p className="m-0" style={{ ...leadStyle, maxWidth: 720 }}>
         <a href="https://www.tiktok.com/@YOUR_TIKTOK" style={{ color: '#c4b5fd', fontWeight: 600 }}>TikTok</a>
@@ -178,7 +178,7 @@ function WhatWeDoSection() {
       <div className="mb-3.5" style={eyebrowStyle}>Here&apos;s what we do</div>
       <h2 className="m-0 mb-2" style={h2Style}>Everything we offer, free</h2>
       <p className="m-0 mb-8" style={{ ...leadStyle, maxWidth: 680 }}>
-        Use as much or as little as you want. No subscription, no catch.
+        We back creators with three things — our reach, our technology, and our network. Use as much or as little as you want. No subscription, no catch.
       </p>
       <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
         <WhatWeDoCard
