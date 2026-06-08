@@ -4,7 +4,40 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
-type Script = { id: string; title: string; score: number | null }
+type Script = {
+  id: string
+  title: string
+  score: number | null
+  posterUrl?: string | null
+  format?: string | null
+  genre?: string | null
+  date?: string | null
+}
+
+function Thumb({ s }: { s: Script }) {
+  if (s.posterUrl) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={s.posterUrl} alt="" style={{ width: 38, height: 52, borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} />
+  }
+  return (
+    <div className="flex items-center justify-center shrink-0" style={{ width: 38, height: 52, borderRadius: 6, background: '#efece6', color: '#b8b0a4', fontSize: 15 }}>▦</div>
+  )
+}
+
+function SubLine({ s }: { s: Script }) {
+  const parts = [s.format, s.genre, s.date].filter(Boolean) as string[]
+  if (parts.length === 0) return null
+  return (
+    <div style={{ fontSize: 12.5, color: '#57534E', marginTop: 2 }}>
+      {parts.map((p, i) => (
+        <span key={i}>
+          {i > 0 && ' · '}
+          <span style={i === 0 && s.format ? { color: '#1C1917', fontWeight: 600 } : undefined}>{p}</span>
+        </span>
+      ))}
+    </div>
+  )
+}
 
 /**
  * Inline apply / edit for the single "Partner with GEM" opportunity. The writer
@@ -128,12 +161,21 @@ export function InlineApply({
     busy?: boolean
     pills?: string[]
   }) => (
-    <div style={{ border: '1px solid #ece8e1', background: '#fff', borderRadius: 11, padding: '11px 14px', marginBottom: 8 }}>
-      <div className="flex items-center gap-3">
-        <span className="flex-1 min-w-0" style={{ fontSize: 14.5, fontWeight: 600, color: '#1C1917' }}>
-          {s.title}
-        </span>
-        {s.score != null && <span style={{ fontSize: 13, fontWeight: 800, color: '#534AB7' }}>{Math.round(s.score)}</span>}
+    <div className="flex items-center gap-3" style={{ border: '1px solid #ece8e1', background: '#fff', borderRadius: 11, padding: '10px 13px', marginBottom: 8 }}>
+      <Thumb s={s} />
+      <div className="flex-1 min-w-0">
+        <div className="truncate" style={{ fontSize: 14.5, fontWeight: 700, color: '#1C1917' }}>{s.title}</div>
+        <SubLine s={s} />
+        {pills && pills.length > 0 && (
+          <div className="flex flex-wrap gap-1.5" style={{ marginTop: 7 }}>
+            {pills.map((p) => (
+              <span key={p} style={{ fontSize: 11, fontWeight: 600, color: '#534AB7', background: '#F0EDFB', borderRadius: 99, padding: '2px 9px' }}>{p}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      <div className="flex items-center shrink-0" style={{ gap: 11 }}>
+        {s.score != null && <span style={{ fontSize: 12, fontWeight: 600, color: '#9b958c' }}>{Math.round(s.score)}</span>}
         <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: tagColor }}>{tag}</span>
         {onWithdraw && (
           <button
@@ -146,18 +188,6 @@ export function InlineApply({
           </button>
         )}
       </div>
-      {pills && pills.length > 0 && (
-        <div className="flex flex-wrap gap-1.5" style={{ marginTop: 8 }}>
-          {pills.map((p) => (
-            <span
-              key={p}
-              style={{ fontSize: 11, fontWeight: 600, color: '#534AB7', background: '#F0EDFB', borderRadius: 99, padding: '2px 9px' }}
-            >
-              {p}
-            </span>
-          ))}
-        </div>
-      )}
     </div>
   )
 
@@ -255,7 +285,7 @@ export function InlineApply({
                         border: `1px solid ${sel ? '#b9aef0' : '#ece8e1'}`,
                         background: sel ? '#faf9ff' : '#fff',
                         borderRadius: 11,
-                        padding: '12px 14px',
+                        padding: '10px 13px',
                         marginBottom: 9,
                       }}
                     >
@@ -274,11 +304,13 @@ export function InlineApply({
                       >
                         {sel ? '✓' : ''}
                       </span>
-                      <span className="flex-1 min-w-0" style={{ fontSize: 14.5, fontWeight: 600 }}>
-                        {s.title}
-                      </span>
+                      <Thumb s={s} />
+                      <div className="flex-1 min-w-0">
+                        <div className="truncate" style={{ fontSize: 14.5, fontWeight: 600, color: '#1C1917' }}>{s.title}</div>
+                        <SubLine s={s} />
+                      </div>
                       {s.score != null && (
-                        <span style={{ fontSize: 13, fontWeight: 800, color: '#534AB7' }}>{Math.round(s.score)}</span>
+                        <span style={{ fontSize: 12, fontWeight: 600, color: '#9b958c' }}>{Math.round(s.score)}</span>
                       )}
                     </button>
                   )
