@@ -1197,14 +1197,11 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         >
 
         {/* ═══ GEM ANALYSIS CONTENT ═══ */}
+        {/* Fully visible to everyone — the score is already shown on the
+            preview/Discover card, so there's nothing to gate. (Removed the
+            "Visible to collaborators only" blur overlay.) Anuj 2026-06-05. */}
         <div className="relative space-y-8">
-        {!viewerHasFullAccess && (
-          <div className="absolute inset-0 z-20 rounded-2xl flex items-center justify-center" style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(26,16,53,0.7)' }}>
-            <p className="text-[20px] sm:text-[24px] font-bold text-center m-0 px-6" style={{ color: '#A78BFA' }}>
-              Visible to collaborators only
-            </p>
-          </div>
-        )}
+        {void viewerHasFullAccess}
 
         {/* Score display */}
         {typeof commercialScore === 'number' && (
