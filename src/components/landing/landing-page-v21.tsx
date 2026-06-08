@@ -66,7 +66,7 @@ function HeroSection() {
             Get started
           </Link>
           <Link
-            href="/opportunities"
+            href="/partners"
             onClick={() => { try { trackEvent('cta_clicked', { location: 'hero_v21', label: 'Partner with us' }) } catch {} }}
             className="inline-block text-white no-underline transition-all hover:bg-white/10 active:scale-[0.98]"
             style={{ border: '1px solid rgba(255,255,255,0.35)', padding: '15px 34px', borderRadius: 12, fontWeight: 600, fontSize: 17 }}
@@ -228,7 +228,7 @@ function OpportunitiesSection({ opportunities }: { opportunities: OpportunityCar
           <h2 className="m-0" style={h2Style}>Opportunities</h2>
         </div>
         <Link
-          href="/opportunities"
+          href="/partners"
           className="text-[14px] font-semibold no-underline hover:opacity-80 shrink-0 ml-4"
           style={{ color: '#c4b5fd' }}
           onClick={() => { try { trackEvent('cta_clicked', { location: 'opportunities_v21', label: 'Browse all' }) } catch {} }}

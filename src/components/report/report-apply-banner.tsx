@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react'
  *  - × button  → hide for this session (comes back next visit)
  *  - "Don't show me this again" → permanent, stored in localStorage
  */
-export function ReportApplyBanner({ applyHref = '/opportunities' }: { applyHref?: string }) {
+export function ReportApplyBanner({ applyHref = '/partners' }: { applyHref?: string }) {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
