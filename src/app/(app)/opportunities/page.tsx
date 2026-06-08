@@ -55,16 +55,39 @@ function Diamond({ size = 12 }: { size?: number }) {
   )
 }
 
-const WAYS: { title: string; body: string }[] = [
-  { title: 'Champion your work', body: 'Put our name and our 350K+ audience behind you and the film.' },
-  { title: 'Build proof of concept', body: 'Help you make a teaser, short, or vertical — and back that work.' },
-  { title: 'Develop & package', body: 'Sharpen the script, and help attach the talent and team that make it real.' },
-  { title: 'Help finance it', body: 'Put early money in, and connect you to partners to raise the rest.' },
-  { title: 'Help get it distributed', body: 'Work with partners to find distribution and see it through to release.' },
-  { title: 'Market it', body: 'Use our reach to get the finished work in front of an audience.' },
-]
+function TikTokIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width={20} height={20} fill="currentColor" aria-hidden="true">
+      <path d="M16.5 3c.32 2.02 1.6 3.62 3.5 3.9v2.43c-1.27 0-2.46-.4-3.5-1.06v6.36c0 3.18-2.58 5.77-5.77 5.77S4.96 17.81 4.96 14.63 7.55 8.86 10.73 8.86c.31 0 .61.02.91.07v2.52a3.25 3.25 0 1 0 2.34 3.12V3h2.52z" />
+    </svg>
+  )
+}
 
-const STAGES = ['Your script', 'Developed', 'Packaged', 'Backed', 'Seen by 350K+']
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width={20} height={20} fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+const OFFERINGS: { title: string; body: string; social?: boolean }[] = [
+  {
+    title: 'Develop your idea',
+    body: 'We use our technology — and what we’ve learned studying thousands of scripts — to help you craft and position your story for the screen. We won’t change your vision; we’ll help make it producible and investable.',
+  },
+  {
+    title: 'Test & market it',
+    body: 'We help you test concepts and grow the project over time — through our own channels and our partner network.',
+    social: true,
+  },
+  {
+    title: 'Production partnership',
+    body: 'When the time’s right, we invest and help produce the full film or series — and connect you to our partner network for casting, financing, and distribution.',
+  },
+]
 
 const STEPS: { lead: string; rest: string }[] = [
   { lead: 'Every application is read by a human.', rest: 'No fees, no form into a void.' },
@@ -176,49 +199,29 @@ export default async function OpportunitiesPage() {
       </div>
 
       <div className="mx-auto px-4" style={{ maxWidth: 760, color: INK }}>
-        {/* ── 2. FOUNDER ── */}
-        <div className="flex gap-5 items-center" style={{ padding: '40px 0', borderBottom: `1px solid ${LINE}` }}>
-          <div className="shrink-0 flex items-center justify-center" style={{ width: 84, height: 84, borderRadius: '50%', background: 'linear-gradient(135deg,#6d8bdc,#3b5bb5)', color: '#fff', fontSize: 30, fontWeight: 700 }}>A</div>
-          <div>
-            <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.4, textTransform: 'uppercase', color: '#534AB7', marginBottom: 7 }}>
-              Founded by Anuj Kommareddy
-            </div>
-            <p style={{ fontSize: 16.5, lineHeight: 1.5 }}>
-              We started as social media creators and built an audience of <b style={{ fontWeight: 700 }}>350,000+</b>. Since then
-              we&apos;ve built the technology and the partner network to take a project all the way from idea to screen —
-              that&apos;s GEM. Come see what we&apos;re about on{' '}
-              <a href="https://www.tiktok.com/@trygemstudios" target="_blank" rel="noopener noreferrer" style={{ color: '#534AB7', fontWeight: 600 }}>TikTok</a>
-              {' '}and{' '}
-              <a href="https://www.instagram.com/trygemstudios" target="_blank" rel="noopener noreferrer" style={{ color: '#534AB7', fontWeight: 600 }}>Instagram</a>.
-            </p>
-          </div>
-        </div>
-
-        {/* ── 3. WHAT WE DO ── */}
-        <div style={{ padding: '42px 0' }}>
-          <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.5, textTransform: 'uppercase', color: FAINT, marginBottom: 22 }}>What we do when we back you</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            {WAYS.map((w) => (
-              <div key={w.title} style={{ background: '#fff', border: `1px solid ${LINE}`, borderRadius: 14, padding: 20 }}>
+        {/* ── What we do when we back you (3 simple cards) ── */}
+        <div style={{ padding: '40px 0 8px' }}>
+          <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: 0.5, textTransform: 'uppercase', color: FAINT, marginBottom: 22 }}>If we back you, here&apos;s what that means</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            {OFFERINGS.map((o) => (
+              <div key={o.title} className="flex flex-col" style={{ background: '#fff', border: `1px solid ${LINE}`, borderRadius: 14, padding: 20 }}>
                 <div style={{ marginBottom: 11 }}><Diamond /></div>
-                <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>{w.title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.5, color: MUTED }}>{w.body}</p>
+                <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>{o.title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.5, color: MUTED }}>{o.body}</p>
+                {o.social && (
+                  <div className="flex items-center gap-3" style={{ marginTop: 'auto', paddingTop: 14 }}>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: '#57534E' }}>See for yourself</span>
+                    <a href="https://www.tiktok.com/@trygemstudios" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="inline-flex" style={{ color: '#534AB7' }}>
+                      <TikTokIcon />
+                    </a>
+                    <a href="https://www.instagram.com/trygemstudios" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="inline-flex" style={{ color: '#534AB7' }}>
+                      <InstagramIcon />
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </div>
-
-        {/* ── 4. PIPELINE ── */}
-        <div style={{ background: '#fff', border: `1px solid ${LINE}`, borderRadius: 16, padding: '26px 22px', textAlign: 'center', marginBottom: 42 }}>
-          <div className="flex items-center justify-center flex-wrap" style={{ gap: 10, marginBottom: 14 }}>
-            {STAGES.map((s, i) => (
-              <span key={s} className="flex items-center" style={{ gap: 10 }}>
-                <span style={{ fontSize: 14, fontWeight: 700, color: INK, background: '#faf9ff', border: '1px solid #e6e0ff', borderRadius: 10, padding: '9px 15px' }}>{s}</span>
-                {i < STAGES.length - 1 && <span style={{ color: '#c9bff0', fontSize: 11, margin: '0 4px' }}>◆</span>}
-              </span>
-            ))}
-          </div>
-          <div style={{ fontSize: 13, color: FAINT }}>The path we walk with the filmmakers we back — and the doors we open along the way.</div>
         </div>
 
         {/* ── 5. AFTER YOU APPLY + APPLY ── */}
