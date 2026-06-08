@@ -9,11 +9,17 @@
 // "+" button reveals a small menu of the remaining allowed genres to add.
 // Capped at 3 — at the cap the "+" disappears.
 //
+// The add-menu is rendered in a PORTAL (document.body, fixed position under
+// the "+" button) so it is never clipped by the hero's overflow-hidden.
+// Previously it opened downward inside the hero and got sliced off at the
+// bottom edge — the writer couldn't see the options. Anuj 2026-06-05.
+//
 // Any change POSTs { genre_primary, genre_secondary } to the edit endpoint,
 // which merges partial edited_fields, so genres save without touching other
 // fields. Non-owners just see the plain pills.
 
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useRouter } from 'next/navigation'
 import { LOCKED_GENRE_VOCAB } from '@/lib/edited-fields'
 
@@ -46,22 +52,42 @@ export function GenreChipEditor({
   )
   const [saving, setSaving] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [coords, setCoords] = useState<{ top: number; left: number } | null>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
+  const btnRef = useRef<HTMLButtonElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   // Keep in sync if server values change after a refresh
   useEffect(() => {
     setGenres([initialPrimary, ...initialSecondary].filter((g): g is string => !!g))
   }, [initialPrimary, initialSecondary])
 
-  // Close add-menu on outside click
+  // Close add-menu on outside click, scroll, or resize. The menu is portaled
+  // to the body, so we must check both the trigger wrap and the menu itself.
   useEffect(() => {
     if (!menuOpen) return
     function onClick(e: MouseEvent) {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setMenuOpen(false)
+      const t = e.target as Node
+      if (wrapRef.current?.contains(t)) return
+      if (menuRef.current?.contains(t)) return
+      setMenuOpen(false)
     }
+    function onReposition() { setMenuOpen(false) }
     document.addEventListener('mousedown', onClick)
-    return () => document.removeEventListener('mousedown', onClick)
+    window.addEventListener('scroll', onReposition, true)
+    window.addEventListener('resize', onReposition)
+    return () => {
+      document.removeEventListener('mousedown', onClick)
+      window.removeEventListener('scroll', onReposition, true)
+      window.removeEventListener('resize', onReposition)
+    }
   }, [menuOpen])
+
+  function toggleMenu() {
+    const r = btnRef.current?.getBoundingClientRect()
+    if (r) setCoords({ top: r.bottom + 4, left: r.left })
+    setMenuOpen((o) => !o)
+  }
 
   async function persist(next: string[]) {
     const prev = genres
@@ -143,12 +169,13 @@ export function GenreChipEditor({
         </span>
       ))}
 
-      {/* Add button + menu */}
+      {/* Add button + portaled menu */}
       {!atCap && remaining.length > 0 && (
         <>
           <button
+            ref={btnRef}
             type="button"
-            onClick={() => setMenuOpen((o) => !o)}
+            onClick={toggleMenu}
             disabled={saving}
             aria-label="Add genre"
             className="inline-flex items-center justify-center w-6 h-6 rounded-full transition-colors hover:bg-white/10 disabled:opacity-50"
@@ -158,24 +185,35 @@ export function GenreChipEditor({
               <path d="M6 1.5V10.5M1.5 6H10.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
             </svg>
           </button>
-          {menuOpen && (
-            <div
-              className="absolute left-0 top-full mt-1 z-50 max-h-64 overflow-auto rounded-xl py-1 shadow-lg"
-              style={{ background: '#fff', border: '1px solid rgba(0,0,0,0.08)', minWidth: 160 }}
-            >
-              {remaining.map((g) => (
-                <button
-                  key={g}
-                  type="button"
-                  onClick={() => addGenre(g)}
-                  className="w-full text-left px-3.5 py-1.5 text-[13px] font-medium transition-colors hover:bg-[rgba(124,58,237,0.06)] border-0 bg-transparent cursor-pointer"
-                  style={{ color: '#1C1917' }}
-                >
-                  {g}
-                </button>
-              ))}
-            </div>
-          )}
+          {menuOpen && coords && typeof document !== 'undefined' &&
+            createPortal(
+              <div
+                ref={menuRef}
+                className="max-h-64 overflow-auto rounded-xl py-1 shadow-lg"
+                style={{
+                  position: 'fixed',
+                  top: coords.top,
+                  left: coords.left,
+                  zIndex: 9999,
+                  background: '#fff',
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  minWidth: 160,
+                }}
+              >
+                {remaining.map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    onClick={() => addGenre(g)}
+                    className="w-full text-left px-3.5 py-1.5 text-[13px] font-medium transition-colors hover:bg-[rgba(124,58,237,0.06)] border-0 bg-transparent cursor-pointer"
+                    style={{ color: '#1C1917' }}
+                  >
+                    {g}
+                  </button>
+                ))}
+              </div>,
+              document.body,
+            )}
         </>
       )}
     </div>
