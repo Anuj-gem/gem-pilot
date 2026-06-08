@@ -66,12 +66,12 @@ function HeroSection() {
             Get started
           </Link>
           <Link
-            href="/discover"
-            onClick={() => { try { trackEvent('cta_clicked', { location: 'hero_v21', label: 'Browse projects' }) } catch {} }}
+            href="/opportunities"
+            onClick={() => { try { trackEvent('cta_clicked', { location: 'hero_v21', label: 'Partner with us' }) } catch {} }}
             className="inline-block text-white no-underline transition-all hover:bg-white/10 active:scale-[0.98]"
             style={{ border: '1px solid rgba(255,255,255,0.35)', padding: '15px 34px', borderRadius: 12, fontWeight: 600, fontSize: 17 }}
           >
-            Browse projects
+            Partner with us
           </Link>
         </div>
       </div>
