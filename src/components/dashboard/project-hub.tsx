@@ -145,11 +145,18 @@ export function ProjectHub({ projects: initialProjects, requests: initialRequest
 
   // Bulk delete
   async function handleBulkDelete() {
-    for (const id of selected) {
-      await fetch(`/api/scripts/${id}/hide`, { method: 'POST' })
-    }
-    setProjects(prev => prev.filter(p => !selected.has(p.id)))
+    const ids = Array.from(selected)
+    const results = await Promise.all(
+      ids.map(id =>
+        fetch(`/api/scripts/${id}/hide`, { method: 'DELETE' })
+          .then(r => (r.ok ? id : null))
+          .catch(() => null)
+      )
+    )
+    const deleted = new Set(results.filter((id): id is string => id !== null))
+    setProjects(prev => prev.filter(p => !deleted.has(p.id)))
     setSelected(new Set())
+    router.refresh()
   }
 
   // Only show filters that have items (except 'all' always shows)
