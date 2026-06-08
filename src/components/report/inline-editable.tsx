@@ -2,37 +2,38 @@
 
 // InlineEditable — owner-only click-to-edit for a single report field.
 //
-// Renders as plain text. On click (owner only) it becomes an auto-growing
-// textarea styled to match the surrounding copy — no box, just a subtle
-// underline on hover/focus. Saves itself to /api/evaluations/[id]/edit on
-// blur, but ONLY when the value actually changed. The edit endpoint merges
-// partial edited_fields, so saving a single key never disturbs the others.
+// Renders the text inside its normal element (h1/p/div). For owners it's
+// contentEditable, so editing happens in place with NO box — just a subtle
+// underline on hover/focus. (A textarea can't be used here: a global
+// `textarea { background:white !important }` rule would force a white box.)
 //
-// Empty is allowed for clearable fields (logline/pitch/summary). The title
-// field is non-clearable: an empty value reverts to the last saved value.
+// Saves to /api/evaluations/[id]/edit on blur, but ONLY when the value
+// actually changed. The edit endpoint merges partial edited_fields, so
+// saving a single key never disturbs the others. Empty is allowed for
+// clearable fields; `required` fields (title) revert to the saved value.
+//
+// We deliberately keep NO React state that changes during typing (only a
+// `saving` flag that flips after blur), so React never re-renders the
+// element mid-edit and the caret never jumps.
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 interface Props {
   evaluationId: string
-  /** The edit-endpoint field key, e.g. 'title' | 'logline' | 'elevator_pitch' | 'plot_summary' */
   field: 'title' | 'logline' | 'elevator_pitch' | 'plot_summary'
-  /** Current saved value (what renders when not editing) */
   value: string
-  /** Whether the current viewer owns this script */
   isOwner: boolean
-  /** Tailwind/className for the rendered text (matches surrounding copy) */
   className?: string
-  /** Inline style for the rendered text */
   style?: React.CSSProperties
-  /** Render as a heading element instead of a paragraph (title) */
   as?: 'p' | 'h1' | 'div'
-  /** Placeholder shown (owner only) when empty */
   placeholder?: string
-  /** If true, an empty value is reverted instead of saved (title) */
   required?: boolean
 }
+
+const UNDERLINE_FOCUS = 'inset 0 -1px 0 rgba(124,58,237,0.55)'
+const UNDERLINE_HOVER = 'inset 0 -1px 0 rgba(124,58,237,0.35)'
+const UNDERLINE_NONE = 'inset 0 -1px 0 transparent'
 
 export function InlineEditable({
   evaluationId,
@@ -46,37 +47,18 @@ export function InlineEditable({
   required = false,
 }: Props) {
   const router = useRouter()
-  const [editing, setEditing] = useState(false)
-  const [val, setVal] = useState(value)
-  const [saving, setSaving] = useState(false)
-  const taRef = useRef<HTMLTextAreaElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const savedRef = useRef(value)
+  const [saving, setSaving] = useState(false)
 
-  // Keep local state in sync if the server value changes (e.g. after refresh)
+  // Keep the DOM text in sync with the saved value when not actively editing.
   useEffect(() => {
-    setVal(value)
     savedRef.current = value
-  }, [value])
-
-  // Auto-grow the textarea to fit content
-  const grow = () => {
-    const ta = taRef.current
-    if (!ta) return
-    ta.style.height = 'auto'
-    ta.style.height = `${ta.scrollHeight}px`
-  }
-  useLayoutEffect(() => {
-    if (editing) {
-      grow()
-      const ta = taRef.current
-      if (ta) {
-        ta.focus()
-        // place caret at end
-        const len = ta.value.length
-        ta.setSelectionRange(len, len)
-      }
+    const el = ref.current
+    if (el && document.activeElement !== el && el.textContent !== value) {
+      el.textContent = value
     }
-  }, [editing])
+  }, [value])
 
   if (!isOwner) {
     if (!value) return null
@@ -89,18 +71,14 @@ export function InlineEditable({
   }
 
   async function commit() {
-    const trimmed = val.trim()
+    const el = ref.current
+    if (!el) return
+    el.style.boxShadow = UNDERLINE_NONE
+    const trimmed = (el.textContent ?? '').trim()
     const prev = savedRef.current.trim()
-    setEditing(false)
 
-    // Required field can't be cleared — revert.
-    if (required && !trimmed) {
-      setVal(savedRef.current)
-      return
-    }
-    // No change — nothing to save.
-    if (trimmed === prev) {
-      setVal(savedRef.current)
+    if ((required && !trimmed) || trimmed === prev) {
+      el.textContent = savedRef.current // revert / normalize
       return
     }
 
@@ -113,81 +91,64 @@ export function InlineEditable({
       })
       if (!res.ok) throw new Error(String(res.status))
       savedRef.current = trimmed
-      setVal(trimmed)
       router.refresh()
     } catch {
-      // revert on failure
-      setVal(savedRef.current)
+      el.textContent = savedRef.current // revert on failure
     } finally {
       setSaving(false)
     }
   }
 
-  if (editing) {
-    return (
-      <textarea
-        ref={taRef}
-        value={val}
-        disabled={saving}
-        onChange={(e) => {
-          setVal(e.target.value)
-          grow()
-        }}
-        onBlur={commit}
-        onKeyDown={(e) => {
-          // Esc cancels; Enter on a single-line field (title) commits.
-          if (e.key === 'Escape') {
-            e.preventDefault()
-            setVal(savedRef.current)
-            setEditing(false)
-          } else if (e.key === 'Enter' && as !== 'p') {
-            e.preventDefault()
-            taRef.current?.blur()
-          }
-        }}
-        rows={1}
-        className={className}
-        style={{
-          ...style,
-          width: '100%',
-          display: 'block',
-          resize: 'none',
-          overflow: 'hidden',
-          background: 'transparent',
-          border: 'none',
-          outline: 'none',
-          padding: 0,
-          margin: 0,
-          boxShadow: 'inset 0 -1px 0 rgba(124,58,237,0.55)',
-          font: 'inherit',
-        }}
-      />
-    )
-  }
+  const Tag = as as any
 
-  const Tag = as
-  const isEmpty = !val
   return (
     <Tag
+      ref={ref}
       className={className}
-      onClick={() => setEditing(true)}
-      title="Click to edit"
+      contentEditable={!saving}
+      suppressContentEditableWarning
+      role="textbox"
+      data-placeholder={placeholder}
+      onFocus={(e: React.FocusEvent<HTMLElement>) => {
+        e.currentTarget.style.boxShadow = UNDERLINE_FOCUS
+      }}
+      onBlur={() => commit()}
+      onPaste={(e: React.ClipboardEvent) => {
+        e.preventDefault()
+        const text = e.clipboardData.getData('text/plain')
+        document.execCommand('insertText', false, text)
+      }}
+      onKeyDown={(e: React.KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          e.preventDefault()
+          if (ref.current) ref.current.textContent = savedRef.current
+          ;(e.target as HTMLElement).blur()
+        } else if (e.key === 'Enter' && as !== 'p') {
+          e.preventDefault()
+          ;(e.target as HTMLElement).blur()
+        }
+      }}
+      onMouseOver={(e: React.MouseEvent<HTMLElement>) => {
+        if (!saving && document.activeElement !== e.currentTarget) {
+          e.currentTarget.style.boxShadow = UNDERLINE_HOVER
+        }
+      }}
+      onMouseOut={(e: React.MouseEvent<HTMLElement>) => {
+        if (document.activeElement !== e.currentTarget) {
+          e.currentTarget.style.boxShadow = UNDERLINE_NONE
+        }
+      }}
       style={{
         ...style,
         cursor: 'text',
-        boxShadow: 'inset 0 -1px 0 transparent',
-        transition: 'box-shadow 120ms ease',
+        outline: 'none',
         opacity: saving ? 0.55 : 1,
-        ...(isEmpty ? { color: '#A8A29E' } : null),
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = 'inset 0 -1px 0 rgba(124,58,237,0.35)'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = 'inset 0 -1px 0 transparent'
+        boxShadow: UNDERLINE_NONE,
+        transition: 'box-shadow 120ms ease',
+        minHeight: '1em',
       }}
     >
-      {isEmpty ? placeholder : val}
+      {value}
     </Tag>
   )
 }

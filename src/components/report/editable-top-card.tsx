@@ -45,6 +45,9 @@ interface Props {
   scoreShownToIndustry?: boolean
   isProSubscriber?: boolean
   heroOverlay?: boolean
+  /** True ONLY for the actual post owner (excludes admins). Gates the
+   *  inline click-to-edit on title/logline — admins can view but not edit. */
+  isPostOwner?: boolean
 }
 
 const MAX_TAGS = 25
@@ -77,7 +80,9 @@ export function EditableTopCard({
   isProSubscriber = true,
   headerActionsLeft,
   heroOverlay,
+  isPostOwner,
 }: Props) {
+  const canInlineEdit = isPostOwner ?? isOwner
   const editCtx = useEditContextOptional()
   const isEditing = editCtx?.isEditing ?? false
 
@@ -193,18 +198,18 @@ export function EditableTopCard({
           evaluationId={evaluationId}
           field="title"
           value={displayTitle}
-          isOwner={isOwner}
+          isOwner={canInlineEdit}
           as="h1"
           required
           placeholder="Your script title"
           className="text-[34px] sm:text-[40px] font-bold text-white tracking-tight leading-[1.08] m-0 mb-2"
         />
-        {(displayLogline || isOwner) && (
+        {(displayLogline || canInlineEdit) && (
           <InlineEditable
             evaluationId={evaluationId}
             field="logline"
             value={displayLogline}
-            isOwner={isOwner}
+            isOwner={canInlineEdit}
             as="p"
             placeholder="Add a one-line logline…"
             className="text-[15px] sm:text-[16px] leading-[1.5] m-0 mb-3 font-medium"

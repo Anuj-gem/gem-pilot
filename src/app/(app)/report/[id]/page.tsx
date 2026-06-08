@@ -890,6 +890,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
               submissionId={submission.id}
               initial={topCard}
               isOwner={isOwner || isAdmin}
+              isPostOwner={isOwner}
               hasEdits={topCardHasEdits}
               postedAt={submission.created_at ?? null}
               heroOverlay
