@@ -31,8 +31,10 @@ export async function middleware(request: NextRequest) {
   // Protected routes - redirect to login if not authenticated
   // Note: /dashboard is intentionally NOT protected — anonymous users see the
   // onboarding state (upload + newest opportunities).
+  // Match on exact path or a sub-path (with a trailing slash) so that, e.g.,
+  // '/partner' protects the producer dashboard but does NOT catch '/partners'.
   const protectedPaths = ['/partner', '/onboarding']
-  const isProtected = protectedPaths.some(path => pathname.startsWith(path))
+  const isProtected = protectedPaths.some(path => pathname === path || pathname.startsWith(path + '/'))
 
   if (isProtected && !user) {
     const url = request.nextUrl.clone()
