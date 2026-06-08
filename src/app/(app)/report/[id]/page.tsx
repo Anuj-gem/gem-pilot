@@ -781,20 +781,6 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
             </div>
           )}
 
-          {isAdmin && !isOwner && (
-            <div className="gem-no-print mb-4">
-              <span
-                className="text-[9.5px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
-                style={{
-                  color: '#ff6b6b',
-                  background: 'rgba(255,107,107,0.12)',
-                  border: '1px solid rgba(255,107,107,0.3)',
-                }}
-              >
-                Admin
-              </span>
-            </div>
-          )}
         </div>
 
         <div className="max-w-3xl mx-auto pb-0 relative z-10" />
@@ -840,8 +826,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         <div className="space-y-4">
 
         {/* Top-of-report partner status: apply (default) → under review →
-            reviewed with feedback. Owner-only. */}
-        {(isOwner || isAdmin) && <ReportPartnerStatus status={partnerStatus} />}
+            reviewed with feedback. Owner-only — admins/other viewers don't
+            see the apply banner on someone else's report. */}
+        {isOwner && <ReportPartnerStatus status={partnerStatus} />}
 
         {/* opportunities-v1: Interested/Pass buttons + script download removed.
             Producer review now happens in /producer/opportunities. */}
