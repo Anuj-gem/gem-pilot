@@ -249,7 +249,7 @@ export function InlineApply({
           opacity: open ? 0.6 : 1,
         }}
       >
-        {hasPending ? 'Add more scripts' : 'Apply with a script'} <span style={{ fontSize: 12 }}>{open ? '▴' : '▾'}</span>
+        {hasPending ? 'Add more scripts' : 'Apply for free'} <span style={{ fontSize: 12 }}>{open ? '▴' : '▾'}</span>
       </button>
 
       {open && (

@@ -20,11 +20,11 @@ export const revalidate = 0
 const PARTNER_SLUG = 'partner'
 
 export const metadata = {
-  title: 'We back filmmakers the old gatekeepers miss — GEM',
-  description: 'GEM backs a few filmmakers a year — all the way. Apply with a script.',
+  title: 'We back filmmakers the old gatekeepers miss',
+  description: 'GEM backs a few filmmakers a year — all the way. Apply for free.',
   openGraph: {
     title: 'We back filmmakers the old gatekeepers miss — GEM',
-    description: 'GEM backs a few filmmakers a year — all the way. Apply with a script.',
+    description: 'GEM backs a few filmmakers a year — all the way. Apply for free.',
     type: 'website' as const,
     siteName: 'GEM',
   },
@@ -128,19 +128,22 @@ export default async function OpportunitiesPage() {
     }
   }
 
-  const fullBleed: React.CSSProperties = {
-    width: '100vw',
-    position: 'relative',
-    left: '50%',
-    marginLeft: '-50vw',
-  }
-
   return (
-    <div style={{ marginTop: -24, marginBottom: -64 }}>
-      {/* ── 1. HERO (full-bleed dark) ── */}
+    <div
+      style={{
+        width: '100vw',
+        position: 'relative',
+        left: '50%',
+        marginLeft: '-50vw',
+        marginTop: -24,
+        marginBottom: -64,
+        background: '#f7f5f1',
+        minHeight: '100vh',
+      }}
+    >
+      {/* ── 1. HERO (dark band) ── */}
       <div
         style={{
-          ...fullBleed,
           background: 'radial-gradient(ellipse at 50% 0%, #2b1a55 0%, #1a1035 55%, #140a28 100%)',
           color: '#fff',
           textAlign: 'center',
@@ -168,7 +171,7 @@ export default async function OpportunitiesPage() {
           className="inline-block no-underline"
           style={{ background: 'linear-gradient(135deg,#7c3aed,#a855f7)', color: '#fff', fontWeight: 800, fontSize: 16, padding: '16px 38px', borderRadius: 13, boxShadow: '0 10px 30px rgba(124,58,237,.45)' }}
         >
-          Apply with a script →
+          Apply for free →
         </a>
       </div>
 
