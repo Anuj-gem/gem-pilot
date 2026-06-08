@@ -330,13 +330,11 @@ export function CrewSection({
 
   if (loading) return null
 
-  const visibleRoles = isOwner
-    ? roles
-    : roles.filter(r =>
-        r.assigned_user_id ||
-        (r.collaborator && r.collaborator.status === 'accepted') ||
-        isMyPendingInvite(r)
-      )
+  // Show ALL roles to everyone — including open/unfilled ones — so viewers
+  // can see what roles are available (and, for cast, the model's character
+  // analysis on each). Only hide the section if there are no roles at all.
+  // Anuj 2026-06-05.
+  const visibleRoles = roles
   if (!isOwner && visibleRoles.length === 0) return null
 
   return (
