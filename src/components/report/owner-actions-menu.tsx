@@ -12,14 +12,11 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
-  Pencil,
-  Download,
   MoreHorizontal,
   Trash2,
 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { ScriptPrivacySheet } from '@/components/report/script-privacy-sheet'
-import { useEditContextOptional } from './edit-context'
 import {
   IndustryActivitySheet,
   type IndustryActivityRow,
@@ -75,7 +72,6 @@ export function OwnerActionsMenu({
   reportSections,
 }: Props) {
   const router = useRouter()
-  const editCtx = useEditContextOptional()
   const [activityOpen, setActivityOpen] = useState(false)
   const [privacyOpen, setPrivacyOpen] = useState(false)
   const [deleting, setDeleting] = useState(false)
@@ -84,32 +80,10 @@ export function OwnerActionsMenu({
   // side PDF endpoint we may bring back).
   void evaluationId
   void title
+  void editHref
+  void downloadHref
+  void isSubscribed
   const wrapRef = useRef<HTMLDivElement>(null)
-
-  function triggerEdit() {
-    // Direct context call — no more fragile window event pattern
-    if (editCtx) {
-      editCtx.startEditing()
-      return
-    }
-    // Fallback for dashboard usage (outside EditProvider)
-    window.dispatchEvent(new CustomEvent('gem:edit-top-card'))
-  }
-
-  function triggerDownload() {
-    if (!isSubscribed) {
-      // Free writers — gate on subscription. Reuse the global upgrade
-      // modal listener so the path matches every other Pro action.
-      window.dispatchEvent(new CustomEvent('gem:open-upgrade-modal'))
-      return
-    }
-    // Anuj 2026-04-28: download is now a client-side print path through
-    // <DownloadPdfModalHost> on the report page. We dispatch a global
-    // event; the host listens and pops the modal with the 5 toggles.
-    // The dashboard variant of this menu sets `editHref` to
-    // /report/[id]?download=1, which the host auto-opens.
-    window.dispatchEvent(new CustomEvent('gem:open-download-pdf'))
-  }
 
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -142,53 +116,6 @@ export function OwnerActionsMenu({
           className="absolute right-0 top-full mt-1 w-44 rounded-xl shadow-lg py-1 z-50"
           style={{ background: 'white', border: '1px solid rgba(0,0,0,0.08)' }}
         >
-          {editHref ? (
-            <Link
-              href={editHref}
-              className="flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] no-underline"
-              style={{ color: '#1C1917' }}
-              onClick={() => setMenuOpen(false)}
-            >
-              <Pencil size={14} style={{ color: '#7C3AED' }} />
-              Edit
-            </Link>
-          ) : (
-            <button
-              type="button"
-              onClick={() => { triggerEdit(); setMenuOpen(false) }}
-              className="w-full flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] border-0 bg-transparent text-left cursor-pointer"
-              style={{ color: '#1C1917' }}
-            >
-              <Pencil size={14} style={{ color: '#7C3AED' }} />
-              Edit
-            </button>
-          )}
-
-          {downloadHref ? (
-            <Link
-              href={downloadHref}
-              className="flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] no-underline"
-              style={{ color: '#1C1917' }}
-              onClick={() => setMenuOpen(false)}
-            >
-              <Download size={14} style={{ color: '#78716C' }} />
-              Download PDF
-            </Link>
-          ) : (
-            <button
-              type="button"
-              onClick={() => { triggerDownload(); setMenuOpen(false) }}
-              className="w-full flex items-center gap-2.5 px-3.5 py-2 text-[13px] font-medium transition-colors hover:bg-[rgba(0,0,0,0.04)] border-0 bg-transparent text-left cursor-pointer"
-              style={{ color: '#1C1917' }}
-            >
-              <Download size={14} style={{ color: '#78716C' }} />
-              Download PDF
-            </button>
-          )}
-
-          {/* Divider */}
-          <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', margin: '4px 0' }} />
-
           {/* Delete */}
           <button
             type="button"
