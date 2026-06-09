@@ -72,8 +72,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Opportunity not found' }, { status: 404 })
   }
 
-  // Verify scripts belong to this user and are completed
-  const { data: userScripts } = await supabase
+  // Verify scripts belong to this user and are completed. Use the service
+  // client (not the RLS-limited user client) so a policy can't silently hide
+  // the user's own rows. Never drop a script quietly — if any requested
+  // script can't be attached, fail loudly so it's visible, not a silent no-op.
+  const { data: userScripts } = await service
     .from('script_submissions')
     .select('id')
     .eq('user_id', user.id)
@@ -81,8 +84,12 @@ export async function POST(req: NextRequest) {
     .in('id', script_ids)
 
   const validIds = (userScripts || []).map((s: { id: string }) => s.id)
-  if (validIds.length === 0) {
-    return NextResponse.json({ error: 'No valid scripts found' }, { status: 400 })
+  const missing = script_ids.filter((id) => !validIds.includes(id))
+  if (missing.length > 0) {
+    return NextResponse.json(
+      { error: `Couldn't attach ${missing.length} script(s) — not found, not completed, or not owned by your account.`, missing },
+      { status: 400 }
+    )
   }
 
   // If the writer already has a pending application to this opportunity, ADD
