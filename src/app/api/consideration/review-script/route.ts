@@ -5,6 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
 import { createServerClient } from '@supabase/ssr'
+import { sendEmail } from '@/lib/email'
 
 function svc() {
   return createServerClient(
@@ -59,5 +60,46 @@ export async function POST(req: NextRequest) {
     .eq('script_submission_id', script_submission_id)
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+  // Notify the writer that this script's review is complete. Per-script, and
+  // deduped on consideration+script so each script sends exactly once (a later
+  // "Update feedback" on the same script won't re-send). Skipped on clear.
+  if (!clear) {
+    try {
+      const { data: con } = await service
+        .from('considerations')
+        .select('writer_id')
+        .eq('id', consideration_id)
+        .single()
+      const { data: script } = await service
+        .from('script_submissions')
+        .select('title')
+        .eq('id', script_submission_id)
+        .single()
+      if (con?.writer_id) {
+        const { data: writer } = await service
+          .from('profiles')
+          .select('email')
+          .eq('id', con.writer_id)
+          .single()
+        if (writer?.email) {
+          await sendEmail({
+            templateAlias: 'consideration_complete' as const,
+            to: writer.email,
+            variables: {
+              script_title: script?.title || 'your script',
+              feedback_url: `https://www.gem.studio/applications/${consideration_id}`,
+            },
+            dedupeKey: `consideration_complete_${consideration_id}_${script_submission_id}`,
+            tag: 'consideration_complete',
+            userId: con.writer_id,
+          }, service)
+        }
+      }
+    } catch (e) {
+      console.error('[review-script] complete email failed:', e)
+    }
+  }
+
   return NextResponse.json({ ok: true })
 }
