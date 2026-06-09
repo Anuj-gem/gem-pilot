@@ -76,6 +76,15 @@ export async function POST(req: NextRequest) {
         .select('title')
         .eq('id', script_submission_id)
         .single()
+      // Feedback lives on the report page for this script (keyed by eval id).
+      const { data: ev } = await service
+        .from('script_evaluations')
+        .select('id')
+        .eq('submission_id', script_submission_id)
+        .single()
+      const reportUrl = ev?.id
+        ? `https://www.gem.studio/report/${ev.id}`
+        : 'https://www.gem.studio/dashboard'
       if (con?.writer_id) {
         const { data: writer } = await service
           .from('profiles')
@@ -88,7 +97,7 @@ export async function POST(req: NextRequest) {
             to: writer.email,
             variables: {
               script_title: script?.title || 'your script',
-              feedback_url: `https://www.gem.studio/applications/${consideration_id}`,
+              feedback_url: reportUrl,
             },
             dedupeKey: `consideration_complete_${consideration_id}_${script_submission_id}`,
             tag: 'consideration_complete',
