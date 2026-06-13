@@ -99,18 +99,22 @@ export function LandingV3() {
       <section id="read" className="mt-[18px]" style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
         <div className="mx-auto grid max-w-[1080px] grid-cols-1 items-center gap-10 px-7 py-16 md:grid-cols-[1fr_1.05fr] md:gap-[54px]">
           <div>
-            <div className="text-[13px] font-bold uppercase tracking-[1.6px] text-[#D9A626]">The read</div>
-            <h2 style={serif} className="mt-3.5 text-[28px] font-semibold leading-[1.12] tracking-[-0.4px] text-white sm:text-[36px]">
-              The tools we use to pick our own projects. Yours, free.
+            <div className="text-[13px] font-bold uppercase tracking-[1.6px] text-[#D9A626]">Free script coverage</div>
+            <h2 style={serif} className="mt-3.5 text-[30px] font-semibold leading-[1.08] tracking-[-0.4px] text-white sm:text-[42px]">
+              Free coverage on your script, in minutes.
             </h2>
-            <p className="mt-4 max-w-[430px] text-[16.5px] text-[#c9c2e6]">
-              We built this to pick our own projects, then opened it to everyone. Upload a script, get a real read in
-              minutes, and send it our way if you want us involved. We tell you straight, every time.
+            <p className="mt-5 max-w-[440px] text-[16.5px] leading-[1.6] text-[#c9c2e6]">
+              Upload a script and get a real read, powered by Selznick, our own model for evaluating scripts. You see
+              an overall score and exactly what is working, what is not, and how to position it for buyers.
             </p>
-            <div className="mt-4 flex items-center gap-2 text-[13.5px] text-[#a99fd6]">
+            <p className="mt-3.5 max-w-[440px] text-[16.5px] leading-[1.6] text-[#c9c2e6]">
+              It is the same read we use to decide what to make. Send us the scripts you believe in most, and if we
+              love one, we partner with you to get it made.
+            </p>
+            <div className="mt-5 flex items-center gap-2 text-[13.5px] text-[#a99fd6]">
               <span className="inline-block h-3.5 w-3.5 rounded-[3px] border-2 border-[#a99fd6]" /> Completely private. No one sees your script but you.
             </div>
-            <div className="mt-6">
+            <div className="mt-7">
               <Link href="/get-started" className="inline-block rounded-[9px] bg-white px-7 py-3.5 text-[16px] font-semibold text-[#241149]">
                 Get started
               </Link>
@@ -122,8 +126,9 @@ export function LandingV3() {
             <h3 style={serif} className="text-[30px] font-bold">Nightfall</h3>
             <div className="mt-0.5 text-sm text-[#8a8398]">Series · Thriller · Drama</div>
             <div className="my-5 rounded-[14px] bg-[#f3f0fb] px-5 py-[18px]">
-              <div className="flex items-center gap-2 text-[13px] font-bold tracking-[1px] text-[#7C3AED]">
-                <span className="h-[13px] w-[13px] rotate-45 rounded-[2px] bg-[#7C3AED]" /> GEM SCORE
+              <div className="flex items-center justify-between text-[13px] font-bold tracking-[1px] text-[#7C3AED]">
+                <span className="flex items-center gap-2"><span className="h-[13px] w-[13px] rotate-45 rounded-[2px] bg-[#7C3AED]" /> GEM SCORE</span>
+                <span className="text-[10px] font-semibold tracking-[0.6px] text-[#8a7fb0]">POWERED BY SELZNICK</span>
               </div>
               <div className="mt-1.5 text-[52px] font-extrabold leading-none text-[#6D28D9]">
                 88<span className="text-[22px] font-bold text-[#a99fc4]"> / 100</span>
@@ -155,17 +160,33 @@ export function LandingV3() {
         </div>
       </section>
 
-      {/* WHAT YOU GET */}
+      {/* WHAT'S IN YOUR COVERAGE */}
       <section id="score" className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">What you get</div>
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">What is in your coverage</div>
         <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-          Not just a score. A way to make your case.
+          The same read we use to decide.
         </h2>
-        <p className="mx-auto mt-5 max-w-[620px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-          Our model reads thousands of signals in a script for originality and commercial potential. The score is our
-          honest first read. The useful part is everything around it: your strengths, your gaps, and how to position
-          the story for buyers, and for us.
+        <p className="mx-auto mt-5 max-w-[600px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+          Every script gets a full report from Selznick, our model for evaluating scripts. It is the exact information
+          we look at when we decide what to make.
         </p>
+        <div className="mx-auto mt-12 grid max-w-[920px] grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
+          {[
+            { h: 'An overall score', p: 'Selznick reads your script for originality and commercial potential and gives it one honest number.' },
+            { h: 'What is working', p: 'The strengths that make your story stand out, and why they land.' },
+            { h: 'Where it needs work', p: 'The gaps to close before it is ready to sell.' },
+            { h: 'How to position it', p: 'How to pitch the story to buyers, and to us.' },
+            { h: 'Format and budget', p: 'Where it fits, film or series, and what it would take to make.' },
+          ].map((c) => (
+            <div key={c.h} className="flex items-start gap-3.5">
+              <Diamond size={18} glow={false} />
+              <div>
+                <h3 className="text-[17px] font-semibold leading-tight">{c.h}</h3>
+                <p className="mt-1.5 text-[14.5px] leading-[1.55] text-[#5b5470]">{c.p}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* WHO WE ARE — tinted band */}
