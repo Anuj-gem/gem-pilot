@@ -173,28 +173,47 @@ export function LandingV3() {
         </p>
       </section>
 
-      {/* HOW WE WORK */}
-      <section id="help" className="mx-auto max-w-[1080px] px-7 pb-16">
-        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How we work with you</div>
+      {/* WHO WE ARE */}
+      <section id="help" className="mx-auto max-w-[1080px] px-7 pb-4">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Who we are</div>
         <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
-          If we partner, we bring everything we&apos;ve got.
+          We come from technology and the internet.
         </h2>
-        <div className="mt-10 grid grid-cols-1 gap-[18px] md:grid-cols-2">
+        <p className="mx-auto mt-4 max-w-[680px] text-center text-[17px] text-[#5b5470]">
+          Our team has driven close to a billion views online and built products at some of the biggest technology
+          and media companies in the world. We pair that with deep expertise in AI and modern content, and we use it
+          to find great stories, develop them, and produce them for a fraction of the usual cost.
+        </p>
+        {/* logo strip — swap these wordmarks for real logo SVGs */}
+        <div className="mx-auto mt-9 flex max-w-[680px] flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[#9a93ad]">
+          <span className="text-[22px] font-bold tracking-tight">Uber</span>
+          <span className="text-[18px] font-semibold tracking-tight">The Walt Disney Company</span>
+          <span className="flex items-center gap-2 text-[18px] font-bold"><span className="text-[#7C3AED]">~1B</span><span className="font-medium text-[#5b5470]">views</span></span>
+        </div>
+      </section>
+
+      {/* WHAT WE'RE LOOKING FOR */}
+      <section className="mx-auto max-w-[1080px] px-7 py-16">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Who we&apos;re looking for</div>
+        <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
+          Creators, not just scripts.
+        </h2>
+        <p className="mx-auto mt-4 max-w-[660px] text-center text-[17px] text-[#5b5470]">
+          We started as creators, and we believe the future is the melting of social and Hollywood. The most exciting
+          new storytellers are getting overlooked. Those are the people we want to work with.
+        </p>
+        <div className="mx-auto mt-10 grid max-w-[820px] grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
           {[
-            { big: '~1B', h: 'Marketing & reach', p: 'Close to a billion views across our own channels. We know how to make a story travel and find its audience.' },
-            { h: 'Modern, lower-cost production', p: 'We&apos;re deep in modern production, especially the latest AI tools, and use them to make things for a fraction of the usual cost.' },
-            { h: 'Development', p: 'Technology that helps shape a promising idea into its strongest, most screen-ready version.' },
-            { h: 'Talent matching', p: 'We help find and attach the right people to a project, using our tech and our network.' },
-            { h: 'Financing', p: 'We help position a project to show its return, connect it to financiers, and put our own money in when it’s right.' },
-            { h: 'Aligned, no fees', p: 'We come in alongside you and only earn when the project does. Your interests and ours are the same.' },
+            { h: 'A real point of view', p: 'Unique, original ideas with the bones to become film or television.' },
+            { h: 'An instinct for attention', p: 'You understand virality and audience, not just the page.' },
+            { h: 'A storytelling brand', p: 'You build a world and a following, not one-off scripts.' },
+            { h: 'Command of the craft', p: 'Proof you can deliver: consistency, an audience, and real creative and production chops.' },
           ].map((c) => (
-            <div key={c.h} className="flex items-start gap-[18px] rounded-[16px] border border-[#E7E3EF] bg-white p-[26px]">
-              {c.big
-                ? <div className="min-w-[64px] text-[30px] font-extrabold leading-none text-[#7C3AED]">{c.big}</div>
-                : <Diamond size={30} glow={false} />}
+            <div key={c.h} className="flex items-start gap-3.5">
+              <Diamond size={18} glow={false} />
               <div>
-                <h3 className="mb-1.5 text-[18px] font-semibold">{c.h}</h3>
-                <p className="text-[14.5px] text-[#5b5470]" dangerouslySetInnerHTML={{ __html: c.p }} />
+                <h3 className="text-[17px] font-semibold leading-tight">{c.h}</h3>
+                <p className="mt-1 text-[14.5px] text-[#5b5470]">{c.p}</p>
               </div>
             </div>
           ))}
