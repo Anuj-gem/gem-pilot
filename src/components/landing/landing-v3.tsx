@@ -1,0 +1,258 @@
+'use client'
+
+// Landing page v3 (2026-06-13) — production-company positioning.
+// Hero → The Read (coverage card) → What you get → How we work → Partner form → Close.
+// Faithful port of the approved mock. Light theme, GEM purple #7C3AED, navy accent bands.
+// Serif display = Playfair via --font-display. Responsive desktop + mobile.
+
+import { useState } from 'react'
+import Link from 'next/link'
+
+const serif = { fontFamily: 'var(--font-display), Georgia, serif' }
+
+function Diamond({ size = 21, glow = true }: { size?: number; glow?: boolean }) {
+  return (
+    <span
+      style={{
+        width: size, height: size,
+        background: 'linear-gradient(135deg,#8b5cf6,#6D28D9)',
+        transform: 'rotate(45deg)', borderRadius: Math.max(3, size / 5),
+        boxShadow: glow ? '0 0 14px rgba(124,58,237,.45)' : 'none',
+        display: 'inline-block', flex: 'none',
+      }}
+    />
+  )
+}
+
+export function LandingV3() {
+  const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [form, setForm] = useState({ name: '', company: '', email: '', notes: '' })
+
+  async function submitPartner(e: React.FormEvent) {
+    e.preventDefault()
+    if (sending) return
+    setSending(true)
+    try {
+      await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          full_name: form.name,
+          company: form.company,
+          email: form.email,
+          notes: form.notes,
+          role: 'producer',
+        }),
+      })
+      setSent(true)
+    } catch {
+      setSent(true)
+    } finally {
+      setSending(false)
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-[#FAFAF9] text-[#171520]">
+      {/* NAV */}
+      <nav className="mx-auto flex max-w-[1080px] items-center justify-between px-7 py-[18px]">
+        <div className="flex items-center gap-2.5 text-[20px] font-bold tracking-wide">
+          <Diamond /> GEM
+        </div>
+        <div className="flex items-center gap-5 text-sm text-[#5b5470]">
+          <a href="#read" className="hidden sm:inline hover:text-[#171520]">Free coverage</a>
+          <a href="#help" className="hidden sm:inline hover:text-[#171520]">How we work</a>
+          <a href="#partner" className="hidden sm:inline hover:text-[#171520]">Partner with us</a>
+          <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
+          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-[18px] py-[10px] font-semibold text-white">
+            Get free coverage
+          </Link>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <header className="px-7 pb-12 pt-12 text-center sm:pt-14">
+        <div className="mx-auto mb-6 h-12 w-12 rotate-45 rounded-[9px]"
+          style={{ background: 'linear-gradient(135deg,#8b5cf6,#6D28D9)', boxShadow: '0 0 40px rgba(124,58,237,.5)' }} />
+        <h1 style={serif} className="mx-auto max-w-[780px] text-[34px] font-semibold leading-[1.1] tracking-[-0.5px] sm:text-[48px]">
+          Great stories get overlooked. <span className="text-[#7C3AED]">We find them and get them made.</span>
+        </h1>
+        <p className="mx-auto mt-5 max-w-[600px] text-[17px] text-[#5b5470] sm:text-[18.5px]">
+          We&apos;re looking for talented writers and creators ready to bring their work to film and television.
+          Free tools, honest feedback, and an open door, which is not how most studios work. If we love what
+          you&apos;ve made, we partner to make it real.
+        </p>
+        <div className="mt-7 flex flex-wrap justify-center gap-3.5">
+          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-white">
+            Get your free coverage
+          </Link>
+          <a href="#partner" className="rounded-[9px] border-[1.5px] border-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-[#7C3AED]">
+            Partner with us
+          </a>
+        </div>
+        <div className="mt-3.5 text-[13px] text-[#5b5470]">
+          Already have an account? <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
+        </div>
+      </header>
+
+      {/* THE READ — coverage feature */}
+      <section id="read" className="mt-[18px]" style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
+        <div className="mx-auto grid max-w-[1080px] grid-cols-1 items-center gap-10 px-7 py-16 md:grid-cols-[1fr_1.05fr] md:gap-[54px]">
+          <div>
+            <div className="text-[13px] font-bold uppercase tracking-[1.6px] text-[#D9A626]">The read</div>
+            <h2 style={serif} className="mt-3.5 text-[28px] font-semibold leading-[1.12] tracking-[-0.4px] text-white sm:text-[36px]">
+              The tools we use to pick our own projects. Yours, free.
+            </h2>
+            <p className="mt-4 max-w-[430px] text-[16.5px] text-[#c9c2e6]">
+              We built this to evaluate the projects we want to work with, then opened it to everyone. Upload a
+              script and get a real read in minutes: where it stands, what&apos;s working, and how to position it to
+              sell. If you want us involved, send it our way. We&apos;re actively looking for projects to partner on,
+              and we&apos;ll always tell you straight if we pass.
+            </p>
+            <div className="mt-4 flex items-center gap-2 text-[13.5px] text-[#a99fd6]">
+              <span className="inline-block h-3.5 w-3.5 rounded-[3px] border-2 border-[#a99fd6]" /> Completely private. No one sees your script but you.
+            </div>
+            <div className="mt-6">
+              <Link href="/get-started" className="inline-block rounded-[9px] bg-white px-7 py-3.5 text-[16px] font-semibold text-[#241149]">
+                Get your free read
+              </Link>
+            </div>
+          </div>
+
+          {/* coverage card */}
+          <div className="rounded-[20px] bg-white p-[30px] shadow-[0_30px_70px_rgba(0,0,0,.35)]">
+            <h3 style={serif} className="text-[30px] font-bold">Nightfall</h3>
+            <div className="mt-0.5 text-sm text-[#8a8398]">Series · Thriller · Drama</div>
+            <div className="my-5 rounded-[14px] bg-[#f3f0fb] px-5 py-[18px]">
+              <div className="flex items-center gap-2 text-[13px] font-bold tracking-[1px] text-[#7C3AED]">
+                <span className="h-[13px] w-[13px] rotate-45 rounded-[2px] bg-[#7C3AED]" /> GEM SCORE
+              </div>
+              <div className="mt-1.5 text-[52px] font-extrabold leading-none text-[#6D28D9]">
+                88<span className="text-[22px] font-bold text-[#a99fc4]"> / 100</span>
+              </div>
+              <div className="mt-3.5 h-[9px] overflow-hidden rounded-[6px] bg-[#e2dcf2]">
+                <span className="block h-full w-[88%] rounded-[6px]" style={{ background: 'linear-gradient(90deg,#8b5cf6,#6D28D9)' }} />
+              </div>
+            </div>
+            <div className="mb-2 mt-[18px] text-xs font-bold tracking-[1px] text-[#6b6480]">STRENGTHS</div>
+            {[
+              'Breakout central character with a real contradiction at the core',
+              'The hook lands inside the first ten pages and keeps pulling',
+              "An ownable tone, you'd know this show from a single scene",
+            ].map((t) => (
+              <div key={t} className="my-[7px] flex gap-2.5 text-[15px] text-[#2a2536]"><span className="font-extrabold text-[#16a34a]">+</span> {t}</div>
+            ))}
+            <div className="mb-2 mt-[18px] text-xs font-bold tracking-[1px] text-[#6b6480]">WHERE IT NEEDS WORK</div>
+            {[
+              'Momentum sags through the midpoint of the pilot',
+              "The antagonist's logic needs sharpening to match the lead",
+            ].map((t) => (
+              <div key={t} className="my-[7px] flex gap-2.5 text-[15px] text-[#2a2536]"><span className="font-extrabold text-[#c2740c]">–</span> {t}</div>
+            ))}
+            <div className="mt-5 flex justify-between border-t border-[#eee] pt-4 text-sm text-[#8a8398]">
+              <span>Format · <b className="text-[#2a2536]">Series</b></span>
+              <span>Budget · <span className="text-[#c2740c]">Indie</span> <b className="text-[#2a2536]">$1.5M–3M / ep</b></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU GET */}
+      <section id="score" className="mx-auto max-w-[1080px] px-7 py-16">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">What you get</div>
+        <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
+          Not just a score. A way to make your case.
+        </h2>
+        <p className="mx-auto mt-4 max-w-[660px] text-center text-[17px] text-[#5b5470]">
+          We studied the history of film and TV and built a model that reads thousands of signals in a script for
+          originality and commercial potential. The number is our honest first read on the idea. The useful part is
+          everything around it: your strengths, your gaps, and how to position the story for buyers, and for us. The
+          score weighs what&apos;s on the page. What happens next, the filmmaking, the casting, the marketing, is where
+          we come in.
+        </p>
+      </section>
+
+      {/* HOW WE WORK */}
+      <section id="help" className="mx-auto max-w-[1080px] px-7 pb-16">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How we work with you</div>
+        <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
+          If we partner, we bring everything we&apos;ve got.
+        </h2>
+        <div className="mt-10 grid grid-cols-1 gap-[18px] md:grid-cols-2">
+          {[
+            { big: '~1B', h: 'Marketing & reach', p: 'Close to a billion views across our own channels. We know how to make a story travel and find its audience.' },
+            { h: 'Modern, lower-cost production', p: 'We&apos;re deep in modern production, especially the latest AI tools, and use them to make things for a fraction of the usual cost.' },
+            { h: 'Development', p: 'Technology that helps shape a promising idea into its strongest, most screen-ready version.' },
+            { h: 'Talent matching', p: 'We help find and attach the right people to a project, using our tech and our network.' },
+            { h: 'Financing', p: 'We help position a project to show its return, connect it to financiers, and put our own money in when it’s right.' },
+            { h: 'Aligned, no fees', p: 'We come in alongside you and only earn when the project does. Your interests and ours are the same.' },
+          ].map((c) => (
+            <div key={c.h} className="flex items-start gap-[18px] rounded-[16px] border border-[#E7E3EF] bg-white p-[26px]">
+              {c.big
+                ? <div className="min-w-[64px] text-[30px] font-extrabold leading-none text-[#7C3AED]">{c.big}</div>
+                : <Diamond size={30} glow={false} />}
+              <div>
+                <h3 className="mb-1.5 text-[18px] font-semibold">{c.h}</h3>
+                <p className="text-[14.5px] text-[#5b5470]" dangerouslySetInnerHTML={{ __html: c.p }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PARTNER */}
+      <section className="mx-auto max-w-[1080px] px-7">
+        <div id="partner" className="rounded-[20px] p-9 text-center sm:p-12" style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
+          <div className="text-[13px] font-bold uppercase tracking-[1.6px] text-[#D9A626]">Partner with us</div>
+          <h2 style={serif} className="mt-2.5 text-[26px] font-semibold text-white sm:text-[29px]">
+            Studios, agencies, creators, financiers.
+          </h2>
+          <p className="mx-auto mt-3.5 max-w-[560px] text-[16px] text-[#c9c2e6]">
+            If you make things or back things, we should talk. No script required, just tell us who you are and
+            what you&apos;re interested in.
+          </p>
+          {sent ? (
+            <div className="mx-auto mt-7 max-w-[560px] rounded-[12px] bg-[#2c1c50] px-6 py-8 text-[#e8e3f7]">
+              Thanks. We&apos;ll be in touch.
+            </div>
+          ) : (
+            <form onSubmit={submitPartner} className="mx-auto mt-6 grid max-w-[560px] grid-cols-1 gap-3 text-left sm:grid-cols-2">
+              <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Name"
+                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6]" />
+              <input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Company"
+                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6]" />
+              <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Email"
+                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6] sm:col-span-2" />
+              <textarea rows={3} value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })}
+                placeholder="Who you are and what you're interested in"
+                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6] sm:col-span-2" />
+              <div className="sm:col-span-2">
+                <button disabled={sending} className="rounded-[9px] bg-white px-[19px] py-[11px] text-sm font-semibold text-[#241149] disabled:opacity-60">
+                  {sending ? 'Sending…' : 'Reach out'}
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+      </section>
+
+      {/* CLOSE */}
+      <section className="mx-auto max-w-[1080px] px-7 pb-7 pt-16 text-center">
+        <h2 style={serif} className="mx-auto max-w-[600px] text-[27px] font-semibold sm:text-[31px]">
+          Every great show started as a script someone almost missed.
+        </h2>
+        <p className="mx-auto mb-6 mt-3.5 max-w-[460px] text-[#5b5470]">We make sure the right ones don&apos;t.</p>
+        <Link href="/get-started" className="inline-block rounded-[9px] bg-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-white">
+          Get your free coverage
+        </Link>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="mx-auto mt-7 flex max-w-[1080px] items-center justify-between border-t border-[#E7E3EF] px-7 py-7 text-[13px] text-[#5b5470]">
+        <div className="flex items-center gap-2.5 text-[16px] font-bold"><Diamond size={15} /> GEM</div>
+        <div>gem.studio &nbsp;·&nbsp; hello@gem.studio</div>
+      </footer>
+    </div>
+  )
+}
