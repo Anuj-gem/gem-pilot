@@ -78,10 +78,10 @@ export function LandingV3() {
         <h1 style={serif} className="mx-auto max-w-[780px] text-[34px] font-semibold leading-[1.1] tracking-[-0.5px] sm:text-[48px]">
           Great stories get overlooked. <span className="text-[#7C3AED]">We find them and get them made.</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-[600px] text-[17px] text-[#5b5470] sm:text-[18.5px]">
-          We&apos;re looking for talented writers and creators ready to bring their work to film and television.
-          Free tools, honest feedback, and an open door, which is not how most studios work. If we love what
-          you&apos;ve made, we partner to make it real.
+        <p className="mx-auto mt-5 max-w-[620px] text-[17px] text-[#5b5470] sm:text-[18.5px]">
+          We believe every screenwriter deserves a shot. We use today&apos;s technology not to replace people but to
+          find talented writers who would otherwise go unnoticed, and to give every writer the tools to make their
+          work stronger and their odds better. Send us your script. If we love it, we partner to get it made.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3.5">
           <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-white">
@@ -181,8 +181,9 @@ export function LandingV3() {
         </h2>
         <p className="mx-auto mt-4 max-w-[680px] text-center text-[17px] text-[#5b5470]">
           Our team has driven close to a billion views online and built products at some of the biggest technology
-          and media companies in the world. We pair that with deep expertise in AI and modern content, and we use it
-          to find great stories, develop them, and produce them for a fraction of the usual cost.
+          and media companies in the world. That rare mix of technical and creative talent lets us do two things at
+          once: use our technology to give thousands of writers a real shot, and bring a sharp creative eye to the
+          ones with exceptional potential. Then we develop them and produce them for a fraction of the usual cost.
         </p>
         {/* logo strip — swap these wordmarks for real logo SVGs */}
         <div className="mx-auto mt-9 flex max-w-[680px] flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[#9a93ad]">
@@ -215,6 +216,30 @@ export function LandingV3() {
                 <h3 className="text-[17px] font-semibold leading-tight">{c.h}</h3>
                 <p className="mt-1 text-[14.5px] text-[#5b5470]">{c.p}</p>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HOW WE HELP */}
+      <section className="mx-auto max-w-[1080px] px-7 pb-4">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How we help</div>
+        <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
+          From first draft to audience.
+        </h2>
+        <p className="mx-auto mt-4 max-w-[660px] text-center text-[17px] text-[#5b5470]">
+          When we partner on a project we are with you the whole way, from shaping the work to getting it in front of people.
+        </p>
+        <div className="mx-auto mt-10 grid max-w-[940px] grid-cols-1 gap-x-9 gap-y-8 sm:grid-cols-3">
+          {[
+            { h: 'Creative development', p: 'We help shape the work and find its best path to market: the right positioning, the right format, and the creative choices that make it land.' },
+            { h: 'Financing', p: 'We help fund the work, and tap our network to assemble the financing that even your most ambitious projects need.' },
+            { h: 'Marketing and distribution', p: 'We craft the release and bring our own channels, with over a billion views, to get the work seen, then line up the right partners to take it wide.' },
+          ].map((c) => (
+            <div key={c.h} className="flex flex-col items-start gap-3">
+              <Diamond size={18} glow={false} />
+              <h3 className="text-[18px] font-semibold leading-tight">{c.h}</h3>
+              <p className="text-[14.5px] text-[#5b5470]">{c.p}</p>
             </div>
           ))}
         </div>
