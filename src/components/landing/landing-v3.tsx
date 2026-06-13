@@ -66,7 +66,7 @@ export function LandingV3() {
           <a href="#partner" className="hidden sm:inline hover:text-[#171520]">Partner with us</a>
           <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
           <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-[18px] py-[10px] font-semibold text-white">
-            Get free coverage
+            Get started
           </Link>
         </div>
       </nav>
@@ -75,17 +75,16 @@ export function LandingV3() {
       <header className="px-7 pb-12 pt-12 text-center sm:pt-14">
         <div className="mx-auto mb-6 h-12 w-12 rotate-45 rounded-[9px]"
           style={{ background: 'linear-gradient(135deg,#8b5cf6,#6D28D9)', boxShadow: '0 0 40px rgba(124,58,237,.5)' }} />
-        <h1 style={serif} className="mx-auto max-w-[780px] text-[34px] font-semibold leading-[1.1] tracking-[-0.5px] sm:text-[48px]">
-          Great stories get overlooked. <span className="text-[#7C3AED]">We find them and get them made.</span>
+        <h1 style={serif} className="mx-auto max-w-[820px] text-[40px] font-semibold leading-[1.08] tracking-[-0.5px] sm:text-[56px]">
+          We give every screenwriter <span className="text-[#7C3AED]">a chance.</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-[620px] text-[17px] text-[#5b5470] sm:text-[18.5px]">
-          We believe every screenwriter deserves a shot. We use today&apos;s technology not to replace people but to
-          find talented writers who would otherwise go unnoticed, and to give every writer the tools to make their
-          work stronger and their odds better. Send us your script. If we love it, we partner to get it made.
+        <p className="mx-auto mt-5 max-w-[600px] text-[17px] text-[#5b5470] sm:text-[18.5px]">
+          We use powerful technology not to replace writers but to find talented creatives who would otherwise go
+          unnoticed, and help them turn their scripts into successful productions.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3.5">
           <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-white">
-            Get your free coverage
+            Get started
           </Link>
           <a href="#partner" className="rounded-[9px] border-[1.5px] border-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-[#7C3AED]">
             Partner with us
@@ -105,17 +104,15 @@ export function LandingV3() {
               The tools we use to pick our own projects. Yours, free.
             </h2>
             <p className="mt-4 max-w-[430px] text-[16.5px] text-[#c9c2e6]">
-              We built this to evaluate the projects we want to work with, then opened it to everyone. Upload a
-              script and get a real read in minutes: where it stands, what&apos;s working, and how to position it to
-              sell. If you want us involved, send it our way. We&apos;re actively looking for projects to partner on,
-              and we&apos;ll always tell you straight if we pass.
+              We built this to pick our own projects, then opened it to everyone. Upload a script, get a real read in
+              minutes, and send it our way if you want us involved. We tell you straight, every time.
             </p>
             <div className="mt-4 flex items-center gap-2 text-[13.5px] text-[#a99fd6]">
               <span className="inline-block h-3.5 w-3.5 rounded-[3px] border-2 border-[#a99fd6]" /> Completely private. No one sees your script but you.
             </div>
             <div className="mt-6">
               <Link href="/get-started" className="inline-block rounded-[9px] bg-white px-7 py-3.5 text-[16px] font-semibold text-[#241149]">
-                Get your free read
+                Get started
               </Link>
             </div>
           </div>
@@ -164,12 +161,10 @@ export function LandingV3() {
         <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
           Not just a score. A way to make your case.
         </h2>
-        <p className="mx-auto mt-4 max-w-[660px] text-center text-[17px] text-[#5b5470]">
-          We studied the history of film and TV and built a model that reads thousands of signals in a script for
-          originality and commercial potential. The number is our honest first read on the idea. The useful part is
-          everything around it: your strengths, your gaps, and how to position the story for buyers, and for us. The
-          score weighs what&apos;s on the page. What happens next, the filmmaking, the casting, the marketing, is where
-          we come in.
+        <p className="mx-auto mt-4 max-w-[620px] text-center text-[17px] text-[#5b5470]">
+          Our model reads thousands of signals in a script for originality and commercial potential. The score is our
+          honest first read. The useful part is everything around it: your strengths, your gaps, and how to position
+          the story for buyers, and for us.
         </p>
       </section>
 
@@ -180,16 +175,23 @@ export function LandingV3() {
           We come from technology and the internet.
         </h2>
         <p className="mx-auto mt-4 max-w-[680px] text-center text-[17px] text-[#5b5470]">
-          Our team has driven close to a billion views online and built products at some of the biggest technology
-          and media companies in the world. That rare mix of technical and creative talent lets us do two things at
-          once: use our technology to give thousands of writers a real shot, and bring a sharp creative eye to the
-          ones with exceptional potential. Then we develop them and produce them for a fraction of the usual cost.
+          Our team has driven nearly a billion views online and built products at some of the biggest technology and
+          media companies in the world. That rare mix of technical and creative talent lets us give thousands of
+          writers a real shot, spot the ones with exceptional potential, and produce them for a fraction of the cost.
         </p>
-        {/* logo strip — swap these wordmarks for real logo SVGs */}
-        <div className="mx-auto mt-9 flex max-w-[680px] flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[#9a93ad]">
-          <span className="text-[22px] font-bold tracking-tight">Uber</span>
-          <span className="text-[18px] font-semibold tracking-tight">The Walt Disney Company</span>
-          <span className="flex items-center gap-2 text-[18px] font-bold"><span className="text-[#7C3AED]">~1B</span><span className="font-medium text-[#5b5470]">views</span></span>
+        {/* logo strip — wordmarks styled to brand; swap for real SVGs when available */}
+        <div className="mx-auto mt-7 text-center text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">
+          Where our team comes from
+        </div>
+        <div className="mx-auto mt-6 flex max-w-[820px] flex-wrap items-center justify-center gap-x-14 gap-y-7">
+          <span className="text-[32px] font-bold tracking-tight text-[#171520]">Uber</span>
+          <span style={{ fontFamily: "'Brush Script MT', 'Snell Roundhand', Georgia, cursive" }} className="text-[30px] italic font-semibold text-[#171520]">
+            The Walt Disney Company
+          </span>
+          <span className="flex items-baseline gap-1.5">
+            <span className="text-[32px] font-extrabold text-[#7C3AED]">1B+</span>
+            <span className="text-[16px] font-medium text-[#5b5470]">views</span>
+          </span>
         </div>
       </section>
 
@@ -227,19 +229,19 @@ export function LandingV3() {
         <h2 style={serif} className="mt-2.5 text-center text-[28px] font-semibold tracking-[-0.3px] sm:text-[33px]">
           From first draft to audience.
         </h2>
-        <p className="mx-auto mt-4 max-w-[660px] text-center text-[17px] text-[#5b5470]">
-          When we partner on a project we are with you the whole way, from shaping the work to getting it in front of people.
+        <p className="mx-auto mt-4 max-w-[540px] text-center text-[17px] text-[#5b5470]">
+          When we partner, we are with you the whole way.
         </p>
-        <div className="mx-auto mt-10 grid max-w-[940px] grid-cols-1 gap-x-9 gap-y-8 sm:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-[980px] grid-cols-1 gap-6 sm:grid-cols-3">
           {[
-            { h: 'Creative development', p: 'We help shape the work and find its best path to market: the right positioning, the right format, and the creative choices that make it land.' },
-            { h: 'Financing', p: 'We help fund the work, and tap our network to assemble the financing that even your most ambitious projects need.' },
-            { h: 'Marketing and distribution', p: 'We craft the release and bring our own channels, with over a billion views, to get the work seen, then line up the right partners to take it wide.' },
+            { h: 'Creative development', p: 'We shape the work and find its path to market: positioning, format, and the calls that make it land.' },
+            { h: 'Financing', p: 'We help fund the work and tap our network to assemble financing for ambitious projects.' },
+            { h: 'Marketing and distribution', p: 'We use our own channels, over a billion views, to get the work seen and take it wide.' },
           ].map((c) => (
-            <div key={c.h} className="flex flex-col items-start gap-3">
-              <Diamond size={18} glow={false} />
-              <h3 className="text-[18px] font-semibold leading-tight">{c.h}</h3>
-              <p className="text-[14.5px] text-[#5b5470]">{c.p}</p>
+            <div key={c.h} className="rounded-[16px] bg-[#F3F0FB] p-7">
+              <Diamond size={20} glow={false} />
+              <h3 className="mt-4 text-[19px] font-semibold leading-tight">{c.h}</h3>
+              <p className="mt-2 text-[15px] text-[#5b5470]">{c.p}</p>
             </div>
           ))}
         </div>
