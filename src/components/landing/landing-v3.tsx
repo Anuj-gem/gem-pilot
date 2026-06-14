@@ -196,23 +196,28 @@ export function LandingV3() {
           <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
             Technologists and creators.
           </h2>
-          <p className="mx-auto mt-5 max-w-[660px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-            We come from the biggest technology and media companies in the world, and we are creators ourselves, with
-            over a billion views across social. Our team reads every submission directly, and you can apply to partner
-            with us on any script you write.
+          <p className="mx-auto mt-5 max-w-[640px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+            Technology powers what we do, but we are creators at heart. We come from companies like Uber and the Walt
+            Disney Company, and we have built a social following with over a billion views of our own. Our team reads
+            every submission directly, and you can partner with us on any script you write.
           </p>
-          <div className="mx-auto mt-12 text-center text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">
-            Where our team comes from
-          </div>
-          <div className="mx-auto mt-7 flex max-w-[820px] flex-wrap items-center justify-center gap-x-16 gap-y-8">
-            <span className="text-[34px] font-bold tracking-tight text-[#171520]">Uber</span>
-            <span style={{ fontFamily: "'Brush Script MT', 'Snell Roundhand', Georgia, cursive" }} className="text-[32px] italic font-semibold text-[#171520]">
-              The Walt Disney Company
-            </span>
-            <span className="flex items-baseline gap-1.5">
-              <span className="text-[34px] font-extrabold text-[#7C3AED]">1B+</span>
-              <span className="text-[16px] font-medium text-[#5b5470]">views</span>
-            </span>
+          <div className="mx-auto mt-14 grid max-w-[780px] grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8">
+            <div className="text-center sm:border-r sm:border-[#e0d8f3]">
+              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">Where we have worked</div>
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
+                <span className="text-[30px] font-bold tracking-tight text-[#171520]">Uber</span>
+                <span style={{ fontFamily: "'Brush Script MT', 'Snell Roundhand', Georgia, cursive" }} className="text-[27px] italic font-semibold text-[#171520]">
+                  The Walt Disney Company
+                </span>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">What we have built</div>
+              <div className="mt-4 flex items-baseline justify-center gap-2">
+                <span className="text-[40px] font-extrabold leading-none text-[#7C3AED]">1B+</span>
+                <span className="text-[16px] font-medium text-[#5b5470]">views on our own channels</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
