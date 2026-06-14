@@ -5,7 +5,7 @@
 // Faithful port of the approved mock. Light theme, GEM purple #7C3AED, navy accent bands.
 // Serif display = Playfair via --font-display. Responsive desktop + mobile.
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 const serif = { fontFamily: 'var(--font-display), Georgia, serif' }
@@ -28,6 +28,14 @@ export function LandingV3() {
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
   const [form, setForm] = useState({ name: '', company: '', email: '', notes: '' })
+  const [scriptCount, setScriptCount] = useState<number | null>(null)
+
+  useEffect(() => {
+    fetch('/api/stats')
+      .then((r) => r.json())
+      .then((d) => { if (typeof d?.scriptsSubmitted === 'number') setScriptCount(d.scriptsSubmitted) })
+      .catch(() => {})
+  }, [])
 
   async function submitPartner(e: React.FormEvent) {
     e.preventDefault()
@@ -82,24 +90,26 @@ export function LandingV3() {
           We use powerful technology not to replace writers but to find talented creatives who would otherwise go
           unnoticed, and help them turn their scripts into successful productions.
         </p>
-        <div className="mx-auto mt-9 flex max-w-[460px] items-stretch justify-center gap-8">
-          <div className="flex-1 text-center">
-            <div className="text-[34px] font-extrabold leading-none text-[#7C3AED] sm:text-[40px]">1,000+</div>
-            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">scripts submitted</div>
-          </div>
-          <div className="w-px bg-[#e0d8f3]" />
-          <div className="flex-1 text-center">
-            <div className="text-[34px] font-extrabold leading-none text-[#7C3AED] sm:text-[40px]">$100K</div>
-            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">in direct financing per project</div>
-          </div>
-        </div>
         <div className="mt-9 flex justify-center">
-          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-9 py-3.5 text-[16px] font-semibold text-white">
+          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-10 py-4 text-[16px] font-semibold text-white">
             Get started
           </Link>
         </div>
-        <div className="mt-3.5 text-[13px] text-[#5b5470]">
+        <div className="mt-3 text-[13px] text-[#5b5470]">
           Already have an account? <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
+        </div>
+        <div className="mx-auto mt-11 flex max-w-[480px] items-stretch justify-center gap-10">
+          <div className="flex-1 text-center">
+            <div className="text-[36px] font-extrabold leading-none text-[#7C3AED] sm:text-[44px] tabular-nums">
+              {scriptCount !== null ? scriptCount.toLocaleString() : '—'}
+            </div>
+            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">scripts submitted to us</div>
+          </div>
+          <div className="w-px bg-[#e0d8f3]" />
+          <div className="flex-1 text-center">
+            <div className="text-[36px] font-extrabold leading-none text-[#7C3AED] sm:text-[44px]">$100K</div>
+            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">in direct financing per project</div>
+          </div>
         </div>
       </header>
 
@@ -112,16 +122,13 @@ export function LandingV3() {
               Free coverage on your script, in minutes.
             </h2>
             <p className="mt-5 max-w-[440px] text-[16.5px] leading-[1.6] text-[#c9c2e6]">
-              Upload a script and get a real read, powered by Selznick, our own model for evaluating scripts. You see
-              an overall score and exactly what is working, what is not, and how to position it for buyers.
+              Sign up and get instant, free coverage on any script, powered by Selznick, the most advanced script
+              evaluation model we have ever built. You get an overall score plus exactly what is working, what is not,
+              and how to position it.
             </p>
             <p className="mt-3.5 max-w-[440px] text-[16.5px] leading-[1.6] text-[#c9c2e6]">
-              It is the same read we use to decide what to make. Send us the scripts you believe in most, and if we
-              love one, we partner with you to get it made.
+              Use it however you like, or send us a script you want us to produce. It always stays private to you.
             </p>
-            <div className="mt-5 flex items-center gap-2 text-[13.5px] text-[#a99fd6]">
-              <span className="inline-block h-3.5 w-3.5 rounded-[3px] border-2 border-[#a99fd6]" /> Completely private. No one sees your script but you.
-            </div>
             <div className="mt-7">
               <Link href="/get-started" className="inline-block rounded-[9px] bg-white px-7 py-3.5 text-[16px] font-semibold text-[#241149]">
                 Get started
@@ -168,30 +175,22 @@ export function LandingV3() {
         </div>
       </section>
 
-      {/* WHAT'S IN YOUR COVERAGE */}
+      {/* HOW IT WORKS */}
       <section id="score" className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">What is in your coverage</div>
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How it works</div>
         <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-          The same read we use to decide.
+          Simple from the start.
         </h2>
-        <p className="mx-auto mt-5 max-w-[600px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-          Every script gets a full report from Selznick, our model for evaluating scripts. It is the exact information
-          we look at when we decide what to make.
-        </p>
-        <div className="mx-auto mt-12 grid max-w-[920px] grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-[980px] grid-cols-1 gap-6 sm:grid-cols-3">
           {[
-            { h: 'An overall score', p: 'Selznick reads your script for originality and commercial potential and gives it one honest number.' },
-            { h: 'What is working', p: 'The strengths that make your story stand out, and why they land.' },
-            { h: 'Where it needs work', p: 'The gaps to close before it is ready to sell.' },
-            { h: 'How to position it', p: 'How to pitch the story to buyers, and to us.' },
-            { h: 'Format and budget', p: 'Where it fits, film or series, and what it would take to make.' },
+            { n: '1', h: 'Get instant coverage', p: 'Sign up and upload a script. Selznick gives you a full, professional read in minutes, free and private to you.' },
+            { n: '2', h: 'Submit to us', p: 'Send us a script you want us to produce, right from the app. One click shares your report with our team.' },
+            { n: '3', h: 'We partner', p: 'We read every submission in detail. For the scripts we love, we become your production partner.' },
           ].map((c) => (
-            <div key={c.h} className="flex items-start gap-3.5">
-              <Diamond size={18} glow={false} />
-              <div>
-                <h3 className="text-[17px] font-semibold leading-tight">{c.h}</h3>
-                <p className="mt-1.5 text-[14.5px] leading-[1.55] text-[#5b5470]">{c.p}</p>
-              </div>
+            <div key={c.n} className="rounded-[18px] border border-[#ece8f5] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.05)]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#7C3AED] text-[15px] font-bold text-white">{c.n}</div>
+              <h3 className="mt-4 text-[19px] font-semibold leading-tight">{c.h}</h3>
+              <p className="mt-2 text-[15px] leading-[1.55] text-[#5b5470]">{c.p}</p>
             </div>
           ))}
         </div>
@@ -263,16 +262,16 @@ export function LandingV3() {
         <div className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
           <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How we help</div>
           <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-            From first draft to audience.
+            We become your production partner.
           </h2>
-          <p className="mx-auto mt-5 max-w-[560px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-            When we partner on your project, we are with you at every stage.
+          <p className="mx-auto mt-5 max-w-[600px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+            For the scripts we take on, we do what a studio does, and we move fast.
           </p>
           <div className="mx-auto mt-12 grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { tag: 'Creative development', stat: '', p: 'Backed by our technology, we develop your work, shape the strategy to produce it, and position it for the market. Your partner from the earliest stage.' },
-              { tag: 'Financing', stat: 'Up to $100K', p: 'We fund your work directly, then tap our network to raise what a proof of concept or a full production needs.' },
-              { tag: 'Marketing and distribution', stat: '400K followers', p: 'We push the work through our own channels and secure the partnerships to distribute it and make money.' },
+              { tag: 'Creative development', stat: '', p: 'We develop the work with you: positioning, format, talent, and the creative calls that get it made.' },
+              { tag: 'Financing', stat: 'Up to $100K', p: 'We finance your project with up to $100,000 of our own money, then help you raise whatever else it needs.' },
+              { tag: 'Marketing and distribution', stat: '', p: 'We secure the marketing and distribution partnerships to get it released, and amplify it through our own audience.' },
             ].map((c) => (
               <div key={c.tag} className="flex flex-col rounded-[18px] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.07)]">
                 {c.stat
