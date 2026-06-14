@@ -9,10 +9,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { trackEvent } from '@/lib/posthog'
 
-const NAV_LINKS = [
-  { href: '/discover', label: 'Discover', emoji: '🔍' },
-  { href: '/opportunities', label: 'Opportunities', emoji: '💼' },
-]
+const NAV_LINKS: { href: string; label: string; emoji: string }[] = []
 
 export function LandingNav() {
   const [ctaVisible, setCtaVisible] = useState(true)
