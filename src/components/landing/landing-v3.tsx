@@ -82,13 +82,21 @@ export function LandingV3() {
           We use powerful technology not to replace writers but to find talented creatives who would otherwise go
           unnoticed, and help them turn their scripts into successful productions.
         </p>
-        <div className="mt-7 flex flex-wrap justify-center gap-3.5">
-          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-white">
+        <div className="mx-auto mt-9 flex max-w-[460px] items-stretch justify-center gap-8">
+          <div className="flex-1 text-center">
+            <div className="text-[34px] font-extrabold leading-none text-[#7C3AED] sm:text-[40px]">1,000+</div>
+            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">scripts submitted</div>
+          </div>
+          <div className="w-px bg-[#e0d8f3]" />
+          <div className="flex-1 text-center">
+            <div className="text-[34px] font-extrabold leading-none text-[#7C3AED] sm:text-[40px]">$100K</div>
+            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">in direct financing per project</div>
+          </div>
+        </div>
+        <div className="mt-9 flex justify-center">
+          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-9 py-3.5 text-[16px] font-semibold text-white">
             Get started
           </Link>
-          <a href="#partner" className="rounded-[9px] border-[1.5px] border-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-[#7C3AED]">
-            Partner with us
-          </a>
         </div>
         <div className="mt-3.5 text-[13px] text-[#5b5470]">
           Already have an account? <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
