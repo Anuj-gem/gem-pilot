@@ -424,52 +424,32 @@ export default function GetStartedClient() {
               {/* Right — branding */}
               <div className="flex-1 hidden md:flex flex-col justify-center max-w-[400px]">
                 <h2 className="text-[26px] font-bold text-white leading-tight mb-3">
-                  Where screenwriters develop their ideas into{' '}
-                  <span style={{ color: '#d4a843' }}>hits.</span>
+                  Where screenwriters turn scripts into{' '}
+                  <span style={{ color: '#d4a843' }}>productions.</span>
                 </h2>
-                <p className="text-[13px] leading-relaxed mb-6" style={{ color: '#b8a8d8' }}>
-                  Upload your script. Get instant coverage. Connect with the
-                  industry partners who can help get your project made.
+                <p className="text-[13px] leading-relaxed mb-7" style={{ color: '#b8a8d8' }}>
+                  Sign up free, get instant coverage on your script, and send us the ones you want us to produce.
                 </p>
 
-                {/* Opportunity card mockup */}
-                <div className="bg-white rounded-xl p-4 shadow-lg" style={{ maxWidth: 240 }}>
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <div className="w-[6px] h-[6px] rounded-full" style={{ backgroundColor: '#22c55e' }} />
-                    <span className="text-[10px] font-medium" style={{ color: '#22c55e' }}>
-                      OPTIONED
-                    </span>
-                    <span className="text-[10px]" style={{ color: '#9ca3af' }}>
-                      by Meridian Pictures
-                    </span>
-                  </div>
-                  <p className="text-[14px] font-semibold mb-0.5" style={{ color: '#1C1917' }}>
-                    Nightfall
-                  </p>
-                  <p className="text-[10px] mb-3" style={{ color: '#9ca3af' }}>
-                    Series · Drama · Thriller
-                  </p>
-                  <div className="border-t pt-2 space-y-1" style={{ borderColor: '#E7E5E4' }}>
-                    {[
-                      { initials: 'MP', name: 'Meridian Pictures', role: 'Producer', bg: '#ef4444' },
-                      { initials: 'KP', name: 'Kate Park', role: 'Director', bg: '#a855f7' },
-                    ].map((p) => (
-                      <div key={p.name} className="flex items-center gap-1.5">
-                        <div
-                          className="w-5 h-5 rounded-full flex items-center justify-center text-[7px] font-medium text-white"
-                          style={{ backgroundColor: p.bg }}
-                        >
-                          {p.initials}
-                        </div>
-                        <span className="text-[10px] font-medium" style={{ color: '#1C1917' }}>
-                          {p.name}
-                        </span>
-                        <span className="text-[9px]" style={{ color: '#9ca3af' }}>
-                          {p.role}
-                        </span>
+                <div className="space-y-5">
+                  {[
+                    { n: '1', h: 'Free script coverage', p: 'Instant, professional coverage powered by Selznick. Free, and private to you.' },
+                    { n: '2', h: 'Up to $100K in financing', p: 'We finance the projects we take on directly, and help raise any additional financing they need.' },
+                    { n: '3', h: 'Talent and distribution', p: 'We help attract talent and secure the marketing and distribution partnerships to get your project made.' },
+                  ].map((s) => (
+                    <div key={s.n} className="flex items-start gap-3">
+                      <div
+                        className="flex h-7 w-7 flex-none items-center justify-center rounded-full text-[13px] font-bold text-white"
+                        style={{ backgroundColor: '#7C3AED' }}
+                      >
+                        {s.n}
                       </div>
-                    ))}
-                  </div>
+                      <div>
+                        <p className="text-[15px] font-semibold text-white leading-tight">{s.h}</p>
+                        <p className="text-[12.5px] leading-relaxed mt-0.5" style={{ color: '#b8a8d8' }}>{s.p}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
