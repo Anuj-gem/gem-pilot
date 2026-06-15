@@ -65,8 +65,9 @@ export function LandingV3() {
     <div className="min-h-screen bg-[#FAFAF9] text-[#171520]">
       {/* NAV */}
       <nav className="mx-auto flex max-w-[1080px] items-center justify-between px-7 py-[18px]">
-        <div className="flex items-center gap-2.5 text-[20px] font-bold tracking-wide">
-          <Diamond /> GEM
+        <div className="flex items-center gap-2.5 text-[20px] tracking-wide">
+          <Diamond />
+          <span><span className="font-bold">GEM</span><span className="ml-1.5 font-medium tracking-[0.18em]">STUDIOS</span></span>
         </div>
         <div className="flex items-center gap-5 text-sm text-[#5b5470]">
           <a href="#read" className="hidden sm:inline hover:text-[#171520]">Free coverage</a>
