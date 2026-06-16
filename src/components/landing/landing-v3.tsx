@@ -23,7 +23,7 @@ function Diamond({ size = 21, glow = true }: { size?: number; glow?: boolean }) 
   )
 }
 
-function ClipTile({ id, views, img }: { id: string; views: string; img: string }) {
+function ClipTile({ id, views, img }: { id: string; views?: string; img: string }) {
   const [playing, setPlaying] = useState(false)
   return (
     <div className="relative w-[178px] overflow-hidden rounded-[16px] border border-[#e0d8f3]"
@@ -41,7 +41,7 @@ function ClipTile({ id, views, img }: { id: string; views: string; img: string }
           type="button"
           onClick={() => setPlaying(true)}
           className="absolute inset-0 h-full w-full cursor-pointer border-0 bg-transparent p-0"
-          aria-label={`Play clip, ${views} views`}
+          aria-label={views ? `Play clip, ${views} views` : 'Play clip'}
         >
           <img
             src={img}
@@ -54,10 +54,10 @@ function ClipTile({ id, views, img }: { id: string; views: string; img: string }
               <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
             </span>
           </span>
-          <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[13px] font-semibold text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
+          {views && <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[13px] font-semibold text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
             <svg width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
             {views}
-          </span>
+          </span>}
         </button>
       )}
     </div>
@@ -136,9 +136,9 @@ export function LandingV3() {
 
           {/* Clips — click to play inline */}
           <div className="mt-12 flex flex-wrap items-start justify-center gap-5">
-            <ClipTile id="7584299938708737312" views="111M" img="/clip-wedding.jpg" />
-            <ClipTile id="7585421656076602657" views="84M" img="/clip-lawyer.jpg" />
-            <ClipTile id="7586952126383934752" views="8.6M" img="/clip-orange.jpg" />
+            <ClipTile id="7584299938708737312" views="111M" img="/clip-wedding.png" />
+            <ClipTile id="7585421656076602657" views="84M" img="/clip-lawyer.png" />
+            <ClipTile id="7568327414305148192" img="/clip-three.png" />
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
