@@ -23,6 +23,47 @@ function Diamond({ size = 21, glow = true }: { size?: number; glow?: boolean }) 
   )
 }
 
+function ClipTile({ id, views, img }: { id: string; views: string; img: string }) {
+  const [playing, setPlaying] = useState(false)
+  return (
+    <div className="relative w-[178px] overflow-hidden rounded-[16px] border border-[#e0d8f3]"
+      style={{ aspectRatio: '9 / 16', background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
+      {playing ? (
+        <iframe
+          title="GEM clip"
+          src={`https://www.tiktok.com/embed/v2/${id}?autoplay=1`}
+          className="absolute inset-0 h-full w-full"
+          style={{ border: 0 }}
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setPlaying(true)}
+          className="absolute inset-0 h-full w-full cursor-pointer border-0 bg-transparent p-0"
+          aria-label={`Play clip, ${views} views`}
+        >
+          <img
+            src={img}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+          />
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full" style={{ background: 'rgba(255,255,255,0.22)' }}>
+              <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
+            </span>
+          </span>
+          <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[13px] font-semibold text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
+            <svg width="11" height="11" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
+            {views}
+          </span>
+        </button>
+      )}
+    </div>
+  )
+}
+
 export function LandingV3() {
   const [scriptCount, setScriptCount] = useState<number | null>(null)
 
@@ -31,14 +72,6 @@ export function LandingV3() {
       .then((r) => r.json())
       .then((d) => { if (typeof d?.scriptsSubmitted === 'number') setScriptCount(d.scriptsSubmitted) })
       .catch(() => {})
-  }, [])
-
-  useEffect(() => {
-    const s = document.createElement('script')
-    s.src = 'https://www.tiktok.com/embed.js'
-    s.async = true
-    document.body.appendChild(s)
-    return () => { try { document.body.removeChild(s) } catch {} }
   }, [])
 
   return (
@@ -88,57 +121,34 @@ export function LandingV3() {
         </div>
       </header>
 
-      {/* OUR STORY — short-form origin */}
+      {/* OUR WORK — virality + social proof */}
       <section id="story" style={{ background: '#F4F0FC' }}>
         <div className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Our story</div>
+          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Our work</div>
           <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-            We come from the world of short-form.
+            We got here by going viral.
           </h2>
-          <p className="mx-auto mt-5 max-w-[660px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-            Across all of our channels, we&apos;ve done nearly a billion views, and along the way we learned modern
-            production inside out, including what actually makes something break through online. We&apos;re a real team,
-            out of companies like Uber and the Walt Disney Company, and we are just getting started. We&apos;re here to
-            make the best entertainment in the world.
+          <p className="mx-auto mt-5 max-w-[640px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+            Across our channels we&apos;ve done nearly a billion views, with a team out of companies like Uber and the
+            Walt Disney Company. Now we&apos;re partnering with talented writers to make the best series and films in the
+            world.
           </p>
 
-          {/* Clips — embedded TikTok players */}
-          <div className="mt-12 flex flex-wrap items-start justify-center gap-4">
-            {[
-              '7584299938708737312',
-              '7585421656076602657',
-              '7573662963739921696',
-            ].map((id) => (
-              <blockquote
-                key={id}
-                className="tiktok-embed"
-                cite={`https://www.tiktok.com/@trygemstudios/video/${id}`}
-                data-video-id={id}
-                style={{ maxWidth: 325, minWidth: 300, margin: 0 }}
-              >
-                <section></section>
-              </blockquote>
-            ))}
+          {/* Clips — click to play inline */}
+          <div className="mt-12 flex flex-wrap items-start justify-center gap-5">
+            <ClipTile id="7584299938708737312" views="111M" img="/clip-wedding.jpg" />
+            <ClipTile id="7585421656076602657" views="84M" img="/clip-lawyer.jpg" />
+            <ClipTile id="7586952126383934752" views="8.6M" img="/clip-orange.jpg" />
           </div>
 
-          {/* Pedigree */}
-          <div className="mx-auto mt-14 grid max-w-[780px] grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8">
-            <div className="text-center sm:border-r sm:border-[#e0d8f3]">
-              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">Where we have worked</div>
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
-                <span className="text-[30px] font-bold tracking-tight text-[#171520]">Uber</span>
-                <span style={{ fontFamily: "'Brush Script MT', 'Snell Roundhand', Georgia, cursive" }} className="text-[27px] italic font-semibold text-[#171520]">
-                  The Walt Disney Company
-                </span>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">What we have built</div>
-              <div className="mt-4 flex items-baseline justify-center gap-2">
-                <span className="text-[40px] font-extrabold leading-none text-[#7C3AED]">1B+</span>
-                <span className="text-[16px] font-medium text-[#5b5470]">views on our own channels</span>
-              </div>
-            </div>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-8 py-3.5 text-[16px] font-semibold text-white">
+              Send us a script
+            </Link>
+            <a href="https://www.tiktok.com/@trygemstudios" target="_blank" rel="noopener noreferrer"
+              className="rounded-[9px] border border-[#c9bdea] px-7 py-3.5 text-[16px] font-semibold text-[#6D28D9] no-underline">
+              Watch more
+            </a>
           </div>
         </div>
       </section>
