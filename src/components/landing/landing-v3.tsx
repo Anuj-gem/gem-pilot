@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 const serif = { fontFamily: 'var(--font-display), Georgia, serif' }
-const CHANNEL = 'https://www.tiktok.com/@trygemstudios'
 const FEATURED_CLIP = 'https://www.tiktok.com/@trygemstudios/video/7584299938708737312'
 
 function Diamond({ size = 21, glow = true }: { size?: number; glow?: boolean }) {
@@ -95,15 +94,14 @@ export function LandingV3() {
               We got here by going viral.
             </h2>
             <p className="mx-auto mt-5 max-w-[480px] text-[17px] leading-[1.6] text-[#5b5470] md:mx-0">
-              We built a following of nearly a billion views and learned how to make things people can&apos;t stop
-              watching. Now we&apos;re leveling up: we want to make the best series and films in the world, with writers
-              who have incredible stories to tell.
+              We&apos;ve done nearly a billion views across social media. Now we&apos;re leveling up: we want to make
+              the best series and films in the world, with writers who have incredible stories to tell.
             </p>
             <div className="mt-7 flex justify-center md:justify-start">
-              <a href={CHANNEL} target="_blank" rel="noopener noreferrer"
+              <Link href="/get-started"
                 className="inline-flex items-center gap-2 rounded-[9px] bg-[#7C3AED] px-7 py-3.5 text-[16px] font-semibold text-white no-underline">
-                Watch more on TikTok
-              </a>
+                Get started
+              </Link>
             </div>
           </div>
 
@@ -151,6 +149,11 @@ export function LandingV3() {
             </p>
           </div>
         </div>
+        <div className="mt-10 flex justify-center">
+          <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-9 py-3.5 text-[16px] font-semibold text-white no-underline">
+            Get started
+          </Link>
+        </div>
       </section>
 
       {/* HOW WE HELP — cards */}
@@ -175,6 +178,11 @@ export function LandingV3() {
                 <p className="mt-2.5 text-[15px] leading-[1.55] text-[#5b5470]">{c.p}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-9 py-3.5 text-[16px] font-semibold text-white no-underline">
+              Get started
+            </Link>
           </div>
         </div>
       </section>
