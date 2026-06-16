@@ -99,17 +99,12 @@ export function LandingV3() {
         <div className="mt-3 text-[13px] text-[#5b5470]">
           Already have an account? <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
         </div>
-        <div className="mx-auto mt-11 flex max-w-[480px] items-stretch justify-center gap-10">
+        <div className="mx-auto mt-11 flex max-w-[480px] items-stretch justify-center">
           <div className="flex-1 text-center">
             <div className="text-[36px] font-extrabold leading-none text-[#7C3AED] sm:text-[44px] tabular-nums">
               {scriptCount !== null ? scriptCount.toLocaleString() : '—'}
             </div>
             <div className="mt-1.5 text-[13.5px] text-[#5b5470]">scripts submitted to us</div>
-          </div>
-          <div className="w-px bg-[#e0d8f3]" />
-          <div className="flex-1 text-center">
-            <div className="text-[36px] font-extrabold leading-none text-[#7C3AED] sm:text-[44px]">$100K</div>
-            <div className="mt-1.5 text-[13.5px] text-[#5b5470]">in direct financing per project</div>
           </div>
         </div>
       </header>
@@ -271,7 +266,7 @@ export function LandingV3() {
           <div className="mx-auto mt-12 grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-3">
             {[
               { tag: 'Creative development', stat: '', p: 'We develop the work with you: positioning, format, talent, and the creative calls that get it made.' },
-              { tag: 'Financing', stat: 'Up to $100K', p: 'We finance your project with up to $100,000 of our own money, then help you raise whatever else it needs.' },
+              { tag: 'Financing', stat: '', p: 'We back the projects we take on and help you raise whatever else they need.' },
               { tag: 'Marketing and distribution', stat: '', p: 'We secure the marketing and distribution partnerships to get it released, and amplify it through our own audience.' },
             ].map((c) => (
               <div key={c.tag} className="flex flex-col rounded-[18px] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.07)]">
