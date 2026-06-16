@@ -1,9 +1,8 @@
 'use client'
 
-// Landing page v3 (2026-06-13) — production-company positioning.
-// Hero → The Read (coverage card) → What you get → How we work → Partner form → Close.
-// Faithful port of the approved mock. Light theme, GEM purple #7C3AED, navy accent bands.
-// Serif display = Playfair via --font-display. Responsive desktop + mobile.
+// Landing page v3 — production-company positioning with a short-form origin story.
+// Hero → Our story → The Read (free coverage) → What we do (tech + team) → Who we're looking for → How we help → Close.
+// Light theme, GEM purple #7C3AED, navy accent bands. Serif display = Playfair via --font-display.
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -25,9 +24,6 @@ function Diamond({ size = 21, glow = true }: { size?: number; glow?: boolean }) 
 }
 
 export function LandingV3() {
-  const [sent, setSent] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [form, setForm] = useState({ name: '', company: '', email: '', notes: '' })
   const [scriptCount, setScriptCount] = useState<number | null>(null)
 
   useEffect(() => {
@@ -36,30 +32,6 @@ export function LandingV3() {
       .then((d) => { if (typeof d?.scriptsSubmitted === 'number') setScriptCount(d.scriptsSubmitted) })
       .catch(() => {})
   }, [])
-
-  async function submitPartner(e: React.FormEvent) {
-    e.preventDefault()
-    if (sending) return
-    setSending(true)
-    try {
-      await fetch('/api/apply', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          full_name: form.name,
-          company: form.company,
-          email: form.email,
-          notes: form.notes,
-          role: 'producer',
-        }),
-      })
-      setSent(true)
-    } catch {
-      setSent(true)
-    } finally {
-      setSending(false)
-    }
-  }
 
   return (
     <div className="min-h-screen bg-[#FAFAF9] text-[#171520]">
@@ -70,9 +42,8 @@ export function LandingV3() {
           <span><span className="font-bold">GEM</span><span className="ml-1.5 font-medium tracking-[0.18em]">STUDIOS</span></span>
         </div>
         <div className="flex items-center gap-5 text-sm text-[#5b5470]">
+          <a href="#story" className="hidden sm:inline hover:text-[#171520]">Our story</a>
           <a href="#read" className="hidden sm:inline hover:text-[#171520]">Free coverage</a>
-          <a href="#help" className="hidden sm:inline hover:text-[#171520]">How we work</a>
-          <a href="#partner" className="hidden sm:inline hover:text-[#171520]">Partner with us</a>
           <Link href="/login" className="font-semibold text-[#7C3AED]">Log in</Link>
           <Link href="/get-started" className="rounded-[9px] bg-[#7C3AED] px-[18px] py-[10px] font-semibold text-white">
             Get started
@@ -109,8 +80,67 @@ export function LandingV3() {
         </div>
       </header>
 
+      {/* OUR STORY — short-form origin */}
+      <section id="story" style={{ background: '#F4F0FC' }}>
+        <div className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
+          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Our story</div>
+          <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
+            We come from the world of short-form.
+          </h2>
+          <p className="mx-auto mt-5 max-w-[660px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+            Across all of our channels, we&apos;ve done nearly a billion views, and along the way we learned modern
+            production inside out, including what actually makes something break through online. We&apos;re a real team,
+            out of companies like Uber and the Walt Disney Company, and we are just getting started. We&apos;re here to
+            make the best entertainment in the world.
+          </p>
+
+          {/* Clips */}
+          <div className="mt-12 flex flex-wrap items-stretch justify-center gap-5">
+            {[
+              'https://vm.tiktok.com/ZNRcoo97K/',
+              'https://vm.tiktok.com/ZNRco7cvd/',
+              'https://vm.tiktok.com/ZNRcoESt6/',
+            ].map((href) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex w-[150px] flex-col items-center justify-center gap-3 rounded-[16px] px-4 py-8 no-underline transition-transform hover:scale-[1.03]"
+                style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)', minHeight: 240 }}
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full" style={{ background: 'rgba(255,255,255,0.16)' }}>
+                  <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
+                </span>
+                <span className="text-[12px] font-semibold uppercase tracking-[1px] text-[#D9A626]">Watch on TikTok</span>
+              </a>
+            ))}
+          </div>
+
+          {/* Pedigree */}
+          <div className="mx-auto mt-14 grid max-w-[780px] grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8">
+            <div className="text-center sm:border-r sm:border-[#e0d8f3]">
+              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">Where we have worked</div>
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
+                <span className="text-[30px] font-bold tracking-tight text-[#171520]">Uber</span>
+                <span style={{ fontFamily: "'Brush Script MT', 'Snell Roundhand', Georgia, cursive" }} className="text-[27px] italic font-semibold text-[#171520]">
+                  The Walt Disney Company
+                </span>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">What we have built</div>
+              <div className="mt-4 flex items-baseline justify-center gap-2">
+                <span className="text-[40px] font-extrabold leading-none text-[#7C3AED]">1B+</span>
+                <span className="text-[16px] font-medium text-[#5b5470]">views on our own channels</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* THE READ — coverage feature */}
-      <section id="read" className="mt-[18px]" style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
+      <section id="read" style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
         <div className="mx-auto grid max-w-[1080px] grid-cols-1 items-center gap-10 px-7 py-16 md:grid-cols-[1fr_1.05fr] md:gap-[54px]">
           <div>
             <div className="text-[13px] font-bold uppercase tracking-[1.6px] text-[#D9A626]">Free script coverage</div>
@@ -171,181 +201,89 @@ export function LandingV3() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="score" className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How it works</div>
+      {/* WHAT WE DO — technology + team */}
+      <section id="how" className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">What we do</div>
         <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-          Simple from the start.
+          Powerful technology, and people who know story.
         </h2>
-        <div className="mx-auto mt-12 grid max-w-[980px] grid-cols-1 gap-6 sm:grid-cols-3">
-          {[
-            { n: '1', h: 'Get instant coverage', p: 'Sign up and upload a script. Selznick gives you a full, professional read in minutes, free and private to you.' },
-            { n: '2', h: 'Submit to us', p: 'Send us a script you want us to produce, right from the app. One click shares your report with our team.' },
-            { n: '3', h: 'We partner', p: 'We read every submission in detail. For the scripts we love, we become your production partner.' },
-          ].map((c) => (
-            <div key={c.n} className="rounded-[18px] border border-[#ece8f5] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.05)]">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#7C3AED] text-[15px] font-bold text-white">{c.n}</div>
-              <h3 className="mt-4 text-[19px] font-semibold leading-tight">{c.h}</h3>
-              <p className="mt-2 text-[15px] leading-[1.55] text-[#5b5470]">{c.p}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* OUR STORY — short-form origin */}
-      <section id="help" style={{ background: '#F4F0FC' }}>
-        <div className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Our story</div>
-          <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-            We come from the world of short-form.
-          </h2>
-          <p className="mx-auto mt-5 max-w-[640px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-            We&apos;ve built a following of nearly a billion views across our own channels, with a team out of companies
-            like Uber and the Walt Disney Company. We built this technology to find great writers, and made it free for
-            you to use: get instant coverage, sharpen your script, and position it to sell and get made.
-          </p>
-
-          {/* Clips */}
-          <div className="mt-12 flex flex-wrap items-stretch justify-center gap-5">
-            {[
-              { href: 'https://vm.tiktok.com/ZNRcoo97K/', views: '100M' },
-              { href: 'https://vm.tiktok.com/ZNRco7cvd/', views: '80M' },
-              { href: 'https://vm.tiktok.com/ZNRcoESt6/', views: '30M' },
-            ].map((c) => (
-              <a
-                key={c.href}
-                href={c.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative flex w-[150px] flex-col items-center justify-center gap-2 rounded-[16px] px-4 py-7 no-underline transition-transform hover:scale-[1.03]"
-                style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)', minHeight: 250 }}
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full" style={{ background: 'rgba(255,255,255,0.14)' }}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
-                </span>
-                <span className="text-[34px] font-extrabold leading-none text-white">{c.views}</span>
-                <span className="text-[13px] text-[#c9c2e6]">views</span>
-                <span className="mt-1 text-[11px] font-semibold uppercase tracking-[1px] text-[#D9A626]">Watch on TikTok</span>
-              </a>
-            ))}
+        <div className="mx-auto mt-12 grid max-w-[920px] grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="rounded-[18px] border border-[#ece8f5] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.05)]">
+            <Diamond size={22} glow={false} />
+            <h3 className="mt-4 text-[19px] font-semibold leading-tight">The technology</h3>
+            <p className="mt-2.5 text-[15px] leading-[1.55] text-[#5b5470]">
+              We built proprietary technology that spots standout scripts and helps develop and position them. Our team
+              uses it to read everything that comes in, and we put the same tool in your hands for free, so you never
+              have to spend hundreds of dollars on coverage.
+            </p>
           </div>
-
-          {/* Pedigree */}
-          <div className="mx-auto mt-14 grid max-w-[780px] grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8">
-            <div className="text-center sm:border-r sm:border-[#e0d8f3]">
-              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">Where we have worked</div>
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
-                <span className="text-[30px] font-bold tracking-tight text-[#171520]">Uber</span>
-                <span style={{ fontFamily: "'Brush Script MT', 'Snell Roundhand', Georgia, cursive" }} className="text-[27px] italic font-semibold text-[#171520]">
-                  The Walt Disney Company
-                </span>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">What we have built</div>
-              <div className="mt-4 flex items-baseline justify-center gap-2">
-                <span className="text-[40px] font-extrabold leading-none text-[#7C3AED]">1B+</span>
-                <span className="text-[16px] font-medium text-[#5b5470]">views on our own channels</span>
-              </div>
-            </div>
+          <div className="rounded-[18px] border border-[#ece8f5] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.05)]">
+            <Diamond size={22} glow={false} />
+            <h3 className="mt-4 text-[19px] font-semibold leading-tight">The team</h3>
+            <p className="mt-2.5 text-[15px] leading-[1.55] text-[#5b5470]">
+              Behind it is a team of creators and producers. We personally read the scripts you send, with our tools
+              alongside us, to decide which ones we want to help bring to the screen.
+            </p>
           </div>
         </div>
       </section>
 
       {/* WHAT WE'RE LOOKING FOR */}
-      <section className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Who we&apos;re looking for</div>
-        <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-          Creators, not just scripts.
-        </h2>
-        <p className="mx-auto mt-5 max-w-[660px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-          We started as creators, and we believe the future is the melting of social and Hollywood. The most exciting
-          new storytellers are getting overlooked. Those are the people we want to work with.
-        </p>
-        <div className="mx-auto mt-12 grid max-w-[860px] grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2">
-          {[
-            { h: 'A real point of view', p: 'Unique, original ideas with the bones to become film or television.' },
-            { h: 'An instinct for attention', p: 'You understand virality and audience, not just the page.' },
-            { h: 'A storytelling brand', p: 'You build a world and a following, not one-off scripts.' },
-            { h: 'Command of the craft', p: 'Proof you can deliver: consistency, an audience, and real creative and production chops.' },
-          ].map((c) => (
-            <div key={c.h} className="flex items-start gap-4">
-              <Diamond size={18} glow={false} />
-              <div>
-                <h3 className="text-[17px] font-semibold leading-tight">{c.h}</h3>
-                <p className="mt-1.5 text-[14.5px] leading-[1.55] text-[#5b5470]">{c.p}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* HOW WE HELP — tinted band with cards */}
       <section style={{ background: '#F4F0FC' }}>
         <div className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How we help</div>
+          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Who we&apos;re looking for</div>
           <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-            We become your production partner.
+            Creators, not just scripts.
           </h2>
-          <p className="mx-auto mt-5 max-w-[600px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-            For the scripts we take on, we do what a studio does, and we move fast.
+          <p className="mx-auto mt-5 max-w-[660px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+            We started as creators, and we believe the future is the melting of social and Hollywood. The most exciting
+            new storytellers are getting overlooked. Those are the people we want to work with.
           </p>
-          <div className="mx-auto mt-12 grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-[860px] grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2">
             {[
-              { tag: 'Creative development', stat: '', p: 'We develop the work with you: positioning, format, talent, and the creative calls that get it made.' },
-              { tag: 'Financing', stat: '', p: 'We back the projects we take on and help you raise whatever else they need.' },
-              { tag: 'Marketing and distribution', stat: '', p: 'We secure the marketing and distribution partnerships to get it released, and amplify it through our own audience.' },
+              { h: 'A real point of view', p: 'Unique, original ideas with the bones to become film or television.' },
+              { h: 'An instinct for attention', p: 'You understand virality and audience, not just the page.' },
+              { h: 'A storytelling brand', p: 'You build a world and a following, not one-off scripts.' },
+              { h: 'Command of the craft', p: 'Proof you can deliver: consistency, an audience, and real creative and production chops.' },
             ].map((c) => (
-              <div key={c.tag} className="flex flex-col rounded-[18px] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.07)]">
-                {c.stat
-                  ? <div className="text-[30px] font-extrabold leading-none text-[#7C3AED]">{c.stat}</div>
-                  : <Diamond size={22} glow={false} />}
-                <h3 className="mt-4 text-[19px] font-semibold leading-tight">{c.tag}</h3>
-                <p className="mt-2.5 text-[15px] leading-[1.55] text-[#5b5470]">{c.p}</p>
+              <div key={c.h} className="flex items-start gap-4">
+                <Diamond size={18} glow={false} />
+                <div>
+                  <h3 className="text-[17px] font-semibold leading-tight">{c.h}</h3>
+                  <p className="mt-1.5 text-[14.5px] leading-[1.55] text-[#5b5470]">{c.p}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PARTNER */}
-      <section className="mx-auto max-w-[1080px] px-7">
-        <div id="partner" className="rounded-[20px] p-9 text-center sm:p-12" style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)' }}>
-          <div className="text-[13px] font-bold uppercase tracking-[1.6px] text-[#D9A626]">Partner with us</div>
-          <h2 style={serif} className="mt-2.5 text-[26px] font-semibold text-white sm:text-[29px]">
-            Studios, agencies, creators, financiers.
-          </h2>
-          <p className="mx-auto mt-3.5 max-w-[560px] text-[16px] text-[#c9c2e6]">
-            If you make things or back things, we should talk. No script required, just tell us who you are and
-            what you&apos;re interested in.
-          </p>
-          {sent ? (
-            <div className="mx-auto mt-7 max-w-[560px] rounded-[12px] bg-[#2c1c50] px-6 py-8 text-[#e8e3f7]">
-              Thanks. We&apos;ll be in touch.
+      {/* HOW WE HELP — cards */}
+      <section className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
+        <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">How we help</div>
+        <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
+          We become your production partner.
+        </h2>
+        <p className="mx-auto mt-5 max-w-[600px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
+          For the scripts we take on, we do what a studio does, and we move fast.
+        </p>
+        <div className="mx-auto mt-12 grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-3">
+          {[
+            { tag: 'Creative development', p: 'We develop the work with you: positioning, format, talent, and the creative calls that get it made.' },
+            { tag: 'Financing', p: 'We back the projects we take on and help you raise whatever else they need.' },
+            { tag: 'Marketing and distribution', p: 'We secure the marketing and distribution partnerships to get it released, and amplify it through our own audience.' },
+          ].map((c) => (
+            <div key={c.tag} className="flex flex-col rounded-[18px] bg-white p-8 shadow-[0_12px_34px_rgba(36,17,73,.07)] border border-[#ece8f5]">
+              <Diamond size={22} glow={false} />
+              <h3 className="mt-4 text-[19px] font-semibold leading-tight">{c.tag}</h3>
+              <p className="mt-2.5 text-[15px] leading-[1.55] text-[#5b5470]">{c.p}</p>
             </div>
-          ) : (
-            <form onSubmit={submitPartner} className="mx-auto mt-6 grid max-w-[560px] grid-cols-1 gap-3 text-left sm:grid-cols-2">
-              <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Name"
-                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6]" />
-              <input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Company"
-                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6]" />
-              <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Email"
-                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6] sm:col-span-2" />
-              <textarea rows={3} value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                placeholder="Who you are and what you're interested in"
-                className="w-full rounded-[9px] border border-[#4a3a6e] bg-[#2c1c50] px-3.5 py-3 text-sm text-white placeholder:text-[#a99cc6] sm:col-span-2" />
-              <div className="sm:col-span-2">
-                <button disabled={sending} className="rounded-[9px] bg-white px-[19px] py-[11px] text-sm font-semibold text-[#241149] disabled:opacity-60">
-                  {sending ? 'Sending…' : 'Reach out'}
-                </button>
-              </div>
-            </form>
-          )}
+          ))}
         </div>
       </section>
 
       {/* CLOSE */}
-      <section className="mx-auto max-w-[1080px] px-7 pb-7 pt-16 text-center">
+      <section className="mx-auto max-w-[1080px] px-7 pb-7 pt-4 text-center">
         <h2 style={serif} className="mx-auto max-w-[600px] text-[27px] font-semibold sm:text-[31px]">
           Every great show started as a script someone almost missed.
         </h2>
