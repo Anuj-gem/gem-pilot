@@ -33,6 +33,14 @@ export function LandingV3() {
       .catch(() => {})
   }, [])
 
+  useEffect(() => {
+    const s = document.createElement('script')
+    s.src = 'https://www.tiktok.com/embed.js'
+    s.async = true
+    document.body.appendChild(s)
+    return () => { try { document.body.removeChild(s) } catch {} }
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#FAFAF9] text-[#171520]">
       {/* NAV */}
@@ -94,26 +102,22 @@ export function LandingV3() {
             make the best entertainment in the world.
           </p>
 
-          {/* Clips */}
-          <div className="mt-12 flex flex-wrap items-stretch justify-center gap-5">
+          {/* Clips — embedded TikTok players */}
+          <div className="mt-12 flex flex-wrap items-start justify-center gap-4">
             {[
-              'https://vm.tiktok.com/ZNRcoo97K/',
-              'https://vm.tiktok.com/ZNRco7cvd/',
-              'https://vm.tiktok.com/ZNRcoESt6/',
-            ].map((href) => (
-              <a
-                key={href}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative flex w-[150px] flex-col items-center justify-center gap-3 rounded-[16px] px-4 py-8 no-underline transition-transform hover:scale-[1.03]"
-                style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)', minHeight: 240 }}
+              '7584299938708737312',
+              '7585421656076602657',
+              '7573662963739921696',
+            ].map((id) => (
+              <blockquote
+                key={id}
+                className="tiktok-embed"
+                cite={`https://www.tiktok.com/@trygemstudios/video/${id}`}
+                data-video-id={id}
+                style={{ maxWidth: 325, minWidth: 300, margin: 0 }}
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full" style={{ background: 'rgba(255,255,255,0.16)' }}>
-                  <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
-                </span>
-                <span className="text-[12px] font-semibold uppercase tracking-[1px] text-[#D9A626]">Watch on TikTok</span>
-              </a>
+                <section></section>
+              </blockquote>
             ))}
           </div>
 
