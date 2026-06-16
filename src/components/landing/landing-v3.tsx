@@ -192,18 +192,45 @@ export function LandingV3() {
         </div>
       </section>
 
-      {/* WHO WE ARE — tinted band */}
+      {/* OUR STORY — short-form origin */}
       <section id="help" style={{ background: '#F4F0FC' }}>
         <div className="mx-auto max-w-[1080px] px-7 py-20 sm:py-28">
-          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Who we are</div>
+          <div className="text-center text-[13px] font-bold uppercase tracking-[1.6px] text-[#7C3AED]">Our story</div>
           <h2 style={serif} className="mt-3 text-center text-[30px] font-semibold tracking-[-0.3px] sm:text-[40px]">
-            Technologists and creators.
+            We come from the world of short-form.
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-center text-[17px] leading-[1.6] text-[#5b5470]">
-            Technology powers what we do, but we are creators at heart. We come from companies like Uber and the Walt
-            Disney Company, and we have built a social following with over a billion views of our own. Our team reads
-            every submission directly, and you can partner with us on any script you write.
+            We&apos;ve built a following of nearly a billion views across our own channels, with a team out of companies
+            like Uber and the Walt Disney Company. We built this technology to find great writers, and made it free for
+            you to use: get instant coverage, sharpen your script, and position it to sell and get made.
           </p>
+
+          {/* Clips */}
+          <div className="mt-12 flex flex-wrap items-stretch justify-center gap-5">
+            {[
+              { href: 'https://vm.tiktok.com/ZNRcoo97K/', views: '100M' },
+              { href: 'https://vm.tiktok.com/ZNRco7cvd/', views: '80M' },
+              { href: 'https://vm.tiktok.com/ZNRcoESt6/', views: '30M' },
+            ].map((c) => (
+              <a
+                key={c.href}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex w-[150px] flex-col items-center justify-center gap-2 rounded-[16px] px-4 py-7 no-underline transition-transform hover:scale-[1.03]"
+                style={{ background: 'linear-gradient(135deg,#241149,#1b0f38)', minHeight: 250 }}
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-full" style={{ background: 'rgba(255,255,255,0.14)' }}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="#ffffff" /></svg>
+                </span>
+                <span className="text-[34px] font-extrabold leading-none text-white">{c.views}</span>
+                <span className="text-[13px] text-[#c9c2e6]">views</span>
+                <span className="mt-1 text-[11px] font-semibold uppercase tracking-[1px] text-[#D9A626]">Watch on TikTok</span>
+              </a>
+            ))}
+          </div>
+
+          {/* Pedigree */}
           <div className="mx-auto mt-14 grid max-w-[780px] grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8">
             <div className="text-center sm:border-r sm:border-[#e0d8f3]">
               <div className="text-[12px] font-semibold uppercase tracking-[1.6px] text-[#9a93ad]">Where we have worked</div>
