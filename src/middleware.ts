@@ -3,11 +3,17 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 // GEM transition — June 2026.
 // The SaaS evaluation product is shutting down. Most routes redirect to
-// /landing.html (the new GEM Studios static page, served from /public).
+// / (the new GEM Studios landing, served from /public/landing.html via rewrite).
 //
-// Whitelist — kept alive:
-//   /landing.html  — new GEM Studios landing
-//   /pitch.html    — pitch intake form
+// Clean URLs:
+//   /        → serves /public/landing.html (rewrite, URL stays /)
+//   /pitch   → serves /public/pitch.html (rewrite, URL stays /pitch)
+//
+// Old .html URLs → 301 redirect to clean versions:
+//   /landing.html → /
+//   /pitch.html   → /pitch
+//
+// Whitelist — kept alive (pass through to Supabase session refresh):
 //   /screenshots   — static assets used by landing
 //   /discover      — public script leaderboard
 //   /report        — existing report links
@@ -21,8 +27,6 @@ import { NextResponse, type NextRequest } from 'next/server'
 //   /blog          — blog posts
 
 const KEEP_PREFIXES = [
-  '/landing.html',
-  '/pitch.html',
   '/screenshots',
   '/discover',
   '/report',
@@ -40,21 +44,30 @@ const KEEP_PREFIXES = [
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Root → new landing page
+  // Root → serve landing.html content (clean URL stays /)
   if (pathname === '/') {
-    const url = request.nextUrl.clone()
-    url.pathname = '/landing.html'
-    return NextResponse.redirect(url, { status: 302 })
+    return NextResponse.rewrite(new URL('/landing.html', request.url))
   }
 
-  // Anything not on the keep list → landing page
+  // /pitch → serve pitch.html content (clean URL stays /pitch)
+  if (pathname === '/pitch') {
+    return NextResponse.rewrite(new URL('/pitch.html', request.url))
+  }
+
+  // Old .html URLs → 301 redirect to clean versions
+  if (pathname === '/landing.html') {
+    return NextResponse.redirect(new URL('/', request.url), { status: 301 })
+  }
+  if (pathname === '/pitch.html') {
+    return NextResponse.redirect(new URL('/pitch', request.url), { status: 301 })
+  }
+
+  // Anything not on the keep list → root (landing page)
   const keep = KEEP_PREFIXES.some(
     prefix => pathname === prefix || pathname.startsWith(prefix)
   )
   if (!keep) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/landing.html'
-    return NextResponse.redirect(url, { status: 302 })
+    return NextResponse.redirect(new URL('/', request.url), { status: 302 })
   }
 
   // For kept routes — run Supabase session refresh (required for SSR auth).
@@ -87,6 +100,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|html|css|js|ico|txt|xml)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|css|js|ico|txt|xml)$).*)',
   ],
 }
