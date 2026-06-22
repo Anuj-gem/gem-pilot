@@ -1,7 +1,63 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+// GEM transition — June 2026.
+// The SaaS evaluation product is shutting down. Most routes redirect to
+// /landing.html (the new GEM Studios static page, served from /public).
+//
+// Whitelist — kept alive:
+//   /landing.html  — new GEM Studios landing
+//   /pitch.html    — pitch intake form
+//   /screenshots   — static assets used by landing
+//   /discover      — public script leaderboard
+//   /report        — existing report links
+//   /w/            — public writer profiles
+//   /admin         — internal tooling
+//   /auth          — OAuth callbacks (Supabase requires this)
+//   /api           — API routes
+//   /privacy, /terms — legal
+//   /sample        — sample reports
+//   /selznick      — internal
+//   /blog          — blog posts
+
+const KEEP_PREFIXES = [
+  '/landing.html',
+  '/pitch.html',
+  '/screenshots',
+  '/discover',
+  '/report',
+  '/w/',
+  '/admin',
+  '/auth',
+  '/api',
+  '/privacy',
+  '/terms',
+  '/sample',
+  '/selznick',
+  '/blog',
+]
+
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+
+  // Root → new landing page
+  if (pathname === '/') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/landing.html'
+    return NextResponse.redirect(url, { status: 302 })
+  }
+
+  // Anything not on the keep list → landing page
+  const keep = KEEP_PREFIXES.some(
+    prefix => pathname === prefix || pathname.startsWith(prefix)
+  )
+  if (!keep) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/landing.html'
+    return NextResponse.redirect(url, { status: 302 })
+  }
+
+  // For kept routes — run Supabase session refresh (required for SSR auth).
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
@@ -25,73 +81,12 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
-  const pathname = request.nextUrl.pathname
-
-  // Protected routes - redirect to login if not authenticated
-  // Note: /dashboard is intentionally NOT protected — anonymous users see the
-  // onboarding state (upload + newest opportunities).
-  // Match on exact path or a sub-path (with a trailing slash) so that, e.g.,
-  // '/partner' protects the producer dashboard but does NOT catch '/partners'.
-  const protectedPaths = ['/partner', '/onboarding']
-  const isProtected = protectedPaths.some(path => pathname === path || pathname.startsWith(path + '/'))
-
-  if (isProtected && !user) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/login'
-    url.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(url)
-  }
-
-  // Redirect logged-in users away from login/signup
-  if (user && (pathname === '/login' || pathname === '/signup')) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/dashboard'
-    return NextResponse.redirect(url)
-  }
-
-  // Producer-specific routing. Skip the lookup if there's no user, or if the
-  // request is for a path where the producer-specific redirects don't apply
-  // (auth flows, API endpoints, the onboarding pages themselves).
-  if (user) {
-    const producerCheckSkipPaths = [
-      '/api',
-      '/auth',
-      '/login',
-      '/signup',
-      '/onboarding',
-    ]
-    const skipProducerCheck = producerCheckSkipPaths.some(p =>
-      pathname.startsWith(p)
-    )
-
-    if (!skipProducerCheck) {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('account_type, lane')
-        .eq('id', user.id)
-        .single()
-
-      if (profile?.account_type === 'producer') {
-        // Producers without a `lane` need to finish onboarding before they
-        // see anything else (except the auth/onboarding paths skipped above).
-        if (profile.lane === null) {
-          const url = request.nextUrl.clone()
-          url.pathname = '/onboarding/producer'
-          return NextResponse.redirect(url)
-        }
-
-        // Producers now use the same dashboard as writers.
-        // /partner is still accessible via the sidebar "Manage applications" link.
-      }
-    }
-  }
-
+  await supabase.auth.getUser()
   return supabaseResponse
 }
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|html|css|js|ico|txt|xml)$).*)',
   ],
 }
