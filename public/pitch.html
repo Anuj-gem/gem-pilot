@@ -165,53 +165,45 @@
     textarea { resize: vertical; min-height: 120px; line-height: 1.65; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-    /* File upload */
-    .file-field { margin-bottom: 10px; }
-    .file-field:last-child { margin-bottom: 0; }
-    .file-field.hidden { display: none; }
-    .file-label-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      margin-bottom: 7px;
-    }
-    .file-cat-name {
-      font-size: 13px; font-weight: 400; color: #E5E0D8;
-    }
-    .file-cat-hint {
-      font-size: 11px; color: #9CA3AF;
-    }
-    .file-drop-zone {
+    /* Multi-file drop zone */
+    .drop-zone {
       border: 0.5px dashed rgba(255,255,255,0.22);
-      padding: 13px 16px; cursor: pointer;
+      padding: 32px 24px; cursor: pointer;
       transition: border-color 0.2s, background 0.2s;
-      display: flex; align-items: center; gap: 12px;
-      position: relative;
+      text-align: center; position: relative;
     }
-    .file-drop-zone:hover { border-color: rgba(124,58,237,0.6); background: rgba(124,58,237,0.05); }
-    .file-drop-zone.has-file {
-      border-color: rgba(124,58,237,0.5); border-style: solid;
-      background: rgba(124,58,237,0.06);
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color: rgba(124,58,237,0.6);
+      background: rgba(124,58,237,0.05);
     }
-    .file-drop-zone input[type="file"] {
+    .drop-zone input[type="file"] {
       position: absolute; inset: 0; opacity: 0;
       cursor: pointer; width: 100%; height: 100%;
     }
-    .file-icon {
-      width: 28px; height: 28px; flex-shrink: 0;
-      border: 0.5px solid rgba(255,255,255,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 9px; letter-spacing: 0.05em; color: #9CA3AF;
+    .drop-zone-icon {
+      font-size: 22px; margin-bottom: 10px; color: #6B7280;
     }
-    .file-drop-zone.has-file .file-icon {
-      background: rgba(124,58,237,0.2); border-color: #7C3AED; color: #C4B5FD;
+    .drop-zone-label {
+      font-size: 13px; color: #9CA3AF; line-height: 1.6;
     }
-    .file-status { font-size: 12px; color: #9CA3AF; flex: 1; }
-    .file-status.selected { color: #E5E0D8; }
-    .file-remove {
-      font-size: 12px; color: #6B7280; cursor: pointer;
-      padding: 4px; flex-shrink: 0; display: none;
-      z-index: 1; position: relative;
+    .drop-zone-label strong { color: #C9C4BC; font-weight: 400; }
+    .drop-zone-formats {
+      margin-top: 8px; font-size: 11px; color: #6B7280;
+      letter-spacing: 0.06em; text-transform: uppercase;
     }
-    .file-drop-zone.has-file .file-remove { display: block; }
+    .file-list { margin-top: 12px; }
+    .file-list-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 9px 12px;
+      background: rgba(124,58,237,0.08);
+      border: 0.5px solid rgba(124,58,237,0.3);
+      margin-bottom: 6px;
+    }
+    .file-list-item:last-child { margin-bottom: 0; }
+    .file-list-name { font-size: 12px; color: #E5E0D8; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-list-size { font-size: 11px; color: #9CA3AF; margin: 0 12px; flex-shrink: 0; }
+    .file-list-remove { font-size: 12px; color: #6B7280; cursor: pointer; flex-shrink: 0; padding: 2px 4px; background: none; border: none; transition: color 0.2s; }
+    .file-list-remove:hover { color: #F0EBE1; }
 
     /* Submit */
     .submit-section { margin-top: 48px; padding-top: 40px; border-top: 0.5px solid rgba(255,255,255,0.15); }
@@ -342,70 +334,16 @@
         <div class="form-section">
           <div class="section-title">
             Materials
-            <span class="section-hint">All optional &nbsp;·&nbsp; PDF, DOC, PPT &nbsp;·&nbsp; Max 50MB each</span>
+            <span class="section-hint">Optional &nbsp;·&nbsp; PDF, DOC, XLS, images &nbsp;·&nbsp; Max 50MB per file</span>
           </div>
-
-          <div class="file-field" id="ff-script">
-            <div class="file-label-row">
-              <span class="file-cat-name" id="label-script">Pilot script</span>
-            </div>
-            <div class="file-drop-zone" id="zone-script">
-              <div class="file-icon">PDF</div>
-              <span class="file-status" id="status-script">Click to attach</span>
-              <span class="file-remove" onclick="removeFile(event,'script')">✕</span>
-              <input type="file" id="file-script" accept=".pdf,.doc,.docx" onchange="handleFileSelect('script',this)">
-            </div>
+          <div class="drop-zone" id="drop-zone">
+            <div class="drop-zone-icon">↑</div>
+            <div class="drop-zone-label"><strong>Drag files here</strong> or click to browse</div>
+            <div class="drop-zone-formats">PDF &nbsp;·&nbsp; DOC · DOCX &nbsp;·&nbsp; XLS · XLSX &nbsp;·&nbsp; PPT · PPTX &nbsp;·&nbsp; JPG · PNG</div>
+            <input type="file" id="file-input" multiple
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.webp">
           </div>
-
-          <div class="file-field" id="ff-bible">
-            <div class="file-label-row">
-              <span class="file-cat-name">Series bible</span>
-              <span class="file-cat-hint">World, characters, season arc</span>
-            </div>
-            <div class="file-drop-zone" id="zone-bible">
-              <div class="file-icon">PDF</div>
-              <span class="file-status" id="status-bible">Click to attach</span>
-              <span class="file-remove" onclick="removeFile(event,'bible')">✕</span>
-              <input type="file" id="file-bible" accept=".pdf,.doc,.docx" onchange="handleFileSelect('bible',this)">
-            </div>
-          </div>
-
-          <div class="file-field" id="ff-extra">
-            <div class="file-label-row">
-              <span class="file-cat-name" id="label-extra">Additional episodes</span>
-              <span class="file-cat-hint" id="hint-extra">Episodes 2–3, outlines</span>
-            </div>
-            <div class="file-drop-zone" id="zone-extra">
-              <div class="file-icon">PDF</div>
-              <span class="file-status" id="status-extra">Click to attach</span>
-              <span class="file-remove" onclick="removeFile(event,'extra')">✕</span>
-              <input type="file" id="file-extra" accept=".pdf,.doc,.docx" onchange="handleFileSelect('extra',this)">
-            </div>
-          </div>
-
-          <div class="file-field" id="ff-deck">
-            <div class="file-label-row">
-              <span class="file-cat-name">Pitch deck</span>
-            </div>
-            <div class="file-drop-zone" id="zone-deck">
-              <div class="file-icon">PPT</div>
-              <span class="file-status" id="status-deck">Click to attach</span>
-              <span class="file-remove" onclick="removeFile(event,'deck')">✕</span>
-              <input type="file" id="file-deck" accept=".pdf,.ppt,.pptx,.key" onchange="handleFileSelect('deck',this)">
-            </div>
-          </div>
-
-          <div class="file-field" id="ff-budget">
-            <div class="file-label-row">
-              <span class="file-cat-name">Budget or financials</span>
-            </div>
-            <div class="file-drop-zone" id="zone-budget">
-              <div class="file-icon">XLS</div>
-              <span class="file-status" id="status-budget">Click to attach</span>
-              <span class="file-remove" onclick="removeFile(event,'budget')">✕</span>
-              <input type="file" id="file-budget" accept=".pdf,.xls,.xlsx,.csv" onchange="handleFileSelect('budget',this)">
-            </div>
-          </div>
+          <div class="file-list" id="file-list"></div>
         </div>
 
         <!-- Contact -->
@@ -420,6 +358,10 @@
               <label class="field-label" for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="you@email.com" required>
             </div>
+          </div>
+          <div class="field" style="margin-top:10px;">
+            <label class="field-label" for="phone">Phone <span style="color:#7C3AED;font-size:11px;letter-spacing:0.05em;">REQUIRED</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
           </div>
         </div>
 
@@ -489,7 +431,7 @@
   const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/pitch-confirmation`
 
   const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-  const files = {}
+  // files managed via selectedFiles array below
 
   const TYPE_CONFIG = {
     series: {
@@ -524,32 +466,56 @@
     const ctx = document.getElementById('type-context')
     ctx.textContent = cfg.context
     ctx.classList.add('visible')
-    document.getElementById('label-script').textContent = cfg.scriptLabel
-    document.getElementById('ff-bible').classList.toggle('hidden', cfg.hideBible)
-    document.getElementById('label-extra').textContent = cfg.extraLabel
-    document.getElementById('hint-extra').textContent = cfg.extraHint
     document.getElementById('logline').placeholder = cfg.summaryPlaceholder
   }
 
   updateForType('series')
 
-  function handleFileSelect(key, input) {
-    const file = input.files[0]
-    if (!file) return
-    files[key] = file
-    document.getElementById(`status-${key}`).textContent = file.name
-    document.getElementById(`status-${key}`).classList.add('selected')
-    document.getElementById(`zone-${key}`).classList.add('has-file')
+  // Multi-file handling
+  let selectedFiles = []
+
+  function formatSize(bytes) {
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB'
+    return (bytes / 1024 / 1024).toFixed(1) + ' MB'
   }
 
-  function removeFile(e, key) {
-    e.stopPropagation()
-    delete files[key]
-    document.getElementById(`file-${key}`).value = ''
-    document.getElementById(`status-${key}`).textContent = 'Click to attach'
-    document.getElementById(`status-${key}`).classList.remove('selected')
-    document.getElementById(`zone-${key}`).classList.remove('has-file')
+  function renderFileList() {
+    const list = document.getElementById('file-list')
+    list.innerHTML = ''
+    selectedFiles.forEach((file, i) => {
+      const item = document.createElement('div')
+      item.className = 'file-list-item'
+      item.innerHTML = `
+        <span class="file-list-name">${file.name}</span>
+        <span class="file-list-size">${formatSize(file.size)}</span>
+        <button type="button" class="file-list-remove" onclick="removeFileAt(${i})">✕</button>
+      `
+      list.appendChild(item)
+    })
   }
+
+  function removeFileAt(i) {
+    selectedFiles.splice(i, 1)
+    renderFileList()
+  }
+
+  const dropZone = document.getElementById('drop-zone')
+  const fileInput = document.getElementById('file-input')
+
+  fileInput.addEventListener('change', () => {
+    for (const f of fileInput.files) selectedFiles.push(f)
+    fileInput.value = ''
+    renderFileList()
+  })
+
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over') })
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'))
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault()
+    dropZone.classList.remove('drag-over')
+    for (const f of e.dataTransfer.files) selectedFiles.push(f)
+    renderFileList()
+  })
 
   function setProgress(pct, text) {
     document.getElementById('progress-fill').style.width = pct + '%'
@@ -573,17 +539,17 @@
     const submissionId = generateId()
     const name = document.getElementById('name').value.trim()
     const email = document.getElementById('email').value.trim()
+    const phone = document.getElementById('phone').value.trim()
     const project_type = document.querySelector('input[name="project_type"]:checked').value
     const logline = document.getElementById('logline').value.trim()
 
     const filePaths = []
-    const fileKeys = Object.keys(files)
     let uploaded = 0
 
-    for (const key of fileKeys) {
-      const file = files[key]
-      setProgress(Math.round((uploaded / (fileKeys.length + 1)) * 80), `Uploading ${file.name}...`)
-      const path = `${submissionId}/${key}/${file.name}`
+    for (const file of selectedFiles) {
+      setProgress(Math.round((uploaded / (selectedFiles.length + 1)) * 80), `Uploading ${file.name}...`)
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_')
+      const path = `${submissionId}/${safeName}`
       const { error } = await supabase.storage.from('pitch-files').upload(path, file)
       if (!error) filePaths.push(path)
       uploaded++
@@ -593,7 +559,7 @@
 
     const { error: dbError } = await supabase
       .from('pitch_submissions')
-      .insert({ id: submissionId, name, email, project_type, logline: logline || null, file_paths: filePaths })
+      .insert({ id: submissionId, name, email, project_type, logline: logline || null, file_paths: filePaths, notes: phone ? `Phone: ${phone}` : null })
 
     if (dbError) {
       console.error(dbError)
@@ -609,7 +575,7 @@
     await fetch(EDGE_FN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, project_type, logline, file_paths: filePaths, submission_id: submissionId }),
+      body: JSON.stringify({ name, email, phone, project_type, logline, file_paths: filePaths, submission_id: submissionId }),
     }).catch(() => {})
 
     setProgress(100, 'Done.')
