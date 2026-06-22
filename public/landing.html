@@ -118,10 +118,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5px;
-      margin-top: 48px;
+      border-top: 0.5px solid rgba(255,255,255,0.08);
     }
     .content-card {
-      aspect-ratio: 9/16;
+      aspect-ratio: 4/5;
+      max-height: 340px;
       position: relative; overflow: hidden;
     }
     .content-card img {
@@ -402,30 +403,6 @@
 <section class="track-section" id="work">
   <div class="section-marker reveal">Track Record</div>
 
-  <div class="carousel">
-    <div class="content-card" style="background:#1A1008;">
-      <img src="screenshots/wedding-ceremony.jpg" alt="Wedding ceremony">
-      <div class="card-overlay">
-        <div class="card-views">111M views</div>
-        <div class="card-label">A wedding moment nobody scripted</div>
-      </div>
-    </div>
-    <div class="content-card" style="background:#0E0E16;">
-      <img src="screenshots/clip-three.jpg" alt="Viral clip">
-      <div class="card-overlay">
-        <div class="card-views">Real people. Real stories.</div>
-        <div class="card-label">Content from our channels</div>
-      </div>
-    </div>
-    <div class="content-card" style="background:#0A1008;">
-      <img src="screenshots/clip-lawyer.jpg" alt="Viral clip">
-      <div class="card-overlay">
-        <div class="card-views">The kind of story networks pass on</div>
-        <div class="card-label">Content from our channels</div>
-      </div>
-    </div>
-  </div>
-
   <div class="track-stat-bar reveal">
     <div class="track-stat-left">
       <div class="big-number">One Billion<br>Views</div>
@@ -442,6 +419,21 @@
         </p>
       </div>
       <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <div class="content-card" style="background:#1A1008;">
+      <img src="screenshots/wedding-ceremony.jpg" alt="Wedding ceremony">
+      <div class="card-overlay">
+        <div class="card-views">111M views</div>
+      </div>
+    </div>
+    <div class="content-card" style="background:#0E0E16;">
+      <img src="screenshots/clip-three.jpg" alt="Viral clip">
+    </div>
+    <div class="content-card" style="background:#0A1008;">
+      <img src="screenshots/clip-lawyer.jpg" alt="Viral clip">
     </div>
   </div>
 
