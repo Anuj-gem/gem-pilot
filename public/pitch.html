@@ -568,7 +568,11 @@
 
     await fetch(EDGE_FN_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'apikey': SUPABASE_ANON_KEY,
+      },
       body: JSON.stringify({ name, email, phone, project_type, logline, file_paths: filePaths, submission_id: submissionId }),
     }).catch(() => {})
 
