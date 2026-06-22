@@ -429,36 +429,73 @@
 </footer>
 
 <script>
+  /* ── File handling (no external deps, runs first) ── */
+  window.selectedFiles = []
+
+  window.formatSize = function(b) {
+    return b < 1048576 ? Math.round(b/1024) + ' KB' : (b/1048576).toFixed(1) + ' MB'
+  }
+
+  window.renderFileList = function() {
+    var list = document.getElementById('file-list')
+    if (!list) return
+    list.innerHTML = ''
+    window.selectedFiles.forEach(function(f, i) {
+      var d = document.createElement('div')
+      d.className = 'file-list-item'
+      d.innerHTML = '<span class="file-list-name">' + f.name + '</span>' +
+        '<span class="file-list-size">' + window.formatSize(f.size) + '</span>' +
+        '<button type="button" class="file-list-remove" onclick="window.removeFileAt(' + i + ')">✕</button>'
+      list.appendChild(d)
+    })
+  }
+
+  window.removeFileAt = function(i) {
+    window.selectedFiles.splice(i, 1)
+    window.renderFileList()
+  }
+
+  window.handleFileInputChange = function(input) {
+    Array.from(input.files).forEach(function(f) { window.selectedFiles.push(f) })
+    try { input.value = '' } catch(e) {}
+    window.renderFileList()
+  }
+
+  // Drag-and-drop — DOM is already ready since this script is at page bottom
+  var _dz = document.getElementById('drop-zone')
+  if (_dz) {
+    _dz.addEventListener('dragover', function(e) { e.preventDefault(); _dz.classList.add('drag-over') })
+    _dz.addEventListener('dragleave', function() { _dz.classList.remove('drag-over') })
+    _dz.addEventListener('drop', function(e) {
+      e.preventDefault()
+      _dz.classList.remove('drag-over')
+      Array.from(e.dataTransfer.files).forEach(function(f) { window.selectedFiles.push(f) })
+      window.renderFileList()
+    })
+  }
+</script>
+
+<script>
+  /* ── Supabase + form logic ── */
   const SUPABASE_URL = 'https://cpykkbnhhkrwoirzaelp.supabase.co'
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNweWtrYm5oaGtyd29pcnphZWxwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE5OTY5OTIsImV4cCI6MjA2NzU3Mjk5Mn0.PcPs9bFpPJVQmc28pUf25cEyWbhZIJyTJrL1LGlE85I'
   const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/pitch-confirmation`
 
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-  // files managed via selectedFiles array below
+  var supabase
+  try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) }
+  catch(e) { console.error('Supabase init failed', e) }
 
   const TYPE_CONFIG = {
     series: {
       context: 'For a series: share a pilot script, series bible, or just a premise. Whatever stage you\'re at is fine.',
-      scriptLabel: 'Pilot script',
-      extraLabel: 'Additional episodes',
-      extraHint: 'Episodes 2–3, outlines',
-      hideBible: false,
       summaryPlaceholder: 'Title, premise, who the show is about, what world it lives in — one paragraph is plenty. Early stage is fine.',
     },
     feature: {
       context: 'For a feature: a script or treatment is ideal, but a strong premise is enough to start.',
-      scriptLabel: 'Feature screenplay',
-      extraLabel: 'Treatment or outline',
-      extraHint: 'Story breakdown, act structure',
-      hideBible: true,
       summaryPlaceholder: 'Title, premise, the story you\'re telling — one paragraph is plenty. We can work from a logline or a full draft.',
     },
     other: {
       context: 'Not sure what format fits? Just tell us what you have — an idea, a deck, or a concept is enough.',
-      scriptLabel: 'Script or screenplay',
-      extraLabel: 'Additional materials',
-      extraHint: 'Anything relevant',
-      hideBible: true,
       summaryPlaceholder: 'Tell us what you have — format, premise, stage of development. One paragraph is plenty.',
     },
   }
@@ -473,54 +510,6 @@
   }
 
   updateForType('series')
-
-  // Multi-file handling — all functions on window so inline onchange/onclick always resolve
-  window.selectedFiles = []
-
-  window.formatSize = function(bytes) {
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB'
-    return (bytes / 1024 / 1024).toFixed(1) + ' MB'
-  }
-
-  window.renderFileList = function() {
-    var list = document.getElementById('file-list')
-    if (!list) return
-    list.innerHTML = ''
-    window.selectedFiles.forEach(function(file, i) {
-      var item = document.createElement('div')
-      item.className = 'file-list-item'
-      item.innerHTML =
-        '<span class="file-list-name">' + file.name + '</span>' +
-        '<span class="file-list-size">' + window.formatSize(file.size) + '</span>' +
-        '<button type="button" class="file-list-remove" onclick="window.removeFileAt(' + i + ')">✕</button>'
-      list.appendChild(item)
-    })
-  }
-
-  window.removeFileAt = function(i) {
-    window.selectedFiles.splice(i, 1)
-    window.renderFileList()
-  }
-
-  window.handleFileInputChange = function(input) {
-    Array.from(input.files).forEach(function(f) { window.selectedFiles.push(f) })
-    input.value = ''
-    window.renderFileList()
-  }
-
-  // Drag and drop
-  document.addEventListener('DOMContentLoaded', function() {
-    var dz = document.getElementById('drop-zone')
-    if (!dz) return
-    dz.addEventListener('dragover', function(e) { e.preventDefault(); dz.classList.add('drag-over') })
-    dz.addEventListener('dragleave', function() { dz.classList.remove('drag-over') })
-    dz.addEventListener('drop', function(e) {
-      e.preventDefault()
-      dz.classList.remove('drag-over')
-      Array.from(e.dataTransfer.files).forEach(function(f) { window.selectedFiles.push(f) })
-      window.renderFileList()
-    })
-  })
 
   function setProgress(pct, text) {
     document.getElementById('progress-fill').style.width = pct + '%'
