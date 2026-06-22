@@ -343,7 +343,8 @@
             <div class="drop-zone-label"><strong>Drag files here</strong> or click to browse</div>
             <div class="drop-zone-formats">PDF &nbsp;·&nbsp; DOC · DOCX &nbsp;·&nbsp; XLS · XLSX &nbsp;·&nbsp; PPT · PPTX &nbsp;·&nbsp; JPG · PNG</div>
             <input type="file" id="file-input" multiple
-              accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.webp">
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.webp"
+              onchange="handleFileInputChange(this)">
           </div>
           <div class="file-list" id="file-list"></div>
         </div>
@@ -473,50 +474,52 @@
 
   updateForType('series')
 
-  // Multi-file handling
-  let selectedFiles = []
+  // Multi-file handling — all functions on window so inline onchange/onclick always resolve
+  window.selectedFiles = []
 
-  function formatSize(bytes) {
+  window.formatSize = function(bytes) {
     if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB'
     return (bytes / 1024 / 1024).toFixed(1) + ' MB'
   }
 
-  function renderFileList() {
-    const list = document.getElementById('file-list')
+  window.renderFileList = function() {
+    var list = document.getElementById('file-list')
+    if (!list) return
     list.innerHTML = ''
-    selectedFiles.forEach((file, i) => {
-      const item = document.createElement('div')
+    window.selectedFiles.forEach(function(file, i) {
+      var item = document.createElement('div')
       item.className = 'file-list-item'
-      item.innerHTML = `
-        <span class="file-list-name">${file.name}</span>
-        <span class="file-list-size">${formatSize(file.size)}</span>
-        <button type="button" class="file-list-remove" onclick="removeFileAt(${i})">✕</button>
-      `
+      item.innerHTML =
+        '<span class="file-list-name">' + file.name + '</span>' +
+        '<span class="file-list-size">' + window.formatSize(file.size) + '</span>' +
+        '<button type="button" class="file-list-remove" onclick="window.removeFileAt(' + i + ')">✕</button>'
       list.appendChild(item)
     })
   }
 
-  function removeFileAt(i) {
-    selectedFiles.splice(i, 1)
-    renderFileList()
+  window.removeFileAt = function(i) {
+    window.selectedFiles.splice(i, 1)
+    window.renderFileList()
   }
 
-  const dropZone = document.getElementById('drop-zone')
-  const fileInput = document.getElementById('file-input')
+  window.handleFileInputChange = function(input) {
+    Array.from(input.files).forEach(function(f) { window.selectedFiles.push(f) })
+    input.value = ''
+    window.renderFileList()
+  }
 
-  fileInput.addEventListener('change', () => {
-    Array.from(fileInput.files).forEach(f => selectedFiles.push(f))
-    fileInput.value = ''
-    renderFileList()
-  })
-
-  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over') })
-  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'))
-  dropZone.addEventListener('drop', e => {
-    e.preventDefault()
-    dropZone.classList.remove('drag-over')
-    Array.from(e.dataTransfer.files).forEach(f => selectedFiles.push(f))
-    renderFileList()
+  // Drag and drop
+  document.addEventListener('DOMContentLoaded', function() {
+    var dz = document.getElementById('drop-zone')
+    if (!dz) return
+    dz.addEventListener('dragover', function(e) { e.preventDefault(); dz.classList.add('drag-over') })
+    dz.addEventListener('dragleave', function() { dz.classList.remove('drag-over') })
+    dz.addEventListener('drop', function(e) {
+      e.preventDefault()
+      dz.classList.remove('drag-over')
+      Array.from(e.dataTransfer.files).forEach(function(f) { window.selectedFiles.push(f) })
+      window.renderFileList()
+    })
   })
 
   function setProgress(pct, text) {
@@ -548,8 +551,8 @@
     const filePaths = []
     let uploaded = 0
 
-    for (const file of selectedFiles) {
-      setProgress(Math.round((uploaded / (selectedFiles.length + 1)) * 80), `Uploading ${file.name}...`)
+    for (const file of window.selectedFiles) {
+      setProgress(Math.round((uploaded / (window.selectedFiles.length + 1)) * 80), `Uploading ${file.name}...`)
       const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_')
       const path = `${submissionId}/${safeName}`
       const { error } = await supabase.storage.from('pitch-files').upload(path, file)
