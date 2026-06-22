@@ -442,17 +442,27 @@
     <div class="form-sidebar">
       <div class="sidebar-block">
         <div class="sidebar-label">What we look for</div>
-        <p class="sidebar-text">Projects with a clear point of view — stories that have something to say and an audience that's ready for them. We work across formats and genres.</p>
+        <p class="sidebar-text">Projects with a clear point of view — stories that have something to say and an audience ready for them. We work across formats and genres. Early stage is fine.</p>
       </div>
       <div class="sidebar-divider"></div>
       <div class="sidebar-block">
-        <div class="sidebar-label">What happens next</div>
-        <p class="sidebar-text">Our team reviews your materials and runs our own analysis. We'll send you back a detailed response — including our read on the project and where we think it could go.</p>
+        <div class="sidebar-label">Privacy</div>
+        <p class="sidebar-text">Everything you share stays between you and us. We don't forward submissions or share materials with anyone outside our team.</p>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">What you'll get back</div>
+        <p class="sidebar-text">Our read on the project — what we think is working, where it could go, and our honest take on the opportunity. It's our analysis, private to you, to do with as you see fit.</p>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">If we want to work with you</div>
+        <p class="sidebar-text">We'll reach out directly to start a conversation. From there we discuss the project, figure out if there's a fit, and go from there.</p>
       </div>
       <div class="sidebar-divider"></div>
       <div class="sidebar-block">
         <div class="sidebar-label">Questions</div>
-        <p class="sidebar-text">Reach us at <a href="mailto:hello@gem.studio" style="color:#C4B5FD;text-decoration:none;border-bottom:0.5px solid rgba(196,181,253,0.4);">hello@gem.studio</a></p>
+        <p class="sidebar-text">Reach us at <a href="mailto:info@gem.studio" style="color:#C4B5FD;text-decoration:none;border-bottom:0.5px solid rgba(196,181,253,0.4);">info@gem.studio</a></p>
       </div>
     </div>
   </div>
@@ -464,13 +474,13 @@
   <h2 class="success-headline">We've got it.<br><em>We'll be in touch.</em></h2>
   <p class="success-body">
     Check your inbox for a confirmation. Our team will review your materials and send you back a full response within a few days.<br><br>
-    Questions: <a href="mailto:hello@gem.studio" style="color:#C4B5FD;text-decoration:none;border-bottom:0.5px solid rgba(196,181,253,0.4);">hello@gem.studio</a>
+    Questions: <a href="mailto:info@gem.studio" style="color:#C4B5FD;text-decoration:none;border-bottom:0.5px solid rgba(196,181,253,0.4);">info@gem.studio</a>
   </p>
 </div>
 
 <footer>
   <div class="footer-left">GEM Studios · gem.studio</div>
-  <div class="footer-right">hello@gem.studio</div>
+  <div class="footer-right">info@gem.studio</div>
 </footer>
 
 <script>
@@ -483,25 +493,28 @@
 
   const TYPE_CONFIG = {
     series: {
-      context: 'For a series, share whatever you have — a pilot script, bible, or just an idea. We read them all.',
+      context: 'For a series: share a pilot script, series bible, or just a premise. Whatever stage you\'re at is fine.',
       scriptLabel: 'Pilot script',
       extraLabel: 'Additional episodes',
       extraHint: 'Episodes 2–3, outlines',
       hideBible: false,
+      summaryPlaceholder: 'Title, premise, who the show is about, what world it lives in — one paragraph is plenty. Early stage is fine.',
     },
     feature: {
-      context: 'For a feature, a script or treatment is the best starting point — but anything helps.',
+      context: 'For a feature: a script or treatment is ideal, but a strong premise is enough to start.',
       scriptLabel: 'Feature screenplay',
       extraLabel: 'Treatment or outline',
       extraHint: 'Story breakdown, act structure',
       hideBible: true,
+      summaryPlaceholder: 'Title, premise, the story you\'re telling — one paragraph is plenty. We can work from a logline or a full draft.',
     },
     other: {
-      context: 'Not sure what format fits? Just tell us what you have. We can work with an idea, a deck, or a conversation.',
+      context: 'Not sure what format fits? Just tell us what you have — an idea, a deck, or a concept is enough.',
       scriptLabel: 'Script or screenplay',
       extraLabel: 'Additional materials',
       extraHint: 'Anything relevant',
       hideBible: true,
+      summaryPlaceholder: 'Tell us what you have — format, premise, stage of development. One paragraph is plenty.',
     },
   }
 
@@ -515,10 +528,10 @@
     document.getElementById('ff-bible').classList.toggle('hidden', cfg.hideBible)
     document.getElementById('label-extra').textContent = cfg.extraLabel
     document.getElementById('hint-extra').textContent = cfg.extraHint
+    document.getElementById('logline').placeholder = cfg.summaryPlaceholder
   }
 
   updateForType('series')
-  document.getElementById('type-context').classList.remove('visible')
 
   function handleFileSelect(key, input) {
     const file = input.files[0]
@@ -587,7 +600,7 @@
       btn.disabled = false
       btn.textContent = 'Submit project'
       progressEl.style.display = 'none'
-      alert('Something went wrong. Please try again or email us at hello@gem.studio')
+      alert('Something went wrong. Please try again or email us at info@gem.studio')
       return
     }
 
