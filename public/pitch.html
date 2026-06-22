@@ -505,7 +505,7 @@
   const fileInput = document.getElementById('file-input')
 
   fileInput.addEventListener('change', () => {
-    for (const f of fileInput.files) selectedFiles.push(f)
+    Array.from(fileInput.files).forEach(f => selectedFiles.push(f))
     fileInput.value = ''
     renderFileList()
   })
@@ -515,7 +515,7 @@
   dropZone.addEventListener('drop', e => {
     e.preventDefault()
     dropZone.classList.remove('drag-over')
-    for (const f of e.dataTransfer.files) selectedFiles.push(f)
+    Array.from(e.dataTransfer.files).forEach(f => selectedFiles.push(f))
     renderFileList()
   })
 
