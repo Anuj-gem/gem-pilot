@@ -1,8 +1,8 @@
 ---
-title: "What the 2024 Black List Is Really Worth"
+title: "What the 2025 Black List Is Really Worth"
 slug: blacklist-2025-analysis
 date: "2026-06-23"
-summary: "We analyzed all 72 scripts on the 2024 Black List the way we'd approach anything we might produce. Spend $1.25 billion, make back $1.07 billion. But the aggregate number is the wrong read — and what's underneath it is the real story."
+summary: "We analyzed every script on the 2025 Black List the way we'd approach anything we might produce. Spend $1.25 billion, make back $1.07 billion. But the aggregate number is the wrong read — and what's underneath it is the real story."
 author: "GEM Studios"
 draft: false
 ---
@@ -59,13 +59,13 @@ draft: false
 
 <p>And yet most scripts on it never get made.</p>
 
-<p>We decided to look at all of them. GEM is a development company — we have built creative networks with close to a billion views across social media, and we are actively developing a feature film and a series. In that process we kept encountering Black List scripts. We were genuinely impressed. So we ran every script on the 2024 Black List through the same process we use on anything we might want to produce.</p>
+<p>We decided to look at all of them. GEM is a development company — we have built creative networks with close to a billion views across social media, and we are actively developing a feature film and a series. In that process we kept encountering Black List scripts. We were genuinely impressed. So we worked through every script on the 2025 Black List the same way we approach anything we might want to produce.</p>
 
 <p>The first number that comes out:</p>
 
 <div class="stat-hero">
   <span class="big-num">$1.25B</span>
-  <p class="stat-sub">combined estimated production budgets if you produced all 72 scripts</p>
+  <p class="stat-sub">combined estimated production budgets if you produced every script on the 2025 Black List</p>
 </div>
 
 <div class="num-pair">
@@ -84,8 +84,93 @@ draft: false
 <p>It is also not the whole story.</p>
 
 <div class="stat-callout">
-  <span class="sc-num">71 of 72</span>
-  <span class="sc-label">scripts project as money-losers at theatrical break-even — before streaming, awards, or any other window enters the conversation</span>
+  <span class="sc-num">99%</span>
+  <span class="sc-label">of scripts on the 2025 Black List project as money-losers at theatrical break-even — before streaming, awards, or any other window enters the conversation</span>
+</div>
+
+<div class="chart-section" style="margin:2rem 0;border:1px solid #ebebeb;border-radius:10px;padding:1.5rem 1.5rem 1rem;background:#fafaf8">
+  <span style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:1rem;display:block">Every script on the 2025 Black List — where we see it</span>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:1.25rem">
+    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#d4d2ce;display:inline-block"></span>No clear path</span>
+    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#1D9E75;display:inline-block"></span>Commercial misread</span>
+    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#7C3AED;display:inline-block"></span>Prestige + streaming floor</span>
+    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:#555"><span style="width:10px;height:10px;border-radius:50%;background:#EF9F27;display:inline-block"></span>Asymmetric ceiling</span>
+  </div>
+  <svg viewBox="0 0 550 285" xmlns="http://www.w3.org/2000/svg" width="100%" style="display:block;max-width:550px">
+    <circle cx="30" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="146" cy="30" r="6" fill="#7C3AED"/>
+    <circle cx="204" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="262" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="378" cy="30" r="6" fill="#EF9F27"/>
+    <circle cx="436" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="494" cy="30" r="6" fill="#d4d2ce"/>
+    <circle cx="30" cy="62" r="6" fill="#7C3AED"/>
+    <circle cx="88" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="146" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="262" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="378" cy="62" r="6" fill="#1D9E75"/>
+    <circle cx="436" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="494" cy="62" r="6" fill="#d4d2ce"/>
+    <circle cx="30" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="146" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="262" cy="94" r="6" fill="#7C3AED"/>
+    <circle cx="320" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="378" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="436" cy="94" r="6" fill="#d4d2ce"/>
+    <circle cx="494" cy="94" r="6" fill="#EF9F27"/>
+    <circle cx="30" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="126" r="6" fill="#7C3AED"/>
+    <circle cx="146" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="262" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="378" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="436" cy="126" r="6" fill="#1D9E75"/>
+    <circle cx="494" cy="126" r="6" fill="#d4d2ce"/>
+    <circle cx="30" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="146" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="158" r="6" fill="#EF9F27"/>
+    <circle cx="262" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="378" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="436" cy="158" r="6" fill="#7C3AED"/>
+    <circle cx="494" cy="158" r="6" fill="#d4d2ce"/>
+    <circle cx="30" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="146" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="190" r="6" fill="#7C3AED"/>
+    <circle cx="262" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="190" r="6" fill="#1D9E75"/>
+    <circle cx="378" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="436" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="494" cy="190" r="6" fill="#d4d2ce"/>
+    <circle cx="30" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="146" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="262" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="222" r="6" fill="#7C3AED"/>
+    <circle cx="378" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="436" cy="222" r="6" fill="#d4d2ce"/>
+    <circle cx="494" cy="222" r="6" fill="#1D9E75"/>
+    <circle cx="30" cy="254" r="6" fill="#d4d2ce"/>
+    <circle cx="88" cy="254" r="6" fill="#EF9F27"/>
+    <circle cx="146" cy="254" r="6" fill="#d4d2ce"/>
+    <circle cx="204" cy="254" r="6" fill="#d4d2ce"/>
+    <circle cx="262" cy="254" r="6" fill="#d4d2ce"/>
+    <circle cx="320" cy="254" r="6" fill="#d4d2ce"/>
+    <circle cx="378" cy="254" r="6" fill="#1D9E75"/>
+    <circle cx="436" cy="254" r="6" fill="#d4d2ce"/>
+    <circle cx="494" cy="254" r="6" fill="#d4d2ce"/>
+  </svg>
+  <p style="font-size:12px;color:#999;text-align:center;margin-top:.75rem;font-style:italic">Each dot = one script &nbsp;·&nbsp; every script on the list represented</p>
 </div>
 
 <p>When you read the slate as one number, the answer is pass. But a slate is not one thing. The aggregate math hides a distribution — and inside that distribution are real pockets of opportunity that the surface read consistently misses.</p>
@@ -191,7 +276,9 @@ draft: false
 
 <p>We have projects in active development that we found exactly this way. Scripts that would not survive a surface read. Writers who have never had a room hear their work. When you go deep — when you understand what the material structurally resembles, what creates the ceiling, what makes content travel — the case for the right projects is clear.</p>
 
-<p>To the industry: the access has never been better. Scripts are out there. The methods we have described here — going deeper, looking past the first impression, thinking across distribution windows — are not proprietary. They are just work. If you want to expand what your process can see, we are actively looking for projects and can move quickly with the right partners.</p>
+<p>The question we get most often is how — how we are seeing what we are seeing. That is a longer conversation. But the short answer is that we have built the infrastructure to go deep at scale: a substantive body of research on what drives commercial performance across every distribution window, how genre and budget interact, what makes content travel, what patterns precede the outcomes people are still trying to predict from gut alone. The creative judgment still matters. It always will. But that judgment gets sharper when it has something real to draw from.</p>
+
+<p>To producers and development executives who work in these lanes: if you are developing one of the scripts on this list — or working on anything that lives in the territory we have described here — we would genuinely like to compare notes. Not to pitch you. Just to talk. We have found things we think are being missed, and we are curious whether your read matches ours. Reach out.</p>
 
 <p>To writers: keep leaning into your vision. The next era of distribution rewards distinctive voices in ways that traditional theatrical never could. Whether or not you are on a list, whether or not you have relationships — reach out. The work has more paths than it has ever had.</p>
 
