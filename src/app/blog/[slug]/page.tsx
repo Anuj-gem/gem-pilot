@@ -6,8 +6,7 @@ import type { Metadata } from 'next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import Nav from '@/components/nav'
-import { BlogMasthead } from '@/components/blog/blog-masthead'
+import GemStudiosNav from '@/components/gem-studios-nav'
 import { ArrowLeft } from 'lucide-react'
 import { getAllPostSlugs, getPost } from '@/lib/blog'
 
@@ -84,8 +83,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <Nav />
-      <BlogMasthead />
+      <GemStudiosNav />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14 pb-24">
         <Link
           href="/blog"

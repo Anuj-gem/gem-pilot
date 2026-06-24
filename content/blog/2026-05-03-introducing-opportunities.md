@@ -4,7 +4,7 @@ slug: introducing-opportunities
 date: 2026-05-03
 summary: "A curated feed of open calls from vetted industry partners. GEM matches your scripts by genre, format, and score — one tap to submit, no query letters, no entry fees."
 author: "Anuj Kommareddy"
-draft: false
+draft: true
 ---
 
 We built GEM so writers could get a real read on their scripts and get them in front of the right people. Today we're shipping the second half of that promise: **Opportunities**.

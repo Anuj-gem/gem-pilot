@@ -4,7 +4,7 @@ slug: industry-pilot-is-live
 date: 2026-04-28
 summary: "What's new: in-app industry accounts, end-to-end privacy, Selznick 3.8 with the GEM Score back, enhanced privacy controls, and branded PDF downloads."
 author: "Anuj Kommareddy"
-draft: false
+draft: true
 ---
 
 Today we're shipping a whole new set of changes that mark the future of

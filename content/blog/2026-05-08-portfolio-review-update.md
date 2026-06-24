@@ -4,7 +4,7 @@ slug: portfolio-review-update
 date: 2026-05-08
 summary: "We've added portfolio reviews by our partner network, rebuilt the submission flow, and made it easier to manage your scripts."
 author: "Anuj Kommareddy"
-draft: false
+draft: true
 ---
 
 We've added portfolio reviews by our partner network to GEM — thank you for your patience as we've been building this out. We also made a bunch of app updates to focus the experience around it.

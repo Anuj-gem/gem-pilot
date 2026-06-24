@@ -4,7 +4,7 @@ slug: community-reviews-and-free-publishing
 date: 2026-05-01
 summary: "Four big changes: peer reviews on every script, a real public profile for every writer, free publishing with peer feedback and the chance to get noticed, and a simpler privacy model with one set of defaults."
 author: "Anuj Kommareddy"
-draft: false
+draft: true
 ---
 
 Another big update. Four changes that together make GEM feel a lot more like a real place where writers can grow.

@@ -1,15 +1,14 @@
 // /blog — index listing of all published posts.
 
 import Link from 'next/link'
-import Nav from '@/components/nav'
-import { BlogMasthead } from '@/components/blog/blog-masthead'
+import GemStudiosNav from '@/components/gem-studios-nav'
 import { ArrowRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
 
 export const metadata = {
-  title: 'Blog — GEM',
+  title: 'Blog — GEM Studios',
   description:
-    'Notes on the screenwriter network for industry. Product updates, how Selznick reads, and what makes a script qualify.',
+    'Notes from the GEM Studios development team — what we\'re building, what we\'re watching, and how we think about finding great projects.',
 }
 
 // Posts are read off disk on each request. We tried `force-static` but
@@ -25,16 +24,14 @@ export default async function BlogIndexPage() {
   const posts = await getAllPosts()
   return (
     <>
-      <Nav />
-      <BlogMasthead />
+      <GemStudiosNav />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14 pb-24">
         <header className="mb-10 sm:mb-14">
           <h1 className="text-[36px] sm:text-[48px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-4 font-[family-name:var(--font-display)]">
-            Notes from GEM.
+            Notes from GEM Studios.
           </h1>
           <p className="text-[15.5px] sm:text-[16px] text-[var(--gem-gray-300)] leading-[1.6] m-0 max-w-[60ch]">
-            Product updates, how Selznick reads, and behind-the-scenes notes
-            on the engine.
+            What we&apos;re building, what we&apos;re watching, and how we think about finding great projects.
           </p>
         </header>
 
