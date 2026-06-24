@@ -18,23 +18,26 @@ draft: false
 .stat-hero .stat-desc{font-size:15px;color:#999;margin-bottom:1.25rem;line-height:1.5}
 .bar-row{display:flex;flex-direction:column;gap:10px;max-width:460px}
 .bar-item{display:flex;align-items:center;gap:12px}
-.bar-lbl{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#aaa;width:130px;flex-shrink:0}
+.bar-lbl{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#777;width:130px;flex-shrink:0}
 .bar-track{flex:1;height:5px;background:#f0f0f0;border-radius:3px;overflow:hidden}
 .bar-fill{height:100%;border-radius:3px}
-.bar-val{font-size:13px;font-weight:600;color:#666;width:56px;text-align:right;flex-shrink:0}
+.bar-val{font-size:13px;font-weight:600;color:#444;width:56px;text-align:right;flex-shrink:0}
 .chart-section{margin:2.25rem 0;border:1px solid #ebebeb;border-radius:10px;padding:1.5rem;background:#fafaf8}
-.chart-tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#bbb;margin-bottom:.85rem;display:block}
+.chart-tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:.85rem;display:block}
 .chart-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#999}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#666}
 .l-circle{width:9px;height:9px;border-radius:50%;background:rgba(136,135,128,.45)}
 .l-diamond{width:9px;height:9px;background:#1D9E75;transform:rotate(45deg)}
 .l-tri{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid #7f77dd}
 .l-star{width:10px;height:10px;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);background:#EF9F27}
-.chart-cap{font-size:12px;color:#bbb;text-align:center;margin-top:.75rem;font-style:italic}
+.chart-cap{font-size:12px;color:#888;text-align:center;margin-top:.75rem;font-style:italic}
 .cta-block{background:#0f0f0f;border-radius:12px;padding:2rem;margin-top:3rem}
 .cta-block p{color:rgba(255,255,255,.7);font-size:16px;margin-bottom:1.25rem}
-.cta-btn{display:inline-block;background:#5340b7;color:#fff;padding:.7rem 1.4rem;border-radius:7px;text-decoration:none;font-size:15px;font-weight:500}
-.cta-btn:hover{background:#6D28D9;color:#fff}
+.cta-btn{display:inline-block;background:#7C3AED;color:#fff !important;padding:.7rem 1.4rem;border-radius:7px;text-decoration:none !important;font-size:15px;font-weight:500}
+.cta-btn:hover{background:#6D28D9;color:#fff !important}
+.gem-prose p{margin-bottom:1.4rem}
+.gem-prose p:last-child{margin-bottom:0}
+.q-block p,.cta-block p,.stat-hero .stat-desc{margin-bottom:0}
 </style>
 
 <p>The Black List is one of the most respected institutions in Hollywood. Every year it surfaces unproduced scripts that development executives genuinely admire — strong voices, bold ideas, real craft. A lot of great things have come out of it.</p>
@@ -105,19 +108,19 @@ draft: false
 <text x="465.5" y="70.5" fill="rgba(0,0,0,0.1)" font-size="11" font-family="-apple-system,sans-serif" text-anchor="middle">Crossover</text>
 <line x1="52" y1="318" x2="564" y2="318" stroke="#ddd" stroke-width="1"/>
 <line x1="52" y1="18" x2="52" y2="318" stroke="#ddd" stroke-width="1"/>
-<text x="170.2" y="352" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="middle">20th pct</text>
+<text x="170.2" y="352" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="middle">20th pct</text>
 <line x1="170.2" y1="318" x2="170.2" y2="321" stroke="#ddd" stroke-width="1"/>
-<text x="367.1" y="352" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="middle">30th pct</text>
+<text x="367.1" y="352" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="middle">30th pct</text>
 <line x1="367.1" y1="318" x2="367.1" y2="321" stroke="#ddd" stroke-width="1"/>
-<text x="564.0" y="352" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="middle">40th pct</text>
+<text x="564.0" y="352" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="middle">40th pct</text>
 <line x1="564.0" y1="318" x2="564.0" y2="321" stroke="#ddd" stroke-width="1"/>
-<text x="47" y="321.0" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">0</text>
-<text x="47" y="246.0" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">25</text>
-<text x="47" y="171.0" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">50</text>
-<text x="47" y="96.0" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">75</text>
-<text x="47" y="21.0" fill="#bbb" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">100</text>
-<text x="308.0" y="359" fill="#bbb" font-size="11" font-family="-apple-system,sans-serif" text-anchor="middle">Commercial potential</text>
-<text x="12" y="168.0" fill="#bbb" font-size="11" font-family="-apple-system,sans-serif" text-anchor="middle" transform="rotate(-90,12,168.0)">Prestige profile</text>
+<text x="47" y="321.0" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">0</text>
+<text x="47" y="246.0" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">25</text>
+<text x="47" y="171.0" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">50</text>
+<text x="47" y="96.0" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">75</text>
+<text x="47" y="21.0" fill="#666" font-size="10" font-family="-apple-system,sans-serif" text-anchor="end">100</text>
+<text x="308.0" y="359" fill="#555" font-size="11" font-family="-apple-system,sans-serif" text-anchor="middle">Commercial potential</text>
+<text x="12" y="168.0" fill="#555" font-size="11" font-family="-apple-system,sans-serif" text-anchor="middle" transform="rotate(-90,12,168.0)">Prestige profile</text>
 <circle cx="229.2" cy="285.0" r="3.5" fill="rgba(136,135,128,0.25)" stroke="rgba(136,135,128,0.45)" stroke-width="0.5"/>
 <circle cx="268.6" cy="312.0" r="3.5" fill="rgba(136,135,128,0.25)" stroke="rgba(136,135,128,0.45)" stroke-width="0.5"/>
 <circle cx="150.5" cy="150.0" r="3.5" fill="rgba(136,135,128,0.25)" stroke="rgba(136,135,128,0.45)" stroke-width="0.5"/>
@@ -237,5 +240,5 @@ draft: false
 
 <div class="cta-block">
   <p>If you have written something you think has been read wrong — that is exactly the territory we are in.</p>
-  <a class="cta-btn" href="https://gem.studio/pitch">Submit your script →</a>
+  <a class="cta-btn" href="https://gem.studio/pitch">Partner with us →</a>
 </div>
