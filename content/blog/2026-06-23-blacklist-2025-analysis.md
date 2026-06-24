@@ -224,15 +224,11 @@ draft: false
 
 <p>That is the work we are trying to do at GEM.</p>
 
-<p>We use technology and research — but not to replace taste. No serious person should automate creative judgment, and no multimillion-dollar production decision should be made by a model. What technology gives us is leverage. It lets us compare a script against a much larger body of produced work than any individual can hold in their head. It lets us see patterns across genre, budget, audience behavior, market performance, and story construction. It lets us move past the first impression and ask better questions.</p>
-
-<p>The best analogy is not "technology as a creative executive." It is a calculator for someone who was previously doing arithmetic by hand. The judgment still matters. The taste still matters. The read still matters. But the level of analysis changes.</p>
+<p>Most evaluation stops at theatrical box office. We go further: streaming acquisition economics, awards circuit comps, international rights, production cost scenarios at different budget tiers. We look at what a script structurally resembles that actually worked — not vaguely, but with a real body of data behind the comparison. It is a calculator for someone who was previously doing arithmetic by hand. The judgment still matters. The taste still matters. The read still matters. But the level of analysis changes, and so does what you can see.</p>
 
 <div class="pull-quote">
   <p>Depth does not scale unless you build for it.</p>
 </div>
-
-<p>We know this because of what it has produced for us.</p>
 
 <p>We have projects in active development that we found exactly this way — not from loglines, not from what was already circulating. Scripts that would not survive the conventional read. The premise doesn't land in a one-line summary. The concept doesn't travel through a chain of assistants. But when you go deep — when you understand what the material actually resembles that worked, when you can see what makes content spread before it becomes obvious — the case for each of them is clear and substantial. These are projects built for how audiences discover and share things now. You cannot see that from the outside.</p>
 
