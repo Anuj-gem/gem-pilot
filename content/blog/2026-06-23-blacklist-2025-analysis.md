@@ -73,19 +73,19 @@ draft: false
   </div>
 </div>
 
-<p>That sounds harsh, but it also explains a lot.</p>
+<p>That number mostly describes what happens when you apply a single lens — theatrical, wide release — to seventy-four scripts that weren't all built for it.</p>
 
-<p>It explains why so many celebrated scripts never get made. It costs nothing to love a script. It costs a lot to produce one. And there is a meaningful difference between "this is an excellent piece of writing" and "there is a clear, responsible path to making this."</p>
+<p>Most weren't. That is the honest read. But it is also not the only question worth asking.</p>
 
-<p>The Black List is not the problem. In many ways, it is doing exactly what it is supposed to do. It surfaces taste. It surfaces voice. It surfaces scripts that people in the industry genuinely admire.</p>
+<p>The distribution landscape has changed. A project with a distinct voice and a specific audience has more paths than it did ten years ago — streaming acquisitions, the awards circuit, international rights, prestige theatrical runs. Scripts that look non-commercial through one lens can look very different through another. The Black List keeps surfacing work that deserves to be made. What hasn't kept pace is the framework for thinking about how to make it.</p>
 
 <div class="pull-quote">
-  <p>Admiration is not a production thesis.</p>
+  <p>The distribution landscape has changed. The evaluation lens hasn't.</p>
 </div>
 
-<p>And when you look at the list through that lens, the picture gets more interesting.</p>
+<p>When you look at the list through a wider lens, the picture gets more interesting.</p>
 
-<p>A lot of the scripts are exactly as difficult to produce as you would expect: expensive, tonally narrow, hard to market, or built around audiences that may not show up theatrically. But buried inside the list are real opportunities. Not obvious ones. Not always clean logline sells. But scripts with a genuine path if you understand how movies break through now.</p>
+<p>A lot of the scripts are exactly as difficult to produce as you would expect: expensive, tonally narrow, hard to market through traditional channels. But inside the list are real opportunities — scripts with a genuine path once you stop asking whether they fit the old model and start asking how the modern era actually gets behind them.</p>
 
 <div class="chart-section">
   <span class="chart-tag">All 74 scripts &nbsp;·&nbsp; 2025 Black List</span>
