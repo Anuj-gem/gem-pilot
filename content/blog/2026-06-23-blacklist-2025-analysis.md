@@ -193,15 +193,15 @@ draft: false
 ---
 
 <div class="bucket">
-<span class="bucket-label">The commercial lane</span>
-<div class="bucket-title">The scripts where the expected economics actually work — and nobody is looking at them that way</div>
+<span class="bucket-label">Efficient play</span>
+<div class="bucket-title">Scripts where the math actually works — and the downside is more conservative than anyone is pricing in</div>
 
-<p>The most overlooked genre on the 2025 Black List is horror. By conventional read, it gets dismissed. By the numbers, it is the most commercially efficient category on the entire list.</p>
+<p>The clearest opportunity on the 2025 Black List is also the most routinely passed on. A cluster of scripts — concentrated in horror, with a meaningful presence in lean comedy — where the expected return approaches or clears theatrical break-even on its own, before a streaming deal, an awards run, or anything exceptional is required.</p>
 
 <div class="bucket-stats">
   <div class="bs-item">
     <span class="bs-num">$18M</span>
-    <span class="bs-lbl">Median production budget</span>
+    <span class="bs-lbl">Median production budget (horror)</span>
   </div>
   <div class="bs-item">
     <span class="bs-num">$34M</span>
@@ -217,18 +217,20 @@ draft: false
   </div>
 </div>
 
-<p>Horror is the only genre on this list where the median expected return approaches theatrical break-even before streaming enters the conversation. The top-performing script in this category projects a return above 3x on the expected case, with a ceiling that clears $100 million on a budget well under $15 million. A $15 million investment with a ceiling above $100 million and a realistic expected case near or above break-even is an unusual opportunity. It is sitting on this list unproduced.</p>
+<p>Horror is the only genre on this list where the expected return approaches break-even before a single streaming dollar is counted. The top-performing script in this category projects a return above 3x on the expected case, with a ceiling that clears $100 million on a budget under $15 million. The comedy lane tells a similar story: twenty-two scripts, median expected return nearly matching median budget, several projecting 2x or better on the expected case before streaming enters.</p>
 
-<p>A similar pattern appears in a subset of the comedies. Twenty-two comedy scripts on this list. Median expected return nearly matches median production budget — meaning the expected case is roughly break-even before any other distribution window is counted. Several comedies in this group project 2x or better on the expected case with ceilings well above $75 million. The comedy genre as a whole is being evaluated through the same theatrical-break-even lens as everything else, and it is passing the test more quietly than the industry is noticing.</p>
+<p>What people are missing is not just the upside. It is how conservative the downside actually is. These scripts do not require anything exceptional to happen. They require competent execution of a specific, well-defined creative vision aimed at an audience that is identifiable before production begins. That is a fundamentally different risk profile from most of what gets greenlit.</p>
 
-<p>What these scripts share is not something a logline reveals. They have a specific point of view, a specific audience, and specific moments built for how content actually travels now. The surface pass will not surface this. A deeper read does.</p>
+<p>There is a further case that modern production techniques make even more compelling: many of these scripts could be made for substantially less than our projections. In horror especially, craft and specificity of vision matter more than production scale. Bring an $18 million horror production to $12 million and the expected-case math changes meaningfully. The ceiling stays exactly the same.</p>
+
+<p>What we are looking at in these scripts: premises that communicate themselves without explanation — concepts that translate immediately to a trailer, a clip, a moment shared on a phone. Genre executed with unexpected specificity rather than prestige posturing. Clear audience identity. Moments built for how attention actually travels in 2026. None of this appears in a coverage note. It requires reading the material at the level of someone who intends to make it.</p>
 
 <div class="proof-film">
   <img src="/blog/talk-to-me.jpg" alt="Talk to Me (2022) film poster" />
   <div class="proof-film-body">
-    <span class="proof-label">What this lane looks like when it gets made</span>
+    <span class="proof-label">What this looks like when it gets made</span>
     <div class="proof-title">Talk to Me (2022)</div>
-    <div class="proof-stats"><strong>$4.5M budget → $92M worldwide box office</strong><br/>Debut feature from YouTube directors. Specific Australian Gen Z voice. No marketing budget that explains a 20x return. The material explained it.</div>
+    <div class="proof-stats"><strong>$4.5M budget → $92M worldwide box office</strong><br/>YouTube directors, debut feature, specific Gen Z voice. No marketing explanation for a 20x return. The concept traveled on its own.</div>
   </div>
 </div>
 </div>
@@ -236,38 +238,38 @@ draft: false
 ---
 
 <div class="bucket">
-<span class="bucket-label">Prestige + platform play</span>
-<div class="bucket-title">Where the theatrical math says no — and that is the wrong question to be asking</div>
+<span class="bucket-label">Talent magnet</span>
+<div class="bucket-title">Scripts that attract the people who change every other number in the deal</div>
 
-<p>Eleven scripts on the 2025 Black List carry an awards nomination probability that is three times or more above the industry base rate. One sits above 50%. A sports narrative comes in near 30%. A crime script — not a genre historically associated with awards recognition — sits just below 30%.</p>
+<p>A different category entirely. These are mid-budget scripts — typically $25-35 million — where the expected theatrical case does not make the argument, and the expected theatrical case is not the argument to make. What makes them compelling is the material itself.</p>
 
-<p>None of these clear theatrical break-even on the expected box office case. That is why they are sitting on the list. It is also not the question worth asking about them.</p>
+<p>There is a specific kind of script that performers of real standing cannot say no to. Not because it is a safe bet — it is often the opposite. Because it is the kind of material that careers are defined by. The subject matter carries specific cultural weight. The lead roles are so particular, demand such an unusual kind of performance, and exist in such an emotionally specific register that the short list of people who can actually do it is the same short list of people who make films matter. When those people show up, everything else changes: the financing structure, the streaming acquisition, the awards conversation, the way the film is marketed. None of this is visible in a box office projection. It is only visible in the material.</p>
 
-<p>The case for this category is not built on one number. A streaming pre-sale puts a floor under the downside before production begins. A lead role specific enough to attract an actor looking for material that will define their career, willing to work below market rate to get it. A narrative distinctive enough that a single award multiplies its value in every distribution window that follows. No single factor makes the investment. All of them together do — and seeing them together requires seeing more than a conventional read provides.</p>
+<p>The pattern: talent attaches because they believe in the work. That belief generates awards attention. Awards attention generates word-of-mouth that carries the theatrical run beyond what the expected case projects. Streaming economics then reflect the film's perceived importance rather than its opening weekend. The theatrical number ends up being the smallest part of the return. The chain has to start with the material being genuinely irresistible — and that is what we are looking for in this group.</p>
 
 <div class="bucket-stats">
   <div class="bs-item">
-    <span class="bs-num">11</span>
-    <span class="bs-lbl">Scripts with 3x+ base rate awards probability</span>
+    <span class="bs-num">$25–35M</span>
+    <span class="bs-lbl">Typical production range</span>
   </div>
   <div class="bs-item">
-    <span class="bs-num">$52M</span>
-    <span class="bs-lbl">Median ceiling for drama scripts on the list</span>
+    <span class="bs-num">$15–20M</span>
+    <span class="bs-lbl">Streaming pre-sale floor (establishes manageable equity gap)</span>
   </div>
   <div class="bs-item">
     <span class="bs-num">$145M</span>
-    <span class="bs-lbl">Top ceiling in the musical category</span>
+    <span class="bs-lbl">Top ceiling in this group</span>
   </div>
 </div>
 
-<p>The prestige lane also includes scripts where the expected box office is low but the ceiling is not. One musical on this list projects a $145 million ceiling on a $35 million budget. The expected case does not clear break-even. The ceiling does — comfortably. The question for a project like this is not whether it will make money on the expected case. The question is whether you understand what creates the ceiling, and whether you believe in the conditions that get you there.</p>
+<p>The downside is bounded before production begins. A streaming pre-sale at the level these projects attract — fifteen to twenty million against a thirty million production — leaves a manageable equity gap. The upside grows with every element that attaches. We are not projecting that all of these scripts will follow this path. We are identifying the ones where the material has the specific quality that makes the chain possible.</p>
 
 <div class="proof-film">
   <img src="/blog/coda.jpg" alt="CODA (2021) film poster" />
   <div class="proof-film-body">
-    <span class="proof-label">What this lane looks like when it gets made</span>
+    <span class="proof-label">What this looks like when it gets made</span>
     <div class="proof-title">CODA (2021)</div>
-    <div class="proof-stats"><strong>$10M budget. Apple acquired at Sundance. Best Picture winner.</strong><br/>No conventional theatrical path. Streaming floor established at acquisition. Awards traction compounded across every window after. The expected case was never the point.</div>
+    <div class="proof-stats"><strong>$10M budget. Apple acquired at Sundance. Best Picture winner.</strong><br/>The material attracted the right people. Each element that attached changed the next conversation. The theatrical number was never the investment thesis.</div>
   </div>
 </div>
 </div>
@@ -275,38 +277,38 @@ draft: false
 ---
 
 <div class="bucket">
-<span class="bucket-label">Asymmetric ceiling</span>
-<div class="bucket-title">Scripts where the expected case is modest and the upside is genuinely large</div>
+<span class="bucket-label">The ceiling bet</span>
+<div class="bucket-title">Bigger investment, unconventional material, and outcomes the other categories cannot reach</div>
 
-<p>A third category. Scripts where the expected outcome would not justify production by conventional analysis — and where the ceiling is real enough, and large enough, that the bet makes sense anyway.</p>
+<p>The third category requires the most conviction and carries the most risk. Scripts with production budgets in the $35-45 million range, unconventional in format, scope, or subject matter, where the expected case is weak and the downside is real. Wrong execution at any level — director, cast, release strategy — and these do not work. That is an honest read of the risk.</p>
+
+<p>The other honest read: when these work, they reach ceilings that the efficient play cannot match in absolute dollars. A $12 million horror production returning 3x is a strong outcome. A $45 million production returning 5x is a different conversation — the kind of outcome that defines a company's year, funds a slate, and opens doors that smaller bets do not. The top ceiling on this list is $215 million, on a $45 million budget. Several more scripts in this category project ceilings above $125 million. These numbers are not accessible through a smaller, more conservative bet. The only path to them is through this kind of investment in this kind of material.</p>
 
 <div class="bucket-stats">
   <div class="bs-item">
-    <span class="bs-num">$14M</span>
-    <span class="bs-lbl">Median expected box office across the full list</span>
-  </div>
-  <div class="bs-item">
-    <span class="bs-num">$77M</span>
-    <span class="bs-lbl">Median breakout ceiling across the full list</span>
-  </div>
-  <div class="bs-item">
     <span class="bs-num">$215M</span>
-    <span class="bs-lbl">Highest single-script ceiling on the list</span>
+    <span class="bs-lbl">Top ceiling on the list ($45M budget)</span>
+  </div>
+  <div class="bs-item">
+    <span class="bs-num">$137M</span>
+    <span class="bs-lbl">Second ceiling ($45M budget)</span>
+  </div>
+  <div class="bs-item">
+    <span class="bs-num">$126M</span>
+    <span class="bs-lbl">Third ceiling ($38M budget)</span>
   </div>
 </div>
 
-<p>The gap between $14 million and $77 million — expected case to ceiling at the median — is the value a surface read buries every time. That gap is not random. It comes from specific attributes: IP that travels internationally, narrative structures that support franchise expansion, premises that translate across formats and cultural contexts, genre execution that rewards the rare film that gets it exactly right. None of these show up in a logline. They show up in a deep read backed by research into what has historically created these outcomes.</p>
+<p>What separates a ceiling bet from just an expensive bet: there is something in the material that suggests it can reach audiences beyond its obvious constituency. The world is expansive enough. The premise is wide enough. The emotional stakes are legible to enough kinds of people that when it works, it works for many of them. That crossover quality is specific and identifiable in the material. It does not appear in every ambitious script. It appears in particular ones, and finding them requires reading for something that most coverage does not look for.</p>
 
-<p>The highest ceiling on this list is $215 million, on a $45 million budget. The script is unproduced. A film that generates $215 million in worldwide box office on a $45 million production budget is a career-defining outcome for everyone involved. That is not guaranteed by the analysis. It is the ceiling — what becomes possible when the conditions align. Understanding what those conditions are, and how to help create them, is the work.</p>
-
-<p>With streaming economics available as a floor on most serious productions today, the downside on these scripts is bounded. The upside is not. That asymmetry is the bet. Pricing it correctly requires knowing what creates the ceiling before you commit to the budget.</p>
+<p>A streaming pre-sale bounds the downside before principal photography. A pre-sale at the level of a $40 million production takes meaningful risk off the table. The ceiling is not bounded. The bet is asymmetric. Identifying which scripts actually carry the ceiling potential — rather than just the cost and ambition profile — is the work.</p>
 
 <div class="proof-film">
   <img src="/blog/eeaao.jpg" alt="Everything Everywhere All at Once film poster" />
   <div class="proof-film-body">
-    <span class="proof-label">What this lane looks like when it gets made</span>
+    <span class="proof-label">What this looks like when it gets made</span>
     <div class="proof-title">Everything Everywhere All at Once (2022)</div>
-    <div class="proof-stats"><strong>$14.3M budget → $103M worldwide box office. 7 Academy Awards.</strong><br/>Nothing in the expected case predicted this. A24 understood the ceiling. The rest of the industry called it a risk. It was the opposite.</div>
+    <div class="proof-stats"><strong>$14.3M budget → $103M worldwide. 7 Academy Awards.</strong><br/>Unconventional in every way. A24 saw that the premise was wide enough to reach anyone. The ceiling was there the whole time — it just required a different read to see it.</div>
   </div>
 </div>
 </div>
@@ -321,9 +323,9 @@ draft: false
   <p>The qualities that put a script on the Black List are exactly the qualities that make something travel in 2026.</p>
 </div>
 
-<p>Making confident creative decisions has never been harder. More distribution windows. More complexity in how economics divide across stakeholders. Higher stakes per decision as production costs have compressed the margin for error. A talented creative executive with genuine taste and a stack of scripts is necessary but no longer sufficient — not because the taste is wrong, but because the information required to act on it confidently has grown beyond what any single person can hold in their head.</p>
+<p>Making confident creative decisions has never been harder. More distribution windows. More complexity in how economics divide across stakeholders. Higher stakes per decision as production costs have compressed the margin for error. A talented creative executive with genuine taste and a stack of scripts is necessary but no longer sufficient. Not because the taste is wrong, but because the information required to act on it confidently has grown beyond what any single person can hold in their head.</p>
 
-<p>The companies finding opportunities consistently are the ones where creative judgment and modern research reinforce each other. The data does not make the call. A person with taste and conviction makes the call. What the research does is ensure that person is not making it without knowing the ceiling, without understanding what creates commercial efficiency at a given budget level, without being able to distinguish between a script with genuine awards probability and one that simply feels prestigious. The creative instinct gets amplified, not replaced.</p>
+<p>The companies finding opportunities consistently are the ones where creative judgment and modern research reinforce each other. The data does not make the call. A person with taste and conviction makes the call. What the research does is ensure that person is not making it without knowing the ceiling, without understanding what creates commercial efficiency at a given budget level, without being able to distinguish between a script that genuinely carries award-level qualities and one that simply feels prestigious. The creative instinct gets amplified, not replaced.</p>
 
 <p>There is over $3 billion in profit on the 2025 Black List. The industry already agrees the work is excellent. The question is who is going to build the business case for it.</p>
 
