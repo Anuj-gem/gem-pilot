@@ -194,7 +194,7 @@ draft: false
 
 <div class="bucket">
 <span class="bucket-label">Efficient play</span>
-<div class="bucket-title">Scripts people are passing on because they are reading for the wrong signals</div>
+<div class="bucket-title">Low-budget scripts with high upside that most people are not seeing</div>
 
 <p>The most consistent financial opportunity on the 2025 Black List is not the most prestigious one. It is a cluster of horror and comedy scripts that most development readers have already seen and moved past. The loglines are high-concept rather than awards-bait. The budgets look modest. Nothing about them signals the kind of project that drives a prestige development slate. That is exactly why the opportunity exists.</p>
 
@@ -229,7 +229,7 @@ draft: false
 
 <div class="bucket">
 <span class="bucket-label">Talent magnet</span>
-<div class="bucket-title">Scripts that attract the people who change every other number in the deal</div>
+<div class="bucket-title">Prestige material that draws major talent, earns awards attention, and travels on streaming</div>
 
 <p>A different category entirely. These are mid-budget scripts — typically $25-35 million — where the expected theatrical case does not make the argument, and the expected theatrical case is not the argument to make. What makes them compelling is the material itself.</p>
 
@@ -268,7 +268,7 @@ draft: false
 
 <div class="bucket">
 <span class="bucket-label">The ceiling bet</span>
-<div class="bucket-title">Bigger investment, unconventional material, and outcomes the other categories cannot reach</div>
+<div class="bucket-title">Bigger upfront investment, but with huge asymmetric upside</div>
 
 <p>The third category requires the most conviction and carries the most risk. Scripts with production budgets in the $35-45 million range, unconventional in format, scope, or subject matter, where the expected case is weak and the downside is real. Wrong execution at any level — director, cast, release strategy — and these do not work. That is an honest read of the risk.</p>
 
