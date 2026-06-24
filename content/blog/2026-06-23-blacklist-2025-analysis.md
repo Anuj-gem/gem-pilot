@@ -199,13 +199,15 @@ draft: false
   <p class="chart-cap">Each point = one script &nbsp;·&nbsp; x-axis = commercial potential &nbsp;·&nbsp; y-axis = prestige profile</p>
 </div>
 
-<p>Fourteen of the seventy-four stood out as genuinely exceptional — writing that, measured against the body of produced work, belongs in the prestige lane. Run the standard box office model on these and you get the same answer everyone else gets. That answer is not wrong. It just does not account for all the ways a project like this can actually return.</p>
+<p>Seven scripts on a list of seventy-four, each with a different profile, each with a case the conventional read is not making.</p>
 
-<p>For five of those fourteen, when we extended the analysis — awards circuit returns, streaming acquisition, international rights — the math changes completely. We are projecting total returns of <strong>$20 to $45 million per project</strong>, against budgets we estimate at $4 to $7 million, with several buildable toward the lower end of that range using current production methods. The writer's vision stays intact. The project gets made on terms that work. And it generates a return that most people reading these scripts right now are not seeing.</p>
+<p>One is a horror script that, from the logline, reads as familiar territory. The material is not. The execution is highly distinctive, with specific elements throughout that are built for how modern audiences discover and share content — extremely clippable, structurally tailored for the way things spread now. None of that is visible from a surface pass.</p>
 
-<p>Two more take a different path. One is in a horror subgenre that has been consistently outperforming at this price point. From the logline it does not read as a highly original project. Dig in, and it is. The execution is distinctive, and there are specific elements built for the way modern audiences discover and share things — material with real viral architecture that a surface read will miss entirely. The other is a contained action script: tight budget, clear commercial math, straightforward upside.</p>
+<p>Others have a different profile: exceptional writing with specific narrative elements — the kind of social commentary and thematic weight that drives high-level casting conversations and awards consideration. Projects where the prestige angle, done correctly, becomes a financial asset rather than a liability.</p>
 
-<p>Seven scripts on a list of seventy-four where the case is there and the market is not making it.</p>
+<p>In both cases, when we extended the analysis — streaming acquisition, awards circuit, international rights — we are projecting returns of <strong>$20 to $45 million per project</strong> against budgets of $4 to $7 million. That is 5x or better, on projects that most people are currently passing on.</p>
+
+<p>The portfolio logic is straightforward. Rather than concentrating on a single "safe" production at ten times the budget and hoping it performs, a focused slate at this level — each with a specific, well-reasoned upside case — returns more on a multiple basis and creates more opportunities to back something genuinely exceptional.</p>
 
 <p>We are not naming them specifically. In some cases we are in active conversations with the writers about partnering directly. In others, we simply do not want to affect anyone's odds — calling out a script, positively or negatively, can do things to it that the writer did not ask for. We are not interested in talking up our own book or hurting anyone's path to finding a producer.</p>
 
