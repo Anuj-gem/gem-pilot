@@ -215,24 +215,17 @@ draft: false
 
 <hr/>
 
-<p>Most evaluation still happens too close to the surface. People read the logline. They skim the coverage. They react to the genre, the budget, the comps, the perceived market. And to be fair, that is often enough to say no. Most scripts are not worth making.</p>
+<p>The instinct in this industry is to play it safe. That instinct made more sense when safe was actually safe — when a certain kind of polished, broadly appealing project could reliably find a theatrical audience. That world has changed. In a content environment where audiences are drowning in options, generic disappears. What cuts through is when people genuinely love something — when a film earns word-of-mouth because it has a real point of view, because it goes somewhere, because it has moments that get clipped and shared and talked about. Distinctive work, made with conviction, is increasingly the better bet. Not a riskier one.</p>
 
-<p>But the scripts that are worth making are often worth making for specific reasons. Reasons that only appear when you go deeper.</p>
-
-<div class="q-block">
-  <p>What is the actual architecture of the thing? Where are the sequences? Where does the audience lean forward? What would the trailer sell? What would get clipped? What would make people argue? What would make talent say yes?</p>
-  <p>What does this resemble that actually worked — not vaguely, but structurally, tonally, commercially? What is the cheapest responsible version of the idea? What is the best distribution path for that version?</p>
-</div>
-
-<p>That is the work we are trying to do at GEM.</p>
-
-<p>Most evaluation stops at theatrical box office. We go further: streaming acquisition economics, awards circuit comps, international rights, production cost scenarios at different budget tiers. We look at what a script structurally resembles that actually worked — not vaguely, but with a real body of data behind the comparison. It is a calculator for someone who was previously doing arithmetic by hand. The judgment still matters. The taste still matters. The read still matters. But the level of analysis changes, and so does what you can see.</p>
+<p>The problem is not that people in development lack taste. Most of the scripts on the Black List got there because people with real taste responded to them. The problem is bandwidth. Reading a script at the depth required to make a real case — understanding what it structurally resembles, what the audience looks like, what the distribution path actually is, how the economics work across every window — takes time. More time than most processes allow, across more scripts than most teams can cover. So things get evaluated at the surface, where the obvious answer is usually no.</p>
 
 <div class="pull-quote">
   <p>Depth does not scale unless you build for it.</p>
 </div>
 
-<p>We have projects in active development that we found exactly this way — not from loglines, not from what was already circulating. Scripts that would not survive the conventional read. The premise doesn't land in a one-line summary. The concept doesn't travel through a chain of assistants. But when you go deep — when you understand what the material actually resembles that worked, when you can see what makes content spread before it becomes obvious — the case for each of them is clear and substantial. These are projects built for how audiences discover and share things now. You cannot see that from the outside.</p>
+<p>That is what we have been building. At GEM, we have assessed thousands of scripts and developed a substantive body of understanding around what drives commercial performance — streaming acquisition economics, awards circuit patterns, casting impact, how genre and budget interact across distribution windows, what makes content spread. That foundation lets us move through material at a speed and depth that was not realistic before, and identify opportunities that a conventional process would not reach. The creative judgment still matters. The taste still matters. But the level of analysis changes what you can see, and therefore what you can make.</p>
+
+<p>We have projects in active development that we found exactly this way — not from loglines, not from what was already circulating. Scripts that would not survive a surface read. But when you go deep — when you understand what the material actually resembles that worked, when you can see what makes content spread before it becomes obvious — the case for each of them is clear. These are projects built for how audiences discover and share things now. That is not visible from the outside.</p>
 
 <p>We are looking for more of them. And we have been finding them.</p>
 
