@@ -366,37 +366,48 @@
     .footer-left { font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: 0.06em; }
     .footer-right { font-size: 11px; color: rgba(255,255,255,0.32); }
 
-    /* ── How We See It ── */
+    /* ── What Makes Us Different ── */
     .method-section { padding: 80px 0 0; }
     .method-section .section-marker { padding: 0 56px; }
     .method-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       border-top: 0.5px solid rgba(255,255,255,0.08);
       margin-top: 40px;
     }
     .method-item {
-      padding: 52px 56px 64px;
+      padding: 56px 64px 72px;
       border-right: 0.5px solid rgba(255,255,255,0.08);
     }
     .method-item:last-child { border-right: none; }
+    .method-icon {
+      width: 48px; height: 48px;
+      border: 0.5px solid rgba(124,58,237,0.35);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 36px;
+    }
+    .method-icon svg {
+      width: 22px; height: 22px;
+      stroke: #7C3AED; stroke-width: 1.5;
+      fill: none; stroke-linecap: round; stroke-linejoin: round;
+    }
     .method-number {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(56px, 6vw, 80px);
+      font-size: clamp(64px, 7vw, 88px);
       font-weight: 300; line-height: 0.88;
       color: #7C3AED; letter-spacing: -0.02em;
       margin-bottom: 28px;
     }
     .method-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 26px; font-weight: 300;
-      color: #F0EBE1; margin-bottom: 16px;
-      line-height: 1.2;
+      font-size: clamp(26px, 2.8vw, 34px);
+      font-weight: 300; color: #F0EBE1;
+      margin-bottom: 20px; line-height: 1.12;
     }
     .method-title em { font-style: italic; color: #A78BFA; }
     .method-body {
       font-size: 14px; color: rgba(255,255,255,0.78);
-      line-height: 1.82;
+      line-height: 1.85; max-width: 400px;
     }
 
     /* ── Mobile ── */
@@ -413,8 +424,9 @@
 
       .method-section .section-marker { padding: 0 20px; }
       .method-grid { grid-template-columns: 1fr; margin-top: 24px; }
-      .method-item { padding: 36px 20px; border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+      .method-item { padding: 40px 20px; border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
       .method-item:last-child { border-bottom: none; }
+      .method-body { max-width: 100%; }
 
       .track-section .section-marker { padding: 0 20px; }
       .carousel { grid-template-columns: 1fr; }
@@ -542,24 +554,25 @@
 
 <div class="rule"></div>
 
-<!-- How We See It -->
+<!-- What Makes Us Different -->
 <section class="method-section">
-  <div class="section-marker reveal">How we see it</div>
+  <div class="section-marker reveal">What makes us different</div>
   <div class="method-grid">
     <div class="method-item reveal">
+      <div class="method-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
       <div class="method-number">01</div>
-      <div class="method-title">We study it <em>deeply.</em></div>
-      <p class="method-body">Years of research into what audiences actually respond to — across thousands of projects, every format and genre. Not instinct. Not taste. Evidence, at a depth most development operations don't go to.</p>
+      <div class="method-title">We were built on<br><em>new media.</em></div>
+      <p class="method-body">Over a billion views. Viral content, ecommerce, merchandise — we didn't come from traditional distribution. We came from the modern media landscape and understand it at a level most studios don't. We know how audiences actually find content today, what makes it spread, and how to generate value far beyond a single theatrical release.</p>
     </div>
     <div class="method-item reveal">
+      <div class="method-icon">
+        <svg viewBox="0 0 24 24"><circle cx="5" cy="19" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="5" cy="5" r="2"/><path d="M6.5 17.5l4-4M13.5 10.5l4-4M6.5 6.5l4 4M13.5 13.5l4 4"/></svg>
+      </div>
       <div class="method-number">02</div>
-      <div class="method-title">We look <em>differently.</em></div>
-      <p class="method-body">No house aesthetic. No preferred genre. No politics shaping the read. Every project gets the same rigorous, objective look — informed by patterns most studios aren't searching for.</p>
-    </div>
-    <div class="method-item reveal">
-      <div class="method-number">03</div>
-      <div class="method-title">We find it <em>early.</em></div>
-      <p class="method-body">Potential before it's obvious. That's the whole point — and it's what a billion views proved we can do. We bring that same ability to every project we consider.</p>
+      <div class="method-title">Research and tools<br><em>built for this.</em></div>
+      <p class="method-body">We've built a significant body of research into what makes projects connect with audiences. Our technology surfaces patterns in scripts, formats, and ideas — things that are genuinely hard to see without data behind you. It doesn't replace creative judgment. It gives our team an edge that most development operations simply don't have access to.</p>
     </div>
   </div>
 </section>
