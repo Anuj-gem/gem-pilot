@@ -2,6 +2,7 @@
 title: "We lifted the three-script cap"
 date: "2026-05-06"
 excerpt: "Submit every script you have for industry consideration. Better evaluations. Simpler process. Free users can submit too."
+draft: true
 ---
 
 The three-script cap on submissions to industry partners was too limiting. It forced writers to pick and choose, and it didn't give our partner network enough material to fully evaluate each writer's range.
