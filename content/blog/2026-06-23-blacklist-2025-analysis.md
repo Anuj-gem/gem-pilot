@@ -232,7 +232,13 @@ draft: false
 
 <p>We have projects in active development that we found exactly this way — not from loglines, not from what was already circulating. Scripts that would not survive the conventional read. The premise doesn't land in a one-line summary. The concept doesn't travel through a chain of assistants. But when you go deep — when you understand what the material actually resembles that worked, when you can see what makes content spread before it becomes obvious — the case for each of them is clear and substantial. These are projects built for how audiences discover and share things now. You cannot see that from the outside.</p>
 
-<p>We are looking for more of them.</p>
+<p>We are looking for more of them. And we have been finding them.</p>
+
+<p>The Black List is an acute case — scripts with documented quality, real industry recognition, still no path to production. But it is one slice of a much larger picture. Over the past several months, working with an open submission platform, we have reviewed thousands of scripts from writers who have never been on any list, never had representation, never had a room hear their work. We found projects we are actively developing. We found writers we are in conversations with right now. The talent is not hard to find. The willingness to go look for it is what has been missing.</p>
+
+<p>To the industry: the access has never been better. Scripts are posted publicly. Writers are everywhere and reachable. The methods we have described here — going deeper, looking past the first impression, thinking beyond theatrical — are not proprietary. They are just work. If you want to expand what your process can see, we are happy to collaborate. We are actively looking for projects and can move quickly with the right partners.</p>
+
+<p>To writers: keep leaning into your vision. Do not write toward the market. The next era of distribution rewards distinctive voices and genuine quality in ways that traditional theatrical never could. For a long time, writing what was truly in your heart was a professional risk. That is changing, and it will keep changing. Whether or not you are on a list, whether or not you have industry relationships — reach out. There will be more companies doing what we are doing. The work has more paths to market than it has ever had, and that is only going to grow.</p>
 
 <div class="cta-block">
   <p>If you have written something you think has been read wrong — that is exactly the territory we are in.</p>
