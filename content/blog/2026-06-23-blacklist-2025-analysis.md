@@ -94,12 +94,12 @@ draft: false
 
 <p>Since the list was published in December, several scripts have been picked up by studios and streamers. Netflix, Searchlight, Apple, Lionsgate, A24, and others have moved on titles from the list. We think those are smart bets. We wish those projects every success. The $3 billion figure reflects what remains — the scripts that have not yet found a home. Which is still the overwhelming majority.</p>
 
-<div class="stat-callout">
-  <span class="sc-num">96%</span>
-  <span class="sc-label">of scripts on the 2025 Black List project as money-losers at traditional theatrical break-even. That is the framework most people are still using to evaluate them.</span>
-</div>
+<p>Ninety-six percent of the scripts on this list cannot clear traditional theatrical break-even on their expected box office case. That is why they go unmade. It is also the wrong question. Theatrical break-even — roughly 2.5 times production budget once marketing and exhibitor cuts are factored in — is a framework built for a distribution model that no longer fully exists. It assumes wide release, heavy media spend, and a world where reaching enough screens is sufficient to drive an audience. That world has not disappeared, but it has shrunk considerably. What has grown is a world where audiences make active choices, and where something genuinely exceptional finds its audience without anyone buying their way in.</p>
 
-<p>The 96% figure is the reason these scripts go unmade. It is also the wrong number to lead with. Theatrical break-even — roughly 2.5 times production budget once marketing and exhibitor cuts are factored in — is a framework built for a distribution model that no longer fully exists. It assumes wide release, heavy media spend, and a world where reaching enough screens is sufficient to drive an audience. That world has not disappeared, but it has shrunk considerably. What has grown is a world where audiences make active choices, and where something genuinely exceptional finds its audience without anyone buying their way in.</p>
+<div class="stat-callout">
+  <span class="sc-num">$14M → $77M</span>
+  <span class="sc-label">Median expected box office vs. median breakout ceiling across the full list. The upside is real. The expected case just doesn't show it.</span>
+</div>
 
 <p>When you look at this list through a different framework, the picture changes. Not for every script. But for a meaningful subset, the case is clear once you know what you are looking for.</p>
 
