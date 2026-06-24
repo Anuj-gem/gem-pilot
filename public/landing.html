@@ -366,6 +366,39 @@
     .footer-left { font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: 0.06em; }
     .footer-right { font-size: 11px; color: rgba(255,255,255,0.32); }
 
+    /* ── How We See It ── */
+    .method-section { padding: 80px 0 0; }
+    .method-section .section-marker { padding: 0 56px; }
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 0.5px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+    }
+    .method-item {
+      padding: 52px 56px 64px;
+      border-right: 0.5px solid rgba(255,255,255,0.08);
+    }
+    .method-item:last-child { border-right: none; }
+    .method-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(56px, 6vw, 80px);
+      font-weight: 300; line-height: 0.88;
+      color: #7C3AED; letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+    .method-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 300;
+      color: #F0EBE1; margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .method-title em { font-style: italic; color: #A78BFA; }
+    .method-body {
+      font-size: 14px; color: rgba(255,255,255,0.78);
+      line-height: 1.82;
+    }
+
     /* ── Mobile ── */
     @media (max-width: 768px) {
       body { overflow-x: hidden; }
@@ -377,6 +410,11 @@
       h1.hero-headline { font-size: clamp(38px, 10vw, 56px); }
       .hero-sub { font-size: 15px; }
       .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+      .method-section .section-marker { padding: 0 20px; }
+      .method-grid { grid-template-columns: 1fr; margin-top: 24px; }
+      .method-item { padding: 36px 20px; border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+      .method-item:last-child { border-bottom: none; }
 
       .track-section .section-marker { padding: 0 20px; }
       .carousel { grid-template-columns: 1fr; }
@@ -500,6 +538,30 @@
     </div>
   </div>
 
+</section>
+
+<div class="rule"></div>
+
+<!-- How We See It -->
+<section class="method-section">
+  <div class="section-marker reveal">How we see it</div>
+  <div class="method-grid">
+    <div class="method-item reveal">
+      <div class="method-number">01</div>
+      <div class="method-title">We study it <em>deeply.</em></div>
+      <p class="method-body">Years of research into what audiences actually respond to — across thousands of projects, every format and genre. Not instinct. Not taste. Evidence, at a depth most development operations don't go to.</p>
+    </div>
+    <div class="method-item reveal">
+      <div class="method-number">02</div>
+      <div class="method-title">We look <em>differently.</em></div>
+      <p class="method-body">No house aesthetic. No preferred genre. No politics shaping the read. Every project gets the same rigorous, objective look — informed by patterns most studios aren't searching for.</p>
+    </div>
+    <div class="method-item reveal">
+      <div class="method-number">03</div>
+      <div class="method-title">We find it <em>early.</em></div>
+      <p class="method-body">Potential before it's obvious. That's the whole point — and it's what a billion views proved we can do. We bring that same ability to every project we consider.</p>
+    </div>
+  </div>
 </section>
 
 <div class="rule"></div>
