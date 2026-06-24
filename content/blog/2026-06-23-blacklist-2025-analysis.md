@@ -2,7 +2,7 @@
 title: "There Is $3 Billion in Profit on the 2025 Black List. Here's Why Nobody Is Making It."
 slug: blacklist-2025-analysis
 date: "2026-06-23"
-summary: "We analyzed every script on the 2025 Black List the same way we approach anything we might produce. The combined ceiling is over $5 billion in worldwide box office against $1.35 billion in production budgets. Most of it will never get made. Here is what the industry is missing."
+summary: "We analyzed every script on the 2025 Black List the same way we approach anything we might produce. Most will never get made. Here is the business case the industry isn't making."
 author: "GEM Studios"
 draft: false
 ---
@@ -63,7 +63,7 @@ draft: false
 
 <p>Which makes the 2025 Black List one of the most interesting financial documents in Hollywood right now. Seventy-four scripts. Every one of them vetted by hundreds of development executives who confirmed: this is excellent work. The quality has already been agreed upon. What has not been built is the business case.</p>
 
-<p>We built it. GEM is a development company — we have built creative networks with close to a billion views across social media, and we are actively producing. In that process we applied the same analysis we use on anything we might want to produce to every script on the 2025 Black List. What came out of that:</p>
+<p>We built it. If you don't know us: we run <a href="https://www.tiktok.com/@gem" target="_blank" rel="noopener">one of the most-followed entertainment communities on social media</a> and are actively developing a slate of series and films. We did this because we kept wondering why scripts this good go unmade so often, and we wanted to share what we found. We are not naming names or pointing fingers at anyone. Hopefully all this does is draw more attention to the work. Most of these scripts deserve to be in production.</p>
 
 <div class="stat-hero">
   <span class="big-num">$3B+</span>
