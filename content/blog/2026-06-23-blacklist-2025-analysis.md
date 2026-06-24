@@ -199,11 +199,11 @@ draft: false
   <p class="chart-cap">Each point = one script &nbsp;·&nbsp; x-axis = commercial potential &nbsp;·&nbsp; y-axis = prestige profile</p>
 </div>
 
-<p>Fourteen of the seventy-four scripts stood out — not as commercial in any traditional sense, but as genuinely exceptional writing. Put against the body of produced work, these belong in the prestige lane: the kind of project that wins on the awards circuit, travels internationally, earns strong streaming placement. Read the logline and run the box office model and you get the same answer everyone else gets. That answer isn't wrong. It's just not the whole picture.</p>
+<p>Fourteen of the seventy-four stood out as genuinely exceptional — writing that, measured against the body of produced work, belongs in the prestige lane. Run the standard box office model on these and you get the same answer everyone else gets. That answer is not wrong. It just does not account for all the ways a project like this can actually return.</p>
 
-<p>For five of those fourteen, when we looked at the full picture — awards circuit returns, streaming acquisition, international rights — the math changes completely. We are projecting total returns of <strong>$20 to $45 million per project</strong>, against budgets we estimate at $4 to $7 million. The writer's vision stays intact. The project gets made correctly. And it generates a return that most people evaluating these scripts right now aren't seeing, because they stopped at the wrong number.</p>
+<p>For five of those fourteen, when we extended the analysis — awards circuit returns, streaming acquisition, international rights — the math changes completely. We are projecting total returns of <strong>$20 to $45 million per project</strong>, against budgets we estimate at $4 to $7 million, with several buildable toward the lower end of that range using current production methods. The writer's vision stays intact. The project gets made on terms that work. And it generates a return that most people reading these scripts right now are not seeing.</p>
 
-<p>Two more — one horror, one action — work on simpler terms. Straightforward commercial math, under $5 million to produce.</p>
+<p>Two more take a different path. One is in a horror subgenre that has been consistently outperforming at this price point. From the logline it does not read as a highly original project. Dig in, and it is. The execution is distinctive, and there are specific elements built for the way modern audiences discover and share things — material with real viral architecture that a surface read will miss entirely. The other is a contained action script: tight budget, clear commercial math, straightforward upside.</p>
 
 <p>Seven scripts on a list of seventy-four where the case is there and the market is not making it.</p>
 
