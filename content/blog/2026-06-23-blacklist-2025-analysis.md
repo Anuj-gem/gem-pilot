@@ -194,36 +194,26 @@ draft: false
 
 <div class="bucket">
 <span class="bucket-label">Efficient play</span>
-<div class="bucket-title">Scripts where the math actually works — and the downside is more conservative than anyone is pricing in</div>
+<div class="bucket-title">Scripts people are passing on because they are reading for the wrong signals</div>
 
-<p>The clearest opportunity on the 2025 Black List is also the most routinely passed on. A cluster of scripts — concentrated in horror, with a meaningful presence in lean comedy — where the expected return approaches or clears theatrical break-even on its own, before a streaming deal, an awards run, or anything exceptional is required.</p>
+<p>The most consistent financial opportunity on the 2025 Black List is not the most prestigious one. It is a cluster of horror and comedy scripts that most development readers have already seen and moved past. The loglines are high-concept rather than awards-bait. The budgets look modest. Nothing about them signals the kind of project that drives a prestige development slate. That is exactly why the opportunity exists.</p>
 
 <div class="bucket-stats">
   <div class="bs-item">
-    <span class="bs-num">$18M</span>
-    <span class="bs-lbl">Median production budget (horror)</span>
+    <span class="bs-num">2x–3x+</span>
+    <span class="bs-lbl">Expected return range on production budget, before streaming</span>
   </div>
   <div class="bs-item">
-    <span class="bs-num">$34M</span>
-    <span class="bs-lbl">Median expected box office</span>
-  </div>
-  <div class="bs-item">
-    <span class="bs-num">~2x</span>
-    <span class="bs-lbl">Expected return at median</span>
-  </div>
-  <div class="bs-item">
-    <span class="bs-num">$114M</span>
-    <span class="bs-lbl">Median breakout ceiling</span>
+    <span class="bs-num">$100M+</span>
+    <span class="bs-lbl">Breakout ceiling reachable without an exceptional outcome</span>
   </div>
 </div>
 
-<p>Horror is the only genre on this list where the expected return approaches break-even before a single streaming dollar is counted. The top-performing script in this category projects a return above 3x on the expected case, with a ceiling that clears $100 million on a budget under $15 million. The comedy lane tells a similar story: twenty-two scripts, median expected return nearly matching median budget, several projecting 2x or better on the expected case before streaming enters.</p>
+<p>What we are finding in these scripts: they have a specific kind of clarity that is genuinely hard to write and consistently undervalued by readers looking for narrative complexity and thematic ambition. The concept communicates itself immediately. You can describe it in a sentence, trailer it in thirty seconds, clip a single scene and have it spread. That premise-level efficiency is not a sign of a simple script. It is a sign of a script that knows exactly what it is and who it is for. The audience is identifiable before production begins, which is a rarer condition than it sounds.</p>
 
-<p>What people are missing is not just the upside. It is how conservative the downside actually is. These scripts do not require anything exceptional to happen. They require competent execution of a specific, well-defined creative vision aimed at an audience that is identifiable before production begins. That is a fundamentally different risk profile from most of what gets greenlit.</p>
+<p>The second angle most people are not looking at: the production economics. Our assessment puts these scripts at certain budget levels. But in horror especially, and in lean comedy, modern production techniques allow these films to be made for substantially less than the numbers on the page suggest, without touching the elements that actually drive the financial outcome. The concept. The specific creative vision. The moments that travel. The scale of a production does not determine whether those things land. Shrink one of these budgets by a meaningful percentage and the math changes. The ceiling stays exactly the same.</p>
 
-<p>There is a further case that modern production techniques make even more compelling: many of these scripts could be made for substantially less than our projections. In horror especially, craft and specificity of vision matter more than production scale. Bring an $18 million horror production to $12 million and the expected-case math changes meaningfully. The ceiling stays exactly the same.</p>
-
-<p>What we are looking at in these scripts: premises that communicate themselves without explanation — concepts that translate immediately to a trailer, a clip, a moment shared on a phone. Genre executed with unexpected specificity rather than prestige posturing. Clear audience identity. Moments built for how attention actually travels in 2026. None of this appears in a coverage note. It requires reading the material at the level of someone who intends to make it.</p>
+<p>Nobody who has passed on these scripts thinks they are bad. They are on the Black List because the industry already agreed they are excellent. What is missing is the willingness to ask different questions: not "is this awards material?" but "does this concept travel, is this audience reachable, and can we make this for less than the first budget number suggests?"</p>
 
 <div class="proof-film">
   <img src="/blog/talk-to-me.jpg" alt="Talk to Me (2022) film poster" />
