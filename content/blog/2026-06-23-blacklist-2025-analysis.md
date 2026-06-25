@@ -4,7 +4,7 @@ slug: blacklist-2025-analysis
 date: "2026-06-23"
 summary: "The industry loves every script on this list. Most will never get produced. Not because they are bad. Because nobody built the financial case to produce them. We did."
 author: "GEM Studios"
-draft: false
+draft: true
 ---
 
 <style>
