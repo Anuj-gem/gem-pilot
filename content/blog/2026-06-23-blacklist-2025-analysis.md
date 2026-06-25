@@ -270,9 +270,9 @@ draft: false
 <span class="bucket-label">The ceiling bet</span>
 <div class="bucket-title">Bigger upfront investment, but with huge asymmetric upside</div>
 
-<p>The third category requires the most conviction and carries the most risk. Scripts with production budgets in the $35-45 million range, unconventional in format, scope, or subject matter, where the expected case is weak and the downside is real. Wrong execution at any level — director, cast, release strategy — and these do not work. That is an honest read of the risk.</p>
+<p>The third category is the least obvious and requires the most conviction. These are mid-budget scripts — typically $12-30 million — where the expected case is uncertain and the concept has mass-audience breakout potential that the expected case dramatically underestimates. Not prestige. Not the efficient play. The bet here is specifically on a concept that, if it connects, returns 5-10x the expected projection. The gap between likely and possible is the point.</p>
 
-<p>The other honest read: when these work, they reach ceilings that the efficient play cannot match in absolute dollars. A $12 million horror production returning 3x is a strong outcome. A $45 million production returning 5x is a different conversation — the kind of outcome that defines a company's year, funds a slate, and opens doors that smaller bets do not. The top ceiling on this list is $215 million, on a $45 million budget. Several more scripts in this category project ceilings above $125 million. These numbers are not accessible through a smaller, more conservative bet. The only path to them is through this kind of investment in this kind of material.</p>
+<p>The top scripts in this group project ceilings above $130 million on budgets under $20 million. One already got picked up — a thriller at $12 million with a ceiling above $135 million, acquired by Searchlight before most people had run the numbers. That is the kind of outcome this category produces when someone sees it early. The expected case does not tell you it is there. The concept does.</p>
 
 <div class="bucket-stats">
   <div class="bs-item">
@@ -291,14 +291,14 @@ draft: false
 
 <p>What separates a ceiling bet from just an expensive bet: there is something in the material that suggests it can reach audiences beyond its obvious constituency. The world is expansive enough. The premise is wide enough. The emotional stakes are legible to enough kinds of people that when it works, it works for many of them. That crossover quality is specific and identifiable in the material. It does not appear in every ambitious script. It appears in particular ones, and finding them requires reading for something that most coverage does not look for.</p>
 
-<p>A streaming pre-sale bounds the downside before principal photography. A pre-sale at the level of a $40 million production takes meaningful risk off the table. The ceiling is not bounded. The bet is asymmetric. Identifying which scripts actually carry the ceiling potential — rather than just the cost and ambition profile — is the work.</p>
+<p>A streaming pre-sale bounds the downside before principal photography. The ceiling is not bounded. The bet is asymmetric. Identifying which scripts actually carry the breakout potential — rather than just the cost and ambition profile — is the work.</p>
 
 <div class="proof-film">
-  <img src="/blog/eeaao.jpg" alt="Everything Everywhere All at Once film poster" />
+  <img src="/blog/a-quiet-place.jpg" alt="A Quiet Place film poster" />
   <div class="proof-film-body">
     <span class="proof-label">What this looks like when it gets made</span>
-    <div class="proof-title">Everything Everywhere All at Once (2022)</div>
-    <div class="proof-stats"><strong>$14.3M budget → $103M worldwide. 7 Academy Awards.</strong><br/>Unconventional in every way. A24 saw that the premise was wide enough to reach anyone. The ceiling was there the whole time — it just required a different read to see it.</div>
+    <div class="proof-title">A Quiet Place (2018)</div>
+    <div class="proof-stats"><strong>$17M budget → $340M worldwide box office</strong><br/>A high-concept premise nobody thought would scale. No prestige scaffolding, no awards strategy. The concept reached a mass audience because it was exactly right. That is the ceiling bet.</div>
   </div>
 </div>
 </div>
