@@ -13,7 +13,7 @@ export const BLOG_POSTS: BlogPost[] = [
     "slug": "blacklist-2025-analysis",
     "title": "There Is $3 Billion in Profit on the 2025 Black List. Here's Why Nobody Is Making It.",
     "date": "2026-06-23",
-    "summary": "We analyzed every script on the 2025 Black List the same way we approach anything we might produce. Most will never get made. Here is the business case the industry isn't making.",
+    "summary": "Scripts get on the Black List because the industry loves them. Most never get made anyway. Not because they are bad. Because nobody built the financial case. We built it.",
     "author": "GEM Studios",
     "og_image": null,
     "draft": false,
