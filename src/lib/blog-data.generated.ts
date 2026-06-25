@@ -11,9 +11,9 @@ import type { BlogPost } from './blog'
 export const BLOG_POSTS: BlogPost[] = [
   {
     "slug": "blacklist-2025-analysis",
-    "title": "There Is $3 Billion in Profit on the 2025 Black List. Here's Why Nobody Is Making It.",
+    "title": "The 2025 Black List Has $3 Billion in Profits Being Left on the Table.",
     "date": "2026-06-23",
-    "summary": "Scripts get on the Black List because the industry loves them. Most never get made anyway. Not because they are bad. Because nobody built the financial case. We built it.",
+    "summary": "The industry loves every script on this list. Most will never get produced. Not because they are bad. Because nobody built the financial case to produce them. We did.",
     "author": "GEM Studios",
     "og_image": null,
     "draft": false,
