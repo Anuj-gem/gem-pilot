@@ -11,7 +11,6 @@ import { ArrowLeft } from 'lucide-react'
 import { getAllPostSlugs, getPost } from '@/lib/blog'
 
 const SITE_URL = 'https://www.gem.studio'
-const DEFAULT_OG = '/og/blog-default.png'
 
 // Read on each request — same reasoning as /blog page (build-time
 // content/ access on Vercel was returning empty, causing 404s for new
@@ -38,7 +37,10 @@ export async function generateMetadata({
   const post = await getPost(slug)
   if (!post) return { title: 'Post not found — GEM' }
   const url = `${SITE_URL}/blog/${post.slug}`
-  const og = post.og_image || DEFAULT_OG
+  // Falls back to the per-post dynamic OG image route (opengraph-image.tsx)
+  // rather than a static default file, since /og/blog-default.png doesn't
+  // exist in public/. Anuj 2026-07-06.
+  const og = post.og_image || `/blog/${post.slug}/opengraph-image`
   return {
     title: `${post.title} — GEM`,
     description: post.summary,
