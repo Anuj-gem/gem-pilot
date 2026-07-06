@@ -9,33 +9,35 @@ draft: false
 
 The 2025 Black List, re-ranked by GEM's projections of worldwide theatrical box office, from the script alone. Our order departs substantially from the Black List's own, and that is the point of the exercise. We've limited this page to our top 25: some of our projections are not flattering, and publishing a low number next to a writer's name serves no one. If you want the full list, reach out and we'll share it case by case: **anuj@gem.studio**.
 
-| # | Script | Writer(s) | Conservative projection | Optimal case | Producer | Studio |
-|---|---|---|---|---|---|---|
-| 1 | **RIDING HURT** | Buck Bloomingdale | $66M | $159M | Range | Teton Ridge |
-| 2 | **BLACKOUT** | Kevin Yang | $58M | $155M | open | |
-| 3 | **PLACE TO BE** | Aimee Pham & Kai Sampadian | $57M | $154M | open | |
-| 4 | **GEEZERS** | Richard Martin | $56M | $146M | open | |
-| 5 | **THE MILKMAN** | Lucas Kavner & Dylan Dawson | $56M | $214M | Davis Entertainment | |
-| 6 | **THE PIRATE** | Will Dunn | $52M | $176M | 87North / On The Roam | Amazon MGM |
-| 7 | **GUYS WITH NO FRIENDS** | Deb Kaplan & Harry Elfont | $50M | $148M | Safehouse | Paramount |
-| 8 | **PINFALL** | Sean O'Reilly | $48M | $149M | Temple Hill | |
-| 9 | **RENEGOTIATE** | Mark Townend | $48M | $115M | CineMachine / Range | Lionsgate |
-| 10 | **DON'T DO 72** | Kryzz Gautier | $47M | $99M | open | |
-| 11 | **LORDS OF THE DANCE** | Greg Wayne | $47M | $198M | Mutiny | |
-| 12 | **FROSTBITE** | Michael Jones | $46M | $199M | open | |
-| 13 | **REVENGE BODY** | Devon Kerr | $45M | $202M | open | |
-| 14 | **DO IT YOURSELF** | Liv Auerbach & Daisygreen Stenhouse | $45M | $118M | PictureStart | |
-| 15 | **CRUSH** | John Fischer | $44M | $117M | Temple Hill / 12:01 | 20th Century |
-| 16 | **DEAD MAN'S ISLAND** | Jordan Santacana | $44M | $169M | Elliott Pictures | |
-| 17 | **THE SURVIVAL LIST** | Tom Melia | $43M | $120M | Marc Platt | Lionsgate |
-| 18 | **ALTS** | Seth Worley | $42M | $140M | open | |
-| 19 | **ET AL.** | Paul Levitt | $42M | $166M | Mortal Media | |
-| 20 | **THE LIGHT FROM THE ARCADE** | Derek Pastuszek | $40M | $140M | open | |
-| 21 | **LEVERAGE** | Joe Ferran | $40M | $146M | Imagine / Empirical | |
-| 22 | **ALPHA** | Halil Ozsan | $39M | $155M | Aperture / Safehouse | Netflix |
-| 23 | **BUILDING BOWIE** | Alan Fox | $38M | $136M | A/Vantage Pictures | |
-| 24 | **UNTOUCHABLE** | Julian Silver & Reiss Clauson-Wolf | $37M | $129M | Zach Cregger | |
-| 25 | **INFESTATION** | Chris Freyer | $37M | $109M | open | |
+| GEM rank | Black List rank | Script | Writer(s) | Conservative projection | Optimal case | Producer | Studio |
+|---|---|---|---|---|---|---|---|
+| 1 | T-13 | **RIDING HURT** | Buck Bloomingdale | $66M | $159M | Range | Teton Ridge |
+| 2 | T-18 | **BLACKOUT** | Kevin Yang | $58M | $155M | open | |
+| 3 | T-63 | **PLACE TO BE** | Aimee Pham & Kai Sampadian | $57M | $154M | open | |
+| 4 | T-27 | **GEEZERS** | Richard Martin | $56M | $146M | open | |
+| 5 | T-27 | **THE MILKMAN** | Lucas Kavner & Dylan Dawson | $56M | $214M | Davis Entertainment | |
+| 6 | T-47 | **THE PIRATE** | Will Dunn | $52M | $176M | 87North / On The Roam | Amazon MGM |
+| 7 | T-53 | **GUYS WITH NO FRIENDS** | Deb Kaplan & Harry Elfont | $50M | $148M | Safehouse | Paramount |
+| 8 | T-27 | **PINFALL** | Sean O'Reilly | $48M | $149M | Temple Hill | |
+| 9 | T-47 | **RENEGOTIATE** | Mark Townend | $48M | $115M | CineMachine / Range | Lionsgate |
+| 10 | T-27 | **DON'T DO 72** | Kryzz Gautier | $47M | $99M | open | |
+| 11 | T-42 | **LORDS OF THE DANCE** | Greg Wayne | $47M | $198M | Mutiny | |
+| 12 | T-20 | **FROSTBITE** | Michael Jones | $46M | $199M | open | |
+| 13 | T-27 | **REVENGE BODY** | Devon Kerr | $45M | $202M | open | |
+| 14 | T-13 | **DO IT YOURSELF** | Liv Auerbach & Daisygreen Stenhouse | $45M | $118M | PictureStart | |
+| 15 | T-53 | **CRUSH** | John Fischer | $44M | $117M | Temple Hill / 12:01 | 20th Century |
+| 16 | T-63 | **DEAD MAN'S ISLAND** | Jordan Santacana | $44M | $169M | Elliott Pictures | |
+| 17 | T-63 | **THE SURVIVAL LIST** | Tom Melia | $43M | $120M | Marc Platt | Lionsgate |
+| 18 | T-53 | **ALTS** | Seth Worley | $42M | $140M | open | |
+| 19 | 12 | **ET AL.** | Paul Levitt | $42M | $166M | Mortal Media | |
+| 20 | T-53 | **THE LIGHT FROM THE ARCADE** | Derek Pastuszek | $40M | $140M | open | |
+| 21 | T-7 | **LEVERAGE** | Joe Ferran | $40M | $146M | Imagine / Empirical | |
+| 22 | T-10 | **ALPHA** | Halil Ozsan | $39M | $155M | Aperture / Safehouse | Netflix |
+| 23 | T-7 | **BUILDING BOWIE** | Alan Fox | $38M | $136M | A/Vantage Pictures | |
+| 24 | 4 | **UNTOUCHABLE** | Julian Silver & Reiss Clauson-Wolf | $37M | $129M | Zach Cregger | |
+| 25 | T-36 | **INFESTATION** | Chris Freyer | $37M | $109M | open | |
+
+*Black List rank is this script's position on the official 2025 Black List, ranked by votes received. "T-" marks a tie: several scripts received the same number of votes, so they share a rank.*
 
 ### Where our ranking departs from the Black List's
 
