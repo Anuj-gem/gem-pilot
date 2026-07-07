@@ -7,13 +7,17 @@ author: "Anuj Kommareddy"
 draft: false
 ---
 
-The 2025 Black List, re-ranked by GEM's projections of worldwide theatrical box office, from the script alone. Our order departs substantially from the Black List's own, and that is the point of the exercise. We've limited this page to our top 25: some of our projections are not flattering, and publishing a low number next to a writer's name serves no one. If you want the full list, reach out and we'll share it case by case: **anuj@gem.studio**.
+The Black List has a track record few other institutions in the industry can match: scripts that made the list have gone on to become produced films worth more than $30 billion at the worldwide box office, combined. Our own projections land in the same place. On average, we project that a script on this year's list is a considerably better commercial bet than a typical theatrical release, which is really just our numbers catching up to what the list has already proven over twenty years.
 
-To build these projections, we measure each script against more than 14,000 past English-language films, modeling the narrative itself alongside dozens of other factors and tying the patterns we find to how audiences have actually responded at the box office. The result: the typical script on this year's Black List projects meaningfully higher box office than the typical film.
+That is a genuine hat tip to the readers and executives who vote on the list every year. Their taste is good. But taste alone doesn't get a script into production, and year after year only a small share of Black List scripts actually get made. Usually that isn't a quality problem. A script can be excellent and still not have an obvious commercial path, and that distinction matters more, not less, once you're looking at a set of scripts that already clear the bar for good writing. When everything in front of you is strong, the harder and more useful question is which of these has an audience that will actually turn out.
+
+That's the question we ranked on. To build these projections, we measure each script against more than 14,000 past English-language films, modeling the narrative itself alongside dozens of other factors and tying the patterns we find to how audiences have actually responded at the box office.
 
 ![The typical Black List script projects about 2.4 times the box office of the typical film](/blog/blacklist-2025-vs-corpus-v2.png)
 
 Every gray dot is a past film; the purple dots are this year's Black List scripts, plotted on the same scale. The two lines mark where each group's typical, or median, script lands: $28.8M for the Black List versus $11.8M for past films overall.
+
+Rank the list by projected commercial performance instead of by votes, and you get an order substantially different from the Black List's own. Below is our top 25. We ranked the full list, not just these 25, but we've limited this page to the top of it: some of our projections aren't flattering, and publishing a low number next to a writer's name serves no one. If you want the full list, reach out and we'll share it case by case: **anuj@gem.studio**.
 
 | GEM rank | Black List rank | Script | Writer(s) | Conservative projection | Optimal case | Producer | Studio |
 |---|---|---|---|---|---|---|---|
@@ -56,7 +60,5 @@ We score every script against thousands of factors, and a good part of that work
 Just a couple of the distinctions worth knowing about. If you'd like to hear more about how we build these projections, or want us to take a look at your own script, get in touch.
 
 ---
-
-This is a small slice of the board. We ranked the full Black List, not just these 25, but we didn't want to publish the whole thing here. Some of these projections aren't flattering, and a low number next to a writer's name doesn't help anyone. Consider this illustrative: a look at the projects near the top we think are especially strong, and a bit of exposure for the writers and producers behind them.
 
 Questions or comments, reach us at **info@gem.studio**.
