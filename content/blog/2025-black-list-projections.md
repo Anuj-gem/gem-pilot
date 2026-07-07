@@ -39,18 +39,18 @@ The 2025 Black List, re-ranked by GEM's projections of worldwide theatrical box 
 
 *Black List rank is this script's position on the official 2025 Black List, ranked by votes received. "T-" marks a tie: several scripts received the same number of votes, so they share a rank.*
 
-### Where our ranking departs from the Black List's
+### A few highlights from our analysis
 
-Our top fifteen and the Black List's share only two titles. Three measurable differences carry most of the story:
+We score every script against thousands of factors, and a good part of that work is tracing how patterns in the writing line up with patterns in how audiences actually respond. The model itself stays internal, but we're glad to go deeper with anyone who wants it, and we review scripts directly for people who ask. A couple of findings from this list stood out enough to share on their own, out of many we could point to. They help explain, at least in part, why our ranking looks so different from the Black List's.
 
-**We heavily weight potentially viral moments.** Scenes strong enough that audiences will clip them, quote them, and share them. This has always mattered, but since 2000 the advantage has exploded: scripts rich in these moments now earn about 34 times what scripts without them earn, up from about 4 times before 2000. The penalty runs the other way too — a film without clippable moments performs far worse today than it did 25 years ago, because on social media the films that have them drown out the films that don't. Three of the strongest scripts on this list by this measure — CRUSH, DON'T DO 72, and REVENGE BODY — sit near the bottom of the Black List's ranking.
+**Shareable moments carry far more weight than they used to.** Scenes strong enough that an audience clips, quotes, or shares them were once a minor edge. Since 2000 it has become a major one: scripts rich in these moments now earn about 34 times what scripts without them earn, up from about 4 times before 2000. CRUSH, DON'T DO 72, and REVENGE BODY score strongest on this measure of anything on the list, and all three sit near the bottom of the Black List's own ranking.
 
-**We reward unique concepts, told simply.** The Black List rewards original premises too. The difference is that it also rewards strange, complex storytelling structure on top of the unique concept. We do not. We reward the unique concept when it is simple and clearly told, because historically those are the films that perform — in our research, films built on original concepts earn about five times more when the story is easy to follow than when the structure works against the audience.
+**Original ideas sell tickets. Unconventional storytelling mostly doesn't.** The Black List tends to reward both at once, an unusual premise paired with unconventional structure. We separate them. Films built on a genuinely original concept earn about five times more, in our research, when the story is told simply than when the structure works against the audience.
 
-**We avoid scripts with an overpowering social message.** The Black List's ranking heavily weighs a strong central social message. We do not find that to be a commercially viable factor. What we reward is cultural specificity and authenticity — PLACE TO BE is the best example on this list: deeply specific, no message anywhere in it, third on our board. When a social message overpowers the underlying story, it drowns out the value of that authenticity, so we avoid projects where the message leads.
+Just a couple of the distinctions worth knowing about. If you'd like to hear more about how we build these projections, or want us to take a look at your own script, get in touch.
 
 ---
 
-This is a small slice of the board. We ranked the full Black List, not just these 25, but we didn't want to publish the whole thing here — some of these projections aren't flattering, and a low number next to a writer's name doesn't help anyone. Consider this illustrative: a look at the projects near the top we think are especially strong, and a bit of exposure for the writers and producers behind them.
+This is a small slice of the board. We ranked the full Black List, not just these 25, but we didn't want to publish the whole thing here. Some of these projections aren't flattering, and a low number next to a writer's name doesn't help anyone. Consider this illustrative: a look at the projects near the top we think are especially strong, and a bit of exposure for the writers and producers behind them.
 
 Questions or comments, reach us at **info@gem.studio**.
