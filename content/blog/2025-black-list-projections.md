@@ -9,6 +9,12 @@ draft: false
 
 The 2025 Black List, re-ranked by GEM's projections of worldwide theatrical box office, from the script alone. Our order departs substantially from the Black List's own, and that is the point of the exercise. We've limited this page to our top 25: some of our projections are not flattering, and publishing a low number next to a writer's name serves no one. If you want the full list, reach out and we'll share it case by case: **anuj@gem.studio**.
 
+To build these projections, we measure each script against more than 14,000 past English-language films, modeling the narrative itself alongside dozens of other factors and tying the patterns we find to how audiences have actually responded at the box office. The result: the typical script on this year's Black List projects meaningfully higher box office than the typical film.
+
+![The typical Black List script projects about 2.4 times the box office of the typical film](/blog/blacklist-2025-vs-corpus-v2.png)
+
+Every gray dot is a past film; the purple dots are this year's Black List scripts, plotted on the same scale. The two lines mark where each group's typical, or median, script lands: $28.8M for the Black List versus $11.8M for past films overall.
+
 | GEM rank | Black List rank | Script | Writer(s) | Conservative projection | Optimal case | Producer | Studio |
 |---|---|---|---|---|---|---|---|
 | 1 | T-13 | **RIDING HURT** | Buck Bloomingdale | $66M | $159M | Range | Teton Ridge |
