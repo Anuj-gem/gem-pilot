@@ -364,40 +364,32 @@
       display: grid; grid-template-columns: 1.05fr 0.95fr;
       gap: 64px; align-items: center;
     }
-    .posters { display: flex; gap: 18px; justify-content: center; }
-    .poster {
+    .posters { display: flex; gap: 22px; justify-content: center; align-items: flex-start; }
+    .poster-fig {
       width: min(200px, 44%);
-      aspect-ratio: 2/3;
-      border-radius: 10px;
-      background: linear-gradient(165deg, #251C33 0%, #14101B 70%);
-      border: 1px solid rgba(22,20,27,0.35);
-      box-shadow: 0 28px 56px -28px rgba(22,20,27,0.5);
-      color: var(--on-screen);
-      display: flex; flex-direction: column;
-      justify-content: space-between;
-      padding: 20px 18px;
+      display: flex; flex-direction: column; gap: 12px;
+      margin: 0;
       transform: rotate(-2deg);
     }
-    .poster:last-child { transform: rotate(2deg) translateY(14px); }
-    .poster-year {
-      font-size: 9px; font-weight: 700; letter-spacing: 0.24em;
-      text-transform: uppercase; color: var(--accent-soft);
+    .poster-fig:last-child { transform: rotate(2deg) translateY(14px); }
+    .poster {
+      aspect-ratio: 2/3;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(22,20,27,0.35);
+      box-shadow: 0 28px 56px -28px rgba(22,20,27,0.5);
+      background: #14101B;
     }
-    .poster-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 2.6vw, 30px);
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: #fff; line-height: 1.1; text-align: center;
+    .poster img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
     }
-    .poster-facts {
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    .poster-facts span {
-      font-size: 10px; letter-spacing: 0.05em;
-      color: var(--on-screen-muted); line-height: 1.45;
+    .poster-fig figcaption {
+      font-size: 11px; letter-spacing: 0.03em;
+      color: var(--muted); line-height: 1.55;
       text-align: center;
     }
-    .poster-facts span b { color: #E9D8FD; font-weight: 600; }
+    .poster-fig figcaption b { color: var(--ink); font-weight: 600; }
     .posters-note {
       margin-top: 26px; font-size: 12px; color: var(--muted);
       font-style: italic; text-align: center;
@@ -510,7 +502,7 @@
       .hunt-tile p { max-width: 100%; }
 
       .stakes-grid { grid-template-columns: 1fr; gap: 48px; }
-      .poster { width: min(180px, 46%); }
+      .poster-fig { width: min(180px, 46%); }
 
       .teaser { padding: 56px 24px 52px; }
       .door { padding: 64px 20px 56px; }
@@ -691,22 +683,14 @@
     </div>
     <div class="reveal">
       <div class="posters">
-        <div class="poster">
-          <span class="poster-year">2026</span>
-          <span class="poster-title">Obsession</span>
-          <div class="poster-facts">
-            <span>Written &amp; directed by a YouTube filmmaker</span>
-            <span>Made for <b>$750K</b> · over <b>$400M</b> worldwide</span>
-          </div>
-        </div>
-        <div class="poster">
-          <span class="poster-year">2026</span>
-          <span class="poster-title">Backrooms</span>
-          <div class="poster-facts">
-            <span>From a 20-year-old YouTube creator</span>
-            <span><b>A24's biggest film ever</b> · <b>$350M+</b> worldwide</span>
-          </div>
-        </div>
+        <figure class="poster-fig">
+          <div class="poster"><img src="screenshots/poster-obsession.jpg" alt="Obsession (2026) theatrical poster"></div>
+          <figcaption>Written &amp; directed by a YouTube filmmaker<br>Made for <b>$750K</b> · over <b>$400M</b> worldwide</figcaption>
+        </figure>
+        <figure class="poster-fig">
+          <div class="poster"><img src="screenshots/poster-backrooms.jpg" alt="Backrooms (2026) theatrical poster"></div>
+          <figcaption>From a 20-year-old YouTube creator<br><b>A24's biggest film ever</b> · <b>$350M+</b> worldwide</figcaption>
+        </figure>
       </div>
       <p class="posters-note">Not our films — that's the point. Nobody inside the system made these.</p>
     </div>
@@ -720,9 +704,9 @@
   <div class="section-marker reveal">The goal</div>
   <div class="teaser reveal">
     <p class="teaser-k">Gem Studios presents</p>
-    <p class="teaser-h">A film for the audience everyone else <em>gave up on.</em></p>
+    <p class="teaser-h">Our first film is out there. <em>We're going to find it.</em></p>
     <p class="teaser-sub">
-      Our goal is bold and simple: develop a feature film and release it in theaters worldwide. <b>We haven't found it yet.</b> We're deep in the search — reading everything, everywhere, looking where no one else is.
+      Our goal is bold and simple: develop a feature film and release it in theaters worldwide. We're deep in the search — reading everything, everywhere, looking where no one else is.
     </p>
     <span class="teaser-stamp">First project · announced late 2026</span>
   </div>
