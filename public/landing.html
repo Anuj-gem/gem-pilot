@@ -773,18 +773,21 @@
         const r = 0.5 + rand() * 0.5;
         ctx.fillRect(x, y, r, r);
       }
-      // The overlooked — lit purple
+      // The overlooked — tiny gem diamonds, same mark as the logo
       const litRand = mulberry32(21);
       for (let i = 0; i < 26; i++) {
         const x = litRand() * w, y = litRand() * h;
-        const r = 1.4 + litRand() * 1.2;
+        const s = 2.2 + litRand() * 2;      // diamond side ≈ same visual size as the old dots
         ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
         ctx.shadowColor = 'rgba(167,139,250,0.9)';
-        ctx.shadowBlur = 9;
-        ctx.fillStyle = '#A78BFA';
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.shadowBlur = 10;
+        const g = ctx.createLinearGradient(-s / 2, -s / 2, s / 2, s / 2);
+        g.addColorStop(0, '#A78BFA');
+        g.addColorStop(1, '#7C3AED');
+        ctx.fillStyle = g;
+        ctx.fillRect(-s / 2, -s / 2, s, s);
         ctx.restore();
       }
     }
