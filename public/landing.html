@@ -23,7 +23,6 @@
       --screen:#14101B;           /* dark panels = theater screens */
       --on-screen:#F3EFE8;
       --on-screen-muted:rgba(243,239,232,0.62);
-      --stamp:#A83A2E;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -148,112 +147,43 @@
     }
     .btn-text:hover { color: var(--ink); }
 
-    /* ── The problem ── */
-    .problem-grid {
-      display: grid; grid-template-columns: 1.05fr 0.95fr;
-      gap: 64px; align-items: center;
-      max-width: 1080px;
-    }
-    .script-stage { display: flex; justify-content: center; }
-    .script-card {
-      background: #FDFCF9;
-      border: 1px solid var(--hair-strong);
-      border-radius: 4px;
-      width: min(330px, 100%);
-      aspect-ratio: 8.5/11;
-      position: relative;
-      box-shadow: 0 24px 48px -24px rgba(22,20,27,0.28);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 40px 28px;
-      transform: rotate(-1.5deg);
-    }
-    .script-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--ink);
-      text-align: center; margin-bottom: 14px;
-    }
-    .script-by {
-      font-size: 10.5px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--muted);
-      text-align: center; line-height: 2;
-    }
-    .stamp {
-      position: absolute;
-      border: 3px solid var(--stamp);
-      color: var(--stamp);
-      font-weight: 600; letter-spacing: 0.22em;
-      text-transform: uppercase;
-      padding: 10px 18px;
-      border-radius: 3px;
-      background: rgba(253,252,249,0.6);
-    }
-    .stamp-1 {
-      font-size: 15px;
-      top: 24%; left: 50%;
-      transform: translateX(-50%) rotate(-9deg);
-      opacity: 0.92;
-    }
-    .stamp-2 {
-      font-size: 9.5px;
-      bottom: 17%; left: 50%;
-      transform: translateX(-50%) rotate(5deg);
-      opacity: 0.65;
-      border-width: 2px; padding: 7px 12px;
-    }
-
-    /* ── Dark screen panels ── */
+    /* ── Who we are (dark screen panel + starfield) ── */
     .screen-panel {
       background: var(--screen);
       color: var(--on-screen);
       border-radius: 18px;
-      padding: 56px 56px 52px;
+      padding: 60px 56px;
       position: relative;
       overflow: hidden;
     }
-    .screen-panel .panel-big {
+    #field {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; display: block;
+    }
+    .who-cols {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px;
+    }
+    .who-col h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(44px, 6vw, 84px);
-      font-weight: 300; line-height: 0.98;
-      color: #fff; letter-spacing: -0.02em;
-      margin-bottom: 18px;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 400; line-height: 1.15;
+      color: #fff; margin-bottom: 16px;
+      text-wrap: balance;
     }
-    .screen-panel .panel-lede {
-      font-size: 16.5px; color: var(--on-screen);
-      max-width: 640px; line-height: 1.7; font-weight: 300;
-    }
-
-    /* Origin */
-    .lessons {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: rgba(255,255,255,0.12);
-      border-radius: 12px; overflow: hidden;
-      margin-top: 40px;
-    }
-    .lesson { background: var(--screen); padding: 26px 24px 28px; }
-    .lesson-n {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--accent-soft);
-      margin-bottom: 12px;
-    }
-    .lesson-t {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; color: #fff; margin-bottom: 9px; line-height: 1.15;
-    }
-    .lesson p { font-size: 14px; color: var(--on-screen-muted); line-height: 1.65; }
-    .origin-close {
-      margin-top: 36px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: clamp(20px, 2.6vw, 26px);
-      color: var(--accent-soft);
+    .who-col h3 em { font-style: italic; color: var(--accent-soft); }
+    .who-col p {
+      font-size: 15.5px; color: var(--on-screen);
+      line-height: 1.75; font-weight: 300;
+      max-width: 46ch;
     }
     .origin-clips {
-      margin-top: 36px;
-      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+      margin-top: 28px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     }
     .clip-thumb {
-      width: 92px; aspect-ratio: 4/5;
+      width: 82px; aspect-ratio: 4/5;
       border-radius: 8px; overflow: hidden;
       border: 1px solid rgba(255,255,255,0.16);
       position: relative; flex: none;
@@ -265,56 +195,17 @@
       color: #E9D8FD; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
       padding: 14px 6px 5px; text-align: center;
     }
-    .clips-meta { display: flex; flex-direction: column; gap: 8px; }
-    .clips-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--accent-soft);
-    }
     .tiktok-link {
       font-size: 11px; letter-spacing: 0.1em;
       color: var(--on-screen-muted); text-transform: uppercase;
       text-decoration: none;
       border-bottom: 1px solid rgba(255,255,255,0.25);
-      padding-bottom: 2px; align-self: flex-start;
+      padding-bottom: 2px;
       transition: color 0.2s;
     }
     .tiktok-link:hover { color: #fff; }
 
-    /* Engine / starfield */
-    .engine-panel { padding: 64px 56px 56px; }
-    #field {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; display: block;
-    }
-    .engine-content { position: relative; z-index: 1; max-width: 660px; }
-    .engine-stat {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(64px, 9vw, 128px);
-      font-weight: 300; line-height: 0.9;
-      color: #fff; letter-spacing: -0.02em;
-    }
-    .engine-stat-cap {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--accent-soft);
-      margin: 18px 0 26px;
-    }
-    .engine-copy {
-      font-size: 16px; color: var(--on-screen);
-      line-height: 1.75; font-weight: 300;
-      margin-bottom: 22px;
-    }
-    .engine-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 26px;
-      color: var(--accent-soft);
-    }
-    .engine-namesake {
-      margin-top: 12px;
-      font-size: 13.5px; color: var(--on-screen-muted);
-      line-height: 1.7; max-width: 54ch;
-    }
-
-    /* ── The hunt ── */
+    /* ── How we work ── */
     .hunt-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 16px; margin-top: 8px;
@@ -387,12 +278,6 @@
       margin-top: 26px; font-size: 12px; color: var(--muted);
       font-style: italic; text-align: center;
     }
-    .stakes-close {
-      margin-top: 24px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: clamp(20px, 2.4vw, 25px);
-      color: var(--accent-deep);
-    }
 
     /* ── The goal (teaser one-sheet) ── */
     .teaser {
@@ -461,6 +346,12 @@
     .door-partner b { color: var(--ink); font-weight: 600; }
     .door-partner a { color: var(--accent-deep); text-decoration: none; }
     .door-partner a:hover { text-decoration: underline; }
+    .door-people {
+      margin: 16px auto 0;
+      font-size: 13.5px; color: var(--muted); max-width: 560px; line-height: 1.65;
+    }
+    .door-people a { color: var(--accent-deep); text-decoration: none; }
+    .door-people a:hover { text-decoration: underline; }
 
     /* ── Footer ── */
     footer {
@@ -484,12 +375,9 @@
       .hero-sub { font-size: 15.5px; }
       .hero-actions { flex-direction: column; gap: 18px; }
 
-      .problem-grid { grid-template-columns: 1fr; gap: 44px; }
-      .script-stage { order: 2; }
-
-      .screen-panel { padding: 40px 24px 40px; border-radius: 14px; }
-      .lessons { grid-template-columns: 1fr; }
-      .engine-panel { padding: 48px 24px 44px; }
+      .screen-panel { padding: 40px 24px; border-radius: 14px; }
+      .who-cols { grid-template-columns: 1fr; gap: 44px; }
+      .who-col p { max-width: 100%; }
 
       .hunt-grid { grid-template-columns: 1fr; }
       .hunt-tile p { max-width: 100%; }
@@ -513,8 +401,8 @@
     <span class="logo-text">GEM Studios</span>
   </div>
   <div class="nav-links">
-    <a href="#story">Our story</a>
-    <a href="#engine">The engine</a>
+    <a href="#who">Who we are</a>
+    <a href="#how">How we work</a>
     <a href="#goal">The goal</a>
     <a href="/blog">Blog</a>
     <a href="/pitch" class="nav-cta">Bring us a project</a>
@@ -525,105 +413,47 @@
 <section class="hero">
   <p class="hero-tag reveal">A new kind of movie studio</p>
   <h1 class="hero-headline reveal">
-    We find the talent that's<br>
-    <em>almost impossible to find.</em>
+    We make the films<br>
+    <em>others won't.</em>
   </h1>
   <p class="hero-sub reveal">GEM is a studio on a mission: find, develop, and finance the filmmakers the industry overlooks — and take their work to theaters worldwide.</p>
   <div class="hero-actions reveal">
     <a href="/pitch" class="btn-primary">Bring us a project</a>
-    <a href="#story" class="btn-text">How we do it ↓</a>
+    <a href="#who" class="btn-text">Who we are ↓</a>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- The problem -->
-<section id="problem">
-  <div class="section-marker reveal">The problem</div>
-  <div class="problem-grid">
-    <div class="reveal">
-      <h2 class="sec-h">The hardest bet in film is <em>an unknown.</em></h2>
-      <p class="sec-sub">
-        It's genuinely hard. A script alone tells you very little about the film it could become. Getting anything made is a miracle of assembly, and backing an unproven writer is the riskiest bet in the business. Nobody's doing their job wrong — there's just never been a good way to judge the opportunity sitting on the page.
-      </p>
-      <p class="sec-sub" style="margin-top:16px;">
-        We built one. That's the whole company: give overlooked talent a real shot, and give the industry a new way to see them.
-      </p>
-    </div>
-    <div class="script-stage reveal">
-      <div class="script-card">
-        <div class="script-title">Untitled<br>Screenplay</div>
-        <div class="script-by">Written by<br>A Brilliant Unknown</div>
-        <div class="stamp stamp-1">Too Risky</div>
-        <div class="stamp stamp-2">No Name Attached</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- Where we come from -->
-<section id="story">
-  <div class="section-marker reveal">Where we come from</div>
+<!-- Who we are -->
+<section id="who">
+  <div class="section-marker reveal">Who we are</div>
   <div class="screen-panel reveal">
-    <div class="panel-big">One billion views.</div>
-    <p class="panel-lede">We built one of the most viral brands in the world — over a billion views, making AI content for social media. It taught us three things:</p>
-    <div class="lessons">
-      <div class="lesson">
-        <div class="lesson-n">01</div>
-        <div class="lesson-t">We're outsiders too.</div>
-        <p>Even with a billion views behind us, Hollywood was hard to engage. We know exactly what it's like to be talented and unread.</p>
-      </div>
-      <div class="lesson">
-        <div class="lesson-n">02</div>
-        <div class="lesson-t">The talent is everywhere.</div>
-        <p>There's immense talent out there that can't break through — on forums, on YouTube, in inboxes that never get opened.</p>
-      </div>
-      <div class="lesson">
-        <div class="lesson-n">03</div>
-        <div class="lesson-t">We know what connects.</div>
-        <p>What goes viral, what a modern audience actually shows up for, and how to make things that reach them.</p>
-      </div>
-    </div>
-    <div class="origin-clips">
-      <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
-      <div class="clip-thumb"><img src="screenshots/clip-three.jpg" alt="Viral clip"></div>
-      <div class="clip-thumb"><img src="screenshots/clip-lawyer.jpg" alt="Viral clip"></div>
-      <div class="clips-meta">
-        <span class="clips-label">◆ From our channels</span>
-        <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
-      </div>
-    </div>
-    <p class="origin-close">Now we're bringing everything we learned to feature films.</p>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- The engine -->
-<section id="engine">
-  <div class="section-marker reveal">The engine</div>
-  <h2 class="sec-h reveal">Built on the entire history of <em>film.</em></h2>
-  <div class="screen-panel engine-panel reveal" style="margin-top:28px;">
     <canvas id="field" aria-hidden="true"></canvas>
-    <div class="engine-content">
-      <div class="engine-stat">13,000+</div>
-      <div class="engine-stat-cap">Films studied — every era, every genre, every hit, every flop</div>
-      <p class="engine-copy">
-        The largest body of research ever assembled on feature films. On top of it, the most sophisticated creative development technology in the industry — built to spot hidden gems: original ideas and incredible talent that can entertain a theatrical audience.
-      </p>
-      <p class="engine-name">We call it Selznick.</p>
-      <p class="engine-namesake">After David O. Selznick — the producer who saw what everyone else missed, brought Hitchcock to America, and made <em>Gone with the Wind</em>. It hunts for exactly what he hunted for: hidden gems.</p>
+    <div class="who-cols">
+      <div class="who-col">
+        <h3>One of the most viral channels <em>in the world.</em></h3>
+        <p>Over a billion views on social media — built by backing creators with wild imaginations that no one else was willing to take seriously. Now we're helping these kinds of creators make films for the big screen.</p>
+        <div class="origin-clips">
+          <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
+          <div class="clip-thumb"><img src="screenshots/clip-three.jpg" alt="Viral clip"></div>
+          <div class="clip-thumb"><img src="screenshots/clip-lawyer.jpg" alt="Viral clip"></div>
+          <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
+        </div>
+      </div>
+      <div class="who-col">
+        <h3>One of the largest research libraries <em>on film.</em></h3>
+        <p>13,000+ films studied — every era, every genre, every hit, every flop — with world-class creative development technology built on top of it. It's how we judge what we back.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- How we find them -->
+<!-- How we work -->
 <section id="how">
-  <div class="section-marker reveal">How we find them</div>
+  <div class="section-marker reveal">How we work</div>
   <h2 class="sec-h reveal">We don't wait for talent to <em>find us.</em></h2>
   <div class="hunt-grid" style="margin-top:36px;">
     <div class="hunt-tile reveal">
@@ -665,14 +495,10 @@
   <div class="section-marker reveal">Why now</div>
   <div class="stakes-grid">
     <div class="reveal">
-      <h2 class="sec-h">Audiences are craving the theater. <em>The system stopped delivering.</em></h2>
+      <h2 class="sec-h">Audiences show up for <em>new voices.</em></h2>
       <p class="sec-sub">
-        Two of 2026's biggest theatrical events were made by internet-born filmmakers. A YouTuber's $750,000 horror film passed $400 million worldwide. A 20-year-old creator's web series became A24's biggest movie ever.
+        Two of 2026's biggest theatrical hits came from internet-born filmmakers — a $750,000 film that passed $400 million worldwide, and a web series that became A24's biggest movie ever. That's the audience we're building for.
       </p>
-      <p class="sec-sub" style="margin-top:16px;">
-        Modern audiences show up when something actually speaks to them. The traditional system didn't find those filmmakers — and it isn't built to find the next ones.
-      </p>
-      <p class="stakes-close">We are.</p>
     </div>
     <div class="reveal">
       <div class="posters">
@@ -685,7 +511,7 @@
           <figcaption>From a 20-year-old YouTube creator<br><b>A24's biggest film ever</b> · <b>$350M+</b> worldwide</figcaption>
         </figure>
       </div>
-      <p class="posters-note">Not our films — that's the point. Nobody inside the system made these.</p>
+      <p class="posters-note">Not our films — proof the audience is there.</p>
     </div>
   </div>
 </section>
@@ -721,6 +547,7 @@
   </div>
   <p class="door-note reveal">Or reach us directly at <a href="mailto:info@gem.studio">info@gem.studio</a></p>
   <p class="door-partner reveal"><b>Studio or production company</b> with something stuck in development? <b>Financing partner?</b> Same door: <a href="mailto:info@gem.studio">info@gem.studio</a></p>
+  <p class="door-people reveal">Want to know who you're talking to? <a href="https://www.linkedin.com/in/anujkommareddy/" target="_blank">Find Anuj on LinkedIn ↗</a></p>
 </section>
 
 <footer>
@@ -740,7 +567,7 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
-  // Starfield — 13,000 dots, one per film studied; a handful lit purple (the overlooked).
+  // Starfield — quiet atmosphere behind the panel; a few tiny gem diamonds in the dust.
   (function () {
     const canvas = document.getElementById('field');
     if (!canvas) return;
@@ -768,16 +595,16 @@
       const N = 13000;
       for (let i = 0; i < N; i++) {
         const x = rand() * w, y = rand() * h;
-        const a = 0.04 + rand() * 0.16;
+        const a = 0.03 + rand() * 0.12;
         ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
         const r = 0.5 + rand() * 0.5;
         ctx.fillRect(x, y, r, r);
       }
-      // The overlooked — tiny gem diamonds, same mark as the logo
+      // Tiny gem diamonds, same mark as the logo
       const litRand = mulberry32(21);
       for (let i = 0; i < 26; i++) {
         const x = litRand() * w, y = litRand() * h;
-        const s = 2.2 + litRand() * 2;      // diamond side ≈ same visual size as the old dots
+        const s = 2.2 + litRand() * 2;
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(Math.PI / 4);
@@ -794,7 +621,6 @@
 
     let t;
     window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(draw, 150); });
-    // Draw once the panel has a size (after layout)
     requestAnimationFrame(draw);
   })();
 </script>
