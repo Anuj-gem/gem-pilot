@@ -160,23 +160,23 @@
       position: absolute; inset: 0;
       width: 100%; height: 100%; display: block;
     }
-    .who-cols {
+    .who-content {
       position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 56px;
+      max-width: 780px;
     }
-    .who-col h3 {
+    .who-statement {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 400; line-height: 1.15;
-      color: #fff; margin-bottom: 16px;
+      font-size: clamp(28px, 3.8vw, 46px);
+      font-weight: 400; line-height: 1.18;
+      color: #fff;
       text-wrap: balance;
+      margin-bottom: 20px;
     }
-    .who-col h3 em { font-style: italic; color: var(--accent-soft); }
-    .who-col p {
-      font-size: 15.5px; color: var(--on-screen);
-      line-height: 1.75; font-weight: 300;
-      max-width: 46ch;
+    .who-statement em { font-style: italic; color: var(--accent-soft); }
+    .who-next {
+      font-size: 17px; color: var(--on-screen);
+      line-height: 1.7; font-weight: 300;
+      max-width: 52ch;
     }
     .origin-clips {
       margin-top: 28px;
@@ -346,13 +346,6 @@
     .door-partner b { color: var(--ink); font-weight: 600; }
     .door-partner a { color: var(--accent-deep); text-decoration: none; }
     .door-partner a:hover { text-decoration: underline; }
-    .door-people {
-      margin: 16px auto 0;
-      font-size: 13.5px; color: var(--muted); max-width: 560px; line-height: 1.65;
-    }
-    .door-people a { color: var(--accent-deep); text-decoration: none; }
-    .door-people a:hover { text-decoration: underline; }
-
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--hair);
@@ -376,8 +369,7 @@
       .hero-actions { flex-direction: column; gap: 18px; }
 
       .screen-panel { padding: 40px 24px; border-radius: 14px; }
-      .who-cols { grid-template-columns: 1fr; gap: 44px; }
-      .who-col p { max-width: 100%; }
+      .who-next { max-width: 100%; }
 
       .hunt-grid { grid-template-columns: 1fr; }
       .hunt-tile p { max-width: 100%; }
@@ -430,20 +422,14 @@
   <div class="section-marker reveal">Who we are</div>
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
-    <div class="who-cols">
-      <div class="who-col">
-        <h3>One of the most viral channels <em>in the world.</em></h3>
-        <p>Over a billion views on social media — built by backing creators with wild imaginations that no one else was willing to take seriously. Now we're helping these kinds of creators make films for the big screen.</p>
-        <div class="origin-clips">
-          <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
-          <div class="clip-thumb"><img src="screenshots/clip-three.jpg" alt="Viral clip"></div>
-          <div class="clip-thumb"><img src="screenshots/clip-lawyer.jpg" alt="Viral clip"></div>
-          <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
-        </div>
-      </div>
-      <div class="who-col">
-        <h3>One of the largest research libraries <em>on film.</em></h3>
-        <p>13,000+ films studied — every era, every genre, every hit, every flop — with world-class creative development technology built on top of it. It's how we judge what we back.</p>
+    <div class="who-content">
+      <p class="who-statement">We've done over a billion views on social media, backing creators with wild imaginations <em>that no one else would take seriously.</em></p>
+      <p class="who-next">Now we're helping creators like this make their way to the big screen.</p>
+      <div class="origin-clips">
+        <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
+        <div class="clip-thumb"><img src="screenshots/clip-three.jpg" alt="Viral clip"></div>
+        <div class="clip-thumb"><img src="screenshots/clip-lawyer.jpg" alt="Viral clip"></div>
+        <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
       </div>
     </div>
   </div>
@@ -547,7 +533,6 @@
   </div>
   <p class="door-note reveal">Or reach us directly at <a href="mailto:info@gem.studio">info@gem.studio</a></p>
   <p class="door-partner reveal"><b>Studio or production company</b> with something stuck in development? <b>Financing partner?</b> Same door: <a href="mailto:info@gem.studio">info@gem.studio</a></p>
-  <p class="door-people reveal">Want to know who you're talking to? <a href="https://www.linkedin.com/in/anujkommareddy/" target="_blank">Find Anuj on LinkedIn ↗</a></p>
 </section>
 
 <footer>
