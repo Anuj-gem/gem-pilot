@@ -204,10 +204,17 @@
       transition: color 0.2s;
     }
     .tiktok-link:hover { color: #fff; }
+    .who-cta {
+      margin-top: 26px; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      font-size: 14px; color: var(--on-screen-muted); line-height: 1.65;
+    }
+    .who-cta a { color: var(--accent-soft); text-decoration: none; }
+    .who-cta a:hover { color: #fff; }
 
     /* ── How we work ── */
     .hunt-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 16px; margin-top: 8px;
     }
     .hunt-tile {
@@ -393,8 +400,8 @@
     <span class="logo-text">GEM Studios</span>
   </div>
   <div class="nav-links">
-    <a href="#who">Who we are</a>
-    <a href="#how">How we work</a>
+    <a href="#channels">Our channels</a>
+    <a href="#work">Work with us</a>
     <a href="#goal">The goal</a>
     <a href="/blog">Blog</a>
     <a href="/pitch" class="nav-cta">Bring us a project</a>
@@ -403,73 +410,69 @@
 
 <!-- Hero -->
 <section class="hero">
-  <p class="hero-tag reveal">A new kind of movie studio</p>
+  <p class="hero-tag reveal">Content · Screenplays · Feature films</p>
   <h1 class="hero-headline reveal">
-    We make the films<br>
-    <em>others won't.</em>
+    A comprehensive<br>
+    <em>AI media company.</em>
   </h1>
-  <p class="hero-sub reveal">GEM is a studio on a mission: find, develop, and finance the filmmakers the industry overlooks — and take their work to theaters worldwide.</p>
+  <p class="hero-sub reveal">GEM pairs the world's best entertainers with advanced AI technology to produce content that audiences love.</p>
   <div class="hero-actions reveal">
     <a href="/pitch" class="btn-primary">Bring us a project</a>
-    <a href="#who" class="btn-text">Who we are ↓</a>
+    <a href="#channels" class="btn-text">What we do ↓</a>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- Who we are -->
-<section id="who">
-  <div class="section-marker reveal">Who we are</div>
+<!-- Our channels -->
+<section id="channels">
+  <div class="section-marker reveal">Our channels</div>
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="who-statement">We've done over a billion views on social media, backing creators with wild imaginations <em>that no one else would take seriously.</em></p>
-      <p class="who-next">Now we're helping creators like this make their way to the big screen.</p>
+      <p class="who-statement">Over 1 billion views <em>across 10+ social channels.</em></p>
+      <p class="who-next">Built on a proprietary AI engine that helps creators create viral entertainment.</p>
       <div class="origin-clips">
         <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
         <div class="clip-thumb"><img src="screenshots/clip-three.jpg" alt="Viral clip"></div>
         <div class="clip-thumb"><img src="screenshots/clip-lawyer.jpg" alt="Viral clip"></div>
         <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
       </div>
+      <p class="who-cta">Advertise on our channels, or partner with us to distribute your content on social → <a href="mailto:info@gem.studio">info@gem.studio</a></p>
     </div>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- How we work -->
-<section id="how">
-  <div class="section-marker reveal">How we work</div>
-  <h2 class="sec-h reveal">We don't wait for talent to <em>find us.</em></h2>
+<!-- Work with us -->
+<section id="work">
+  <div class="section-marker reveal">Work with us</div>
+  <h2 class="sec-h reveal">What we do — and how to <em>get involved.</em></h2>
   <div class="hunt-grid" style="margin-top:36px;">
     <div class="hunt-tile reveal">
       <div class="hunt-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M14.2 9.8 19 5"/><circle cx="19" cy="5" r="1"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M4.9 19.1a10 10 0 0 1 0-14.2"/><path d="M7.8 16.2a6 6 0 0 1 0-8.4"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4"/><path d="M19.1 4.9a10 10 0 0 1 0 14.2"/></svg>
       </div>
-      <div class="hunt-t">We reach out <em>first.</em></div>
-      <p>Thousands of writers post their work online — forums, communities, their own sites. No reps, no track record. We read it, and when we see something, we reach out directly.</p>
+      <div class="hunt-t">Advertise &amp; <em>distribute.</em></div>
+      <p>Advertise on our social channels, or partner with us to distribute your content across them — 10+ channels, over a billion views of reach.</p>
+      <a href="mailto:info@gem.studio" class="hunt-link">Get in touch →</a>
     </div>
     <div class="hunt-tile reveal">
       <div class="hunt-icon">
-        <svg viewBox="0 0 24 24"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h20"/><path d="M13 20V5.6a1.6 1.6 0 0 0-2-1.55l-4 1A2 2 0 0 0 5.5 7v13"/><path d="M10 12h.01"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M15 2v5h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
       </div>
-      <div class="hunt-t">The door is <em>always open.</em></div>
-      <p>Anyone can bring us a project, anytime. No agent, no permission required.</p>
-      <a href="/pitch" class="hunt-link">Bring us a project →</a>
+      <div class="hunt-t">Screenplay <em>analysis.</em></div>
+      <p>We've worked with hundreds of writers, filmmakers, and production companies to analyze and enhance 3,000+ screenplays — feature films, TV, and web series — using Selznick, the most advanced screenplay evaluation AI ever built.</p>
+      <a href="mailto:info@gem.studio" class="hunt-link">Analyze your project →</a>
     </div>
     <div class="hunt-tile reveal">
       <div class="hunt-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
       </div>
-      <div class="hunt-t">Festival <em>partnerships.</em></div>
-      <p>We partner with festivals to find and champion talented writers — especially the ones who don't take home the prize.</p>
-    </div>
-    <div class="hunt-tile reveal">
-      <div class="hunt-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-      </div>
-      <div class="hunt-t">Studio <em>resurrections.</em></div>
-      <p>We work with studios and production companies to revive scripts and franchises stuck in development — the ones that could never get off the ground.</p>
+      <div class="hunt-t">Feature <em>films.</em></div>
+      <p>We partner with a select group of production and distribution companies to directly acquire, produce, and distribute feature films for worldwide theatrical release.</p>
+      <a href="/pitch" class="hunt-link">Pitch us a project →</a>
     </div>
   </div>
 </section>
@@ -524,15 +527,15 @@
   <div class="section-marker reveal">The door</div>
   <h2 class="door-h reveal">Anyone can <em>reach out.</em></h2>
   <div class="door-terms reveal">
-    <span class="door-term">No agent</span>
-    <span class="door-term">No track record</span>
-    <span class="door-term">No permission required</span>
+    <span class="door-term">Advertise &amp; distribute</span>
+    <span class="door-term">Analyze a screenplay</span>
+    <span class="door-term">Pitch us a project</span>
   </div>
   <div class="reveal">
     <a href="/pitch" class="btn-primary" style="padding:16px 44px;font-size:13px;">Bring us a project</a>
   </div>
-  <p class="door-note reveal">Or reach us directly at <a href="mailto:info@gem.studio">info@gem.studio</a></p>
-  <p class="door-partner reveal"><b>Studio or production company</b> with something stuck in development? <b>Financing partner?</b> Same door: <a href="mailto:info@gem.studio">info@gem.studio</a></p>
+  <p class="door-note reveal">For everything else, reach us directly at <a href="mailto:info@gem.studio">info@gem.studio</a></p>
+  <p class="door-partner reveal"><b>Writers:</b> no agent, no track record, no permission required. <b>Studios, brands, and financing partners:</b> same door: <a href="mailto:info@gem.studio">info@gem.studio</a></p>
 </section>
 
 <footer>
