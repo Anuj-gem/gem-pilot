@@ -196,6 +196,97 @@
       border-top: 1px solid var(--hair);
       display: flex; gap: 28px; flex-wrap: wrap;
     }
+    .pillar-next b { font-weight: 600; color: var(--ink); }
+
+    /* Capability rows (pillar 02) */
+    .caps {
+      margin-top: 40px;
+      border-top: 1px solid var(--hair);
+      display: flex; flex-direction: column;
+    }
+    .cap {
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px; align-items: center;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--hair);
+    }
+    .cap-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 2.6vw, 32px);
+      font-weight: 400; line-height: 1.12;
+      color: var(--ink); margin-bottom: 10px;
+    }
+    .cap-h em { font-style: italic; color: var(--accent-deep); }
+    .cap-p {
+      font-size: 15px; color: var(--ink-soft);
+      line-height: 1.7; max-width: 54ch;
+    }
+    .cap-tiles { display: flex; flex-direction: column; gap: 12px; }
+
+    /* Model-output tiles */
+    .otile {
+      background: var(--screen); color: var(--on-screen);
+      border-radius: 12px; padding: 18px 20px;
+    }
+    .otile-label {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent-soft);
+      margin-bottom: 10px;
+    }
+    .otile-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 16px; padding: 7px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12.5px;
+    }
+    .otile-label + .otile-row { border-top: none; }
+    .otile-row span { color: var(--on-screen-muted); }
+    .otile-row b { font-weight: 500; color: #fff; text-align: right; letter-spacing: 0.02em; }
+    .acc { color: var(--accent-soft) !important; }
+    .otile-stat {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 12px; margin: 8px 0 6px;
+    }
+    .otile-stat span { color: var(--on-screen-muted); }
+    .otile-stat b { font-weight: 500; color: #fff; font-size: 14px; }
+    .bar {
+      height: 6px; border-radius: 3px;
+      background: rgba(255,255,255,0.10); overflow: hidden;
+    }
+    .bar i {
+      display: block; height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #5B21B6);
+      border-radius: 3px;
+    }
+    .cap-cta {
+      margin-top: 28px;
+      font-size: 16.5px; color: var(--ink); font-weight: 400;
+    }
+    .cap-cta a {
+      color: var(--accent-deep); font-weight: 600; text-decoration: none;
+      border-bottom: 1px solid rgba(124,58,237,0.35); padding-bottom: 1px;
+    }
+    .cap-cta a:hover { color: var(--accent); }
+
+    /* Own-slate announcement card */
+    .own-card {
+      margin-top: 16px;
+      background: var(--screen); color: var(--on-screen);
+      border-radius: 18px; padding: 44px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 36px;
+    }
+    .own-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 2.8vw, 32px);
+      font-weight: 400; color: #fff;
+      margin-bottom: 8px; line-height: 1.12;
+    }
+    .own-h em { font-style: italic; color: var(--accent-soft); }
+    .own-p {
+      font-size: 14.5px; color: var(--on-screen-muted);
+      line-height: 1.7; max-width: 56ch; margin: 0;
+    }
     .who-statement {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(28px, 3.8vw, 46px);
@@ -411,6 +502,9 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
+      .cap { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
+      .cap-p { max-width: 100%; }
+      .own-card { flex-direction: column; align-items: flex-start; padding: 32px 24px; border-radius: 14px; }
 
       .hunt-grid { grid-template-columns: 1fr; }
       .hunt-tile p { max-width: 100%; }
@@ -481,12 +575,69 @@
 <section id="work" style="padding-top:0;">
   <div class="pillar-card reveal">
     <p class="pillar-n">02 · Film &amp; TV</p>
-    <p class="pillar-statement">We partner directly with hundreds of writers and <em>production companies.</em></p>
-    <p class="pillar-next">We've analyzed and helped improve over 3,000 screenplays — feature films, TV, and web series — using Selznick, the most advanced screenplay evaluation AI ever built. And we're developing our own feature film projects with a select group of co-financiers and distributors, for worldwide theatrical release.</p>
-    <div class="pillar-links">
-      <a href="/pitch" class="hunt-link">Pitch us a project →</a>
-      <a href="mailto:info@gem.studio" class="hunt-link">Analyze your screenplay →</a>
+    <p class="pillar-statement">A comprehensive development and production partner for <em>feature filmmakers.</em></p>
+    <p class="pillar-next">Powered by <b>Selznick</b> — the most powerful AI creative assistant ever built for the feature film industry. We've partnered with hundreds of writers, production companies, and financiers to:</p>
+
+    <div class="caps">
+      <div class="cap reveal">
+        <div>
+          <p class="cap-h">Find <em>scripts.</em></p>
+          <p class="cap-p">Selznick scouts and studies screenplays for our partners — reading each one in depth to find the stories with the potential to draw a large global audience. Built on research across 13,000+ films, it evaluates every script along thousands of dimensions: narrative, character, theme, structure, pacing, genre, market.</p>
+        </div>
+        <div class="cap-tiles">
+          <div class="otile">
+            <p class="otile-label">Selznick · Scout report</p>
+            <div class="otile-row"><span>Script</span><b>Untitled Thriller</b></div>
+            <div class="otile-row"><span>Audience potential</span><b>Large</b></div>
+            <div class="otile-row"><span>Recommendation</span><b class="acc">Acquire</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap reveal">
+        <div>
+          <p class="cap-h">Build the <em>financial case.</em></p>
+          <p class="cap-p">Selznick ties the money to the story itself. It studies a narrative in depth to understand what, specifically, will drive audiences to watch — then builds a comprehensive financial case around it: projected worldwide box office, full budget analysis, and how the two move together. Detailed enough to raise money against.</p>
+        </div>
+        <div class="cap-tiles">
+          <div class="otile">
+            <p class="otile-label">Selznick · Financial case</p>
+            <div class="otile-stat"><span>Projected worldwide gross</span><b>$48M</b></div>
+            <div class="bar"><i style="width:88%"></i></div>
+            <div class="otile-stat"><span>Production budget</span><b>$22M</b></div>
+            <div class="bar"><i style="width:40%"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap reveal">
+        <div>
+          <p class="cap-h">Develop &amp; <em>adapt.</em></p>
+          <p class="cap-p">Writers and producers use Selznick to develop ideas and run new drafts — seeing how each creative choice changes the budget, the box office, and how widely the story translates across global audiences. We also partner to adapt work from other mediums — books, series, existing IP — into feature-ready scripts.</p>
+        </div>
+        <div class="cap-tiles">
+          <div class="otile">
+            <p class="otile-label">Creative choice</p>
+            <div class="otile-row"><span>Remove large-scale VFX</span><b>Budget −$18M · Gross −$2M</b></div>
+          </div>
+          <div class="otile">
+            <p class="otile-label">Draft over draft</p>
+            <div class="otile-row"><span>Projected gross</span><b>Draft 1 $62M → <span class="acc">Draft 2 $81M</span></b></div>
+            <div class="otile-row"><span>Global translatability</span><b class="acc">↑</b></div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <p class="cap-cta">Are you a filmmaker? <a href="mailto:info@gem.studio">Partner with us →</a></p>
+  </div>
+
+  <div class="own-card reveal">
+    <div>
+      <p class="own-h">We also develop <em>our own.</em></p>
+      <p class="own-p">With a select few production companies and film financiers, we acquire, develop, and co-finance projects for worldwide theatrical release. Think we should see yours?</p>
+    </div>
+    <a href="/pitch" class="btn-primary" style="flex:none;">Pitch us a project</a>
   </div>
 </section>
 
