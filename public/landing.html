@@ -283,25 +283,18 @@
     .otable-row b { font-weight: 600; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
     .pass { color: rgba(243,239,232,0.45); }
 
-    /* Drivers + markets */
-    .otile-sub {
-      margin-top: 14px; margin-bottom: 4px;
-      font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+    /* Outcome range + verdict colors */
+    .outc {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; margin: 6px 0 12px;
+    }
+    .oc { display: flex; flex-direction: column; gap: 5px; }
+    .oc span {
+      font-size: 8.5px; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--on-screen-muted);
     }
-    .drv {
-      display: grid; grid-template-columns: 72px 1fr 26px;
-      gap: 10px; align-items: center;
-      padding: 4px 0; font-size: 11px;
-    }
-    .drv span { color: var(--on-screen-muted); }
-    .drv b { font-weight: 500; color: #fff; text-align: right; }
-    .mkts { margin: 10px 0 4px; display: flex; flex-direction: column; gap: 6px; }
-    .mkt {
-      display: grid; grid-template-columns: 72px 1fr;
-      gap: 10px; align-items: center; font-size: 10.5px;
-    }
-    .mkt span { color: var(--on-screen-muted); }
+    .oc b { font-size: 14px; font-weight: 500; color: #fff; font-variant-numeric: tabular-nums; }
+    .fatal { color: #E8927C !important; }
     .otile-row.wrap { flex-direction: column; align-items: flex-start; gap: 3px; }
     .otile-row.wrap b { text-align: left; font-weight: 400; color: var(--on-screen); }
     .cap-cta {
@@ -550,6 +543,7 @@
       .pillar-next { max-width: 100%; }
       .cap { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
       .cap-p { max-width: 100%; }
+      .outc { grid-template-columns: 1fr 1fr; }
       .own-card { flex-direction: column; align-items: flex-start; padding: 32px 24px; border-radius: 14px; }
 
       .hunt-grid { grid-template-columns: 1fr; }
@@ -634,8 +628,8 @@
           <div class="otile">
             <p class="otile-label">Selznick · Scout report</p>
             <div class="otable">
-              <div class="otable-head"><span>Script</span><span>Story</span><span>Char.</span><span>Budget</span><span>Gross</span><span>Verdict</span></div>
-              <div class="otable-row"><span>Untitled Thriller</span><span>91</span><span>84</span><span>$22M</span><span>$48M</span><b class="acc">Acquire</b></div>
+              <div class="otable-head"><span>Script</span><span>Story</span><span>Char.</span><span>Budget</span><span>EV</span><span>Verdict</span></div>
+              <div class="otable-row"><span>Untitled Thriller</span><span>91</span><span>84</span><span>$14M</span><span>$41M</span><b class="acc">Acquire</b></div>
               <div class="otable-row"><span>Untitled Drama</span><span>88</span><span>90</span><span>$9M</span><span>$31M</span><b class="acc">Acquire</b></div>
               <div class="otable-row"><span>Untitled Actioner</span><span>62</span><span>71</span><span>$85M</span><span>$52M</span><b class="pass">Pass</b></div>
             </div>
@@ -646,19 +640,20 @@
       <div class="cap reveal">
         <div>
           <p class="cap-h">Build the <em>financial case.</em></p>
-          <p class="cap-p">Selznick ties the money to the story itself. It studies a narrative in depth to understand what, specifically, will drive audiences to watch — then builds a comprehensive financial case around it: projected worldwide box office, full budget analysis, and how the two move together. Detailed enough to raise money against.</p>
+          <p class="cap-p">Selznick ties the money to the story itself. It studies a narrative in depth to understand what, specifically, will drive audiences to watch — then builds the financial case around it: box office as a full range of outcomes, a production budget range, and what protects the floor. Detailed enough to raise money against.</p>
         </div>
         <div class="cap-tiles">
           <div class="otile">
-            <p class="otile-label">Selznick · Financial case</p>
-            <div class="otile-stat"><span>Projected worldwide gross</span><b>$48M</b></div>
-            <div class="bar"><i style="width:88%"></i></div>
-            <div class="otile-stat"><span>Production budget</span><b>$22M</b></div>
-            <div class="bar"><i style="width:40%"></i></div>
-            <p class="otile-sub">What's driving it</p>
-            <div class="drv"><span>Story</span><div class="bar sm"><i style="width:91%"></i></div><b>91</b></div>
-            <div class="drv"><span>Characters</span><div class="bar sm"><i style="width:84%"></i></div><b>84</b></div>
-            <div class="drv"><span>Structure</span><div class="bar sm"><i style="width:78%"></i></div><b>78</b></div>
+            <p class="otile-label">Untitled Thriller · Financial case</p>
+            <div class="outc">
+              <div class="oc"><span>Downside</span><b>$9M</b><div class="bar sm"><i style="width:12%"></i></div></div>
+              <div class="oc"><span>Median</span><b>$27M</b><div class="bar sm"><i style="width:34%"></i></div></div>
+              <div class="oc"><span>Upside</span><b>$96M</b><div class="bar sm"><i style="width:100%"></i></div></div>
+              <div class="oc"><span>Expected</span><b class="acc">$41M</b><div class="bar sm"><i style="width:48%"></i></div></div>
+            </div>
+            <div class="otile-row"><span>Production budget</span><b>$12M – $18M</b></div>
+            <div class="otile-row wrap"><span>Cost engineering</span><b>The shipwreck can be AI-enhanced rendering, not a practical build → −$4M. One vessel — a contained shoot.</b></div>
+            <div class="otile-row wrap"><span>What protects the floor</span><b>The capsized ship · sustained suspense · a contained cast</b></div>
           </div>
         </div>
       </div>
@@ -666,17 +661,14 @@
       <div class="cap reveal">
         <div>
           <p class="cap-h">Develop &amp; <em>adapt.</em></p>
-          <p class="cap-p">Writers and producers use Selznick to develop ideas and run new drafts — seeing how each creative choice changes the budget, the box office, and how widely the story translates across global audiences. We also partner to adapt work from other mediums — books, series, existing IP — into feature-ready scripts.</p>
+          <p class="cap-p">Anyone developing a screenplay — writers, producers, rights holders — uses Selznick to run new drafts and see the financial impact of every creative choice. The goal: a script that's true to the vision, and an excellent investment. We also partner to adapt work from other mediums — books, series, existing IP — into feature-ready scripts.</p>
         </div>
         <div class="cap-tiles">
           <div class="otile">
-            <p class="otile-label">Creative choice</p>
-            <div class="otile-row"><span>Remove large-scale VFX</span><b>Budget −$18M · Gross −$2M</b></div>
-          </div>
-          <div class="otile">
-            <p class="otile-label">Draft over draft</p>
-            <div class="otile-row"><span>Projected gross</span><b>Draft 1 $62M → <span class="acc">Draft 2 $81M</span></b></div>
-            <div class="otile-row"><span>Global translatability</span><b class="acc">↑</b></div>
+            <p class="otile-label">Untitled Thriller · Two possible cuts</p>
+            <div class="otile-row"><span>Trim the storm flashback</span><b>Budget −$2.5M · EV <span class="acc">−$0.4M</span> · safe</b></div>
+            <div class="otile-row"><span>Move the story onshore</span><b>Budget −$3M · EV <span class="fatal">−$22M</span> · fatal</b></div>
+            <div class="otile-row wrap"><span>Selznick's read</span><b>The ship is the subject — it's worth every dollar.</b></div>
           </div>
         </div>
       </div>
@@ -684,24 +676,23 @@
       <div class="cap reveal">
         <div>
           <p class="cap-h">Package &amp; <em>release.</em></p>
-          <p class="cap-p">Selznick shows the impact of every packaging decision — what an A-list lead adds to projected gross versus an emerging actor, how an attached director changes a film's chances, and where the film should live: which medium, which platforms, which markets. With the reasoning spelled out.</p>
+          <p class="cap-p">Selznick shows the impact of every packaging decision — who to attach, when to release it, where it should live, and how to market it. With the reasoning spelled out.</p>
         </div>
         <div class="cap-tiles">
           <div class="otile">
-            <p class="otile-label">Talent attachment</p>
-            <div class="otile-row"><span>Lead: A-list star</span><b>Proj. gross <span class="acc">+$34M</span> · Odds ↑</b></div>
-            <div class="otile-row"><span>Lead: Emerging actor</span><b>Baseline</b></div>
+            <p class="otile-label">Untitled Thriller · Talent</p>
+            <div class="otile-row wrap"><span>The case for a star</span><b>The lead is in 78% of scenes — every relationship runs through her. This one needs a star.</b></div>
+            <div class="otile-row"><span>A-list lead</span><b>EV <span class="acc">+$21M</span></b></div>
           </div>
           <div class="otile">
-            <p class="otile-label">Release pathway</p>
-            <div class="otile-row"><span>Ideal release</span><b class="acc">Theatrical</b></div>
-            <div class="otile-row wrap"><span>Why</span><b>Large-scale VFX · vivid imagery that translates globally</b></div>
-            <div class="mkts">
-              <div class="mkt"><span>N. America</span><div class="bar sm"><i style="width:92%"></i></div></div>
-              <div class="mkt"><span>Europe</span><div class="bar sm"><i style="width:76%"></i></div></div>
-              <div class="mkt"><span>Asia</span><div class="bar sm"><i style="width:64%"></i></div></div>
-            </div>
-            <div class="otile-row"><span>Projected worldwide</span><b class="acc">$84M</b></div>
+            <p class="otile-label">Untitled Thriller · Release</p>
+            <div class="otile-row"><span>Ideal path</span><b class="acc">Theatrical</b></div>
+            <div class="otile-row wrap"><span>Why</span><b>Open-water imagery built for the big screen.</b></div>
+            <div class="otile-row wrap"><span>Window</span><b>Early August — zero major openings within two weeks.</b></div>
+          </div>
+          <div class="otile">
+            <p class="otile-label">Untitled Thriller · Marketing</p>
+            <div class="otile-row wrap"><span>The plan</span><b>No blockbuster campaign needed: 10+ viral-ready moments — the hull-breach scene alone — cast social-native talent and market it through virality.</b></div>
           </div>
         </div>
       </div>
