@@ -64,7 +64,7 @@ export default function GemStudiosNav() {
           Blog
         </a>
         <a
-          href="/pitch"
+          href="mailto:info@gem.studio"
           style={{
             fontSize: '11px',
             letterSpacing: '0.1em',
@@ -75,7 +75,7 @@ export default function GemStudiosNav() {
             textTransform: 'uppercase',
           }}
         >
-          Submit a project
+          Get in touch
         </a>
       </div>
     </nav>
