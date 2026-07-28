@@ -198,145 +198,45 @@
     }
     .pillar-next b { font-weight: 600; color: var(--ink); }
 
-    /* Capability rows (pillar 02) */
-    .caps {
-      margin-top: 40px;
-      border-top: 1px solid var(--hair);
-      display: flex; flex-direction: column;
-    }
-    .cap {
-      display: grid; grid-template-columns: 1.05fr 0.95fr;
-      gap: 44px; align-items: center;
-      padding: 34px 0;
-      border-bottom: 1px solid var(--hair);
-    }
-    .cap-h {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(24px, 2.6vw, 32px);
-      font-weight: 400; line-height: 1.12;
-      color: var(--ink); margin-bottom: 10px;
-    }
-    .cap-h em { font-style: italic; color: var(--accent-deep); }
-    .cap-p {
-      font-size: 15px; color: var(--ink-soft);
-      line-height: 1.7; max-width: 54ch;
-    }
-    .cap-tiles { display: flex; flex-direction: column; gap: 12px; }
-
-    /* Model-output tiles */
-    .otile {
+    /* Selznick pipeline */
+    .pipe {
+      margin-top: 36px;
       background: var(--screen); color: var(--on-screen);
-      border-radius: 12px; padding: 18px 20px;
+      border-radius: 18px;
+      padding: 38px 40px 42px;
     }
-    .otile-label {
-      font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em;
+    .pipe-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--accent-soft);
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
-    .otile-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      gap: 16px; padding: 7px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 12.5px;
+    .pipe-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
     }
-    .otile-label + .otile-row { border-top: none; }
-    .otile-row span { color: var(--on-screen-muted); }
-    .otile-row b { font-weight: 500; color: #fff; text-align: right; letter-spacing: 0.02em; }
-    .acc { color: var(--accent-soft) !important; }
-    .otile-stat {
-      display: flex; justify-content: space-between; align-items: baseline;
-      font-size: 12px; margin: 8px 0 6px;
+    .pstep { position: relative; }
+    .pstep:not(:last-child)::after {
+      content: '→';
+      position: absolute; top: 4px; right: -22px;
+      color: var(--accent-soft); font-size: 14px;
     }
-    .otile-stat span { color: var(--on-screen-muted); }
-    .otile-stat b { font-weight: 500; color: #fff; font-size: 14px; }
-    .bar {
-      height: 6px; border-radius: 3px;
-      background: rgba(255,255,255,0.10); overflow: hidden;
+    .pnum {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px; font-weight: 300; line-height: 1;
+      color: var(--accent-soft); margin-bottom: 10px;
     }
-    .bar i {
-      display: block; height: 100%;
-      background: linear-gradient(90deg, #8b5cf6, #5B21B6);
-      border-radius: 3px;
+    .pt {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px; color: #fff;
+      margin-bottom: 8px; line-height: 1.1;
     }
-    .bar.sm { height: 4px; }
-
-    /* Scout report mini-table */
-    .otable { font-variant-numeric: tabular-nums; }
-    .otable-head, .otable-row {
-      display: grid;
-      grid-template-columns: 1.7fr 0.55fr 0.55fr 0.7fr 0.7fr 0.85fr;
-      gap: 8px; padding: 6px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      align-items: baseline;
-      font-size: 10.5px;
+    .pd { font-size: 12.5px; color: var(--on-screen-muted); line-height: 1.6; }
+    .pmini { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; max-width: 120px; }
+    .pmini i {
+      display: block; height: 5px; border-radius: 3px;
+      background: rgba(255,255,255,0.14);
     }
-    .otable-head {
-      border-top: none;
-      font-size: 8.5px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--on-screen-muted);
-    }
-    .otable-row span { color: #fff; }
-    .otable-row span:first-child { color: var(--on-screen); }
-    .otable-head span:not(:first-child),
-    .otable-row span:not(:first-child),
-    .otable-row b { text-align: right; }
-    .otable-row b { font-weight: 600; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .pass { color: rgba(243,239,232,0.45); }
-
-    /* Projection curve + verdict colors */
-    .proj { width: 100%; height: auto; display: block; margin: 8px 0 6px; }
-    .proj text {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px; fill: var(--on-screen-muted);
-    }
-    .proj text.val { fill: #fff; font-weight: 600; font-size: 11.5px; }
-    .proj text.val.acc2 { fill: #C4B5FD; }
-    .fatal { color: #E8927C !important; }
-    .otile-row.wrap { flex-direction: column; align-items: flex-start; gap: 3px; }
-    .otile-row.wrap b { text-align: left; font-weight: 400; color: var(--on-screen); }
-
-    /* Percentile chips, calendar, water tile */
-    .chip {
-      display: inline-block;
-      font-size: 9px; font-weight: 700; letter-spacing: 0.08em;
-      padding: 2px 7px; border-radius: 5px;
-      background: rgba(167,139,250,0.15); color: var(--accent-soft);
-      border: 1px solid rgba(167,139,250,0.35);
-    }
-    .otile.water { background: linear-gradient(175deg, #14101B 30%, #0D1B24 100%); }
-    .cal-month {
-      margin: 8px 0 4px;
-      font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--on-screen-muted);
-    }
-    .cal {
-      display: grid; grid-template-columns: repeat(7, 1fr);
-      gap: 4px; margin: 0 0 8px;
-    }
-    .cal i {
-      height: 22px; border-radius: 3px;
-      background: rgba(255,255,255,0.07);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 8.5px; font-style: normal;
-      color: var(--on-screen-muted);
-    }
-    .cal i.us {
-      background: linear-gradient(135deg, #8b5cf6, #5B21B6);
-      color: #fff; font-weight: 700;
-      box-shadow: 0 0 10px rgba(124,58,237,0.5);
-    }
-    .cal i.tent { background: rgba(232,146,124,0.18); color: #E8927C; }
-    .cal-leg {
-      display: flex; gap: 16px; align-items: center;
-      font-size: 9px; color: var(--on-screen-muted);
-      margin: 0 0 6px;
-    }
-    .cal-leg .k {
-      display: inline-block; width: 8px; height: 8px;
-      border-radius: 2px; margin-right: 5px;
-    }
-    .cal-leg .k.us { background: #8b5cf6; box-shadow: none; }
-    .cal-leg .k.tent { background: rgba(232,146,124,0.5); }
+    .pmini i.on { background: linear-gradient(90deg, #8b5cf6, #5B21B6); }
     .cap-cta {
       margin-top: 28px;
       font-size: 16.5px; color: var(--ink); font-weight: 400;
@@ -418,43 +318,6 @@
     .who-cta a { color: var(--accent-soft); text-decoration: none; }
     .who-cta a:hover { color: #fff; }
 
-    /* ── How we work ── */
-    .hunt-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 16px; margin-top: 8px;
-    }
-    .hunt-tile {
-      background: var(--card);
-      border: 1px solid var(--hair-strong);
-      border-radius: 14px;
-      padding: 30px 30px 32px;
-    }
-    .hunt-icon {
-      width: 46px; height: 46px;
-      border: 1px solid rgba(124,58,237,0.35);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 22px;
-    }
-    .hunt-icon svg {
-      width: 21px; height: 21px;
-      stroke: var(--accent); stroke-width: 1.5;
-      fill: none; stroke-linecap: round; stroke-linejoin: round;
-    }
-    .hunt-t {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 25px; font-weight: 400; color: var(--ink);
-      margin-bottom: 10px; line-height: 1.1;
-    }
-    .hunt-t em { font-style: italic; color: var(--accent-deep); }
-    .hunt-tile p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; max-width: 400px; }
-    .hunt-link {
-      display: inline-block; margin-top: 12px;
-      font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
-      color: var(--accent-deep); text-decoration: none;
-      border-bottom: 1px solid rgba(124,58,237,0.35); padding-bottom: 1px;
-    }
-    .hunt-link:hover { color: var(--accent); }
 
     /* ── The goal (teaser one-sheet) ── */
     .teaser {
@@ -549,11 +412,9 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
-      .cap { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
-      .cap-p { max-width: 100%; }
-
-      .hunt-grid { grid-template-columns: 1fr; }
-      .hunt-tile p { max-width: 100%; }
+      .pipe { padding: 30px 24px 32px; border-radius: 14px; }
+      .pipe-steps { grid-template-columns: 1fr; gap: 24px; }
+      .pstep:not(:last-child)::after { display: none; }
 
 
       .teaser { padding: 56px 24px 52px; }
@@ -625,112 +486,37 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Feature films</p>
     <p class="pillar-statement">We're building a new feature film studio for the <em>AI era.</em></p>
-    <p class="pillar-next">Powered by <b>Selznick</b> — the first AI development executive. It helps world-class filmmakers find and develop feature films that bring audiences to the theaters. Here's what it does:</p>
+    <p class="pillar-next">Powered by <b>Selznick</b> — the first AI development executive. Nothing like it has been built before — and it doesn't replace humans. It's a partner to the world's best filmmakers, built to make them even better at developing ideas that draw a big theatrical audience. Here's what it lets us do:</p>
 
-    <div class="caps">
-      <div class="cap reveal">
-        <div>
-          <p class="cap-h">Find <em>scripts.</em></p>
-          <p class="cap-p">Selznick scouts and studies screenplays for our partners — reading each one in depth to find the stories with the potential to draw a large global audience. Built on research across 13,000+ films, it evaluates every script along thousands of dimensions: narrative, character, theme, structure, pacing, genre, market.</p>
+    <div class="pipe reveal">
+      <p class="pipe-label">◆ Selznick · Script to screen</p>
+      <div class="pipe-steps">
+        <div class="pstep">
+          <p class="pnum">1</p>
+          <p class="pt">Ingest</p>
+          <p class="pd">Thousands of scripts and ideas come in, from hundreds of writers.</p>
         </div>
-        <div class="cap-tiles">
-          <div class="otile">
-            <p class="otile-label">Selznick · Scout report</p>
-            <div class="otable">
-              <div class="otable-head"><span>Script</span><span>Story</span><span>Char.</span><span>Budget</span><span>Proj.</span><span>Verdict</span></div>
-              <div class="otable-row"><span>Untitled Thriller</span><span>91</span><span>84</span><span>$14M</span><span>$41M</span><b class="acc">Acquire</b></div>
-              <div class="otable-row"><span>Untitled Drama</span><span>88</span><span>90</span><span>$9M</span><span>$31M</span><b class="acc">Acquire</b></div>
-              <div class="otable-row"><span>Untitled Actioner</span><span>62</span><span>71</span><span>$85M</span><span>$52M</span><b class="pass">Pass</b></div>
-            </div>
-          </div>
+        <div class="pstep">
+          <p class="pnum">2</p>
+          <p class="pt">Identify</p>
+          <p class="pd">Selznick studies and compares them all — surfacing the ideas that can draw a huge audience.</p>
+          <div class="pmini"><i style="width:38%"></i><i style="width:60%"></i><i class="on" style="width:92%"></i></div>
         </div>
-      </div>
-
-      <div class="cap reveal">
-        <div>
-          <p class="cap-h">Build the <em>financial case.</em></p>
-          <p class="cap-p">Selznick ties the money to the story itself. It studies a narrative in depth to understand what, specifically, will drive audiences to watch — then builds the financial case around it: a conservative projection, an upside projection, and what drives each. It's equal parts creative and mathematical: understand the story, and you understand what brings people to the box office.</p>
+        <div class="pstep">
+          <p class="pnum">3</p>
+          <p class="pt">Develop</p>
+          <p class="pd">We partner with the filmmakers to develop the idea and find its commercial path.</p>
         </div>
-        <div class="cap-tiles">
-          <div class="otile">
-            <p class="otile-label">Untitled Thriller · Projected worldwide box office</p>
-            <svg class="proj" viewBox="0 0 340 132" aria-hidden="true">
-              <defs>
-                <linearGradient id="pg" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.12"/>
-                  <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.5"/>
-                </linearGradient>
-              </defs>
-              <path d="M22 106 C 120 98, 210 76, 318 24 L 318 126 L 22 126 Z" fill="url(#pg)"/>
-              <path d="M22 106 C 120 98, 210 76, 318 24" fill="none" stroke="#A78BFA" stroke-width="2"/>
-              <circle cx="22" cy="106" r="4" fill="#F3EFE8"/>
-              <circle cx="176" cy="84" r="4" fill="#A78BFA"/>
-              <circle cx="318" cy="24" r="4.5" fill="#8b5cf6"/>
-              <text class="val" x="22" y="92">$18M</text>
-              <text x="22" y="122">Conservative</text>
-              <text class="val" x="176" y="70" text-anchor="middle">$41M</text>
-              <text x="176" y="122" text-anchor="middle">Expected</text>
-              <text class="val acc2" x="318" y="14" text-anchor="end">$96M+</text>
-              <text x="318" y="122" text-anchor="end">Upside</text>
-            </svg>
-            <div class="otile-row"><span>Production budget</span><b>$12M – $18M</b></div>
-            <div class="otile-row wrap"><span>Cost engineering</span><b>The shipwreck can be AI-enhanced rendering, not a practical build → −$4M. One vessel — a contained shoot.</b></div>
-            <div class="otile-row wrap"><span>Why the floor holds</span><b>Thin competition in the release corridor · built-in virality · a contained, single-vessel shoot — even the conservative case covers the budget.</b></div>
-            <div class="otile-row wrap"><span>Where the upside lives</span><b>A recognizable lead multiplies virality · open-water imagery pulls theatrical audiences · subject matter that translates globally lifts international sales.</b></div>
-          </div>
-          <div class="otile">
-            <p class="otile-label">Comps · Open-water suspense</p>
-            <div class="otile-row wrap"><span>The pattern</span><b>Audiences consistently show up for open water.</b></div>
-            <div class="otile-row"><span>The Shallows (2016)</span><b>$17M → <span class="acc">$119M</span> ww</b></div>
-            <div class="otile-row"><span>47 Meters Down (2017)</span><b>$5.5M → <span class="acc">$62M</span> ww</b></div>
-            <div class="otile-row"><span>Open Water (2004)</span><b>~$0.5M → <span class="acc">$55M</span> ww</b></div>
-          </div>
+        <div class="pstep">
+          <p class="pnum">4</p>
+          <p class="pt">Finance</p>
+          <p class="pd">The financial case — budget against projected box office — raises the money.</p>
+          <div class="pmini"><i class="on" style="width:88%"></i><i style="width:34%"></i></div>
         </div>
-      </div>
-
-      <div class="cap reveal">
-        <div>
-          <p class="cap-h">Develop &amp; <em>adapt.</em></p>
-          <p class="cap-p">Anyone developing a screenplay — writers, producers, rights holders — uses Selznick to run new drafts and see the financial impact of every creative choice. The goal: a script that's true to the vision, and an excellent investment. We also partner to adapt work from other mediums — books, series, existing IP — into feature-ready scripts.</p>
-        </div>
-        <div class="cap-tiles">
-          <div class="otile">
-            <p class="otile-label">Untitled Thriller · Two possible cuts</p>
-            <div class="otile-row"><span>Trim the storm flashback</span><b>Budget −$2.5M · proj. gross <span class="acc">−$0.4M</span> · safe</b></div>
-            <div class="otile-row"><span>Move the story onshore</span><b>Budget −$3M · proj. gross <span class="fatal">−$22M</span> · fatal</b></div>
-            <div class="otile-row wrap"><span>Selznick's read</span><b>The ship is the subject — it's worth every dollar.</b></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cap reveal">
-        <div>
-          <p class="cap-h">Package &amp; <em>release.</em></p>
-          <p class="cap-p">Selznick shows the impact of every packaging decision — who to attach, when to release it, where it should live, and how to market it. With the reasoning spelled out.</p>
-        </div>
-        <div class="cap-tiles">
-          <div class="otile">
-            <p class="otile-label">Untitled Thriller · Talent</p>
-            <div class="otile-row wrap"><span>Lead screen presence</span><b><span class="chip">92nd percentile</span> of the 13,000 films we've studied — on screen in 78% of scenes</b></div>
-            <div class="otile-row"><span>Scenes demanding top-tier acting</span><b>14</b></div>
-            <div class="otile-row"><span>Recognizable lead</span><b>viral exposure <span class="acc">+25%</span> · proj. gross <span class="acc">+$21M</span></b></div>
-            <div class="otile-row wrap"><span>Selznick's read</span><b>Doesn't need an A-lister — needs an actor.</b></div>
-          </div>
-          <div class="otile">
-            <p class="otile-label">Untitled Thriller · Viral potential</p>
-            <div class="otile-row"><span>Viral potential</span><b><span class="chip">90th percentile</span> of 13,000 films</b></div>
-            <div class="otile-row"><span>Viral-ready moments</span><b>10+</b></div>
-            <div class="otile-row wrap"><span>Including</span><b>the shipwreck · the beach scene · the birth scene</b></div>
-            <div class="otile-row wrap"><span>Marketing path</span><b>Virality and recognizability — not media buys.</b></div>
-          </div>
-          <div class="otile water">
-            <p class="otile-label">Untitled Thriller · Release window</p>
-            <p class="cal-month">August</p>
-            <div class="cal"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i class="us">7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>17</i><i>18</i><i>19</i><i>20</i><i class="tent">21</i><i>22</i><i>23</i><i>24</i><i>25</i><i>26</i><i>27</i><i>28</i></div>
-            <div class="cal-leg"><span><i class="k us"></i>Our window</span><span><i class="k tent"></i>Major tentpole opening</span></div>
-            <div class="otile-row"><span>Ideal path</span><b class="acc">Theatrical · Fri, Aug 7</b></div>
-            <div class="otile-row wrap"><span>Why</span><b>Clear corridor — no major openings within two weeks. Open-water imagery built for the big screen.</b></div>
-          </div>
+        <div class="pstep">
+          <p class="pnum">5</p>
+          <p class="pt">Release</p>
+          <p class="pd">Distributed in theaters — where the money is made.</p>
         </div>
       </div>
     </div>
