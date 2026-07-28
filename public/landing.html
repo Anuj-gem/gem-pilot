@@ -456,42 +456,6 @@
     }
     .hunt-link:hover { color: var(--accent); }
 
-    /* ── Why now / posters ── */
-    .stakes-grid {
-      display: grid; grid-template-columns: 1.05fr 0.95fr;
-      gap: 64px; align-items: center;
-    }
-    .posters { display: flex; gap: 22px; justify-content: center; align-items: flex-start; }
-    .poster-fig {
-      width: min(200px, 44%);
-      display: flex; flex-direction: column; gap: 12px;
-      margin: 0;
-      transform: rotate(-2deg);
-    }
-    .poster-fig:last-child { transform: rotate(2deg) translateY(14px); }
-    .poster {
-      aspect-ratio: 2/3;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(22,20,27,0.35);
-      box-shadow: 0 28px 56px -28px rgba(22,20,27,0.5);
-      background: #14101B;
-    }
-    .poster img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-    }
-    .poster-fig figcaption {
-      font-size: 11px; letter-spacing: 0.03em;
-      color: var(--muted); line-height: 1.55;
-      text-align: center;
-    }
-    .poster-fig figcaption b { color: var(--ink); font-weight: 600; }
-    .posters-note {
-      margin-top: 26px; font-size: 12px; color: var(--muted);
-      font-style: italic; text-align: center;
-    }
-
     /* ── The goal (teaser one-sheet) ── */
     .teaser {
       background: radial-gradient(120% 150% at 50% 0%, #241B31 0%, #14101B 62%);
@@ -591,8 +555,6 @@
       .hunt-grid { grid-template-columns: 1fr; }
       .hunt-tile p { max-width: 100%; }
 
-      .stakes-grid { grid-template-columns: 1fr; gap: 48px; }
-      .poster-fig { width: min(180px, 46%); }
 
       .teaser { padding: 56px 24px 52px; }
       .door { padding: 64px 20px 56px; }
@@ -776,34 +738,6 @@
     <p class="cap-cta">Want to join the private beta? <a href="mailto:info@gem.studio?subject=Selznick%20private%20beta">Get in touch →</a></p>
   </div>
 
-</section>
-
-<div class="rule"></div>
-
-<!-- Why now -->
-<section id="why">
-  <div class="section-marker reveal">Why now</div>
-  <div class="stakes-grid">
-    <div class="reveal">
-      <h2 class="sec-h">The biggest theatrical hits of 2026 were born on the internet. <em>So were we.</em></h2>
-      <p class="sec-sub">
-        A $750,000 film by a YouTube filmmaker passed $400 million worldwide. A web series became A24's biggest movie ever. The theatrical market is turning internet-native — and we come from there, a billion views deep.
-      </p>
-    </div>
-    <div class="reveal">
-      <div class="posters">
-        <figure class="poster-fig">
-          <div class="poster"><img src="screenshots/poster-obsession.jpg" alt="Obsession (2026) theatrical poster"></div>
-          <figcaption>Written &amp; directed by a YouTube filmmaker<br>Made for <b>$750K</b> · over <b>$400M</b> worldwide</figcaption>
-        </figure>
-        <figure class="poster-fig">
-          <div class="poster"><img src="screenshots/poster-backrooms.jpg" alt="Backrooms (2026) theatrical poster"></div>
-          <figcaption>From a 20-year-old YouTube creator<br><b>A24's biggest film ever</b> · <b>$350M+</b> worldwide</figcaption>
-        </figure>
-      </div>
-      <p class="posters-note">Not our films — proof of where the market is going.</p>
-    </div>
-  </div>
 </section>
 
 <div class="rule"></div>
