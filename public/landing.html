@@ -210,33 +210,16 @@
       text-transform: uppercase; color: var(--accent-soft);
       margin-bottom: 30px;
     }
-    .pipe-steps {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 30px;
+    .flow-wrap { overflow-x: auto; }
+    .flow {
+      display: block; width: 100%; min-width: 720px; height: auto;
     }
-    .pstep { position: relative; }
-    .pstep:not(:last-child)::after {
-      content: '→';
-      position: absolute; top: 4px; right: -22px;
-      color: var(--accent-soft); font-size: 14px;
+    .flow text {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px; font-weight: 300;
+      fill: var(--on-screen-muted);
     }
-    .pnum {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px; font-weight: 300; line-height: 1;
-      color: var(--accent-soft); margin-bottom: 10px;
-    }
-    .pt {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px; color: #fff;
-      margin-bottom: 8px; line-height: 1.1;
-    }
-    .pd { font-size: 12.5px; color: var(--on-screen-muted); line-height: 1.6; }
-    .pmini { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; max-width: 120px; }
-    .pmini i {
-      display: block; height: 5px; border-radius: 3px;
-      background: rgba(255,255,255,0.14);
-    }
-    .pmini i.on { background: linear-gradient(90deg, #8b5cf6, #5B21B6); }
+    .flow text.strong { fill: #fff; font-weight: 500; }
     .cap-cta {
       margin-top: 28px;
       font-size: 16.5px; color: var(--ink); font-weight: 400;
@@ -412,9 +395,7 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
-      .pipe { padding: 30px 24px 32px; border-radius: 14px; }
-      .pipe-steps { grid-template-columns: 1fr; gap: 24px; }
-      .pstep:not(:last-child)::after { display: none; }
+      .pipe { padding: 30px 20px 32px; border-radius: 14px; }
 
 
       .teaser { padding: 56px 24px 52px; }
@@ -489,35 +470,55 @@
     <p class="pillar-next">Powered by <b>Selznick</b> — the first AI development executive. It helps us find the world's most talented filmmakers, and partner with them to develop their ideas into films that attract a huge theatrical audience. Here's how it works:</p>
 
     <div class="pipe reveal">
-      <p class="pipe-label">◆ Selznick · Script to screen</p>
-      <div class="pipe-steps">
-        <div class="pstep">
-          <p class="pnum">1</p>
-          <p class="pt">Find</p>
-          <p class="pd">Hundreds of writers send us their scripts — and Selznick scouts out talented filmmakers on its own.</p>
-        </div>
-        <div class="pstep">
-          <p class="pnum">2</p>
-          <p class="pt">Study</p>
-          <p class="pd">Selznick reads every script in depth and compares them all.</p>
-        </div>
-        <div class="pstep">
-          <p class="pnum">3</p>
-          <p class="pt">Identify</p>
-          <p class="pd">The filmmakers with ideas that have huge theatrical potential rise to the top.</p>
-          <div class="pmini"><i style="width:38%"></i><i style="width:60%"></i><i class="on" style="width:92%"></i></div>
-        </div>
-        <div class="pstep">
-          <p class="pnum">4</p>
-          <p class="pt">Develop &amp; finance</p>
-          <p class="pd">We partner with them to develop the idea — and the financial case helps raise the money.</p>
-          <div class="pmini"><i class="on" style="width:88%"></i><i style="width:34%"></i></div>
-        </div>
-        <div class="pstep">
-          <p class="pnum">5</p>
-          <p class="pt">Release</p>
-          <p class="pd">The film is released in theaters — where the money is made.</p>
-        </div>
+      <p class="pipe-label">Script to screen</p>
+      <div class="flow-wrap">
+        <svg class="flow" viewBox="0 0 1000 270" aria-hidden="true">
+          <defs>
+            <linearGradient id="gemg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8b5cf6"/>
+              <stop offset="1" stop-color="#5B21B6"/>
+            </linearGradient>
+            <linearGradient id="outg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8b5cf6"/>
+              <stop offset="1" stop-color="#A78BFA"/>
+            </linearGradient>
+            <radialGradient id="gemglow">
+              <stop offset="0" stop-color="rgba(139,92,246,0.45)"/>
+              <stop offset="1" stop-color="rgba(139,92,246,0)"/>
+            </radialGradient>
+          </defs>
+
+          <!-- inputs -->
+          <text x="30" y="58" class="strong">Thousands of scripts</text>
+          <text x="30" y="78">sent to us</text>
+          <circle cx="208" cy="66" r="3.5" fill="rgba(243,239,232,0.4)"/>
+          <path d="M212 66 C 292 66, 332 120, 376 138" fill="none" stroke="rgba(243,239,232,0.28)" stroke-width="1.5"/>
+
+          <text x="30" y="200" class="strong">Filmmakers we</text>
+          <text x="30" y="220">scout ourselves</text>
+          <circle cx="208" cy="210" r="3.5" fill="rgba(243,239,232,0.4)"/>
+          <path d="M212 210 C 292 210, 332 160, 376 144" fill="none" stroke="rgba(243,239,232,0.28)" stroke-width="1.5"/>
+
+          <!-- the gem -->
+          <circle cx="404" cy="141" r="48" fill="url(#gemglow)"/>
+          <rect x="-19" y="-19" width="38" height="38" rx="7" transform="translate(404 141) rotate(45)" fill="url(#gemg)"/>
+          <text x="404" y="216" text-anchor="middle" class="strong">Selznick</text>
+          <text x="404" y="236" text-anchor="middle">reads everything</text>
+
+          <!-- the out-stream -->
+          <path d="M436 141 L 900 141" stroke="url(#outg)" stroke-width="3.5" fill="none"/>
+          <circle cx="588" cy="141" r="5" fill="#A78BFA"/>
+          <text x="588" y="100" text-anchor="middle" class="strong">Ideas with real</text>
+          <text x="588" y="120" text-anchor="middle" class="strong">theatrical potential</text>
+          <circle cx="764" cy="141" r="5" fill="#A78BFA"/>
+          <text x="764" y="180" text-anchor="middle" class="strong">Developed together</text>
+          <text x="764" y="200" text-anchor="middle">script · casting · financing</text>
+
+          <!-- theaters -->
+          <rect x="900" y="122" width="52" height="38" rx="5" fill="none" stroke="#A78BFA" stroke-width="2"/>
+          <path d="M908 132 h36" stroke="#A78BFA" stroke-width="2"/>
+          <text x="926" y="186" text-anchor="middle" class="strong">Theaters</text>
+        </svg>
       </div>
     </div>
 
