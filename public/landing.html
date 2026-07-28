@@ -283,17 +283,14 @@
     .otable-row b { font-weight: 600; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
     .pass { color: rgba(243,239,232,0.45); }
 
-    /* Outcome range + verdict colors */
-    .outc {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 12px; margin: 6px 0 12px;
+    /* Projection curve + verdict colors */
+    .proj { width: 100%; height: auto; display: block; margin: 8px 0 6px; }
+    .proj text {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px; fill: var(--on-screen-muted);
     }
-    .oc { display: flex; flex-direction: column; gap: 5px; }
-    .oc span {
-      font-size: 8.5px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--on-screen-muted);
-    }
-    .oc b { font-size: 14px; font-weight: 500; color: #fff; font-variant-numeric: tabular-nums; }
+    .proj text.val { fill: #fff; font-weight: 600; font-size: 11.5px; }
+    .proj text.val.acc2 { fill: #C4B5FD; }
     .fatal { color: #E8927C !important; }
     .otile-row.wrap { flex-direction: column; align-items: flex-start; gap: 3px; }
     .otile-row.wrap b { text-align: left; font-weight: 400; color: var(--on-screen); }
@@ -567,7 +564,6 @@
       .pillar-next { max-width: 100%; }
       .cap { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
       .cap-p { max-width: 100%; }
-      .outc { grid-template-columns: 1fr 1fr; }
 
       .hunt-grid { grid-template-columns: 1fr; }
       .hunt-tile p { max-width: 100%; }
@@ -594,7 +590,7 @@
     <a href="#channels">What we do</a>
     <a href="#goal">The goal</a>
     <a href="/blog">Blog</a>
-    <a href="/pitch" class="nav-cta">Bring us a project</a>
+    <a href="/pitch" class="nav-cta">Get in touch</a>
   </div>
 </nav>
 
@@ -607,7 +603,7 @@
   </h1>
   <p class="hero-sub reveal">GEM pairs the world's best entertainers with advanced AI technology to produce content that audiences love.</p>
   <div class="hero-actions reveal">
-    <a href="/pitch" class="btn-primary">Bring us a project</a>
+    <a href="/pitch" class="btn-primary">Get in touch</a>
     <a href="#channels" class="btn-text">What we do ↓</a>
   </div>
 </section>
@@ -651,7 +647,7 @@
           <div class="otile">
             <p class="otile-label">Selznick · Scout report</p>
             <div class="otable">
-              <div class="otable-head"><span>Script</span><span>Story</span><span>Char.</span><span>Budget</span><span>EV</span><span>Verdict</span></div>
+              <div class="otable-head"><span>Script</span><span>Story</span><span>Char.</span><span>Budget</span><span>Proj.</span><span>Verdict</span></div>
               <div class="otable-row"><span>Untitled Thriller</span><span>91</span><span>84</span><span>$14M</span><span>$41M</span><b class="acc">Acquire</b></div>
               <div class="otable-row"><span>Untitled Drama</span><span>88</span><span>90</span><span>$9M</span><span>$31M</span><b class="acc">Acquire</b></div>
               <div class="otable-row"><span>Untitled Actioner</span><span>62</span><span>71</span><span>$85M</span><span>$52M</span><b class="pass">Pass</b></div>
@@ -663,20 +659,34 @@
       <div class="cap reveal">
         <div>
           <p class="cap-h">Build the <em>financial case.</em></p>
-          <p class="cap-p">Selznick ties the money to the story itself. It studies a narrative in depth to understand what, specifically, will drive audiences to watch — then builds the financial case around it: box office as a full range of outcomes, a production budget range, and what protects the floor. Detailed enough to raise money against.</p>
+          <p class="cap-p">Selznick ties the money to the story itself. It studies a narrative in depth to understand what, specifically, will drive audiences to watch — then builds the financial case around it: a conservative projection, an upside projection, and what drives each. It's equal parts creative and mathematical: understand the story, and you understand what brings people to the box office.</p>
         </div>
         <div class="cap-tiles">
           <div class="otile">
-            <p class="otile-label">Untitled Thriller · Financial case</p>
-            <div class="outc">
-              <div class="oc"><span>Downside</span><b>$9M</b><div class="bar sm"><i style="width:12%"></i></div></div>
-              <div class="oc"><span>Median</span><b>$27M</b><div class="bar sm"><i style="width:34%"></i></div></div>
-              <div class="oc"><span>Upside</span><b>$96M</b><div class="bar sm"><i style="width:100%"></i></div></div>
-              <div class="oc"><span>Expected</span><b class="acc">$41M</b><div class="bar sm"><i style="width:48%"></i></div></div>
-            </div>
+            <p class="otile-label">Untitled Thriller · Projected worldwide box office</p>
+            <svg class="proj" viewBox="0 0 340 132" aria-hidden="true">
+              <defs>
+                <linearGradient id="pg" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.12"/>
+                  <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.5"/>
+                </linearGradient>
+              </defs>
+              <path d="M22 106 C 120 98, 210 76, 318 24 L 318 126 L 22 126 Z" fill="url(#pg)"/>
+              <path d="M22 106 C 120 98, 210 76, 318 24" fill="none" stroke="#A78BFA" stroke-width="2"/>
+              <circle cx="22" cy="106" r="4" fill="#F3EFE8"/>
+              <circle cx="176" cy="84" r="4" fill="#A78BFA"/>
+              <circle cx="318" cy="24" r="4.5" fill="#8b5cf6"/>
+              <text class="val" x="22" y="92">$18M</text>
+              <text x="22" y="122">Conservative</text>
+              <text class="val" x="176" y="70" text-anchor="middle">$41M</text>
+              <text x="176" y="122" text-anchor="middle">Expected</text>
+              <text class="val acc2" x="318" y="14" text-anchor="end">$96M+</text>
+              <text x="318" y="122" text-anchor="end">Upside</text>
+            </svg>
             <div class="otile-row"><span>Production budget</span><b>$12M – $18M</b></div>
             <div class="otile-row wrap"><span>Cost engineering</span><b>The shipwreck can be AI-enhanced rendering, not a practical build → −$4M. One vessel — a contained shoot.</b></div>
-            <div class="otile-row wrap"><span>What protects the floor</span><b>The capsized ship · sustained suspense · a contained cast</b></div>
+            <div class="otile-row wrap"><span>Why the floor holds</span><b>Thin competition in the release corridor · built-in virality · a contained, single-vessel shoot — even the conservative case covers the budget.</b></div>
+            <div class="otile-row wrap"><span>Where the upside lives</span><b>A recognizable lead multiplies virality · open-water imagery pulls theatrical audiences · subject matter that translates globally lifts international sales.</b></div>
           </div>
           <div class="otile">
             <p class="otile-label">Comps · Open-water suspense</p>
@@ -696,8 +706,8 @@
         <div class="cap-tiles">
           <div class="otile">
             <p class="otile-label">Untitled Thriller · Two possible cuts</p>
-            <div class="otile-row"><span>Trim the storm flashback</span><b>Budget −$2.5M · EV <span class="acc">−$0.4M</span> · safe</b></div>
-            <div class="otile-row"><span>Move the story onshore</span><b>Budget −$3M · EV <span class="fatal">−$22M</span> · fatal</b></div>
+            <div class="otile-row"><span>Trim the storm flashback</span><b>Budget −$2.5M · proj. gross <span class="acc">−$0.4M</span> · safe</b></div>
+            <div class="otile-row"><span>Move the story onshore</span><b>Budget −$3M · proj. gross <span class="fatal">−$22M</span> · fatal</b></div>
             <div class="otile-row wrap"><span>Selznick's read</span><b>The ship is the subject — it's worth every dollar.</b></div>
           </div>
         </div>
@@ -711,14 +721,14 @@
         <div class="cap-tiles">
           <div class="otile">
             <p class="otile-label">Untitled Thriller · Talent</p>
-            <div class="otile-row"><span>Lead screen presence</span><b><span class="chip">P92</span> · in 78% of scenes</b></div>
+            <div class="otile-row wrap"><span>Lead screen presence</span><b><span class="chip">92nd percentile</span> of the 13,000 films we've studied — on screen in 78% of scenes</b></div>
             <div class="otile-row"><span>Scenes demanding top-tier acting</span><b>14</b></div>
-            <div class="otile-row"><span>Recognizable lead</span><b>viral exposure <span class="acc">+25%</span> · EV <span class="acc">+$21M</span></b></div>
+            <div class="otile-row"><span>Recognizable lead</span><b>viral exposure <span class="acc">+25%</span> · proj. gross <span class="acc">+$21M</span></b></div>
             <div class="otile-row wrap"><span>Selznick's read</span><b>Doesn't need an A-lister — needs an actor.</b></div>
           </div>
           <div class="otile">
             <p class="otile-label">Untitled Thriller · Viral potential</p>
-            <div class="otile-row"><span>vs. all feature films</span><b><span class="chip">P90</span></b></div>
+            <div class="otile-row"><span>Viral potential</span><b><span class="chip">90th percentile</span> of 13,000 films</b></div>
             <div class="otile-row"><span>Viral-ready moments</span><b>10+</b></div>
             <div class="otile-row wrap"><span>Including</span><b>the shipwreck · the beach scene · the birth scene</b></div>
             <div class="otile-row wrap"><span>Marketing path</span><b>Virality and recognizability — not media buys.</b></div>
@@ -790,15 +800,15 @@
   <div class="section-marker reveal">The door</div>
   <h2 class="door-h reveal">Anyone can <em>reach out.</em></h2>
   <div class="door-terms reveal">
-    <span class="door-term">Advertise &amp; distribute</span>
-    <span class="door-term">Analyze a screenplay</span>
-    <span class="door-term">Pitch us a project</span>
+    <span class="door-term">Social partnerships</span>
+    <span class="door-term">Screenplay analysis</span>
+    <span class="door-term">Film development</span>
   </div>
   <div class="reveal">
-    <a href="/pitch" class="btn-primary" style="padding:16px 44px;font-size:13px;">Bring us a project</a>
+    <a href="/pitch" class="btn-primary" style="padding:16px 44px;font-size:13px;">Get in touch</a>
   </div>
-  <p class="door-note reveal">For everything else, reach us directly at <a href="mailto:info@gem.studio">info@gem.studio</a></p>
-  <p class="door-partner reveal"><b>Writers:</b> no agent, no track record, no permission required. <b>Studios, brands, and financing partners:</b> same door: <a href="mailto:info@gem.studio">info@gem.studio</a></p>
+  <p class="door-note reveal">Or email us directly at <a href="mailto:info@gem.studio">info@gem.studio</a></p>
+  <p class="door-partner reveal"><b>GEM is in private beta.</b> We work with a handful of select partners across social, screenplays, and feature films. Tell us who you are, what you're working on, and how you'd like to work with us.</p>
 </section>
 
 <footer>
