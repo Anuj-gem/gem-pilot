@@ -25,7 +25,7 @@ export default function Icon() {
           style={{
             width: 22,
             height: 22,
-            background: '#7c3aed',
+            background: 'linear-gradient(135deg, #8b5cf6, #5B21B6)',
             transform: 'rotate(45deg)',
             borderRadius: 3,
             display: 'flex',
