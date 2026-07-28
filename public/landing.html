@@ -205,21 +205,17 @@
       border-radius: 18px;
       padding: 38px 40px 42px;
     }
-    .pipe-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+    .fstats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .pipe-stamp {
+      display: inline-block; margin-top: 26px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.3em;
       text-transform: uppercase; color: var(--accent-soft);
-      margin-bottom: 30px;
+      border: 1px solid rgba(196,181,253,0.45);
+      border-radius: 4px; padding: 9px 20px;
     }
-    .flow-wrap { overflow-x: auto; }
-    .flow {
-      display: block; width: 100%; min-width: 720px; height: auto;
-    }
-    .flow text {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px; font-weight: 300;
-      fill: var(--on-screen-muted);
-    }
-    .flow text.strong { fill: #fff; font-weight: 500; }
     .cap-cta {
       margin-top: 28px;
       font-size: 16.5px; color: var(--ink); font-weight: 400;
@@ -302,41 +298,6 @@
     .who-cta a:hover { color: #fff; }
 
 
-    /* ── The goal (teaser one-sheet) ── */
-    .teaser {
-      background: radial-gradient(120% 150% at 50% 0%, #241B31 0%, #14101B 62%);
-      color: #fff;
-      border-radius: 18px;
-      border: 1px solid rgba(196,181,253,0.22);
-      padding: 76px 48px 68px;
-      text-align: center;
-    }
-    .teaser-k {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.4em;
-      text-transform: uppercase; color: var(--accent-soft);
-      margin-bottom: 26px;
-    }
-    .teaser-h {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(34px, 5.4vw, 64px);
-      font-weight: 400; line-height: 1.08;
-      max-width: 19ch; margin: 0 auto;
-      text-wrap: balance;
-    }
-    .teaser-h em { font-style: italic; color: var(--accent-soft); }
-    .teaser-sub {
-      margin: 26px auto 0; max-width: 560px;
-      font-size: 15.5px; color: var(--on-screen-muted); line-height: 1.75;
-    }
-    .teaser-sub b { color: #fff; font-weight: 500; }
-    .teaser-stamp {
-      display: inline-block; margin-top: 34px;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--accent-soft);
-      border: 1px solid rgba(196,181,253,0.45);
-      border-radius: 4px; padding: 10px 22px;
-    }
-
     /* ── The door ── */
     .door { text-align: center; padding: 96px 56px 88px; }
     .door-h {
@@ -396,9 +357,9 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .pipe { padding: 30px 20px 32px; border-radius: 14px; }
+      .fstats { grid-template-columns: 1fr 1fr; }
 
 
-      .teaser { padding: 56px 24px 52px; }
       .door { padding: 64px 20px 56px; }
 
       footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
@@ -415,7 +376,6 @@
   </div>
   <div class="nav-links">
     <a href="#channels">What we do</a>
-    <a href="#goal">The goal</a>
     <a href="/blog">Blog</a>
     <a href="mailto:info@gem.studio" class="nav-cta">Get in touch</a>
   </div>
@@ -467,59 +427,16 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Feature films</p>
     <p class="pillar-statement">We're building a new feature film studio for the <em>AI era.</em></p>
-    <p class="pillar-next">Powered by <b>Selznick</b> — the first AI development executive. It helps us find the world's most talented filmmakers, and partner with them to develop their ideas into films that attract a huge theatrical audience. Here's how it works:</p>
+    <p class="pillar-next">Powered by <b>Selznick</b> — the first AI development executive. It finds the feature film ideas with the greatest theatrical potential, and the talented filmmakers behind them. We partner with those filmmakers to develop, finance, and distribute their films in theaters — and anyone can send us a script.</p>
 
     <div class="pipe reveal">
-      <p class="pipe-label">Script to screen</p>
-      <div class="flow-wrap">
-        <svg class="flow" viewBox="0 0 1000 270" aria-hidden="true">
-          <defs>
-            <linearGradient id="gemg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#8b5cf6"/>
-              <stop offset="1" stop-color="#5B21B6"/>
-            </linearGradient>
-            <linearGradient id="outg" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#8b5cf6"/>
-              <stop offset="1" stop-color="#A78BFA"/>
-            </linearGradient>
-            <radialGradient id="gemglow">
-              <stop offset="0" stop-color="rgba(139,92,246,0.45)"/>
-              <stop offset="1" stop-color="rgba(139,92,246,0)"/>
-            </radialGradient>
-          </defs>
-
-          <!-- inputs -->
-          <text x="30" y="58" class="strong">Thousands of scripts</text>
-          <text x="30" y="78">sent to us</text>
-          <circle cx="208" cy="66" r="3.5" fill="rgba(243,239,232,0.4)"/>
-          <path d="M212 66 C 292 66, 332 120, 376 138" fill="none" stroke="rgba(243,239,232,0.28)" stroke-width="1.5"/>
-
-          <text x="30" y="200" class="strong">Filmmakers we</text>
-          <text x="30" y="220">scout ourselves</text>
-          <circle cx="208" cy="210" r="3.5" fill="rgba(243,239,232,0.4)"/>
-          <path d="M212 210 C 292 210, 332 160, 376 144" fill="none" stroke="rgba(243,239,232,0.28)" stroke-width="1.5"/>
-
-          <!-- the gem -->
-          <circle cx="404" cy="141" r="48" fill="url(#gemglow)"/>
-          <rect x="-19" y="-19" width="38" height="38" rx="7" transform="translate(404 141) rotate(45)" fill="url(#gemg)"/>
-          <text x="404" y="216" text-anchor="middle" class="strong">Selznick</text>
-          <text x="404" y="236" text-anchor="middle">reads everything</text>
-
-          <!-- the out-stream -->
-          <path d="M436 141 L 900 141" stroke="url(#outg)" stroke-width="3.5" fill="none"/>
-          <circle cx="588" cy="141" r="5" fill="#A78BFA"/>
-          <text x="588" y="100" text-anchor="middle" class="strong">Ideas with real</text>
-          <text x="588" y="120" text-anchor="middle" class="strong">theatrical potential</text>
-          <circle cx="764" cy="141" r="5" fill="#A78BFA"/>
-          <text x="764" y="180" text-anchor="middle" class="strong">Developed together</text>
-          <text x="764" y="200" text-anchor="middle">script · casting · financing</text>
-
-          <!-- theaters -->
-          <rect x="900" y="122" width="52" height="38" rx="5" fill="none" stroke="#A78BFA" stroke-width="2"/>
-          <path d="M908 132 h36" stroke="#A78BFA" stroke-width="2"/>
-          <text x="926" y="186" text-anchor="middle" class="strong">Theaters</text>
-        </svg>
+      <div class="fstats">
+        <div class="wstat"><b>3,000+</b><span>Scripts studied</span></div>
+        <div class="wstat"><b>3</b><span>Films in development</span></div>
+        <div class="wstat"><b>$45M</b><span>Est. production cost</span></div>
+        <div class="wstat"><b>$170M</b><span>Projected box office</span></div>
       </div>
+      <p class="pipe-stamp">First announcement · late 2026</p>
     </div>
 
     <p class="cap-cta">Are you a filmmaker? <a href="mailto:info@gem.studio?subject=Working%20with%20GEM">Get in touch →</a></p>
@@ -529,34 +446,20 @@
 
 <div class="rule"></div>
 
-<!-- The goal -->
-<section id="goal">
-  <div class="section-marker reveal">The goal</div>
-  <div class="teaser reveal">
-    <p class="teaser-k">Gem Studios presents</p>
-    <p class="teaser-h">Multiple feature films, <em>in development now.</em></p>
-    <p class="teaser-sub">
-      In partnership with writers, producers, and financiers. Our goal is bold and simple: release them in theaters worldwide. And we're still deep in the search for the next ones — reading everything, everywhere.
-    </p>
-    <span class="teaser-stamp">First announcement · late 2026</span>
-  </div>
-</section>
-
-<div class="rule"></div>
-
 <!-- The door -->
 <section class="door" id="partner">
   <div class="section-marker reveal">The door</div>
   <h2 class="door-h reveal">Anyone can <em>reach out.</em></h2>
   <div class="door-terms reveal">
-    <span class="door-term">Social partnerships</span>
-    <span class="door-term">Screenplay analysis</span>
-    <span class="door-term">Feature films</span>
+    <span class="door-term">Screen your script</span>
+    <span class="door-term">Partner on our social channels</span>
+    <span class="door-term">Pitch us a feature film</span>
+    <span class="door-term">Production &amp; financing partners</span>
   </div>
   <div class="reveal">
     <a href="mailto:info@gem.studio?subject=Working%20with%20GEM" class="btn-primary" style="padding:16px 44px;font-size:13px;">Email us — info@gem.studio</a>
   </div>
-  <p class="door-partner reveal">We work with a select group of partners across social, screenplays, and feature films. Tell us who you are, what you're working on, and how you'd like to work with us.</p>
+  <p class="door-partner reveal"><b>We're open for business.</b> Tell us who you are, what you're working on, and how you'd like to work with us — or become a production or financing partner on any of our projects in development.</p>
 </section>
 
 <footer>
