@@ -223,15 +223,9 @@
       border-radius: 14px; padding: 24px 22px 22px;
     }
     .scard-g {
-      height: 72px; margin-bottom: 18px;
+      min-height: 76px; margin-bottom: 18px;
       display: flex; flex-direction: column; justify-content: flex-end;
     }
-    .srows { display: flex; flex-direction: column; gap: 6px; }
-    .srows i {
-      display: block; height: 9px; border-radius: 4px;
-      background: rgba(255,255,255,0.12);
-    }
-    .srows i.on { background: linear-gradient(90deg, #8b5cf6, #5B21B6); }
     .vbars {
       display: flex; align-items: flex-end; gap: 8px;
       height: 56px;
@@ -242,28 +236,28 @@
       background: rgba(255,255,255,0.14);
     }
     .vbars i.on { background: linear-gradient(180deg, #8b5cf6, #5B21B6); }
-    .vbars.drafts i { width: 26px; }
+    .vbars.ten { gap: 6px; }
+    .vbars.ten i { width: 9px; }
     .dlab {
-      display: flex; gap: 14px; margin-top: 7px;
+      display: flex; justify-content: space-between;
+      max-width: 144px; margin-top: 7px;
       font-size: 9px; font-weight: 600; letter-spacing: 0.08em;
       text-transform: uppercase; color: var(--on-screen-muted);
     }
     .dlab .on { color: var(--accent-soft); }
+    .dgrid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .dgrid span {
+      border: 1px solid rgba(255,255,255,0.16); border-radius: 7px;
+      padding: 8px 6px; text-align: center;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--on-screen);
+    }
     .scard-t {
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px; color: #fff;
-      margin-bottom: 7px; line-height: 1.15;
-    }
-    .scard-d {
-      font-size: 12.5px; color: var(--on-screen-muted);
-      line-height: 1.6;
-    }
-    .pipe-stamp {
-      display: inline-block; margin-top: 26px;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--accent-soft);
-      border: 1px solid rgba(196,181,253,0.45);
-      border-radius: 4px; padding: 9px 20px;
+      line-height: 1.2;
     }
     .cap-cta {
       margin-top: 28px;
@@ -479,38 +473,34 @@
     <p class="pillar-statement">We're building a new feature film studio for the <em>AI era.</em></p>
     <p class="pillar-next">Powered by <b>Selznick</b> — the first comprehensive AI development executive built specifically for feature films. It projects the commercial potential of any screenplay, guides writers to maximize that potential without harming their vision, and guides critical development decisions: budget, casting, crew, and distribution.</p>
 
-    <div class="selz-cards">
-      <div class="scard reveal">
-        <div class="scard-g">
-          <div class="srows"><i style="width:55%"></i><i style="width:75%"></i><i class="on" style="width:95%"></i><i style="width:40%"></i></div>
-        </div>
-        <p class="scard-t">Identify commercial potential</p>
-        <p class="scard-d">Selznick reads every screenplay and surfaces the ones worth making.</p>
-      </div>
-      <div class="scard reveal">
-        <div class="scard-g">
-          <div class="vbars"><i style="height:30%"></i><i style="height:48%"></i><i style="height:66%"></i><i class="on" style="height:95%"></i></div>
-        </div>
-        <p class="scard-t">Project box office potential</p>
-        <p class="scard-d">A projected box office range for any script — before a dollar is spent.</p>
-      </div>
-      <div class="scard reveal">
-        <div class="scard-g">
-          <div class="vbars drafts"><i style="height:45%"></i><i class="on" style="height:90%"></i></div>
-          <div class="dlab"><span>Draft 1</span><span class="on">Draft 2</span></div>
-        </div>
-        <p class="scard-t">Guide creative development</p>
-        <p class="scard-d">Draft to draft, decision to decision — budget, casting, crew, distribution.</p>
-      </div>
-    </div>
-
     <div class="pipe reveal">
       <div class="fstats">
         <div class="wstat"><b>500+</b><span>Writers, producers &amp; financiers</span></div>
         <div class="wstat"><b>10,000+</b><span>Screenplays evaluated</span></div>
-        <div class="wstat"><b>10+</b><span>Films in development</span></div>
+        <div class="wstat"><b>10+</b><span>Feature films in development</span></div>
       </div>
-      <p class="pipe-stamp">First announcement · late 2026</p>
+    </div>
+
+    <div class="selz-cards">
+      <div class="scard reveal">
+        <div class="scard-g">
+          <div class="vbars"><i style="height:26%"></i><i style="height:44%"></i><i style="height:63%"></i><i class="on" style="height:95%"></i></div>
+        </div>
+        <p class="scard-t">Projects the commercial potential of any screenplay</p>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-g">
+          <div class="vbars ten"><i style="height:30%"></i><i style="height:44%"></i><i style="height:38%"></i><i style="height:56%"></i><i style="height:48%"></i><i style="height:67%"></i><i style="height:60%"></i><i style="height:79%"></i><i style="height:72%"></i><i class="on" style="height:96%"></i></div>
+          <div class="dlab"><span>Draft 1</span><span class="on">Draft 10</span></div>
+        </div>
+        <p class="scard-t">Guides writers to maximize it — without harming their vision</p>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-g">
+          <div class="dgrid"><span>Budget</span><span>Casting</span><span>Crew</span><span>Distribution</span></div>
+        </div>
+        <p class="scard-t">Guides critical development decisions</p>
+      </div>
     </div>
 
     <p class="cap-cta">Are you a filmmaker? <a href="mailto:info@gem.studio?subject=Working%20with%20GEM">Get in touch →</a></p>
