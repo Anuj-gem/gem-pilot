@@ -209,8 +209,54 @@
       padding: 38px 40px 42px;
     }
     .fstats {
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 12px;
+    }
+
+    /* Selznick cards */
+    .selz-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-top: 32px;
+    }
+    .scard {
+      background: var(--screen); color: var(--on-screen);
+      border-radius: 14px; padding: 24px 22px 22px;
+    }
+    .scard-g {
+      height: 72px; margin-bottom: 18px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .srows { display: flex; flex-direction: column; gap: 6px; }
+    .srows i {
+      display: block; height: 9px; border-radius: 4px;
+      background: rgba(255,255,255,0.12);
+    }
+    .srows i.on { background: linear-gradient(90deg, #8b5cf6, #5B21B6); }
+    .vbars {
+      display: flex; align-items: flex-end; gap: 8px;
+      height: 56px;
+    }
+    .vbars i {
+      display: block; width: 16px;
+      border-radius: 3px 3px 0 0;
+      background: rgba(255,255,255,0.14);
+    }
+    .vbars i.on { background: linear-gradient(180deg, #8b5cf6, #5B21B6); }
+    .vbars.drafts i { width: 26px; }
+    .dlab {
+      display: flex; gap: 14px; margin-top: 7px;
+      font-size: 9px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--on-screen-muted);
+    }
+    .dlab .on { color: var(--accent-soft); }
+    .scard-t {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; color: #fff;
+      margin-bottom: 7px; line-height: 1.15;
+    }
+    .scard-d {
+      font-size: 12.5px; color: var(--on-screen-muted);
+      line-height: 1.6;
     }
     .pipe-stamp {
       display: inline-block; margin-top: 26px;
@@ -360,7 +406,8 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .pipe { padding: 30px 20px 32px; border-radius: 14px; }
-      .fstats { grid-template-columns: 1fr 1fr; }
+      .fstats { grid-template-columns: 1fr; }
+      .selz-cards { grid-template-columns: 1fr; }
 
 
       .door { padding: 64px 20px 56px; }
@@ -408,7 +455,7 @@
     <div class="who-content">
       <p class="pillar-n">Social media</p>
       <p class="who-statement">One of the world's most viral <em>social media networks.</em></p>
-      <p class="who-next">Powered by <b>Jimmy</b> — our proprietary AI engine that has helped produce some of the internet's most viral content.</p>
+      <p class="who-next">Powered by <b>Jimmy</b> — our AI-native system for viral content creation, behind some of the internet's most viral videos.</p>
       <div class="wstats">
         <div class="wstat"><b>1B+</b><span>Views</span></div>
         <div class="wstat"><b>400K+</b><span>Followers</span></div>
@@ -430,14 +477,38 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Feature films</p>
     <p class="pillar-statement">We're building a new feature film studio for the <em>AI era.</em></p>
-    <p class="pillar-next">Powered by <b>Selznick</b> — the world's most powerful AI development executive, built on research across 13,000+ past films. It finds filmmakers with one-of-a-kind feature film ideas, and we partner with them to develop, finance, and distribute their films in theaters. There's immense talent out there with no access to the traditional Hollywood system — Selznick lets us be open to anyone, no matter their track record or their connections.</p>
+    <p class="pillar-next">Powered by <b>Selznick</b> — the first comprehensive AI development executive built specifically for feature films. It projects the commercial potential of any screenplay, guides writers to maximize that potential without harming their vision, and guides critical development decisions: budget, casting, crew, and distribution.</p>
+
+    <div class="selz-cards">
+      <div class="scard reveal">
+        <div class="scard-g">
+          <div class="srows"><i style="width:55%"></i><i style="width:75%"></i><i class="on" style="width:95%"></i><i style="width:40%"></i></div>
+        </div>
+        <p class="scard-t">Identify commercial potential</p>
+        <p class="scard-d">Selznick reads every screenplay and surfaces the ones worth making.</p>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-g">
+          <div class="vbars"><i style="height:30%"></i><i style="height:48%"></i><i style="height:66%"></i><i class="on" style="height:95%"></i></div>
+        </div>
+        <p class="scard-t">Project box office potential</p>
+        <p class="scard-d">A projected box office range for any script — before a dollar is spent.</p>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-g">
+          <div class="vbars drafts"><i style="height:45%"></i><i class="on" style="height:90%"></i></div>
+          <div class="dlab"><span>Draft 1</span><span class="on">Draft 2</span></div>
+        </div>
+        <p class="scard-t">Guide creative development</p>
+        <p class="scard-d">Draft to draft, decision to decision — budget, casting, crew, distribution.</p>
+      </div>
+    </div>
 
     <div class="pipe reveal">
       <div class="fstats">
-        <div class="wstat"><b>3,000+</b><span>Scripts studied</span></div>
-        <div class="wstat"><b>3</b><span>Films in development</span></div>
-        <div class="wstat"><b>$45M</b><span>Est. production cost</span></div>
-        <div class="wstat"><b>$170M</b><span>Projected box office</span></div>
+        <div class="wstat"><b>500+</b><span>Writers, producers &amp; financiers</span></div>
+        <div class="wstat"><b>10,000+</b><span>Screenplays evaluated</span></div>
+        <div class="wstat"><b>10+</b><span>Films in development</span></div>
       </div>
       <p class="pipe-stamp">First announcement · late 2026</p>
     </div>
