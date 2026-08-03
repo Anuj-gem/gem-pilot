@@ -201,26 +201,37 @@
     }
     .pillar-next b { font-weight: 600; color: var(--ink); }
 
-    /* Selznick pipeline */
-    .pipe {
-      margin-top: 36px;
-      background: var(--screen); color: var(--on-screen);
-      border-radius: 18px;
-      padding: 38px 40px 42px;
-    }
-    .fstats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
 
     /* Selznick cards */
     .selz-cards {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 14px; margin-top: 32px;
     }
     .scard {
       background: var(--screen); color: var(--on-screen);
       border-radius: 14px; padding: 24px 22px 22px;
+    }
+    .scard-k {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent-soft);
+      margin-bottom: 16px;
+    }
+    .srows { display: flex; flex-direction: column; gap: 6px; }
+    .srows i {
+      display: block; height: 9px; border-radius: 4px;
+      background: rgba(255,255,255,0.12);
+    }
+    .srows i.on { background: linear-gradient(90deg, #8b5cf6, #5B21B6); }
+    .tgrid { display: flex; gap: 8px; }
+    .tgrid span {
+      flex: 1; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px;
+      padding: 16px 6px; text-align: center;
+      font-size: 12px; font-weight: 600; color: var(--on-screen-muted);
+    }
+    .tgrid span.on {
+      border-color: rgba(139,92,246,0.6);
+      color: var(--accent-soft);
+      background: rgba(139,92,246,0.12);
     }
     .scard-g {
       min-height: 76px;
@@ -245,6 +256,7 @@
       text-transform: uppercase; color: var(--on-screen-muted);
     }
     .dlab .on { color: var(--accent-soft); }
+    .dlab.wide { max-width: none; }
     .dgrid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
     }
@@ -345,6 +357,11 @@
       margin-bottom: 20px; color: var(--ink);
     }
     .door-h em { font-style: italic; color: var(--accent-deep); }
+    .door-sub {
+      margin: 0 auto 36px; max-width: 620px;
+      font-size: 15px; color: var(--ink-soft); line-height: 1.7;
+    }
+    .door-sub b { font-weight: 600; color: var(--ink); }
     .door-terms {
       display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
       margin-bottom: 40px;
@@ -394,8 +411,6 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
-      .pipe { padding: 30px 20px 32px; border-radius: 14px; }
-      .fstats { grid-template-columns: 1fr; }
       .selz-cards { grid-template-columns: 1fr; }
 
 
@@ -442,13 +457,13 @@
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="pillar-n">Social media</p>
-      <p class="who-statement">One of the world's most viral <em>social media networks.</em></p>
-      <p class="who-next">Powered by <b>Jimmy</b> — our AI-native system for viral content creation, behind some of the internet's most viral videos.</p>
+      <p class="pillar-n">What we've done</p>
+      <p class="who-statement">We make entertainment for massive global audiences — <em>and we're just getting started.</em></p>
+      <p class="who-next">We write and produce it ourselves, alongside the world's best creators — from one of the world's most viral social networks to TV and feature films.</p>
       <div class="wstats">
         <div class="wstat"><b>1B+</b><span>Views</span></div>
-        <div class="wstat"><b>400K+</b><span>Followers</span></div>
-        <div class="wstat"><b>10+</b><span>Social channels</span></div>
+        <div class="wstat"><b>10,000+</b><span>Screenplays studied</span></div>
+        <div class="wstat"><b>10+</b><span>TV &amp; film projects in development</span></div>
       </div>
       <div class="origin-clips">
         <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
@@ -464,39 +479,43 @@
 <!-- Pillar · Feature films -->
 <section id="work" style="padding-top:0;">
   <div class="pillar-card reveal">
-    <p class="pillar-n">Feature films</p>
-    <p class="pillar-statement">We're building a new feature film studio for the <em>AI era.</em></p>
-    <p class="pillar-next">Powered by <b>Selznick</b> — the first comprehensive AI development executive built specifically for feature films. It projects the commercial potential of any screenplay, guides writers to maximize that potential without harming their vision, and guides critical development decisions: budget, casting, crew, and distribution.</p>
-
-    <div class="pipe reveal">
-      <div class="fstats">
-        <div class="wstat"><b>500+</b><span>Writers, producers &amp; financiers</span></div>
-        <div class="wstat"><b>10,000+</b><span>Screenplays evaluated</span></div>
-        <div class="wstat"><b>10+</b><span>Feature films in development</span></div>
-      </div>
-    </div>
+    <p class="pillar-n">The technology</p>
+    <p class="pillar-statement">All of it runs on <em>Selznick.</em></p>
+    <p class="pillar-next">Selznick is the technology at the core of GEM — built by us, for the way we work. It's not AI that replaces creatives: it's AI that's a partner to the world's best ones. Here's what it does:</p>
 
     <div class="selz-cards">
       <div class="scard reveal">
+        <p class="scard-k">Scouting</p>
         <div class="scard-g">
-          <div class="vbars"><i style="height:26%"></i><i style="height:44%"></i><i style="height:63%"></i><i class="on" style="height:95%"></i></div>
-          <div class="dlab"><span>Projected box office</span></div>
+          <div class="srows"><i style="width:88%"></i><i style="width:60%"></i><i class="on" style="width:96%"></i><i style="width:48%"></i><i style="width:72%"></i></div>
+          <div class="dlab wide"><span>10,000+ scripts &amp; ideas in</span><span class="on">The ones worth making</span></div>
         </div>
       </div>
       <div class="scard reveal">
+        <p class="scard-k">Development</p>
         <div class="scard-g">
           <div class="vbars ten"><i style="height:30%"></i><i style="height:44%"></i><i style="height:38%"></i><i style="height:56%"></i><i style="height:48%"></i><i style="height:67%"></i><i style="height:60%"></i><i style="height:79%"></i><i style="height:72%"></i><i class="on" style="height:96%"></i></div>
           <div class="dlab"><span>Draft 1</span><span class="on">Draft 10</span></div>
         </div>
       </div>
       <div class="scard reveal">
+        <p class="scard-k">Commercial path</p>
         <div class="scard-g">
-          <div class="dgrid"><span>Budget</span><span>Casting</span><span>Crew</span><span>Distribution</span></div>
+          <div class="vbars"><i style="height:26%"></i><i style="height:44%"></i><i style="height:63%"></i><i class="on" style="height:95%"></i></div>
+          <div class="dlab"><span>Projected box office</span></div>
+          <div class="dgrid" style="margin-top:14px;"><span>Budget</span><span>Casting</span><span>Timing</span><span>Distribution</span></div>
+        </div>
+      </div>
+      <div class="scard reveal">
+        <p class="scard-k">Testing</p>
+        <div class="scard-g">
+          <div class="tgrid"><span>1.2M</span><span>480K</span><span class="on">11M</span></div>
+          <div class="dlab wide"><span>Concepts tested on our own channels</span></div>
         </div>
       </div>
     </div>
 
-    <p class="cap-cta">Are you a filmmaker? <a href="mailto:info@gem.studio?subject=Working%20with%20GEM">Get in touch →</a></p>
+    <p class="cap-cta">Are you a creator? <a href="mailto:info@gem.studio?subject=Working%20with%20GEM">Get in touch →</a></p>
   </div>
 
 </section>
@@ -507,6 +526,7 @@
 <section class="door" id="partner">
   <div class="section-marker reveal">The door</div>
   <h2 class="door-h reveal">Anyone can <em>reach out.</em></h2>
+  <p class="door-sub reveal">Send us anything — a script, a book, a raw idea. No reps, no track record required. Amazon once opened its doors to every writer and had to shut them: reading everything is impossible without the technology. <b>We built the technology.</b> We read everything, and we reach out when there's a fit.</p>
   <div class="door-terms reveal">
     <span class="door-term">Screen your script</span>
     <span class="door-term">Partner on our social channels</span>
