@@ -308,23 +308,32 @@
       font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--accent-soft);
     }
-    .origin-clips {
-      margin-top: 28px;
-      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    .open-strip {
+      margin-top: 28px; padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
     }
-    .clip-thumb {
-      width: 82px; aspect-ratio: 4/5;
-      border-radius: 8px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.16);
-      position: relative; flex: none;
+    .ministat {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 10px; padding: 10px 16px; flex: none;
     }
-    .clip-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .clip-views {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      font-size: 9px; font-weight: 600; letter-spacing: 0.06em;
-      color: #E9D8FD; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-      padding: 14px 6px 5px; text-align: center;
+    .ministat b {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 300; line-height: 1;
+      color: #fff;
     }
+    .ministat span {
+      display: block; margin-top: 5px;
+      font-size: 8.5px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--accent-soft);
+    }
+    .open-copy {
+      flex: 1; min-width: 260px;
+      font-size: 13.5px; color: var(--on-screen-muted); line-height: 1.65;
+    }
+    .open-copy a { color: var(--accent-soft); text-decoration: none; }
+    .open-copy a:hover { color: #fff; }
     .tiktok-link {
       font-size: 11px; letter-spacing: 0.1em;
       color: var(--on-screen-muted); text-transform: uppercase;
@@ -334,13 +343,6 @@
       transition: color 0.2s;
     }
     .tiktok-link:hover { color: #fff; }
-    .who-cta {
-      margin-top: 26px; padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.14);
-      font-size: 14px; color: var(--on-screen-muted); line-height: 1.65;
-    }
-    .who-cta a { color: var(--accent-soft); text-decoration: none; }
-    .who-cta a:hover { color: #fff; }
 
 
     /* ── The door ── */
@@ -453,20 +455,18 @@
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
       <p class="pillar-n">What we've done</p>
-      <p class="who-statement">We make entertainment for massive global audiences — <em>and we're just getting started.</em></p>
-      <p class="who-next">From one of the world's most viral social networks to TV and feature films — made by our team and the world's best creators.</p>
+      <p class="who-statement">We make entertainment for global audiences — <em>and we're just getting started.</em></p>
+      <p class="who-next">GEM creators produce content for audiences everywhere — from viral social video to TV and feature films.</p>
       <div class="wstats">
-        <div class="wstat"><b>1B+</b><span>Views</span></div>
-        <div class="wstat"><b>10,000+</b><span>Screenplays studied</span></div>
-        <div class="wstat"><b>10+</b><span>TV &amp; film projects in development</span></div>
+        <div class="wstat"><b>1B+</b><span>Views on social — in the last year</span></div>
+        <div class="wstat"><b>5+</b><span>TV &amp; film projects in development</span></div>
       </div>
-      <div class="origin-clips">
-        <div class="clip-thumb"><img src="screenshots/wedding-ceremony.jpg" alt="Viral clip"><div class="clip-views">111M views</div></div>
-        <div class="clip-thumb"><img src="screenshots/clip-three.jpg" alt="Viral clip"></div>
-        <div class="clip-thumb"><img src="screenshots/clip-lawyer.jpg" alt="Viral clip"></div>
-        <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank">View on TikTok ↗</a>
+      <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank" style="display:inline-block;margin-top:18px;">View our channels on TikTok ↗</a>
+      <div class="open-strip">
+        <div class="ministat"><b>10,000+</b><span>Submissions</span></div>
+        <div class="ministat"><b>500+</b><span>Writers</span></div>
+        <p class="open-copy">We work with anyone. Writers everywhere have sent us thousands of screenplays and ideas — and we actively scout the internet, social media, and beyond to find incredible creators to partner with. Send us yours → <a href="mailto:info@gem.studio">info@gem.studio</a></p>
       </div>
-      <p class="who-cta">Partner with us on our channels — advertise, or distribute your content on social → <a href="mailto:info@gem.studio">info@gem.studio</a></p>
     </div>
   </div>
 </section>
@@ -476,7 +476,7 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">The technology</p>
     <p class="pillar-statement">All of it runs on <em>Selznick.</em></p>
-    <p class="pillar-next">Selznick is the technology at the core of GEM — built by us, for the way we work. It's not AI that replaces creatives: it's AI that's a partner to the world's best ones. Here's what it does:</p>
+    <p class="pillar-next">Selznick is the most comprehensive AI platform for creative development ever built. It doesn't replace creatives — we leverage it to find and partner with the world's best, and to produce amazing work together. Here's what it does:</p>
 
     <div class="selz-cards">
       <div class="scard reveal">
@@ -484,7 +484,7 @@
         <div class="scard-g">
           <div class="srows"><i style="width:88%"></i><i style="width:60%"></i><i class="on" style="width:96%"></i><i style="width:48%"></i><i style="width:72%"></i></div>
         </div>
-        <p class="scard-d">We scout thousands of ideas and creators — and find the immense potential that no one else can see.</p>
+        <p class="scard-d">We scout everywhere on the internet — and take open submissions from anyone — to find creators and ideas with immense potential that no one else can see.</p>
       </div>
       <div class="scard reveal">
         <p class="scard-k">Development</p>
@@ -497,9 +497,9 @@
       <div class="scard reveal">
         <p class="scard-k">The right path</p>
         <div class="scard-g">
-          <div class="tgrid"><span class="on">Theatrical</span><span>Streaming</span><span>Series</span></div>
+          <div class="tgrid"><span class="on">Theatrical</span><span>Streaming</span><span>Online</span></div>
         </div>
-        <p class="scard-d">For any idea, Selznick finds the path to the largest, most dedicated audience — and spots the ones that can grow into franchises.</p>
+        <p class="scard-d">Selznick builds detailed financial projections — what an idea costs to make, what it can earn, and how to produce it sustainably — then finds where it should be distributed to reach the largest, most dedicated audience.</p>
       </div>
     </div>
 
