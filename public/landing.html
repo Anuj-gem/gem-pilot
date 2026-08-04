@@ -204,8 +204,21 @@
 
     /* Selznick cards */
     .selz-cards {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 14px; margin-top: 32px;
+    }
+    .panel-cta {
+      margin-top: 26px; padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      font-size: 15px; color: var(--on-screen);
+    }
+    .panel-cta a { color: var(--accent-soft); text-decoration: none; font-weight: 500; }
+    .panel-cta a:hover { color: #fff; }
+    .snum {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px; font-weight: 300; line-height: 1;
+      color: #fff;
     }
     .scard {
       background: var(--screen); color: var(--on-screen);
@@ -413,7 +426,7 @@
     Great entertainers<br>
     + AI = <em>magic.</em>
   </h1>
-  <p class="hero-sub reveal">GEM pairs the world's best entertainers with advanced technology that helps them develop their ideas into content that attracts massive global audiences.</p>
+  <p class="hero-sub reveal">GEM pairs the world's best entertainers with <b>Selznick</b> — our AI for creative development — to produce entertainment for mass global audiences.</p>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
     <a href="#channels" class="btn-text">What we do ↓</a>
@@ -428,14 +441,14 @@
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="pillar-n">What we've done</p>
-      <p class="who-statement">We produce entertainment for mass global audiences — <em>and we're just getting started.</em></p>
-      <p class="who-next">In just the last year, our work has reached over 500 million people worldwide. Some big things are underway — stay tuned.</p>
+      <p class="pillar-n">Social media</p>
+      <p class="who-statement">We co-produce social content with some of the world's most talented <em>online creators.</em></p>
       <div class="wstats">
-        <div class="wstat"><b>1B+</b><span>Views on our social channels</span></div>
-        <div class="wstat"><b>5+</b><span>TV &amp; film projects in development</span></div>
+        <div class="wstat"><b>1B+</b><span>Views — last 12 months</span></div>
+        <div class="wstat"><b>500M+</b><span>People reached — last 12 months</span></div>
       </div>
       <a href="https://tiktok.com/@trygemstudios" class="tiktok-link" target="_blank" style="display:inline-block;margin-top:18px;">View our channels on TikTok ↗</a>
+      <p class="panel-cta">Partner with us on our channels → <a href="mailto:info@gem.studio?subject=Social%20partnership">info@gem.studio</a></p>
     </div>
   </div>
 </section>
@@ -443,25 +456,17 @@
 <!-- Pillar · Feature films -->
 <section id="work" style="padding-top:0;">
   <div class="pillar-card reveal">
-    <p class="pillar-n">The technology</p>
-    <p class="pillar-statement">All of it runs on <em>Selznick.</em></p>
-    <p class="pillar-next">All of our work is built on <b>Selznick</b> — game-changing AI for creative development. It doesn't replace creatives: it finds them, and it helps them do their best work. Here's what that looks like:</p>
+    <p class="pillar-n">Feature film screenplays</p>
+    <p class="pillar-statement">We optimize screenplays — and the decisions <em>around them.</em></p>
+    <p class="pillar-next">We've worked with 500+ industry partners — writers, producers, and studio execs — to optimize feature film screenplays and make key financing and development decisions with <b>Selznick</b>.</p>
 
     <div class="selz-cards">
-      <div class="scard reveal">
-        <p class="scard-k">Finding ideas &amp; creators</p>
-        <div class="scard-g">
-          <div class="srows"><i style="width:88%"></i><i style="width:60%"></i><i class="on" style="width:96%"></i><i style="width:48%"></i><i style="width:72%"></i></div>
-        </div>
-        <p class="scard-d">We scout everywhere for IP and the creators behind it — looking for massive potential in both the idea and the person. Anyone can send us their work; Selznick reads everything and finds what can attract world-class audiences.</p>
-      </div>
       <div class="scard reveal">
         <p class="scard-k">Creative development</p>
         <div class="scard-g">
           <div class="vbars ten"><i style="height:30%"></i><i style="height:44%"></i><i style="height:38%"></i><i style="height:56%"></i><i style="height:48%"></i><i style="height:67%"></i><i style="height:60%"></i><i style="height:79%"></i><i style="height:72%"></i><i class="on" style="height:96%"></i></div>
           <div class="dlab"><span>Draft 1</span><span class="on">Draft 10</span></div>
         </div>
-        <p class="scard-d">We partner with incredible creators and help turn raw ideas into globally popular productions — using Selznick to test, iterate, and refine, draft by draft.</p>
       </div>
       <div class="scard reveal">
         <p class="scard-k">The big decisions</p>
@@ -473,11 +478,36 @@
             <div class="orow"><span>Where does it live?</span><b class="oacc">Theaters</b></div>
           </div>
         </div>
-        <p class="scard-d">We make detailed production and financial decisions with Selznick — casting, budgeting, distribution strategy — the calls that make or break a project.</p>
       </div>
     </div>
 
-    <p class="cap-cta">Are you a creator? <a href="mailto:info@gem.studio?subject=Working%20with%20GEM">Get in touch →</a></p>
+    <p class="cap-cta"><a href="mailto:info@gem.studio?subject=Screenplay%20optimization">Work on your screenplay with us →</a></p>
+  </div>
+
+</section>
+
+<!-- Block · Scouting & development -->
+<section id="scout" style="padding-top:0;">
+  <div class="pillar-card reveal">
+    <p class="pillar-n">Scouting &amp; development</p>
+    <p class="pillar-statement">We scout thousands of ideas to find <em>the next great IP.</em></p>
+    <p class="pillar-next">From screenplays to books to work sent to us directly by writers — we look for IP with mass audience appeal that we can develop for worldwide theatrical distribution.</p>
+
+    <div class="selz-cards">
+      <div class="scard reveal">
+        <p class="scard-k">The hunt</p>
+        <div class="scard-g">
+          <div class="srows"><i style="width:88%"></i><i style="width:60%"></i><i class="on" style="width:96%"></i><i style="width:48%"></i><i style="width:72%"></i></div>
+        </div>
+      </div>
+      <div class="scard reveal">
+        <p class="scard-k">In development</p>
+        <b class="snum">5+</b>
+        <p class="scard-d">Projects in active development — for worldwide theatrical release.</p>
+      </div>
+    </div>
+
+    <p class="cap-cta"><a href="mailto:info@gem.studio?subject=My%20work">Send us your work →</a></p>
   </div>
 
 </section>
