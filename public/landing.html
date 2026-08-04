@@ -20,9 +20,12 @@
       --muted:#78727F;
       --hair:rgba(22,20,27,0.10);
       --hair-strong:rgba(22,20,27,0.16);
-      --accent:#7C3AED;
-      --accent-deep:#5B21B6;
+      --accent:#5B21B6;
+      --accent-bright:#7C3AED;
+      --accent-deep:#4C1D95;
       --accent-soft:#A78BFA;
+      --gold:#B08A3E;
+      --gold-soft:#E4C97E;
       --screen:#14101B;           /* dark panels = theater screens */
       --on-screen:#F3EFE8;
       --on-screen-muted:rgba(243,239,232,0.62);
@@ -32,7 +35,7 @@
       background: var(--paper);
       color: var(--ink);
       font-family: 'Inter', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -99,8 +102,8 @@
     section { padding: 76px 56px; }
     .sec-h {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 4.2vw, 54px);
-      font-weight: 400; line-height: 1.08;
+      font-size: clamp(32px, 4.4vw, 58px);
+      font-weight: 500; line-height: 1.08;
       letter-spacing: -0.01em; color: var(--ink);
       max-width: 860px; margin-bottom: 20px;
       text-wrap: pretty;
@@ -116,8 +119,8 @@
     h1.hero-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(48px, 7.4vw, 104px);
-      font-weight: 400; line-height: 1.04;
-      letter-spacing: -0.02em; color: var(--ink);
+      font-weight: 500; line-height: 1.04;
+      letter-spacing: -0.03em; color: var(--ink);
       max-width: 1000px; margin: 0 auto 28px;
       text-wrap: pretty;
     }
@@ -142,7 +145,7 @@
     .hstat span {
       display: block; margin-top: 8px;
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--accent-deep);
+      text-transform: uppercase; color: var(--gold);
     }
     .hero-actions { display: flex; gap: 22px; align-items: center; justify-content: center; }
     .btn-primary {
@@ -181,7 +184,7 @@
     }
     .pillar-n {
       font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--accent-deep);
+      text-transform: uppercase; color: var(--gold);
       margin-bottom: 14px;
     }
     .screen-panel .pillar-n { color: var(--accent-soft); }
@@ -193,9 +196,9 @@
     }
     .pillar-statement {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 3.8vw, 46px);
-      font-weight: 400; line-height: 1.18;
-      color: var(--ink);
+      font-size: clamp(32px, 4.4vw, 58px);
+      font-weight: 500; line-height: 1.14;
+      letter-spacing: -0.02em; color: var(--ink);
       text-wrap: pretty;
       margin-bottom: 20px;
       max-width: 900px;
@@ -203,7 +206,7 @@
     .pillar-statement em { font-style: italic; color: var(--accent-deep); }
     .pillar-next {
       font-size: 17px; color: var(--ink-soft);
-      line-height: 1.7; font-weight: 300;
+      line-height: 1.7; font-weight: 400;
       max-width: 62ch;
     }
     .pillar-links {
@@ -418,15 +421,15 @@
     .dev-badge {
       display: inline-flex; align-items: baseline; gap: 8px;
       margin-top: 26px;
-      background: rgba(47,158,107,0.09);
-      border: 1px solid rgba(47,158,107,0.30);
+      background: rgba(176,138,62,0.09);
+      border: 1px solid rgba(176,138,62,0.32);
       border-radius: 999px; padding: 9px 20px;
-      font-size: 13.5px; color: #1E7A4F; font-weight: 500;
+      font-size: 13.5px; color: #7A5E22; font-weight: 500;
     }
     .dev-badge b {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 26px; font-weight: 400; line-height: 1;
-      color: #2F9E6B;
+      font-size: 26px; font-weight: 500; line-height: 1;
+      color: var(--gold);
     }
 
     .open-line {
@@ -447,16 +450,16 @@
 
     .who-statement {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 3.8vw, 46px);
-      font-weight: 400; line-height: 1.18;
-      color: #fff;
+      font-size: clamp(32px, 4.4vw, 58px);
+      font-weight: 500; line-height: 1.14;
+      letter-spacing: -0.02em; color: #fff;
       text-wrap: pretty;
       margin-bottom: 20px;
     }
     .who-statement em { font-style: italic; color: var(--accent-soft); }
     .who-next {
       font-size: 17px; color: var(--on-screen);
-      line-height: 1.7; font-weight: 300;
+      line-height: 1.7; font-weight: 400;
       max-width: 52ch;
     }
     .who-next b { font-weight: 600; color: #fff; }
@@ -483,7 +486,7 @@
     .door-h {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(42px, 6vw, 84px);
-      font-weight: 400; line-height: 1.05;
+      font-weight: 500; line-height: 1.05; letter-spacing: -0.03em;
       margin-bottom: 20px; color: var(--ink);
     }
     .door-h em { font-style: italic; color: var(--accent-deep); }
