@@ -260,6 +260,38 @@
     .panel-cta a { color: var(--accent-soft); text-decoration: none; font-weight: 500; }
     .panel-cta a:hover { color: #fff; }
 
+    /* ── The slate ── */
+    .slate { padding: 0 56px; }
+    .slate-inner {
+      background: linear-gradient(120deg, #241C33 0%, #16111F 60%, #120E19 100%);
+      border: 1px solid rgba(228,201,126,0.22);
+      border-radius: 18px;
+      padding: 40px 48px;
+      display: flex; align-items: center; gap: 56px; flex-wrap: wrap;
+    }
+    .slate-nums { display: flex; gap: 48px; }
+    .snum b {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(46px, 6vw, 68px);
+      font-weight: 300; line-height: 1; color: #fff;
+    }
+    .snum span {
+      display: block; margin-top: 8px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #E4C97E;
+    }
+    .slate-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3.2vw, 40px);
+      font-weight: 500; letter-spacing: -0.02em;
+      color: #fff; line-height: 1.1;
+    }
+    .slate-d {
+      margin-top: 8px; font-size: 14px;
+      color: var(--on-screen-muted);
+    }
+
     /* ── Thesis ── */
     .quotes {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -435,7 +467,7 @@
     .jrn .src text { font-size: 13.5px; fill: var(--on-screen); }
     .jrn .feeds path { stroke: rgba(243,239,232,0.18); stroke-width: 1; }
     .jrn .jico { fill: none; stroke: #C4B5FD; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    .jrn .globe { fill: none; stroke: rgba(228,201,126,0.75); stroke-width: 1.3; }
+    .jrn .jconn { fill: none; stroke: rgba(196,181,253,0.45); stroke-width: 1.4; }
     .jrn .rhead {
       font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; fill: #C4B5FD;
@@ -443,22 +475,20 @@
     .jrn .rrow text { font-size: 12.5px; fill: var(--on-screen-muted); }
     .jrn .rrow .rv { font-size: 13px; font-weight: 600; fill: var(--on-screen); }
     .jrn .rrow .rv.gold { fill: #E4C97E; }
-    .jrn .jbr { fill: none; stroke: rgba(228,201,126,0.3); stroke-width: 1.1; }
-    .jrn .jconn { fill: none; stroke: rgba(196,181,253,0.45); stroke-width: 1.4; }
-    .jrn .way circle { fill: #17121F; stroke: rgba(228,201,126,0.45); stroke-width: 1.2; }
-    .jrn .wico { font-size: 15px; font-weight: 600; fill: #E4C97E; font-family: 'Inter', sans-serif; }
-    .jrn .way .jico { stroke: #E4C97E; stroke-width: 1.5; }
-    .jrn .wlab { font-size: 11.5px; fill: var(--on-screen-muted); }
-    .jrn .offs circle { fill: rgba(228,201,126,0.7); }
-    .jrn .offs text { font-size: 11.5px; fill: var(--on-screen-muted); }
+    .jrn .gpath circle { fill: #17121F; stroke: rgba(228,201,126,0.5); stroke-width: 1.4; }
+    .jrn .gpath .gend { fill: rgba(228,201,126,0.18); stroke: #E4C97E; stroke-width: 1.8; }
+    .jrn .grail { fill: none; stroke: url(#jline); stroke-width: 2.4; }
+    .jrn .gp { font-size: 12.5px; fill: var(--on-screen); }
+    .jrn .gp.gold { fill: #E4C97E; font-weight: 600; font-size: 13.5px; }
+    .jrn .glab {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; fill: #C4B5FD;
+    }
+    .jrn .gval { font-size: 11.5px; fill: var(--on-screen-muted); }
         .jrn text {
       font-family: 'Inter', sans-serif;
       fill: var(--on-screen);
     }
-    .jrn .jt { font-size: 13.5px; font-weight: 500; }
-    .jrn .jt.gold { fill: #E4C97E; font-size: 14.5px; }
-    .jrn .jsub { font-size: 11.5px; fill: var(--on-screen-muted); }
-    .jrn .jd { font-size: 12px; fill: var(--on-screen-muted); }
     
 
     .paths { display: flex; flex-direction: column; gap: 8px; }
@@ -476,19 +506,6 @@
     .pdot {
       width: 7px; height: 7px; border-radius: 50%;
       background: #E4C97E; box-shadow: 0 0 9px rgba(228,201,126,0.9);
-    }
-    .dev-badge {
-      display: inline-flex; align-items: baseline; gap: 8px;
-      margin-top: 26px;
-      background: rgba(176,138,62,0.09);
-      border: 1px solid rgba(176,138,62,0.32);
-      border-radius: 999px; padding: 9px 20px;
-      font-size: 13.5px; color: #7A5E22; font-weight: 500;
-    }
-    .dev-badge b {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px; font-weight: 500; line-height: 1;
-      color: var(--gold);
     }
 
     .open-line {
@@ -581,6 +598,9 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .quotes { grid-template-columns: 1fr; }
+      .slate { padding: 0 20px; }
+      .slate-inner { padding: 30px 24px; gap: 28px; border-radius: 14px; }
+      .slate-nums { gap: 32px; }
       .film-cards, .film-cards.three { grid-template-columns: 1fr; }
       .film-cards .fcard,
       .film-cards .fcard:nth-child(4),
@@ -709,7 +729,7 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Scouting &amp; development</p>
     <p class="pillar-statement">We're developing the next great <em>blockbuster franchises.</em></p>
-    <p class="pillar-next">We use <b>Selznick</b> to evaluate IP across a wide variety of formats — to find the hidden gems we can acquire and develop into the next great blockbuster franchise.</p>
+    <p class="pillar-next">Entertainment is moved by a handful of massive properties. We use <b>Selznick</b> to study IP and opportunities at a scale nobody has before — to find the hidden gems we can acquire and develop into the next great franchise.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
@@ -775,7 +795,7 @@
           <path d="M470 176 V 206" class="jconn" marker-end="url(#arwp)"/>
 
           <!-- ranked output under the gem -->
-          <text class="rhead" x="360" y="222">Box office potential</text>
+          <text class="rhead" x="360" y="222">Franchise potential</text>
           <g class="rrow">
             <text x="360" y="248">Untitled thriller · screenplay</text>
             <text class="rv gold" x="586" y="248" text-anchor="end">$2.2B</text>
@@ -785,41 +805,31 @@
             <text class="rv" x="586" y="296" text-anchor="end">$860M</text>
           </g>
 
-          <!-- to theaters worldwide -->
-          <path d="M512 134 H 776" stroke="url(#jline)" stroke-width="2.4" fill="none" marker-end="url(#arw)"/>
+          <!-- the golden path -->
+          <path d="M534 166 H 596" stroke="url(#jline)" stroke-width="2.4" fill="none"/>
 
-          <g class="way">
-            <circle cx="596" cy="134" r="16"/>
-            <text class="wico" x="596" y="140" text-anchor="middle">$</text>
-            <text class="wlab" x="596" y="168" text-anchor="middle">Funding</text>
+          <g class="gpath">
+            <path d="M604 214 L 700 186 L 796 152 L 900 104" class="grail"/>
 
-            <circle cx="692" cy="134" r="16"/>
-            <g class="jico" transform="translate(692 134)"><rect x="-8" y="-6" width="16" height="12" rx="2"/><path d="M-8 -2h16"/><path d="M-3.5 -6l2 4"/><path d="M1.5 -6l2 4"/></g>
-            <text class="wlab" x="692" y="168" text-anchor="middle">Development</text>
+            <circle cx="604" cy="214" r="7"/>
+            <text class="gp" x="604" y="240" text-anchor="middle">Web series</text>
+
+            <circle cx="700" cy="186" r="7"/>
+            <text class="gp" x="700" y="212" text-anchor="middle">TV series</text>
+
+            <circle cx="796" cy="152" r="7"/>
+            <text class="gp" x="796" y="178" text-anchor="middle">Feature film</text>
+
+            <circle cx="900" cy="104" r="9" class="gend"/>
+            <text class="gp gold" x="900" y="80" text-anchor="middle">Franchise</text>
           </g>
 
-          <circle cx="838" cy="134" r="72" fill="url(#screenglow)"/>
-          <g class="globe" transform="translate(838 134)">
-            <circle cx="0" cy="0" r="38"/>
-            <path d="M-38 0h76M0 -38v76"/>
-            <ellipse cx="0" cy="0" rx="18" ry="38"/>
-            <path d="M-34 -16h68M-34 16h68"/>
-          </g>
-          <text class="jt gold" x="838" y="204" text-anchor="middle">Theaters worldwide</text>
+          <text class="glab" x="604" y="272">Value rising along the path</text>
+          <text class="gval" x="604" y="296">Each step proves the audience for the next</text>
 
-          <g class="offs">
-            <path d="M872 106 C 908 96, 916 76, 942 70" class="jbr"/>
-            <path d="M878 134 H 942" class="jbr"/>
-            <path d="M872 162 C 908 172, 916 192, 942 198" class="jbr"/>
-            <circle cx="946" cy="70" r="3"/><text x="956" y="74">Streaming</text>
-            <circle cx="946" cy="134" r="3"/><text x="956" y="138">Sequels</text>
-            <circle cx="946" cy="198" r="3"/><text x="956" y="202">Spin-offs</text>
-          </g>
         </svg>
       </div>
     </div>
-
-    <p class="dev-badge"><b>5</b> projects now in active development</p>
 
     <p class="open-line">We work with anyone — no agent, no representation, no track record required. If you've got an idea with massive global appeal, we want to hear from you.</p>
     <p class="cap-cta"><a href="mailto:info@gem.studio?subject=My%20idea">Pitch us an idea →</a></p>
@@ -832,9 +842,9 @@
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="pillar-n">Social media</p>
-      <p class="who-statement">We've developed some of the most viral content <em>on the internet.</em></p>
-      <p class="who-next">All of it built on top of Selznick, which assists us with idea generation, trend research, concept testing, and every other part of the viral video creative process. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
+      <p class="pillar-n">What we've made</p>
+      <p class="who-statement">We've produced some of the internet's most viral videos <em>and channels.</em></p>
+      <p class="who-next">All of it built on concepts and IP we own. That's how we test concepts, iterate on ideas, and build audiences for them before making large-scale investments — informed at every step by Selznick. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
       <div class="bignums">
         <div class="bignum"><b>1B+</b><span>Views</span></div>
         <div class="bignum"><b>500M+</b><span>People reached</span></div>
@@ -860,12 +870,26 @@
   </div>
 </section>
 
+<!-- The slate -->
+<section class="slate" id="slate">
+  <div class="slate-inner reveal">
+    <div class="slate-nums">
+      <div class="snum"><b>5</b><span>Feature films</span></div>
+      <div class="snum"><b>3</b><span>TV series</span></div>
+    </div>
+    <div class="slate-copy">
+      <p class="slate-h">In active development.</p>
+      <p class="slate-d">First announcements early 2027.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Pillar · Feature films -->
 <section id="work" style="padding-top:0;">
   <div class="pillar-card reveal">
-    <p class="pillar-n">TV &amp; film</p>
-    <p class="pillar-statement">We've partnered with 500+ film and TV <em>industry partners.</em></p>
-    <p class="pillar-next">Our partners use <b>Selznick</b> as a comprehensive development partner to inform nearly every important decision they need to make in order to turn their ideas into commercially successful film and TV series.</p>
+    <p class="pillar-n">Our network</p>
+    <p class="pillar-statement">We're developing what's working with <em>the industry's best.</em></p>
+    <p class="pillar-next">A network of 500+ film and TV industry partners — writers developing scripts, producers co-developing projects, financiers and distributors who can take a concept to theaters. Together, informed by <b>Selznick</b>, we make the creative and investment decisions that turn a concept into a film.</p>
 
     <div class="film-cards">
       <div class="fcard reveal">
@@ -885,7 +909,7 @@
         <div class="projrows">
           <div class="prow"><span>Box office</span><i><b style="width:100%"></b></i><em class="gold">$45M+</em></div>
           <div class="prow"><span>Streaming revenue</span><i><b style="width:62%"></b></i><em>$28M</em></div>
-          <div class="prow"><span>Series franchise potential</span><i><b style="width:78%"></b></i><em>High</em></div>
+          <div class="prow"><span>Franchise potential</span><i><b style="width:78%"></b></i><em>High</em></div>
           <div class="prow"><span>Awards potential</span><i><b style="width:41%"></b></i><em>Moderate</em></div>
         </div>
       </div>
