@@ -311,10 +311,12 @@
     }
     .thesis-p b { color: var(--ink); font-weight: 600; }
     .why-grid {
-      display: grid; grid-template-columns: 1.15fr 0.85fr;
-      gap: 40px; align-items: start; margin-top: 4px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px; align-items: center; margin-top: 8px;
     }
+    .why-copy { display: flex; flex-direction: column; }
     .why-grid .thesis-p { margin-bottom: 0; max-width: none; }
+    .why-grid .pull { margin-top: 26px; }
     .tmap {
       background: linear-gradient(160deg, #241C33 0%, #16111F 60%, #120E19 100%);
       border: 1px solid rgba(196,181,253,0.16);
@@ -692,7 +694,14 @@
   <h3 class="thesis-h reveal">Why we built Selznick.</h3>
 
   <div class="why-grid reveal">
-    <p class="thesis-p">We believe AI like Selznick is the key to solving these problems — and to building franchises that weren't possible before. Most of the industry is using it to cut costs, replace people, and automate away human creativity. We think the opposite: the greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
+    <div class="why-copy">
+      <p class="thesis-p">We believe AI like Selznick is the key to solving these problems — and to building franchises that weren't possible before. Most of the industry is using it to cut costs, replace people, and automate away human creativity. We think the opposite: the greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
+
+      <figure class="pull">
+        <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
+        <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
+      </figure>
+    </div>
 
     <div class="tmap">
       <div class="tmap-top">
@@ -715,11 +724,6 @@
       </div>
     </div>
   </div>
-
-  <figure class="pull reveal">
-    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
-    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
-  </figure>
 
 </section>
 
