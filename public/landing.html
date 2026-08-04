@@ -336,7 +336,17 @@
     .jrn .src text { font-size: 13.5px; fill: var(--on-screen); }
     .jrn .feeds path { stroke: rgba(243,239,232,0.18); stroke-width: 1; }
     .jrn .jico { fill: none; stroke: #C4B5FD; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    .jrn .seats circle { fill: rgba(228,201,126,0.75); }
+    .jrn .globe { fill: none; stroke: rgba(228,201,126,0.75); stroke-width: 1.3; }
+    .jrn .rhead {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; fill: #C4B5FD;
+    }
+    .jrn .rrow text { font-size: 12.5px; fill: var(--on-screen-muted); }
+    .jrn .rrow .rv { font-size: 13px; font-weight: 600; fill: var(--on-screen); }
+    .jrn .rrow .rv.gold { fill: #E4C97E; }
+    .jrn .jbr { fill: none; stroke: rgba(228,201,126,0.3); stroke-width: 1.1; }
+    .jrn .offs circle { fill: rgba(228,201,126,0.7); }
+    .jrn .offs text { font-size: 11.5px; fill: var(--on-screen-muted); }
         .jrn text {
       font-family: 'Inter', sans-serif;
       fill: var(--on-screen);
@@ -345,11 +355,7 @@
     .jrn .jt.gold { fill: #E4C97E; font-size: 14.5px; }
     .jrn .jsub { font-size: 11.5px; fill: var(--on-screen-muted); }
     .jrn .jd { font-size: 12px; fill: var(--on-screen-muted); }
-    .jrn-note {
-      margin-top: 12px; font-size: 12.5px;
-      color: var(--on-screen-muted); font-style: italic;
-    }
-
+    
 
     .paths { display: flex; flex-direction: column; gap: 8px; }
     .path {
@@ -527,11 +533,11 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Scouting &amp; development</p>
     <p class="pillar-statement">We're scouting for the next great <em>blockbuster franchise.</em></p>
-    <p class="pillar-next">There are ideas and creators out there with huge worldwide potential that nobody is looking at. We built <b>Selznick</b> to find them — then we partner with the creator, develop it into a production-ready film, and take it to theaters worldwide.</p>
+    <p class="pillar-next">There are ideas and creators out there with huge worldwide potential that nobody is looking at. We built <b>Selznick</b> to find them — then we partner with the creator, develop it into a production-ready film, and take it to theaters worldwide. <b>5 projects are now in active development.</b></p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="jrn" viewBox="0 0 980 300" aria-hidden="true">
+        <svg class="jrn" viewBox="0 0 1020 320" aria-hidden="true">
           <defs>
             <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
@@ -543,64 +549,80 @@
               <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
             </radialGradient>
             <radialGradient id="screenglow">
-              <stop offset="0" stop-color="rgba(228,201,126,0.38)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
+              <stop offset="0" stop-color="rgba(228,201,126,0.34)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
             </radialGradient>
           </defs>
 
           <!-- sources -->
           <g class="src">
-            <circle cx="44" cy="46" r="19" class="sbub"/>
-            <g class="jico" transform="translate(44 46)"><rect x="-7" y="-9" width="14" height="18" rx="2"/><path d="M-3.5 -4.5h7M-3.5 0h7M-3.5 4.5h4"/></g>
-            <text x="74" y="51">Original screenplays</text>
+            <circle cx="40" cy="40" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 40)"><rect x="-6.5" y="-8.5" width="13" height="17" rx="2"/><path d="M-3 -4h6M-3 0h6M-3 4h3.5"/></g>
+            <text x="68" y="45">Original screenplays</text>
 
-            <circle cx="44" cy="106" r="19" class="sbub"/>
-            <g class="jico" transform="translate(44 106)"><path d="M-8 -8v16M8 -8v16"/><path d="M-8 -8c5 0 8 1.5 8 3v13c0-1.5-3-3-8-3z"/><path d="M8 -8c-5 0-8 1.5-8 3v13c0-1.5 3-3 8-3z"/></g>
-            <text x="74" y="111">Books &amp; novels</text>
+            <circle cx="40" cy="94" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 94)"><path d="M-7.5 -7.5v15M7.5 -7.5v15"/><path d="M-7.5 -7.5c4.5 0 7.5 1.4 7.5 2.8v12.2c0-1.4-3-2.8-7.5-2.8z"/><path d="M7.5 -7.5c-4.5 0-7.5 1.4-7.5 2.8v12.2c0-1.4 3-2.8 7.5-2.8z"/></g>
+            <text x="68" y="99">Books &amp; novels</text>
 
-            <circle cx="44" cy="166" r="19" class="sbub"/>
-            <g class="jico" transform="translate(44 166)"><rect x="-8" y="-8" width="7" height="7" rx="1.2"/><rect x="1" y="-8" width="7" height="7" rx="1.2"/><rect x="-8" y="1" width="7" height="7" rx="1.2"/><rect x="1" y="1" width="7" height="7" rx="1.2"/></g>
-            <text x="74" y="171">Comics &amp; manga</text>
+            <circle cx="40" cy="148" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 148)"><rect x="-7.5" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="-7.5" y="1" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="1" width="6.5" height="6.5" rx="1.2"/></g>
+            <text x="68" y="153">Comics &amp; manga</text>
 
-            <circle cx="44" cy="226" r="19" class="sbub"/>
-            <g class="jico" transform="translate(44 226)"><rect x="-9" y="-7" width="18" height="14" rx="3"/><path d="M-2 -3l5 3-5 3z" fill="#C4B5FD" stroke="none"/></g>
-            <text x="74" y="231">Social video &amp; YouTube</text>
+            <circle cx="40" cy="202" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 202)"><rect x="-8.5" y="-6.5" width="17" height="13" rx="3"/><path d="M-2 -3l4.5 3-4.5 3z" fill="#C4B5FD" stroke="none"/></g>
+            <text x="68" y="207">Social video &amp; YouTube</text>
 
-            <circle cx="44" cy="286" r="19" class="sbub"/>
-            <g class="jico" transform="translate(44 286)"><circle cx="0" cy="-4" r="4"/><path d="M-8 9c0-4.4 3.6-7 8-7s8 2.6 8 7"/></g>
-            <text x="74" y="291">Historical figures</text>
+            <circle cx="40" cy="256" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 256)"><circle cx="0" cy="-3.5" r="3.8"/><path d="M-7.5 8.5c0-4.2 3.4-6.6 7.5-6.6s7.5 2.4 7.5 6.6"/></g>
+            <text x="68" y="261">Historical figures</text>
           </g>
 
           <g class="feeds">
-            <path d="M250 46 C 350 46, 380 120, 448 158" fill="none"/>
-            <path d="M228 106 C 340 106, 380 140, 448 162" fill="none"/>
-            <path d="M238 166 H 448" fill="none"/>
-            <path d="M266 226 C 360 226, 390 200, 448 172" fill="none"/>
-            <path d="M244 286 C 360 286, 390 220, 448 176" fill="none"/>
+            <path d="M244 40 C 330 40, 360 96, 424 122" fill="none"/>
+            <path d="M212 94 C 320 94, 360 112, 424 128" fill="none"/>
+            <path d="M222 148 C 330 148, 370 138, 424 134" fill="none"/>
+            <path d="M270 202 C 350 202, 380 170, 424 142" fill="none"/>
+            <path d="M226 256 C 350 256, 385 190, 424 148" fill="none"/>
           </g>
 
           <!-- the engine -->
-          <circle cx="490" cy="166" r="96" fill="url(#gemhalo)"/>
-          <circle class="ring r1" cx="490" cy="166" r="46" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
-          <circle class="ring r2" cx="490" cy="166" r="72" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
-          <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(490 166) rotate(45)" fill="url(#gemfill)"/>
-          <text class="jt" x="490" y="240" text-anchor="middle">Selznick finds the ones</text>
-          <text class="jt" x="490" y="260" text-anchor="middle">with the most potential</text>
+          <circle cx="470" cy="134" r="88" fill="url(#gemhalo)"/>
+          <circle class="ring r1" cx="470" cy="134" r="42" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
+          <circle class="ring r2" cx="470" cy="134" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
+          <rect x="-18" y="-18" width="36" height="36" rx="7.5" transform="translate(470 134) rotate(45)" fill="url(#gemfill)"/>
 
-          <!-- to theaters -->
-          <path d="M534 166 H 782" stroke="url(#jline)" stroke-width="2.4" fill="none"/>
-
-          <circle cx="838" cy="166" r="76" fill="url(#screenglow)"/>
-          <g transform="translate(838 166)">
-            <rect x="-40" y="-34" width="80" height="46" rx="3" fill="rgba(228,201,126,0.9)"/>
-            <g class="seats">
-              <circle cx="-30" cy="24" r="4"/><circle cx="-15" cy="24" r="4"/><circle cx="0" cy="24" r="4"/><circle cx="15" cy="24" r="4"/><circle cx="30" cy="24" r="4"/>
-            </g>
+          <!-- ranked output under the gem -->
+          <text class="rhead" x="360" y="222">Box office potential</text>
+          <g class="rrow">
+            <text x="360" y="248">Untitled thriller · screenplay</text>
+            <text class="rv gold" x="586" y="248" text-anchor="end">$2.2B</text>
+            <text x="360" y="272">Untitled adventure · comic</text>
+            <text class="rv" x="586" y="272" text-anchor="end">$1.4B</text>
+            <text x="360" y="296">Untitled epic · novel</text>
+            <text class="rv" x="586" y="296" text-anchor="end">$860M</text>
           </g>
-          <text class="jt gold" x="838" y="240" text-anchor="middle">Theaters worldwide</text>
-          <text class="jsub" x="838" y="260" text-anchor="middle">then streaming, sequels, spin-offs</text>
+
+          <!-- to theaters worldwide -->
+          <path d="M512 134 H 780" stroke="url(#jline)" stroke-width="2.4" fill="none"/>
+
+          <circle cx="838" cy="134" r="72" fill="url(#screenglow)"/>
+          <g class="globe" transform="translate(838 134)">
+            <circle cx="0" cy="0" r="38"/>
+            <path d="M-38 0h76M0 -38v76"/>
+            <ellipse cx="0" cy="0" rx="18" ry="38"/>
+            <path d="M-34 -16h68M-34 16h68"/>
+          </g>
+          <text class="jt gold" x="838" y="204" text-anchor="middle">Theaters worldwide</text>
+
+          <g class="offs">
+            <path d="M872 106 C 908 96, 916 76, 942 70" class="jbr"/>
+            <path d="M878 134 H 942" class="jbr"/>
+            <path d="M872 162 C 908 172, 916 192, 942 198" class="jbr"/>
+            <circle cx="946" cy="70" r="3"/><text x="956" y="74">Streaming</text>
+            <circle cx="946" cy="134" r="3"/><text x="956" y="138">Sequels</text>
+            <circle cx="946" cy="198" r="3"/><text x="956" y="202">Spin-offs</text>
+          </g>
         </svg>
       </div>
-      <p class="jrn-note">5 projects now in active development.</p>
     </div>
 
     <p class="open-line">We work with anyone — no agent, no representation, no track record required. If you've got an idea with massive global appeal, we want to hear from you.</p>
