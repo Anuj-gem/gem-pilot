@@ -220,6 +220,106 @@
       font-size: 52px; font-weight: 300; line-height: 1;
       color: #fff;
     }
+
+    /* ── Film graphics ── */
+    .film-note {
+      margin-top: 30px;
+      font-size: 14px; color: var(--muted); font-style: italic;
+    }
+    .film-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-top: 14px;
+    }
+    .fcard {
+      background: linear-gradient(158deg, #241C33 0%, #16111F 55%, #120E19 100%);
+      border: 1px solid rgba(196,181,253,0.16);
+      border-radius: 16px; padding: 24px 26px 26px;
+      color: var(--on-screen);
+      box-shadow: 0 20px 40px -28px rgba(22,20,27,0.6);
+    }
+    .fcard-k {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #C4B5FD;
+      margin-bottom: 18px;
+    }
+    .fcard-d {
+      margin-top: 16px; font-size: 12.5px;
+      color: var(--on-screen-muted); line-height: 1.6;
+    }
+    .gold { color: #E4C97E !important; }
+
+    .curve { width: 100%; height: auto; display: block; }
+    .fcard-rows { margin-top: 14px; }
+    .frow {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 7px 0; font-size: 12.5px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .frow:first-child { border-top: none; }
+    .frow span { color: var(--on-screen-muted); }
+    .frow b { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .fbig {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px; font-weight: 300; line-height: 1;
+      color: #fff; margin-bottom: 16px;
+    }
+    .stackbar {
+      display: flex; gap: 3px; height: 14px;
+      border-radius: 4px; overflow: hidden;
+    }
+    .stackbar i { display: block; height: 100%; border-radius: 2px; }
+    .fkeys {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;
+      font-size: 10.5px; color: var(--on-screen-muted);
+    }
+    .fkeys span { display: flex; align-items: center; gap: 6px; }
+    .fkeys i { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+
+    .castrow { display: flex; gap: 10px; }
+    .cast {
+      flex: 1; text-align: center;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 11px; padding: 14px 8px 12px;
+    }
+    .cast.on {
+      border-color: rgba(196,181,253,0.55);
+      background: rgba(139,92,246,0.14);
+    }
+    .avatar {
+      width: 34px; height: 34px; margin: 0 auto 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cast.on .avatar { background: rgba(196,181,253,0.2); }
+    .avatar svg {
+      width: 17px; height: 17px;
+      stroke: #C4B5FD; stroke-width: 1.6; fill: none;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .cast span {
+      display: block; font-size: 10.5px; color: var(--on-screen-muted);
+      margin-bottom: 5px; line-height: 1.3;
+    }
+    .cast b { font-size: 12px; color: #fff; font-weight: 600; }
+
+    .paths { display: flex; flex-direction: column; gap: 8px; }
+    .path {
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 9px; padding: 13px 16px;
+      font-size: 13px; color: var(--on-screen-muted);
+    }
+    .path.on {
+      border-color: rgba(228,201,126,0.5);
+      background: linear-gradient(90deg, rgba(228,201,126,0.14), rgba(228,201,126,0.03));
+      color: #fff; font-weight: 500;
+    }
+    .pdot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #E4C97E; box-shadow: 0 0 9px rgba(228,201,126,0.9);
+    }
     .scard {
       background: var(--screen); color: var(--on-screen);
       border-radius: 14px; padding: 24px 22px 22px;
@@ -239,41 +339,6 @@
       min-height: 76px;
       display: flex; flex-direction: column; justify-content: flex-end;
     }
-    .vbars {
-      display: flex; align-items: flex-end; gap: 8px;
-      height: 56px;
-    }
-    .vbars i {
-      display: block; width: 16px;
-      border-radius: 3px 3px 0 0;
-      background: rgba(255,255,255,0.14);
-    }
-    .vbars i.on { background: linear-gradient(180deg, #8b5cf6, #5B21B6); }
-    .vbars.ten { gap: 6px; }
-    .vbars.ten i { width: 9px; }
-    .dlab {
-      display: flex; justify-content: space-between;
-      max-width: 144px; margin-top: 7px;
-      font-size: 9px; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--on-screen-muted);
-    }
-    .dlab .on { color: var(--accent-soft); }
-    .scard-d {
-      margin-top: 14px;
-      font-size: 13px; color: var(--on-screen-muted);
-      line-height: 1.65;
-    }
-    .omini {
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 8px; padding: 10px 14px;
-    }
-    .orow {
-      display: flex; justify-content: space-between; align-items: baseline;
-      gap: 12px; padding: 4px 0; font-size: 11.5px;
-    }
-    .orow span { color: var(--on-screen-muted); }
-    .orow b { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
-    .orow b.oacc { color: var(--accent-soft); }
     .cap-cta {
       margin-top: 28px;
       font-size: 16.5px; color: var(--ink); font-weight: 400;
@@ -396,6 +461,8 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .selz-cards { grid-template-columns: 1fr; }
+      .film-cards { grid-template-columns: 1fr; }
+      .fcard { padding: 22px 20px 24px; }
 
 
       .door { padding: 64px 20px 56px; }
@@ -457,27 +524,80 @@
 <section id="work" style="padding-top:0;">
   <div class="pillar-card reveal">
     <p class="pillar-n">TV &amp; film</p>
-    <p class="pillar-statement">We've partnered with 500+ industry pros <em>on their projects.</em></p>
-    <p class="pillar-next">Box office projection analysis. Screenplay iteration, draft by draft. Critical development and investment decisions. We do this work with writers, producers, and studio execs using <b>Selznick</b> — and many of their projects are now in development and production.</p>
+    <p class="pillar-statement">We've partnered with 500+ film and TV <em>industry partners.</em></p>
+    <p class="pillar-next">We help them run box office projection analysis, iterate on their screenplays, and make critical development and investment decisions for their projects — all with <b>Selznick</b>. Many of those projects are now in development and production.</p>
 
-    <div class="selz-cards">
-      <div class="scard reveal">
-        <p class="scard-k">Creative development</p>
-        <div class="scard-g">
-          <div class="vbars ten"><i style="height:30%"></i><i style="height:44%"></i><i style="height:38%"></i><i style="height:56%"></i><i style="height:48%"></i><i style="height:67%"></i><i style="height:60%"></i><i style="height:79%"></i><i style="height:72%"></i><i class="on" style="height:96%"></i></div>
-          <div class="dlab"><span>Draft 1</span><span class="on">Draft 10</span></div>
+    <p class="film-note">Here's what that looks like on a single project:</p>
+
+    <div class="film-cards">
+      <div class="fcard reveal">
+        <p class="fcard-k">Box office projection</p>
+        <svg class="curve" viewBox="0 0 300 128" aria-hidden="true">
+          <defs>
+            <linearGradient id="curvefill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#A78BFA" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="curveline" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#C4B5FD"/>
+              <stop offset="1" stop-color="#E4C97E"/>
+            </linearGradient>
+          </defs>
+          <path d="M8 112 C 46 74, 66 44, 104 34 C 158 21, 214 17, 292 14 L 292 118 L 8 118 Z" fill="url(#curvefill)"/>
+          <path d="M8 112 C 46 74, 66 44, 104 34 C 158 21, 214 17, 292 14" fill="none" stroke="url(#curveline)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="104" cy="34" r="4" fill="#C4B5FD"/>
+          <circle cx="292" cy="14" r="4.5" fill="#E4C97E"/>
+        </svg>
+        <div class="fcard-rows">
+          <div class="frow"><span>Opening weekend</span><b>$18M</b></div>
+          <div class="frow"><span>Projected total</span><b class="gold">$45M+</b></div>
         </div>
       </div>
-      <div class="scard reveal">
-        <p class="scard-k">The big decisions</p>
-        <div class="scard-g">
-          <div class="omini">
-            <div class="orow"><span>How much do we invest?</span><b>$14M</b></div>
-            <div class="orow"><span>What can it earn?</span><b class="oacc">$45M+</b></div>
-            <div class="orow"><span>Who do we cast?</span><b>An emerging lead</b></div>
-            <div class="orow"><span>Where does it live?</span><b class="oacc">Theaters</b></div>
+
+      <div class="fcard reveal">
+        <p class="fcard-k">Budget breakdown</p>
+        <p class="fbig">$14M</p>
+        <div class="stackbar">
+          <i style="width:26%;background:linear-gradient(90deg,#8b5cf6,#7C3AED)"></i>
+          <i style="width:34%;background:linear-gradient(90deg,#7C3AED,#6D28D9)"></i>
+          <i style="width:22%;background:linear-gradient(90deg,#E4C97E,#C9A55A)"></i>
+          <i style="width:18%;background:rgba(255,255,255,0.22)"></i>
+        </div>
+        <div class="fkeys">
+          <span><i style="background:#8b5cf6"></i>Cast</span>
+          <span><i style="background:#7C3AED"></i>38 shoot days</span>
+          <span><i style="background:#E4C97E"></i>VFX</span>
+          <span><i style="background:rgba(255,255,255,0.4)"></i>Post</span>
+        </div>
+      </div>
+
+      <div class="fcard reveal">
+        <p class="fcard-k">Casting</p>
+        <div class="castrow">
+          <div class="cast">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>A-list lead</span><b class="gold">+$21M</b>
+          </div>
+          <div class="cast on">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>Emerging lead</span><b>Baseline</b>
+          </div>
+          <div class="cast">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>Social-native</span><b class="gold">+$9M</b>
           </div>
         </div>
+        <p class="fcard-d">The lead carries 78% of scenes — worth the spend.</p>
+      </div>
+
+      <div class="fcard reveal">
+        <p class="fcard-k">Distribution path</p>
+        <div class="paths">
+          <div class="path on"><span>Theatrical</span><i class="pdot"></i></div>
+          <div class="path"><span>Streaming</span></div>
+          <div class="path"><span>Online</span></div>
+        </div>
+        <p class="fcard-d">Wide release, early August — a clear corridor with no major openings.</p>
       </div>
     </div>
 
