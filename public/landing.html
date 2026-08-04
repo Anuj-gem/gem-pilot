@@ -258,14 +258,13 @@
     .panel-cta a:hover { color: #fff; }
 
     /* ── Film graphics ── */
-    .film-note {
-      margin-top: 30px;
-      font-size: 14px; color: var(--muted); font-style: italic;
-    }
     .film-cards {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 14px; margin-top: 14px;
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 14px; margin-top: 30px;
     }
+    .film-cards .fcard { grid-column: span 2; }
+    .film-cards .fcard:nth-child(4) { grid-column: 1 / span 3; }
+    .film-cards .fcard:nth-child(5) { grid-column: 4 / span 3; }
     .fcard {
       background: linear-gradient(158deg, #241C33 0%, #16111F 55%, #120E19 100%);
       border: 1px solid rgba(196,181,253,0.16);
@@ -311,6 +310,32 @@
     }
     .fkeys span { display: flex; align-items: center; gap: 6px; }
     .fkeys i { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+
+    .optlist, .projrows { display: flex; flex-direction: column; gap: 10px; }
+    .opt, .prow {
+      display: grid; grid-template-columns: 128px 1fr 62px;
+      gap: 10px; align-items: center;
+      font-size: 11.5px; color: var(--on-screen-muted);
+    }
+    .opt i, .prow i {
+      display: block; height: 7px; border-radius: 4px;
+      background: rgba(255,255,255,0.10); overflow: hidden;
+    }
+    .opt i b, .prow i b {
+      display: block; height: 100%; border-radius: 4px;
+      background: linear-gradient(90deg, #8b5cf6, #6D28D9);
+    }
+    .opt.on i b, .prow:first-child i b { background: linear-gradient(90deg, #C4B5FD, #E4C97E); }
+    .opt em, .prow em {
+      font-style: normal; text-align: right;
+      font-size: 11.5px; font-weight: 600; color: #fff;
+    }
+    .opt.on span, .prow:first-child span { color: #fff; }
+    .curve .itlab {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; fill: var(--on-screen-muted);
+    }
 
     .castrow { display: flex; gap: 10px; }
     .cast {
@@ -494,6 +519,9 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .film-cards, .film-cards.three { grid-template-columns: 1fr; }
+      .film-cards .fcard,
+      .film-cards .fcard:nth-child(4),
+      .film-cards .fcard:nth-child(5) { grid-column: 1 / -1; }
       .caps3 { grid-template-columns: 1fr; }
       .fcard { padding: 22px 20px 24px; }
 
@@ -700,37 +728,33 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">TV &amp; film</p>
     <p class="pillar-statement">We've partnered with 500+ film and TV <em>industry partners.</em></p>
-    <p class="pillar-next">We help them run box office projection analysis, iterate on their screenplays, and make critical development and investment decisions for their projects — all with <b>Selznick</b>. Many of those projects are now in development and production.</p>
-
-    <p class="film-note">Here's what that looks like on a single project:</p>
+    <p class="pillar-next">Our partners use <b>Selznick</b> as a comprehensive development partner to inform nearly every important decision they need to make in order to turn their ideas into commercially successful film and TV series.</p>
 
     <div class="film-cards">
       <div class="fcard reveal">
-        <p class="fcard-k">Box office projection</p>
-        <svg class="curve" viewBox="0 0 300 128" aria-hidden="true">
-          <defs>
-            <linearGradient id="curvefill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#A78BFA" stop-opacity="0.55"/>
-              <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="curveline" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#C4B5FD"/>
-              <stop offset="1" stop-color="#E4C97E"/>
-            </linearGradient>
-          </defs>
-          <path d="M8 112 C 46 74, 66 44, 104 34 C 158 21, 214 17, 292 14 L 292 118 L 8 118 Z" fill="url(#curvefill)"/>
-          <path d="M8 112 C 46 74, 66 44, 104 34 C 158 21, 214 17, 292 14" fill="none" stroke="url(#curveline)" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="104" cy="34" r="4" fill="#C4B5FD"/>
-          <circle cx="292" cy="14" r="4.5" fill="#E4C97E"/>
-        </svg>
+        <p class="fcard-k">Screenplay optioning</p>
+        <div class="optlist">
+          <div class="opt on"><span>Screenplay A</span><i><b style="width:100%"></b></i><em class="gold">Option</em></div>
+          <div class="opt"><span>Screenplay B</span><i><b style="width:47%"></b></i><em>Pass</em></div>
+          <div class="opt"><span>Screenplay C</span><i><b style="width:28%"></b></i><em>Pass</em></div>
+        </div>
         <div class="fcard-rows">
-          <div class="frow"><span>Opening weekend</span><b>$18M</b></div>
-          <div class="frow"><span>Projected total</span><b class="gold">$45M+</b></div>
+          <div class="frow"><span>Recommended option price</span><b class="gold">$650K</b></div>
         </div>
       </div>
 
       <div class="fcard reveal">
-        <p class="fcard-k">Budget breakdown</p>
+        <p class="fcard-k">Financial projections</p>
+        <div class="projrows">
+          <div class="prow"><span>Box office</span><i><b style="width:100%"></b></i><em class="gold">$45M+</em></div>
+          <div class="prow"><span>Streaming revenue</span><i><b style="width:62%"></b></i><em>$28M</em></div>
+          <div class="prow"><span>Series franchise potential</span><i><b style="width:78%"></b></i><em>High</em></div>
+          <div class="prow"><span>Awards potential</span><i><b style="width:41%"></b></i><em>Moderate</em></div>
+        </div>
+      </div>
+
+      <div class="fcard reveal">
+        <p class="fcard-k">Production &amp; budget planning</p>
         <p class="fbig">$14M</p>
         <div class="stackbar">
           <i style="width:26%;background:linear-gradient(90deg,#8b5cf6,#7C3AED)"></i>
@@ -744,10 +768,11 @@
           <span><i style="background:#E4C97E"></i>VFX</span>
           <span><i style="background:rgba(255,255,255,0.4)"></i>Post</span>
         </div>
+        <p class="fcard-d">Costed from the screenplay alone — before a dollar is spent.</p>
       </div>
 
       <div class="fcard reveal">
-        <p class="fcard-k">Casting</p>
+        <p class="fcard-k">Casting &amp; crew</p>
         <div class="castrow">
           <div class="cast">
             <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
@@ -759,20 +784,36 @@
           </div>
           <div class="cast">
             <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Social-native</span><b class="gold">+$9M</b>
+            <span>Award-winning director</span><b class="gold">+$14M</b>
           </div>
         </div>
         <p class="fcard-d">The lead carries 78% of scenes — worth the spend.</p>
       </div>
 
       <div class="fcard reveal">
-        <p class="fcard-k">Distribution path</p>
-        <div class="paths">
-          <div class="path on"><span>Theatrical</span><i class="pdot"></i></div>
-          <div class="path"><span>Streaming</span></div>
-          <div class="path"><span>Online</span></div>
+        <p class="fcard-k">Creative iteration</p>
+        <svg class="curve" viewBox="0 0 300 118" aria-hidden="true">
+          <defs>
+            <linearGradient id="itfill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#A78BFA" stop-opacity="0.5"/>
+              <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="itline" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#C4B5FD"/>
+              <stop offset="1" stop-color="#E4C97E"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 96 C 70 88, 120 66, 170 52 C 220 38, 260 26, 288 20 L 288 108 L 12 108 Z" fill="url(#itfill)"/>
+          <path d="M12 96 C 70 88, 120 66, 170 52 C 220 38, 260 26, 288 20" fill="none" stroke="url(#itline)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="12" cy="96" r="4" fill="#C4B5FD"/>
+          <circle cx="288" cy="20" r="4.5" fill="#E4C97E"/>
+          <text class="itlab" x="12" y="116">Draft 1</text>
+          <text class="itlab" x="288" y="116" text-anchor="end">Draft 6</text>
+        </svg>
+        <div class="fcard-rows">
+          <div class="frow"><span>Commercial potential</span><b class="gold">+$19M</b></div>
         </div>
-        <p class="fcard-d">Wide release, early August — a clear corridor with no major openings.</p>
+        <p class="fcard-d">Positioned for the market — without compromising the writer's vision.</p>
       </div>
     </div>
 
