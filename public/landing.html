@@ -102,8 +102,8 @@
       font-size: clamp(32px, 4.2vw, 54px);
       font-weight: 400; line-height: 1.08;
       letter-spacing: -0.01em; color: var(--ink);
-      max-width: 720px; margin-bottom: 20px;
-      text-wrap: balance;
+      max-width: 860px; margin-bottom: 20px;
+      text-wrap: pretty;
     }
     .sec-h em { font-style: italic; color: var(--accent-deep); }
     .sec-sub {
@@ -124,7 +124,7 @@
       font-weight: 400; line-height: 1.02;
       letter-spacing: -0.02em; color: var(--ink);
       max-width: 1040px; margin: 0 auto 30px;
-      text-wrap: balance;
+      text-wrap: pretty;
     }
     h1.hero-headline em { font-style: italic; color: var(--accent-deep); }
     .hero-sub {
@@ -184,9 +184,9 @@
       font-size: clamp(28px, 3.8vw, 46px);
       font-weight: 400; line-height: 1.18;
       color: var(--ink);
-      text-wrap: balance;
+      text-wrap: pretty;
       margin-bottom: 20px;
-      max-width: 780px;
+      max-width: 900px;
     }
     .pillar-statement em { font-style: italic; color: var(--accent-deep); }
     .pillar-next {
@@ -345,6 +345,7 @@
     .jrn .rrow .rv { font-size: 13px; font-weight: 600; fill: var(--on-screen); }
     .jrn .rrow .rv.gold { fill: #E4C97E; }
     .jrn .jbr { fill: none; stroke: rgba(228,201,126,0.3); stroke-width: 1.1; }
+    .jrn .jconn { fill: none; stroke: rgba(196,181,253,0.45); stroke-width: 1.4; }
     .jrn .offs circle { fill: rgba(228,201,126,0.7); }
     .jrn .offs text { font-size: 11.5px; fill: var(--on-screen-muted); }
         .jrn text {
@@ -373,8 +374,22 @@
       width: 7px; height: 7px; border-radius: 50%;
       background: #E4C97E; box-shadow: 0 0 9px rgba(228,201,126,0.9);
     }
+    .dev-badge {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      margin-top: 26px;
+      background: rgba(47,158,107,0.09);
+      border: 1px solid rgba(47,158,107,0.30);
+      border-radius: 999px; padding: 9px 20px;
+      font-size: 13.5px; color: #1E7A4F; font-weight: 500;
+    }
+    .dev-badge b {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 400; line-height: 1;
+      color: #2F9E6B;
+    }
+
     .open-line {
-      margin-top: 30px;
+      margin-top: 22px;
       font-size: 16px; color: var(--ink-soft); line-height: 1.7;
       max-width: 62ch;
     }
@@ -394,7 +409,7 @@
       font-size: clamp(28px, 3.8vw, 46px);
       font-weight: 400; line-height: 1.18;
       color: #fff;
-      text-wrap: balance;
+      text-wrap: pretty;
       margin-bottom: 20px;
     }
     .who-statement em { font-style: italic; color: var(--accent-soft); }
@@ -533,7 +548,7 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Scouting &amp; development</p>
     <p class="pillar-statement">We're scouting for the next great <em>blockbuster franchise.</em></p>
-    <p class="pillar-next">There are ideas and creators out there with huge worldwide potential that nobody is looking at. We built <b>Selznick</b> to find them — then we partner with the creator, develop it into a production-ready film, and take it to theaters worldwide. <b>5 projects are now in active development.</b></p>
+    <p class="pillar-next">There are ideas and creators out there with huge worldwide potential that nobody is looking at. We built <b>Selznick</b> to find them — then we partner with the creator, develop it into a production-ready film, and take it to theaters worldwide.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
@@ -551,6 +566,12 @@
             <radialGradient id="screenglow">
               <stop offset="0" stop-color="rgba(228,201,126,0.34)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
             </radialGradient>
+            <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 1 L 9 5 L 0 9 z" fill="#E4C97E"/>
+            </marker>
+            <marker id="arwp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 1 L 9 5 L 0 9 z" fill="#C4B5FD"/>
+            </marker>
           </defs>
 
           <!-- sources -->
@@ -590,6 +611,8 @@
           <circle class="ring r2" cx="470" cy="134" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
           <rect x="-18" y="-18" width="36" height="36" rx="7.5" transform="translate(470 134) rotate(45)" fill="url(#gemfill)"/>
 
+          <path d="M470 176 V 206" class="jconn" marker-end="url(#arwp)"/>
+
           <!-- ranked output under the gem -->
           <text class="rhead" x="360" y="222">Box office potential</text>
           <g class="rrow">
@@ -602,7 +625,7 @@
           </g>
 
           <!-- to theaters worldwide -->
-          <path d="M512 134 H 780" stroke="url(#jline)" stroke-width="2.4" fill="none"/>
+          <path d="M512 134 H 776" stroke="url(#jline)" stroke-width="2.4" fill="none" marker-end="url(#arw)"/>
 
           <circle cx="838" cy="134" r="72" fill="url(#screenglow)"/>
           <g class="globe" transform="translate(838 134)">
@@ -624,6 +647,8 @@
         </svg>
       </div>
     </div>
+
+    <p class="dev-badge"><b>5</b> projects now in active development</p>
 
     <p class="open-line">We work with anyone — no agent, no representation, no track record required. If you've got an idea with massive global appeal, we want to hear from you.</p>
     <p class="cap-cta"><a href="mailto:info@gem.studio?subject=My%20idea">Pitch us an idea →</a></p>
