@@ -328,69 +328,28 @@
     }
     .cast b { font-size: 12px; color: #fff; font-weight: 600; }
 
-    /* Scanner */
-    .fcard.scanner { margin-top: 14px; padding: 22px 26px 16px; }
+    /* Journey */
+    .fcard.journey { margin-top: 14px; padding: 26px 26px 20px; }
     .scan-wrap { overflow-x: auto; }
-    .scan { display: block; width: 100%; min-width: 620px; height: auto; }
-    .scan .slabels text {
+    .jrn { display: block; width: 100%; min-width: 720px; height: auto; }
+    .jrn .jn { fill: rgba(255,255,255,0.05); stroke: rgba(196,181,253,0.35); stroke-width: 1.2; }
+    .jrn .jn.on { fill: rgba(228,201,126,0.10); stroke: rgba(228,201,126,0.55); }
+    .jrn .jico { fill: none; stroke: #C4B5FD; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .jrn .seats circle { fill: rgba(228,201,126,0.75); }
+    .jrn .jbr { fill: none; stroke: rgba(228,201,126,0.35); stroke-width: 1.2; }
+    .jrn text {
       font-family: 'Inter', sans-serif;
-      font-size: 14px; font-weight: 400; fill: var(--on-screen);
+      fill: var(--on-screen);
     }
-    .scan .stage {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; fill: #C4B5FD;
-    }
-    .scan .feeds path { stroke: rgba(243,239,232,0.18); stroke-width: 1; }
-    .scan .out { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.12); }
-    .scan .out.on { fill: rgba(228,201,126,0.12); stroke: rgba(228,201,126,0.5); }
-    .scan .olab {
-      font-family: 'Inter', sans-serif;
-      font-size: 12.5px; fill: var(--on-screen-muted);
-    }
-    .scan .olab.on { fill: #fff; font-weight: 500; }
-    .scan .oval {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px; font-weight: 600; fill: #E4C97E;
-    }
-    .scan .oval.dim { fill: var(--on-screen-muted); font-weight: 400; }
-    .scan .setc {
-      font-family: 'Inter', sans-serif;
-      font-size: 12.5px; font-style: italic;
-      fill: var(--on-screen-muted);
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .scan .ring { transform-origin: 470px 154px; animation: pulse 3.6s ease-out infinite; }
-      .scan .ring.r2 { animation-delay: 1.2s; }
-      .scan .ring.r3 { animation-delay: 2.4s; }
-      @keyframes pulse {
-        0%   { transform: scale(0.55); opacity: 0; }
-        22%  { opacity: 1; }
-        100% { transform: scale(1.5); opacity: 0; }
-      }
+    .jrn .jt { font-size: 13.5px; font-weight: 500; }
+    .jrn .jt.gold { fill: #E4C97E; font-size: 14.5px; }
+    .jrn .jsub { font-size: 11.5px; fill: var(--on-screen-muted); }
+    .jrn .jd { font-size: 12px; fill: var(--on-screen-muted); }
+    .jrn-note {
+      margin-top: 12px; font-size: 12.5px;
+      color: var(--on-screen-muted); font-style: italic;
     }
 
-    .ranks { display: flex; flex-direction: column; gap: 11px; }
-    .rank {
-      display: grid; grid-template-columns: 84px 1fr 48px;
-      gap: 10px; align-items: center;
-      font-size: 10.5px; color: var(--on-screen-muted);
-    }
-    .rank i {
-      display: block; height: 7px; border-radius: 4px;
-      background: rgba(255,255,255,0.10); overflow: hidden;
-    }
-    .rank i b {
-      display: block; height: 100%; border-radius: 4px;
-      background: linear-gradient(90deg, #8b5cf6, #6D28D9);
-    }
-    .rank.on i b { background: linear-gradient(90deg, #C4B5FD, #E4C97E); }
-    .rank em {
-      font-style: normal; text-align: right;
-      font-size: 11.5px; font-weight: 600; color: #fff;
-      font-variant-numeric: tabular-nums;
-    }
-    .rank.on span { color: #fff; }
 
     .paths { display: flex; flex-direction: column; gap: 8px; }
     .path {
@@ -568,93 +527,70 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Scouting &amp; development</p>
     <p class="pillar-statement">We're scouting for the next great <em>blockbuster franchise.</em></p>
-    <p class="pillar-next">There are ideas and creators out there with huge worldwide potential that nobody is looking at — we built <b>Selznick</b> to find them.</p>
+    <p class="pillar-next">There are ideas and creators out there with huge worldwide potential that nobody is looking at. We built <b>Selznick</b> to find them — then we partner with the creator, develop it into a production-ready film, and take it to theaters worldwide.</p>
 
-    <div class="fcard scanner reveal">
+    <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="scan" viewBox="0 0 940 300" aria-hidden="true">
+        <svg class="jrn" viewBox="0 0 960 260" aria-hidden="true">
           <defs>
             <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#C4B5FD"/>
-              <stop offset="1" stop-color="#7C3AED"/>
+              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
             </linearGradient>
-            <radialGradient id="gemhalo">
-              <stop offset="0" stop-color="rgba(139,92,246,0.42)"/>
-              <stop offset="1" stop-color="rgba(139,92,246,0)"/>
+            <linearGradient id="jline" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8b5cf6"/><stop offset="0.7" stop-color="#C4B5FD"/><stop offset="1" stop-color="#E4C97E"/>
+            </linearGradient>
+            <radialGradient id="screenglow">
+              <stop offset="0" stop-color="rgba(228,201,126,0.4)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
             </radialGradient>
-            <linearGradient id="outflow" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#C4B5FD"/>
-              <stop offset="1" stop-color="#E4C97E"/>
-            </linearGradient>
           </defs>
 
-          <!-- stage labels -->
-          <text class="stage" x="30" y="26">01 · Scan everything</text>
-          <text class="stage" x="470" y="26" text-anchor="middle">02 · Selznick studies it</text>
-          <text class="stage" x="910" y="26" text-anchor="end">03 · Worth developing</text>
+          <path d="M96 108 H 700" stroke="url(#jline)" stroke-width="2" fill="none"/>
 
-          <!-- sources -->
-          <g class="slabels">
-            <text x="30" y="76">Original screenplays</text>
-            <text x="30" y="118">Books &amp; novels</text>
-            <text x="30" y="160">Comics &amp; manga</text>
-            <text x="30" y="202">Social video</text>
-            <text x="30" y="244">YouTube &amp; historical figures</text>
+          <!-- 1. find -->
+          <circle cx="96" cy="108" r="30" class="jn"/>
+          <rect x="-11" y="-11" width="22" height="22" rx="5" transform="translate(96 108) rotate(45)" fill="url(#gemfill)"/>
+          <text class="jt" x="96" y="164" text-anchor="middle">We find a great idea</text>
+
+          <!-- 2. partner -->
+          <circle cx="298" cy="108" r="30" class="jn"/>
+          <g class="jico" transform="translate(298 108)">
+            <circle cx="-7" cy="-4" r="4.5"/><path d="M-16 11c0-5 4-8 9-8s9 3 9 8"/>
+            <circle cx="9" cy="-4" r="4.5"/><path d="M0 11c0-5 4-8 9-8s9 3 9 8"/>
           </g>
-          <g class="feeds">
-            <path d="M262 70 C 350 70, 380 120, 428 148" fill="none"/>
-            <path d="M262 112 C 350 112, 380 134, 428 152" fill="none"/>
-            <path d="M262 154 H 428" fill="none"/>
-            <path d="M262 196 C 350 196, 380 174, 428 158" fill="none"/>
-            <path d="M262 238 C 350 238, 380 190, 428 160" fill="none"/>
+          <text class="jt" x="298" y="164" text-anchor="middle">We partner with the creator</text>
+
+          <text class="jsub" x="298" y="184" text-anchor="middle">— and acquire it</text>
+
+          <!-- 3. develop -->
+          <circle cx="500" cy="108" r="30" class="jn"/>
+          <g class="jico" transform="translate(500 108)">
+            <rect x="-12" y="-9" width="24" height="18" rx="2.5"/>
+            <path d="M-12 -3h24"/><path d="M-5 -9l3 6"/><path d="M3 -9l3 6"/>
           </g>
+          <text class="jt" x="500" y="164" text-anchor="middle">We develop it</text>
+          <text class="jsub" x="500" y="184" text-anchor="middle">into a production-ready film</text>
 
-          <!-- the engine -->
-          <circle cx="470" cy="154" r="104" fill="url(#gemhalo)"/>
-          <circle class="ring r1" cx="470" cy="154" r="52" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
-          <circle class="ring r2" cx="470" cy="154" r="80" fill="none" stroke="rgba(196,181,253,0.24)" stroke-width="1.1"/>
-          <rect x="-20" y="-20" width="40" height="40" rx="8" transform="translate(470 154) rotate(45)" fill="url(#gemfill)"/>
-
-          <!-- output: the shortlist -->
-          <path d="M512 154 C 570 154, 590 100, 648 100" fill="none" stroke="url(#outflow)" stroke-width="2.6"/>
-          <path d="M512 154 C 570 154, 590 154, 648 154" fill="none" stroke="rgba(243,239,232,0.22)" stroke-width="1.4"/>
-          <path d="M512 154 C 570 154, 590 208, 648 208" fill="none" stroke="rgba(243,239,232,0.14)" stroke-width="1.2"/>
-
-          <g class="outs">
-            <rect x="656" y="84" width="230" height="32" rx="7" class="out on"/>
-            <text class="olab on" x="672" y="105">Blockbuster potential</text>
-            <text class="oval" x="870" y="105" text-anchor="end">$2.2B</text>
-
-            <rect x="656" y="138" width="230" height="32" rx="7" class="out"/>
-            <text class="olab" x="672" y="159">Strong</text>
-            <text class="oval dim" x="870" y="159" text-anchor="end">$740M</text>
-
-            <rect x="656" y="192" width="230" height="32" rx="7" class="out"/>
-            <text class="olab" x="672" y="213">Pass</text>
-            <text class="oval dim" x="870" y="213" text-anchor="end">—</text>
+          <!-- 4. theaters -->
+          <circle cx="700" cy="108" r="74" fill="url(#screenglow)"/>
+          <circle cx="700" cy="108" r="34" class="jn on"/>
+          <g transform="translate(700 108)">
+            <rect x="-17" y="-15" width="34" height="19" rx="2" fill="rgba(228,201,126,0.9)"/>
+            <g class="seats">
+              <circle cx="-13" cy="10" r="2.3"/><circle cx="-6.5" cy="10" r="2.3"/><circle cx="0" cy="10" r="2.3"/><circle cx="6.5" cy="10" r="2.3"/><circle cx="13" cy="10" r="2.3"/>
+            </g>
           </g>
+          <text class="jt gold" x="700" y="176" text-anchor="middle">Theaters worldwide</text>
 
-          <text class="setc" x="470" y="288" text-anchor="middle">…and anything else that could become a franchise</text>
+          <!-- 5. downstream -->
+          <path d="M736 96 C 790 84, 800 62, 846 58" class="jbr"/>
+          <path d="M738 108 H 846" class="jbr"/>
+          <path d="M736 120 C 790 132, 800 154, 846 158" class="jbr"/>
+          <text class="jd" x="858" y="63">Streaming</text>
+          <text class="jd" x="858" y="113">Sequels</text>
+          <text class="jd" x="858" y="163">Spin-offs</text>
         </svg>
       </div>
-    </div>
-
-    <div class="film-cards">
-      <div class="fcard reveal">
-        <p class="fcard-k">Ranked by box office potential</p>
-        <div class="ranks">
-          <div class="rank on"><span>Opportunity 01</span><i><b style="width:100%"></b></i><em class="gold">$2.2B</em></div>
-          <div class="rank"><span>Opportunity 02</span><i><b style="width:52%"></b></i><em>$1.1B</em></div>
-          <div class="rank"><span>Opportunity 03</span><i><b style="width:34%"></b></i><em>$740M</em></div>
-          <div class="rank"><span>Opportunity 04</span><i><b style="width:19%"></b></i><em>$410M</em></div>
-        </div>
-      </div>
-
-      <div class="fcard reveal">
-        <p class="fcard-k">In development</p>
-        <p class="fbig gold">5</p>
-        <p class="fcard-d" style="margin-top:10px;">Projects now in active development — for worldwide theatrical release. We're looking for the next one.</p>
-      </div>
+      <p class="jrn-note">5 projects now in active development.</p>
     </div>
 
     <p class="open-line">We work with anyone — no agent, no representation, no track record required. If you've got an idea with massive global appeal, we want to hear from you.</p>
