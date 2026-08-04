@@ -319,6 +319,24 @@
       margin-top: 22px; font-size: 16px; color: var(--ink-soft);
       max-width: 62ch; line-height: 1.7;
     }
+    .blinds {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-top: 30px;
+    }
+    .blind {
+      border: 1px solid var(--hair-strong);
+      border-left: 3px solid rgba(176,138,62,0.55);
+      border-radius: 0 12px 12px 0;
+      padding: 22px 24px;
+      background: var(--card);
+    }
+    .blind-k {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 500; letter-spacing: -0.01em;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .blind-d { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+
     .thesis-h {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(26px, 3vw, 38px);
@@ -477,7 +495,8 @@
     .jrn .rrow .rv.gold { fill: #E4C97E; }
     .jrn .gpath circle { fill: #17121F; stroke: rgba(228,201,126,0.5); stroke-width: 1.4; }
     .jrn .gpath .gend { fill: rgba(228,201,126,0.18); stroke: #E4C97E; stroke-width: 1.8; }
-    .jrn .grail { fill: none; stroke: url(#jline); stroke-width: 2.4; }
+    .jrn .grail { fill: none; stroke: url(#jline); stroke-width: 2.6; }
+    .jrn .galt { fill: none; stroke: rgba(243,239,232,0.13); stroke-width: 1.2; stroke-dasharray: 4 5; }
     .jrn .gp { font-size: 12.5px; fill: var(--on-screen); }
     .jrn .gp.gold { fill: #E4C97E; font-weight: 600; font-size: 13.5px; }
     .jrn .glab {
@@ -598,6 +617,7 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .quotes { grid-template-columns: 1fr; }
+      .blinds { grid-template-columns: 1fr; }
       .slate { padding: 0 20px; }
       .slate-inner { padding: 30px 24px; gap: 28px; border-radius: 14px; }
       .slate-nums { gap: 32px; }
@@ -670,9 +690,25 @@
   </div>
   <p class="qnote reveal">The people running this industry have named the problem. What's been missing is a way to solve it.</p>
 
-  <h3 class="thesis-h reveal">Picking better.</h3>
-  <p class="thesis-p reveal">Spotting genuine potential is extremely hard, and acting on it takes enormous investment — so the industry retreats to what's already proven. Making things cheaper doesn't solve that. Neither does chasing whatever is already popular online. Entertainment is a business of rare, enormous wins: <b>the top 10% of films earn 72% of all box office.</b> The only move that matters is picking better.</p>
-  <p class="thesis-p reveal">That's why we built <b>Selznick</b>. It doesn't make our films — it helps us find the IP worth betting on, make sharper creative and investment decisions, and maximize what a property is worth across every channel modern media offers.</p>
+  <h3 class="thesis-h reveal">Why entertainment is in a creative rut.</h3>
+  <p class="thesis-p reveal">Entertainment is a business of rare, enormous wins — <b>the top 10% of films earn 72% of all box office.</b> Everything depends on spotting those few. But the industry is structurally blind in three ways, and the biggest ideas keep getting missed because of it.</p>
+
+  <div class="blinds reveal">
+    <div class="blind">
+      <p class="blind-k">Closed</p>
+      <p class="blind-d">You get read if you're known. New people and new ideas don't get in.</p>
+    </div>
+    <div class="blind">
+      <p class="blind-k">Single-format</p>
+      <p class="blind-d">An idea gets judged as one medium — so anything that doesn't already look like a film is invisible.</p>
+    </div>
+    <div class="blind">
+      <p class="blind-k">Running on feel</p>
+      <p class="blind-d">Feel can only recognize what it has seen before. It misses the factors that make something enormous.</p>
+    </div>
+  </div>
+
+  <p class="thesis-p reveal" style="margin-top:32px;">Making things cheaper doesn't fix any of that. Neither does chasing whatever is already popular online. That's why we built <b>Selznick</b> — to solve the whole stack.</p>
 
   <div class="fcard tmap reveal">
     <div class="scan-wrap">
@@ -694,17 +730,17 @@
         <path d="M490 112 V 132 H 490 V 156" class="tl"/>
         <path d="M490 112 V 132 H 812 V 156" class="tl"/>
 
-        <text class="tn" x="168" y="182" text-anchor="middle">Find the IP</text>
-        <text class="td" x="168" y="206" text-anchor="middle">hidden gems with</text>
-        <text class="td" x="168" y="224" text-anchor="middle">real potential</text>
+        <text class="tn" x="168" y="182" text-anchor="middle">Open to anyone</text>
+        <text class="td" x="168" y="206" text-anchor="middle">we scout everywhere, and</text>
+        <text class="td" x="168" y="224" text-anchor="middle">anyone can reach us</text>
 
-        <text class="tn" x="490" y="182" text-anchor="middle">Develop it</text>
-        <text class="td" x="490" y="206" text-anchor="middle">sharper creative and</text>
-        <text class="td" x="490" y="224" text-anchor="middle">investment decisions</text>
+        <text class="tn" x="490" y="182" text-anchor="middle">Sees what feel can't</text>
+        <text class="td" x="490" y="206" text-anchor="middle">the factors that make</text>
+        <text class="td" x="490" y="224" text-anchor="middle">something enormous</text>
 
-        <text class="tn" x="812" y="182" text-anchor="middle">Maximize its value</text>
-        <text class="td" x="812" y="206" text-anchor="middle">across the full modern</text>
-        <text class="td" x="812" y="224" text-anchor="middle">media landscape</text>
+        <text class="tn" x="812" y="182" text-anchor="middle">Every format</text>
+        <text class="td" x="812" y="206" text-anchor="middle">value maximized across the</text>
+        <text class="td" x="812" y="224" text-anchor="middle">full modern media landscape</text>
 
         <path d="M812 240 V 258" class="tl gold"/>
         <path d="M660 276 H 964" class="tl gold"/>
@@ -809,6 +845,10 @@
           <path d="M534 166 H 596" stroke="url(#jline)" stroke-width="2.4" fill="none"/>
 
           <g class="gpath">
+            <!-- routes considered -->
+            <path d="M604 214 C 700 214, 780 208, 900 198" class="galt"/>
+            <path d="M604 214 C 700 200, 790 178, 900 168" class="galt"/>
+            <!-- the route chosen -->
             <path d="M604 214 L 700 186 L 796 152 L 900 104" class="grail"/>
 
             <circle cx="604" cy="214" r="7"/>
@@ -821,11 +861,11 @@
             <text class="gp" x="796" y="178" text-anchor="middle">Feature film</text>
 
             <circle cx="900" cy="104" r="9" class="gend"/>
-            <text class="gp gold" x="900" y="80" text-anchor="middle">Franchise</text>
+            <text class="gp gold" x="900" y="82" text-anchor="middle">Franchise</text>
           </g>
 
-          <text class="glab" x="604" y="272">Value rising along the path</text>
-          <text class="gval" x="604" y="296">Each step proves the audience for the next</text>
+          <text class="glab" x="604" y="278">The path we'd take it down</text>
+          <text class="gval" x="604" y="300">One of many routes — Selznick finds the one worth the most</text>
 
         </svg>
       </div>
