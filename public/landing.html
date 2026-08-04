@@ -204,7 +204,7 @@
 
     .caps3 {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 12px; margin-top: 12px; max-width: 620px;
+      gap: 12px; margin-top: 30px; max-width: 620px;
     }
     .cap3 {
       border: 1px solid rgba(255,255,255,0.14);
@@ -416,26 +416,20 @@
       max-width: 52ch;
     }
     .who-next b { font-weight: 600; color: #fff; }
-    .wstats {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 12px; margin-top: 26px; max-width: 620px;
+    .bignums {
+      display: flex; gap: 56px; flex-wrap: wrap;
+      margin-top: 30px;
     }
-    .wstat {
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.03);
-      padding: 20px 16px 18px;
-    }
-    .wstat b {
+    .bignum b {
       display: block;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: 300; line-height: 0.95;
+      font-size: clamp(46px, 6vw, 68px);
+      font-weight: 300; line-height: 1;
       color: #fff; letter-spacing: -0.01em;
     }
-    .wstat span {
+    .bignum span {
       display: block; margin-top: 8px;
-      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--accent-soft);
     }
 
@@ -631,10 +625,10 @@
     <div class="who-content">
       <p class="pillar-n">Social media</p>
       <p class="who-statement">We've developed some of the most viral content <em>on the internet.</em></p>
-      <p class="who-next">We partner with the world's most talented online creators to build viral channels — using Selznick for viral idea generation, trend research, and concept testing. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">see them on TikTok ↗</a>)</span></p>
-      <div class="wstats">
-        <div class="wstat"><b>1B+</b><span>Views · 12 months</span></div>
-        <div class="wstat"><b>500M+</b><span>People reached · 12 months</span></div>
+      <p class="who-next">We partner with the world's most talented online creators to build viral channels — using Selznick for viral idea generation, trend research, and concept testing. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
+      <div class="bignums">
+        <div class="bignum"><b>1B+</b><span>Views</span></div>
+        <div class="bignum"><b>500M+</b><span>People reached</span></div>
       </div>
       <div class="caps3">
         <div class="cap3">
