@@ -482,9 +482,14 @@
       font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; fill: #C4B5FD;
     }
-    .jrn .rrow text { font-size: 12.5px; fill: var(--on-screen-muted); }
-    .jrn .rrow .rv { font-size: 13px; font-weight: 600; fill: var(--on-screen); }
-    .jrn .rrow .rv.gold { fill: #E4C97E; }
+    .jrn .rb { fill: rgba(255,255,255,0.09); }
+    .jrn .rb.on { fill: url(#jline); }
+    .jrn .rb.mid { fill: rgba(196,181,253,0.45); }
+    .jrn .rv { font-size: 13px; font-weight: 600; fill: #fff; }
+    .jrn .rv.gold { fill: #E4C97E; }
+    .jrn .rv.dim { fill: var(--on-screen-muted); font-weight: 500; }
+    .jrn .gext { fill: none; stroke: rgba(228,201,126,0.32); stroke-width: 1.1; }
+    .jrn .gx { font-size: 11.5px; fill: var(--on-screen-muted); }
     .jrn .gpath circle { fill: #17121F; stroke: rgba(228,201,126,0.5); stroke-width: 1.4; }
     .jrn .gpath .gend { fill: rgba(228,201,126,0.18); stroke: #E4C97E; stroke-width: 1.8; }
     .jrn .grail { fill: none; stroke: url(#jline); stroke-width: 2.6; }
@@ -737,12 +742,12 @@
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="jrn" viewBox="0 0 1160 330" aria-hidden="true">
+        <svg class="jrn" viewBox="0 0 1240 330" aria-hidden="true">
           <defs>
             <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
             </linearGradient>
-            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="700" y1="250" x2="1080" y2="86">
+            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="700" y1="250" x2="1000" y2="118">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#E4C97E"/>
             </linearGradient>
             <radialGradient id="gemhalo">
@@ -799,35 +804,48 @@
           <path d="M470 176 V 206" class="jconn" marker-end="url(#arwp)"/>
 
           <!-- ranked output under the gem -->
-          <text class="rhead" x="360" y="222">Franchise potential</text>
-          <g class="rrow">
-            <text x="360" y="248">Untitled thriller · screenplay</text>
-            <text class="rv gold" x="586" y="248" text-anchor="end">$2.2B</text>
-            <text x="360" y="272">Untitled adventure · comic</text>
-            <text class="rv" x="586" y="272" text-anchor="end">$1.4B</text>
-            <text x="360" y="296">Untitled epic · novel</text>
-            <text class="rv" x="586" y="296" text-anchor="end">$860M</text>
+          <text class="rhead" x="360" y="222">Total franchise potential</text>
+          <g class="rbars">
+            <rect x="360" y="238" width="230" height="9" rx="4.5" class="rb"/>
+            <rect x="360" y="238" width="230" height="9" rx="4.5" class="rb on"/>
+            <text class="rv gold" x="600" y="247">$2.2B</text>
+
+            <rect x="360" y="264" width="230" height="9" rx="4.5" class="rb"/>
+            <rect x="360" y="264" width="146" height="9" rx="4.5" class="rb mid"/>
+            <text class="rv" x="600" y="273">$1.4B</text>
+
+            <rect x="360" y="290" width="230" height="9" rx="4.5" class="rb"/>
+            <rect x="360" y="290" width="90" height="9" rx="4.5" class="rb mid"/>
+            <text class="rv dim" x="600" y="299">$860M</text>
           </g>
 
           <!-- the golden path -->
           <path d="M534 134 C 600 134, 630 210, 692 246" class="gfeed"/>
 
           <g class="gpath">
-            <path d="M700 250 C 800 244, 900 230, 1080 206" class="galt"/>
-            <path d="M700 250 C 810 232, 910 190, 1080 150" class="galt"/>
-            <path d="M700 250 L 826 208 L 952 160 L 1080 86" class="grail"/>
+            <path d="M700 250 C 800 244, 900 232, 1000 214" class="galt"/>
+            <path d="M700 250 L 800 214 L 900 172 L 1000 118" class="grail"/>
 
             <circle cx="700" cy="250" r="7"/>
             <text class="gp" x="700" y="230" text-anchor="middle">Web series</text>
 
-            <circle cx="826" cy="208" r="7"/>
-            <text class="gp" x="826" y="188" text-anchor="middle">TV series</text>
+            <circle cx="800" cy="214" r="7"/>
+            <text class="gp" x="800" y="194" text-anchor="middle">TV series</text>
 
-            <circle cx="952" cy="160" r="7"/>
-            <text class="gp" x="952" y="140" text-anchor="middle">Feature film</text>
+            <circle cx="900" cy="172" r="7"/>
+            <text class="gp" x="900" y="152" text-anchor="middle">Feature film</text>
 
-            <circle cx="1080" cy="86" r="9" class="gend"/>
-            <text class="gp gold" x="1080" y="64" text-anchor="end">Franchise</text>
+            <circle cx="1000" cy="118" r="9" class="gend"/>
+            <text class="gp gold" x="1000" y="96" text-anchor="middle">Franchise</text>
+
+            <path d="M1010 128 C 1050 140, 1060 152, 1074 162" class="gext"/>
+            <path d="M1010 128 C 1052 146, 1062 168, 1074 186" class="gext"/>
+            <path d="M1010 128 C 1050 152, 1058 186, 1074 210" class="gext"/>
+            <path d="M1010 128 C 1048 158, 1054 202, 1074 234" class="gext"/>
+            <text class="gx" x="1082" y="166">Theme parks</text>
+            <text class="gx" x="1082" y="190">Consumer products</text>
+            <text class="gx" x="1082" y="214">Comics &amp; novels</text>
+            <text class="gx" x="1082" y="238">Games &amp; merch</text>
           </g>
 
           <text class="glab" x="700" y="292">Multi-channel potential</text>
