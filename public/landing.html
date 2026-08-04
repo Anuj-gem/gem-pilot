@@ -310,57 +310,53 @@
       line-height: 1.75; max-width: 68ch; margin-bottom: 16px;
     }
     .thesis-p b { color: var(--ink); font-weight: 600; }
-    .fcard.tmap { margin-top: 32px; padding: 40px 40px 42px; }
+    .why-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px; align-items: start; margin-top: 4px;
+    }
+    .why-grid .thesis-p { margin-bottom: 0; max-width: none; }
+    .tmap {
+      background: linear-gradient(160deg, #241C33 0%, #16111F 60%, #120E19 100%);
+      border: 1px solid rgba(196,181,253,0.16);
+      border-radius: 16px; padding: 26px 26px 22px;
+    }
     .tmap-top {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 14px; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 12px;
+      padding-bottom: 18px; margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
     }
     .tgem {
-      width: 34px; height: 34px; border-radius: 9px;
+      width: 22px; height: 22px; border-radius: 6px; flex: none;
       background: linear-gradient(135deg,#C4B5FD,#7C3AED);
       transform: rotate(45deg);
-      box-shadow: 0 0 34px rgba(139,92,246,0.55);
+      box-shadow: 0 0 20px rgba(139,92,246,0.5);
     }
     .tgem-l {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.28em;
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em;
       text-transform: uppercase; color: #C4B5FD;
     }
-    .tmap-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; margin-top: 30px;
-      background: rgba(255,255,255,0.09);
-      border-radius: 14px; overflow: hidden;
-    }
+    .tmap-list { display: flex; flex-direction: column; }
     .tnode {
-      background: #17121F;
-      padding: 26px 26px 28px;
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
+    .tnode:last-child { border-bottom: none; padding-bottom: 4px; }
     .tico {
-      width: 38px; height: 38px; border-radius: 10px;
-      border: 1px solid rgba(196,181,253,0.3);
+      width: 32px; height: 32px; border-radius: 9px; flex: none;
+      border: 1px solid rgba(196,181,253,0.28);
       background: rgba(196,181,253,0.07);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
     }
     .tico svg {
-      width: 18px; height: 18px;
+      width: 16px; height: 16px;
       stroke: #C4B5FD; stroke-width: 1.6; fill: none;
       stroke-linecap: round; stroke-linejoin: round;
     }
     .tnode-h {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 23px; font-weight: 500; letter-spacing: -0.01em;
-      color: #fff; margin-bottom: 12px;
-    }
-    .tnode-l { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .tnode-l li {
-      position: relative; padding-left: 15px;
-      font-size: 13px; color: var(--on-screen-muted); line-height: 1.55;
-    }
-    .tnode-l li::before {
-      content: ''; position: absolute; left: 0; top: 8px;
-      width: 5px; height: 5px; border-radius: 50%;
-      background: rgba(196,181,253,0.6);
+      font-size: 20px; font-weight: 500; letter-spacing: -0.01em;
+      color: #fff;
     }
 
     /* ── Film graphics ── */
@@ -611,8 +607,7 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .blinds { grid-template-columns: 1fr; }
-      .tmap-grid { grid-template-columns: 1fr; }
-      .fcard.tmap { padding: 28px 22px 30px; }
+      .why-grid { grid-template-columns: 1fr; gap: 26px; }
       .slate { padding: 0 20px; }
       .slate-inner { padding: 30px 24px; gap: 28px; border-radius: 14px; }
       .slate-nums { gap: 32px; }
@@ -695,52 +690,36 @@
   </div>
 
   <h3 class="thesis-h reveal">Why we built Selznick.</h3>
-  <p class="thesis-p reveal">We believe AI like Selznick is the key to solving these problems — and to building franchises that weren't possible before. Most of the industry is using it to cut costs, replace people, and automate away human creativity. We think the opposite: the greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
 
-  <figure class="pull reveal">
-    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
-    <figcaption><b>Ted Sarandos</b>, Netflix · on making films cheaper with AI</figcaption>
-  </figure>
+  <div class="why-grid reveal">
+    <p class="thesis-p">We believe AI like Selznick is the key to solving these problems — and to building franchises that weren't possible before. Most of the industry is using it to cut costs, replace people, and automate away human creativity. We think the opposite: the greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
 
-  <div class="fcard tmap reveal">
-    <div class="tmap-top">
-      <span class="tgem"></span>
-      <span class="tgem-l">Selznick</span>
-    </div>
-    <div class="tmap-grid">
-      <div class="tnode">
-        <div class="tico">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.6 15.6 21 21"/><path d="M11 7.5v7M7.5 11h7"/></svg>
-        </div>
-        <p class="tnode-h">Scouting</p>
-        <ul class="tnode-l">
-          <li>We look everywhere for IP</li>
-          <li>Open to working with anyone</li>
-        </ul>
+    <div class="tmap">
+      <div class="tmap-top">
+        <span class="tgem"></span>
+        <span class="tgem-l">Selznick</span>
       </div>
-      <div class="tnode">
-        <div class="tico">
-          <svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="M3 12.5 12 17l9-4.5"/><path d="M3 17 12 21.5 21 17"/></svg>
+      <div class="tmap-list">
+        <div class="tnode">
+          <span class="tico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.6 15.6 21 21"/><path d="M11 7.5v7M7.5 11h7"/></svg></span>
+          <span class="tnode-h">Scouting</span>
         </div>
-        <p class="tnode-h">Creative development</p>
-        <ul class="tnode-l">
-          <li>Deep research and adaptation</li>
-          <li>Testing concepts on real audiences</li>
-          <li>Partnering with the best creators</li>
-        </ul>
-      </div>
-      <div class="tnode">
-        <div class="tico">
-          <svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-5M11 20v-9M16 20v-6M21 20V6"/></svg>
+        <div class="tnode">
+          <span class="tico"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="M3 12.5 12 17l9-4.5"/><path d="M3 17 12 21.5 21 17"/></svg></span>
+          <span class="tnode-h">Development &amp; testing</span>
         </div>
-        <p class="tnode-h">Maximizing value</p>
-        <ul class="tnode-l">
-          <li>Revenue across the entire entertainment landscape</li>
-          <li>Box office, streaming, social, consumer products, brand</li>
-        </ul>
+        <div class="tnode">
+          <span class="tico"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-5M11 20v-9M16 20v-6M21 20V6"/></svg></span>
+          <span class="tnode-h">Franchise building</span>
+        </div>
       </div>
     </div>
   </div>
+
+  <figure class="pull reveal">
+    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
+    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
+  </figure>
 
 </section>
 
