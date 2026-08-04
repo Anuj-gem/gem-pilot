@@ -472,7 +472,7 @@
     /* Journey */
     .fcard.journey { margin-top: 14px; padding: 26px 26px 20px; }
     .scan-wrap { overflow-x: auto; }
-    .jrn { display: block; width: 100%; min-width: 720px; height: auto; }
+    .jrn { display: block; width: 100%; min-width: 860px; height: auto; }
     .jrn .sbub { fill: rgba(255,255,255,0.05); stroke: rgba(196,181,253,0.3); stroke-width: 1.1; }
     .jrn .src text { font-size: 13.5px; fill: var(--on-screen); }
     .jrn .feeds path { stroke: rgba(243,239,232,0.18); stroke-width: 1; }
@@ -488,6 +488,7 @@
     .jrn .gpath circle { fill: #17121F; stroke: rgba(228,201,126,0.5); stroke-width: 1.4; }
     .jrn .gpath .gend { fill: rgba(228,201,126,0.18); stroke: #E4C97E; stroke-width: 1.8; }
     .jrn .grail { fill: none; stroke: url(#jline); stroke-width: 2.6; }
+    .jrn .gfeed { fill: none; stroke: rgba(196,181,253,0.45); stroke-width: 2; }
     .jrn .galt { fill: none; stroke: rgba(243,239,232,0.13); stroke-width: 1.2; stroke-dasharray: 4 5; }
     .jrn .gp { font-size: 12.5px; fill: var(--on-screen); }
     .jrn .gp.gold { fill: #E4C97E; font-weight: 600; font-size: 13.5px; }
@@ -760,12 +761,12 @@
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="jrn" viewBox="0 0 1020 320" aria-hidden="true">
+        <svg class="jrn" viewBox="0 0 1160 330" aria-hidden="true">
           <defs>
             <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
             </linearGradient>
-            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="512" y1="134" x2="790" y2="134">
+            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="700" y1="250" x2="1080" y2="86">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#E4C97E"/>
             </linearGradient>
             <radialGradient id="gemhalo">
@@ -833,30 +834,28 @@
           </g>
 
           <!-- the golden path -->
-          <path d="M534 166 H 596" stroke="url(#jline)" stroke-width="2.4" fill="none"/>
+          <path d="M534 134 C 600 134, 630 210, 692 246" class="gfeed"/>
 
           <g class="gpath">
-            <!-- routes considered -->
-            <path d="M604 214 C 700 214, 780 208, 900 198" class="galt"/>
-            <path d="M604 214 C 700 200, 790 178, 900 168" class="galt"/>
-            <!-- the route chosen -->
-            <path d="M604 214 L 700 186 L 796 152 L 900 104" class="grail"/>
+            <path d="M700 250 C 800 244, 900 230, 1080 206" class="galt"/>
+            <path d="M700 250 C 810 232, 910 190, 1080 150" class="galt"/>
+            <path d="M700 250 L 826 208 L 952 160 L 1080 86" class="grail"/>
 
-            <circle cx="604" cy="214" r="7"/>
-            <text class="gp" x="604" y="240" text-anchor="middle">Web series</text>
+            <circle cx="700" cy="250" r="7"/>
+            <text class="gp" x="700" y="230" text-anchor="middle">Web series</text>
 
-            <circle cx="700" cy="186" r="7"/>
-            <text class="gp" x="700" y="212" text-anchor="middle">TV series</text>
+            <circle cx="826" cy="208" r="7"/>
+            <text class="gp" x="826" y="188" text-anchor="middle">TV series</text>
 
-            <circle cx="796" cy="152" r="7"/>
-            <text class="gp" x="796" y="178" text-anchor="middle">Feature film</text>
+            <circle cx="952" cy="160" r="7"/>
+            <text class="gp" x="952" y="140" text-anchor="middle">Feature film</text>
 
-            <circle cx="900" cy="104" r="9" class="gend"/>
-            <text class="gp gold" x="900" y="82" text-anchor="middle">Franchise</text>
+            <circle cx="1080" cy="86" r="9" class="gend"/>
+            <text class="gp gold" x="1080" y="64" text-anchor="end">Franchise</text>
           </g>
 
-          <text class="glab" x="604" y="278">The path we'd take it down</text>
-          <text class="gval" x="604" y="300">One of many routes — Selznick finds the one worth the most</text>
+          <text class="glab" x="700" y="292">The path we'd take it down</text>
+          <text class="gval" x="700" y="314">One of many routes — Selznick finds the one worth the most</text>
 
         </svg>
       </div>
