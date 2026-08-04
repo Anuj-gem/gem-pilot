@@ -202,11 +202,6 @@
     .pillar-next b { font-weight: 600; color: var(--ink); }
 
 
-    /* Selznick cards */
-    .selz-cards {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 14px; margin-top: 32px;
-    }
     .panel-cta {
       margin-top: 26px; padding-top: 22px;
       border-top: 1px solid rgba(255,255,255,0.14);
@@ -214,12 +209,6 @@
     }
     .panel-cta a { color: var(--accent-soft); text-decoration: none; font-weight: 500; }
     .panel-cta a:hover { color: #fff; }
-    .snum {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 52px; font-weight: 300; line-height: 1;
-      color: #fff;
-    }
 
     /* ── Film graphics ── */
     .film-note {
@@ -304,6 +293,36 @@
     }
     .cast b { font-size: 12px; color: #fff; font-weight: 600; }
 
+    .film-cards.three { grid-template-columns: repeat(3, 1fr); }
+    .srcs { display: flex; flex-wrap: wrap; gap: 7px; }
+    .srcs span {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px; padding: 7px 13px;
+      font-size: 11.5px; color: var(--on-screen);
+      background: rgba(255,255,255,0.04);
+    }
+    .ranks { display: flex; flex-direction: column; gap: 11px; }
+    .rank {
+      display: grid; grid-template-columns: 84px 1fr 48px;
+      gap: 10px; align-items: center;
+      font-size: 10.5px; color: var(--on-screen-muted);
+    }
+    .rank i {
+      display: block; height: 7px; border-radius: 4px;
+      background: rgba(255,255,255,0.10); overflow: hidden;
+    }
+    .rank i b {
+      display: block; height: 100%; border-radius: 4px;
+      background: linear-gradient(90deg, #8b5cf6, #6D28D9);
+    }
+    .rank.on i b { background: linear-gradient(90deg, #C4B5FD, #E4C97E); }
+    .rank em {
+      font-style: normal; text-align: right;
+      font-size: 11.5px; font-weight: 600; color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+    .rank.on span { color: #fff; }
+
     .paths { display: flex; flex-direction: column; gap: 8px; }
     .path {
       display: flex; align-items: center; justify-content: space-between;
@@ -319,25 +338,6 @@
     .pdot {
       width: 7px; height: 7px; border-radius: 50%;
       background: #E4C97E; box-shadow: 0 0 9px rgba(228,201,126,0.9);
-    }
-    .scard {
-      background: var(--screen); color: var(--on-screen);
-      border-radius: 14px; padding: 24px 22px 22px;
-    }
-    .scard-k {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--accent-soft);
-      margin-bottom: 16px;
-    }
-    .srows { display: flex; flex-direction: column; gap: 6px; }
-    .srows i {
-      display: block; height: 9px; border-radius: 4px;
-      background: rgba(255,255,255,0.12);
-    }
-    .srows i.on { background: linear-gradient(90deg, #8b5cf6, #5B21B6); }
-    .scard-g {
-      min-height: 76px;
-      display: flex; flex-direction: column; justify-content: flex-end;
     }
     .cap-cta {
       margin-top: 28px;
@@ -460,8 +460,7 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
-      .selz-cards { grid-template-columns: 1fr; }
-      .film-cards { grid-template-columns: 1fr; }
+      .film-cards, .film-cards.three { grid-template-columns: 1fr; }
       .fcard { padding: 22px 20px 24px; }
 
 
@@ -611,23 +610,40 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Scouting &amp; development</p>
     <p class="pillar-statement">We're scouting for the next great <em>blockbuster franchise.</em></p>
-    <p class="pillar-next">From screenplays to books to work sent to us directly by writers — we look for IP with mass audience appeal that we can develop for worldwide theatrical distribution.</p>
+    <p class="pillar-next">We've used <b>Selznick</b> to scout thousands of IP acquisition opportunities — original screenplays, books, comics and manga, social media content — to identify IP we can acquire and develop into blockbuster feature film franchises.</p>
 
-    <div class="selz-cards">
-      <div class="scard reveal">
-        <p class="scard-k">The hunt</p>
-        <div class="scard-g">
-          <div class="srows"><i style="width:88%"></i><i style="width:60%"></i><i class="on" style="width:96%"></i><i style="width:48%"></i><i style="width:72%"></i></div>
+    <div class="film-cards three">
+      <div class="fcard reveal">
+        <p class="fcard-k">What we scan</p>
+        <div class="srcs">
+          <span>Original screenplays</span>
+          <span>Books</span>
+          <span>Comics &amp; manga</span>
+          <span>Social video</span>
+          <span>YouTube</span>
+          <span>Historical figures</span>
+        </div>
+        <p class="fcard-d">Thousands of opportunities, everywhere they live.</p>
+      </div>
+
+      <div class="fcard reveal">
+        <p class="fcard-k">Ranked by box office potential</p>
+        <div class="ranks">
+          <div class="rank on"><span>Opportunity 01</span><i><b style="width:100%"></b></i><em class="gold">$2.2B</em></div>
+          <div class="rank"><span>Opportunity 02</span><i><b style="width:52%"></b></i><em>$1.1B</em></div>
+          <div class="rank"><span>Opportunity 03</span><i><b style="width:34%"></b></i><em>$740M</em></div>
+          <div class="rank"><span>Opportunity 04</span><i><b style="width:19%"></b></i><em>$410M</em></div>
         </div>
       </div>
-      <div class="scard reveal">
-        <p class="scard-k">In development</p>
-        <b class="snum">5+</b>
-        <p class="scard-d">Projects in active development — for worldwide theatrical release.</p>
+
+      <div class="fcard reveal">
+        <p class="fcard-k">In development</p>
+        <p class="fbig gold">5</p>
+        <p class="fcard-d" style="margin-top:10px;">Projects now in active development — for worldwide theatrical release. We're looking for the next one.</p>
       </div>
     </div>
 
-    <p class="cap-cta"><a href="mailto:info@gem.studio?subject=My%20work">Send us your work →</a></p>
+    <p class="cap-cta"><a href="mailto:info@gem.studio?subject=My%20work">Pitch us your IP →</a></p>
   </div>
 
 </section>
