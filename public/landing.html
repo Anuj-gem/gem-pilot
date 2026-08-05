@@ -168,10 +168,24 @@
       font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
       letter-spacing: 0.32em; fill: var(--accent-deep);
     }
+    .hero-viz .htoday {
+      font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; fill: var(--gold);
+    }
+    .hero-proof-k {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .hero-started {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 19px; color: var(--ink-soft);
+      margin: 14px auto 34px;
+    }
     .hero-proof {
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold);
-      margin: 0 auto 34px;
+      margin: 0 auto;
     }
     .hero-actions { display: flex; gap: 22px; align-items: center; justify-content: center; }
     .btn-primary {
@@ -735,15 +749,20 @@
       <text class="hgemlab" x="490" y="170" text-anchor="middle">GEM</text>
 
       <path d="M530 148 C 620 152, 700 146, 780 108 C 850 74, 900 40, 946 26" class="hcurve"/>
-      <circle cx="648" cy="149" r="3" fill="#7C3AED"/>
-      <circle cx="790" cy="103" r="3" fill="#9B6FD0"/>
-      <circle cx="884" cy="52" r="3" fill="#B08A3E"/>
+      <circle cx="648" cy="149" r="3.5" fill="#7C3AED"/>
+      <text class="hlab" x="648" y="176" text-anchor="middle">Viral hits</text>
+      <circle cx="790" cy="103" r="3.5" fill="#9B6FD0"/>
+      <circle cx="790" cy="103" r="9" class="hpick"/>
+      <text class="hlab" x="790" y="132" text-anchor="middle">Feature films</text>
+      <text class="htoday" x="790" y="148" text-anchor="middle">We are here</text>
       <circle cx="950" cy="24" r="20" fill="url(#hglowg)"/>
       <rect x="-8" y="-8" width="16" height="16" rx="3" transform="translate(950 24) rotate(45)" fill="url(#hgold)"/>
-      <text class="hlab gold" x="950" y="230" text-anchor="end">Global entertainment phenomena</text>
+      <text class="hlab gold" x="920" y="20" text-anchor="end">Global franchises</text>
     </svg>
   </div>
+    <p class="hero-proof-k reveal">In our first 12 months</p>
   <p class="hero-proof reveal">1,000,000,000+ views &middot; 10+ social channels &middot; 2 feature films in development</p>
+  <p class="hero-started reveal">And we're just getting started.</p>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
     <a href="#story" class="btn-text">Learn more ↓</a>
