@@ -159,7 +159,7 @@
     .hero-viz .hfeed { stroke: rgba(91,33,182,0.18); stroke-width: 1.1; fill: none; }
     .hero-viz .hcurve { stroke: url(#hcurve); stroke-width: 2.6; fill: none; stroke-linecap: round; }
     .hero-viz .hlab {
-      font-family: 'Inter', sans-serif; font-size: 11.5px;
+      font-family: 'Inter', sans-serif; font-size: 13px;
       fill: var(--muted); letter-spacing: 0.04em;
     }
     .hero-viz .hlab.gold { fill: var(--gold); font-weight: 600; }
@@ -169,18 +169,18 @@
       letter-spacing: 0.32em; fill: var(--accent-deep);
     }
     .hero-viz .htoday {
-      font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700;
+      font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
       letter-spacing: 0.16em; text-transform: uppercase; fill: var(--gold);
     }
     .hero-proof-k {
       font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
     .hero-started {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
       font-size: 19px; color: var(--ink-soft);
-      margin: 14px auto 34px;
+      margin: -8px auto 34px;
     }
     .hero-proof {
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
@@ -334,6 +334,11 @@
     .mini-g .mg-goldpath { stroke: rgba(228,201,126,0.7); stroke-width: 1.5; fill: none; }
     .mini-g .mg-node.solid { fill: #1C1526; }
     .mini-g .mg-hair { fill: #C4B5FD; opacity: 0.9; }
+    .mini-g .mg-tile { fill: rgba(255,255,255,0.04); stroke: rgba(196,181,253,0.3); stroke-width: 1.1; }
+    .mini-g .mg-tile.hot { stroke: rgba(228,201,126,0.7); stroke-width: 1.4; fill: rgba(228,201,126,0.07); }
+    .mini-g .mg-track { fill: rgba(255,255,255,0.08); }
+    .mini-g .mg-fill { fill: url(#gemgold2); }
+    .fcard.wide .provg { max-width: 720px; }
     .mini-g .mg-note { font-family: 'Inter', sans-serif; font-size: 9.5px; font-style: italic; fill: rgba(196,181,253,0.55); }
     .mini-g .mg-plus { font-family: 'Cormorant Garamond', serif; font-size: 26px; fill: rgba(243,239,232,0.6); }
     .mini-g .mg-clap { fill: rgba(228,201,126,0.12); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
@@ -764,7 +769,11 @@
     </svg>
   </div>
     <p class="hero-proof-k reveal">In our first 12 months</p>
-  <p class="hero-proof reveal">1,000,000,000+ views &middot; 10+ social channels &middot; 2 feature films in development</p>
+  <div class="hero-stats reveal">
+    <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
+    <div class="hstat"><b>10+</b><span>Social channels</span></div>
+    <div class="hstat"><b>2</b><span>Feature films in development</span></div>
+  </div>
   <p class="hero-started reveal">And we're just getting started.</p>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
@@ -1121,33 +1130,40 @@
 
     <div class="film-cards">
       <div class="fcard wide reveal">
-        <p class="fcard-k">Build the brand</p>
-        <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
-          <rect x="34" y="48" width="46" height="82" rx="9" class="mg-box"/>
-          <path d="M52 82 l12 7 -12 7 z" class="mg-ico thin"/>
-          <path d="M86 62 a 26 26 0 0 1 0 30 M94 54 a 38 38 0 0 1 0 46" class="mg-wave"/>
-          <text class="mg-lbl" x="57" y="152" text-anchor="middle">Social</text>
+        <p class="fcard-k">The proving ground</p>
+        <svg class="mini-g provg" viewBox="0 0 760 230" aria-hidden="true">
+          <circle cx="70" cy="110" r="16" class="mg-node solid"/>
+          <rect x="-7" y="-7" width="14" height="14" rx="2.5" transform="translate(70 110) rotate(45)" fill="rgba(196,181,253,0.4)"/>
+          <text class="mg-lbl" x="70" y="150" text-anchor="middle">One overlooked idea</text>
+          <path d="M96 110 H 132" class="mg-goldpath" marker-end="url(#mgarwg)"/>
 
-          <circle cx="124" cy="74" r="3" class="mg-dot"/>
-          <circle cx="138" cy="96" r="3" class="mg-dot"/>
-          <circle cx="132" cy="118" r="3" class="mg-dot"/>
-          <circle cx="152" cy="82" r="3" class="mg-dot"/>
-          <circle cx="158" cy="108" r="3" class="mg-dot"/>
-          <circle cx="172" cy="92" r="3" class="mg-dot"/>
-          <circle cx="184" cy="112" r="3" class="mg-dot"/>
-          <circle cx="188" cy="80" r="3" class="mg-dot"/>
-          <circle cx="202" cy="98" r="3" class="mg-dot"/>
-          <text class="mg-lbl" x="163" y="152" text-anchor="middle">The modern audience</text>
+          <rect x="150" y="28" width="88" height="60" rx="7" class="mg-tile"/>
+          <path d="M188 50 l16 8 -16 8 z" class="mg-ico thin"/>
+          <text class="mg-val dim" x="194" y="104" text-anchor="middle">1.2M</text>
+          <rect x="252" y="28" width="88" height="60" rx="7" class="mg-tile"/>
+          <path d="M290 50 l16 8 -16 8 z" class="mg-ico thin"/>
+          <text class="mg-val dim" x="296" y="104" text-anchor="middle">8.4M</text>
+          <rect x="354" y="28" width="88" height="60" rx="7" class="mg-tile"/>
+          <path d="M392 50 l16 8 -16 8 z" class="mg-ico thin"/>
+          <text class="mg-val dim" x="398" y="104" text-anchor="middle">46M</text>
+          <rect x="150" y="120" width="88" height="60" rx="7" class="mg-tile"/>
+          <path d="M188 142 l16 8 -16 8 z" class="mg-ico thin"/>
+          <text class="mg-val dim" x="194" y="196" text-anchor="middle">380K</text>
+          <rect x="252" y="120" width="88" height="60" rx="7" class="mg-tile"/>
+          <path d="M290 142 l16 8 -16 8 z" class="mg-ico thin"/>
+          <text class="mg-val dim" x="296" y="196" text-anchor="middle">24M</text>
+          <rect x="354" y="120" width="88" height="60" rx="7" class="mg-tile hot"/>
+          <path d="M392 142 l16 8 -16 8 z" class="mg-ico thin"/>
+          <text class="mg-val gold" x="398" y="196" text-anchor="middle">104M</text>
 
-          <path d="M212 94 H 232" class="mg-goldpath" marker-end="url(#mgarwg)"/>
+          <path d="M462 110 H 500" class="mg-goldpath" marker-end="url(#mgarwg)"/>
 
-          <rect x="244" y="56" width="72" height="24" rx="4" class="mg-marquee"/>
-          <text class="mg-mq" x="280" y="72" text-anchor="middle">NOW PLAYING</text>
-          <rect x="252" y="80" width="56" height="50" rx="3" class="mg-box"/>
-          <path d="M266 130 v-18 h10 v18 M286 130 v-18 h10 v18" class="mg-ico thin"/>
-          <text class="mg-lbl gold" x="280" y="152" text-anchor="middle">Theaters</text>
+          <text class="mg-lbl" x="600" y="24" text-anchor="middle">Audience signal</text>
+          <rect x="592" y="38" width="16" height="150" rx="8" class="mg-track"/>
+          <rect x="592" y="68" width="16" height="120" rx="8" class="mg-fill"/>
+          <text class="mg-val gold" x="622" y="76">Scale it</text>
         </svg>
-        <p class="fcard-d">We don't treat social media as a marketing channel — it's part of the film itself. We create viral marketing experiences, build the audience long before release, and use every modern revenue source to de-risk the project, so we can keep backing bold visions sustainably.</p>
+        <p class="fcard-d">One idea becomes many experiments. We adapt it for our channels, watch what the audience does, and build the brand as it grows — until the signal is undeniable.</p>
       </div>
     </div>
   </div>
@@ -1201,7 +1217,7 @@
         <svg class="mini-g" viewBox="0 0 380 190" aria-hidden="true">
           <circle cx="46" cy="28" r="13" class="mg-node solid"/>
           <rect x="-6" y="-6" width="12" height="12" rx="2.5" transform="translate(46 28) rotate(45)" fill="rgba(196,181,253,0.4)"/>
-          <text class="mg-lbl" x="68" y="32">A raw idea</text>
+          <text class="mg-lbl" x="68" y="32">A proven idea</text>
 
           <circle cx="46" cy="70" r="14" class="mg-node solid"/>
           <circle cx="41.8" cy="66.8" r="3.4" class="mg-ico thin" fill="none"/>
