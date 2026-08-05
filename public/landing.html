@@ -273,9 +273,17 @@
       gap: 14px; margin-top: 30px;
     }
     .twins {
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1fr;
       gap: 14px; margin-top: 30px;
     }
+    .model-wide .film-cards { margin-top: 24px; }
+    .model-wide .fcard {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(196,181,253,0.18);
+      box-shadow: none;
+    }
+    .twin-d b { color: #fff; font-weight: 600; }
+    .twin-d { max-width: 76ch; }
     .twins .twin { padding: 30px 30px 28px; border-radius: 14px; }
     .twin-h {
       font-family: 'Cormorant Garamond', serif;
@@ -982,11 +990,61 @@
     <p class="pillar-statement">We pair the world's best creators with our AI to adapt ideas <em>for the big screen.</em></p>
 
     <div class="twins reveal">
-      <div class="fcard twin">
+      <div class="fcard twin model-wide">
         <p class="fcard-k">The model</p>
-        <p class="twin-h">The most advanced development model in film.</p>
-        <p class="twin-d">It adapts a concept, projects what the film would earn, sets the budget line by line, and prices what every casting and creative decision is worth — long before anyone commits real money.</p>
+        <p class="twin-h">Selznick, our world model of the film business.</p>
+        <p class="twin-d">Trained on 13,000+ films and everything they earned, <b>Selznick</b> reads any idea and answers the questions every studio spends millions guessing at.</p>
+
+        <div class="film-cards three-up">
+          <div class="fcard">
+            <p class="fcard-k">What's the right team?</p>
+            <div class="castrow">
+              <div class="cast">
+                <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+                <span>A-list lead</span><b class="gold">+$21M</b>
+              </div>
+              <div class="cast on">
+                <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+                <span>Emerging lead</span><b>Baseline</b>
+              </div>
+              <div class="cast">
+                <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+                <span>Award-winning director</span><b class="gold">+$14M</b>
+              </div>
+            </div>
+            <p class="fcard-d">Casting and creative choices, priced before anyone signs.</p>
+          </div>
+
+          <div class="fcard">
+            <p class="fcard-k">What's the right budget?</p>
+            <p class="fbig">$14M</p>
+            <div class="stackbar">
+              <i style="width:26%;background:linear-gradient(90deg,#8b5cf6,#7C3AED)"></i>
+              <i style="width:34%;background:linear-gradient(90deg,#7C3AED,#6D28D9)"></i>
+              <i style="width:22%;background:linear-gradient(90deg,#E4C97E,#C9A55A)"></i>
+              <i style="width:18%;background:rgba(255,255,255,0.22)"></i>
+            </div>
+            <div class="fkeys">
+              <span><i style="background:#8b5cf6"></i>Cast</span>
+              <span><i style="background:#7C3AED"></i>38 shoot days</span>
+              <span><i style="background:#E4C97E"></i>VFX</span>
+              <span><i style="background:rgba(255,255,255,0.4)"></i>Post</span>
+            </div>
+            <p class="fcard-d">Costed from the screenplay alone — before a dollar is spent.</p>
+          </div>
+
+          <div class="fcard">
+            <p class="fcard-k">What's the box office potential?</p>
+            <div class="projrows">
+              <div class="prow"><span>Draft 1</span><i><b style="width:36%"></b></i><em>$45M</em></div>
+              <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
+              <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
+            </div>
+            <p class="fcard-d">Position to position, draft to draft — how far each version can go.</p>
+          </div>
+        </div>
       </div>
+
       <div class="screen-panel twin">
         <canvas id="field" aria-hidden="true"></canvas>
         <div class="who-content">
@@ -1000,55 +1058,6 @@
             <div class="bignum"><b>400K+</b><span>Followers</span></div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="film-cards three-up">
-      <div class="fcard reveal">
-        <p class="fcard-k">What's the right team?</p>
-        <div class="castrow">
-          <div class="cast">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>A-list lead</span><b class="gold">+$21M</b>
-          </div>
-          <div class="cast on">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Emerging lead</span><b>Baseline</b>
-          </div>
-          <div class="cast">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Award-winning director</span><b class="gold">+$14M</b>
-          </div>
-        </div>
-        <p class="fcard-d">Casting and creative choices, priced before anyone signs.</p>
-      </div>
-
-      <div class="fcard reveal">
-        <p class="fcard-k">What's the right budget?</p>
-        <p class="fbig">$14M</p>
-        <div class="stackbar">
-          <i style="width:26%;background:linear-gradient(90deg,#8b5cf6,#7C3AED)"></i>
-          <i style="width:34%;background:linear-gradient(90deg,#7C3AED,#6D28D9)"></i>
-          <i style="width:22%;background:linear-gradient(90deg,#E4C97E,#C9A55A)"></i>
-          <i style="width:18%;background:rgba(255,255,255,0.22)"></i>
-        </div>
-        <div class="fkeys">
-          <span><i style="background:#8b5cf6"></i>Cast</span>
-          <span><i style="background:#7C3AED"></i>38 shoot days</span>
-          <span><i style="background:#E4C97E"></i>VFX</span>
-          <span><i style="background:rgba(255,255,255,0.4)"></i>Post</span>
-        </div>
-        <p class="fcard-d">Costed from the screenplay alone — before a dollar is spent.</p>
-      </div>
-
-      <div class="fcard reveal">
-        <p class="fcard-k">What's the box office potential?</p>
-        <div class="projrows">
-          <div class="prow"><span>Draft 1</span><i><b style="width:36%"></b></i><em>$45M</em></div>
-          <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
-          <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
-        </div>
-        <p class="fcard-d">Position to position, draft to draft — how far each version can go.</p>
       </div>
     </div>
   </div>
