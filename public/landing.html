@@ -303,6 +303,24 @@
     .mini-g .mg-wave { stroke: rgba(196,181,253,0.5); stroke-width: 1.4; fill: none; stroke-linecap: round; }
     .mini-g .mg-marquee { fill: rgba(228,201,126,0.1); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
     .mini-g .mg-mq { font-family: 'Inter', sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; fill: #E4C97E; }
+    .team-band .bignums { gap: 40px; margin: 24px 0 4px; }
+    .team-band .bignum b { font-size: clamp(30px, 3.4vw, 48px); }
+    .team-band .twin-d { margin-top: 22px; max-width: 60ch; }
+    .logo-row {
+      display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+      margin-top: 24px; padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .lg { color: rgba(243,239,232,0.9); white-space: nowrap; display: inline-flex; align-items: center; }
+    .lg-hcp { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; gap: 10px; }
+    .lg-hcp svg { width: 26px; height: 26px; }
+    .lg-uber { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+    .lg-latest { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 0.02em; }
+    .lg-latest i { font-style: normal; color: #C0503A; margin-left: 5px; }
+    .lg-disney {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 19px; font-weight: 500;
+    }
     .mini-g .mg-bar { fill: url(#gemfill2); }
     .mini-g .mg-bar.dim { fill: rgba(196,181,253,0.35); }
     .mini-g .mg-bar.gold { fill: url(#gemgold2); }
@@ -587,7 +605,7 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Find</p>
     <p class="pillar-statement">We find IP that <em>no one else can find.</em></p>
-    <p class="pillar-next">Most studios can only consider what a handful of agents send them. We're open to everyone — creators send us their work, and we scout the rest proactively. We built the most powerful AI ever built for this purpose: it studies ideas across every format, at a depth and scale no one can match, and surfaces the ones with the most box office potential.</p>
+    <p class="pillar-next">Most studios can only consider what a handful of agents send them. We're open to everyone — creators send us their work, and we scout the rest proactively. We built <b>Selznick</b>, the most advanced AI ever created for film: it studies ideas across every format, at a depth and scale no one can match, and surfaces the ones with the most box office potential.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
@@ -988,7 +1006,7 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Develop</p>
     <p class="pillar-statement">We develop it to maximize its <em>box office potential.</em></p>
-    <p class="pillar-next">We pair the world's most talented creators with <b>Selznick</b>, the most advanced AI creative partner ever built for film — and take each idea through a development process no studio can match.</p>
+    <p class="pillar-next">We pair the world's most talented creators with <b>Selznick</b> — our AI creative partner — and take each idea through a development process no studio can match.</p>
 
     <div class="film-cards three-up">
       <div class="fcard reveal">
@@ -1101,8 +1119,19 @@
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="media-content">
     <p class="fcard-k">The team</p>
-    <p class="twin-h">The creators of Selznick — and the creative minds behind a billion views.</p>
-    <p class="twin-d">We've spent our careers building at some of the world's biggest media and technology companies, and putting content in front of hundreds of millions of people. GEM is those two disciplines, fused.</p>
+    <p class="twin-h">The creative team behind a billion views.</p>
+    <div class="bignums">
+      <div class="bignum"><b>1B+</b><span>Views</span></div>
+      <div class="bignum"><b>500M+</b><span>People reached</span></div>
+      <div class="bignum"><b>400K+</b><span>Followers</span></div>
+    </div>
+    <p class="twin-d">We're the creators of <b>Selznick</b> — and we've spent our whole careers building at the world's leading media and technology companies.</p>
+    <div class="logo-row">
+      <span class="lg lg-hcp"><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="7" fill="#37A343"/><path d="M9 16.5 L17 9.5 L25 16.5 M11.5 15v10M22.5 15v10M11.5 20h11" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Housecall Pro</span>
+      <span class="lg lg-uber">Uber</span>
+      <span class="lg lg-latest">THE <i>LATEST</i></span>
+      <span class="lg lg-disney">The Walt Disney Studios</span>
+    </div>
     </div>
   </div>
 </section>
