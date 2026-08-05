@@ -224,38 +224,6 @@
     .tk a { color: var(--accent-soft); text-decoration: none; }
     .tk a:hover { color: #fff; }
 
-    /* ── The slate ── */
-    .slate { padding: 0 56px; }
-    .slate-inner {
-      background: linear-gradient(120deg, #241C33 0%, #16111F 60%, #120E19 100%);
-      border: 1px solid rgba(228,201,126,0.22);
-      border-radius: 18px;
-      padding: 40px 48px;
-      display: flex; align-items: center; gap: 56px; flex-wrap: wrap;
-    }
-    .slate-nums { display: flex; gap: 48px; }
-    .snum b {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(46px, 6vw, 68px);
-      font-weight: 300; line-height: 1; color: #fff;
-    }
-    .snum span {
-      display: block; margin-top: 8px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: #E4C97E;
-    }
-    .slate-h {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 3.2vw, 40px);
-      font-weight: 500; letter-spacing: -0.02em;
-      color: #fff; line-height: 1.1;
-    }
-    .slate-d {
-      margin-top: 8px; font-size: 14px;
-      color: var(--on-screen-muted);
-    }
-
     /* ── Thesis ── */
     .pull {
       margin: 34px 0 0;
@@ -541,9 +509,6 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .blinds { grid-template-columns: 1fr; }
-      .slate { padding: 0 20px; }
-      .slate-inner { padding: 30px 24px; gap: 28px; border-radius: 14px; }
-      .slate-nums { gap: 32px; }
       .film-cards, .film-cards.three { grid-template-columns: 1fr; }
       .film-cards .fcard,
       .film-cards .fcard:nth-child(4),
@@ -581,7 +546,8 @@
   <p class="hero-sub reveal">With <b>Selznick</b>, the world's first AI creative executive, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
   <div class="hero-stats reveal">
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-    <div class="hstat"><b>2</b><span>Feature films in development</span></div>
+    <div class="hstat"><b>500,000,000+</b><span>People reached</span></div>
+    <div class="hstat"><b>2</b><span>Feature films in active development</span></div>
   </div>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
@@ -596,7 +562,12 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Scout</p>
     <p class="pillar-statement">We scout for IP with massive <em>box office potential.</em></p>
-    <p class="pillar-next">The entire business runs on a small number of enormous properties, and Hollywood is not set up to find them. We use <b>Selznick</b> to look across every format — screenplays, books, comics, online video — for the rare opportunities that could become major feature film franchises.</p>
+    <p class="pillar-next">Hollywood is driven by huge franchises, and every one of them began as an original that worked. The industry has gotten very good at extending franchises and very bad at starting them. We use <b>Selznick</b> to evaluate every form of idea imaginable (screenplays, books, comics, online creators, etc.) with a depth no one else in Hollywood can match, and find the hidden gems with the potential to become major box office franchises.</p>
+
+    <figure class="pull reveal">
+      <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
+      <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
+    </figure>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
@@ -683,12 +654,12 @@
 
 </section>
 
-<!-- Block · Test -->
+<!-- Block · Social -->
 <section id="channels" style="padding-top:0;">
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="pillar-n">Test</p>
+      <p class="pillar-n">Social</p>
       <p class="who-statement">Our content has generated some of the internet's most <em>viral videos.</em></p>
       <p class="who-next">And we're just getting started. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
       <div class="bignums">
@@ -696,20 +667,6 @@
         <div class="bignum"><b>1B+</b><span>Views</span></div>
         <div class="bignum"><b>500M+</b><span>People reached</span></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- The slate -->
-<section class="slate" id="slate">
-  <div class="slate-inner reveal">
-    <div class="slate-nums">
-      <div class="snum"><b>2</b><span>Feature films</span></div>
-      <div class="snum"><b>1</b><span>TV series</span></div>
-    </div>
-    <div class="slate-copy">
-      <p class="slate-h">In active development.</p>
-      <p class="slate-d">First announcements early 2027.</p>
     </div>
   </div>
 </section>
@@ -781,11 +738,6 @@
   <div class="section-marker reveal">The thesis</div>
   <h2 class="sec-h reveal">Great new franchises are getting <em>rarer.</em></h2>
   <p class="sec-sub reveal">The industry refreshes the same properties again and again — not out of laziness, but because identifying and developing genuinely great new ones is extremely hard.</p>
-
-  <figure class="pull reveal">
-    <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
-    <figcaption><b>Steven Spielberg</b> · CinemaCon, 2026</figcaption>
-  </figure>
 
   <h3 class="thesis-h reveal">Why entertainment is in a creative rut.</h3>
   <p class="thesis-p reveal">Entertainment is a business of rare, enormous wins — <b>the top 10% of films earn 72% of all box office.</b> Everything depends on spotting those few. But the industry is structurally blind in three ways, and the biggest ideas keep getting missed because of it.</p>
