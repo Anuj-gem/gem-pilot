@@ -337,7 +337,7 @@
     .mini-g .mg-tile { fill: rgba(255,255,255,0.04); stroke: rgba(196,181,253,0.3); stroke-width: 1.1; }
     .mini-g .mg-tile.hot { stroke: rgba(228,201,126,0.7); stroke-width: 1.4; fill: rgba(228,201,126,0.07); }
     .mini-g .mg-track { fill: rgba(255,255,255,0.08); }
-    .mini-g .mg-fill { fill: url(#gemgold2); }
+    .mini-g .mg-fill { fill: url(#pgold); }
     .fcard.wide .provg { max-width: 720px; }
     .mini-g .mg-note { font-family: 'Inter', sans-serif; font-size: 9.5px; font-style: italic; fill: rgba(196,181,253,0.55); }
     .mini-g .mg-plus { font-family: 'Cormorant Garamond', serif; font-size: 26px; fill: rgba(243,239,232,0.6); }
@@ -1132,10 +1132,18 @@
       <div class="fcard wide reveal">
         <p class="fcard-k">The proving ground</p>
         <svg class="mini-g provg" viewBox="0 0 760 230" aria-hidden="true">
+          <defs>
+            <linearGradient id="pgold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
+            </linearGradient>
+            <marker id="parw" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0 1.5 L 8.5 5 L 0 8.5 z" fill="#E4C97E"/>
+            </marker>
+          </defs>
           <circle cx="70" cy="110" r="16" class="mg-node solid"/>
           <rect x="-7" y="-7" width="14" height="14" rx="2.5" transform="translate(70 110) rotate(45)" fill="rgba(196,181,253,0.4)"/>
           <text class="mg-lbl" x="70" y="150" text-anchor="middle">One overlooked idea</text>
-          <path d="M96 110 H 132" class="mg-goldpath" marker-end="url(#mgarwg)"/>
+          <path d="M96 110 H 132" class="mg-goldpath" marker-end="url(#parw)"/>
 
           <rect x="150" y="28" width="88" height="60" rx="7" class="mg-tile"/>
           <path d="M188 50 l16 8 -16 8 z" class="mg-ico thin"/>
@@ -1156,7 +1164,7 @@
           <path d="M392 142 l16 8 -16 8 z" class="mg-ico thin"/>
           <text class="mg-val gold" x="398" y="196" text-anchor="middle">104M</text>
 
-          <path d="M462 110 H 500" class="mg-goldpath" marker-end="url(#mgarwg)"/>
+          <path d="M462 110 H 500" class="mg-goldpath" marker-end="url(#parw)"/>
 
           <text class="mg-lbl" x="600" y="24" text-anchor="middle">Audience signal</text>
           <rect x="592" y="38" width="16" height="150" rx="8" class="mg-track"/>
