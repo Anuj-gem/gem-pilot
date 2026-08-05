@@ -310,29 +310,54 @@
       line-height: 1.75; max-width: 68ch; margin-bottom: 16px;
     }
     .thesis-p b { color: var(--ink); font-weight: 600; }
-    .steps {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--hair-strong);
-      border: 1px solid var(--hair-strong);
-      border-radius: 16px; overflow: hidden;
+    .tmap {
+      background: linear-gradient(160deg, #241C33 0%, #16111F 55%, #120E19 100%);
+      border: 1px solid rgba(196,181,253,0.16);
+      border-radius: 18px; padding: 30px 34px 26px;
     }
-    .step { background: var(--card); padding: 32px 30px 34px; }
-    .step-n {
-      display: block; margin-bottom: 14px;
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em;
-      color: var(--gold);
+    .tmap-top {
+      display: flex; align-items: center; gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
     }
-    .step-h {
+    .tgem {
+      width: 22px; height: 22px; border-radius: 6px; flex: none;
+      background: linear-gradient(135deg,#C4B5FD,#7C3AED);
+      transform: rotate(45deg);
+      box-shadow: 0 0 20px rgba(139,92,246,0.5);
+    }
+    .tgem-l {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em;
+      text-transform: uppercase; color: #C4B5FD;
+    }
+    .tmap-list { display: flex; flex-direction: column; }
+    .tnode {
+      display: flex; align-items: flex-start; gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .tnode:last-child { border-bottom: none; padding-bottom: 6px; }
+    .tico {
+      width: 34px; height: 34px; border-radius: 9px; flex: none;
+      border: 1px solid rgba(196,181,253,0.28);
+      background: rgba(196,181,253,0.07);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .tico svg {
+      width: 17px; height: 17px;
+      stroke: #C4B5FD; stroke-width: 1.6; fill: none;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .tnode-h {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 3vw, 38px);
-      font-weight: 500; letter-spacing: -0.02em;
-      color: var(--ink); margin-bottom: 12px;
+      font-size: 26px; font-weight: 500; letter-spacing: -0.01em;
+      color: #fff; margin-bottom: 6px;
     }
-    .step-d { font-size: 15px; color: var(--ink-soft); line-height: 1.65; }
-    .steps-note {
-      margin-top: 24px; font-size: 15px; color: var(--muted); line-height: 1.6;
+    .tnode-d {
+      font-size: 14.5px; color: var(--on-screen-muted);
+      line-height: 1.65; max-width: 76ch;
     }
-    .steps-note b { color: var(--ink); font-weight: 600; }
 
     /* ── Film graphics ── */
     .film-cards {
@@ -580,7 +605,7 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .blinds { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; }
+      .tmap { padding: 24px 22px 20px; }
       .slate { padding: 0 20px; }
       .slate-inner { padding: 30px 24px; gap: 28px; border-radius: 14px; }
       .slate-nums { gap: 32px; }
@@ -636,66 +661,37 @@
 <!-- What we do -->
 <section id="what">
   <div class="section-marker reveal">What we do</div>
-  <div class="steps reveal">
-    <div class="step">
-      <span class="step-n">01</span>
-      <p class="step-h">Scout</p>
-      <p class="step-d">We take in IP across every format — screenplays, books, comics, online video — to find the opportunities that could become huge entertainment franchises.</p>
+  <div class="tmap reveal">
+    <div class="tmap-top">
+      <span class="tgem"></span>
+      <span class="tgem-l">Selznick</span>
     </div>
-    <div class="step">
-      <span class="step-n">02</span>
-      <p class="step-h">Test</p>
-      <p class="step-d">We develop and adapt those concepts, then test them on social and other low-cost formats until we know what audiences respond to.</p>
-    </div>
-    <div class="step">
-      <span class="step-n">03</span>
-      <p class="step-h">Scale</p>
-      <p class="step-d">Once a concept is proven, we scale it into feature films, TV series, and everything a franchise can become.</p>
-    </div>
-  </div>
-  <p class="steps-note reveal"><b>Selznick</b> informs every step — what to look at, what to make, and what to bet on.</p>
-</section>
-
-<div class="rule"></div>
-
-<!-- The thesis -->
-<section id="thesis">
-  <div class="section-marker reveal">The thesis</div>
-  <h2 class="sec-h reveal">Great new franchises are getting <em>rarer.</em></h2>
-  <p class="sec-sub reveal">The industry refreshes the same properties again and again — not out of laziness, but because identifying and developing genuinely great new ones is extremely hard.</p>
-
-  <figure class="pull reveal">
-    <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
-    <figcaption><b>Steven Spielberg</b> · CinemaCon, 2026</figcaption>
-  </figure>
-
-  <h3 class="thesis-h reveal">Why entertainment is in a creative rut.</h3>
-  <p class="thesis-p reveal">Entertainment is a business of rare, enormous wins — <b>the top 10% of films earn 72% of all box office.</b> Everything depends on spotting those few. But the industry is structurally blind in three ways, and the biggest ideas keep getting missed because of it.</p>
-
-  <div class="blinds reveal">
-    <div class="blind">
-      <p class="blind-k">Closed-off decision makers</p>
-      <p class="blind-d">The people who can actually make something happen are difficult to reach, and they work with who they've worked with before. The same ideas get recycled, and enormous amounts of talent and IP are never considered at all.</p>
-    </div>
-    <div class="blind">
-      <p class="blind-k">Narrow lenses</p>
-      <p class="blind-d">The opportunities for a piece of IP have never been greater, but seeing them takes a broad view and real fluency across today's channels. Judged through one lens, most of a property's potential stays invisible — and so does the case for investing in it.</p>
-    </div>
-    <div class="blind">
-      <p class="blind-k">Running on feel</p>
-      <p class="blind-d">Creative instinct can never be replaced — but the media landscape has become far too complex for instinct alone. Without rigorous research and precise financial modeling, even the best judgment gets misled.</p>
+    <div class="tmap-list">
+      <div class="tnode">
+        <span class="tico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.6 15.6 21 21"/><path d="M11 7.5v7M7.5 11h7"/></svg></span>
+        <div class="tnode-c">
+          <p class="tnode-h">Scout</p>
+          <p class="tnode-d">We take in IP across every format — screenplays, books, comics, online video — to find the opportunities that could become huge entertainment franchises.</p>
+        </div>
+      </div>
+      <div class="tnode">
+        <span class="tico"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="M3 12.5 12 17l9-4.5"/><path d="M3 17 12 21.5 21 17"/></svg></span>
+        <div class="tnode-c">
+          <p class="tnode-h">Test</p>
+          <p class="tnode-d">We develop and adapt those concepts, then test them on social and other low-cost formats until we know what audiences respond to.</p>
+        </div>
+      </div>
+      <div class="tnode">
+        <span class="tico"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-5M11 20v-9M16 20v-6M21 20V6"/></svg></span>
+        <div class="tnode-c">
+          <p class="tnode-h">Scale</p>
+          <p class="tnode-d">Once a concept is proven, we scale it into feature films, TV series, and everything a franchise can become.</p>
+        </div>
+      </div>
     </div>
   </div>
-
-
-  <p class="thesis-p reveal" style="margin-top:32px;">Most of the industry's answer has been to use AI to cut costs — replacing people, automating the work. We don't believe in that. The greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
-
-  <figure class="pull reveal">
-    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
-    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
-  </figure>
-
 </section>
+
 
 <!-- Block · Scouting & development -->
 <section id="scout">
@@ -825,7 +821,7 @@
 
 </section>
 
-<!-- What we do -->
+<!-- Block · Test -->
 <section id="channels" style="padding-top:0;">
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
@@ -918,6 +914,46 @@
 
 </section>
 
+<div class="rule"></div>
+
+<!-- The thesis -->
+<section id="thesis">
+  <div class="section-marker reveal">The thesis</div>
+  <h2 class="sec-h reveal">Great new franchises are getting <em>rarer.</em></h2>
+  <p class="sec-sub reveal">The industry refreshes the same properties again and again — not out of laziness, but because identifying and developing genuinely great new ones is extremely hard.</p>
+
+  <figure class="pull reveal">
+    <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
+    <figcaption><b>Steven Spielberg</b> · CinemaCon, 2026</figcaption>
+  </figure>
+
+  <h3 class="thesis-h reveal">Why entertainment is in a creative rut.</h3>
+  <p class="thesis-p reveal">Entertainment is a business of rare, enormous wins — <b>the top 10% of films earn 72% of all box office.</b> Everything depends on spotting those few. But the industry is structurally blind in three ways, and the biggest ideas keep getting missed because of it.</p>
+
+  <div class="blinds reveal">
+    <div class="blind">
+      <p class="blind-k">Closed-off decision makers</p>
+      <p class="blind-d">The people who can actually make something happen are difficult to reach, and they work with who they've worked with before. The same ideas get recycled, and enormous amounts of talent and IP are never considered at all.</p>
+    </div>
+    <div class="blind">
+      <p class="blind-k">Narrow lenses</p>
+      <p class="blind-d">The opportunities for a piece of IP have never been greater, but seeing them takes a broad view and real fluency across today's channels. Judged through one lens, most of a property's potential stays invisible — and so does the case for investing in it.</p>
+    </div>
+    <div class="blind">
+      <p class="blind-k">Running on feel</p>
+      <p class="blind-d">Creative instinct can never be replaced — but the media landscape has become far too complex for instinct alone. Without rigorous research and precise financial modeling, even the best judgment gets misled.</p>
+    </div>
+  </div>
+
+
+  <p class="thesis-p reveal" style="margin-top:32px;">Most of the industry's answer has been to use AI to cut costs — replacing people, automating the work. We don't believe in that. The greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
+
+  <figure class="pull reveal">
+    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
+    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
+  </figure>
+
+</section>
 <div class="rule"></div>
 
 <!-- The door -->
