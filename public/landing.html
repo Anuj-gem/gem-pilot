@@ -106,7 +106,7 @@
     .intake-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(440px, 62vh, 600px);
+      height: clamp(500px, 68vh, 660px);
       margin-top: 40px; margin-bottom: 34px;
     }
     .intake-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -904,15 +904,17 @@
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
+    const THEIRS = ['Talent reps', 'Industry relationships'];
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
 
-    let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, TY = 0, DIV = 0, R = 0, wide = true;
+    let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, TY1 = 0, TY2 = 0, TCY = 0, DIV = 0, R = 0, wide = true;
     let parts = [], slow = [], branches = [], theirs = [], vi = 0;
     let pulse = 0, emitIn = 2.0, slowIn = 9, valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
     const ease = t => t * t * (3 - 2 * t);
-    const bandY = i => (h * 0.44) + i * ((h * 0.46) / (SOURCES.length - 1));
+    const bandY = i => (h * 0.45) + i * ((h * 0.45) / (SOURCES.length - 1));
+    const theirY = i => (i === 0 ? TY1 : TY2);
 
     function spawn(seeded) {
       const b = Math.floor(rnd() * SOURCES.length);
@@ -925,11 +927,12 @@
       };
     }
     function spawnSlow(seeded) {
+      const b = Math.floor(rnd() * 2);
       return {
-        x: seeded ? XS + rnd() * (CX - XS) : XS - rnd() * 200,
-        y0: TY + (rnd() - 0.5) * 14,
-        s: 1.6 + rnd() * 1.2,
-        o: 0.2 + rnd() * 0.14,
+        x: seeded ? XS + rnd() * (CX - XS) : XS - rnd() * 220,
+        yb: theirY(b),
+        s: 1.6 + rnd() * 1.1,
+        o: 0.18 + rnd() * 0.14,
         v: 5 + rnd() * 4
       };
     }
@@ -944,12 +947,12 @@
       X0 = wide ? Math.max(30, w * 0.06) : 14;
       XS = wide ? w * 0.24 : 26;
       CX = w * 0.52;
-      TY = h * 0.13; DIV = h * 0.27; CY = h * 0.63;
+      TY1 = h * 0.12; TY2 = h * 0.21; TCY = h * 0.165; DIV = h * 0.30; CY = h * 0.66;
       R = wide ? 54 : 40;
       parts = []; slow = [];
       const n = wide ? 170 : 100;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
-      for (let i = 0; i < 5; i++) slow.push(spawnSlow(true));
+      for (let i = 0; i < 6; i++) slow.push(spawnSlow(true));
       branches = []; theirs = [];
     }
 
@@ -1029,7 +1032,8 @@
       }
       for (const p of slow) {
         p.x += p.v * dt;
-        p.y = p.y0;
+        const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (CX - 22 - XS))));
+        p.y = p.yb + (TCY - p.yb) * k;
         if (p.x > CX - 18) Object.assign(p, spawnSlow(false));
       }
 
@@ -1042,7 +1046,7 @@
       }
       slowIn -= dt;
       if (slowIn <= 0) {
-        theirs.push({ x: CX + 44 + rnd() * 26, y: TY + (rnd() - 0.5) * 12, t: 0 });
+        theirs.push({ x: CX + 46 + rnd() * 26, y: TCY + (rnd() - 0.5) * 12, t: 0 });
         if (theirs.length > 2) theirs.shift();
         slowIn = 26 + rnd() * 8;
       }
@@ -1056,13 +1060,24 @@
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
-      // ── the rest of the industry ──
+      // ── other studios ──
       if (wide) {
         ctx.save();
-        icon(5, X0 + 7, TY);
-        ctx.fillStyle = 'rgba(243,239,232,0.42)';
-        ctx.font = '400 14px Inter, sans-serif';
-        ctx.fillText('The rest of the industry', X0 + 28, TY + 5);
+        ctx.textAlign = 'left';
+        ctx.fillStyle = 'rgba(243,239,232,0.34)';
+        ctx.font = '700 10px Inter, sans-serif';
+        if ('letterSpacing' in ctx) ctx.letterSpacing = '2.6px';
+        ctx.fillText('OTHER STUDIOS', X0, h * 0.05);
+        ctx.restore();
+        ctx.save();
+        ctx.textAlign = 'left';
+        THEIRS.forEach((t, i) => {
+          const y = theirY(i);
+          icon(5, X0 + 7, y);
+          ctx.fillStyle = 'rgba(243,239,232,0.5)';
+          ctx.font = '400 14px Inter, sans-serif';
+          ctx.fillText(t, X0 + 28, y + 5);
+        });
         ctx.restore();
       }
       for (const p of slow) {
@@ -1070,18 +1085,18 @@
       }
       ctx.save();
       ctx.beginPath();
-      ctx.arc(CX, TY, 15, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(243,239,232,0.22)';
+      ctx.arc(CX, TCY, 16, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(243,239,232,0.2)';
       ctx.lineWidth = 1;
       ctx.stroke();
       ctx.restore();
       for (const t of theirs) {
         const a = Math.min(1, t.t / 1.2);
         ctx.save();
-        ctx.strokeStyle = 'rgba(243,239,232,0.14)';
+        ctx.strokeStyle = 'rgba(243,239,232,0.13)';
         ctx.lineWidth = 0.8;
         ctx.beginPath();
-        ctx.moveTo(CX + 16, TY);
+        ctx.moveTo(CX + 17, TCY);
         ctx.lineTo(t.x, t.y);
         ctx.stroke();
         ctx.restore();
@@ -1099,6 +1114,13 @@
 
       // ── us ──
       if (wide) {
+        ctx.save();
+        ctx.textAlign = 'left';
+        ctx.fillStyle = 'rgba(228,201,126,0.85)';
+        ctx.font = '700 10px Inter, sans-serif';
+        if ('letterSpacing' in ctx) ctx.letterSpacing = '2.6px';
+        ctx.fillText('GEM', X0, h * 0.375);
+        ctx.restore();
         ctx.save();
         ctx.textAlign = 'left';
         SOURCES.forEach((sname, i) => {
@@ -1153,17 +1175,7 @@
       ctx.fillStyle = g;
       ctx.fillRect(CX - R - 120, CY - R - 120, (R + 120) * 2, (R + 120) * 2);
 
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(CX, CY, R, 0, Math.PI * 2);
-      ctx.fillStyle = '#120E1B';
-      ctx.fill();
-      ctx.strokeStyle = 'rgba(196,181,253,' + (0.4 + pulse * 0.5).toFixed(2) + ')';
-      ctx.lineWidth = 1.3;
-      ctx.stroke();
-      ctx.restore();
-
-      const gs = R * 1.62;
+      const gs = R * 1.5;
       ctx.save();
       ctx.translate(CX, CY);
       ctx.rotate(Math.PI / 4);
@@ -1213,7 +1225,7 @@
     if (reduce) {
       for (let i = 0; i < 6; i++) addBranch();
       for (const b of branches) b.t = 3;
-      theirs.push({ x: CX + 54, y: TY, t: 3 });
+      theirs.push({ x: CX + 54, y: TCY, t: 3 });
       for (const p of parts) { const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (CX - R - XS)))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
     } else requestAnimationFrame(frame);
