@@ -301,6 +301,7 @@
     .mini-g .mg-goldpath { stroke: rgba(228,201,126,0.7); stroke-width: 1.5; fill: none; }
     .mini-g .mg-node.solid { fill: #1C1526; }
     .mini-g .mg-hair { fill: #C4B5FD; opacity: 0.9; }
+    .mini-g .mg-note { font-family: 'Inter', sans-serif; font-size: 9.5px; font-style: italic; fill: rgba(196,181,253,0.55); }
     .mini-g .mg-plus { font-family: 'Cormorant Garamond', serif; font-size: 26px; fill: rgba(243,239,232,0.6); }
     .mini-g .mg-clap { fill: rgba(228,201,126,0.12); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
     .mini-g .mg-clapline { stroke: rgba(228,201,126,0.55); stroke-width: 1.2; }
@@ -451,6 +452,10 @@
     }
     .gfield .gcap.gold { fill: #E4C97E; font-weight: 600; }
     .gfield .gdiv { stroke: rgba(255,255,255,0.06); stroke-width: 1; }
+    .gfield .gcall { fill: rgba(16,12,22,0.92); stroke: rgba(228,201,126,0.45); stroke-width: 1; }
+    .gfield .gcall-line { stroke: rgba(228,201,126,0.45); stroke-width: 1; fill: none; }
+    .gfield .gcall-t { font-family: 'Inter', sans-serif; font-size: 11px; fill: rgba(243,239,232,0.75); }
+    .gfield .gcall-v { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; fill: #E4C97E; }
     .gfield .gvaltag {
       font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600;
       fill: #E4C97E; letter-spacing: 0.02em;
@@ -597,7 +602,7 @@
   <h1 class="hero-headline reveal">
     We're developing Hollywood's next great <em>franchises.</em>
   </h1>
-  <p class="hero-sub reveal">We pair the creative team behind one of the world's most viral content networks with <b>Selznick</b>, the most advanced AI ever created for film — to find hidden gems and develop them into major feature film franchises.</p>
+  <p class="hero-sub reveal">We pair the creative team behind one of the world's most viral content networks with <b>Selznick</b>, the most advanced AI ever created for film — to find the hidden gems Hollywood overlooks and turn them into global entertainment phenomena.</p>
   <div class="hero-stats reveal">
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
     <div class="hstat"><b>500,000,000+</b><span>People reached</span></div>
@@ -615,8 +620,8 @@
 <section id="find">
   <div class="pillar-card reveal">
     <p class="pillar-n">Find</p>
-    <p class="pillar-statement">We find IP that <em>no one else can find.</em></p>
-    <p class="pillar-next">Most studios can only consider what a handful of agents send them. We're open to everyone — creators send us their work, and we scout the rest proactively. We built <b>Selznick</b> to do what studios can't: it studies ideas across every format, at a depth and scale no one can match, and surfaces the ones with the potential to become worldwide theatrical successes.</p>
+    <p class="pillar-statement">We find the IP that Hollywood can't find — <em>and would never invest in.</em></p>
+    <p class="pillar-next">Most studios can only consider what a handful of agents send them. We're open to everyone — creators send us their work, and we scout the rest proactively. The biggest ideas rarely look obvious: they look risky, counterintuitive, easy to pass on. We built <b>Selznick</b> to do what studios can't — study ideas across every format, at a depth and scale no one can match, and show us which ones have massive potential, and how to reach it.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
@@ -918,6 +923,11 @@
             <g class="ggem"><circle cx="150" cy="84" r="17" fill="url(#gemglow)"/>
               <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(150 84) rotate(45)" fill="url(#gemgold)"/>
               <text class="gvaltag" x="150" y="114" text-anchor="middle">$2.2B</text></g>
+            <path d="M168 76 C 182 66, 190 60, 200 56" class="gcall-line"/>
+            <rect x="202" y="34" width="158" height="66" rx="8" class="gcall"/>
+            <text class="gcall-t" x="214" y="54">Box office</text><text class="gcall-v" x="348" y="54" text-anchor="end">$1.2B</text>
+            <text class="gcall-t" x="214" y="72">Streaming</text><text class="gcall-v" x="348" y="72" text-anchor="end">$500M</text>
+            <text class="gcall-t" x="214" y="90">Consumer products</text><text class="gcall-v" x="348" y="90" text-anchor="end">$500M</text>
             <g class="ggem"><circle cx="316" cy="152" r="17" fill="url(#gemglow)"/>
               <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(316 152) rotate(45)" fill="url(#gemgold)"/>
               <text class="gvaltag" x="316" y="182" text-anchor="middle">$3.6B</text></g>
@@ -948,8 +958,8 @@
 <section id="develop" style="padding-top:0;">
   <div class="pillar-card reveal">
     <p class="pillar-n">Develop</p>
-    <p class="pillar-statement">We develop ideas to maximize their <em>box office potential.</em></p>
-    <p class="pillar-next">We pair the world's most talented creators with <b>Selznick</b> — our AI creative partner — and take each idea through a development process no studio can match.</p>
+    <p class="pillar-statement">We develop them into <em>global entertainment phenomena.</em></p>
+    <p class="pillar-next">We pair the world's most talented creators with <b>Selznick</b> to develop their work and find the path from bold vision to global phenomenon. None of it is guesswork — and our audience compounds every launch.</p>
 
     <div class="film-cards three-up">
       <div class="fcard reveal">
@@ -976,38 +986,45 @@
           <text class="mg-val dim" x="316" y="78" text-anchor="end">$45M</text>
 
           <text class="mg-lbl" x="24" y="116">Draft 2</text>
+          <text class="mg-note" x="24" y="130">sharper opening</text>
           <rect x="88" y="107" width="106" height="10" rx="5" class="mg-bar"/>
           <text class="mg-val" x="316" y="116" text-anchor="end">$78M</text>
 
           <text class="mg-lbl" x="24" y="154">Draft 3</text>
+          <text class="mg-note" x="24" y="168">the ending lands</text>
           <rect x="88" y="145" width="160" height="10" rx="5" class="mg-bar gold"/>
           <text class="mg-val gold" x="316" y="154" text-anchor="end">$120M+</text>
         </svg>
-        <p class="fcard-d">We take each idea through a careful creative process, with in-depth analysis from Selznick at every step. The goal is a version that stays true to the work and reaches the biggest possible theatrical audience.</p>
+        <p class="fcard-d">Every writer wants to know what their script could be worth — we can actually tell them. Then we work through the creative choices together, adapting the work into its strongest version while staying true to their vision.</p>
       </div>
 
       <div class="fcard reveal">
         <p class="fcard-k">Develop</p>
         <svg class="mini-g" viewBox="0 0 380 190" aria-hidden="true">
-          <circle cx="46" cy="40" r="15" class="mg-node solid"/>
-          <circle cx="41.5" cy="36.5" r="3.6" class="mg-ico thin" fill="none"/>
-          <path d="M35 46 c0-3.4 3-5 6.5-5 s6.5 1.6 6.5 5" class="mg-ico thin"/>
-          <circle cx="51" cy="35.5" r="3.6" class="mg-ico thin" fill="none"/>
-          <path d="M44.5 45 c0-3.4 3-5 6.5-5 s6.5 1.6 6.5 5" class="mg-ico thin"/>
-          <text class="mg-lbl" x="70" y="44">Cast &amp; crew</text>
+          <circle cx="46" cy="28" r="13" class="mg-node solid"/>
+          <rect x="-6" y="-6" width="12" height="12" rx="2.5" transform="translate(46 28) rotate(45)" fill="rgba(196,181,253,0.4)"/>
+          <text class="mg-lbl" x="68" y="32">A raw idea</text>
 
-          <circle cx="46" cy="95" r="15" class="mg-node solid"/>
-          <rect x="-9" y="-9" width="18" height="18" rx="3.5" transform="translate(46 95) rotate(45)" fill="url(#gemfill2)"/>
-          <text class="mg-lbl" x="70" y="99">Production technology</text>
+          <circle cx="46" cy="70" r="14" class="mg-node solid"/>
+          <circle cx="41.8" cy="66.8" r="3.4" class="mg-ico thin" fill="none"/>
+          <path d="M36 75 c0-3.2 2.8-4.7 6-4.7 s6 1.5 6 4.7" class="mg-ico thin"/>
+          <circle cx="50.6" cy="65.8" r="3.4" class="mg-ico thin" fill="none"/>
+          <path d="M44.8 74 c0-3.2 2.8-4.7 6-4.7 s6 1.5 6 4.7" class="mg-ico thin"/>
+          <text class="mg-lbl" x="68" y="74">Cast &amp; crew</text>
 
-          <circle cx="46" cy="150" r="15" class="mg-node solid"/>
-          <rect x="37" y="144" width="18" height="12" rx="2" class="mg-ico thin" fill="none"/>
-          <circle cx="46" cy="150" r="3" class="mg-ico thin" fill="none"/>
-          <text class="mg-lbl" x="70" y="154">Funding</text>
+          <circle cx="46" cy="112" r="14" class="mg-node solid"/>
+          <rect x="-8" y="-8" width="16" height="16" rx="3" transform="translate(46 112) rotate(45)" fill="url(#gemfill2)"/>
+          <text class="mg-lbl" x="68" y="116">Production technology</text>
 
-          <path d="M198 40 C 232 40, 240 72, 258 88" class="mg-line"/>
-          <path d="M198 95 H 258" class="mg-line"/>
-          <path d="M198 150 C 232 150, 240 118, 258 102" class="mg-line"/>
+          <circle cx="46" cy="154" r="14" class="mg-node solid"/>
+          <rect x="38" y="149" width="16" height="11" rx="2" class="mg-ico thin" fill="none"/>
+          <circle cx="46" cy="154.5" r="2.7" class="mg-ico thin" fill="none"/>
+          <text class="mg-lbl" x="68" y="158">Funding</text>
+
+          <path d="M198 28 C 236 28, 244 66, 258 84" class="mg-line"/>
+          <path d="M198 70 C 232 70, 240 84, 258 90" class="mg-line"/>
+          <path d="M198 112 C 232 112, 240 100, 258 96" class="mg-line"/>
+          <path d="M198 154 C 236 154, 244 118, 258 102" class="mg-line"/>
           <path d="M258 95 H 268" class="mg-goldpath" marker-end="url(#mgarwg)"/>
 
           <rect x="284" y="56" width="58" height="12" rx="2" class="mg-clap"/>
@@ -1017,7 +1034,7 @@
           <path d="M348 102 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 z" class="mg-spark"/>
           <text class="mg-lbl gold" x="313" y="136" text-anchor="middle">A magical experience</text>
         </svg>
-        <p class="fcard-d">We do extensive research with Selznick to find world-class talent — the cast and crew who can bring the most out of each idea. We find them the money they need to succeed, and we leverage advanced technology and modern production methods to help them stretch every dollar and deliver a truly magical experience.</p>
+        <p class="fcard-d">We bring together the cast and crew who compound a film's value — people who aren't always the obvious choice, but who can help market the film and stretch every dollar. We find the money they need, and we give them the best technology available.</p>
       </div>
 
       <div class="fcard reveal">
@@ -1047,7 +1064,7 @@
           <path d="M266 130 v-18 h10 v18 M286 130 v-18 h10 v18" class="mg-ico thin"/>
           <text class="mg-lbl gold" x="280" y="152" text-anchor="middle">Theaters</text>
         </svg>
-        <p class="fcard-d">We build a film’s audience on social media long before release, then use viral marketing to drive people to theaters at a fraction of the usual cost.</p>
+        <p class="fcard-d">We don't treat social media as a marketing channel — it's part of the film itself. We create viral marketing experiences, build the audience long before release, and use every modern revenue source to de-risk the project, so we can keep backing bold visions sustainably.</p>
       </div>
     </div>
   </div>
