@@ -1543,23 +1543,23 @@
       // THE ONE — the only gold in the sky
       if (ign) {
         let g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 0.22 * Math.min(w, h) * 1.4);
-        g.addColorStop(0, 'rgba(228,201,126,0.16)');
+        g.addColorStop(0, 'rgba(228,201,126,0.2)');
         g.addColorStop(1, 'rgba(228,201,126,0)');
         ctx.fillStyle = g;
         ctx.fillRect(0, 0, w, h);
 
-        g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 64);
-        g.addColorStop(0, 'rgba(167,139,250,0.28)');
+        g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 84);
+        g.addColorStop(0, 'rgba(167,139,250,0.32)');
         g.addColorStop(1, 'rgba(167,139,250,0)');
         ctx.fillStyle = g;
         ctx.fillRect(ign.x - 70, ign.y - 70, 140, 140);
 
-        const gs = 15;
+        const gs = 21;
         ctx.save();
         ctx.translate(ign.x, ign.y);
         ctx.rotate(Math.PI / 4);
         ctx.shadowColor = '#E4C97E';
-        ctx.shadowBlur = 26;
+        ctx.shadowBlur = 34;
         const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
         gg.addColorStop(0, '#F0DCA0');
         gg.addColorStop(1, '#B08A3E');
@@ -1567,16 +1567,25 @@
         ctx.fillRect(-gs / 2, -gs / 2, gs, gs);
         ctx.restore();
 
-        if (o.ignition.centerLabel) {
-          ctx.save();
-          ctx.textAlign = 'center';
-          ctx.fillStyle = 'rgba(243,239,232,0.78)';
-          ctx.font = 'italic 500 15px "Cormorant Garamond", serif';
-          ctx.fillText(o.ignition.centerLabel, ign.x, ign.y + 46);
-          ctx.restore();
-        }
+
 
         if (o.ignition.satellites && w >= 700) {
+          const pts = o.ignition.satellites.map(function (sat) {
+            const a2 = sat.ang * Math.PI / 180;
+            return [ign.x + Math.cos(a2) * sat.r, ign.y + Math.sin(a2) * sat.r];
+          });
+          ctx.save();
+          ctx.strokeStyle = 'rgba(196,181,253,0.09)';
+          ctx.lineWidth = 0.8;
+          for (let i = 0; i < pts.length; i++) {
+            const nxt = pts[(i + 1) % pts.length];
+            ctx.beginPath();
+            ctx.moveTo(pts[i][0], pts[i][1]);
+            ctx.lineTo(nxt[0], nxt[1]);
+            ctx.stroke();
+          }
+          ctx.restore();
+
           o.ignition.satellites.forEach(function (sat) {
             const a = sat.ang * Math.PI / 180;
             const sx = ign.x + Math.cos(a) * sat.r;
@@ -1603,13 +1612,6 @@
             ctx.fillRect(-sat.size, -sat.size, sat.size * 2, sat.size * 2);
             ctx.restore();
 
-            ctx.save();
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'rgba(243,239,232,0.8)';
-            ctx.font = '600 13px Inter, sans-serif';
-            ctx.fillText(sat.label, sx, sy + sat.size + 24);
-            ctx.restore();
-
             if (sat.kids) {
               const kr = mulberry32(Math.round(sat.r * 7 + sat.ang));
               for (let k = 0; k < sat.kids; k++) {
@@ -1630,6 +1632,29 @@
                 ctx.fillStyle = 'rgba(196,181,253,' + (0.4 + kr() * 0.35).toFixed(2) + ')';
                 ctx.fillRect(-ks, -ks, ks * 2, ks * 2);
                 ctx.restore();
+
+                if (kr() < 0.45) {
+                  const gn = 1 + Math.round(kr());
+                  for (let gk = 0; gk < gn; gk++) {
+                    const ga = ka + (kr() - 0.5) * 1.6;
+                    const gd = 18 + kr() * 26;
+                    const gx = kx + Math.cos(ga) * gd;
+                    const gy = ky + Math.sin(ga) * gd;
+                    ctx.save();
+                    ctx.strokeStyle = 'rgba(196,181,253,0.12)';
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(kx + Math.cos(ga) * 4, ky + Math.sin(ga) * 4);
+                    ctx.lineTo(gx, gy);
+                    ctx.stroke();
+                    ctx.translate(gx, gy);
+                    ctx.rotate(Math.PI / 4);
+                    const gsz = 1 + kr() * 1;
+                    ctx.fillStyle = 'rgba(196,181,253,' + (0.25 + kr() * 0.25).toFixed(2) + ')';
+                    ctx.fillRect(-gsz, -gsz, gsz * 2, gsz * 2);
+                    ctx.restore();
+                  }
+                }
               }
             }
           });
@@ -1643,13 +1668,14 @@
     const sky = document.getElementById('hero-field');
     if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
-      centerLabel: 'A one-of-a-kind idea',
       satellites: [
-        { label: 'Feature film', ang: -78, r: 205, size: 9, kids: 7 },
-        { label: 'TV series', ang: -10, r: 205, size: 8, kids: 5 },
-        { label: 'Merchandise', ang: 55, r: 188, size: 7.5, kids: 4 },
-        { label: 'Games', ang: 145, r: 188, size: 7, kids: 4 },
-        { label: 'Social', ang: -155, r: 195, size: 7, kids: 4 }
+        { ang: -78, r: 210, size: 9, kids: 7 },
+        { ang: -38, r: 146, size: 5, kids: 3 },
+        { ang: -10, r: 215, size: 8, kids: 5 },
+        { ang: 55, r: 185, size: 7.5, kids: 4 },
+        { ang: 102, r: 152, size: 5.5, kids: 3 },
+        { ang: 145, r: 192, size: 7, kids: 4 },
+        { ang: -155, r: 198, size: 7, kids: 5 }
       ]
     } }]);
 
