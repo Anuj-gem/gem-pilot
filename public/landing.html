@@ -272,6 +272,22 @@
       display: grid; grid-template-columns: repeat(6, 1fr);
       gap: 14px; margin-top: 30px;
     }
+    .twins {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-top: 30px;
+    }
+    .twins .twin { padding: 30px 30px 28px; border-radius: 14px; }
+    .twin-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(21px, 2.2vw, 27px);
+      font-weight: 500; line-height: 1.22; letter-spacing: -0.01em;
+      color: #fff; margin-bottom: 10px; text-wrap: pretty;
+    }
+    .twin-d {
+      font-size: 14px; color: var(--on-screen-muted); line-height: 1.65;
+    }
+    .twins .bignums { gap: 28px; margin-top: 22px; }
+    .twins .bignum b { font-size: clamp(26px, 2.6vw, 36px); }
     .film-cards .fcard { grid-column: span 2; }
     .fcard {
       background: linear-gradient(158deg, #241C33 0%, #16111F 55%, #120E19 100%);
@@ -486,6 +502,7 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
+      .twins { grid-template-columns: 1fr; }
       .film-cards, .film-cards.three { grid-template-columns: 1fr; }
       .film-cards .fcard,
       .film-cards .fcard:nth-child(4),
@@ -962,8 +979,29 @@
 <section id="develop" style="padding-top:0;">
   <div class="pillar-card reveal">
     <p class="pillar-n">Develop</p>
-    <p class="pillar-statement">We know how to maximize <em>its potential.</em></p>
-    <p class="pillar-next">We pair the world's most talented writers with the world's most advanced creative development model — humans at the center of the creative process, assisted by powerful AI — to adapt, position, and develop each concept until it's ready for a global theatrical audience.</p>
+    <p class="pillar-statement">We pair the world's best creators with our AI to adapt ideas <em>for the big screen.</em></p>
+
+    <div class="twins reveal">
+      <div class="fcard twin">
+        <p class="fcard-k">The model</p>
+        <p class="twin-h">The most advanced development model in film.</p>
+        <p class="twin-d">It adapts a concept, projects what the film would earn, sets the budget line by line, and prices what every casting and creative decision is worth — long before anyone commits real money.</p>
+      </div>
+      <div class="screen-panel twin">
+        <canvas id="field" aria-hidden="true"></canvas>
+        <div class="who-content">
+          <p class="fcard-k">The team</p>
+          <p class="twin-h">The creative minds behind some of the internet's most viral videos.</p>
+          <p class="twin-d">We've studied modern audiences extensively — and we know how to use the modern media landscape to maximize the potential of any IP. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
+          <div class="bignums">
+            <div class="bignum"><b>10+</b><span>Channels</span></div>
+            <div class="bignum"><b>1B+</b><span>Views</span></div>
+            <div class="bignum"><b>500M+</b><span>Reached</span></div>
+            <div class="bignum"><b>400K+</b><span>Followers</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="film-cards three-up">
       <div class="fcard reveal">
@@ -1011,23 +1049,6 @@
           <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
         </div>
         <p class="fcard-d">Position to position, draft to draft — how far each version can go.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Modern audiences -->
-<section id="channels" style="padding-top:0;">
-  <div class="screen-panel reveal">
-    <canvas id="field" aria-hidden="true"></canvas>
-    <div class="who-content">
-      <p class="pillar-n">Reach</p>
-      <p class="who-statement">We understand modern audiences like <em>no other studio.</em></p>
-      <p class="who-next">We've studied modern audiences and social media like no one else — and we understand how to use the modern media landscape to drive audiences to the box office. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
-      <div class="bignums">
-        <div class="bignum"><b>10+</b><span>Channels</span></div>
-        <div class="bignum"><b>1B+</b><span>Views</span></div>
-        <div class="bignum"><b>500M+</b><span>People reached</span></div>
       </div>
     </div>
   </div>
