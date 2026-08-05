@@ -132,7 +132,7 @@
     }
     .hero-stats {
       display: flex; justify-content: center; align-items: flex-start;
-      gap: 56px; flex-wrap: wrap;
+      gap: 34px; flex-wrap: wrap;
       margin: 0 auto 36px;
     }
     .hstat b {
@@ -147,6 +147,12 @@
       display: block; margin-top: 8px;
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold);
+    }
+    .harrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2.4vw, 30px); line-height: 1;
+      color: var(--gold); align-self: center;
+      margin-top: -14px;
     }
     .hero-actions { display: flex; gap: 22px; align-items: center; justify-content: center; }
     .btn-primary {
@@ -241,6 +247,12 @@
       font-size: 12.5px; color: var(--muted); letter-spacing: 0.02em;
     }
     .pull figcaption b { color: var(--ink-soft); font-weight: 600; }
+    .quote-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; margin-top: 40px; max-width: 980px;
+    }
+    .quote-row .pull { margin: 0; }
+    .quote-row .pull blockquote { font-size: clamp(17px, 1.8vw, 21px); }
 
 
     .thesis-h {
@@ -466,7 +478,8 @@
 
       .hero { padding: 44px 20px 56px; }
       h1.hero-headline { font-size: clamp(30px, 8.5vw, 44px); }
-      .hero-stats { gap: 28px; }
+      .hero-stats { gap: 16px; }
+      .quote-row { grid-template-columns: 1fr; gap: 24px; }
       .hero-actions { flex-direction: column; gap: 18px; }
 
       .screen-panel { padding: 40px 24px; border-radius: 14px; }
@@ -509,8 +522,10 @@
   </h1>
   <p class="hero-sub reveal">Powered by the world's most advanced entertainment AI, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
   <div class="hero-stats reveal">
+    <div class="hstat"><b>Thousands</b><span>Ideas scouted</span></div>
+    <span class="harrow">&rarr;</span>
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-    <div class="hstat"><b>500,000,000+</b><span>People reached</span></div>
+    <span class="harrow">&rarr;</span>
     <div class="hstat"><b>2</b><span>Feature films in active development</span></div>
   </div>
   <div class="hero-actions reveal">
@@ -526,17 +541,18 @@
   <h2 class="sec-h reveal">Hollywood has an <em>originality problem.</em></h2>
   <p class="sec-sub reveal">The industry has gotten very good at extending old franchises and very bad at starting new ones — and every great franchise began as an original that worked.</p>
 
-  <figure class="pull reveal">
-    <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
-    <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
-  </figure>
+  <p class="thesis-p reveal" style="margin-top:26px;">We are not an AI content company. Our films are written and made by people. We built AI to do the one thing Hollywood can't: find and develop original ideas at the depth and scale this moment demands.</p>
 
-  <p class="thesis-p reveal" style="margin-top:34px;">We are not an AI content company. Our films are written and made by people. We built AI to do the one thing Hollywood can't: find and develop original ideas at the depth and scale this moment demands.</p>
-
-  <figure class="pull reveal">
-    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
-    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
-  </figure>
+  <div class="quote-row reveal">
+    <figure class="pull">
+      <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
+      <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
+    </figure>
+    <figure class="pull">
+      <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
+      <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
+    </figure>
+  </div>
 </section>
 
 <div class="rule"></div>
@@ -994,7 +1010,7 @@
           <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
           <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
         </div>
-        <p class="fcard-d">Draft to draft, decision to decision — how far each version can go.</p>
+        <p class="fcard-d">Position to position, draft to draft — how far each version can go.</p>
       </div>
     </div>
   </div>
@@ -1007,7 +1023,7 @@
     <div class="who-content">
       <p class="pillar-n">Reach</p>
       <p class="who-statement">We understand modern audiences like <em>no other studio.</em></p>
-      <p class="who-next">Our track record proves it — and we use social media and the modern media landscape to drive people to the box office. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
+      <p class="who-next">We've studied modern audiences and social media like no one else — and we understand how to use the modern media landscape to drive audiences to the box office. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
       <div class="bignums">
         <div class="bignum"><b>10+</b><span>Channels</span></div>
         <div class="bignum"><b>1B+</b><span>Views</span></div>
