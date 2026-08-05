@@ -164,6 +164,12 @@
     }
     .hero-viz .hlab.gold { fill: var(--gold); font-weight: 600; }
     .hero-viz .hpick { fill: none; stroke: rgba(176,138,62,0.5); stroke-width: 1; }
+    .hero-viz .hspoke { stroke: rgba(176,138,62,0.45); stroke-width: 1.1; }
+    .hero-viz .hsdot { fill: rgba(176,138,62,0.7); }
+    .hero-viz .hslab {
+      font-family: 'Inter', sans-serif; font-size: 11px;
+      fill: var(--muted); letter-spacing: 0.03em;
+    }
     .hero-viz .hgemlab {
       font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
       letter-spacing: 0.32em; fill: var(--accent-deep);
@@ -643,7 +649,7 @@
   <h1 class="hero-headline reveal">
     We're building the next great <em>entertainment franchises.</em>
   </h1>
-  <p class="hero-sub reveal">GEM is a new kind of studio. We use <b>Walt</b>, the most powerful AI creative executive ever built, and a true mastery of modern media to find the ideas everyone else overlooks, prove them with real audiences, and build them into franchises that endure.</p>
+  <p class="hero-sub reveal">GEM is a new kind of studio. We find the rare ideas no one else will invest in, and pair the world's best creatives with <b>Walt</b>, our AI creative executive, to build them into enduring brands — franchises that live beyond any single film, grown through careful compounding of audiences.</p>
   <div class="hero-viz reveal">
     <svg viewBox="0 0 1000 240" aria-hidden="true">
       <defs>
@@ -756,16 +762,27 @@
       <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(490 119) rotate(45)" fill="url(#hgem)"/>
       <text class="hgemlab" x="490" y="170" text-anchor="middle">GEM</text>
 
-      <path d="M530 148 C 620 152, 700 146, 780 108 C 850 74, 900 40, 946 26" class="hcurve"/>
+      <path d="M530 148 C 620 152, 700 146, 780 108 C 815 90, 838 76, 856 65" class="hcurve"/>
       <circle cx="648" cy="149" r="3.5" fill="#7C3AED"/>
       <text class="hlab" x="648" y="176" text-anchor="middle">Viral hits</text>
       <circle cx="790" cy="103" r="3.5" fill="#9B6FD0"/>
       <circle cx="790" cy="103" r="9" class="hpick"/>
-      <text class="hlab" x="790" y="132" text-anchor="middle">Feature films</text>
-      <text class="htoday" x="790" y="148" text-anchor="middle">We are here</text>
-      <circle cx="950" cy="24" r="20" fill="url(#hglowg)"/>
-      <rect x="-8" y="-8" width="16" height="16" rx="3" transform="translate(950 24) rotate(45)" fill="url(#hgold)"/>
-      <text class="hlab gold" x="920" y="20" text-anchor="end">Global franchises</text>
+      <text class="hlab" x="774" y="132" text-anchor="middle">Feature films</text>
+      <text class="htoday" x="774" y="148" text-anchor="middle">We are here</text>
+
+      <circle cx="866" cy="58" r="24" fill="url(#hglowg)"/>
+      <rect x="-9" y="-9" width="18" height="18" rx="3.5" transform="translate(866 58) rotate(45)" fill="url(#hgold)"/>
+      <path d="M878 46 L 918 20" class="hspoke"/><circle cx="921" cy="18" r="2.5" class="hsdot"/>
+      <text class="hslab" x="930" y="22">Film</text>
+      <path d="M882 54 L 934 42" class="hspoke"/><circle cx="938" cy="41" r="2.5" class="hsdot"/>
+      <text class="hslab" x="947" y="45">Series</text>
+      <path d="M882 62 L 936 70" class="hspoke"/><circle cx="940" cy="71" r="2.5" class="hsdot"/>
+      <text class="hslab" x="949" y="75">Games</text>
+      <path d="M878 70 L 922 96" class="hspoke"/><circle cx="925" cy="98" r="2.5" class="hsdot"/>
+      <text class="hslab" x="934" y="102">Social</text>
+      <path d="M870 72 L 894 120" class="hspoke"/><circle cx="895" cy="124" r="2.5" class="hsdot"/>
+      <text class="hslab" x="903" y="128">Merchandise</text>
+      <text class="hlab gold" x="856" y="166" text-anchor="middle">An enduring franchise</text>
     </svg>
   </div>
     <p class="hero-proof-k reveal">In our first 12 months</p>
@@ -1126,7 +1143,7 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Prove</p>
     <p class="pillar-statement">We prove every idea with real audiences — <em>before we scale it.</em></p>
-    <p class="pillar-next">No one should put a hundred million dollars behind an unproven idea. So we don't. We give an idea a small budget and a real audience: we adapt it for social media with <b>Walt</b>'s help, build it a brand and a following across our channels, and let hundreds of millions of viewers show us what it can become. The winners aren't guesses — they're already working, with fans and revenue of their own.</p>
+    <p class="pillar-next">No one should put a hundred million dollars behind an unproven idea. So we don't. We give an idea a small budget and a real audience: we adapt it for social media with <b>Walt</b>'s help, build it a brand and a following across our channels, and let hundreds of millions of viewers show us what it can become. The winners aren't guesses — they're already working, with fans and revenue of their own. Modern media offers more ways to build and de-risk a property than have ever existed, and they are our home turf.</p>
 
     <div class="film-cards">
       <div class="fcard wide reveal">
