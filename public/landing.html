@@ -154,6 +154,20 @@
       color: var(--gold); align-self: center;
       margin-top: -14px;
     }
+    .hero-viz { max-width: 980px; margin: 4px auto 22px; }
+    .hero-viz svg { display: block; width: 100%; height: auto; }
+    .hero-viz .hfeed { stroke: rgba(91,33,182,0.18); stroke-width: 1.1; fill: none; }
+    .hero-viz .hcurve { stroke: url(#hcurve); stroke-width: 2.6; fill: none; stroke-linecap: round; }
+    .hero-viz .hlab {
+      font-family: 'Inter', sans-serif; font-size: 11.5px;
+      fill: var(--muted); letter-spacing: 0.04em;
+    }
+    .hero-viz .hlab.gold { fill: var(--gold); font-weight: 600; }
+    .hero-proof {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin: 0 auto 34px;
+    }
     .hero-actions { display: flex; gap: 22px; align-items: center; justify-content: center; }
     .btn-primary {
       background: var(--accent); color: #fff;
@@ -603,11 +617,96 @@
     We're developing Hollywood's next great <em>franchises.</em>
   </h1>
   <p class="hero-sub reveal">We pair the creative team behind one of the world's most viral content networks with <b>Selznick</b>, the most advanced AI ever created for film — to find the hidden gems Hollywood overlooks and turn them into global entertainment phenomena.</p>
-  <div class="hero-stats reveal">
-    <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-    <div class="hstat"><b>500,000,000+</b><span>People reached</span></div>
-    <div class="hstat"><b>2</b><span>Feature films in development</span></div>
+  <div class="hero-viz reveal">
+    <svg viewBox="0 0 1000 240" aria-hidden="true">
+      <defs>
+        <linearGradient id="hcurve" gradientUnits="userSpaceOnUse" x1="520" y1="0" x2="952" y2="0">
+          <stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#B08A3E"/>
+        </linearGradient>
+        <linearGradient id="hgem" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#5B21B6"/>
+        </linearGradient>
+        <linearGradient id="hgold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#E4C97E"/><stop offset="1" stop-color="#B08A3E"/>
+        </linearGradient>
+        <radialGradient id="hhalo">
+          <stop offset="0" stop-color="rgba(124,58,237,0.22)"/><stop offset="1" stop-color="rgba(124,58,237,0)"/>
+        </radialGradient>
+        <radialGradient id="hglowg">
+          <stop offset="0" stop-color="rgba(228,201,126,0.4)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
+        </radialGradient>
+      </defs>
+
+      <g>
+            <circle cx="226" cy="118" r="2" fill="rgba(22,20,27,0.10)"/>
+            <circle cx="213" cy="160" r="2" fill="rgba(22,20,27,0.15)"/>
+            <circle cx="60" cy="157" r="2" fill="rgba(22,20,27,0.20)"/>
+            <circle cx="217" cy="81" r="2" fill="rgba(22,20,27,0.18)"/>
+            <circle cx="326" cy="124" r="2" fill="rgba(22,20,27,0.11)"/>
+            <circle cx="118" cy="135" r="2" fill="rgba(22,20,27,0.21)"/>
+            <circle cx="90" cy="76" r="2" fill="rgba(22,20,27,0.14)"/>
+            <circle cx="270" cy="41" r="2" fill="rgba(22,20,27,0.19)"/>
+            <circle cx="251" cy="123" r="2" fill="rgba(22,20,27,0.12)"/>
+            <circle cx="200" cy="174" r="2" fill="rgba(22,20,27,0.17)"/>
+            <circle cx="147" cy="98" r="2" fill="rgba(22,20,27,0.15)"/>
+            <circle cx="245" cy="74" r="2" fill="rgba(22,20,27,0.20)"/>
+            <circle cx="187" cy="140" r="2" fill="rgba(22,20,27,0.18)"/>
+            <circle cx="87" cy="134" r="2" fill="rgba(22,20,27,0.11)"/>
+            <circle cx="91" cy="59" r="2" fill="rgba(22,20,27,0.16)"/>
+            <circle cx="314" cy="39" r="2" fill="rgba(22,20,27,0.21)"/>
+            <circle cx="274" cy="133" r="2" fill="rgba(22,20,27,0.14)"/>
+            <circle cx="177" cy="187" r="2" fill="rgba(22,20,27,0.19)"/>
+            <circle cx="141" cy="85" r="2" fill="rgba(22,20,27,0.17)"/>
+            <circle cx="279" cy="70" r="2" fill="rgba(22,20,27,0.10)"/>
+            <circle cx="174" cy="152" r="2" fill="rgba(22,20,27,0.20)"/>
+            <circle cx="56" cy="127" r="2" fill="rgba(22,20,27,0.13)"/>
+            <circle cx="103" cy="41" r="2" fill="rgba(22,20,27,0.18)"/>
+            <circle cx="233" cy="97" r="2" fill="rgba(22,20,27,0.11)"/>
+            <circle cx="290" cy="146" r="2" fill="rgba(22,20,27,0.16)"/>
+            <circle cx="145" cy="197" r="2" fill="rgba(22,20,27,0.21)"/>
+            <circle cx="128" cy="120" r="2" fill="rgba(22,20,27,0.14)"/>
+            <circle cx="145" cy="70" r="2" fill="rgba(22,20,27,0.19)"/>
+            <circle cx="317" cy="71" r="2" fill="rgba(22,20,27,0.12)"/>
+            <circle cx="224" cy="130" r="2" fill="rgba(22,20,27,0.17)"/>
+            <circle cx="153" cy="163" r="2" fill="rgba(22,20,27,0.10)"/>
+            <circle cx="263" cy="95" r="2" fill="rgba(22,20,27,0.13)"/>
+            <circle cx="299" cy="162" r="2" fill="rgba(22,20,27,0.18)"/>
+            <circle cx="105" cy="204" r="2" fill="rgba(22,20,27,0.11)"/>
+            <circle cx="102" cy="114" r="2" fill="rgba(22,20,27,0.16)"/>
+            <circle cx="158" cy="55" r="2" fill="rgba(22,20,27,0.21)"/>
+            <circle cx="238" cy="142" r="2" fill="rgba(22,20,27,0.19)"/>
+            <circle cx="124" cy="171" r="2" fill="rgba(22,20,27,0.12)"/>
+            <circle cx="178" cy="88" r="2" fill="rgba(22,20,27,0.10)"/>
+            <circle cx="296" cy="96" r="2" fill="rgba(22,20,27,0.15)"/>
+            <circle cx="298" cy="180" r="2" fill="rgba(22,20,27,0.20)"/>
+            <circle cx="155" cy="139" r="2" fill="rgba(22,20,27,0.13)"/>
+            <circle cx="79" cy="104" r="2" fill="rgba(22,20,27,0.18)"/>
+            <circle cx="182" cy="42" r="2" fill="rgba(22,20,27,0.11)"/>
+            <circle cx="229" cy="111" r="2" fill="rgba(22,20,27,0.16)"/>
+            <circle cx="243" cy="156" r="2" fill="rgba(22,20,27,0.21)"/>
+            <circle cx="89" cy="175" r="2" fill="rgba(22,20,27,0.14)"/>
+            <circle cx="191" cy="76" r="2" fill="rgba(22,20,27,0.12)"/>
+            <circle cx="328" cy="103" r="2" fill="rgba(22,20,27,0.17)"/>
+            <circle cx="286" cy="199" r="2" fill="rgba(22,20,27,0.10)"/>
+            <circle cx="129" cy="146" r="2" fill="rgba(22,20,27,0.15)"/>
+            <circle cx="61" cy="90" r="2" fill="rgba(22,20,27,0.20)"/>
+            <circle cx="215" cy="30" r="2" fill="rgba(22,20,27,0.13)"/>
+      </g>
+      <path d="M300 60 C 380 74, 420 96, 452 110" class="hfeed"/>
+      <path d="M316 118 C 380 118, 420 118, 452 118" class="hfeed"/>
+      <path d="M304 178 C 380 164, 420 142, 452 128" class="hfeed"/>
+      <text class="hlab" x="180" y="230" text-anchor="middle">The ideas Hollywood overlooks</text>
+
+      <circle cx="490" cy="119" r="64" fill="url(#hhalo)"/>
+      <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(490 119) rotate(45)" fill="url(#hgem)"/>
+
+      <path d="M530 148 C 620 152, 700 146, 780 108 C 850 74, 900 40, 946 26" class="hcurve"/>
+      <circle cx="950" cy="24" r="20" fill="url(#hglowg)"/>
+      <rect x="-8" y="-8" width="16" height="16" rx="3" transform="translate(950 24) rotate(45)" fill="url(#hgold)"/>
+      <text class="hlab gold" x="946" y="62" text-anchor="end">A global phenomenon</text>
+    </svg>
   </div>
+  <p class="hero-proof reveal">1,000,000,000+ views on social media &middot; A full slate in active development</p>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
     <a href="#story" class="btn-text">Learn more ↓</a>
@@ -1101,7 +1200,7 @@
   <h2 class="sec-h reveal">Hollywood has an <em>originality problem.</em></h2>
   <p class="sec-sub reveal">The industry has gotten very good at extending old franchises and very bad at starting new ones — and every great franchise began as an original that worked.</p>
 
-  <p class="thesis-p reveal" style="margin-top:26px;">We believe solving it takes an entirely different kind of studio — one that breaks down its walls, leverages modern technology, and understands modern audiences and how to market to them. That's the company we built. And we are not an AI content company: our films are written and made by people. We use AI to find great work and the people behind it, and to give them their best shot.</p>
+  <p class="thesis-p reveal" style="margin-top:26px;">Everyone in the industry knows the potential is out there. But turning a raw idea into a success is so hard that Hollywood has never had a repeatable way to do it — hits get stumbled into, then milked for decades. We believe solving it takes an entirely different kind of studio — one that breaks down its walls, leverages modern technology, and understands modern audiences and how to market to them. That's the company we built. And we are not an AI content company: our films are written and made by people. We use AI to find great work and the people behind it, and to give them their best shot.</p>
 
   <div class="quote-row reveal">
     <figure class="pull">
