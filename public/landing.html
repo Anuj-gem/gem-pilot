@@ -998,6 +998,7 @@
             pickIn = 5.2 + rnd() * 2;
           }
           Object.assign(p, spawn(false));
+          p.chosen = false;
           continue;
         }
         if (pickIn <= 0 && !p.chosen && p.d > 200 && p.d < 320) {
