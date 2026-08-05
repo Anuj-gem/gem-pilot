@@ -299,6 +299,12 @@
     .mini-g .mg-dot { fill: #C4B5FD; }
     .mini-g .mg-ax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
     .mini-g .mg-goldpath { stroke: rgba(228,201,126,0.7); stroke-width: 1.5; fill: none; }
+    .mini-g .mg-node.solid { fill: #1C1526; }
+    .mini-g .mg-plus { font-family: 'Cormorant Garamond', serif; font-size: 26px; fill: rgba(243,239,232,0.6); }
+    .mini-g .mg-clap { fill: rgba(228,201,126,0.12); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
+    .mini-g .mg-clapline { stroke: rgba(228,201,126,0.55); stroke-width: 1.2; }
+    .mini-g .mg-clapbody { fill: rgba(255,255,255,0.04); stroke: rgba(228,201,126,0.55); stroke-width: 1.2; }
+    .mini-g .mg-spark { fill: #E4C97E; opacity: 0.85; }
     .mini-g .mg-wave { stroke: rgba(196,181,253,0.5); stroke-width: 1.4; fill: none; stroke-linecap: round; }
     .mini-g .mg-marquee { fill: rgba(228,201,126,0.1); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
     .mini-g .mg-mq { font-family: 'Inter', sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; fill: #E4C97E; }
@@ -1045,24 +1051,33 @@
       <div class="fcard reveal">
         <p class="fcard-k">Develop</p>
         <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
-          <text class="mg-lbl" x="24" y="36">From greenlight to screen</text>
+          <circle cx="48" cy="82" r="15" class="mg-node solid"/>
+          <circle cx="48" cy="78" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M40 89 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <circle cx="72" cy="82" r="15" class="mg-node solid"/>
+          <circle cx="72" cy="78" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M64 89 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <circle cx="96" cy="82" r="15" class="mg-node solid"/>
+          <circle cx="96" cy="78" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M88 89 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <text class="mg-lbl" x="72" y="126" text-anchor="middle">Our teams</text>
 
-          <text class="mg-lbl" x="24" y="66">Casting</text>
-          <rect x="122" y="57" width="44" height="10" rx="5" class="mg-bar dim"/>
+          <text class="mg-plus" x="126" y="90">+</text>
 
-          <text class="mg-lbl" x="24" y="96">Budget</text>
-          <rect x="150" y="87" width="48" height="10" rx="5" class="mg-bar"/>
+          <circle cx="176" cy="82" r="28" fill="url(#gemhalo2)"/>
+          <rect x="-12" y="-12" width="24" height="24" rx="4.5" transform="translate(176 82) rotate(45)" fill="url(#gemfill2)"/>
+          <text class="mg-lbl" x="176" y="126" text-anchor="middle">Advanced technology</text>
 
-          <text class="mg-lbl" x="24" y="126">Shoot</text>
-          <rect x="186" y="117" width="46" height="10" rx="5" class="mg-bar gold"/>
-          <text class="mg-val dim" x="240" y="126">38 days</text>
+          <path d="M216 82 H 244" class="mg-goldpath" marker-end="url(#mgarwg)"/>
 
-          <text class="mg-lbl" x="24" y="156">Post</text>
-          <rect x="220" y="147" width="56" height="10" rx="5" class="mg-bar dim"/>
-          <rect x="-7" y="-7" width="14" height="14" rx="2.5" transform="translate(300 152) rotate(45)" fill="url(#gemgold2)"/>
-          <text class="mg-lbl gold" x="300" y="180" text-anchor="middle">Release</text>
+          <rect x="258" y="54" width="58" height="12" rx="2" class="mg-clap"/>
+          <path d="M264 54 l8 12 M278 54 l8 12 M292 54 l8 12 M306 54 l8 12" class="mg-clapline"/>
+          <rect x="258" y="68" width="58" height="38" rx="3" class="mg-clapbody"/>
+          <path d="M250 44 l2.5 5 5 2.5 -5 2.5 -2.5 5 -2.5 -5 -5 -2.5 5 -2.5 z" class="mg-spark"/>
+          <path d="M322 100 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 z" class="mg-spark"/>
+          <text class="mg-lbl gold" x="287" y="126" text-anchor="middle">Magical experiences</text>
         </svg>
-        <p class="fcard-d">We cast the film, set the budget, plan the production, and see it through. With Selznick's help, we weigh every decision and assemble the team that brings the most out of the work.</p>
+        <p class="fcard-d">Using Selznick, we make every development decision with precision — the casting, the budget, the production plan that set a project up to succeed. We pair our production teams with the most advanced technology and modern production methods available, so they can work efficiently and deliver magical experiences.</p>
       </div>
 
       <div class="fcard reveal">
