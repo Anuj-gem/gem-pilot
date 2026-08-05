@@ -679,9 +679,8 @@
     <p class="hero-sub reveal">We use <b>Walt</b>, the most powerful AI creative executive ever built, to find storytellers with the ideas that can become enormous global entertainment franchises — and we help them bring their vision to audiences around the world, through every modern media channel.</p>
     <p class="hero-proof-k reveal">In our first 12 months</p>
     <div class="hero-stats reveal">
-      <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-      <div class="hstat"><b>10+</b><span>Social channels</span></div>
-      <div class="hstat"><b>2</b><span>Feature films in development</span></div>
+      <div class="hstat"><b>1,000,000,000+</b><span>Views so far</span></div>
+      <div class="hstat"><b>2</b><span>Feature films coming soon</span></div>
     </div>
     <p class="hero-started reveal">And we're just getting started.</p>
     <div class="hero-actions reveal">
@@ -1512,14 +1511,53 @@
           ctx.shadowColor = 'rgba(228,201,126,0.5)';
           ctx.shadowBlur = 14;
           ctx.fillStyle = '#E4C97E';
-          ctx.font = '500 44px "Cormorant Garamond", serif';
-          ctx.fillText(o.ignition.value, ign.x, ign.y + 86);
+          ctx.font = '500 46px "Cormorant Garamond", serif';
+          ctx.fillText(o.ignition.value, ign.x, ign.y - 104);
           ctx.shadowBlur = 0;
           ctx.fillStyle = 'rgba(243,239,232,0.55)';
           ctx.font = '700 10px Inter, sans-serif';
           if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
-          ctx.fillText(o.ignition.valueLabel, ign.x, ign.y + 112);
+          ctx.fillText(o.ignition.valueLabel, ign.x, ign.y - 80);
           ctx.restore();
+        }
+
+        if (o.ignition.satellites && w >= 700) {
+          o.ignition.satellites.forEach(function (sat) {
+            const a = sat.ang * Math.PI / 180;
+            const sx = ign.x + Math.cos(a) * sat.r;
+            const sy = ign.y + Math.sin(a) * sat.r;
+
+            ctx.save();
+            ctx.strokeStyle = 'rgba(228,201,126,0.28)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(ign.x + Math.cos(a) * 30, ign.y + Math.sin(a) * 30);
+            ctx.lineTo(ign.x + Math.cos(a) * (sat.r - sat.size - 8), ign.y + Math.sin(a) * (sat.r - sat.size - 8));
+            ctx.stroke();
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(sx, sy);
+            ctx.rotate(Math.PI / 4);
+            ctx.shadowColor = 'rgba(167,139,250,0.8)';
+            ctx.shadowBlur = 12;
+            const sg = ctx.createLinearGradient(-sat.size, -sat.size, sat.size, sat.size);
+            sg.addColorStop(0, '#C4B5FD');
+            sg.addColorStop(1, '#7C3AED');
+            ctx.fillStyle = sg;
+            ctx.fillRect(-sat.size, -sat.size, sat.size * 2, sat.size * 2);
+            ctx.restore();
+
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.fillStyle = 'rgba(243,239,232,0.75)';
+            ctx.font = '600 12px Inter, sans-serif';
+            ctx.fillText(sat.label, sx, sy + sat.size + 22);
+            ctx.fillStyle = '#E4C97E';
+            ctx.font = '500 18px "Cormorant Garamond", serif';
+            ctx.fillText(sat.value, sx, sy + sat.size + 44);
+            ctx.restore();
+          });
         }
       }
     }
@@ -1528,7 +1566,16 @@
     const page = document.getElementById('page-field');
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
-    if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: { fx: 0.76, fy: 0.38, value: '$2.1B', valueLabel: 'FRANCHISE POTENTIAL' } }]);
+    if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: {
+      fx: 0.74, fy: 0.42, value: '$2.9B', valueLabel: 'FRANCHISE POTENTIAL',
+      satellites: [
+        { label: 'Feature film', value: '$1.2B', ang: -33, r: 200, size: 9 },
+        { label: 'TV series', value: '$600M', ang: 22, r: 180, size: 8 },
+        { label: 'Merchandise', value: '$400M', ang: 95, r: 160, size: 7.5 },
+        { label: 'Games', value: '$450M', ang: 152, r: 178, size: 7.5 },
+        { label: 'Social', value: '$250M', ang: -145, r: 156, size: 7 }
+      ]
+    } }]);
 
     function drawAll() { fields.forEach(([c, o]) => drawField(c, o)); }
     let t;
