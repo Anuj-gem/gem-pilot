@@ -1563,6 +1563,14 @@
           if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
           ctx.fillText(o.ignition.valueLabel, ign.x - 140, ign.y + 154);
           ctx.restore();
+          if (o.ignition.centerLabel) {
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.fillStyle = 'rgba(243,239,232,0.65)';
+            ctx.font = 'italic 500 14px "Cormorant Garamond", serif';
+            ctx.fillText(o.ignition.centerLabel, ign.x, ign.y + 44);
+            ctx.restore();
+          }
         }
 
         if (o.ignition.satellites && w >= 700) {
@@ -1594,12 +1602,9 @@
 
             ctx.save();
             ctx.textAlign = 'center';
-            ctx.fillStyle = 'rgba(243,239,232,0.75)';
-            ctx.font = '600 12px Inter, sans-serif';
-            ctx.fillText(sat.label, sx, sy + sat.size + 22);
-            ctx.fillStyle = '#E4C97E';
-            ctx.font = '500 18px "Cormorant Garamond", serif';
-            ctx.fillText(sat.value, sx, sy + sat.size + 44);
+            ctx.fillStyle = 'rgba(243,239,232,0.8)';
+            ctx.font = '600 13px Inter, sans-serif';
+            ctx.fillText(sat.label, sx, sy + sat.size + 24);
             ctx.restore();
 
             if (sat.kids) {
@@ -1635,11 +1640,13 @@
     const sky = document.getElementById('hero-field');
     if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.44, value: '$2.5B', valueLabel: 'FRANCHISE POTENTIAL',
+      centerLabel: 'A one-of-a-kind storyteller',
       satellites: [
-        { label: 'Feature film', value: '$1.3B', ang: -55, r: 195, size: 9, kids: 7 },
-        { label: 'TV series', value: '$600M', ang: -6, r: 215, size: 8, kids: 5 },
-        { label: 'Merchandise', value: '$400M', ang: 48, r: 185, size: 7.5, kids: 4 },
-        { label: 'Social', value: '$200M', ang: -116, r: 175, size: 7, kids: 4 }
+        { label: 'Feature film', ang: -55, r: 195, size: 9, kids: 7 },
+        { label: 'TV series', ang: -6, r: 215, size: 8, kids: 5 },
+        { label: 'Merchandise', ang: 48, r: 185, size: 7.5, kids: 4 },
+        { label: 'Games', ang: 187, r: 172, size: 7, kids: 4 },
+        { label: 'Social', ang: -116, r: 175, size: 7, kids: 4 }
       ]
     } }]);
 
