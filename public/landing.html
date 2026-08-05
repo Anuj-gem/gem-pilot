@@ -1549,28 +1549,13 @@
         ctx.fillRect(-gs / 2, -gs / 2, gs, gs);
         ctx.restore();
 
-        if (o.ignition.value) {
+        if (o.ignition.centerLabel) {
           ctx.save();
           ctx.textAlign = 'center';
-          ctx.shadowColor = 'rgba(228,201,126,0.5)';
-          ctx.shadowBlur = 14;
-          ctx.fillStyle = '#E4C97E';
-          ctx.font = '500 46px "Cormorant Garamond", serif';
-          ctx.fillText(o.ignition.value, ign.x - 140, ign.y + 130);
-          ctx.shadowBlur = 0;
-          ctx.fillStyle = 'rgba(243,239,232,0.55)';
-          ctx.font = '700 10px Inter, sans-serif';
-          if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
-          ctx.fillText(o.ignition.valueLabel, ign.x - 140, ign.y + 154);
+          ctx.fillStyle = 'rgba(243,239,232,0.78)';
+          ctx.font = 'italic 500 15px "Cormorant Garamond", serif';
+          ctx.fillText(o.ignition.centerLabel, ign.x, ign.y + 46);
           ctx.restore();
-          if (o.ignition.centerLabel) {
-            ctx.save();
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'rgba(243,239,232,0.65)';
-            ctx.font = 'italic 500 14px "Cormorant Garamond", serif';
-            ctx.fillText(o.ignition.centerLabel, ign.x, ign.y + 44);
-            ctx.restore();
-          }
         }
 
         if (o.ignition.satellites && w >= 700) {
@@ -1583,7 +1568,7 @@
             ctx.strokeStyle = 'rgba(228,201,126,0.28)';
             ctx.lineWidth = 1;
             ctx.beginPath();
-            ctx.moveTo(ign.x + Math.cos(a) * 30, ign.y + Math.sin(a) * 30);
+            ctx.moveTo(ign.x + Math.cos(a) * 76, ign.y + Math.sin(a) * 76);
             ctx.lineTo(ign.x + Math.cos(a) * (sat.r - sat.size - 8), ign.y + Math.sin(a) * (sat.r - sat.size - 8));
             ctx.stroke();
             ctx.restore();
@@ -1639,14 +1624,14 @@
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
     if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: {
-      fx: 0.72, fy: 0.44, value: '$2.5B', valueLabel: 'FRANCHISE POTENTIAL',
+      fx: 0.72, fy: 0.46,
       centerLabel: 'A one-of-a-kind storyteller',
       satellites: [
-        { label: 'Feature film', ang: -55, r: 195, size: 9, kids: 7 },
-        { label: 'TV series', ang: -6, r: 215, size: 8, kids: 5 },
-        { label: 'Merchandise', ang: 48, r: 185, size: 7.5, kids: 4 },
-        { label: 'Games', ang: 187, r: 172, size: 7, kids: 4 },
-        { label: 'Social', ang: -116, r: 175, size: 7, kids: 4 }
+        { label: 'Feature film', ang: -78, r: 205, size: 9, kids: 7 },
+        { label: 'TV series', ang: -10, r: 205, size: 8, kids: 5 },
+        { label: 'Merchandise', ang: 55, r: 188, size: 7.5, kids: 4 },
+        { label: 'Games', ang: 145, r: 188, size: 7, kids: 4 },
+        { label: 'Social', ang: -155, r: 195, size: 7, kids: 4 }
       ]
     } }]);
 
