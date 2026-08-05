@@ -148,82 +148,22 @@
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold);
     }
-    .harrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 2.4vw, 30px); line-height: 1;
-      color: var(--gold); align-self: center;
-      margin-top: -14px;
+    .hero-sky {
+      position: relative; overflow: hidden;
+      width: 100vw; margin: 12px calc(50% - 50vw) 28px;
+      height: clamp(340px, 46vh, 520px);
+      background: #100D16;
     }
-    .hero-viz { max-width: 980px; margin: 4px auto 22px; }
-    .hero-viz svg { display: block; width: 100%; height: auto; }
-    .hero-viz .hfeed { stroke: rgba(91,33,182,0.18); stroke-width: 1.1; fill: none; }
-    .hero-viz .hcurve { stroke: url(#hcurve); stroke-width: 2.6; fill: none; stroke-linecap: round; }
-    .hero-viz .hlab {
-      font-family: 'Inter', sans-serif; font-size: 13px;
-      fill: var(--muted); letter-spacing: 0.04em;
+    .hero-sky canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .hero-sky::before, .hero-sky::after {
+      content: ''; position: absolute; left: 0; right: 0; height: 110px;
+      pointer-events: none; z-index: 1;
     }
-    .hero-viz .hlab.gold { fill: var(--gold); font-weight: 600; }
-    .hero-viz .hpick { fill: none; stroke: rgba(176,138,62,0.5); stroke-width: 1; }
-    .hero-viz .hx-big {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 46px; font-weight: 500; fill: var(--gold);
-      letter-spacing: -0.01em;
-    }
-    .hero-viz .hx-bigk {
-      font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase; fill: var(--muted);
-    }
-    .hero-viz .hx-val { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; fill: var(--gold); }
-    .hero-viz .hx-cell { fill: rgba(245,243,238,0.4); stroke: rgba(22,20,27,0.18); stroke-width: 1.2; }
-    .hero-viz .hx-cell.gold { fill: rgba(228,201,126,0.14); stroke: #B08A3E; stroke-width: 1.8; }
-    .hero-viz .hx-mi { fill: none; stroke: rgba(22,20,27,0.35); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-    .hero-viz .hx-goldic .hx-mi { stroke: #8a6a2e; stroke-width: 1.6; }
-    .hero-viz .hx-found { fill: none; stroke: rgba(176,138,62,0.6); stroke-width: 1.6; }
-    .hero-viz .hx-ring { fill: rgba(245,243,238,0.6); stroke: #B08A3E; stroke-width: 1.8; }
-    .hero-viz .hx-p { fill: none; stroke: rgba(22,20,27,0.65); stroke-width: 2; stroke-linecap: round; }
-    .hero-viz .hx-beam { stroke: rgba(91,33,182,0.3); stroke-width: 2; }
-    .hero-viz .hx-ray { stroke: url(#hxray); stroke-width: 2.4; fill: none; }
-    .hero-viz .hx-nodec { fill: rgba(245,243,238,0.5); stroke: rgba(176,138,62,0.65); stroke-width: 1.6; }
-    .hero-viz .hx-i { fill: none; stroke: #8a6a2e; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    .hero-viz .hx-if { fill: #8a6a2e; }
-    .hero-viz .hx-if2 { fill: #8a6a2e; stroke: none; }
-    .hero-viz .hx-lbl {
-      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
-      fill: var(--ink-soft); letter-spacing: 0.01em;
-    }
-    .hero-viz .hx-lbl.mid { fill: var(--muted); font-size: 13.5px; }
-    .hero-viz .hp-idea { fill: rgba(22,20,27,0.55); }
-    .hero-viz .hp-person { fill: none; stroke: rgba(22,20,27,0.35); stroke-width: 1.1; }
-    .hero-viz .hp-pico { fill: none; stroke: rgba(22,20,27,0.55); stroke-width: 1.4; }
-    .hero-viz .hp-pline { fill: none; stroke: rgba(22,20,27,0.55); stroke-width: 1.4; stroke-linecap: round; }
-    .hero-viz .hp-idearing { fill: none; stroke: rgba(176,138,62,0.55); stroke-width: 1.1; }
-    .hero-viz .hp-beam { stroke: rgba(91,33,182,0.25); stroke-width: 1.3; }
-    .hero-viz .hp-ray { stroke: url(#hray); stroke-width: 1.4; fill: none; }
-    .hero-viz .hp-ray.hot { stroke-width: 2.4; }
-    .hero-viz .hp-node { fill: rgba(176,138,62,0.7); }
-    .hero-viz .hp-node.hot { fill: #B08A3E; }
-    .hero-viz .hp-lbl {
-      font-family: 'Inter', sans-serif; font-size: 12.5px;
-      fill: var(--muted); letter-spacing: 0.03em;
-    }
-    .hero-viz .hp-lbl.gold { fill: var(--gold); font-weight: 600; }
-    .hero-viz .hp-cap {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 17px; fill: var(--ink-soft);
-    }
-    .hero-viz .hspoke { stroke: rgba(176,138,62,0.45); stroke-width: 1.1; }
-    .hero-viz .hsdot { fill: rgba(176,138,62,0.7); }
-    .hero-viz .hslab {
-      font-family: 'Inter', sans-serif; font-size: 11px;
-      fill: var(--muted); letter-spacing: 0.03em;
-    }
-    .hero-viz .hgemlab {
-      font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
-      letter-spacing: 0.32em; fill: var(--accent-deep);
-    }
-    .hero-viz .htoday {
-      font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase; fill: var(--gold);
+    .hero-sky::before { top: 0; background: linear-gradient(180deg, var(--paper), rgba(245,243,238,0)); }
+    .hero-sky::after { bottom: 0; background: linear-gradient(0deg, var(--paper), rgba(245,243,238,0)); }
+    @media (max-width: 640px) {
+      .hero-sky { height: 300px; }
+      .hero-sky::before, .hero-sky::after { height: 70px; }
     }
     .hero-proof-k {
       font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
@@ -710,94 +650,8 @@
     We're building the next great <em>entertainment franchises.</em>
   </h1>
   <p class="hero-sub reveal">We use <b>Walt</b>, the most powerful AI creative executive ever built, to find storytellers with the ideas that can become enormous global entertainment franchises — and we help them bring their vision to audiences around the world, through every modern media channel.</p>
-  <div class="hero-viz reveal">
-    <svg viewBox="0 0 1000 320" aria-hidden="true">
-      <defs>
-        <linearGradient id="hgem" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#5B21B6"/>
-        </linearGradient>
-        <linearGradient id="hxray" gradientUnits="userSpaceOnUse" x1="556" y1="0" x2="850" y2="0">
-          <stop offset="0" stop-color="rgba(124,58,237,0.55)"/><stop offset="1" stop-color="rgba(176,138,62,0.85)"/>
-        </linearGradient>
-        <radialGradient id="hhalo">
-          <stop offset="0" stop-color="rgba(124,58,237,0.24)"/><stop offset="1" stop-color="rgba(124,58,237,0)"/>
-        </radialGradient>
-        <radialGradient id="hxspot">
-          <stop offset="0" stop-color="rgba(228,201,126,0.55)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
-        </radialGradient>
-      </defs>
-
-      <circle cx="100" cy="60" r="17" class="hx-cell"/>
-      <g transform="translate(100 60)"><path d="M-5 5 l8-8 3 3 -8 8 -4 1z" class="hx-mi"/></g>
-      <circle cx="152" cy="60" r="17" class="hx-cell"/>
-      <g transform="translate(152 60)"><path d="M-3.5 -5 l8 5 -8 5 z" class="hx-mi"/></g>
-      <circle cx="204" cy="60" r="17" class="hx-cell"/>
-      <g transform="translate(204 60)"><path d="M-7 -5 c4 0 6 1 7 2 c1 -1 3 -2 7 -2 v10 c-4 0 -6 1 -7 2 c-1 -1 -3 -2 -7 -2 z" class="hx-mi"/></g>
-      <circle cx="256" cy="60" r="17" class="hx-cell"/>
-      <g transform="translate(256 60)"><rect x="-2.5" y="-7" width="5" height="9" rx="2.5" class="hx-mi"/><path d="M-5 -1 c0 4 10 4 10 0 M0 5 v3" class="hx-mi"/></g>
-      <circle cx="100" cy="124" r="17" class="hx-cell"/>
-      <g transform="translate(100 124)"><path d="M-7 -5 h14 v8 h-8 l-4 4 v-4 h-2 z" class="hx-mi"/></g>
-      <circle cx="152" cy="124" r="17" class="hx-cell"/>
-      <g transform="translate(152 124)"><rect x="-7 " y="-5" width="10" height="10" rx="2" class="hx-mi"/><path d="M3 -1 l4 -3 v8 l-4 -3z" class="hx-mi"/></g>
-      <circle cx="204" cy="124" r="30" fill="url(#hxspot)"/>
-      <circle cx="204" cy="124" r="17" class="hx-cell gold"/>
-      <g transform="translate(204 124)" class="hx-goldic"><path d="M-5 5 l8-8 3 3 -8 8 -4 1z" class="hx-mi"/></g>
-      <circle cx="256" cy="124" r="17" class="hx-cell"/>
-      <g transform="translate(256 124)"><path d="M-3.5 -5 l8 5 -8 5 z" class="hx-mi"/></g>
-      <circle cx="100" cy="188" r="17" class="hx-cell"/>
-      <g transform="translate(100 188)"><path d="M-7 -5 c4 0 6 1 7 2 c1 -1 3 -2 7 -2 v10 c-4 0 -6 1 -7 2 c-1 -1 -3 -2 -7 -2 z" class="hx-mi"/></g>
-      <circle cx="152" cy="188" r="17" class="hx-cell"/>
-      <g transform="translate(152 188)"><rect x="-2.5" y="-7" width="5" height="9" rx="2.5" class="hx-mi"/><path d="M-5 -1 c0 4 10 4 10 0 M0 5 v3" class="hx-mi"/></g>
-      <circle cx="204" cy="188" r="17" class="hx-cell"/>
-      <g transform="translate(204 188)"><path d="M-7 -5 h14 v8 h-8 l-4 4 v-4 h-2 z" class="hx-mi"/></g>
-      <circle cx="256" cy="188" r="17" class="hx-cell"/>
-      <g transform="translate(256 188)"><rect x="-7 " y="-5" width="10" height="10" rx="2" class="hx-mi"/><path d="M3 -1 l4 -3 v8 l-4 -3z" class="hx-mi"/></g>
-      <circle cx="100" cy="252" r="17" class="hx-cell"/>
-      <g transform="translate(100 252)"><path d="M-5 5 l8-8 3 3 -8 8 -4 1z" class="hx-mi"/></g>
-      <circle cx="152" cy="252" r="17" class="hx-cell"/>
-      <g transform="translate(152 252)"><path d="M-3.5 -5 l8 5 -8 5 z" class="hx-mi"/></g>
-      <circle cx="204" cy="252" r="17" class="hx-cell"/>
-      <g transform="translate(204 252)"><path d="M-7 -5 c4 0 6 1 7 2 c1 -1 3 -2 7 -2 v10 c-4 0 -6 1 -7 2 c-1 -1 -3 -2 -7 -2 z" class="hx-mi"/></g>
-      <circle cx="256" cy="252" r="17" class="hx-cell"/>
-      <g transform="translate(256 252)"><rect x="-2.5" y="-7" width="5" height="9" rx="2.5" class="hx-mi"/><path d="M-5 -1 c0 4 10 4 10 0 M0 5 v3" class="hx-mi"/></g>
-
-      <path d="M223 128 C 330 145, 410 170, 468 181" class="hx-found"/>
-
-      <text class="hx-big" x="512" y="66" text-anchor="middle">$2.1B</text>
-      <text class="hx-bigk" x="512" y="90" text-anchor="middle">Franchise potential, assessed</text>
-
-      <circle cx="512" cy="185" r="80" fill="url(#hhalo)"/>
-      <rect x="-26" y="-26" width="52" height="52" rx="10" transform="translate(512 185) rotate(45)" fill="url(#hgem)"/>
-      <text class="hgemlab" x="512" y="256" text-anchor="middle">GEM</text>
-
-      <path d="M556 185 C 680 185, 730 50, 820 50" class="hx-ray"/>
-      <circle cx="852" cy="50" r="24" class="hx-nodec"/>
-      <g transform="translate(852 50)"><rect x="-13" y="-9" width="26" height="5.5" rx="1.5" class="hx-i"/><path d="M-10.5 -9 l3.5 5.5 M-3.5 -9 l3.5 5.5 M3.5 -9 l3.5 5.5" class="hx-i"/><rect x="-13" y="-2" width="26" height="12" rx="2" class="hx-i"/></g>
-      <text class="hx-lbl" x="888" y="50">Film</text>
-      <text class="hx-val" x="888" y="69">$900M</text>
-      <path d="M556 185 C 680 185, 730 105, 820 105" class="hx-ray"/>
-      <circle cx="852" cy="105" r="24" class="hx-nodec"/>
-      <g transform="translate(852 105)"><rect x="-13" y="-9" width="26" height="17" rx="3" class="hx-i"/><path d="M-5 8 v4 M5 8 v4 M-8 12 h16" class="hx-i"/></g>
-      <text class="hx-lbl" x="888" y="105">Series</text>
-      <text class="hx-val" x="888" y="124">$450M</text>
-      <path d="M556 185 C 680 185, 730 160, 820 160" class="hx-ray"/>
-      <circle cx="852" cy="160" r="24" class="hx-nodec"/>
-      <g transform="translate(852 160)"><rect x="-14" y="-8" width="28" height="16" rx="7" class="hx-i"/><path d="M-7 0 h6 M-4 -3 v6" class="hx-i"/><circle cx="6" cy="-2" r="1.6" class="hx-if"/><circle cx="9.5" cy="2" r="1.6" class="hx-if"/></g>
-      <text class="hx-lbl" x="888" y="160">Games</text>
-      <text class="hx-val" x="888" y="179">$300M</text>
-      <path d="M556 185 C 680 185, 730 215, 820 215" class="hx-ray"/>
-      <circle cx="852" cy="215" r="24" class="hx-nodec"/>
-      <g transform="translate(852 215)"><rect x="-8" y="-12" width="16" height="24" rx="3.5" class="hx-i"/><path d="M-2 -3 l6 3 -6 3 z" class="hx-if2"/></g>
-      <text class="hx-lbl" x="888" y="215">Social</text>
-      <text class="hx-val" x="888" y="234">$250M</text>
-      <path d="M556 185 C 680 185, 730 270, 820 270" class="hx-ray"/>
-      <circle cx="852" cy="270" r="24" class="hx-nodec"/>
-      <g transform="translate(852 270)"><path d="M-10 -10 h10 l10 10 -10 10 -10 -10 z" transform="rotate(45)" class="hx-i"/><circle cx="-4" cy="-4" r="1.8" class="hx-i"/></g>
-      <text class="hx-lbl" x="888" y="270">Merchandise</text>
-      <text class="hx-val" x="888" y="289">$200M</text>
-
-      <text class="hx-lbl mid" x="178" y="302" text-anchor="middle">Storytellers of every kind</text>
-    </svg>
+  <div class="hero-sky reveal">
+    <canvas id="hero-field" aria-hidden="true"></canvas>
   </div>
     <p class="hero-proof-k reveal">In our first 12 months</p>
   <div class="hero-stats reveal">
@@ -1363,13 +1217,8 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
-  // Starfield — quiet atmosphere behind the panel; a few tiny gem diamonds in the dust.
+  // Night fields — the team-band dust, and the hero sky where one gem has ignited.
   (function () {
-    const canvas = document.getElementById('field');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    // Deterministic PRNG so the field is stable across redraws
     function mulberry32(a) {
       return function () {
         a |= 0; a = (a + 0x6D2B79F5) | 0;
@@ -1378,8 +1227,13 @@
         return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
       };
     }
+    function smoothstep(e0, e1, x) {
+      const t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0)));
+      return t * t * (3 - 2 * t);
+    }
 
-    function draw() {
+    function drawField(canvas, o) {
+      const ctx = canvas.getContext('2d');
       const panel = canvas.parentElement;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const w = panel.clientWidth, h = panel.clientHeight;
@@ -1387,37 +1241,103 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      const rand = mulberry32(7);
-      const N = 13000;
-      for (let i = 0; i < N; i++) {
-        const x = rand() * w, y = rand() * h;
-        const a = 0.03 + rand() * 0.12;
-        ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
-        const r = 0.5 + rand() * 0.5;
-        ctx.fillRect(x, y, r, r);
+      const ign = o.ignition
+        ? { x: (w < 640 ? 0.5 : o.ignition.fx) * w, y: o.ignition.fy * h }
+        : null;
+      const biasR = ign ? 0.18 * w : 0;
+      const bloomR = ign ? 0.16 * Math.min(w, h) : 0;
+
+      function dust(seed, count, rBase, rVar, aBase, aVar) {
+        const rand = mulberry32(seed);
+        for (let i = 0; i < count; i++) {
+          const x = rand() * w, y = rand() * h;
+          let a = aBase + rand() * aVar;
+          const r = rBase + rand() * rVar;
+          if (ign) {
+            const d = Math.hypot(x - ign.x, y - ign.y);
+            a *= 1 + 0.9 * Math.exp(-(d * d) / (biasR * biasR));
+            if (o.edgeFade) {
+              a *= smoothstep(0, 0.12 * h, y) * smoothstep(h, 0.88 * h, y);
+            }
+            if (d < bloomR) {
+              const t = 1 - d / bloomR;
+              a *= 1 + 1.2 * t;
+              ctx.fillStyle = 'rgba(244,228,190,' + Math.min(0.5, a).toFixed(3) + ')';
+              ctx.fillRect(x, y, r, r);
+              continue;
+            }
+          }
+          ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
+          ctx.fillRect(x, y, r, r);
+        }
       }
-      // Tiny gem diamonds, same mark as the logo
-      const litRand = mulberry32(21);
-      for (let i = 0; i < 26; i++) {
+
+      if (o.ignition) {
+        dust(11, 9000, 0.5, 0.25, 0.03, 0.05);
+        dust(12, 4500, 0.7, 0.3, 0.06, 0.06);
+        dust(13, 1500, 1.0, 0.35, 0.10, 0.06);
+      } else {
+        dust(7, 13000, 0.5, 0.5, 0.03, 0.12);
+      }
+
+      // Tiny violet gem diamonds in the dust
+      const litRand = mulberry32(o.gemSeed);
+      for (let i = 0; i < o.gems; i++) {
         const x = litRand() * w, y = litRand() * h;
         const s = 2.2 + litRand() * 2;
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(Math.PI / 4);
-        ctx.shadowColor = 'rgba(167,139,250,0.9)';
+        ctx.shadowColor = 'rgba(167,139,250,' + (o.ignition ? 0.55 : 0.9) + ')';
         ctx.shadowBlur = 10;
         const g = ctx.createLinearGradient(-s / 2, -s / 2, s / 2, s / 2);
         g.addColorStop(0, '#A78BFA');
         g.addColorStop(1, '#7C3AED');
+        ctx.globalAlpha = o.ignition ? 0.7 : 1;
         ctx.fillStyle = g;
         ctx.fillRect(-s / 2, -s / 2, s, s);
         ctx.restore();
       }
+
+      // THE ONE — the only gold in the sky
+      if (ign) {
+        let g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 0.22 * Math.min(w, h) * 1.4);
+        g.addColorStop(0, 'rgba(228,201,126,0.16)');
+        g.addColorStop(1, 'rgba(228,201,126,0)');
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, w, h);
+
+        g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 64);
+        g.addColorStop(0, 'rgba(167,139,250,0.28)');
+        g.addColorStop(1, 'rgba(167,139,250,0)');
+        ctx.fillStyle = g;
+        ctx.fillRect(ign.x - 70, ign.y - 70, 140, 140);
+
+        const gs = 15;
+        ctx.save();
+        ctx.translate(ign.x, ign.y);
+        ctx.rotate(Math.PI / 4);
+        ctx.shadowColor = '#E4C97E';
+        ctx.shadowBlur = 26;
+        const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
+        gg.addColorStop(0, '#F0DCA0');
+        gg.addColorStop(1, '#B08A3E');
+        ctx.fillStyle = gg;
+        ctx.fillRect(-gs / 2, -gs / 2, gs, gs);
+        ctx.restore();
+      }
     }
 
+    const fields = [];
+    const band = document.getElementById('field');
+    if (band) fields.push([band, { gems: 26, gemSeed: 21 }]);
+    const sky = document.getElementById('hero-field');
+    if (sky) fields.push([sky, { gems: 18, gemSeed: 33, edgeFade: true, ignition: { fx: 0.62, fy: 0.40 } }]);
+
+    function drawAll() { fields.forEach(([c, o]) => drawField(c, o)); }
     let t;
-    window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(draw, 150); });
-    requestAnimationFrame(draw);
+    window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(drawAll, 150); });
+    requestAnimationFrame(drawAll);
   })();
 </script>
 
