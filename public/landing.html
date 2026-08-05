@@ -300,6 +300,7 @@
     .mini-g .mg-ax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
     .mini-g .mg-goldpath { stroke: rgba(228,201,126,0.7); stroke-width: 1.5; fill: none; }
     .mini-g .mg-node.solid { fill: #1C1526; }
+    .mini-g .mg-hair { fill: #C4B5FD; opacity: 0.9; }
     .mini-g .mg-plus { font-family: 'Cormorant Garamond', serif; font-size: 26px; fill: rgba(243,239,232,0.6); }
     .mini-g .mg-clap { fill: rgba(228,201,126,0.12); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
     .mini-g .mg-clapline { stroke: rgba(228,201,126,0.55); stroke-width: 1.2; }
@@ -1050,34 +1051,41 @@
 
       <div class="fcard reveal">
         <p class="fcard-k">Develop</p>
-        <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
+        <svg class="mini-g" viewBox="0 0 380 190" aria-hidden="true">
           <circle cx="48" cy="82" r="15" class="mg-node solid"/>
-          <circle cx="48" cy="78" r="4" class="mg-ico thin" fill="none"/>
-          <path d="M40 89 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <circle cx="48" cy="78.5" r="4.3" class="mg-ico thin" fill="none"/>
+          <path d="M43.8 77.5 a4.2 4.2 0 0 1 8.4 0 z" class="mg-hair"/>
+          <path d="M40 89.5 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+
           <circle cx="72" cy="82" r="15" class="mg-node solid"/>
-          <circle cx="72" cy="78" r="4" class="mg-ico thin" fill="none"/>
-          <path d="M64 89 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <circle cx="72" cy="78.5" r="4.3" class="mg-ico thin" fill="none"/>
+          <path d="M67.8 77.5 a4.2 4.2 0 0 1 8.4 0 z" class="mg-hair"/>
+          <path d="M67.6 79 c-.7 3.4 -.4 5.4 -1.8 7.4 M76.4 79 c.7 3.4 .4 5.4 1.8 7.4" class="mg-ico thin"/>
+          <path d="M64 89.5 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+
           <circle cx="96" cy="82" r="15" class="mg-node solid"/>
-          <circle cx="96" cy="78" r="4" class="mg-ico thin" fill="none"/>
-          <path d="M88 89 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
-          <text class="mg-lbl" x="72" y="126" text-anchor="middle">Our teams</text>
+          <circle cx="96" cy="78.5" r="4.3" class="mg-ico thin" fill="none"/>
+          <path d="M91.8 77.5 a4.2 4.2 0 0 1 8.4 0 z" class="mg-hair"/>
+          <circle cx="96" cy="71.6" r="1.9" class="mg-hair"/>
+          <path d="M88 89.5 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <text class="mg-lbl" x="72" y="126" text-anchor="middle">Cast &amp; crew</text>
 
-          <text class="mg-plus" x="126" y="90">+</text>
+          <text class="mg-plus" x="128" y="90">+</text>
 
-          <circle cx="176" cy="82" r="28" fill="url(#gemhalo2)"/>
-          <rect x="-12" y="-12" width="24" height="24" rx="4.5" transform="translate(176 82) rotate(45)" fill="url(#gemfill2)"/>
-          <text class="mg-lbl" x="176" y="126" text-anchor="middle">Advanced technology</text>
+          <circle cx="186" cy="82" r="28" fill="url(#gemhalo2)"/>
+          <rect x="-12" y="-12" width="24" height="24" rx="4.5" transform="translate(186 82) rotate(45)" fill="url(#gemfill2)"/>
+          <text class="mg-lbl" x="186" y="126" text-anchor="middle">Advanced technology</text>
 
-          <path d="M216 82 H 244" class="mg-goldpath" marker-end="url(#mgarwg)"/>
+          <path d="M228 82 H 256" class="mg-goldpath" marker-end="url(#mgarwg)"/>
 
-          <rect x="258" y="54" width="58" height="12" rx="2" class="mg-clap"/>
-          <path d="M264 54 l8 12 M278 54 l8 12 M292 54 l8 12 M306 54 l8 12" class="mg-clapline"/>
-          <rect x="258" y="68" width="58" height="38" rx="3" class="mg-clapbody"/>
-          <path d="M250 44 l2.5 5 5 2.5 -5 2.5 -2.5 5 -2.5 -5 -5 -2.5 5 -2.5 z" class="mg-spark"/>
-          <path d="M322 100 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 z" class="mg-spark"/>
-          <text class="mg-lbl gold" x="287" y="126" text-anchor="middle">Magical experiences</text>
+          <rect x="272" y="54" width="58" height="12" rx="2" class="mg-clap"/>
+          <path d="M278 54 l8 12 M292 54 l8 12 M306 54 l8 12 M320 54 l8 12" class="mg-clapline"/>
+          <rect x="272" y="68" width="58" height="38" rx="3" class="mg-clapbody"/>
+          <path d="M264 44 l2.5 5 5 2.5 -5 2.5 -2.5 5 -2.5 -5 -5 -2.5 5 -2.5 z" class="mg-spark"/>
+          <path d="M336 100 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 z" class="mg-spark"/>
+          <text class="mg-lbl gold" x="301" y="126" text-anchor="middle">Magical experiences</text>
         </svg>
-        <p class="fcard-d">Using Selznick, we make every development decision with precision — the casting, the budget, the production plan that set a project up to succeed. We pair our production teams with the most advanced technology and modern production methods available, so they can work efficiently and deliver magical experiences.</p>
+        <p class="fcard-d">With Selznick, we find the most talented cast and crew and give them a budget that sets them up for success. We pair them with the best technology and modern production capabilities, helping them stretch every dollar and deliver a magical experience.</p>
       </div>
 
       <div class="fcard reveal">
