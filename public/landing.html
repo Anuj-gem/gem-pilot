@@ -723,7 +723,7 @@
     <h1 class="hero-headline reveal">
       We're building the next great <em>entertainment franchises.</em>
     </h1>
-    <p class="hero-sub reveal">Powered by <b>Walt</b>, the most powerful AI creative executive ever built, we find one-of-a-kind ideas that the industry overlooks and develop them into enduring global franchises.</p>
+    <p class="hero-sub reveal">Powered by <b>Walt</b>, the most powerful AI creative executive ever built, we find one-of-a-kind storytellers that the industry overlooks and help them turn their ideas into enduring global franchises.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>500,000,000+</b>
@@ -1488,8 +1488,7 @@
             ? { x: 0.5 * w, y: 0.84 * h }
             : { x: o.ignition.fx * w, y: o.ignition.fy * h })
         : null;
-      const biasR = ign ? 0.18 * w : 0;
-      const bloomR = ign ? 0.16 * Math.min(w, h) : 0;
+      const clearR = 265;
 
       function dust(seed, count, rBase, rVar, aBase, aVar) {
         const rand = mulberry32(seed);
@@ -1499,14 +1498,7 @@
           const r = rBase + rand() * rVar;
           if (ign) {
             const d = Math.hypot(x - ign.x, y - ign.y);
-            a *= 1 + 0.9 * Math.exp(-(d * d) / (biasR * biasR));
-            if (d < bloomR) {
-              const t = 1 - d / bloomR;
-              a *= 1 + 1.2 * t;
-              ctx.fillStyle = 'rgba(244,228,190,' + Math.min(0.5, a).toFixed(3) + ')';
-              ctx.fillRect(x, y, r, r);
-              continue;
-            }
+            a *= 0.15 + 0.85 * smoothstep(0, clearR, d);
           }
           ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
           ctx.fillRect(x, y, r, r);
@@ -1525,6 +1517,7 @@
       const litRand = mulberry32(o.gemSeed);
       for (let i = 0; i < o.gems; i++) {
         const x = litRand() * w, y = litRand() * h;
+        if (ign && Math.hypot(x - ign.x, y - ign.y) < 300) { litRand(); continue; }
         const s = 2.2 + litRand() * 2;
         ctx.save();
         ctx.translate(x, y);
@@ -1543,26 +1536,26 @@
       // THE ONE — the only gold in the sky
       if (ign) {
         let g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 0.22 * Math.min(w, h) * 1.4);
-        g.addColorStop(0, 'rgba(228,201,126,0.2)');
-        g.addColorStop(1, 'rgba(228,201,126,0)');
+        g.addColorStop(0, 'rgba(139,92,246,0.16)');
+        g.addColorStop(1, 'rgba(139,92,246,0)');
         ctx.fillStyle = g;
         ctx.fillRect(0, 0, w, h);
 
-        g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 84);
-        g.addColorStop(0, 'rgba(167,139,250,0.32)');
+        g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 90);
+        g.addColorStop(0, 'rgba(167,139,250,0.3)');
         g.addColorStop(1, 'rgba(167,139,250,0)');
         ctx.fillStyle = g;
-        ctx.fillRect(ign.x - 70, ign.y - 70, 140, 140);
+        ctx.fillRect(ign.x - 90, ign.y - 90, 180, 180);
 
-        const gs = 21;
+        const gs = 22;
         ctx.save();
         ctx.translate(ign.x, ign.y);
         ctx.rotate(Math.PI / 4);
-        ctx.shadowColor = '#E4C97E';
-        ctx.shadowBlur = 34;
+        ctx.shadowColor = '#8b5cf6';
+        ctx.shadowBlur = 32;
         const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
-        gg.addColorStop(0, '#F0DCA0');
-        gg.addColorStop(1, '#B08A3E');
+        gg.addColorStop(0, '#C4B5FD');
+        gg.addColorStop(1, '#6D28D9');
         ctx.fillStyle = gg;
         ctx.fillRect(-gs / 2, -gs / 2, gs, gs);
         ctx.restore();
@@ -1575,7 +1568,7 @@
             return [ign.x + Math.cos(a2) * sat.r, ign.y + Math.sin(a2) * sat.r];
           });
           ctx.save();
-          ctx.strokeStyle = 'rgba(196,181,253,0.09)';
+          ctx.strokeStyle = 'rgba(228,201,126,0.09)';
           ctx.lineWidth = 0.8;
           for (let i = 0; i < pts.length; i++) {
             const nxt = pts[(i + 1) % pts.length];
@@ -1603,11 +1596,11 @@
             ctx.save();
             ctx.translate(sx, sy);
             ctx.rotate(Math.PI / 4);
-            ctx.shadowColor = 'rgba(167,139,250,0.8)';
-            ctx.shadowBlur = 12;
+            ctx.shadowColor = 'rgba(228,201,126,0.85)';
+            ctx.shadowBlur = 14;
             const sg = ctx.createLinearGradient(-sat.size, -sat.size, sat.size, sat.size);
-            sg.addColorStop(0, '#C4B5FD');
-            sg.addColorStop(1, '#7C3AED');
+            sg.addColorStop(0, '#F0DCA0');
+            sg.addColorStop(1, '#B08A3E');
             ctx.fillStyle = sg;
             ctx.fillRect(-sat.size, -sat.size, sat.size * 2, sat.size * 2);
             ctx.restore();
@@ -1620,7 +1613,7 @@
                 const kx = sx + Math.cos(ka) * kd;
                 const ky = sy + Math.sin(ka) * kd;
                 ctx.save();
-                ctx.strokeStyle = 'rgba(196,181,253,0.2)';
+                ctx.strokeStyle = 'rgba(228,201,126,0.2)';
                 ctx.lineWidth = 0.7;
                 ctx.beginPath();
                 ctx.moveTo(sx + Math.cos(ka) * (sat.size + 5), sy + Math.sin(ka) * (sat.size + 5));
@@ -1629,7 +1622,7 @@
                 ctx.translate(kx, ky);
                 ctx.rotate(Math.PI / 4);
                 const ks = 1.8 + kr() * 1.6;
-                ctx.fillStyle = 'rgba(196,181,253,' + (0.4 + kr() * 0.35).toFixed(2) + ')';
+                ctx.fillStyle = 'rgba(228,201,126,' + (0.45 + kr() * 0.35).toFixed(2) + ')';
                 ctx.fillRect(-ks, -ks, ks * 2, ks * 2);
                 ctx.restore();
 
@@ -1641,7 +1634,7 @@
                     const gx = kx + Math.cos(ga) * gd;
                     const gy = ky + Math.sin(ga) * gd;
                     ctx.save();
-                    ctx.strokeStyle = 'rgba(196,181,253,0.12)';
+                    ctx.strokeStyle = 'rgba(228,201,126,0.12)';
                     ctx.lineWidth = 0.6;
                     ctx.beginPath();
                     ctx.moveTo(kx + Math.cos(ga) * 4, ky + Math.sin(ga) * 4);
@@ -1650,7 +1643,7 @@
                     ctx.translate(gx, gy);
                     ctx.rotate(Math.PI / 4);
                     const gsz = 1 + kr() * 1;
-                    ctx.fillStyle = 'rgba(196,181,253,' + (0.25 + kr() * 0.25).toFixed(2) + ')';
+                    ctx.fillStyle = 'rgba(228,201,126,' + (0.3 + kr() * 0.25).toFixed(2) + ')';
                     ctx.fillRect(-gsz, -gsz, gsz * 2, gsz * 2);
                     ctx.restore();
                   }
@@ -1666,7 +1659,7 @@
     const page = document.getElementById('page-field');
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
-    if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: {
+    if (sky) fields.push([sky, { gems: 10, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
       satellites: [
         { ang: -78, r: 210, size: 9, kids: 7 },
