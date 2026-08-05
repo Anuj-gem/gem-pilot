@@ -1516,7 +1516,7 @@
           // ring the network: densest just outside our orbit, thinning outward,
           // and never drifting into the text column on the left
           const ga = litRand() * Math.PI * 2;
-          const gr = 200 + Math.pow(litRand(), 1.7) * 265;
+          const gr = 152 + Math.pow(litRand(), 1.7) * 300;
           x = ign.x + Math.cos(ga) * gr;
           y = ign.y + Math.sin(ga) * gr;
           if (x < w * 0.53 || x > w - 14 || y < 14 || y > h - 14) { litRand(); continue; }
@@ -1621,7 +1621,7 @@
               const kr = mulberry32(Math.round(sat.r * 7 + sat.ang));
               for (let k = 0; k < sat.kids; k++) {
                 const ka = a + (kr() - 0.5) * 1.35;
-                const kd = 40 + kr() * 46;
+                const kd = 32 + kr() * 38;
                 const kx = sx + Math.cos(ka) * kd;
                 const ky = sy + Math.sin(ka) * kd;
                 ctx.save();
@@ -1674,17 +1674,17 @@
     if (sky) fields.push([sky, { gems: 105, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
       satellites: [
-        { ang: -78, r: 158, size: 9, kids: 7 },
-        { ang: -38, r: 112, size: 5, kids: 3 },
-        { ang: -10, r: 162, size: 8, kids: 5 },
-        { ang: 20, r: 114, size: 5, kids: 3 },
-        { ang: 55, r: 140, size: 7.5, kids: 4 },
-        { ang: 80, r: 172, size: 6, kids: 4 },
-        { ang: 102, r: 116, size: 5.5, kids: 3 },
-        { ang: 145, r: 146, size: 7, kids: 4 },
-        { ang: 170, r: 114, size: 4.5, kids: 2 },
-        { ang: -120, r: 118, size: 4.5, kids: 2 },
-        { ang: -155, r: 150, size: 7, kids: 5 }
+        { ang: -78, r: 120, size: 9, kids: 7 },
+        { ang: -38, r: 86, size: 5, kids: 3 },
+        { ang: -10, r: 124, size: 8, kids: 5 },
+        { ang: 20, r: 88, size: 5, kids: 3 },
+        { ang: 55, r: 106, size: 7.5, kids: 4 },
+        { ang: 80, r: 130, size: 6, kids: 4 },
+        { ang: 102, r: 88, size: 5.5, kids: 3 },
+        { ang: 145, r: 110, size: 7, kids: 4 },
+        { ang: 170, r: 86, size: 4.5, kids: 2 },
+        { ang: -120, r: 90, size: 4.5, kids: 2 },
+        { ang: -155, r: 114, size: 7, kids: 5 }
       ]
     } }]);
 
