@@ -276,7 +276,16 @@
       display: grid; grid-template-columns: 1fr;
       gap: 14px; margin-top: 30px;
     }
-    .model-wide .film-cards { margin-top: 24px; }
+    .bridge-card { margin-top: 24px; }
+    .bridge { display: block; width: 100%; min-width: 820px; height: auto; margin-top: 6px; }
+    .bridge .bb.base { fill: url(#brbase); }
+    .bridge .bb.inc { fill: rgba(167,139,250,0.75); }
+    .bridge .bb.gold { fill: url(#brgold); }
+    .bridge .bcon { stroke: rgba(243,239,232,0.28); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
+    .bridge .bax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
+    .bridge .bval { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; fill: #fff; }
+    .bridge .bval.gold { fill: #E4C97E; }
+    .bridge .blab { font-family: 'Inter', sans-serif; font-size: 11.5px; fill: var(--on-screen-muted); }
     .model-wide .fcard {
       background: rgba(255,255,255,0.035);
       border: 1px solid rgba(196,181,253,0.18);
@@ -992,57 +1001,53 @@
     <div class="twins reveal">
       <div class="fcard twin model-wide">
         <p class="fcard-k">The model</p>
-        <p class="twin-h">Selznick, our world model of the film business.</p>
-        <p class="twin-d">Trained on 13,000+ films and everything they earned, <b>Selznick</b> reads any idea and answers the questions every studio spends millions guessing at.</p>
+        <p class="twin-h">Selznick, a world model of the film business.</p>
+        <p class="twin-d">Trained on 13,000+ films and everything that happened to them, <b>Selznick</b> understands a film at every stage of its life — from the idea on the page to the finished picture in theaters. It's how we position projects, plan production, and understand the commercial impact of every creative decision before we make it.</p>
 
-        <div class="film-cards three-up">
-          <div class="fcard">
-            <p class="fcard-k">What's the right team?</p>
-            <div class="castrow">
-              <div class="cast">
-                <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-                <span>A-list lead</span><b class="gold">+$21M</b>
-              </div>
-              <div class="cast on">
-                <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-                <span>Emerging lead</span><b>Baseline</b>
-              </div>
-              <div class="cast">
-                <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-                <span>Award-winning director</span><b class="gold">+$14M</b>
-              </div>
-            </div>
-            <p class="fcard-d">Casting and creative choices, priced before anyone signs.</p>
+        <div class="fcard bridge-card">
+          <p class="fcard-k">One project, decision by decision</p>
+          <div class="scan-wrap">
+            <svg class="bridge" viewBox="0 0 1000 300" aria-hidden="true">
+              <defs>
+                <linearGradient id="brbase" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#5B21B6"/>
+                </linearGradient>
+                <linearGradient id="brgold" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
+                </linearGradient>
+              </defs>
+          <rect x="70" y="178.8" width="90" height="71.2" rx="4" class="bb base"/>
+          <text class="bval" x="115.0" y="169.8" text-anchor="middle">$45M</text>
+          <text class="blab" x="115.0" y="272" text-anchor="middle">Script alone</text>
+          <path d="M160 178.8 H 205" class="bcon"/>
+          <rect x="205" y="151.8" width="90" height="26.9" rx="4" class="bb inc"/>
+          <text class="bval" x="250.0" y="142.8" text-anchor="middle">+$17M</text>
+          <text class="blab" x="250.0" y="272" text-anchor="middle">Positioning</text>
+          <path d="M295 151.8 H 340" class="bcon"/>
+          <rect x="340" y="118.6" width="90" height="33.2" rx="4" class="bb inc"/>
+          <text class="bval" x="385.0" y="109.6" text-anchor="middle">+$21M</text>
+          <text class="blab" x="385.0" y="272" text-anchor="middle">Casting</text>
+          <path d="M430 118.6 H 475" class="bcon"/>
+          <rect x="475" y="96.4" width="90" height="22.2" rx="4" class="bb inc"/>
+          <text class="bval" x="520.0" y="87.4" text-anchor="middle">+$14M</text>
+          <text class="blab" x="520.0" y="272" text-anchor="middle">Director</text>
+          <path d="M565 96.4 H 610" class="bcon"/>
+          <rect x="610" y="82.2" width="90" height="14.2" rx="4" class="bb inc"/>
+          <text class="bval" x="655.0" y="73.2" text-anchor="middle">+$9M</text>
+          <text class="blab" x="655.0" y="272" text-anchor="middle">Production plan</text>
+          <path d="M700 82.2 H 745" class="bcon"/>
+          <rect x="745" y="60.0" width="90" height="22.2" rx="4" class="bb inc"/>
+          <text class="bval" x="790.0" y="51.0" text-anchor="middle">+$14M</text>
+          <text class="blab" x="790.0" y="272" text-anchor="middle">Distribution</text>
+          <rect x="880" y="60.0" width="90" height="190.0" rx="4" class="bb gold"/>
+          <text class="bval gold" x="925.0" y="51.0" text-anchor="middle">$120M+</text>
+          <text class="blab" x="925.0" y="272" text-anchor="middle">Positioned</text>
+          <line x1="60" y1="250" x2="980" y2="250" class="bax"/>
+            </svg>
           </div>
-
-          <div class="fcard">
-            <p class="fcard-k">What's the right budget?</p>
-            <p class="fbig">$14M</p>
-            <div class="stackbar">
-              <i style="width:26%;background:linear-gradient(90deg,#8b5cf6,#7C3AED)"></i>
-              <i style="width:34%;background:linear-gradient(90deg,#7C3AED,#6D28D9)"></i>
-              <i style="width:22%;background:linear-gradient(90deg,#E4C97E,#C9A55A)"></i>
-              <i style="width:18%;background:rgba(255,255,255,0.22)"></i>
-            </div>
-            <div class="fkeys">
-              <span><i style="background:#8b5cf6"></i>Cast</span>
-              <span><i style="background:#7C3AED"></i>38 shoot days</span>
-              <span><i style="background:#E4C97E"></i>VFX</span>
-              <span><i style="background:rgba(255,255,255,0.4)"></i>Post</span>
-            </div>
-            <p class="fcard-d">Costed from the screenplay alone — before a dollar is spent.</p>
-          </div>
-
-          <div class="fcard">
-            <p class="fcard-k">What's the box office potential?</p>
-            <div class="projrows">
-              <div class="prow"><span>Draft 1</span><i><b style="width:36%"></b></i><em>$45M</em></div>
-              <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
-              <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
-            </div>
-            <p class="fcard-d">Position to position, draft to draft — how far each version can go.</p>
-          </div>
+          <p class="fcard-d">Every decision, priced before it's made.</p>
         </div>
+        <p class="twin-d" style="margin-top:18px;">The same model powers our scouting — pricing every idea from the page alone.</p>
       </div>
 
       <div class="screen-panel twin">
