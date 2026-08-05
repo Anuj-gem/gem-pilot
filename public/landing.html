@@ -164,7 +164,16 @@
     }
     .hero-viz .hlab.gold { fill: var(--gold); font-weight: 600; }
     .hero-viz .hpick { fill: none; stroke: rgba(176,138,62,0.5); stroke-width: 1; }
-    .hero-viz .hx-wedge { fill: rgba(124,58,237,0.06); stroke: rgba(124,58,237,0.18); stroke-width: 1; }
+    .hero-viz .hx-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px; font-weight: 500; fill: var(--gold);
+      letter-spacing: -0.01em;
+    }
+    .hero-viz .hx-bigk {
+      font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; fill: var(--muted);
+    }
+    .hero-viz .hx-val { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; fill: var(--gold); }
     .hero-viz .hx-cell { fill: rgba(245,243,238,0.4); stroke: rgba(22,20,27,0.18); stroke-width: 1.2; }
     .hero-viz .hx-cell.gold { fill: rgba(228,201,126,0.14); stroke: #B08A3E; stroke-width: 1.8; }
     .hero-viz .hx-mi { fill: none; stroke: rgba(22,20,27,0.35); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
@@ -718,8 +727,6 @@
         </radialGradient>
       </defs>
 
-      <path d="M474 160 L 72 84 L 72 236 Z" class="hx-wedge"/>
-
       <circle cx="100" cy="60" r="17" class="hx-cell"/>
       <g transform="translate(100 60)"><path d="M-5 5 l8-8 3 3 -8 8 -4 1z" class="hx-mi"/></g>
       <circle cx="152" cy="60" r="17" class="hx-cell"/>
@@ -754,32 +761,40 @@
       <circle cx="256" cy="252" r="17" class="hx-cell"/>
       <g transform="translate(256 252)"><rect x="-2.5" y="-7" width="5" height="9" rx="2.5" class="hx-mi"/><path d="M-5 -1 c0 4 10 4 10 0 M0 5 v3" class="hx-mi"/></g>
 
-      <path d="M223 128 C 320 138, 400 152, 462 158" class="hx-found"/>
+      <path d="M223 128 C 330 145, 410 170, 468 181" class="hx-found"/>
 
-      <circle cx="514" cy="160" r="84" fill="url(#hhalo)"/>
-      <rect x="-27" y="-27" width="54" height="54" rx="10" transform="translate(514 160) rotate(45)" fill="url(#hgem)"/>
-      <text class="hgemlab" x="514" y="232" text-anchor="middle">GEM</text>
+      <text class="hx-big" x="512" y="66" text-anchor="middle">$2.1B</text>
+      <text class="hx-bigk" x="512" y="90" text-anchor="middle">Franchise potential, assessed</text>
 
-      <path d="M556 160 C 680 160, 730 50, 820 50" class="hx-ray"/>
+      <circle cx="512" cy="185" r="80" fill="url(#hhalo)"/>
+      <rect x="-26" y="-26" width="52" height="52" rx="10" transform="translate(512 185) rotate(45)" fill="url(#hgem)"/>
+      <text class="hgemlab" x="512" y="256" text-anchor="middle">GEM</text>
+
+      <path d="M556 185 C 680 185, 730 50, 820 50" class="hx-ray"/>
       <circle cx="852" cy="50" r="24" class="hx-nodec"/>
       <g transform="translate(852 50)"><rect x="-13" y="-9" width="26" height="5.5" rx="1.5" class="hx-i"/><path d="M-10.5 -9 l3.5 5.5 M-3.5 -9 l3.5 5.5 M3.5 -9 l3.5 5.5" class="hx-i"/><rect x="-13" y="-2" width="26" height="12" rx="2" class="hx-i"/></g>
-      <text class="hx-lbl" x="888" y="55">Film</text>
-      <path d="M556 160 C 680 160, 730 105, 820 105" class="hx-ray"/>
+      <text class="hx-lbl" x="888" y="50">Film</text>
+      <text class="hx-val" x="888" y="69">$900M</text>
+      <path d="M556 185 C 680 185, 730 105, 820 105" class="hx-ray"/>
       <circle cx="852" cy="105" r="24" class="hx-nodec"/>
       <g transform="translate(852 105)"><rect x="-13" y="-9" width="26" height="17" rx="3" class="hx-i"/><path d="M-5 8 v4 M5 8 v4 M-8 12 h16" class="hx-i"/></g>
-      <text class="hx-lbl" x="888" y="110">Series</text>
-      <path d="M556 160 C 680 160, 730 160, 820 160" class="hx-ray"/>
+      <text class="hx-lbl" x="888" y="105">Series</text>
+      <text class="hx-val" x="888" y="124">$450M</text>
+      <path d="M556 185 C 680 185, 730 160, 820 160" class="hx-ray"/>
       <circle cx="852" cy="160" r="24" class="hx-nodec"/>
       <g transform="translate(852 160)"><rect x="-14" y="-8" width="28" height="16" rx="7" class="hx-i"/><path d="M-7 0 h6 M-4 -3 v6" class="hx-i"/><circle cx="6" cy="-2" r="1.6" class="hx-if"/><circle cx="9.5" cy="2" r="1.6" class="hx-if"/></g>
-      <text class="hx-lbl" x="888" y="165">Games</text>
-      <path d="M556 160 C 680 160, 730 215, 820 215" class="hx-ray"/>
+      <text class="hx-lbl" x="888" y="160">Games</text>
+      <text class="hx-val" x="888" y="179">$300M</text>
+      <path d="M556 185 C 680 185, 730 215, 820 215" class="hx-ray"/>
       <circle cx="852" cy="215" r="24" class="hx-nodec"/>
       <g transform="translate(852 215)"><rect x="-8" y="-12" width="16" height="24" rx="3.5" class="hx-i"/><path d="M-2 -3 l6 3 -6 3 z" class="hx-if2"/></g>
-      <text class="hx-lbl" x="888" y="220">Social</text>
-      <path d="M556 160 C 680 160, 730 270, 820 270" class="hx-ray"/>
+      <text class="hx-lbl" x="888" y="215">Social</text>
+      <text class="hx-val" x="888" y="234">$250M</text>
+      <path d="M556 185 C 680 185, 730 270, 820 270" class="hx-ray"/>
       <circle cx="852" cy="270" r="24" class="hx-nodec"/>
       <g transform="translate(852 270)"><path d="M-10 -10 h10 l10 10 -10 10 -10 -10 z" transform="rotate(45)" class="hx-i"/><circle cx="-4" cy="-4" r="1.8" class="hx-i"/></g>
-      <text class="hx-lbl" x="888" y="275">Merchandise</text>
+      <text class="hx-lbl" x="888" y="270">Merchandise</text>
+      <text class="hx-val" x="888" y="289">$200M</text>
 
       <text class="hx-lbl mid" x="178" y="302" text-anchor="middle">Storytellers of every kind</text>
     </svg>
