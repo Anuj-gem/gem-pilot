@@ -283,9 +283,25 @@
     .twin-d {
       font-size: 14px; color: var(--on-screen-muted); line-height: 1.65;
     }
+    .mini-g { display: block; width: 100%; height: auto; margin: 8px 0 14px; }
+    .mini-g .mg-box { fill: rgba(255,255,255,0.04); stroke: rgba(196,181,253,0.35); stroke-width: 1.2; }
+    .mini-g .mg-poster { fill: rgba(228,201,126,0.08); stroke: rgba(228,201,126,0.55); stroke-width: 1.3; }
+    .mini-g .mg-ico { stroke: #C4B5FD; stroke-width: 1.6; fill: none; stroke-linecap: round; }
+    .mini-g .mg-ico.thin { stroke-width: 1.2; opacity: 0.85; }
+    .mini-g .mg-arrow { stroke: rgba(228,201,126,0.7); stroke-width: 1.4; }
+    .mini-g .mg-lbl { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--on-screen-muted); }
+    .mini-g .mg-lbl.gold { fill: #E4C97E; font-weight: 600; }
+    .mini-g .mg-line { stroke: rgba(196,181,253,0.3); stroke-width: 1; }
+    .mini-g .mg-node { fill: rgba(255,255,255,0.05); stroke: rgba(196,181,253,0.35); stroke-width: 1.1; }
+    .mini-g .mg-curve { stroke: #8b5cf6; stroke-width: 2; fill: none; }
+    .mini-g .mg-curve.gold { stroke: #E4C97E; }
+    .mini-g .mg-release { stroke: rgba(228,201,126,0.55); stroke-width: 1; stroke-dasharray: 3 4; }
+    .mini-g .mg-dot { fill: #C4B5FD; }
+    .mini-g .mg-ax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
     .team-band {
       background: var(--screen); color: var(--on-screen);
       border-radius: 18px; padding: 44px 48px;
+      position: relative; overflow: hidden;
     }
     .team-band .twin-h { max-width: 30ch; }
     .media-card { position: relative; overflow: hidden; }
@@ -552,27 +568,6 @@
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
     <a href="#story" class="btn-text">Learn more ↓</a>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- Our story -->
-<section id="story">
-  <h2 class="sec-h reveal">Hollywood has an <em>originality problem.</em></h2>
-  <p class="sec-sub reveal">The industry has gotten very good at extending old franchises and very bad at starting new ones — and every great franchise began as an original that worked.</p>
-
-  <p class="thesis-p reveal" style="margin-top:26px;">We are not an AI content company. Our films are written and made by people. We built AI to do the one thing Hollywood can't: find and develop original ideas at the depth and scale this moment demands.</p>
-
-  <div class="quote-row reveal">
-    <figure class="pull">
-      <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
-      <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
-    </figure>
-    <figure class="pull">
-      <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
-      <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -984,48 +979,86 @@
   <div class="pillar-card reveal">
     <p class="pillar-n">Develop</p>
     <p class="pillar-statement">We develop it to maximize its <em>box office potential.</em></p>
-    <p class="pillar-next">Every choice in development is aimed at one number: what the film earns. <b>Selznick</b> — the most advanced AI creative partner ever built for feature film — works beside us at every step.</p>
+    <p class="pillar-next">We pair the world's most talented creators with <b>Selznick</b>, the most advanced AI creative partner ever built for film — and take each idea through a development process no studio can match.</p>
 
     <div class="film-cards three-up">
       <div class="fcard reveal">
         <p class="fcard-k">Adapt</p>
-        <div class="projrows">
-          <div class="prow"><span>Draft 1</span><i><b style="width:36%"></b></i><em>$45M</em></div>
-          <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
-          <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
-        </div>
-        <p class="fcard-d">An extensive creative process, adapting each idea carefully to maximize its commercial potential — with clear forecasting at every draft.</p>
+        <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
+          <rect x="26" y="50" width="54" height="72" rx="5" class="mg-box"/>
+          <path d="M53 68 v24 M41 80 h24" class="mg-ico"/>
+          <text class="mg-lbl" x="53" y="146" text-anchor="middle">The idea</text>
+          <path d="M92 86 H 122" class="mg-arrow"/>
+          <rect x="134" y="50" width="54" height="72" rx="5" class="mg-box"/>
+          <path d="M146 66h30M146 78h30M146 90h18M146 102h24" class="mg-ico thin"/>
+          <text class="mg-lbl" x="161" y="146" text-anchor="middle">The adaptation</text>
+          <path d="M200 86 H 230" class="mg-arrow"/>
+          <rect x="242" y="42" width="62" height="88" rx="6" class="mg-poster"/>
+          <rect x="-9" y="-9" width="18" height="18" rx="3" transform="translate(273 86) rotate(45)" fill="url(#gemgold2)"/>
+          <text class="mg-lbl gold" x="273" y="152" text-anchor="middle">The film</text>
+        </svg>
+        <p class="fcard-d">We go through an extensive creative process, adapting each idea carefully to maximize its commercial potential.</p>
       </div>
 
       <div class="fcard reveal">
         <p class="fcard-k">Assemble</p>
-        <div class="castrow">
-          <div class="cast">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>A-list lead</span><b class="gold">+$21M</b>
-          </div>
-          <div class="cast on">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Emerging lead</span><b>Baseline</b>
-          </div>
-          <div class="cast">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Award-winning director</span><b class="gold">+$14M</b>
-          </div>
-        </div>
-        <p class="fcard-d">Immense research into the impact of cast and crew — we build the team that can realize the vision and deliver it efficiently.</p>
+        <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
+          <path d="M78 54 L 152 84 M262 54 L 188 84 M78 136 L 152 94 M262 136 L 188 94" class="mg-line"/>
+          <circle cx="62" cy="48" r="16" class="mg-node"/>
+          <circle cx="62" cy="44" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M54 55 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <text class="mg-lbl" x="62" y="80" text-anchor="middle">Writer</text>
+          <circle cx="278" cy="48" r="16" class="mg-node"/>
+          <circle cx="278" cy="44" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M270 55 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <text class="mg-lbl" x="278" y="80" text-anchor="middle">Director</text>
+          <circle cx="62" cy="142" r="16" class="mg-node"/>
+          <circle cx="62" cy="138" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M54 149 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <text class="mg-lbl" x="62" y="174" text-anchor="middle">Cast</text>
+          <circle cx="278" cy="142" r="16" class="mg-node"/>
+          <circle cx="278" cy="138" r="4" class="mg-ico thin" fill="none"/>
+          <path d="M270 149 c0-4 3.6-6 8-6 s8 2 8 6" class="mg-ico thin"/>
+          <text class="mg-lbl" x="278" y="174" text-anchor="middle">Crew</text>
+          <circle cx="170" cy="89" r="30" fill="url(#gemhalo2)"/>
+          <rect x="-13" y="-13" width="26" height="26" rx="5" transform="translate(170 89) rotate(45)" fill="url(#gemfill2)"/>
+        </svg>
+        <p class="fcard-d">We do immense research into the impact of cast and crew — and assemble the team that can realize the creative vision.</p>
       </div>
 
-      <div class="fcard media-card reveal">
-        <canvas id="field" aria-hidden="true"></canvas>
-        <div class="media-content">
-          <p class="fcard-k">Build the audience</p>
-          <div class="bignums mini">
-            <div class="bignum"><b>1B+</b><span>Views</span></div>
-            <div class="bignum"><b>500M+</b><span>Reached</span></div>
-          </div>
-          <p class="fcard-d">We use our social media expertise to build a film’s audience and market it — long before it reaches theaters.</p>
-        </div>
+      <div class="fcard reveal">
+        <p class="fcard-k">Build the audience</p>
+        <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
+          <defs>
+            <linearGradient id="augrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(139,92,246,0.55)"/><stop offset="1" stop-color="rgba(139,92,246,0.05)"/>
+            </linearGradient>
+            <linearGradient id="augold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(228,201,126,0.5)"/><stop offset="1" stop-color="rgba(228,201,126,0.05)"/>
+            </linearGradient>
+            <linearGradient id="gemfill2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
+            </linearGradient>
+            <linearGradient id="gemgold2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
+            </linearGradient>
+            <radialGradient id="gemhalo2">
+              <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
+            </radialGradient>
+          </defs>
+          <path d="M24 150 C 80 146, 120 128, 160 106 C 196 86, 228 70, 250 62 L 250 150 Z" fill="url(#augrad)"/>
+          <path d="M250 62 C 268 54, 288 44, 312 34 L 312 150 L 250 150 Z" fill="url(#augold)"/>
+          <path d="M24 150 C 80 146, 120 128, 160 106 C 196 86, 228 70, 250 62" class="mg-curve"/>
+          <path d="M250 62 C 268 54, 288 44, 312 34" class="mg-curve gold"/>
+          <line x1="250" y1="34" x2="250" y2="150" class="mg-release"/>
+          <circle cx="70" cy="142" r="3.5" class="mg-dot"/>
+          <text class="mg-lbl" x="70" y="128" text-anchor="middle">First video</text>
+          <circle cx="196" cy="86" r="3.5" class="mg-dot"/>
+          <text class="mg-lbl" x="196" y="70" text-anchor="middle">1B+ views</text>
+          <text class="mg-lbl gold" x="256" y="26">Release</text>
+          <line x1="24" y1="150" x2="316" y2="150" class="mg-ax"/>
+        </svg>
+        <p class="fcard-d">We use our mastery of social media to build a film's audience and market it — long before it reaches theaters.</p>
       </div>
     </div>
   </div>
@@ -1034,9 +1067,34 @@
 <!-- The team -->
 <section id="team" style="padding-top:0;">
   <div class="team-band reveal">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="media-content">
     <p class="fcard-k">The team</p>
     <p class="twin-h">We are the creators of Selznick — and the creative minds behind a billion views.</p>
     <p class="twin-d">We've spent our careers at some of the world's biggest media and technology companies. GEM is those two disciplines, fused.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- The thesis -->
+<section id="story">
+  <div class="section-marker reveal">The thesis</div>
+  <h2 class="sec-h reveal">Hollywood has an <em>originality problem.</em></h2>
+  <p class="sec-sub reveal">The industry has gotten very good at extending old franchises and very bad at starting new ones — and every great franchise began as an original that worked.</p>
+
+  <p class="thesis-p reveal" style="margin-top:26px;">We are not an AI content company. Our films are written and made by people. We built AI to do the one thing Hollywood can't: find and develop original ideas at the depth and scale this moment demands.</p>
+
+  <div class="quote-row reveal">
+    <figure class="pull">
+      <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
+      <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
+    </figure>
+    <figure class="pull">
+      <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
+      <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
+    </figure>
   </div>
 </section>
 
