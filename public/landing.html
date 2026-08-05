@@ -298,6 +298,11 @@
     .mini-g .mg-release { stroke: rgba(228,201,126,0.55); stroke-width: 1; stroke-dasharray: 3 4; }
     .mini-g .mg-dot { fill: #C4B5FD; }
     .mini-g .mg-ax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
+    .mini-g .mg-loop { stroke: rgba(196,181,253,0.4); stroke-width: 1.4; fill: none; marker-end: url(#mgarw); }
+    .mini-g .mg-goldpath { stroke: rgba(228,201,126,0.7); stroke-width: 1.5; fill: none; }
+    .mini-g .mg-wave { stroke: rgba(196,181,253,0.5); stroke-width: 1.4; fill: none; stroke-linecap: round; }
+    .mini-g .mg-marquee { fill: rgba(228,201,126,0.1); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
+    .mini-g .mg-mq { font-family: 'Inter', sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; fill: #E4C97E; }
     .mini-g .mg-bar { fill: url(#gemfill2); }
     .mini-g .mg-bar.dim { fill: rgba(196,181,253,0.35); }
     .mini-g .mg-bar.gold { fill: url(#gemgold2); }
@@ -565,11 +570,9 @@
   </h1>
   <p class="hero-sub reveal">Powered by the world's most advanced entertainment AI, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
   <div class="hero-stats reveal">
-    <div class="hstat"><b>Thousands</b><span>Ideas scouted</span></div>
-    <span class="harrow">&rarr;</span>
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-    <span class="harrow">&rarr;</span>
-    <div class="hstat"><b>2</b><span>Feature films in active development</span></div>
+    <div class="hstat"><b>500,000,000+</b><span>People reached</span></div>
+    <div class="hstat"><b>2</b><span>Feature films in development</span></div>
   </div>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
@@ -1001,28 +1004,36 @@
             <radialGradient id="gemhalo2">
               <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
             </radialGradient>
+            <marker id="mgarw" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0 1.5 L 8.5 5 L 0 8.5 z" fill="#C4B5FD"/>
+            </marker>
+            <marker id="mgarwg" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0 1.5 L 8.5 5 L 0 8.5 z" fill="#E4C97E"/>
+            </marker>
           </defs>
-          <text class="mg-lbl" x="90" y="36">Box office potential</text>
-          <text class="mg-lbl" x="316" y="36" text-anchor="end">Budget</text>
 
-          <text class="mg-lbl" x="24" y="68">Draft 1</text>
-          <rect x="90" y="59" width="60" height="9" rx="4.5" class="mg-bar dim"/>
-          <text class="mg-val" x="248" y="68" text-anchor="end">$45M</text>
-          <text class="mg-val dim" x="316" y="68" text-anchor="end">$24M</text>
+          <path d="M138 60 A 52 52 0 0 1 152 122" class="mg-loop"/>
+          <path d="M132 138 A 52 52 0 0 1 74 128" class="mg-loop"/>
+          <path d="M62 106 A 52 52 0 0 1 94 52" class="mg-loop"/>
 
-          <text class="mg-lbl" x="24" y="106">Draft 2</text>
-          <rect x="90" y="97" width="105" height="9" rx="4.5" class="mg-bar"/>
-          <text class="mg-val" x="248" y="106" text-anchor="end">$78M</text>
-          <text class="mg-val dim" x="316" y="106" text-anchor="end">$19M</text>
+          <circle cx="116" cy="43" r="17" class="mg-node"/>
+          <path d="M110 48 l9-9 3 3 -9 9 -4 1z M117 41 l3 3" class="mg-ico thin"/>
+          <text class="mg-lbl" x="116" y="20" text-anchor="middle">Write</text>
 
-          <text class="mg-lbl" x="24" y="144">Draft 3</text>
-          <rect x="90" y="135" width="150" height="9" rx="4.5" class="mg-bar gold"/>
-          <text class="mg-val gold" x="248" y="144" text-anchor="end">$120M+</text>
-          <text class="mg-val gold" x="316" y="144" text-anchor="end">$14M</text>
+          <circle cx="66" cy="125" r="17" class="mg-node"/>
+          <path d="M62 118 l10 7 -10 7 z" class="mg-ico thin"/>
+          <text class="mg-lbl" x="52" y="158" text-anchor="middle">Test</text>
 
-          <text class="mg-lbl" x="24" y="176">Appeal up, cost down — draft by draft.</text>
+          <circle cx="160" cy="125" r="17" class="mg-node"/>
+          <path d="M152 131 l5-6 4 3 6-8" class="mg-ico thin"/>
+          <text class="mg-lbl" x="172" y="158" text-anchor="middle">Learn</text>
+
+          <path d="M196 92 H 240" class="mg-goldpath" marker-end="url(#mgarwg)"/>
+          <circle cx="278" cy="92" r="26" fill="url(#gemhalo2)"/>
+          <rect x="-11" y="-11" width="22" height="22" rx="4" transform="translate(278 92) rotate(45)" fill="url(#gemgold2)"/>
+          <text class="mg-lbl gold" x="278" y="140" text-anchor="middle">The strongest version</text>
         </svg>
-        <p class="fcard-d">An extensive creative process: many drafts, each carefully adapted to maximize theatrical appeal and profitability. We test ideas on social media and analyze audience appeal with Selznick along the way.</p>
+        <p class="fcard-d">Extensive iteration and testing on every idea — adapting and positioning it to maximize its theatrical potential, with Selznick and real audiences guiding each pass.</p>
       </div>
 
       <div class="fcard reveal">
@@ -1048,28 +1059,37 @@
           <circle cx="170" cy="89" r="30" fill="url(#gemhalo2)"/>
           <rect x="-13" y="-13" width="26" height="26" rx="5" transform="translate(170 89) rotate(45)" fill="url(#gemfill2)"/>
         </svg>
-        <p class="fcard-d">Extensive research into cast, crew, and every important development decision — assembling the team that can realize the creative vision and deliver something audiences love.</p>
+        <p class="fcard-d">Through extensive research powered by Selznick, we find the people with the right track record, skills, and fit — the team that brings the most out of what’s on the page.</p>
       </div>
 
       <div class="fcard reveal">
         <p class="fcard-k">Build the audience</p>
         <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
-          <defs>
-            <linearGradient id="audg" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
-            </linearGradient>
-          </defs>
-          <text class="mg-lbl" x="24" y="38">Audience built before opening day</text>
+          <rect x="34" y="48" width="46" height="82" rx="9" class="mg-box"/>
+          <path d="M52 82 l12 7 -12 7 z" class="mg-ico thin"/>
+          <path d="M86 62 a 26 26 0 0 1 0 30 M94 54 a 38 38 0 0 1 0 46" class="mg-wave"/>
+          <text class="mg-lbl" x="57" y="152" text-anchor="middle">Social</text>
 
-          <text class="mg-lbl" x="24" y="76">A typical film</text>
-          <rect x="24" y="84" width="16" height="10" rx="4" class="mg-bar dim"/>
-          <text class="mg-val dim" x="50" y="93">&#8776; 0</text>
+          <circle cx="124" cy="74" r="3" class="mg-dot"/>
+          <circle cx="138" cy="96" r="3" class="mg-dot"/>
+          <circle cx="132" cy="118" r="3" class="mg-dot"/>
+          <circle cx="152" cy="82" r="3" class="mg-dot"/>
+          <circle cx="158" cy="108" r="3" class="mg-dot"/>
+          <circle cx="172" cy="92" r="3" class="mg-dot"/>
+          <circle cx="184" cy="112" r="3" class="mg-dot"/>
+          <circle cx="188" cy="80" r="3" class="mg-dot"/>
+          <circle cx="202" cy="98" r="3" class="mg-dot"/>
+          <text class="mg-lbl" x="163" y="152" text-anchor="middle">The modern audience</text>
 
-          <text class="mg-lbl" x="24" y="128">A GEM film</text>
-          <text class="mg-val gold" x="316" y="128" text-anchor="end">500M+ already reached</text>
-          <rect x="24" y="136" width="292" height="10" rx="4" fill="url(#audg)"/>
+          <path d="M212 94 H 232" class="mg-goldpath" marker-end="url(#mgarwg)"/>
+
+          <rect x="244" y="56" width="72" height="24" rx="4" class="mg-marquee"/>
+          <text class="mg-mq" x="280" y="72" text-anchor="middle">NOW PLAYING</text>
+          <rect x="252" y="80" width="56" height="50" rx="3" class="mg-box"/>
+          <path d="M266 130 v-18 h10 v18 M286 130 v-18 h10 v18" class="mg-ico thin"/>
+          <text class="mg-lbl gold" x="280" y="152" text-anchor="middle">Theaters</text>
         </svg>
-        <p class="fcard-d">We leverage social media and modern marketing to develop a film's audience long before it reaches theaters — and maximize its viral potential at release.</p>
+        <p class="fcard-d">A comprehensive marketing strategy built on our mastery of social media and viral marketing — cost-effectively driving the modern audience to the theater.</p>
       </div>
     </div>
   </div>
@@ -1081,8 +1101,8 @@
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="media-content">
     <p class="fcard-k">The team</p>
-    <p class="twin-h">We are the creators of Selznick — and the creative minds behind a billion views.</p>
-    <p class="twin-d">We've spent our careers at some of the world's biggest media and technology companies. GEM is those two disciplines, fused.</p>
+    <p class="twin-h">The creators of Selznick — and the creative minds behind a billion views.</p>
+    <p class="twin-d">We've spent our careers building at some of the world's biggest media and technology companies, and putting content in front of hundreds of millions of people. GEM is those two disciplines, fused.</p>
     </div>
   </div>
 </section>
