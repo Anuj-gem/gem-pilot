@@ -106,7 +106,7 @@
     .intake-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(300px, 40vh, 400px);
+      height: clamp(380px, 52vh, 520px);
       margin-top: 40px; margin-bottom: 34px;
     }
     .intake-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -896,31 +896,39 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
-  // The intake — ideas stream in from everywhere and pile against Walt.
-  // Almost nothing gets through. What does, comes straight to us and turns gold.
+  // The intake — ideas flood in from every direction, meet us, and come back out as gold.
   (function () {
     const c = document.getElementById('intake-field');
     if (!c) return;
     const ctx = c.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const BANDS = ['Screenplays', 'Books', 'Comics', 'Online video', 'Submissions'];
+    const SOURCES = [
+      { label: 'Screenplays', ang: -150 },
+      { label: 'Books', ang: -95 },
+      { label: 'Comics', ang: -35 },
+      { label: 'Online video', ang: 40 },
+      { label: 'Submissions', ang: 120 }
+    ];
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
-    let w = 0, h = 0, dpr = 1, X0 = 0, LX = 0, LY = 0, LH = 0, WALL = 0, GX = 0, GY = 0, wide = true;
-    let parts = [], travellers = [], orbit = [], vi = 0;
-    let pulse = 0, charge = 0, emitIn = 2.4, valueTxt = '', valueA = 0, last = 0;
+
+    let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, RX = 0, RY = 0, wide = true;
+    let parts = [], branches = [], vi = 0;
+    let pulse = 0, pickIn = 2.2, valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
-    const bandY = i => (h * 0.20) + i * ((h * 0.60) / (BANDS.length - 1));
+    const edge = a => 1 / Math.sqrt(Math.pow(Math.cos(a) / RX, 2) + Math.pow(Math.sin(a) / RY, 2));
 
     function spawn(seeded) {
-      const b = Math.floor(rnd() * BANDS.length);
+      const a = rnd() * Math.PI * 2;
+      const E = edge(a);
       return {
-        x: seeded ? X0 - 40 + rnd() * (WALL - X0 + 40) : X0 - 30 - rnd() * 90,
-        y: bandY(b) + (rnd() - 0.5) * (wide ? 32 : 24),
+        a: a,
+        d: seeded ? 60 + rnd() * (E - 60) : E + rnd() * 60,
         s: 1.3 + rnd() * 2.1,
-        a: 0.3 + rnd() * 0.42,
-        v: 9 + rnd() * 15
+        o: 0.3 + rnd() * 0.42,
+        v: 13 + rnd() * 22,
+        gold: 0
       };
     }
 
@@ -931,14 +939,12 @@
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       wide = w >= 760;
-      X0 = wide ? w * 0.20 : 18;
-      LX = w * 0.52; LY = h * 0.5; LH = h * 0.34;
-      WALL = LX - 52;
-      GX = w * 0.74; GY = h * 0.5;
+      CX = w * 0.5; CY = h * 0.5;
+      RX = w * 0.5 + 40; RY = h * 0.52;
       parts = [];
-      const n = wide ? 175 : 105;
+      const n = wide ? 210 : 120;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
-      travellers = []; orbit = [];
+      branches = [];
     }
 
     function diamond(x, y, s, fill, glow, blur) {
@@ -957,161 +963,141 @@
       return g;
     }
 
-    function step(dt) {
-      for (const p of parts) {
-        p.x += p.v * dt;
-        if (p.x > WALL) Object.assign(p, spawn(false));
-      }
-
-      emitIn -= dt;
-      charge = emitIn < 1 ? Math.max(0, 1 - emitIn) : Math.max(0, charge - dt * 2);
-      if (emitIn <= 0) {
-        travellers.push({
-          sx: LX + 20, sy: LY + (rnd() - 0.5) * LH * 0.5,
-          x: LX + 20, y: LY, t: 0, s0: 3
+    function addBranch(fromAng) {
+      const ang = fromAng + Math.PI + (rnd() - 0.5) * 1.1;
+      const kids = [];
+      const kn = 3 + Math.floor(rnd() * 4);
+      for (let i = 0; i < kn; i++) {
+        kids.push({
+          ka: ang + (rnd() - 0.5) * 1.2,
+          kd: 30 + rnd() * 38,
+          ks: 1.8 + rnd() * 1.7,
+          at: 0.55 + i * 0.11
         });
-        emitIn = 5.4 + rnd() * 2.2;
-        charge = 0;
       }
+      branches.push({ ang: ang, r: 108 + rnd() * 78, s: 5.5 + rnd() * 4, t: 0, kids: kids });
+      if (branches.length > 9) branches.shift();
+    }
 
-      for (const t of travellers) {
-        t.t += dt;
-        const k = Math.min(1, t.t / 1.9);
-        const e = k * k * (3 - 2 * k);
-        t.x = t.sx + (GX - t.sx) * e;
-        t.y = t.sy + (GY - t.sy) * e - Math.sin(e * Math.PI) * 18;
-        t.s = t.s0 + (7.5 - t.s0) * e;
-        if (k >= 1) {
-          t.done = true;
-          pulse = 1;
-          valueTxt = VALUES[vi++ % VALUES.length];
-          valueA = 1;
-          orbit.push({ ang: rnd() * Math.PI * 2, r: 44 + rnd() * 22, s: 4 + rnd() * 3 });
-          if (orbit.length > 7) orbit.shift();
+    function step(dt) {
+      pickIn -= dt;
+      let best = null;
+      for (const p of parts) {
+        p.d -= p.v * dt;
+        if (p.chosen) {
+          p.gold = Math.min(1, Math.max(0, (170 - p.d) / 130));
+          p.s += dt * 2.6;
+        }
+        if (p.d <= 30) {
+          if (p.chosen) {
+            pulse = 1;
+            addBranch(p.a);
+            valueTxt = VALUES[vi++ % VALUES.length];
+            valueA = 1;
+            valueAt = branches[branches.length - 1];
+            pickIn = 5.2 + rnd() * 2;
+          }
+          Object.assign(p, spawn(false));
+          continue;
+        }
+        if (pickIn <= 0 && !p.chosen && p.d > 200 && p.d < 320) {
+          if (!best || p.d < best.d) best = p;
         }
       }
-      travellers = travellers.filter(t => !t.done);
+      if (best) { best.chosen = true; pickIn = 99; }
+
+      for (const b of branches) b.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
-      valueA = Math.max(0, valueA - dt * 0.24);
+      valueA = Math.max(0, valueA - dt * 0.26);
     }
 
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
+      // everything coming toward us
+      for (const p of parts) {
+        const x = CX + Math.cos(p.a) * p.d, y = CY + Math.sin(p.a) * p.d;
+        const near = Math.min(1, Math.max(0, (p.d - 30) / 60));
+        if (p.gold > 0.02) {
+          diamond(x, y, p.s, goldFill(x, y, p.s), 'rgba(228,201,126,0.9)', 8 + p.gold * 16);
+        } else {
+          diamond(x, y, p.s, 'rgba(196,181,253,' + (p.o * near).toFixed(2) + ')');
+        }
+      }
+
       if (wide) {
         ctx.save();
-        ctx.textAlign = 'right';
-        ctx.fillStyle = 'rgba(243,239,232,0.42)';
+        ctx.fillStyle = 'rgba(243,239,232,0.4)';
         ctx.font = '400 12.5px Inter, sans-serif';
-        BANDS.forEach((b, i) => ctx.fillText(b, X0 - 26, bandY(i) + 4));
+        for (const src of SOURCES) {
+          const a = src.ang * Math.PI / 180;
+          const d = edge(a) * 0.9;
+          const x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d;
+          ctx.textAlign = Math.cos(a) < -0.2 ? 'left' : (Math.cos(a) > 0.2 ? 'right' : 'center');
+          ctx.fillText(src.label, x, y + 4);
+        }
         ctx.restore();
       }
 
-      // the field, thinning out as it meets the filter
-      for (const p of parts) {
-        let a = p.a;
-        const fade = 74;
-        if (p.x > WALL - fade) a *= Math.max(0, 1 - (p.x - (WALL - fade)) / fade);
-        if (a > 0.01) diamond(p.x, p.y, p.s, 'rgba(196,181,253,' + a.toFixed(2) + ')');
-      }
-
-      // Walt — a cut facet standing in the stream
-      const glow = 0.13 + charge * 0.3;
-      let g = ctx.createRadialGradient(LX, LY, 0, LX, LY, LH * 1.15);
-      g.addColorStop(0, 'rgba(167,139,250,' + glow.toFixed(2) + ')');
-      g.addColorStop(1, 'rgba(167,139,250,0)');
-      ctx.fillStyle = g;
-      ctx.fillRect(LX - LH * 1.2, LY - LH * 1.2, LH * 2.4, LH * 2.4);
-
-      const ww = 17;
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(LX, LY - LH);
-      ctx.lineTo(LX + ww, LY);
-      ctx.lineTo(LX, LY + LH);
-      ctx.lineTo(LX - ww, LY);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(196,181,253,0.05)';
-      ctx.fill();
-      ctx.strokeStyle = 'rgba(196,181,253,' + (0.42 + charge * 0.45).toFixed(2) + ')';
-      ctx.lineWidth = 1.3;
-      ctx.stroke();
-      ctx.restore();
-
-      ctx.save();
-      const core = ctx.createLinearGradient(0, LY - LH, 0, LY + LH);
-      core.addColorStop(0, 'rgba(196,181,253,0)');
-      core.addColorStop(0.5, 'rgba(224,214,255,' + (0.5 + charge * 0.5).toFixed(2) + ')');
-      core.addColorStop(1, 'rgba(196,181,253,0)');
-      ctx.strokeStyle = core;
-      ctx.lineWidth = 1.1;
-      ctx.beginPath();
-      ctx.moveTo(LX, LY - LH);
-      ctx.lineTo(LX, LY + LH);
-      ctx.stroke();
-      for (let i = 1; i < 8; i++) {
-        const ty = LY - LH + (i * LH * 2) / 8;
-        const tw = 4 + 3 * Math.sin((i / 8) * Math.PI);
-        ctx.strokeStyle = 'rgba(196,181,253,' + (0.2 + charge * 0.3).toFixed(2) + ')';
+      // what we've made of them
+      for (const b of branches) {
+        const g = Math.min(1, b.t / 0.55);
+        const e = g * g * (3 - 2 * g);
+        const bx = CX + Math.cos(b.ang) * b.r * e, by = CY + Math.sin(b.ang) * b.r * e;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(228,201,126,0.32)';
+        ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(LX - tw, ty);
-        ctx.lineTo(LX + tw, ty);
+        ctx.moveTo(CX + Math.cos(b.ang) * 30, CY + Math.sin(b.ang) * 30);
+        ctx.lineTo(bx, by);
         ctx.stroke();
-      }
-      ctx.fillStyle = 'rgba(196,181,253,0.55)';
-      ctx.textAlign = 'center';
-      ctx.font = '700 9.5px Inter, sans-serif';
-      if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-      ctx.fillText('WALT', LX, LY + LH + 26);
-      ctx.restore();
+        ctx.restore();
+        diamond(bx, by, b.s * (0.4 + 0.6 * e), goldFill(bx, by, b.s), 'rgba(228,201,126,0.85)', 14);
 
-      // what got through
-      for (const t of travellers) {
-        diamond(t.x, t.y, t.s, goldFill(t.x, t.y, t.s), 'rgba(228,201,126,0.9)', 20);
+        for (const k of b.kids) {
+          const ka = Math.min(1, Math.max(0, (b.t - k.at) / 0.45));
+          if (ka <= 0) continue;
+          const kx = bx + Math.cos(k.ka) * k.kd * ka, ky = by + Math.sin(k.ka) * k.kd * ka;
+          ctx.save();
+          ctx.strokeStyle = 'rgba(228,201,126,' + (0.2 * ka).toFixed(2) + ')';
+          ctx.lineWidth = 0.7;
+          ctx.beginPath();
+          ctx.moveTo(bx + Math.cos(k.ka) * (b.s + 4), by + Math.sin(k.ka) * (b.s + 4));
+          ctx.lineTo(kx, ky);
+          ctx.stroke();
+          ctx.globalAlpha = ka;
+          ctx.restore();
+          diamond(kx, ky, k.ks, 'rgba(228,201,126,' + (0.75 * ka).toFixed(2) + ')');
+        }
       }
 
       // us
-      g = ctx.createRadialGradient(GX, GY, 0, GX, GY, 108 * (1 + pulse * 0.3));
-      g.addColorStop(0, 'rgba(139,92,246,' + (0.15 + pulse * 0.2).toFixed(2) + ')');
+      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, 120 * (1 + pulse * 0.3));
+      g.addColorStop(0, 'rgba(139,92,246,' + (0.15 + pulse * 0.22).toFixed(2) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
-      ctx.fillRect(GX - 130, GY - 130, 260, 260);
-
-      ctx.save();
-      ctx.strokeStyle = 'rgba(228,201,126,0.3)';
-      ctx.lineWidth = 1;
-      for (const o of orbit) {
-        ctx.beginPath();
-        ctx.moveTo(GX + Math.cos(o.ang) * 28, GY + Math.sin(o.ang) * 28);
-        ctx.lineTo(GX + Math.cos(o.ang) * o.r, GY + Math.sin(o.ang) * o.r);
-        ctx.stroke();
-      }
-      ctx.restore();
-      for (const o of orbit) {
-        const ox = GX + Math.cos(o.ang) * o.r, oy = GY + Math.sin(o.ang) * o.r;
-        diamond(ox, oy, o.s, goldFill(ox, oy, o.s), 'rgba(228,201,126,0.8)', 12);
-      }
+      ctx.fillRect(CX - 150, CY - 150, 300, 300);
 
       ctx.save();
       ctx.beginPath();
-      ctx.arc(GX, GY, 27, 0, Math.PI * 2);
+      ctx.arc(CX, CY, 30, 0, Math.PI * 2);
       ctx.fillStyle = '#120E1B';
       ctx.fill();
       ctx.strokeStyle = 'rgba(196,181,253,' + (0.4 + pulse * 0.5).toFixed(2) + ')';
       ctx.lineWidth = 1.2;
       ctx.stroke();
       ctx.restore();
-      const gs = 25;
+      const gs = 28;
       ctx.save();
-      ctx.translate(GX, GY);
+      ctx.translate(CX, CY);
       ctx.rotate(Math.PI / 4);
       ctx.shadowColor = '#8b5cf6';
-      ctx.shadowBlur = 20 + pulse * 26;
+      ctx.shadowBlur = 20 + pulse * 30;
       const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
       gg.addColorStop(0, '#C4B5FD');
       gg.addColorStop(1, '#6D28D9');
       ctx.fillStyle = gg;
-      const cr = 5;
+      const cr = 6;
       ctx.beginPath();
       ctx.moveTo(-gs / 2 + cr, -gs / 2);
       ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
@@ -1122,20 +1108,18 @@
       ctx.fill();
       ctx.restore();
 
-      if (valueA > 0.01 && valueTxt) {
+      if (valueA > 0.01 && valueTxt && valueAt) {
+        const e = Math.min(1, valueAt.t / 0.55);
+        const bx = CX + Math.cos(valueAt.ang) * valueAt.r * e;
+        const by = CY + Math.sin(valueAt.ang) * valueAt.r * e;
         ctx.save();
+        ctx.globalAlpha = Math.min(1, valueA * 1.7);
         ctx.textAlign = 'center';
-        ctx.globalAlpha = Math.min(1, valueA * 1.6);
         ctx.shadowColor = 'rgba(228,201,126,0.5)';
         ctx.shadowBlur = 14;
         ctx.fillStyle = '#E4C97E';
-        ctx.font = '500 32px "Cormorant Garamond", serif';
-        ctx.fillText(valueTxt, GX, GY - 84);
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = 'rgba(243,239,232,0.55)';
-        ctx.font = '700 9.5px Inter, sans-serif';
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
-        ctx.fillText('FRANCHISE POTENTIAL', GX, GY - 64);
+        ctx.font = '500 27px "Cormorant Garamond", serif';
+        ctx.fillText(valueTxt, bx, by - 26);
         ctx.restore();
       }
     }
@@ -1152,7 +1136,8 @@
     window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
     layout();
     if (reduce) {
-      for (let i = 0; i < 4; i++) { emitIn = 0; step(0.02); for (let k = 0; k < 120; k++) step(0.016); }
+      for (let i = 0; i < 6; i++) addBranch(rnd() * Math.PI * 2);
+      for (const b of branches) b.t = 3;
       draw();
     } else requestAnimationFrame(frame);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
