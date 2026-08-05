@@ -303,73 +303,6 @@
       line-height: 1.75; max-width: 68ch; margin-bottom: 16px;
     }
     .thesis-p b { color: var(--ink); font-weight: 600; }
-    #what { padding-top: 54px; padding-bottom: 58px; }
-    .tmap {
-      position: relative; overflow: hidden;
-      background:
-        radial-gradient(110% 80% at 0% 0%, rgba(124,58,237,0.30) 0%, rgba(124,58,237,0) 58%),
-        radial-gradient(90% 70% at 100% 100%, rgba(176,138,62,0.14) 0%, rgba(176,138,62,0) 60%),
-        linear-gradient(160deg, #2A2140 0%, #17111F 55%, #100D17 100%);
-      border: 1px solid rgba(196,181,253,0.18);
-      border-radius: 18px; padding: 26px 34px 24px;
-      box-shadow: 0 34px 70px -46px rgba(20,16,27,0.9);
-    }
-    .tmap::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0) 26%);
-    }
-    .tmap-top {
-      position: relative; z-index: 1;
-      display: flex; align-items: center; gap: 12px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(255,255,255,0.09);
-    }
-    .tgem {
-      width: 22px; height: 22px; border-radius: 6px; flex: none;
-      background: linear-gradient(135deg,#C4B5FD,#7C3AED);
-      transform: rotate(45deg);
-      box-shadow: 0 0 20px rgba(139,92,246,0.5);
-    }
-    .tgem-l {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em;
-      text-transform: uppercase; color: #C4B5FD;
-    }
-    .tmap-list { position: relative; z-index: 1; display: flex; flex-direction: column; }
-    .tnode {
-      position: relative;
-      display: flex; align-items: flex-start; gap: 20px;
-      padding: 24px 0 22px;
-    }
-    .tnode:last-child { padding-bottom: 6px; }
-    .tnode:not(:last-child)::before {
-      content: ''; position: absolute; left: 20px; top: 72px; bottom: -22px;
-      width: 1px;
-      background: linear-gradient(180deg, rgba(196,181,253,0.42), rgba(196,181,253,0.05));
-    }
-    .tico {
-      width: 40px; height: 40px; border-radius: 12px; flex: none;
-      border: 1px solid rgba(196,181,253,0.34);
-      background: linear-gradient(150deg, rgba(196,181,253,0.24), rgba(124,58,237,0.10));
-      box-shadow: 0 0 26px -6px rgba(139,92,246,0.6),
-                  inset 0 1px 0 rgba(255,255,255,0.12);
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 2px;
-    }
-    .tico svg {
-      width: 19px; height: 19px;
-      stroke: #DED5FF; stroke-width: 1.6; fill: none;
-      stroke-linecap: round; stroke-linejoin: round;
-    }
-    .tnode-h {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px; font-weight: 500; letter-spacing: -0.01em;
-      color: #fff; margin-bottom: 7px;
-    }
-    .tnode-d {
-      font-size: 14.5px; color: rgba(243,239,232,0.7);
-      line-height: 1.65; max-width: 74ch;
-    }
 
     /* ── Film graphics ── */
     .film-cards {
@@ -617,7 +550,6 @@
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
       .blinds { grid-template-columns: 1fr; }
-      .tmap { padding: 24px 22px 20px; }
       .slate { padding: 0 20px; }
       .slate-inner { padding: 30px 24px; gap: 28px; border-radius: 14px; }
       .slate-nums { gap: 32px; }
@@ -653,12 +585,11 @@
 <!-- Hero -->
 <section class="hero">
   <h1 class="hero-headline reveal">
-    We're developing the next great <em>feature films.</em>
+    We're developing Hollywood's next great <em>franchises.</em>
   </h1>
-  <p class="hero-sub reveal">With <b>Selznick</b>, the world's first AI creative executive, we find the ideas with the biggest box office potential and develop them into films for global audiences — and everything a film can become from there.</p>
+  <p class="hero-sub reveal">With <b>Selznick</b>, the world's first AI creative executive, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
   <div class="hero-stats reveal">
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-    <div class="hstat"><b>3</b><span>Feature films &amp; TV series in development</span></div>
   </div>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
@@ -668,46 +599,12 @@
 
 <div class="rule"></div>
 
-<!-- What we do -->
-<section id="what">
-  <div class="tmap reveal">
-    <div class="tmap-top">
-      <span class="tgem"></span>
-      <span class="tgem-l">Selznick</span>
-    </div>
-    <div class="tmap-list">
-      <div class="tnode">
-        <span class="tico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.6 15.6 21 21"/><path d="M11 7.5v7M7.5 11h7"/></svg></span>
-        <div class="tnode-c">
-          <p class="tnode-h">IP scouting</p>
-          <p class="tnode-d">We take in IP across every format — screenplays, books, comics, online video — to find the ideas with the biggest box office potential.</p>
-        </div>
-      </div>
-      <div class="tnode">
-        <span class="tico"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="M3 12.5 12 17l9-4.5"/><path d="M3 17 12 21.5 21 17"/></svg></span>
-        <div class="tnode-c">
-          <p class="tnode-h">Concept testing</p>
-          <p class="tnode-d">We develop and adapt concepts and put them out on social and other low-cost formats, where they reach real audiences and show us what connects.</p>
-        </div>
-      </div>
-      <div class="tnode">
-        <span class="tico"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-5M11 20v-9M16 20v-6M21 20V6"/></svg></span>
-        <div class="tnode-c">
-          <p class="tnode-h">Franchise scaling</p>
-          <p class="tnode-d">We're thinking bigger with the best of them — scaling them into feature films with real box office potential, and everything a film can lead to from there.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- Block · Scouting & development -->
 <section id="scout">
   <div class="pillar-card reveal">
     <p class="pillar-n">Scout</p>
     <p class="pillar-statement">We're scouting for IP and creators with <em>massive potential.</em></p>
-    <p class="pillar-next">Entertainment is moved by a handful of massive properties. We use <b>Selznick</b> to proactively seek out creators and IP across a wide variety of formats — to identify opportunities with massive multi-channel potential.</p>
+    <p class="pillar-next">The entire business runs on a small number of enormous properties, and Hollywood is not set up to find them. We use <b>Selznick</b> to look across every format — screenplays, books, comics, online video — for the rare opportunities that could become major feature film franchises.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
