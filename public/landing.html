@@ -392,6 +392,15 @@
     .jrn .rv { font-size: 13px; font-weight: 600; fill: #fff; }
     .jrn .rv.gold { fill: #E4C97E; }
     .jrn .rv.dim { fill: var(--on-screen-muted); font-weight: 500; }
+    .jrn .rb.hi { fill: url(#jline); }
+    .jrn .dlab { font-size: 12px; fill: var(--on-screen); }
+    .jrn .dval { font-size: 11.5px; font-weight: 600; fill: rgba(243,239,232,0.8); }
+    .jrn .dsep { stroke: rgba(255,255,255,0.12); stroke-width: 1; }
+    .jrn .dsum {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; fill: #E4C97E;
+    }
+    .jrn .dsumv { font-size: 12.5px; font-weight: 600; fill: #E4C97E; }
     .jrn .glab {
       font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; fill: #C4B5FD;
@@ -571,12 +580,12 @@
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="jrn" viewBox="0 0 1000 300" aria-hidden="true">
+        <svg class="jrn" viewBox="0 0 1000 372" aria-hidden="true">
           <defs>
             <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
             </linearGradient>
-            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="672" y1="0" x2="902" y2="0">
+            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="806" y1="0" x2="916" y2="0">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#E4C97E"/>
             </linearGradient>
             <radialGradient id="gemhalo">
@@ -589,60 +598,91 @@
 
           <!-- everything flows in -->
           <g class="src">
-            <circle cx="40" cy="40" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 40)"><rect x="-6.5" y="-8.5" width="13" height="17" rx="2"/><path d="M-3 -4h6M-3 0h6M-3 4h3.5"/></g>
-            <text x="68" y="45">Original screenplays</text>
+            <circle cx="40" cy="72" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 72)"><rect x="-6.5" y="-8.5" width="13" height="17" rx="2"/><path d="M-3 -4h6M-3 0h6M-3 4h3.5"/></g>
+            <text x="68" y="77">Original screenplays</text>
 
-            <circle cx="40" cy="94" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 94)"><path d="M-7.5 -7.5v15M7.5 -7.5v15"/><path d="M-7.5 -7.5c4.5 0 7.5 1.4 7.5 2.8v12.2c0-1.4-3-2.8-7.5-2.8z"/><path d="M7.5 -7.5c-4.5 0-7.5 1.4-7.5 2.8v12.2c0-1.4 3-2.8 7.5-2.8z"/></g>
-            <text x="68" y="99">Books &amp; novels</text>
+            <circle cx="40" cy="126" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 126)"><path d="M-7.5 -7.5v15M7.5 -7.5v15"/><path d="M-7.5 -7.5c4.5 0 7.5 1.4 7.5 2.8v12.2c0-1.4-3-2.8-7.5-2.8z"/><path d="M7.5 -7.5c-4.5 0-7.5 1.4-7.5 2.8v12.2c0-1.4 3-2.8 7.5-2.8z"/></g>
+            <text x="68" y="131">Books &amp; novels</text>
 
-            <circle cx="40" cy="148" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 148)"><rect x="-7.5" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="-7.5" y="1" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="1" width="6.5" height="6.5" rx="1.2"/></g>
-            <text x="68" y="153">Comics &amp; manga</text>
+            <circle cx="40" cy="180" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 180)"><rect x="-7.5" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="-7.5" y="1" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="1" width="6.5" height="6.5" rx="1.2"/></g>
+            <text x="68" y="185">Comics &amp; manga</text>
 
-            <circle cx="40" cy="202" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 202)"><rect x="-8.5" y="-6.5" width="17" height="13" rx="3"/><path d="M-2 -3l4.5 3-4.5 3z" fill="#C4B5FD" stroke="none"/></g>
-            <text x="68" y="207">Online videos &amp; memes</text>
+            <circle cx="40" cy="234" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 234)"><rect x="-8.5" y="-6.5" width="17" height="13" rx="3"/><path d="M-2 -3l4.5 3-4.5 3z" fill="#C4B5FD" stroke="none"/></g>
+            <text x="68" y="239">Online videos &amp; creators</text>
 
-            <circle cx="40" cy="256" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 256)"><circle cx="0" cy="-3.5" r="3.8"/><path d="M-7.5 8.5c0-4.2 3.4-6.6 7.5-6.6s7.5 2.4 7.5 6.6"/></g>
-            <text x="68" y="261">Historical figures</text>
+            <circle cx="40" cy="288" r="18" class="sbub"/>
+            <g class="jico" transform="translate(40 288)"><circle cx="0" cy="-3.5" r="3.8"/><path d="M-7.5 8.5c0-4.2 3.4-6.6 7.5-6.6s7.5 2.4 7.5 6.6"/></g>
+            <text x="68" y="293">Historical figures</text>
           </g>
 
           <g class="feeds">
-            <path d="M244 40 C 350 40, 400 110, 468 140" fill="none"/>
-            <path d="M212 94 C 340 94, 400 124, 468 145" fill="none"/>
-            <path d="M222 148 C 340 148, 400 148, 468 148" fill="none"/>
-            <path d="M270 202 C 370 202, 410 176, 468 152" fill="none"/>
-            <path d="M226 256 C 360 256, 410 196, 468 156" fill="none"/>
+            <path d="M244 72 C 320 72, 350 146, 404 174" fill="none"/>
+            <path d="M212 126 C 310 126, 350 160, 404 178" fill="none"/>
+            <path d="M222 180 C 310 180, 350 180, 404 180" fill="none"/>
+            <path d="M282 234 C 340 234, 370 208, 404 186" fill="none"/>
+            <path d="M226 288 C 330 288, 370 228, 404 190" fill="none"/>
           </g>
 
           <!-- Selznick -->
-          <circle cx="540" cy="148" r="88" fill="url(#gemhalo)"/>
-          <circle class="ring r2" cx="540" cy="148" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
-          <circle class="ring r1" cx="540" cy="148" r="42" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
-          <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(540 148) rotate(45)" fill="url(#gemfill)"/>
-          <text class="glab" x="540" y="238" text-anchor="middle">Selznick</text>
+          <circle cx="476" cy="180" r="88" fill="url(#gemhalo)"/>
+          <circle cx="476" cy="180" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
+          <circle cx="476" cy="180" r="42" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
+          <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(476 180) rotate(45)" fill="url(#gemfill)"/>
+          <text class="glab" x="476" y="270" text-anchor="middle">Selznick</text>
 
-          <path d="M610 148 H 646" class="jconn" marker-end="url(#arwp)"/>
+          <path d="M546 180 H 556" class="jconn" marker-end="url(#arwp)"/>
 
-          <!-- what it's worth -->
-          <text class="rhead" x="672" y="112">Total box office potential</text>
-          <g class="rbars">
-            <rect x="672" y="130" width="230" height="9" rx="4.5" class="rb"/>
-            <rect x="672" y="130" width="230" height="9" rx="4.5" class="rb on"/>
-            <text class="rv gold" x="918" y="139">$2.2B</text>
-
-            <rect x="672" y="158" width="230" height="9" rx="4.5" class="rb"/>
-            <rect x="672" y="158" width="146" height="9" rx="4.5" class="rb mid"/>
-            <text class="rv" x="918" y="167">$1.4B</text>
-
-            <rect x="672" y="186" width="230" height="9" rx="4.5" class="rb"/>
-            <rect x="672" y="186" width="90" height="9" rx="4.5" class="rb mid"/>
-            <text class="rv dim" x="918" y="195">$860M</text>
+          <!-- the read -->
+          <text class="rhead" x="580" y="34">Every idea, read across ten dimensions</text>
+          <g class="dims">
+            <text class="dlab" x="580" y="68">Audience Appeal &amp; Marketability</text>
+            <rect x="806" y="60" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="60" width="103.4" height="8" rx="4" class="rb hi"/>
+            <text class="dval" x="930" y="68">94</text>
+            <text class="dlab" x="580" y="94">Character Appeal &amp; Longevity</text>
+            <rect x="806" y="86" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="86" width="100.1" height="8" rx="4" class="rb hi"/>
+            <text class="dval" x="930" y="94">91</text>
+            <text class="dlab" x="580" y="120">Conceptual Hook &amp; Clarity</text>
+            <rect x="806" y="112" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="112" width="96.8" height="8" rx="4" class="rb mid"/>
+            <text class="dval" x="930" y="120">88</text>
+            <text class="dlab" x="580" y="146">Creative Originality &amp; Boldness</text>
+            <rect x="806" y="138" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="138" width="105.6" height="8" rx="4" class="rb hi"/>
+            <text class="dval" x="930" y="146">96</text>
+            <text class="dlab" x="580" y="172">Narrative Momentum &amp; Engagement</text>
+            <rect x="806" y="164" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="164" width="93.5" height="8" rx="4" class="rb mid"/>
+            <text class="dval" x="930" y="172">85</text>
+            <text class="dlab" x="580" y="198">Resonant Originality</text>
+            <rect x="806" y="190" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="190" width="99.0" height="8" rx="4" class="rb hi"/>
+            <text class="dval" x="930" y="198">90</text>
+            <text class="dlab" x="580" y="224">World Density &amp; Texture</text>
+            <rect x="806" y="216" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="216" width="86.9" height="8" rx="4" class="rb mid"/>
+            <text class="dval" x="930" y="224">79</text>
+            <text class="dlab" x="580" y="250">Tonal Specificity</text>
+            <rect x="806" y="242" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="242" width="101.2" height="8" rx="4" class="rb hi"/>
+            <text class="dval" x="930" y="250">92</text>
+            <text class="dlab" x="580" y="276">Latent Depth &amp; Slow-Burn</text>
+            <rect x="806" y="268" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="268" width="81.4" height="8" rx="4" class="rb mid"/>
+            <text class="dval" x="930" y="276">74</text>
+            <text class="dlab" x="580" y="302">Relationship Density &amp; Ensemble</text>
+            <rect x="806" y="294" width="110" height="8" rx="4" class="rb"/>
+            <rect x="806" y="294" width="91.3" height="8" rx="4" class="rb mid"/>
+            <text class="dval" x="930" y="302">83</text>
           </g>
-          <text class="gval" x="672" y="228">Ranked against everything else we've read.</text>
+          <path d="M580 332 H 946" class="dsep"/>
+          <text class="dsum" x="580" y="358">Box office potential</text>
+          <text class="dsumv" x="946" y="358" text-anchor="end">Top 2% of everything we've read</text>
 
         </svg>
       </div>
@@ -658,9 +698,9 @@
 <section id="work" style="padding-top:0;">
   <div class="pillar-card reveal">
     <p class="pillar-n">Develop</p>
-    <p class="pillar-statement">We develop the best ideas into feature films <em>and TV series.</em></p>
+    <p class="pillar-statement">We have built the most comprehensive feature film <em>development model.</em></p>
+    <p class="pillar-next"><b>Selznick</b> gives us detailed financial projections for a project — box office, streaming revenue, budget — and models what every casting and creative decision is worth, long before anyone spends real money.</p>
     <p class="pillar-next">We're partnering with the best of the best — writers, producers, financiers, and distributors who believe in these projects — to produce feature films and TV series at the highest level and put them in front of global audiences.</p>
-    <p class="pillar-next">We use <b>Selznick</b> to develop the concepts and to make the decisions that get a project made: what it earns, what it costs, who's in it.</p>
 
     <div class="film-cards three-up">
       <div class="fcard reveal">
@@ -719,9 +759,9 @@
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="pillar-n">Where we are</p>
-      <p class="who-statement">Our content has generated some of the internet's most <em>viral videos.</em></p>
-      <p class="who-next">And we're just getting started. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
+      <p class="pillar-n">Modern media</p>
+      <p class="who-statement">We're masters of modern media <em>and virality.</em></p>
+      <p class="who-next">We've already been quietly testing many of the concepts we want to develop into feature films. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
       <div class="bignums">
         <div class="bignum"><b>10+</b><span>Channels</span></div>
         <div class="bignum"><b>1B+</b><span>Views</span></div>
