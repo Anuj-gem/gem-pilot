@@ -217,27 +217,6 @@
     }
     .pillar-next b { font-weight: 600; color: var(--ink); }
     .pillar-next + .pillar-next { margin-top: 16px; }
-    .eng-k {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
-      margin-top: 56px; padding-top: 34px;
-      border-top: 1px solid var(--hair);
-      margin-bottom: 14px;
-    }
-    .eng-h {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 2.9vw, 38px);
-      font-weight: 500; letter-spacing: -0.015em; line-height: 1.14;
-      color: var(--ink); margin: 0 0 12px;
-      max-width: 20ch; text-wrap: pretty;
-    }
-    .eng-d {
-      font-size: 16px; color: var(--ink-soft);
-      line-height: 1.7; max-width: 66ch; margin-bottom: 4px;
-    }
-    #engine .screen-panel { margin-top: 26px; }
-    #engine .film-cards { margin-top: 26px; }
-    #engine .fcard.journey { margin-top: 26px; }
 
 
 
@@ -263,23 +242,6 @@
     }
     .pull figcaption b { color: var(--ink-soft); font-weight: 600; }
 
-    .blinds {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 14px; margin-top: 30px;
-    }
-    .blind {
-      border: 1px solid var(--hair-strong);
-      border-left: 3px solid rgba(176,138,62,0.55);
-      border-radius: 0 12px 12px 0;
-      padding: 22px 24px;
-      background: var(--card);
-    }
-    .blind-k {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px; font-weight: 500; letter-spacing: -0.01em;
-      color: var(--ink); margin-bottom: 8px;
-    }
-    .blind-d { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
 
     .thesis-h {
       font-family: 'Cormorant Garamond', serif;
@@ -397,40 +359,13 @@
     /* Journey */
     .fcard.journey { margin-top: 14px; padding: 26px 26px 20px; }
     .scan-wrap { overflow-x: auto; }
-    .jrn { display: block; width: 100%; min-width: 860px; height: auto; }
-    .jrn .sbub { fill: rgba(255,255,255,0.05); stroke: rgba(196,181,253,0.3); stroke-width: 1.1; }
-    .jrn .src text { font-size: 13.5px; fill: var(--on-screen); }
-    .jrn .feeds path { stroke: rgba(243,239,232,0.18); stroke-width: 1; }
-    .jrn .jico { fill: none; stroke: #C4B5FD; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    .jrn .jconn { fill: none; stroke: rgba(196,181,253,0.45); stroke-width: 1.4; }
-    .jrn .rhead {
-      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; fill: #C4B5FD;
+    .gfield { display: block; width: 100%; min-width: 760px; height: auto; }
+    .gfield .gdots circle { fill: rgba(243,239,232,0.22); }
+    .gfield .gcap {
+      font-family: 'Inter', sans-serif; font-size: 11.5px;
+      fill: var(--on-screen-muted); letter-spacing: 0.04em;
     }
-    .jrn .rb { fill: rgba(255,255,255,0.09); }
-    .jrn .rb.on { fill: url(#jline); }
-    .jrn .rb.mid { fill: rgba(196,181,253,0.45); }
-    .jrn .rv { font-size: 13px; font-weight: 600; fill: #fff; }
-    .jrn .rv.gold { fill: #E4C97E; }
-    .jrn .rv.dim { fill: var(--on-screen-muted); font-weight: 500; }
-    .jrn .rb.hi { fill: url(#jline); }
-    .jrn .dlab { font-size: 12px; fill: var(--on-screen); }
-    .jrn .dval { font-size: 11.5px; font-weight: 600; fill: rgba(243,239,232,0.8); }
-    .jrn .dsep { stroke: rgba(255,255,255,0.12); stroke-width: 1; }
-    .jrn .dsum {
-      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; fill: #E4C97E;
-    }
-    .jrn .dsumv { font-size: 12.5px; font-weight: 600; fill: #E4C97E; }
-    .jrn .glab {
-      font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; fill: #C4B5FD;
-    }
-    .jrn .gval { font-size: 11.5px; fill: var(--on-screen-muted); }
-        .jrn text {
-      font-family: 'Inter', sans-serif;
-      fill: var(--on-screen);
-    }
+    .gfield .gcap.gold { fill: #E4C97E; font-weight: 600; }
     
 
     .paths { display: flex; flex-direction: column; gap: 8px; }
@@ -538,7 +473,6 @@
       .who-next { max-width: 100%; }
       .pillar-card { padding: 40px 24px; border-radius: 14px; }
       .pillar-next { max-width: 100%; }
-      .blinds { grid-template-columns: 1fr; }
       .film-cards, .film-cards.three { grid-template-columns: 1fr; }
       .film-cards .fcard,
       .film-cards .fcard:nth-child(4),
@@ -561,8 +495,8 @@
     <span class="logo-text">GEM Studios</span>
   </div>
   <div class="nav-links">
-    <a href="#thesis">The thesis</a>
-    <a href="#scout">What we do</a>
+    <a href="#story">Our story</a>
+    <a href="#find">What we do</a>
     <a href="/blog">Blog</a>
     <a href="mailto:info@gem.studio" class="nav-cta">Get in touch</a>
   </div>
@@ -573,7 +507,7 @@
   <h1 class="hero-headline reveal">
     We're developing Hollywood's next great <em>franchises.</em>
   </h1>
-  <p class="hero-sub reveal">With <b>Selznick</b>, the world's first AI creative executive, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
+  <p class="hero-sub reveal">Powered by the world's most advanced entertainment AI, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
   <div class="hero-stats reveal">
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
     <div class="hstat"><b>500,000,000+</b><span>People reached</span></div>
@@ -581,133 +515,462 @@
   </div>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
-    <a href="#thesis" class="btn-text">Learn more ↓</a>
+    <a href="#story" class="btn-text">Learn more ↓</a>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- Selznick · why we can do this -->
-<section id="engine">
+<!-- Our story -->
+<section id="story">
+  <h2 class="sec-h reveal">Hollywood has an <em>originality problem.</em></h2>
+  <p class="sec-sub reveal">The industry has gotten very good at extending old franchises and very bad at starting new ones — and every great franchise began as an original that worked.</p>
+
+  <figure class="pull reveal">
+    <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
+    <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
+  </figure>
+
+  <p class="thesis-p reveal" style="margin-top:34px;">We are not an AI content company. Our films are written and made by people. We built AI to do the one thing Hollywood can't: find and develop original ideas at the depth and scale this moment demands.</p>
+
+  <figure class="pull reveal">
+    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
+    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
+  </figure>
+</section>
+
+<div class="rule"></div>
+
+<!-- Find -->
+<section id="find">
   <div class="pillar-card reveal">
-    <p class="pillar-n">Selznick</p>
-    <p class="pillar-statement">Everything we do runs on <em>Selznick.</em></p>
-    <p class="pillar-next"><b>Selznick</b> is a box office model built on every film we can observe, and it is how we approach all of this. Three engines run on it.</p>
-
-    <figure class="pull reveal">
-      <blockquote>&ldquo;If all we make is known, branded IP, then we're gonna run out of gas.&rdquo;</blockquote>
-      <figcaption><b>Steven Spielberg</b> &middot; CinemaCon, 2026</figcaption>
-    </figure>
-
-    <p class="eng-k reveal">The scouting engine</p>
-    <p class="eng-h reveal">Hollywood's first studio that can actually consider everything.</p>
-    <p class="eng-d reveal">Every other studio is closed. Ideas reach them through a handful of agents, in one format, at the speed a person can read. We are open — creators send us their work, and we scour the web for the rest. Selznick reads all of it, so we find things nobody else is even looking at.</p>
+    <p class="pillar-n">Find</p>
+    <p class="pillar-statement">We find IP that <em>no one else can find.</em></p>
+    <p class="pillar-next">Most studios can only consider what a handful of agents send them. We're open to everyone — creators send us their work, and we proactively scout the rest. Our models read all of it, at a depth and scale no studio can match, and surface the ideas with real box office potential.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="jrn" viewBox="0 0 1000 300" aria-hidden="true">
+        <svg class="gfield" viewBox="0 0 1000 268" aria-hidden="true">
           <defs>
-            <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
+            <linearGradient id="gemgold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
             </linearGradient>
-            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="806" y1="0" x2="956" y2="0">
-              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#E4C97E"/>
-            </linearGradient>
-            <radialGradient id="gemhalo">
-              <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
+            <radialGradient id="gemglow">
+              <stop offset="0" stop-color="rgba(228,201,126,0.45)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
             </radialGradient>
-            <marker id="arwp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M0 1 L 9 5 L 0 9 z" fill="#C4B5FD"/>
-            </marker>
           </defs>
-
-          <g class="src">
-            <circle cx="40" cy="44" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 44)"><rect x="-6.5" y="-8.5" width="13" height="17" rx="2"/><path d="M-3 -4h6M-3 0h6M-3 4h3.5"/></g>
-            <text x="68" y="49">Original screenplays</text>
-
-            <circle cx="40" cy="98" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 98)"><path d="M-7.5 -7.5v15M7.5 -7.5v15"/><path d="M-7.5 -7.5c4.5 0 7.5 1.4 7.5 2.8v12.2c0-1.4-3-2.8-7.5-2.8z"/><path d="M7.5 -7.5c-4.5 0-7.5 1.4-7.5 2.8v12.2c0-1.4 3-2.8 7.5-2.8z"/></g>
-            <text x="68" y="103">Books &amp; novels</text>
-
-            <circle cx="40" cy="152" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 152)"><rect x="-7.5" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="-7.5" y="1" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="1" width="6.5" height="6.5" rx="1.2"/></g>
-            <text x="68" y="157">Comics &amp; manga</text>
-
-            <circle cx="40" cy="206" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 206)"><rect x="-8.5" y="-6.5" width="17" height="13" rx="3"/><path d="M-2 -3l4.5 3-4.5 3z" fill="#C4B5FD" stroke="none"/></g>
-            <text x="68" y="211">Online videos &amp; creators</text>
-
-            <circle cx="40" cy="260" r="18" class="sbub"/>
-            <g class="jico" transform="translate(40 260)"><circle cx="0" cy="-3.5" r="3.8"/><path d="M-7.5 8.5c0-4.2 3.4-6.6 7.5-6.6s7.5 2.4 7.5 6.6"/></g>
-            <text x="68" y="265">Historical figures</text>
+          <g class="gdots">
+            <circle cx="24.6" cy="25.5" r="1.7"/>
+            <circle cx="56.7" cy="31.8" r="1.7"/>
+            <circle cx="77.1" cy="28.2" r="1.7"/>
+            <circle cx="97.5" cy="34.5" r="1.7"/>
+            <circle cx="129.6" cy="30.9" r="1.7"/>
+            <circle cx="150.0" cy="27.3" r="1.7"/>
+            <circle cx="170.4" cy="33.6" r="1.7"/>
+            <circle cx="202.5" cy="30.0" r="1.7"/>
+            <circle cx="222.9" cy="26.4" r="1.7"/>
+            <circle cx="243.3" cy="32.7" r="1.7"/>
+            <circle cx="275.4" cy="29.1" r="1.7"/>
+            <circle cx="295.8" cy="25.5" r="1.7"/>
+            <circle cx="316.2" cy="31.8" r="1.7"/>
+            <circle cx="336.6" cy="28.2" r="1.7"/>
+            <circle cx="368.7" cy="34.5" r="1.7"/>
+            <circle cx="389.1" cy="30.9" r="1.7"/>
+            <circle cx="409.5" cy="27.3" r="1.7"/>
+            <circle cx="441.6" cy="33.6" r="1.7"/>
+            <circle cx="462.0" cy="30.0" r="1.7"/>
+            <circle cx="482.4" cy="26.4" r="1.7"/>
+            <circle cx="514.5" cy="32.7" r="1.7"/>
+            <circle cx="534.9" cy="29.1" r="1.7"/>
+            <circle cx="555.3" cy="25.5" r="1.7"/>
+            <circle cx="587.4" cy="31.8" r="1.7"/>
+            <circle cx="607.8" cy="28.2" r="1.7"/>
+            <circle cx="628.2" cy="34.5" r="1.7"/>
+            <circle cx="648.6" cy="30.9" r="1.7"/>
+            <circle cx="680.7" cy="27.3" r="1.7"/>
+            <circle cx="701.1" cy="33.6" r="1.7"/>
+            <circle cx="721.5" cy="30.0" r="1.7"/>
+            <circle cx="753.6" cy="26.4" r="1.7"/>
+            <circle cx="774.0" cy="32.7" r="1.7"/>
+            <circle cx="794.4" cy="29.1" r="1.7"/>
+            <circle cx="826.5" cy="25.5" r="1.7"/>
+            <circle cx="846.9" cy="31.8" r="1.7"/>
+            <circle cx="867.3" cy="28.2" r="1.7"/>
+            <circle cx="899.4" cy="34.5" r="1.7"/>
+            <circle cx="919.8" cy="30.9" r="1.7"/>
+            <circle cx="940.2" cy="27.3" r="1.7"/>
+            <circle cx="960.6" cy="33.6" r="1.7"/>
+            <circle cx="34.5" cy="57.6" r="1.7"/>
+            <circle cx="54.9" cy="54.0" r="1.7"/>
+            <circle cx="75.3" cy="50.4" r="1.7"/>
+            <circle cx="107.4" cy="56.7" r="1.7"/>
+            <circle cx="127.8" cy="53.1" r="1.7"/>
+            <circle cx="148.2" cy="49.5" r="1.7"/>
+            <circle cx="168.6" cy="55.8" r="1.7"/>
+            <circle cx="200.7" cy="52.2" r="1.7"/>
+            <circle cx="221.1" cy="58.5" r="1.7"/>
+            <circle cx="241.5" cy="54.9" r="1.7"/>
+            <circle cx="273.6" cy="51.3" r="1.7"/>
+            <circle cx="294.0" cy="57.6" r="1.7"/>
+            <circle cx="314.4" cy="54.0" r="1.7"/>
+            <circle cx="346.5" cy="50.4" r="1.7"/>
+            <circle cx="366.9" cy="56.7" r="1.7"/>
+            <circle cx="387.3" cy="53.1" r="1.7"/>
+            <circle cx="419.4" cy="49.5" r="1.7"/>
+            <circle cx="439.8" cy="55.8" r="1.7"/>
+            <circle cx="460.2" cy="52.2" r="1.7"/>
+            <circle cx="480.6" cy="58.5" r="1.7"/>
+            <circle cx="512.7" cy="54.9" r="1.7"/>
+            <circle cx="533.1" cy="51.3" r="1.7"/>
+            <circle cx="553.5" cy="57.6" r="1.7"/>
+            <circle cx="585.6" cy="54.0" r="1.7"/>
+            <circle cx="606.0" cy="50.4" r="1.7"/>
+            <circle cx="626.4" cy="56.7" r="1.7"/>
+            <circle cx="658.5" cy="53.1" r="1.7"/>
+            <circle cx="678.9" cy="49.5" r="1.7"/>
+            <circle cx="699.3" cy="55.8" r="1.7"/>
+            <circle cx="731.4" cy="52.2" r="1.7"/>
+            <circle cx="751.8" cy="58.5" r="1.7"/>
+            <circle cx="772.2" cy="54.9" r="1.7"/>
+            <circle cx="792.6" cy="51.3" r="1.7"/>
+            <circle cx="824.7" cy="57.6" r="1.7"/>
+            <circle cx="845.1" cy="54.0" r="1.7"/>
+            <circle cx="865.5" cy="50.4" r="1.7"/>
+            <circle cx="897.6" cy="56.7" r="1.7"/>
+            <circle cx="918.0" cy="53.1" r="1.7"/>
+            <circle cx="938.4" cy="49.5" r="1.7"/>
+            <circle cx="970.5" cy="55.8" r="1.7"/>
+            <circle cx="32.7" cy="79.8" r="1.7"/>
+            <circle cx="53.1" cy="76.2" r="1.7"/>
+            <circle cx="73.5" cy="82.5" r="1.7"/>
+            <circle cx="105.6" cy="78.9" r="1.7"/>
+            <circle cx="126.0" cy="75.3" r="1.7"/>
+            <circle cx="146.4" cy="81.6" r="1.7"/>
+            <circle cx="178.5" cy="78.0" r="1.7"/>
+            <circle cx="198.9" cy="74.4" r="1.7"/>
+            <circle cx="219.3" cy="80.7" r="1.7"/>
+            <circle cx="251.4" cy="77.1" r="1.7"/>
+            <circle cx="271.8" cy="73.5" r="1.7"/>
+            <circle cx="292.2" cy="79.8" r="1.7"/>
+            <circle cx="312.6" cy="76.2" r="1.7"/>
+            <circle cx="344.7" cy="82.5" r="1.7"/>
+            <circle cx="365.1" cy="78.9" r="1.7"/>
+            <circle cx="385.5" cy="75.3" r="1.7"/>
+            <circle cx="417.6" cy="81.6" r="1.7"/>
+            <circle cx="438.0" cy="78.0" r="1.7"/>
+            <circle cx="458.4" cy="74.4" r="1.7"/>
+            <circle cx="490.5" cy="80.7" r="1.7"/>
+            <circle cx="510.9" cy="77.1" r="1.7"/>
+            <circle cx="531.3" cy="73.5" r="1.7"/>
+            <circle cx="563.4" cy="79.8" r="1.7"/>
+            <circle cx="583.8" cy="76.2" r="1.7"/>
+            <circle cx="604.2" cy="82.5" r="1.7"/>
+            <circle cx="624.6" cy="78.9" r="1.7"/>
+            <circle cx="656.7" cy="75.3" r="1.7"/>
+            <circle cx="677.1" cy="81.6" r="1.7"/>
+            <circle cx="697.5" cy="78.0" r="1.7"/>
+            <circle cx="729.6" cy="74.4" r="1.7"/>
+            <circle cx="750.0" cy="80.7" r="1.7"/>
+            <circle cx="770.4" cy="77.1" r="1.7"/>
+            <circle cx="802.5" cy="73.5" r="1.7"/>
+            <circle cx="822.9" cy="79.8" r="1.7"/>
+            <circle cx="843.3" cy="76.2" r="1.7"/>
+            <circle cx="875.4" cy="82.5" r="1.7"/>
+            <circle cx="895.8" cy="78.9" r="1.7"/>
+            <circle cx="916.2" cy="75.3" r="1.7"/>
+            <circle cx="936.6" cy="81.6" r="1.7"/>
+            <circle cx="968.7" cy="78.0" r="1.7"/>
+            <circle cx="30.9" cy="102.0" r="1.7"/>
+            <circle cx="51.3" cy="98.4" r="1.7"/>
+            <circle cx="83.4" cy="104.7" r="1.7"/>
+            <circle cx="103.8" cy="101.1" r="1.7"/>
+            <circle cx="124.2" cy="97.5" r="1.7"/>
+            <circle cx="144.6" cy="103.8" r="1.7"/>
+            <circle cx="176.7" cy="100.2" r="1.7"/>
+            <circle cx="197.1" cy="106.5" r="1.7"/>
+            <circle cx="217.5" cy="102.9" r="1.7"/>
+            <circle cx="249.6" cy="99.3" r="1.7"/>
+            <circle cx="270.0" cy="105.6" r="1.7"/>
+            <circle cx="290.4" cy="102.0" r="1.7"/>
+            <circle cx="322.5" cy="98.4" r="1.7"/>
+            <circle cx="342.9" cy="104.7" r="1.7"/>
+            <circle cx="363.3" cy="101.1" r="1.7"/>
+            <circle cx="395.4" cy="97.5" r="1.7"/>
+            <circle cx="415.8" cy="103.8" r="1.7"/>
+            <circle cx="436.2" cy="100.2" r="1.7"/>
+            <circle cx="456.6" cy="106.5" r="1.7"/>
+            <circle cx="488.7" cy="102.9" r="1.7"/>
+            <circle cx="509.1" cy="99.3" r="1.7"/>
+            <circle cx="529.5" cy="105.6" r="1.7"/>
+            <circle cx="561.6" cy="102.0" r="1.7"/>
+            <circle cx="582.0" cy="98.4" r="1.7"/>
+            <circle cx="602.4" cy="104.7" r="1.7"/>
+            <circle cx="634.5" cy="101.1" r="1.7"/>
+            <circle cx="654.9" cy="97.5" r="1.7"/>
+            <circle cx="675.3" cy="103.8" r="1.7"/>
+            <circle cx="707.4" cy="100.2" r="1.7"/>
+            <circle cx="727.8" cy="106.5" r="1.7"/>
+            <circle cx="748.2" cy="102.9" r="1.7"/>
+            <circle cx="768.6" cy="99.3" r="1.7"/>
+            <circle cx="800.7" cy="105.6" r="1.7"/>
+            <circle cx="821.1" cy="102.0" r="1.7"/>
+            <circle cx="841.5" cy="98.4" r="1.7"/>
+            <circle cx="873.6" cy="104.7" r="1.7"/>
+            <circle cx="894.0" cy="101.1" r="1.7"/>
+            <circle cx="914.4" cy="97.5" r="1.7"/>
+            <circle cx="946.5" cy="103.8" r="1.7"/>
+            <circle cx="966.9" cy="100.2" r="1.7"/>
+            <circle cx="29.1" cy="124.2" r="1.7"/>
+            <circle cx="49.5" cy="130.5" r="1.7"/>
+            <circle cx="81.6" cy="126.9" r="1.7"/>
+            <circle cx="102.0" cy="123.3" r="1.7"/>
+            <circle cx="122.4" cy="129.6" r="1.7"/>
+            <circle cx="154.5" cy="126.0" r="1.7"/>
+            <circle cx="174.9" cy="122.4" r="1.7"/>
+            <circle cx="195.3" cy="128.7" r="1.7"/>
+            <circle cx="227.4" cy="125.1" r="1.7"/>
+            <circle cx="247.8" cy="121.5" r="1.7"/>
+            <circle cx="268.2" cy="127.8" r="1.7"/>
+            <circle cx="288.6" cy="124.2" r="1.7"/>
+            <circle cx="320.7" cy="130.5" r="1.7"/>
+            <circle cx="341.1" cy="126.9" r="1.7"/>
+            <circle cx="361.5" cy="123.3" r="1.7"/>
+            <circle cx="393.6" cy="129.6" r="1.7"/>
+            <circle cx="414.0" cy="126.0" r="1.7"/>
+            <circle cx="434.4" cy="122.4" r="1.7"/>
+            <circle cx="466.5" cy="128.7" r="1.7"/>
+            <circle cx="486.9" cy="125.1" r="1.7"/>
+            <circle cx="507.3" cy="121.5" r="1.7"/>
+            <circle cx="539.4" cy="127.8" r="1.7"/>
+            <circle cx="559.8" cy="124.2" r="1.7"/>
+            <circle cx="580.2" cy="130.5" r="1.7"/>
+            <circle cx="600.6" cy="126.9" r="1.7"/>
+            <circle cx="632.7" cy="123.3" r="1.7"/>
+            <circle cx="653.1" cy="129.6" r="1.7"/>
+            <circle cx="673.5" cy="126.0" r="1.7"/>
+            <circle cx="705.6" cy="122.4" r="1.7"/>
+            <circle cx="726.0" cy="128.7" r="1.7"/>
+            <circle cx="746.4" cy="125.1" r="1.7"/>
+            <circle cx="778.5" cy="121.5" r="1.7"/>
+            <circle cx="798.9" cy="127.8" r="1.7"/>
+            <circle cx="819.3" cy="124.2" r="1.7"/>
+            <circle cx="851.4" cy="130.5" r="1.7"/>
+            <circle cx="871.8" cy="126.9" r="1.7"/>
+            <circle cx="892.2" cy="123.3" r="1.7"/>
+            <circle cx="912.6" cy="129.6" r="1.7"/>
+            <circle cx="944.7" cy="126.0" r="1.7"/>
+            <circle cx="965.1" cy="122.4" r="1.7"/>
+            <circle cx="27.3" cy="146.4" r="1.7"/>
+            <circle cx="59.4" cy="152.7" r="1.7"/>
+            <circle cx="79.8" cy="149.1" r="1.7"/>
+            <circle cx="100.2" cy="145.5" r="1.7"/>
+            <circle cx="120.6" cy="151.8" r="1.7"/>
+            <circle cx="152.7" cy="148.2" r="1.7"/>
+            <circle cx="173.1" cy="154.5" r="1.7"/>
+            <circle cx="193.5" cy="150.9" r="1.7"/>
+            <circle cx="225.6" cy="147.3" r="1.7"/>
+            <circle cx="246.0" cy="153.6" r="1.7"/>
+            <circle cx="266.4" cy="150.0" r="1.7"/>
+            <circle cx="298.5" cy="146.4" r="1.7"/>
+            <circle cx="318.9" cy="152.7" r="1.7"/>
+            <circle cx="339.3" cy="149.1" r="1.7"/>
+            <circle cx="371.4" cy="145.5" r="1.7"/>
+            <circle cx="391.8" cy="151.8" r="1.7"/>
+            <circle cx="412.2" cy="148.2" r="1.7"/>
+            <circle cx="432.6" cy="154.5" r="1.7"/>
+            <circle cx="464.7" cy="150.9" r="1.7"/>
+            <circle cx="485.1" cy="147.3" r="1.7"/>
+            <circle cx="505.5" cy="153.6" r="1.7"/>
+            <circle cx="537.6" cy="150.0" r="1.7"/>
+            <circle cx="558.0" cy="146.4" r="1.7"/>
+            <circle cx="578.4" cy="152.7" r="1.7"/>
+            <circle cx="610.5" cy="149.1" r="1.7"/>
+            <circle cx="630.9" cy="145.5" r="1.7"/>
+            <circle cx="651.3" cy="151.8" r="1.7"/>
+            <circle cx="683.4" cy="148.2" r="1.7"/>
+            <circle cx="703.8" cy="154.5" r="1.7"/>
+            <circle cx="724.2" cy="150.9" r="1.7"/>
+            <circle cx="744.6" cy="147.3" r="1.7"/>
+            <circle cx="776.7" cy="153.6" r="1.7"/>
+            <circle cx="797.1" cy="150.0" r="1.7"/>
+            <circle cx="817.5" cy="146.4" r="1.7"/>
+            <circle cx="849.6" cy="152.7" r="1.7"/>
+            <circle cx="870.0" cy="149.1" r="1.7"/>
+            <circle cx="890.4" cy="145.5" r="1.7"/>
+            <circle cx="922.5" cy="151.8" r="1.7"/>
+            <circle cx="942.9" cy="148.2" r="1.7"/>
+            <circle cx="963.3" cy="154.5" r="1.7"/>
+            <circle cx="25.5" cy="178.5" r="1.7"/>
+            <circle cx="57.6" cy="174.9" r="1.7"/>
+            <circle cx="78.0" cy="171.3" r="1.7"/>
+            <circle cx="98.4" cy="177.6" r="1.7"/>
+            <circle cx="130.5" cy="174.0" r="1.7"/>
+            <circle cx="150.9" cy="170.4" r="1.7"/>
+            <circle cx="171.3" cy="176.7" r="1.7"/>
+            <circle cx="203.4" cy="173.1" r="1.7"/>
+            <circle cx="223.8" cy="169.5" r="1.7"/>
+            <circle cx="244.2" cy="175.8" r="1.7"/>
+            <circle cx="264.6" cy="172.2" r="1.7"/>
+            <circle cx="296.7" cy="178.5" r="1.7"/>
+            <circle cx="317.1" cy="174.9" r="1.7"/>
+            <circle cx="337.5" cy="171.3" r="1.7"/>
+            <circle cx="369.6" cy="177.6" r="1.7"/>
+            <circle cx="390.0" cy="174.0" r="1.7"/>
+            <circle cx="410.4" cy="170.4" r="1.7"/>
+            <circle cx="442.5" cy="176.7" r="1.7"/>
+            <circle cx="462.9" cy="173.1" r="1.7"/>
+            <circle cx="483.3" cy="169.5" r="1.7"/>
+            <circle cx="515.4" cy="175.8" r="1.7"/>
+            <circle cx="535.8" cy="172.2" r="1.7"/>
+            <circle cx="556.2" cy="178.5" r="1.7"/>
+            <circle cx="576.6" cy="174.9" r="1.7"/>
+            <circle cx="608.7" cy="171.3" r="1.7"/>
+            <circle cx="629.1" cy="177.6" r="1.7"/>
+            <circle cx="649.5" cy="174.0" r="1.7"/>
+            <circle cx="681.6" cy="170.4" r="1.7"/>
+            <circle cx="702.0" cy="176.7" r="1.7"/>
+            <circle cx="722.4" cy="173.1" r="1.7"/>
+            <circle cx="754.5" cy="169.5" r="1.7"/>
+            <circle cx="774.9" cy="175.8" r="1.7"/>
+            <circle cx="795.3" cy="172.2" r="1.7"/>
+            <circle cx="827.4" cy="178.5" r="1.7"/>
+            <circle cx="847.8" cy="174.9" r="1.7"/>
+            <circle cx="868.2" cy="171.3" r="1.7"/>
+            <circle cx="888.6" cy="177.6" r="1.7"/>
+            <circle cx="920.7" cy="174.0" r="1.7"/>
+            <circle cx="941.1" cy="170.4" r="1.7"/>
+            <circle cx="961.5" cy="176.7" r="1.7"/>
+            <circle cx="35.4" cy="200.7" r="1.7"/>
+            <circle cx="55.8" cy="197.1" r="1.7"/>
+            <circle cx="76.2" cy="193.5" r="1.7"/>
+            <circle cx="96.6" cy="199.8" r="1.7"/>
+            <circle cx="128.7" cy="196.2" r="1.7"/>
+            <circle cx="149.1" cy="202.5" r="1.7"/>
+            <circle cx="169.5" cy="198.9" r="1.7"/>
+            <circle cx="201.6" cy="195.3" r="1.7"/>
+            <circle cx="222.0" cy="201.6" r="1.7"/>
+            <circle cx="242.4" cy="198.0" r="1.7"/>
+            <circle cx="274.5" cy="194.4" r="1.7"/>
+            <circle cx="294.9" cy="200.7" r="1.7"/>
+            <circle cx="315.3" cy="197.1" r="1.7"/>
+            <circle cx="347.4" cy="193.5" r="1.7"/>
+            <circle cx="367.8" cy="199.8" r="1.7"/>
+            <circle cx="388.2" cy="196.2" r="1.7"/>
+            <circle cx="408.6" cy="202.5" r="1.7"/>
+            <circle cx="440.7" cy="198.9" r="1.7"/>
+            <circle cx="461.1" cy="195.3" r="1.7"/>
+            <circle cx="481.5" cy="201.6" r="1.7"/>
+            <circle cx="513.6" cy="198.0" r="1.7"/>
+            <circle cx="534.0" cy="194.4" r="1.7"/>
+            <circle cx="554.4" cy="200.7" r="1.7"/>
+            <circle cx="586.5" cy="197.1" r="1.7"/>
+            <circle cx="606.9" cy="193.5" r="1.7"/>
+            <circle cx="627.3" cy="199.8" r="1.7"/>
+            <circle cx="659.4" cy="196.2" r="1.7"/>
+            <circle cx="679.8" cy="202.5" r="1.7"/>
+            <circle cx="700.2" cy="198.9" r="1.7"/>
+            <circle cx="720.6" cy="195.3" r="1.7"/>
+            <circle cx="752.7" cy="201.6" r="1.7"/>
+            <circle cx="773.1" cy="198.0" r="1.7"/>
+            <circle cx="793.5" cy="194.4" r="1.7"/>
+            <circle cx="825.6" cy="200.7" r="1.7"/>
+            <circle cx="846.0" cy="197.1" r="1.7"/>
+            <circle cx="866.4" cy="193.5" r="1.7"/>
+            <circle cx="898.5" cy="199.8" r="1.7"/>
+            <circle cx="918.9" cy="196.2" r="1.7"/>
+            <circle cx="939.3" cy="202.5" r="1.7"/>
+            <circle cx="971.4" cy="198.9" r="1.7"/>
+            <circle cx="33.6" cy="222.9" r="1.7"/>
+            <circle cx="54.0" cy="219.3" r="1.7"/>
+            <circle cx="74.4" cy="225.6" r="1.7"/>
+            <circle cx="106.5" cy="222.0" r="1.7"/>
+            <circle cx="126.9" cy="218.4" r="1.7"/>
+            <circle cx="147.3" cy="224.7" r="1.7"/>
+            <circle cx="179.4" cy="221.1" r="1.7"/>
+            <circle cx="199.8" cy="217.5" r="1.7"/>
+            <circle cx="220.2" cy="223.8" r="1.7"/>
+            <circle cx="240.6" cy="220.2" r="1.7"/>
+            <circle cx="272.7" cy="226.5" r="1.7"/>
+            <circle cx="293.1" cy="222.9" r="1.7"/>
+            <circle cx="313.5" cy="219.3" r="1.7"/>
+            <circle cx="345.6" cy="225.6" r="1.7"/>
+            <circle cx="366.0" cy="222.0" r="1.7"/>
+            <circle cx="386.4" cy="218.4" r="1.7"/>
+            <circle cx="418.5" cy="224.7" r="1.7"/>
+            <circle cx="438.9" cy="221.1" r="1.7"/>
+            <circle cx="459.3" cy="217.5" r="1.7"/>
+            <circle cx="491.4" cy="223.8" r="1.7"/>
+            <circle cx="511.8" cy="220.2" r="1.7"/>
+            <circle cx="532.2" cy="226.5" r="1.7"/>
+            <circle cx="552.6" cy="222.9" r="1.7"/>
+            <circle cx="584.7" cy="219.3" r="1.7"/>
+            <circle cx="605.1" cy="225.6" r="1.7"/>
+            <circle cx="625.5" cy="222.0" r="1.7"/>
+            <circle cx="657.6" cy="218.4" r="1.7"/>
+            <circle cx="678.0" cy="224.7" r="1.7"/>
+            <circle cx="698.4" cy="221.1" r="1.7"/>
+            <circle cx="730.5" cy="217.5" r="1.7"/>
+            <circle cx="750.9" cy="223.8" r="1.7"/>
+            <circle cx="771.3" cy="220.2" r="1.7"/>
+            <circle cx="803.4" cy="226.5" r="1.7"/>
+            <circle cx="823.8" cy="222.9" r="1.7"/>
+            <circle cx="844.2" cy="219.3" r="1.7"/>
+            <circle cx="864.6" cy="225.6" r="1.7"/>
+            <circle cx="896.7" cy="222.0" r="1.7"/>
+            <circle cx="917.1" cy="218.4" r="1.7"/>
+            <circle cx="937.5" cy="224.7" r="1.7"/>
+            <circle cx="969.6" cy="221.1" r="1.7"/>
           </g>
-
-          <g class="feeds">
-            <path d="M244 44 C 320 44, 350 118, 404 146" fill="none"/>
-            <path d="M212 98 C 310 98, 350 132, 404 150" fill="none"/>
-            <path d="M222 152 C 310 152, 350 152, 404 152" fill="none"/>
-            <path d="M282 206 C 340 206, 370 180, 404 158" fill="none"/>
-            <path d="M226 260 C 330 260, 370 200, 404 162" fill="none"/>
-          </g>
-
-          <circle cx="476" cy="152" r="88" fill="url(#gemhalo)"/>
-          <circle cx="476" cy="152" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
-          <circle cx="476" cy="152" r="42" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
-          <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(476 152) rotate(45)" fill="url(#gemfill)"/>
-          <text class="glab" x="476" y="242" text-anchor="middle">Selznick</text>
-
-          <path d="M546 152 H 576" class="jconn" marker-end="url(#arwp)"/>
-
-          <text class="rhead" x="600" y="30">What decides a film&#8217;s ceiling, from the page alone</text>
-          <g class="dims">
-            <text class="dlab" x="600" y="68">Story — what it is</text>
-            <rect x="806" y="59" width="150" height="10" rx="5" class="rb"/>
-            <rect x="806" y="59" width="150.0" height="10" rx="5" class="rb hi"/>
-            <text class="dval" x="966" y="68">37.0%</text>
-            <text class="dlab" x="600" y="108">Structure &amp; craft — how it's written</text>
-            <rect x="806" y="99" width="150" height="10" rx="5" class="rb"/>
-            <rect x="806" y="99" width="77.4" height="10" rx="5" class="rb mid"/>
-            <text class="dval" x="966" y="108">19.1%</text>
-            <text class="dlab" x="600" y="148">Rights &amp; deal context</text>
-            <rect x="806" y="139" width="150" height="10" rx="5" class="rb"/>
-            <rect x="806" y="139" width="77.4" height="10" rx="5" class="rb mid"/>
-            <text class="dval" x="966" y="148">19.1%</text>
-            <text class="dlab" x="600" y="188">Audience &amp; comparables</text>
-            <rect x="806" y="179" width="150" height="10" rx="5" class="rb"/>
-            <rect x="806" y="179" width="64.5" height="10" rx="5" class="rb mid"/>
-            <text class="dval" x="966" y="188">15.9%</text>
-            <text class="dlab" x="600" y="228">Characters &amp; casting</text>
-            <rect x="806" y="219" width="150" height="10" rx="5" class="rb"/>
-            <rect x="806" y="219" width="36.5" height="10" rx="5" class="rb mid"/>
-            <text class="dval" x="966" y="228">9.0%</text>
-          </g>
-          <text class="gval" x="600" y="286">Every read is placed against 13,000+ films with known results.</text>
-
+            <g class="ggem"><circle cx="178" cy="88" r="17" fill="url(#gemglow)"/>
+              <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(178 88) rotate(45)" fill="url(#gemgold)"/></g>
+            <g class="ggem"><circle cx="436" cy="158" r="17" fill="url(#gemglow)"/>
+              <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(436 158) rotate(45)" fill="url(#gemgold)"/></g>
+            <g class="ggem"><circle cx="614" cy="58" r="17" fill="url(#gemglow)"/>
+              <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(614 58) rotate(45)" fill="url(#gemgold)"/></g>
+            <g class="ggem"><circle cx="778" cy="186" r="17" fill="url(#gemglow)"/>
+              <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(778 186) rotate(45)" fill="url(#gemgold)"/></g>
+            <g class="ggem"><circle cx="902" cy="104" r="17" fill="url(#gemglow)"/>
+              <rect x="-6.5" y="-6.5" width="13" height="13" rx="2" transform="translate(902 104) rotate(45)" fill="url(#gemgold)"/></g>
+          <text class="gcap" x="30" y="252">Screenplays &middot; Books &middot; Comics &middot; Online creators &middot; History</text>
+          <text class="gcap gold" x="970" y="252" text-anchor="end">The gems surface.</text>
         </svg>
       </div>
     </div>
 
     <p class="open-note reveal">No agent, no representation, no track record required.</p>
     <p class="cap-cta reveal"><a href="mailto:info@gem.studio?subject=My%20idea">Pitch us an idea &rarr;</a></p>
+  </div>
+</section>
 
-    <p class="eng-k reveal">The development engine</p>
-    <p class="eng-h reveal">The most elaborate development engine ever built for a feature film.</p>
-    <p class="eng-d reveal">Selznick adapts a concept, projects what the film would earn, costs the production line by line, and prices what every casting and creative decision is worth — long before anyone commits real money. Budget, distributor and cast move the outcome more than everything on the page combined, so those are the decisions we model hardest.</p>
+<!-- Develop -->
+<section id="develop" style="padding-top:0;">
+  <div class="pillar-card reveal">
+    <p class="pillar-n">Develop</p>
+    <p class="pillar-statement">We know how to maximize <em>its potential.</em></p>
+    <p class="pillar-next">We pair the world's most talented writers with the world's most advanced creative development model — humans at the center of the creative process, assisted by powerful AI — to adapt, position, and develop each concept until it's ready for a global theatrical audience.</p>
 
     <div class="film-cards three-up">
       <div class="fcard reveal">
-        <p class="fcard-k">Financial projections</p>
-        <div class="projrows">
-          <div class="prow"><span>Box office</span><i><b style="width:100%"></b></i><em class="gold">$45M+</em></div>
-          <div class="prow"><span>Streaming revenue</span><i><b style="width:62%"></b></i><em>$28M</em></div>
-          <div class="prow"><span>Franchise potential</span><i><b style="width:78%"></b></i><em>High</em></div>
-          <div class="prow"><span>Awards potential</span><i><b style="width:41%"></b></i><em>Moderate</em></div>
+        <p class="fcard-k">What's the right team?</p>
+        <div class="castrow">
+          <div class="cast">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>A-list lead</span><b class="gold">+$21M</b>
+          </div>
+          <div class="cast on">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>Emerging lead</span><b>Baseline</b>
+          </div>
+          <div class="cast">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>Award-winning director</span><b class="gold">+$14M</b>
+          </div>
         </div>
+        <p class="fcard-d">Casting and creative choices, priced before anyone signs.</p>
       </div>
 
       <div class="fcard reveal">
-        <p class="fcard-k">Production &amp; budget</p>
+        <p class="fcard-k">What's the right budget?</p>
         <p class="fbig">$14M</p>
         <div class="stackbar">
           <i style="width:26%;background:linear-gradient(90deg,#8b5cf6,#7C3AED)"></i>
@@ -725,87 +988,42 @@
       </div>
 
       <div class="fcard reveal">
-        <p class="fcard-k">Casting &amp; creative</p>
-        <div class="castrow">
-          <div class="cast">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>A-list lead</span><b class="gold">+$21M</b>
-          </div>
-          <div class="cast on">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Emerging lead</span><b>Baseline</b>
-          </div>
-          <div class="cast">
-            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
-            <span>Award-winning director</span><b class="gold">+$14M</b>
-          </div>
+        <p class="fcard-k">What's the box office potential?</p>
+        <div class="projrows">
+          <div class="prow"><span>Draft 1</span><i><b style="width:36%"></b></i><em>$45M</em></div>
+          <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
+          <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
         </div>
-        <p class="fcard-d">Draft to draft, decision to decision — what each choice is worth.</p>
+        <p class="fcard-d">Draft to draft, decision to decision — how far each version can go.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <p class="eng-k reveal">The modern media engine</p>
-    <p class="eng-h reveal">We are masters of modern media.</p>
-    <p class="eng-d reveal">We own channels that have reached hundreds of millions of people. That is how we build an audience for a property, learn what connects, and give an idea a life long before it ever reaches a theater.</p>
-
+<!-- Modern audiences -->
+<section id="channels" style="padding-top:0;">
   <div class="screen-panel reveal">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="who-content">
-      <p class="who-statement">Our content has generated some of the world's most <em>viral videos.</em></p>
-      <p class="who-next">And we are just getting started. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
+      <p class="pillar-n">Reach</p>
+      <p class="who-statement">We understand modern audiences like <em>no other studio.</em></p>
+      <p class="who-next">Our track record proves it — and we use social media and the modern media landscape to drive people to the box office. <span class="tk">(<a href="https://www.tiktok.com/@gemstudios1" target="_blank">view our TikTok ↗</a>)</span></p>
       <div class="bignums">
         <div class="bignum"><b>10+</b><span>Channels</span></div>
         <div class="bignum"><b>1B+</b><span>Views</span></div>
         <div class="bignum"><b>500M+</b><span>People reached</span></div>
-        <div class="bignum"><b>2</b><span>Feature films in active development</span></div>
       </div>
     </div>
   </div>
-  </div>
 </section>
 
-<div class="rule"></div>
-
-<!-- The thesis -->
-<section id="thesis">
-  <div class="section-marker reveal">The thesis</div>
-  <h2 class="sec-h reveal">Great new franchises are getting <em>rarer.</em></h2>
-  <p class="sec-sub reveal">The industry refreshes the same properties again and again — not out of laziness, but because identifying and developing genuinely great new ones is extremely hard.</p>
-
-  <h3 class="thesis-h reveal">Why entertainment is in a creative rut.</h3>
-  <p class="thesis-p reveal">Entertainment is a business of rare, enormous wins — <b>the top 10% of films earn 72% of all box office.</b> Everything depends on spotting those few. But the industry is structurally blind in three ways, and the biggest ideas keep getting missed because of it.</p>
-
-  <div class="blinds reveal">
-    <div class="blind">
-      <p class="blind-k">Closed-off decision makers</p>
-      <p class="blind-d">The people who can actually make something happen are difficult to reach, and they work with who they've worked with before. The same ideas get recycled, and enormous amounts of talent and IP are never considered at all.</p>
-    </div>
-    <div class="blind">
-      <p class="blind-k">Narrow lenses</p>
-      <p class="blind-d">The opportunities for a piece of IP have never been greater, but seeing them takes a broad view and real fluency across today's channels. Judged through one lens, most of a property's potential stays invisible — and so does the case for investing in it.</p>
-    </div>
-    <div class="blind">
-      <p class="blind-k">Running on feel</p>
-      <p class="blind-d">Creative instinct can never be replaced — but the media landscape has become far too complex for instinct alone. Without rigorous research and precise financial modeling, even the best judgment gets misled.</p>
-    </div>
-  </div>
-
-
-  <p class="thesis-p reveal" style="margin-top:32px;">Most of the industry's answer has been to use AI to cut costs — replacing people, automating the work. We don't believe in that. The greatest content will always have people at the center, and the right system makes extraordinary creators and their IP into something even greater.</p>
-
-  <figure class="pull reveal">
-    <blockquote>&ldquo;I remain convinced that there's an even bigger opportunity if you can make movies 10 percent better.&rdquo;</blockquote>
-    <figcaption><b>Ted Sarandos</b>, Netflix &middot; on making films cheaper with AI</figcaption>
-  </figure>
-
-</section>
 <div class="rule"></div>
 
 <!-- The door -->
 <section class="door" id="partner">
   <div class="section-marker reveal">The door</div>
-  <h2 class="door-h reveal">Anyone can <em>reach out.</em></h2>
-  <p class="door-sub reveal">We only work with the best — but we don't care about your background, your reps, or your track record. We're looking for really talented people and really great ideas we can turn into great films. Send us yours.</p>
+  <h2 class="door-h reveal">Let's make them <em>together.</em></h2>
+  <p class="door-sub reveal">Two feature films are in active development. If you finance or distribute films — or you're a creator with an incredible idea — we want to hear from you.</p>
   <div class="reveal">
     <a href="mailto:info@gem.studio?subject=Working%20with%20GEM" class="btn-primary" style="padding:16px 44px;font-size:13px;">Email us — info@gem.studio</a>
   </div>
