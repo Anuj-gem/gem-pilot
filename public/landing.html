@@ -310,14 +310,26 @@
       line-height: 1.75; max-width: 68ch; margin-bottom: 16px;
     }
     .thesis-p b { color: var(--ink); font-weight: 600; }
+    #what { padding-top: 54px; padding-bottom: 58px; }
     .tmap {
-      background: linear-gradient(160deg, #241C33 0%, #16111F 55%, #120E19 100%);
-      border: 1px solid rgba(196,181,253,0.16);
-      border-radius: 18px; padding: 30px 34px 26px;
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(110% 80% at 0% 0%, rgba(124,58,237,0.30) 0%, rgba(124,58,237,0) 58%),
+        radial-gradient(90% 70% at 100% 100%, rgba(176,138,62,0.14) 0%, rgba(176,138,62,0) 60%),
+        linear-gradient(160deg, #2A2140 0%, #17111F 55%, #100D17 100%);
+      border: 1px solid rgba(196,181,253,0.18);
+      border-radius: 18px; padding: 26px 34px 24px;
+      box-shadow: 0 34px 70px -46px rgba(20,16,27,0.9);
+    }
+    .tmap::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0) 26%);
     }
     .tmap-top {
+      position: relative; z-index: 1;
       display: flex; align-items: center; gap: 12px;
-      padding-bottom: 20px;
+      padding-bottom: 18px;
       border-bottom: 1px solid rgba(255,255,255,0.09);
     }
     .tgem {
@@ -330,33 +342,46 @@
       font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em;
       text-transform: uppercase; color: #C4B5FD;
     }
-    .tmap-list { display: flex; flex-direction: column; }
+    .tmap-list { position: relative; z-index: 1; display: flex; flex-direction: column; }
     .tnode {
-      display: flex; align-items: flex-start; gap: 18px;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 24px 0 22px;
     }
-    .tnode:last-child { border-bottom: none; padding-bottom: 6px; }
+    .tnode:last-child { padding-bottom: 6px; }
+    .tnode:not(:last-child)::before {
+      content: ''; position: absolute; left: 20px; top: 72px; bottom: -22px;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(196,181,253,0.42), rgba(196,181,253,0.05));
+    }
     .tico {
-      width: 34px; height: 34px; border-radius: 9px; flex: none;
-      border: 1px solid rgba(196,181,253,0.28);
-      background: rgba(196,181,253,0.07);
+      width: 40px; height: 40px; border-radius: 12px; flex: none;
+      border: 1px solid rgba(196,181,253,0.34);
+      background: linear-gradient(150deg, rgba(196,181,253,0.24), rgba(124,58,237,0.10));
+      box-shadow: 0 0 26px -6px rgba(139,92,246,0.6),
+                  inset 0 1px 0 rgba(255,255,255,0.12);
       display: flex; align-items: center; justify-content: center;
       margin-top: 2px;
     }
     .tico svg {
-      width: 17px; height: 17px;
-      stroke: #C4B5FD; stroke-width: 1.6; fill: none;
+      width: 19px; height: 19px;
+      stroke: #DED5FF; stroke-width: 1.6; fill: none;
       stroke-linecap: round; stroke-linejoin: round;
     }
     .tnode-h {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 26px; font-weight: 500; letter-spacing: -0.01em;
-      color: #fff; margin-bottom: 6px;
+      font-size: 28px; font-weight: 500; letter-spacing: -0.01em;
+      color: #fff; margin-bottom: 7px;
+    }
+    .tstep {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.24em;
+      color: var(--accent-soft); opacity: 0.8;
+      vertical-align: middle; margin-right: 15px;
     }
     .tnode-d {
-      font-size: 14.5px; color: var(--on-screen-muted);
-      line-height: 1.65; max-width: 76ch;
+      font-size: 14.5px; color: rgba(243,239,232,0.7);
+      line-height: 1.65; max-width: 74ch;
     }
 
     /* ── Film graphics ── */
@@ -656,11 +681,8 @@
 
 <div class="rule"></div>
 
-<div class="rule"></div>
-
 <!-- What we do -->
 <section id="what">
-  <div class="section-marker reveal">What we do</div>
   <div class="tmap reveal">
     <div class="tmap-top">
       <span class="tgem"></span>
@@ -670,21 +692,21 @@
       <div class="tnode">
         <span class="tico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M15.6 15.6 21 21"/><path d="M11 7.5v7M7.5 11h7"/></svg></span>
         <div class="tnode-c">
-          <p class="tnode-h">Scout</p>
+          <p class="tnode-h"><span class="tstep">01</span>IP scouting</p>
           <p class="tnode-d">We take in IP across every format — screenplays, books, comics, online video — to find the opportunities that could become huge entertainment franchises.</p>
         </div>
       </div>
       <div class="tnode">
         <span class="tico"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5z"/><path d="M3 12.5 12 17l9-4.5"/><path d="M3 17 12 21.5 21 17"/></svg></span>
         <div class="tnode-c">
-          <p class="tnode-h">Test</p>
+          <p class="tnode-h"><span class="tstep">02</span>Concept testing</p>
           <p class="tnode-d">We develop and adapt those concepts, then test them on social and other low-cost formats until we know what audiences respond to.</p>
         </div>
       </div>
       <div class="tnode">
         <span class="tico"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-5M11 20v-9M16 20v-6M21 20V6"/></svg></span>
         <div class="tnode-c">
-          <p class="tnode-h">Scale</p>
+          <p class="tnode-h"><span class="tstep">03</span>Franchise scaling</p>
           <p class="tnode-d">Once a concept is proven, we scale it into feature films, TV series, and everything a franchise can become.</p>
         </div>
       </div>
