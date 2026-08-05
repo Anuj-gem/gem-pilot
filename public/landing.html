@@ -298,6 +298,12 @@
     .mini-g .mg-release { stroke: rgba(228,201,126,0.55); stroke-width: 1; stroke-dasharray: 3 4; }
     .mini-g .mg-dot { fill: #C4B5FD; }
     .mini-g .mg-ax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
+    .mini-g .mg-bar { fill: url(#gemfill2); }
+    .mini-g .mg-bar.dim { fill: rgba(196,181,253,0.35); }
+    .mini-g .mg-bar.gold { fill: url(#gemgold2); }
+    .mini-g .mg-val { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; fill: #fff; }
+    .mini-g .mg-val.dim { fill: var(--on-screen-muted); font-weight: 500; }
+    .mini-g .mg-val.gold { fill: #E4C97E; }
     .team-band {
       background: var(--screen); color: var(--on-screen);
       border-radius: 18px; padding: 44px 48px;
@@ -985,19 +991,38 @@
       <div class="fcard reveal">
         <p class="fcard-k">Adapt</p>
         <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
-          <rect x="26" y="50" width="54" height="72" rx="5" class="mg-box"/>
-          <path d="M53 68 v24 M41 80 h24" class="mg-ico"/>
-          <text class="mg-lbl" x="53" y="146" text-anchor="middle">The idea</text>
-          <path d="M92 86 H 122" class="mg-arrow"/>
-          <rect x="134" y="50" width="54" height="72" rx="5" class="mg-box"/>
-          <path d="M146 66h30M146 78h30M146 90h18M146 102h24" class="mg-ico thin"/>
-          <text class="mg-lbl" x="161" y="146" text-anchor="middle">The adaptation</text>
-          <path d="M200 86 H 230" class="mg-arrow"/>
-          <rect x="242" y="42" width="62" height="88" rx="6" class="mg-poster"/>
-          <rect x="-9" y="-9" width="18" height="18" rx="3" transform="translate(273 86) rotate(45)" fill="url(#gemgold2)"/>
-          <text class="mg-lbl gold" x="273" y="152" text-anchor="middle">The film</text>
+          <defs>
+            <linearGradient id="gemfill2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
+            </linearGradient>
+            <linearGradient id="gemgold2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
+            </linearGradient>
+            <radialGradient id="gemhalo2">
+              <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
+            </radialGradient>
+          </defs>
+          <text class="mg-lbl" x="90" y="36">Box office potential</text>
+          <text class="mg-lbl" x="316" y="36" text-anchor="end">Budget</text>
+
+          <text class="mg-lbl" x="24" y="68">Draft 1</text>
+          <rect x="90" y="59" width="60" height="9" rx="4.5" class="mg-bar dim"/>
+          <text class="mg-val" x="248" y="68" text-anchor="end">$45M</text>
+          <text class="mg-val dim" x="316" y="68" text-anchor="end">$24M</text>
+
+          <text class="mg-lbl" x="24" y="106">Draft 2</text>
+          <rect x="90" y="97" width="105" height="9" rx="4.5" class="mg-bar"/>
+          <text class="mg-val" x="248" y="106" text-anchor="end">$78M</text>
+          <text class="mg-val dim" x="316" y="106" text-anchor="end">$19M</text>
+
+          <text class="mg-lbl" x="24" y="144">Draft 3</text>
+          <rect x="90" y="135" width="150" height="9" rx="4.5" class="mg-bar gold"/>
+          <text class="mg-val gold" x="248" y="144" text-anchor="end">$120M+</text>
+          <text class="mg-val gold" x="316" y="144" text-anchor="end">$14M</text>
+
+          <text class="mg-lbl" x="24" y="176">Appeal up, cost down — draft by draft.</text>
         </svg>
-        <p class="fcard-d">We go through an extensive creative process, adapting each idea carefully to maximize its commercial potential.</p>
+        <p class="fcard-d">An extensive creative process: many drafts, each carefully adapted to maximize theatrical appeal and profitability. We test ideas on social media and analyze audience appeal with Selznick along the way.</p>
       </div>
 
       <div class="fcard reveal">
@@ -1023,42 +1048,28 @@
           <circle cx="170" cy="89" r="30" fill="url(#gemhalo2)"/>
           <rect x="-13" y="-13" width="26" height="26" rx="5" transform="translate(170 89) rotate(45)" fill="url(#gemfill2)"/>
         </svg>
-        <p class="fcard-d">We do immense research into the impact of cast and crew — and assemble the team that can realize the creative vision.</p>
+        <p class="fcard-d">Extensive research into cast, crew, and every important development decision — assembling the team that can realize the creative vision and deliver something audiences love.</p>
       </div>
 
       <div class="fcard reveal">
         <p class="fcard-k">Build the audience</p>
         <svg class="mini-g" viewBox="0 0 340 190" aria-hidden="true">
           <defs>
-            <linearGradient id="augrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="rgba(139,92,246,0.55)"/><stop offset="1" stop-color="rgba(139,92,246,0.05)"/>
-            </linearGradient>
-            <linearGradient id="augold" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="rgba(228,201,126,0.5)"/><stop offset="1" stop-color="rgba(228,201,126,0.05)"/>
-            </linearGradient>
-            <linearGradient id="gemfill2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
-            </linearGradient>
-            <linearGradient id="gemgold2" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="audg" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
             </linearGradient>
-            <radialGradient id="gemhalo2">
-              <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
-            </radialGradient>
           </defs>
-          <path d="M24 150 C 80 146, 120 128, 160 106 C 196 86, 228 70, 250 62 L 250 150 Z" fill="url(#augrad)"/>
-          <path d="M250 62 C 268 54, 288 44, 312 34 L 312 150 L 250 150 Z" fill="url(#augold)"/>
-          <path d="M24 150 C 80 146, 120 128, 160 106 C 196 86, 228 70, 250 62" class="mg-curve"/>
-          <path d="M250 62 C 268 54, 288 44, 312 34" class="mg-curve gold"/>
-          <line x1="250" y1="34" x2="250" y2="150" class="mg-release"/>
-          <circle cx="70" cy="142" r="3.5" class="mg-dot"/>
-          <text class="mg-lbl" x="70" y="128" text-anchor="middle">First video</text>
-          <circle cx="196" cy="86" r="3.5" class="mg-dot"/>
-          <text class="mg-lbl" x="196" y="70" text-anchor="middle">1B+ views</text>
-          <text class="mg-lbl gold" x="256" y="26">Release</text>
-          <line x1="24" y1="150" x2="316" y2="150" class="mg-ax"/>
+          <text class="mg-lbl" x="24" y="38">Audience built before opening day</text>
+
+          <text class="mg-lbl" x="24" y="76">A typical film</text>
+          <rect x="24" y="84" width="16" height="10" rx="4" class="mg-bar dim"/>
+          <text class="mg-val dim" x="50" y="93">&#8776; 0</text>
+
+          <text class="mg-lbl" x="24" y="128">A GEM film</text>
+          <text class="mg-val gold" x="316" y="128" text-anchor="end">500M+ already reached</text>
+          <rect x="24" y="136" width="292" height="10" rx="4" fill="url(#audg)"/>
         </svg>
-        <p class="fcard-d">We use our mastery of social media to build a film's audience and market it — long before it reaches theaters.</p>
+        <p class="fcard-d">We leverage social media and modern marketing to develop a film's audience long before it reaches theaters — and maximize its viral potential at release.</p>
       </div>
     </div>
   </div>
