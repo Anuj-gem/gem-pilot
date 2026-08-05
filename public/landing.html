@@ -298,7 +298,6 @@
     .mini-g .mg-release { stroke: rgba(228,201,126,0.55); stroke-width: 1; stroke-dasharray: 3 4; }
     .mini-g .mg-dot { fill: #C4B5FD; }
     .mini-g .mg-ax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
-    .mini-g .mg-loop { stroke: rgba(196,181,253,0.4); stroke-width: 1.4; fill: none; marker-end: url(#mgarw); }
     .mini-g .mg-goldpath { stroke: rgba(228,201,126,0.7); stroke-width: 1.5; fill: none; }
     .mini-g .mg-wave { stroke: rgba(196,181,253,0.5); stroke-width: 1.4; fill: none; stroke-linecap: round; }
     .mini-g .mg-marquee { fill: rgba(228,201,126,0.1); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
@@ -1022,36 +1021,25 @@
             <radialGradient id="gemhalo2">
               <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
             </radialGradient>
-            <marker id="mgarw" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M0 1.5 L 8.5 5 L 0 8.5 z" fill="#C4B5FD"/>
-            </marker>
             <marker id="mgarwg" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
               <path d="M0 1.5 L 8.5 5 L 0 8.5 z" fill="#E4C97E"/>
             </marker>
           </defs>
+          <text class="mg-lbl" x="24" y="40">Box office potential</text>
 
-          <path d="M138 60 A 52 52 0 0 1 152 122" class="mg-loop"/>
-          <path d="M132 138 A 52 52 0 0 1 74 128" class="mg-loop"/>
-          <path d="M62 106 A 52 52 0 0 1 94 52" class="mg-loop"/>
+          <text class="mg-lbl" x="24" y="78">Draft 1</text>
+          <rect x="88" y="69" width="64" height="10" rx="5" class="mg-bar dim"/>
+          <text class="mg-val dim" x="316" y="78" text-anchor="end">$45M</text>
 
-          <circle cx="116" cy="43" r="17" class="mg-node"/>
-          <path d="M110 48 l9-9 3 3 -9 9 -4 1z M117 41 l3 3" class="mg-ico thin"/>
-          <text class="mg-lbl" x="116" y="20" text-anchor="middle">Write</text>
+          <text class="mg-lbl" x="24" y="116">Draft 2</text>
+          <rect x="88" y="107" width="130" height="10" rx="5" class="mg-bar"/>
+          <text class="mg-val" x="316" y="116" text-anchor="end">$78M</text>
 
-          <circle cx="66" cy="125" r="17" class="mg-node"/>
-          <path d="M62 118 l10 7 -10 7 z" class="mg-ico thin"/>
-          <text class="mg-lbl" x="52" y="158" text-anchor="middle">Test</text>
-
-          <circle cx="160" cy="125" r="17" class="mg-node"/>
-          <path d="M152 131 l5-6 4 3 6-8" class="mg-ico thin"/>
-          <text class="mg-lbl" x="172" y="158" text-anchor="middle">Learn</text>
-
-          <path d="M196 92 H 240" class="mg-goldpath" marker-end="url(#mgarwg)"/>
-          <circle cx="278" cy="92" r="26" fill="url(#gemhalo2)"/>
-          <rect x="-11" y="-11" width="22" height="22" rx="4" transform="translate(278 92) rotate(45)" fill="url(#gemgold2)"/>
-          <text class="mg-lbl gold" x="278" y="140" text-anchor="middle">The strongest version</text>
+          <text class="mg-lbl" x="24" y="154">Draft 3</text>
+          <rect x="88" y="145" width="196" height="10" rx="5" class="mg-bar gold"/>
+          <text class="mg-val gold" x="316" y="154" text-anchor="end">$120M+</text>
         </svg>
-        <p class="fcard-d">We write many drafts and test them as we go. Selznick and real audiences show us what works, and every pass makes the idea stronger.</p>
+        <p class="fcard-d">We take each idea through a careful creative process, with in-depth analysis from Selznick at every step. The goal is a version that stays true to the work and reaches the biggest possible theatrical audience.</p>
       </div>
 
       <div class="fcard reveal">
