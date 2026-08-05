@@ -896,39 +896,32 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
-  // The intake — ideas flood in from every direction, meet us, and come back out as gold.
+  // The intake — every source funnels into us on the left; what we make of it fires out the right.
   (function () {
     const c = document.getElementById('intake-field');
     if (!c) return;
     const ctx = c.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const SOURCES = [
-      { label: 'Screenplays', ang: -150 },
-      { label: 'Books', ang: -95 },
-      { label: 'Comics', ang: -35 },
-      { label: 'Online video', ang: 40 },
-      { label: 'Submissions', ang: 120 }
-    ];
+    const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Submissions'];
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
 
-    let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, RX = 0, RY = 0, wide = true;
+    let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
     let parts = [], branches = [], vi = 0;
-    let pulse = 0, pickIn = 2.2, valueTxt = '', valueA = 0, valueAt = null, last = 0;
+    let pulse = 0, emitIn = 2.0, valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
-    const edge = a => 1 / Math.sqrt(Math.pow(Math.cos(a) / RX, 2) + Math.pow(Math.sin(a) / RY, 2));
+    const ease = t => t * t * (3 - 2 * t);
+    const bandY = i => (h * 0.18) + i * ((h * 0.64) / (SOURCES.length - 1));
 
     function spawn(seeded) {
-      const a = rnd() * Math.PI * 2;
-      const E = edge(a);
+      const b = Math.floor(rnd() * SOURCES.length);
       return {
-        a: a,
-        d: seeded ? 60 + rnd() * (E - 60) : E + rnd() * 60,
-        s: 1.3 + rnd() * 2.1,
-        o: 0.3 + rnd() * 0.42,
-        v: 13 + rnd() * 22,
-        gold: 0
+        x: seeded ? XS + rnd() * (CX - R - XS) : XS - rnd() * 120,
+        y0: bandY(b) + (rnd() - 0.5) * (wide ? 30 : 22),
+        s: 1.3 + rnd() * 2,
+        o: 0.3 + rnd() * 0.4,
+        v: 14 + rnd() * 22
       };
     }
 
@@ -938,11 +931,13 @@
       w = box.clientWidth; h = box.clientHeight;
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      wide = w >= 760;
-      CX = w * 0.5; CY = h * 0.5;
-      RX = w * 0.5 + 40; RY = h * 0.52;
+      wide = w >= 780;
+      X0 = wide ? w * 0.085 : 14;
+      XS = wide ? w * 0.20 : 22;
+      CX = w * 0.50; CY = h * 0.5;
+      R = wide ? 56 : 42;
       parts = [];
-      const n = wide ? 210 : 120;
+      const n = wide ? 190 : 110;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       branches = [];
     }
@@ -963,49 +958,45 @@
       return g;
     }
 
-    function addBranch(fromAng) {
-      const ang = fromAng + Math.PI + (rnd() - 0.5) * 1.1;
+    function addBranch() {
+      let ang = 0, bestGap = -1;
+      for (let i = 0; i < 12; i++) {
+        const a = (rnd() - 0.5) * 2.5;
+        let gap = 99;
+        for (const b of branches) gap = Math.min(gap, Math.abs(b.ang - a));
+        if (gap > bestGap) { bestGap = gap; ang = a; }
+      }
       const kids = [];
       const kn = 3 + Math.floor(rnd() * 4);
       for (let i = 0; i < kn; i++) {
         kids.push({
-          ka: ang + (rnd() - 0.5) * 1.2,
-          kd: 30 + rnd() * 38,
-          ks: 1.8 + rnd() * 1.7,
-          at: 0.55 + i * 0.11
+          ka: ang + (rnd() - 0.5) * 1.1,
+          kd: (wide ? 38 : 26) + rnd() * (wide ? 46 : 30),
+          ks: 1.7 + rnd() * 1.5,
+          at: 0.5 + i * 0.1
         });
       }
-      branches.push({ ang: ang, r: 108 + rnd() * 78, s: 5.5 + rnd() * 4, t: 0, kids: kids });
-      if (branches.length > 9) branches.shift();
+      branches.push({ ang: ang, r: w * 0.10 + rnd() * w * 0.085, s: 5 + rnd() * 2.6, t: 0, kids: kids });
+      if (branches.length > 8) branches.shift();
     }
 
     function step(dt) {
-      pickIn -= dt;
-      let best = null;
       for (const p of parts) {
-        p.d -= p.v * dt;
-        if (p.chosen) {
-          p.gold = Math.min(1, Math.max(0, (170 - p.d) / 130));
-          p.s += dt * 2.6;
-        }
-        if (p.d <= 30) {
-          if (p.chosen) {
-            pulse = 1;
-            addBranch(p.a);
-            valueTxt = VALUES[vi++ % VALUES.length];
-            valueA = 1;
-            valueAt = branches[branches.length - 1];
-            pickIn = 5.2 + rnd() * 2;
-          }
-          Object.assign(p, spawn(false));
-          p.chosen = false;
-          continue;
-        }
-        if (pickIn <= 0 && !p.chosen && p.d > 200 && p.d < 320) {
-          if (!best || p.d < best.d) best = p;
-        }
+        p.x += p.v * dt;
+        const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (CX - R - XS))));
+        p.y = p.y0 + (CY - p.y0) * k;
+        if (p.x > CX - R + 4) Object.assign(p, spawn(false));
       }
-      if (best) { best.chosen = true; pickIn = 99; }
+
+      emitIn -= dt;
+      if (emitIn <= 0) {
+        addBranch();
+        pulse = 1;
+        valueTxt = VALUES[vi++ % VALUES.length];
+        valueA = 1;
+        valueAt = branches[branches.length - 1];
+        emitIn = 4.8 + rnd() * 2;
+      }
 
       for (const b of branches) b.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
@@ -1015,45 +1006,35 @@
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
-      // everything coming toward us
-      for (const p of parts) {
-        const x = CX + Math.cos(p.a) * p.d, y = CY + Math.sin(p.a) * p.d;
-        const near = Math.min(1, Math.max(0, (p.d - 30) / 60));
-        if (p.gold > 0.02) {
-          diamond(x, y, p.s, goldFill(x, y, p.s), 'rgba(228,201,126,0.9)', 8 + p.gold * 16);
-        } else {
-          diamond(x, y, p.s, 'rgba(196,181,253,' + (p.o * near).toFixed(2) + ')');
-        }
-      }
-
       if (wide) {
         ctx.save();
-        ctx.fillStyle = 'rgba(243,239,232,0.4)';
-        ctx.font = '400 12.5px Inter, sans-serif';
-        for (const src of SOURCES) {
-          const a = src.ang * Math.PI / 180;
-          const d = edge(a) * 0.9;
-          const x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d;
-          ctx.textAlign = Math.cos(a) < -0.2 ? 'left' : (Math.cos(a) > 0.2 ? 'right' : 'center');
-          ctx.fillText(src.label, x, y + 4);
-        }
+        ctx.textAlign = 'left';
+        ctx.fillStyle = 'rgba(243,239,232,0.58)';
+        ctx.font = '400 15px Inter, sans-serif';
+        SOURCES.forEach((sname, i) => ctx.fillText(sname, X0, bandY(i) + 5));
         ctx.restore();
       }
 
-      // what we've made of them
+      for (const p of parts) {
+        const fade = Math.min(1, Math.max(0, (CX - R - p.x) / 46));
+        const a = p.o * fade;
+        if (a > 0.01) diamond(p.x, p.y, p.s, 'rgba(196,181,253,' + a.toFixed(2) + ')');
+      }
+
       for (const b of branches) {
-        const g = Math.min(1, b.t / 0.55);
-        const e = g * g * (3 - 2 * g);
-        const bx = CX + Math.cos(b.ang) * b.r * e, by = CY + Math.sin(b.ang) * b.r * e;
+        const g = Math.min(1, b.t / 0.5);
+        const e = ease(g);
+        const d = R + (b.r - R) * e;
+        const bx = CX + Math.cos(b.ang) * d, by = CY + Math.sin(b.ang) * d;
         ctx.save();
         ctx.strokeStyle = 'rgba(228,201,126,0.32)';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(CX + Math.cos(b.ang) * 30, CY + Math.sin(b.ang) * 30);
+        ctx.moveTo(CX + Math.cos(b.ang) * (R + 2), CY + Math.sin(b.ang) * (R + 2));
         ctx.lineTo(bx, by);
         ctx.stroke();
         ctx.restore();
-        diamond(bx, by, b.s * (0.4 + 0.6 * e), goldFill(bx, by, b.s), 'rgba(228,201,126,0.85)', 14);
+        diamond(bx, by, b.s * (0.45 + 0.55 * e), goldFill(bx, by, b.s), 'rgba(228,201,126,0.85)', 14);
 
         for (const k of b.kids) {
           const ka = Math.min(1, Math.max(0, (b.t - k.at) / 0.45));
@@ -1066,39 +1047,38 @@
           ctx.moveTo(bx + Math.cos(k.ka) * (b.s + 4), by + Math.sin(k.ka) * (b.s + 4));
           ctx.lineTo(kx, ky);
           ctx.stroke();
-          ctx.globalAlpha = ka;
           ctx.restore();
           diamond(kx, ky, k.ks, 'rgba(228,201,126,' + (0.75 * ka).toFixed(2) + ')');
         }
       }
 
-      // us
-      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, 120 * (1 + pulse * 0.3));
-      g.addColorStop(0, 'rgba(139,92,246,' + (0.15 + pulse * 0.22).toFixed(2) + ')');
+      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + 90) * (1 + pulse * 0.25));
+      g.addColorStop(0, 'rgba(139,92,246,' + (0.16 + pulse * 0.22).toFixed(2) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
-      ctx.fillRect(CX - 150, CY - 150, 300, 300);
+      ctx.fillRect(CX - R - 120, CY - R - 120, (R + 120) * 2, (R + 120) * 2);
 
       ctx.save();
       ctx.beginPath();
-      ctx.arc(CX, CY, 30, 0, Math.PI * 2);
+      ctx.arc(CX, CY, R, 0, Math.PI * 2);
       ctx.fillStyle = '#120E1B';
       ctx.fill();
       ctx.strokeStyle = 'rgba(196,181,253,' + (0.4 + pulse * 0.5).toFixed(2) + ')';
-      ctx.lineWidth = 1.2;
+      ctx.lineWidth = 1.3;
       ctx.stroke();
       ctx.restore();
-      const gs = 28;
+
+      const gs = R * 1.62;
       ctx.save();
       ctx.translate(CX, CY);
       ctx.rotate(Math.PI / 4);
       ctx.shadowColor = '#8b5cf6';
-      ctx.shadowBlur = 20 + pulse * 30;
+      ctx.shadowBlur = 24 + pulse * 30;
       const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
       gg.addColorStop(0, '#C4B5FD');
       gg.addColorStop(1, '#6D28D9');
       ctx.fillStyle = gg;
-      const cr = 6;
+      const cr = gs * 0.2;
       ctx.beginPath();
       ctx.moveTo(-gs / 2 + cr, -gs / 2);
       ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
@@ -1110,16 +1090,16 @@
       ctx.restore();
 
       if (valueA > 0.01 && valueTxt && valueAt) {
-        const e = Math.min(1, valueAt.t / 0.55);
-        const bx = CX + Math.cos(valueAt.ang) * valueAt.r * e;
-        const by = CY + Math.sin(valueAt.ang) * valueAt.r * e;
+        const e = ease(Math.min(1, valueAt.t / 0.5));
+        const d = R + (valueAt.r - R) * e;
+        const bx = CX + Math.cos(valueAt.ang) * d, by = CY + Math.sin(valueAt.ang) * d;
         ctx.save();
         ctx.globalAlpha = Math.min(1, valueA * 1.7);
         ctx.textAlign = 'center';
         ctx.shadowColor = 'rgba(228,201,126,0.5)';
         ctx.shadowBlur = 14;
         ctx.fillStyle = '#E4C97E';
-        ctx.font = '500 27px "Cormorant Garamond", serif';
+        ctx.font = '500 28px "Cormorant Garamond", serif';
         ctx.fillText(valueTxt, bx, by - 26);
         ctx.restore();
       }
@@ -1137,8 +1117,9 @@
     window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
     layout();
     if (reduce) {
-      for (let i = 0; i < 6; i++) addBranch(rnd() * Math.PI * 2);
+      for (let i = 0; i < 6; i++) addBranch();
       for (const b of branches) b.t = 3;
+      for (const p of parts) { const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (CX - R - XS)))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
     } else requestAnimationFrame(frame);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
