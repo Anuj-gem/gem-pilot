@@ -115,72 +115,70 @@
     }
 
     /* ── Hero ── */
-    .hero { padding: 64px 56px 76px; text-align: center; }
+    .hero {
+      position: relative; overflow: hidden;
+      background: #100D16;
+      padding: 96px 56px 130px;
+      text-align: left;
+    }
+    .hero > canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .hero::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 130px;
+      background: linear-gradient(0deg, var(--paper), rgba(245,243,238,0));
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
     h1.hero-headline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(40px, 5.6vw, 78px);
-      font-weight: 500; line-height: 1.06;
-      letter-spacing: -0.03em; color: var(--ink);
-      max-width: 1120px; margin: 0 auto 26px;
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 500; line-height: 1.08;
+      letter-spacing: -0.02em; color: var(--on-screen);
+      max-width: 680px; margin: 0 0 26px;
       text-wrap: pretty;
     }
-    h1.hero-headline em { font-style: italic; color: var(--accent-deep); }
+    h1.hero-headline em { font-style: italic; color: #C4B5FD; }
     .hero-sub {
-      font-size: 17.5px; color: var(--ink-soft);
-      max-width: 760px; line-height: 1.65;
-      margin: 0 auto 34px; font-weight: 400;
+      font-size: 17px; color: rgba(243,239,232,0.78);
+      max-width: 620px; line-height: 1.7;
+      margin: 0 0 44px; font-weight: 400;
     }
+    .hero-sub b { color: #fff; font-weight: 600; }
     .hero-stats {
-      display: flex; justify-content: center; align-items: flex-start;
-      gap: 34px; flex-wrap: wrap;
-      margin: 0 auto 36px;
+      display: flex; justify-content: flex-start; align-items: flex-start;
+      gap: 48px; flex-wrap: wrap;
+      margin: 0 0 10px;
     }
     .hstat b {
       display: block;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(28px, 3vw, 40px);
       font-weight: 300; line-height: 1;
-      color: var(--ink); letter-spacing: -0.01em;
+      color: var(--on-screen); letter-spacing: -0.01em;
       font-variant-numeric: tabular-nums;
     }
     .hstat span {
       display: block; margin-top: 8px;
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
+      text-transform: uppercase; color: var(--gold-soft);
     }
-    .hero-sky {
-      position: relative; overflow: hidden;
-      width: 100vw; margin: 12px calc(50% - 50vw) 28px;
-      height: clamp(340px, 46vh, 520px);
-      background: #100D16;
-    }
-    .hero-sky canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .hero-sky::before, .hero-sky::after {
-      content: ''; position: absolute; left: 0; right: 0; height: 110px;
-      pointer-events: none; z-index: 1;
-    }
-    .hero-sky::before { top: 0; background: linear-gradient(180deg, var(--paper), rgba(245,243,238,0)); }
-    .hero-sky::after { bottom: 0; background: linear-gradient(0deg, var(--paper), rgba(245,243,238,0)); }
     @media (max-width: 640px) {
-      .hero-sky { height: 300px; }
-      .hero-sky::before, .hero-sky::after { height: 70px; }
     }
     .hero-proof-k {
       font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--muted);
+      text-transform: uppercase; color: rgba(243,239,232,0.5);
       margin-bottom: 16px;
     }
     .hero-started {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 19px; color: var(--ink-soft);
-      margin: -8px auto 34px;
+      font-size: 19px; color: rgba(243,239,232,0.8);
+      margin: 18px 0 38px;
     }
     .hero-proof {
       font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold);
       margin: 0 auto;
     }
-    .hero-actions { display: flex; gap: 22px; align-items: center; justify-content: center; }
+    .hero-actions { display: flex; gap: 26px; align-items: center; justify-content: flex-start; }
     .btn-primary {
       background: var(--accent); color: #fff;
       padding: 15px 36px; font-size: 12.5px; font-weight: 500;
@@ -197,6 +195,8 @@
       padding-bottom: 2px; transition: color 0.2s;
     }
     .btn-text:hover { color: var(--ink); }
+    .hero .btn-text { color: rgba(243,239,232,0.6); border-color: rgba(255,255,255,0.28); }
+    .hero .btn-text:hover { color: #fff; }
 
     /* ── Who we are (dark screen panel + starfield) ── */
     .screen-panel {
@@ -607,7 +607,8 @@
 
       .hero { padding: 44px 20px 56px; }
       h1.hero-headline { font-size: clamp(30px, 8.5vw, 44px); }
-      .hero-stats { gap: 16px; }
+      .hero-stats { gap: 20px; }
+      .hero { padding: 64px 24px 110px; }
       .quote-row { grid-template-columns: 1fr; gap: 24px; }
       .hero-actions { flex-direction: column; gap: 18px; }
 
@@ -646,23 +647,23 @@
 
 <!-- Hero -->
 <section class="hero">
-  <h1 class="hero-headline reveal">
-    We're building the next great <em>entertainment franchises.</em>
-  </h1>
-  <p class="hero-sub reveal">We use <b>Walt</b>, the most powerful AI creative executive ever built, to find storytellers with the ideas that can become enormous global entertainment franchises — and we help them bring their vision to audiences around the world, through every modern media channel.</p>
-  <div class="hero-sky reveal">
-    <canvas id="hero-field" aria-hidden="true"></canvas>
-  </div>
+  <canvas id="hero-field" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <h1 class="hero-headline reveal">
+      We're building the next great <em>entertainment franchises.</em>
+    </h1>
+    <p class="hero-sub reveal">We use <b>Walt</b>, the most powerful AI creative executive ever built, to find storytellers with the ideas that can become enormous global entertainment franchises — and we help them bring their vision to audiences around the world, through every modern media channel.</p>
     <p class="hero-proof-k reveal">In our first 12 months</p>
-  <div class="hero-stats reveal">
-    <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
-    <div class="hstat"><b>10+</b><span>Social channels</span></div>
-    <div class="hstat"><b>2</b><span>Feature films in development</span></div>
-  </div>
-  <p class="hero-started reveal">And we're just getting started.</p>
-  <div class="hero-actions reveal">
-    <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
-    <a href="#story" class="btn-text">Learn more ↓</a>
+    <div class="hero-stats reveal">
+      <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
+      <div class="hstat"><b>10+</b><span>Social channels</span></div>
+      <div class="hstat"><b>2</b><span>Feature films in development</span></div>
+    </div>
+    <p class="hero-started reveal">And we're just getting started.</p>
+    <div class="hero-actions reveal">
+      <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
+      <a href="#story" class="btn-text">Learn more ↓</a>
+    </div>
   </div>
 </section>
 
@@ -1242,7 +1243,9 @@
       ctx.clearRect(0, 0, w, h);
 
       const ign = o.ignition
-        ? { x: (w < 640 ? 0.5 : o.ignition.fx) * w, y: o.ignition.fy * h }
+        ? (w < 700
+            ? { x: 0.5 * w, y: 0.84 * h }
+            : { x: o.ignition.fx * w, y: o.ignition.fy * h })
         : null;
       const biasR = ign ? 0.18 * w : 0;
       const bloomR = ign ? 0.16 * Math.min(w, h) : 0;
@@ -1256,9 +1259,6 @@
           if (ign) {
             const d = Math.hypot(x - ign.x, y - ign.y);
             a *= 1 + 0.9 * Math.exp(-(d * d) / (biasR * biasR));
-            if (o.edgeFade) {
-              a *= smoothstep(0, 0.12 * h, y) * smoothstep(h, 0.88 * h, y);
-            }
             if (d < bloomR) {
               const t = 1 - d / bloomR;
               a *= 1 + 1.2 * t;
@@ -1325,6 +1325,22 @@
         ctx.fillStyle = gg;
         ctx.fillRect(-gs / 2, -gs / 2, gs, gs);
         ctx.restore();
+
+        if (o.ignition.value) {
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.shadowColor = 'rgba(228,201,126,0.5)';
+          ctx.shadowBlur = 14;
+          ctx.fillStyle = '#E4C97E';
+          ctx.font = '500 44px "Cormorant Garamond", serif';
+          ctx.fillText(o.ignition.value, ign.x, ign.y + 86);
+          ctx.shadowBlur = 0;
+          ctx.fillStyle = 'rgba(243,239,232,0.55)';
+          ctx.font = '700 10px Inter, sans-serif';
+          if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
+          ctx.fillText(o.ignition.valueLabel, ign.x, ign.y + 112);
+          ctx.restore();
+        }
       }
     }
 
@@ -1332,12 +1348,13 @@
     const band = document.getElementById('field');
     if (band) fields.push([band, { gems: 26, gemSeed: 21 }]);
     const sky = document.getElementById('hero-field');
-    if (sky) fields.push([sky, { gems: 18, gemSeed: 33, edgeFade: true, ignition: { fx: 0.62, fy: 0.40 } }]);
+    if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: { fx: 0.76, fy: 0.38, value: '$2.1B', valueLabel: 'FRANCHISE POTENTIAL' } }]);
 
     function drawAll() { fields.forEach(([c, o]) => drawField(c, o)); }
     let t;
     window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(drawAll, 150); });
     requestAnimationFrame(drawAll);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
   })();
 </script>
 
