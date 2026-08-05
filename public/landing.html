@@ -424,15 +424,6 @@
     .jrn .rv { font-size: 13px; font-weight: 600; fill: #fff; }
     .jrn .rv.gold { fill: #E4C97E; }
     .jrn .rv.dim { fill: var(--on-screen-muted); font-weight: 500; }
-    .jrn .gext { fill: none; stroke: rgba(228,201,126,0.32); stroke-width: 1.1; }
-    .jrn .gx { font-size: 11.5px; fill: var(--on-screen-muted); }
-    .jrn .gpath circle { fill: #17121F; stroke: rgba(228,201,126,0.5); stroke-width: 1.4; }
-    .jrn .gpath .gend { fill: rgba(228,201,126,0.18); stroke: #E4C97E; stroke-width: 1.8; }
-    .jrn .grail { fill: none; stroke: url(#jline); stroke-width: 2.6; }
-    .jrn .gfeed { fill: none; stroke: rgba(196,181,253,0.45); stroke-width: 2; }
-    .jrn .galt { fill: none; stroke: rgba(243,239,232,0.13); stroke-width: 1.2; stroke-dasharray: 4 5; }
-    .jrn .gp { font-size: 12.5px; fill: var(--on-screen); }
-    .jrn .gp.gold { fill: #E4C97E; font-weight: 600; font-size: 13.5px; }
     .jrn .glab {
       font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; fill: #C4B5FD;
@@ -590,6 +581,7 @@
   <p class="hero-sub reveal">With <b>Selznick</b>, the world's first AI creative executive, we're on a mission to turn hidden gems into major feature film franchises and much more.</p>
   <div class="hero-stats reveal">
     <div class="hstat"><b>1,000,000,000+</b><span>Views on social media</span></div>
+    <div class="hstat"><b>2</b><span>Feature films in development</span></div>
   </div>
   <div class="hero-actions reveal">
     <a href="mailto:info@gem.studio" class="btn-primary">Get in touch</a>
@@ -603,34 +595,28 @@
 <section id="scout">
   <div class="pillar-card reveal">
     <p class="pillar-n">Scout</p>
-    <p class="pillar-statement">We're scouting for IP and creators with <em>massive potential.</em></p>
+    <p class="pillar-statement">We scout for IP with massive <em>box office potential.</em></p>
     <p class="pillar-next">The entire business runs on a small number of enormous properties, and Hollywood is not set up to find them. We use <b>Selznick</b> to look across every format — screenplays, books, comics, online video — for the rare opportunities that could become major feature film franchises.</p>
 
     <div class="fcard journey reveal">
       <div class="scan-wrap">
-        <svg class="jrn" viewBox="0 0 1240 330" aria-hidden="true">
+        <svg class="jrn" viewBox="0 0 1000 300" aria-hidden="true">
           <defs>
             <linearGradient id="gemfill" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
             </linearGradient>
-            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="700" y1="250" x2="1000" y2="118">
+            <linearGradient id="jline" gradientUnits="userSpaceOnUse" x1="672" y1="0" x2="902" y2="0">
               <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#E4C97E"/>
             </linearGradient>
             <radialGradient id="gemhalo">
               <stop offset="0" stop-color="rgba(139,92,246,0.35)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
             </radialGradient>
-            <radialGradient id="screenglow">
-              <stop offset="0" stop-color="rgba(228,201,126,0.34)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
-            </radialGradient>
-            <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 1 L 9 5 L 0 9 z" fill="#E4C97E"/>
-            </marker>
             <marker id="arwp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M0 1 L 9 5 L 0 9 z" fill="#C4B5FD"/>
             </marker>
           </defs>
 
-          <!-- sources -->
+          <!-- everything flows in -->
           <g class="src">
             <circle cx="40" cy="40" r="18" class="sbub"/>
             <g class="jico" transform="translate(40 40)"><rect x="-6.5" y="-8.5" width="13" height="17" rx="2"/><path d="M-3 -4h6M-3 0h6M-3 4h3.5"/></g>
@@ -654,68 +640,38 @@
           </g>
 
           <g class="feeds">
-            <path d="M244 40 C 330 40, 360 96, 424 122" fill="none"/>
-            <path d="M212 94 C 320 94, 360 112, 424 128" fill="none"/>
-            <path d="M222 148 C 330 148, 370 138, 424 134" fill="none"/>
-            <path d="M270 202 C 350 202, 380 170, 424 142" fill="none"/>
-            <path d="M226 256 C 350 256, 385 190, 424 148" fill="none"/>
+            <path d="M244 40 C 350 40, 400 110, 468 140" fill="none"/>
+            <path d="M212 94 C 340 94, 400 124, 468 145" fill="none"/>
+            <path d="M222 148 C 340 148, 400 148, 468 148" fill="none"/>
+            <path d="M270 202 C 370 202, 410 176, 468 152" fill="none"/>
+            <path d="M226 256 C 360 256, 410 196, 468 156" fill="none"/>
           </g>
 
-          <!-- the engine -->
-          <circle cx="470" cy="134" r="88" fill="url(#gemhalo)"/>
-          <circle class="ring r1" cx="470" cy="134" r="42" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
-          <circle class="ring r2" cx="470" cy="134" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
-          <rect x="-18" y="-18" width="36" height="36" rx="7.5" transform="translate(470 134) rotate(45)" fill="url(#gemfill)"/>
+          <!-- Selznick -->
+          <circle cx="540" cy="148" r="88" fill="url(#gemhalo)"/>
+          <circle class="ring r2" cx="540" cy="148" r="66" fill="none" stroke="rgba(196,181,253,0.22)" stroke-width="1.1"/>
+          <circle class="ring r1" cx="540" cy="148" r="42" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.3"/>
+          <rect x="-19" y="-19" width="38" height="38" rx="8" transform="translate(540 148) rotate(45)" fill="url(#gemfill)"/>
+          <text class="glab" x="540" y="238" text-anchor="middle">Selznick</text>
 
-          <path d="M470 176 V 206" class="jconn" marker-end="url(#arwp)"/>
+          <path d="M610 148 H 646" class="jconn" marker-end="url(#arwp)"/>
 
-          <!-- ranked output under the gem -->
-          <text class="rhead" x="360" y="222">Total franchise potential</text>
+          <!-- what it's worth -->
+          <text class="rhead" x="672" y="112">Total box office potential</text>
           <g class="rbars">
-            <rect x="360" y="238" width="230" height="9" rx="4.5" class="rb"/>
-            <rect x="360" y="238" width="230" height="9" rx="4.5" class="rb on"/>
-            <text class="rv gold" x="600" y="247">$2.2B</text>
+            <rect x="672" y="130" width="230" height="9" rx="4.5" class="rb"/>
+            <rect x="672" y="130" width="230" height="9" rx="4.5" class="rb on"/>
+            <text class="rv gold" x="918" y="139">$2.2B</text>
 
-            <rect x="360" y="264" width="230" height="9" rx="4.5" class="rb"/>
-            <rect x="360" y="264" width="146" height="9" rx="4.5" class="rb mid"/>
-            <text class="rv" x="600" y="273">$1.4B</text>
+            <rect x="672" y="158" width="230" height="9" rx="4.5" class="rb"/>
+            <rect x="672" y="158" width="146" height="9" rx="4.5" class="rb mid"/>
+            <text class="rv" x="918" y="167">$1.4B</text>
 
-            <rect x="360" y="290" width="230" height="9" rx="4.5" class="rb"/>
-            <rect x="360" y="290" width="90" height="9" rx="4.5" class="rb mid"/>
-            <text class="rv dim" x="600" y="299">$860M</text>
+            <rect x="672" y="186" width="230" height="9" rx="4.5" class="rb"/>
+            <rect x="672" y="186" width="90" height="9" rx="4.5" class="rb mid"/>
+            <text class="rv dim" x="918" y="195">$860M</text>
           </g>
-
-          <!-- the golden path -->
-          <path d="M534 134 C 600 134, 630 210, 692 246" class="gfeed"/>
-
-          <g class="gpath">
-            <path d="M700 250 C 800 244, 900 232, 1000 214" class="galt"/>
-            <path d="M700 250 L 800 214 L 900 172 L 1000 118" class="grail"/>
-
-            <circle cx="700" cy="250" r="7"/>
-            <text class="gp" x="700" y="230" text-anchor="middle">Web series</text>
-
-            <circle cx="800" cy="214" r="7"/>
-            <text class="gp" x="800" y="194" text-anchor="middle">TV series</text>
-
-            <circle cx="900" cy="172" r="7"/>
-            <text class="gp" x="900" y="152" text-anchor="middle">Feature film</text>
-
-            <circle cx="1000" cy="118" r="9" class="gend"/>
-            <text class="gp gold" x="1000" y="96" text-anchor="middle">Franchise</text>
-
-            <path d="M1010 128 C 1050 140, 1060 152, 1074 162" class="gext"/>
-            <path d="M1010 128 C 1052 146, 1062 168, 1074 186" class="gext"/>
-            <path d="M1010 128 C 1050 152, 1058 186, 1074 210" class="gext"/>
-            <path d="M1010 128 C 1048 158, 1054 202, 1074 234" class="gext"/>
-            <text class="gx" x="1082" y="166">Theme parks</text>
-            <text class="gx" x="1082" y="190">Consumer products</text>
-            <text class="gx" x="1082" y="214">Comics &amp; novels</text>
-            <text class="gx" x="1082" y="238">Games &amp; merch</text>
-          </g>
-
-          <text class="glab" x="700" y="292">Multi-channel potential</text>
-          <text class="gval" x="700" y="314">One property, every stage it could reach</text>
+          <text class="gval" x="672" y="228">Ranked against everything else we've read.</text>
 
         </svg>
       </div>
