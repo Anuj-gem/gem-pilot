@@ -765,7 +765,7 @@
 <section id="see">
   <p class="pillar-n reveal">See</p>
   <p class="pillar-statement reveal">We find ideas that Hollywood is unable — <em>and often unwilling</em> — to look for.</p>
-  <p class="pillar-next reveal"><b>Walt</b> lets our team study ideas at a scale, depth, and breadth no one else can, across every format and from every source. Anyone can send us theirs, and we go looking for the rest. What we're after is easy to overlook and enormous in what it could become.</p>
+  <p class="pillar-next reveal"><b>Walt</b> is the system we built so our creative team can evaluate ideas in any format — screenplays, books, comics, online video — at a scale and depth no one else can, alongside the most detailed financial projections ever built for film. Anyone can send us theirs, and we go looking for the rest. Every decision is still ours to make; the technology just means nothing great gets passed over because no one had the time to look at it.</p>
 
   <div class="intake-wrap reveal">
     <canvas id="intake-field" aria-hidden="true"></canvas>
@@ -903,7 +903,7 @@
     const ctx = c.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Submissions'];
+    const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
 
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
@@ -912,7 +912,7 @@
 
     const rnd = () => Math.random();
     const ease = t => t * t * (3 - 2 * t);
-    const bandY = i => (h * 0.18) + i * ((h * 0.64) / (SOURCES.length - 1));
+    const bandY = i => (h * 0.21) + i * ((h * 0.58) / (SOURCES.length - 1));
 
     function spawn(seeded) {
       const b = Math.floor(rnd() * SOURCES.length);
@@ -932,7 +932,7 @@
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       wide = w >= 780;
-      X0 = wide ? w * 0.085 : 14;
+      X0 = wide ? Math.max(30, w * 0.06) : 14;
       XS = wide ? w * 0.20 : 22;
       CX = w * 0.50; CY = h * 0.5;
       R = wide ? 56 : 42;
@@ -951,6 +951,38 @@
       ctx.fillRect(-s, -s, s * 2, s * 2);
       ctx.restore();
     }
+    function icon(kind, x, y) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.strokeStyle = 'rgba(196,181,253,0.85)';
+      ctx.lineWidth = 1.35;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      if (kind === 0) {          // screenplay
+        ctx.roundRect ? ctx.roundRect(-6, -8, 12, 16, 1.6) : ctx.rect(-6, -8, 12, 16);
+        ctx.moveTo(-3, -4); ctx.lineTo(3, -4);
+        ctx.moveTo(-3, 0); ctx.lineTo(3, 0);
+        ctx.moveTo(-3, 4); ctx.lineTo(1, 4);
+      } else if (kind === 1) {   // book
+        ctx.moveTo(-7, -6); ctx.lineTo(-7, 7); ctx.lineTo(0, 5); ctx.lineTo(7, 7); ctx.lineTo(7, -6);
+        ctx.lineTo(0, -4); ctx.closePath();
+        ctx.moveTo(0, -4); ctx.lineTo(0, 5);
+      } else if (kind === 2) {   // comics
+        ctx.rect(-7, -7, 6, 6); ctx.rect(1, -7, 6, 6);
+        ctx.rect(-7, 1, 6, 6); ctx.rect(1, 1, 6, 6);
+      } else if (kind === 3) {   // online video
+        ctx.roundRect ? ctx.roundRect(-8, -6, 16, 12, 2.5) : ctx.rect(-8, -6, 16, 12);
+        ctx.moveTo(-1.5, -3); ctx.lineTo(3.5, 0); ctx.lineTo(-1.5, 3); ctx.closePath();
+      } else {                   // podcast
+        ctx.roundRect ? ctx.roundRect(-2.6, -8, 5.2, 9, 2.6) : ctx.rect(-2.6, -8, 5.2, 9);
+        ctx.moveTo(-5.5, -1); ctx.arc(0, -1, 5.5, 0, Math.PI, false);
+        ctx.moveTo(0, 4.5); ctx.lineTo(0, 8);
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
     function goldFill(x, y, s) {
       const g = ctx.createLinearGradient(x - s, y - s, x + s, y + s);
       g.addColorStop(0, '#F0DCA0');
@@ -1009,9 +1041,13 @@
       if (wide) {
         ctx.save();
         ctx.textAlign = 'left';
-        ctx.fillStyle = 'rgba(243,239,232,0.58)';
-        ctx.font = '400 15px Inter, sans-serif';
-        SOURCES.forEach((sname, i) => ctx.fillText(sname, X0, bandY(i) + 5));
+        SOURCES.forEach((sname, i) => {
+          const y = bandY(i);
+          icon(i, X0, y);
+          ctx.fillStyle = 'rgba(255,255,255,0.92)';
+          ctx.font = '600 15px Inter, sans-serif';
+          ctx.fillText(sname, X0 + 28, y + 5);
+        });
         ctx.restore();
       }
 
