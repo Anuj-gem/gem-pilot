@@ -1488,7 +1488,6 @@
             ? { x: 0.5 * w, y: 0.84 * h }
             : { x: o.ignition.fx * w, y: o.ignition.fy * h })
         : null;
-      const clearR = 265;
 
       function dust(seed, count, rBase, rVar, aBase, aVar) {
         const rand = mulberry32(seed);
@@ -1496,10 +1495,6 @@
           const x = rand() * w, y = rand() * h;
           let a = aBase + rand() * aVar;
           const r = rBase + rand() * rVar;
-          if (ign) {
-            const d = Math.hypot(x - ign.x, y - ign.y);
-            a *= 0.15 + 0.85 * smoothstep(0, clearR, d);
-          }
           ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
           ctx.fillRect(x, y, r, r);
         }
@@ -1517,7 +1512,7 @@
       const litRand = mulberry32(o.gemSeed);
       for (let i = 0; i < o.gems; i++) {
         const x = litRand() * w, y = litRand() * h;
-        if (ign && Math.hypot(x - ign.x, y - ign.y) < 300) { litRand(); continue; }
+        if (ign && Math.hypot(x - ign.x, y - ign.y) < 70) { litRand(); continue; }
         const s = 2.2 + litRand() * 2;
         ctx.save();
         ctx.translate(x, y);
@@ -1535,18 +1530,6 @@
 
       // THE ONE — the only gold in the sky
       if (ign) {
-        let g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 0.22 * Math.min(w, h) * 1.4);
-        g.addColorStop(0, 'rgba(139,92,246,0.16)');
-        g.addColorStop(1, 'rgba(139,92,246,0)');
-        ctx.fillStyle = g;
-        ctx.fillRect(0, 0, w, h);
-
-        g = ctx.createRadialGradient(ign.x, ign.y, 0, ign.x, ign.y, 90);
-        g.addColorStop(0, 'rgba(167,139,250,0.3)');
-        g.addColorStop(1, 'rgba(167,139,250,0)');
-        ctx.fillStyle = g;
-        ctx.fillRect(ign.x - 90, ign.y - 90, 180, 180);
-
         ctx.save();
         ctx.beginPath();
         ctx.arc(ign.x, ign.y, 46, 0, Math.PI * 2);
@@ -1677,20 +1660,20 @@
     const page = document.getElementById('page-field');
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
-    if (sky) fields.push([sky, { gems: 0, gemSeed: 33, ignition: {
+    if (sky) fields.push([sky, { gems: 38, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
       satellites: [
-        { ang: -78, r: 210, size: 9, kids: 7 },
-        { ang: -38, r: 146, size: 5, kids: 3 },
-        { ang: -10, r: 215, size: 8, kids: 5 },
-        { ang: 20, r: 148, size: 5, kids: 3 },
-        { ang: 55, r: 185, size: 7.5, kids: 4 },
-        { ang: 80, r: 228, size: 6, kids: 4 },
-        { ang: 102, r: 152, size: 5.5, kids: 3 },
-        { ang: 145, r: 192, size: 7, kids: 4 },
-        { ang: 170, r: 150, size: 4.5, kids: 2 },
-        { ang: -120, r: 154, size: 4.5, kids: 2 },
-        { ang: -155, r: 198, size: 7, kids: 5 }
+        { ang: -78, r: 158, size: 9, kids: 7 },
+        { ang: -38, r: 112, size: 5, kids: 3 },
+        { ang: -10, r: 162, size: 8, kids: 5 },
+        { ang: 20, r: 114, size: 5, kids: 3 },
+        { ang: 55, r: 140, size: 7.5, kids: 4 },
+        { ang: 80, r: 172, size: 6, kids: 4 },
+        { ang: 102, r: 116, size: 5.5, kids: 3 },
+        { ang: 145, r: 146, size: 7, kids: 4 },
+        { ang: 170, r: 114, size: 4.5, kids: 2 },
+        { ang: -120, r: 118, size: 4.5, kids: 2 },
+        { ang: -155, r: 150, size: 7, kids: 5 }
       ]
     } }]);
 
