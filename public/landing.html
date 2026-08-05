@@ -1547,17 +1547,35 @@
         ctx.fillStyle = g;
         ctx.fillRect(ign.x - 90, ign.y - 90, 180, 180);
 
-        const gs = 22;
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(ign.x, ign.y, 46, 0, Math.PI * 2);
+        ctx.fillStyle = '#120E1B';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(196,181,253,0.4)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.restore();
+
+        const gs = 42;
         ctx.save();
         ctx.translate(ign.x, ign.y);
         ctx.rotate(Math.PI / 4);
         ctx.shadowColor = '#8b5cf6';
-        ctx.shadowBlur = 32;
+        ctx.shadowBlur = 26;
         const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
         gg.addColorStop(0, '#C4B5FD');
         gg.addColorStop(1, '#6D28D9');
         ctx.fillStyle = gg;
-        ctx.fillRect(-gs / 2, -gs / 2, gs, gs);
+        const cr = 8;
+        ctx.beginPath();
+        ctx.moveTo(-gs / 2 + cr, -gs / 2);
+        ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
+        ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr);
+        ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr);
+        ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr);
+        ctx.closePath();
+        ctx.fill();
         ctx.restore();
 
 
@@ -1588,7 +1606,7 @@
             ctx.strokeStyle = 'rgba(228,201,126,0.28)';
             ctx.lineWidth = 1;
             ctx.beginPath();
-            ctx.moveTo(ign.x + Math.cos(a) * 76, ign.y + Math.sin(a) * 76);
+            ctx.moveTo(ign.x + Math.cos(a) * 48, ign.y + Math.sin(a) * 48);
             ctx.lineTo(ign.x + Math.cos(a) * (sat.r - sat.size - 8), ign.y + Math.sin(a) * (sat.r - sat.size - 8));
             ctx.stroke();
             ctx.restore();
@@ -1659,15 +1677,19 @@
     const page = document.getElementById('page-field');
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
-    if (sky) fields.push([sky, { gems: 10, gemSeed: 33, ignition: {
+    if (sky) fields.push([sky, { gems: 0, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
       satellites: [
         { ang: -78, r: 210, size: 9, kids: 7 },
         { ang: -38, r: 146, size: 5, kids: 3 },
         { ang: -10, r: 215, size: 8, kids: 5 },
+        { ang: 20, r: 148, size: 5, kids: 3 },
         { ang: 55, r: 185, size: 7.5, kids: 4 },
+        { ang: 80, r: 228, size: 6, kids: 4 },
         { ang: 102, r: 152, size: 5.5, kids: 3 },
         { ang: 145, r: 192, size: 7, kids: 4 },
+        { ang: 170, r: 150, size: 4.5, kids: 2 },
+        { ang: -120, r: 154, size: 4.5, kids: 2 },
         { ang: -155, r: 198, size: 7, kids: 5 }
       ]
     } }]);
