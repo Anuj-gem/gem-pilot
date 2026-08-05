@@ -177,7 +177,8 @@
       margin: 0 auto;
     }
     .hero-record {
-      display: inline-flex; align-items: center; gap: 34px;
+      display: inline-flex; align-items: center; gap: 34px; flex-wrap: wrap;
+      max-width: 680px;
       padding: 24px 34px; margin-bottom: 40px;
       border: 1px solid rgba(228,201,126,0.28);
       border-radius: 14px;
@@ -709,7 +710,7 @@
     <h1 class="hero-headline reveal">
       We're building the next great <em>entertainment franchises.</em>
     </h1>
-    <p class="hero-sub reveal">We use <b>Walt</b>, the most powerful AI creative executive ever built, to find storytellers with the ideas that can become enormous global entertainment franchises — and we help them bring their vision to audiences around the world, through every modern media channel.</p>
+    <p class="hero-sub reveal">Powered by <b>Walt</b>, the most powerful AI creative executive ever built, we find the storytellers with the potential to create enormous entertainment franchises — and we help them bring their visions to audiences around the world.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>1,000,000,000+</b>
@@ -1555,12 +1556,12 @@
           ctx.shadowBlur = 14;
           ctx.fillStyle = '#E4C97E';
           ctx.font = '500 46px "Cormorant Garamond", serif';
-          ctx.fillText(o.ignition.value, ign.x, ign.y - 104);
+          ctx.fillText(o.ignition.value, ign.x - 140, ign.y + 130);
           ctx.shadowBlur = 0;
           ctx.fillStyle = 'rgba(243,239,232,0.55)';
           ctx.font = '700 10px Inter, sans-serif';
           if ('letterSpacing' in ctx) ctx.letterSpacing = '2.5px';
-          ctx.fillText(o.ignition.valueLabel, ign.x, ign.y - 80);
+          ctx.fillText(o.ignition.valueLabel, ign.x - 140, ign.y + 154);
           ctx.restore();
         }
 
@@ -1600,6 +1601,29 @@
             ctx.font = '500 18px "Cormorant Garamond", serif';
             ctx.fillText(sat.value, sx, sy + sat.size + 44);
             ctx.restore();
+
+            if (sat.kids) {
+              const kr = mulberry32(Math.round(sat.r * 7 + sat.ang));
+              for (let k = 0; k < sat.kids; k++) {
+                const ka = a + (kr() - 0.5) * 1.35;
+                const kd = 40 + kr() * 46;
+                const kx = sx + Math.cos(ka) * kd;
+                const ky = sy + Math.sin(ka) * kd;
+                ctx.save();
+                ctx.strokeStyle = 'rgba(196,181,253,0.2)';
+                ctx.lineWidth = 0.7;
+                ctx.beginPath();
+                ctx.moveTo(sx + Math.cos(ka) * (sat.size + 5), sy + Math.sin(ka) * (sat.size + 5));
+                ctx.lineTo(kx, ky);
+                ctx.stroke();
+                ctx.translate(kx, ky);
+                ctx.rotate(Math.PI / 4);
+                const ks = 1.8 + kr() * 1.6;
+                ctx.fillStyle = 'rgba(196,181,253,' + (0.4 + kr() * 0.35).toFixed(2) + ')';
+                ctx.fillRect(-ks, -ks, ks * 2, ks * 2);
+                ctx.restore();
+              }
+            }
           });
         }
       }
@@ -1610,13 +1634,12 @@
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
     if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: {
-      fx: 0.74, fy: 0.42, value: '$2.9B', valueLabel: 'FRANCHISE POTENTIAL',
+      fx: 0.72, fy: 0.44, value: '$2.5B', valueLabel: 'FRANCHISE POTENTIAL',
       satellites: [
-        { label: 'Feature film', value: '$1.2B', ang: -33, r: 200, size: 9 },
-        { label: 'TV series', value: '$600M', ang: 22, r: 180, size: 8 },
-        { label: 'Merchandise', value: '$400M', ang: 95, r: 160, size: 7.5 },
-        { label: 'Games', value: '$450M', ang: 152, r: 178, size: 7.5 },
-        { label: 'Social', value: '$250M', ang: -145, r: 156, size: 7 }
+        { label: 'Feature film', value: '$1.3B', ang: -55, r: 195, size: 9, kids: 7 },
+        { label: 'TV series', value: '$600M', ang: -6, r: 215, size: 8, kids: 5 },
+        { label: 'Merchandise', value: '$400M', ang: 48, r: 185, size: 7.5, kids: 4 },
+        { label: 'Social', value: '$200M', ang: -116, r: 175, size: 7, kids: 4 }
       ]
     } }]);
 
