@@ -277,15 +277,20 @@
       gap: 14px; margin-top: 30px;
     }
     .bridge-card { margin-top: 24px; }
-    .bridge { display: block; width: 100%; min-width: 820px; height: auto; margin-top: 6px; }
-    .bridge .bb.base { fill: url(#brbase); }
-    .bridge .bb.inc { fill: rgba(167,139,250,0.75); }
-    .bridge .bb.gold { fill: url(#brgold); }
-    .bridge .bcon { stroke: rgba(243,239,232,0.28); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
-    .bridge .bax { stroke: rgba(255,255,255,0.14); stroke-width: 1; }
-    .bridge .bval { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; fill: #fff; }
-    .bridge .bval.gold { fill: #E4C97E; }
-    .bridge .blab { font-family: 'Inter', sans-serif; font-size: 11.5px; fill: var(--on-screen-muted); }
+    .spage { display: block; width: 100%; min-width: 860px; height: auto; margin-top: 4px; }
+    .spage .sp-page { fill: #F7F5F0; }
+    .spage .sp-line {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px; fill: #37333F;
+    }
+    .spage .sp-slug { font-weight: 700; }
+    .spage .sp-under { stroke: rgba(124,58,237,0.55); stroke-width: 1.5; }
+    .spage .sp-con { stroke: rgba(167,139,250,0.45); stroke-width: 1; fill: none; }
+    .spage .sp-note {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 17.5px; fill: #C4B5FD;
+    }
+    .spage .sp-gold { fill: #E4C97E; font-weight: 600; }
     .model-wide .fcard {
       background: rgba(255,255,255,0.035);
       border: 1px solid rgba(196,181,253,0.18);
@@ -1001,51 +1006,49 @@
     <div class="twins reveal">
       <div class="fcard twin model-wide">
         <p class="fcard-k">The model</p>
-        <p class="twin-h">Selznick, a world model of the film business.</p>
-        <p class="twin-d">Trained on 13,000+ films and everything that happened to them, <b>Selznick</b> understands a film at every stage of its life — from the idea on the page to the finished picture in theaters. It's how we position projects, plan production, and understand the commercial impact of every creative decision before we make it.</p>
+        <p class="twin-h">Selznick knows why films work.</p>
+        <p class="twin-d"><b>Selznick</b> has studied more films than any executive in history — what they were on the page, every decision that shaped them, and what happened when they met the world. It works beside us on every question that decides a film's fate: what to make, who belongs in it, what it should cost, and how big it can become.</p>
 
         <div class="fcard bridge-card">
-          <p class="fcard-k">One project, decision by decision</p>
           <div class="scan-wrap">
-            <svg class="bridge" viewBox="0 0 1000 300" aria-hidden="true">
-              <defs>
-                <linearGradient id="brbase" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#5B21B6"/>
-                </linearGradient>
-                <linearGradient id="brgold" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
-                </linearGradient>
-              </defs>
-          <rect x="70" y="178.8" width="90" height="71.2" rx="4" class="bb base"/>
-          <text class="bval" x="115.0" y="169.8" text-anchor="middle">$45M</text>
-          <text class="blab" x="115.0" y="272" text-anchor="middle">Script alone</text>
-          <path d="M160 178.8 H 205" class="bcon"/>
-          <rect x="205" y="151.8" width="90" height="26.9" rx="4" class="bb inc"/>
-          <text class="bval" x="250.0" y="142.8" text-anchor="middle">+$17M</text>
-          <text class="blab" x="250.0" y="272" text-anchor="middle">Positioning</text>
-          <path d="M295 151.8 H 340" class="bcon"/>
-          <rect x="340" y="118.6" width="90" height="33.2" rx="4" class="bb inc"/>
-          <text class="bval" x="385.0" y="109.6" text-anchor="middle">+$21M</text>
-          <text class="blab" x="385.0" y="272" text-anchor="middle">Casting</text>
-          <path d="M430 118.6 H 475" class="bcon"/>
-          <rect x="475" y="96.4" width="90" height="22.2" rx="4" class="bb inc"/>
-          <text class="bval" x="520.0" y="87.4" text-anchor="middle">+$14M</text>
-          <text class="blab" x="520.0" y="272" text-anchor="middle">Director</text>
-          <path d="M565 96.4 H 610" class="bcon"/>
-          <rect x="610" y="82.2" width="90" height="14.2" rx="4" class="bb inc"/>
-          <text class="bval" x="655.0" y="73.2" text-anchor="middle">+$9M</text>
-          <text class="blab" x="655.0" y="272" text-anchor="middle">Production plan</text>
-          <path d="M700 82.2 H 745" class="bcon"/>
-          <rect x="745" y="60.0" width="90" height="22.2" rx="4" class="bb inc"/>
-          <text class="bval" x="790.0" y="51.0" text-anchor="middle">+$14M</text>
-          <text class="blab" x="790.0" y="272" text-anchor="middle">Distribution</text>
-          <rect x="880" y="60.0" width="90" height="190.0" rx="4" class="bb gold"/>
-          <text class="bval gold" x="925.0" y="51.0" text-anchor="middle">$120M+</text>
-          <text class="blab" x="925.0" y="272" text-anchor="middle">Positioned</text>
-          <line x1="60" y1="250" x2="980" y2="250" class="bax"/>
+            <svg class="spage" viewBox="0 0 1000 420" aria-hidden="true">
+              <rect x="56" y="24" width="440" height="372" rx="6" class="sp-page"/>
+              <text class="sp-line sp-slug" x="96" y="66">INT. LIGHTHOUSE &#8212; NIGHT</text>
+              <text class="sp-line" x="96" y="96">Mara drags the radio to the window.</text>
+              <text class="sp-line" x="96" y="115">Static. Then a voice she knows.</text>
+              <text class="sp-line sp-slug" x="196" y="153">MARA</text>
+              <text class="sp-line" x="146" y="172">You said you'd never</text>
+              <text class="sp-line" x="146" y="191">come back.</text>
+              <text class="sp-line" x="96" y="229">The beam sweeps the water.</text>
+              <text class="sp-line" x="96" y="248">A boat, running dark.</text>
+              <text class="sp-line" x="96" y="286">She kills the light.</text>
+              <text class="sp-line" x="96" y="305">Darkness. The sea breathes.</text>
+              <text class="sp-line" x="96" y="343">FADE OUT.</text>
+
+              <line x1="96" y1="71" x2="268" y2="71" class="sp-under"/>
+              <line x1="146" y1="196" x2="216" y2="196" class="sp-under"/>
+              <line x1="96" y1="253" x2="240" y2="253" class="sp-under"/>
+              <line x1="96" y1="310" x2="276" y2="310" class="sp-under"/>
+
+              <path d="M272 69 C 380 60, 440 56, 528 56" class="sp-con"/>
+              <path d="M220 194 C 340 176, 430 148, 528 142" class="sp-con"/>
+              <path d="M244 251 C 360 244, 440 234, 528 230" class="sp-con"/>
+              <path d="M280 308 C 380 312, 440 318, 528 318" class="sp-con"/>
+
+              <text class="sp-note" x="540" y="60">Open on this &#8212; it&#8217;s the hook.</text>
+              <text class="sp-note" x="540" y="82">Move it to page one.</text>
+
+              <text class="sp-note" x="540" y="146">This role carries the film.</text>
+              <text class="sp-note" x="540" y="168">The right lead is worth <tspan class="sp-gold">+$21M</tspan>.</text>
+
+              <text class="sp-note" x="540" y="234">Night shoot on open water: <tspan class="sp-gold">&#8722;$4M</tspan></text>
+              <text class="sp-note" x="540" y="256">if we move it to the cove.</text>
+
+              <text class="sp-note" x="540" y="322">Ending lands with 18&#8211;34. Position as</text>
+              <text class="sp-note" x="540" y="344">an elevated thriller. Ceiling: <tspan class="sp-gold">$120M+</tspan></text>
             </svg>
           </div>
-          <p class="fcard-d">Every decision, priced before it's made.</p>
+          <p class="fcard-d">The first Selznick was famous for his memos. Ours come priced.</p>
         </div>
         <p class="twin-d" style="margin-top:18px;">The same model powers our scouting — pricing every idea from the page alone.</p>
       </div>
