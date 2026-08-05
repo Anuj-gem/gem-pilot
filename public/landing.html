@@ -176,6 +176,39 @@
       text-transform: uppercase; color: var(--gold);
       margin: 0 auto;
     }
+    .hero-record {
+      display: inline-flex; align-items: center; gap: 34px;
+      padding: 24px 34px; margin-bottom: 40px;
+      border: 1px solid rgba(228,201,126,0.28);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(228,201,126,0.07), rgba(228,201,126,0.02) 55%, rgba(124,58,237,0.05));
+      box-shadow: 0 0 44px -18px rgba(228,201,126,0.35);
+    }
+    .hrec b {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 400; line-height: 1;
+      color: var(--on-screen); letter-spacing: -0.01em;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 0 22px rgba(228,201,126,0.35);
+    }
+    .hrec b.tease { font-style: italic; color: var(--gold-soft); }
+    .hrec span {
+      display: block; margin-top: 9px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold-soft);
+    }
+    .hrec-gem {
+      width: 9px; height: 9px; border-radius: 2px; flex: none;
+      background: linear-gradient(135deg,#C4B5FD,#7C3AED);
+      transform: rotate(45deg);
+      box-shadow: 0 0 12px rgba(139,92,246,0.7);
+    }
+    @media (max-width: 760px) {
+      .hero-record { flex-direction: column; align-items: flex-start; gap: 20px; padding: 22px 24px; }
+      .hrec-gem { display: none; }
+    }
     .hero-actions { display: flex; gap: 26px; align-items: center; justify-content: flex-start; }
     .btn-primary {
       background: var(--accent); color: #fff;
@@ -677,12 +710,22 @@
       We're building the next great <em>entertainment franchises.</em>
     </h1>
     <p class="hero-sub reveal">We use <b>Walt</b>, the most powerful AI creative executive ever built, to find storytellers with the ideas that can become enormous global entertainment franchises — and we help them bring their vision to audiences around the world, through every modern media channel.</p>
-    <p class="hero-proof-k reveal">In our first 12 months</p>
-    <div class="hero-stats reveal">
-      <div class="hstat"><b>1,000,000,000+</b><span>Views so far</span></div>
-      <div class="hstat"><b>2</b><span>Feature films coming soon</span></div>
+    <div class="hero-record reveal">
+      <div class="hrec">
+        <b>1,000,000,000+</b>
+        <span>Views</span>
+      </div>
+      <span class="hrec-gem" aria-hidden="true"></span>
+      <div class="hrec">
+        <b>2</b>
+        <span>Feature films coming soon</span>
+      </div>
+      <span class="hrec-gem" aria-hidden="true"></span>
+      <div class="hrec">
+        <b class="tease">And much more</b>
+        <span>On the way</span>
+      </div>
     </div>
-    <p class="hero-started reveal">And we're just getting started.</p>
     <div class="hero-actions reveal">
       <a href="mailto:info@gem.studio?subject=Pitch" class="btn-primary">Pitch us</a>
       <a href="#see" class="btn-text">Learn more ↓</a>
