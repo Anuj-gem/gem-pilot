@@ -31,9 +31,13 @@
       --on-screen-muted:rgba(243,239,232,0.62);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    #page-field {
+      position: fixed; inset: 0; z-index: -1;
+      width: 100%; height: 100%; display: block;
+    }
     body {
-      background: var(--paper);
-      color: var(--ink);
+      background: #0E0B14;
+      color: var(--on-screen);
       font-family: 'Inter', sans-serif;
       font-weight: 400;
       -webkit-font-smoothing: antialiased;
@@ -54,10 +58,10 @@
     nav {
       padding: 22px 56px;
       display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid var(--hair);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       position: sticky; top: 0;
-      background: rgba(245,243,238,0.86);
-      backdrop-filter: saturate(180%) blur(12px);
+      background: rgba(14,11,20,0.72);
+      backdrop-filter: saturate(160%) blur(12px);
       z-index: 100;
     }
     .logo { display: flex; align-items: center; gap: 11px; }
@@ -67,38 +71,38 @@
       transform: rotate(45deg); flex-shrink: 0;
     }
     .logo-text {
-      font-size: 12px; font-weight: 500;
+      font-size: 12px; font-weight: 600;
       letter-spacing: 0.14em;
-      color: var(--ink);
+      color: #fff;
       text-transform: uppercase;
     }
     .nav-links { display: flex; gap: 36px; align-items: center; }
     .nav-links a {
       font-size: 11px; letter-spacing: 0.1em;
-      color: var(--muted);
+      color: rgba(243,239,232,0.6);
       text-decoration: none; text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover { color: #fff; }
     .nav-links a.nav-cta {
-      color: var(--accent-deep);
-      border-bottom: 1px solid rgba(124,58,237,0.4);
-      padding-bottom: 2px; font-weight: 500;
+      color: #C4B5FD;
+      border-bottom: 1px solid rgba(196,181,253,0.45);
+      padding-bottom: 2px; font-weight: 600;
     }
-    .nav-links a.nav-cta:hover { color: var(--accent); }
+    .nav-links a.nav-cta:hover { color: #fff; }
 
     /* ── Shared section chrome ── */
     .section-marker {
       font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
-      color: var(--muted); text-transform: uppercase;
+      color: rgba(243,239,232,0.45); text-transform: uppercase;
       margin-bottom: 44px;
       display: flex; align-items: center; gap: 16px;
     }
     .section-marker::after {
       content: ''; flex: 1; height: 1px;
-      background: var(--hair);
+      background: rgba(255,255,255,0.08);
     }
-    .rule { height: 1px; background: var(--hair); }
+    .rule { height: 1px; background: rgba(255,255,255,0.08); }
     section { padding: 76px 56px; }
     .sec-h {
       font-family: 'Cormorant Garamond', serif;
@@ -117,16 +121,10 @@
     /* ── Hero ── */
     .hero {
       position: relative; overflow: hidden;
-      background: #100D16;
-      padding: 96px 56px 130px;
+      padding: 96px 56px 110px;
       text-align: left;
     }
     .hero > canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .hero::after {
-      content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 130px;
-      background: linear-gradient(0deg, var(--paper), rgba(245,243,238,0));
-      pointer-events: none;
-    }
     .hero-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
     h1.hero-headline {
       font-family: 'Cormorant Garamond', serif;
@@ -222,23 +220,24 @@
     }
     .screen-panel .pillar-n { color: var(--accent-soft); }
     .pillar-card {
-      background: var(--card);
-      border: 1px solid var(--hair-strong);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(196,181,253,0.14);
       border-radius: 18px;
       padding: 60px 56px;
+      backdrop-filter: blur(2px);
     }
     .pillar-statement {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(32px, 4.4vw, 58px);
       font-weight: 500; line-height: 1.14;
-      letter-spacing: -0.02em; color: var(--ink);
+      letter-spacing: -0.02em; color: var(--on-screen);
       text-wrap: pretty;
       margin-bottom: 20px;
       max-width: 900px;
     }
-    .pillar-statement em { font-style: italic; color: var(--accent-deep); }
+    .pillar-statement em { font-style: italic; color: #C4B5FD; }
     .pillar-next {
-      font-size: 17px; color: var(--ink-soft);
+      font-size: 17px; color: rgba(243,239,232,0.75);
       line-height: 1.7; font-weight: 400;
       max-width: 62ch;
     }
@@ -247,7 +246,7 @@
       border-top: 1px solid var(--hair);
       display: flex; gap: 28px; flex-wrap: wrap;
     }
-    .pillar-next b { font-weight: 600; color: var(--ink); }
+    .pillar-next b { font-weight: 600; color: #fff; }
     .pillar-next + .pillar-next { margin-top: 16px; }
 
 
@@ -396,7 +395,8 @@
     .mini-g .mg-val.dim { fill: var(--on-screen-muted); font-weight: 500; }
     .mini-g .mg-val.gold { fill: #E4C97E; }
     .team-band {
-      background: var(--screen); color: var(--on-screen);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(196,181,253,0.14);
       border-radius: 18px; padding: 44px 48px;
       position: relative; overflow: hidden;
     }
@@ -550,19 +550,19 @@
     }
 
     .open-note {
-      margin-top: 26px;
-      font-size: 14px; color: var(--muted); line-height: 1.6;
+      margin-top: 26px; font-size: 13px; color: rgba(243,239,232,0.55);
+      font-style: italic;
     }
 
     .cap-cta {
       margin-top: 14px;
-      font-size: 16.5px; color: var(--ink); font-weight: 400;
+      font-size: 16.5px; font-weight: 400;
     }
     .cap-cta a {
-      color: var(--accent-deep); font-weight: 600; text-decoration: none;
-      border-bottom: 1px solid rgba(124,58,237,0.35); padding-bottom: 1px;
+      color: #C4B5FD; text-decoration: none; font-weight: 600;
+      font-size: 14px;
     }
-    .cap-cta a:hover { color: var(--accent); }
+    .cap-cta a:hover { color: #fff; }
 
     .who-statement {
       font-family: 'Cormorant Garamond', serif;
@@ -603,22 +603,22 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(42px, 6vw, 84px);
       font-weight: 500; line-height: 1.05; letter-spacing: -0.03em;
-      margin-bottom: 20px; color: var(--ink);
+      margin-bottom: 20px; color: var(--on-screen);
     }
-    .door-h em { font-style: italic; color: var(--accent-deep); }
+    .door-h em { font-style: italic; color: #C4B5FD; }
     .door-sub {
       margin: 0 auto 36px; max-width: 620px;
-      font-size: 15px; color: var(--ink-soft); line-height: 1.7;
+      font-size: 15px; color: rgba(243,239,232,0.75); line-height: 1.7;
     }
-    .door-sub b { font-weight: 600; color: var(--ink); }
+    .door-sub b { font-weight: 600; color: #fff; }
     /* ── Footer ── */
     footer {
-      border-top: 1px solid var(--hair);
+      border-top: 1px solid rgba(255,255,255,0.08);
       padding: 24px 56px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .footer-left { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
-    .footer-right { font-size: 11px; color: var(--muted); }
+    .footer-left { font-size: 11px; color: rgba(243,239,232,0.45); letter-spacing: 0.06em; }
+    .footer-right { font-size: 11px; color: rgba(243,239,232,0.45); }
 
     /* ── Mobile ── */
     @media (max-width: 820px) {
@@ -653,6 +653,8 @@
   </style>
 </head>
 <body>
+
+<canvas id="page-field" aria-hidden="true"></canvas>
 
 <!-- Nav -->
 <nav>
@@ -695,7 +697,7 @@
 <section id="see">
   <div class="pillar-card reveal">
     <p class="pillar-n">See</p>
-    <p class="pillar-statement">We see franchises where studios <em>see nothing.</em></p>
+    <p class="pillar-statement">We see franchise potential where <em>others cannot.</em></p>
     <p class="pillar-next">Most of the industry is closed off to new voices and the most innovative storytellers. We look for hidden gems across every format and every background, and we use <b>Walt</b> to find the potential that others are unable to see.</p>
 
     <div class="fcard journey reveal">
@@ -1353,7 +1355,6 @@
 <!-- The track record -->
 <section id="record" style="padding-top:0;">
   <div class="team-band reveal">
-    <canvas id="field" aria-hidden="true"></canvas>
     <div class="media-content">
     <p class="fcard-k">The track record</p>
     <p class="twin-h">We've been cooking — and the biggest things are still coming.</p>
@@ -1415,7 +1416,8 @@
       const ctx = canvas.getContext('2d');
       const panel = canvas.parentElement;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const w = panel.clientWidth, h = panel.clientHeight;
+      const w = canvas.id === 'page-field' ? window.innerWidth : panel.clientWidth;
+      const h = canvas.id === 'page-field' ? window.innerHeight : panel.clientHeight;
       canvas.width = w * dpr; canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
@@ -1523,8 +1525,8 @@
     }
 
     const fields = [];
-    const band = document.getElementById('field');
-    if (band) fields.push([band, { gems: 26, gemSeed: 21 }]);
+    const page = document.getElementById('page-field');
+    if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
     if (sky) fields.push([sky, { gems: 18, gemSeed: 33, ignition: { fx: 0.76, fy: 0.38, value: '$2.1B', valueLabel: 'FRANCHISE POTENTIAL' } }]);
 
