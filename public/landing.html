@@ -272,32 +272,6 @@
       display: grid; grid-template-columns: repeat(6, 1fr);
       gap: 14px; margin-top: 30px;
     }
-    .bridge-card { margin-top: 24px; }
-    .caps { margin-top: 30px; }
-    .cap { padding: 22px 0; border-top: 1px solid var(--hair); }
-    .cap-h {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(20px, 2.1vw, 26px); font-weight: 500;
-      letter-spacing: -0.01em; color: var(--ink); margin-bottom: 6px;
-    }
-    .cap-d { font-size: 15px; color: var(--ink-soft); line-height: 1.65; max-width: 74ch; }
-    .receipt { margin-top: 34px; padding: 40px 40px; border-radius: 14px; }
-    .receipt .bignums { gap: 34px; margin-top: 20px; }
-    .receipt .bignum b { font-size: clamp(26px, 2.6vw, 36px); }
-    .spage { display: block; width: 100%; min-width: 860px; height: auto; margin-top: 4px; }
-    .spage .sp-page { fill: #F7F5F0; }
-    .spage .sp-line {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 12px; fill: #37333F;
-    }
-    .spage .sp-slug { font-weight: 700; }
-    .spage .sp-under { stroke: rgba(124,58,237,0.55); stroke-width: 1.5; }
-    .spage .sp-con { stroke: rgba(167,139,250,0.45); stroke-width: 1; fill: none; }
-    .spage .sp-note {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 17.5px; fill: #C4B5FD;
-    }
-    .spage .sp-gold { fill: #E4C97E; font-weight: 600; }
     .twin-d b { color: #fff; font-weight: 600; }
     .twin-d { max-width: 76ch; }
     .twin-h {
@@ -309,6 +283,11 @@
     .twin-d {
       font-size: 14px; color: var(--on-screen-muted); line-height: 1.65;
     }
+    .media-card { position: relative; overflow: hidden; }
+    .media-card canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .media-content { position: relative; z-index: 1; }
+    .bignums.mini { gap: 30px; margin-top: 18px; margin-bottom: 16px; }
+    .bignums.mini .bignum b { font-size: clamp(30px, 3vw, 44px); }
     .film-cards .fcard { grid-column: span 2; }
     .fcard {
       background: linear-gradient(158deg, #241C33 0%, #16111F 55%, #120E19 100%);
@@ -995,89 +974,53 @@
   </div>
 </section>
 
-<!-- Selznick -->
-<section id="selznick" style="padding-top:0;">
-  <div class="pillar-card reveal">
-    <p class="pillar-n">Selznick</p>
-    <p class="pillar-statement">Meet <em>Selznick</em> — the most advanced AI creative partner ever built for feature film.</p>
-    <p class="pillar-next"><b>Selznick</b> has studied more films than any executive in history — what they were on the page, every decision that shaped them, and what happened when they met the world. It works beside us on every question that decides a film's fate: what to make, who belongs in it, what it should cost, and how big it can become.</p>
-
-    <div class="fcard bridge-card reveal">
-      <div class="scan-wrap">
-        <svg class="spage" viewBox="0 0 1000 420" aria-hidden="true">
-          <rect x="56" y="24" width="440" height="372" rx="6" class="sp-page"/>
-          <text class="sp-line sp-slug" x="96" y="66">INT. LIGHTHOUSE &#8212; NIGHT</text>
-          <text class="sp-line" x="96" y="96">Mara drags the radio to the window.</text>
-          <text class="sp-line" x="96" y="115">Static. Then a voice she knows.</text>
-          <text class="sp-line sp-slug" x="196" y="153">MARA</text>
-          <text class="sp-line" x="146" y="172">You said you'd never</text>
-          <text class="sp-line" x="146" y="191">come back.</text>
-          <text class="sp-line" x="96" y="229">The beam sweeps the water.</text>
-          <text class="sp-line" x="96" y="248">A boat, running dark.</text>
-          <text class="sp-line" x="96" y="286">She kills the light.</text>
-          <text class="sp-line" x="96" y="305">Darkness. The sea breathes.</text>
-          <text class="sp-line" x="96" y="343">FADE OUT.</text>
-
-          <line x1="96" y1="71" x2="268" y2="71" class="sp-under"/>
-          <line x1="146" y1="196" x2="216" y2="196" class="sp-under"/>
-          <line x1="96" y1="253" x2="240" y2="253" class="sp-under"/>
-          <line x1="96" y1="310" x2="276" y2="310" class="sp-under"/>
-
-          <path d="M272 69 C 380 60, 440 56, 528 56" class="sp-con"/>
-          <path d="M220 194 C 340 176, 430 148, 528 142" class="sp-con"/>
-          <path d="M244 251 C 360 244, 440 234, 528 230" class="sp-con"/>
-          <path d="M280 308 C 380 312, 440 318, 528 318" class="sp-con"/>
-
-          <text class="sp-note" x="540" y="60">Open on this &#8212; it&#8217;s the hook.</text>
-          <text class="sp-note" x="540" y="82">Move it to page one.</text>
-
-          <text class="sp-note" x="540" y="146">This role carries the film.</text>
-          <text class="sp-note" x="540" y="168">The right lead is worth <tspan class="sp-gold">+$21M</tspan>.</text>
-
-          <text class="sp-note" x="540" y="234">This is the scene that travels.</text>
-          <text class="sp-note" x="540" y="256">It will market itself on social.</text>
-
-          <text class="sp-note" x="540" y="322">Ending lands with 18&#8211;34. Position as</text>
-          <text class="sp-note" x="540" y="344">an elevated thriller. Ceiling: <tspan class="sp-gold">$120M+</tspan></text>
-        </svg>
-      </div>
-      <p class="fcard-d">The first Selznick was famous for his memos. Ours come priced.</p>
-    </div>
-  </div>
-</section>
-
 <!-- Develop -->
 <section id="develop" style="padding-top:0;">
   <div class="pillar-card reveal">
     <p class="pillar-n">Develop</p>
-    <p class="pillar-statement">Our team and Selznick together: <em>the ideal producer.</em></p>
-    <p class="pillar-next">We've generated billions of views on social media and helped build AI at industry-leading labs. Marrying the two lets us develop an idea in ways no studio can.</p>
+    <p class="pillar-statement">Selznick, plus the creative team behind some of the internet's most <em>viral videos.</em></p>
+    <p class="pillar-next">Meet <b>Selznick</b> — the most advanced AI creative partner ever built for feature film. It has studied more films than any executive in history and works beside us on every question that decides a film's fate: what to make, who belongs in it, what it should cost, and how big it can become.</p>
+    <p class="pillar-next">We've generated billions of views on social media and helped build AI at industry-leading labs. Together, we develop an idea in ways no studio can.</p>
 
-    <div class="caps reveal">
-      <div class="cap">
-        <p class="cap-h">Adaptation, with precision</p>
-        <p class="cap-d">We adapt and position every idea into its strongest version — with clear forecasting behind every creative choice.</p>
+    <div class="film-cards three-up">
+      <div class="fcard reveal">
+        <p class="fcard-k">Adaptation, with precision</p>
+        <div class="projrows">
+          <div class="prow"><span>Draft 1</span><i><b style="width:36%"></b></i><em>$45M</em></div>
+          <div class="prow"><span>Draft 2</span><i><b style="width:62%"></b></i><em>$78M</em></div>
+          <div class="prow"><span>Draft 3</span><i><b style="width:100%"></b></i><em class="gold">$120M+</em></div>
+        </div>
+        <p class="fcard-d">We adapt and position every idea into its strongest version — with clear forecasting behind every creative choice.</p>
       </div>
-      <div class="cap">
-        <p class="cap-h">Teams that deliver</p>
-        <p class="cap-d">We assemble casts and directors with a depth no list can give you — narrative fit, commercial impact, and who resonates with modern audiences.</p>
-      </div>
-      <div class="cap">
-        <p class="cap-h">Modern media mastery</p>
-        <p class="cap-d">We command the modern media landscape — social, virality, attention — to market every film and maximize its return.</p>
-      </div>
-    </div>
 
-    <div class="screen-panel receipt reveal">
-      <canvas id="field" aria-hidden="true"></canvas>
-      <div class="who-content">
-        <p class="fcard-k">The track record</p>
-        <p class="twin-h">The creative minds behind some of the internet's most viral videos.</p>
-        <div class="bignums">
-          <div class="bignum"><b>10+</b><span>Channels</span></div>
-          <div class="bignum"><b>1B+</b><span>Views</span></div>
-          <div class="bignum"><b>500M+</b><span>Reached</span></div>
-          <div class="bignum"><b>400K+</b><span>Followers</span></div>
+      <div class="fcard reveal">
+        <p class="fcard-k">Teams that deliver</p>
+        <div class="castrow">
+          <div class="cast">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>A-list lead</span><b class="gold">+$21M</b>
+          </div>
+          <div class="cast on">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>Emerging lead</span><b>Baseline</b>
+          </div>
+          <div class="cast">
+            <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+            <span>Award-winning director</span><b class="gold">+$14M</b>
+          </div>
+        </div>
+        <p class="fcard-d">We assemble casts and directors with real depth — narrative fit, commercial impact, and who resonates with modern audiences.</p>
+      </div>
+
+      <div class="fcard media-card reveal">
+        <canvas id="field" aria-hidden="true"></canvas>
+        <div class="media-content">
+          <p class="fcard-k">Modern media mastery</p>
+          <div class="bignums mini">
+            <div class="bignum"><b>1B+</b><span>Views</span></div>
+            <div class="bignum"><b>500M+</b><span>Reached</span></div>
+          </div>
+          <p class="fcard-d">We command social, virality, and attention — and use them to drive audiences to theaters.</p>
         </div>
       </div>
     </div>
