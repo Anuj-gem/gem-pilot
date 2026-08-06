@@ -106,7 +106,7 @@
     .intake-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(500px, 68vh, 660px);
+      height: clamp(560px, 76vh, 740px);
       margin-top: 40px; margin-bottom: 34px;
     }
     .intake-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -1010,7 +1010,7 @@
       for (let attempt = 0; attempt < 10; attempt++) {
         let ang = 0, bestGap = -1;
         for (let i = 0; i < 10; i++) {
-          const a = (rnd() - 0.5) * 2.3;
+          const a = (rnd() - 0.5) * 2.9;
           let gap = 99;
           for (const b of branches) gap = Math.min(gap, Math.abs(b.ang - a));
           if (gap > bestGap) { bestGap = gap; ang = a; }
@@ -1018,36 +1018,36 @@
         const shrink = attempt * 0.12;
         const steps = [];
         let x = CX, y = CY, a = ang;
-        const sizes = [2.3, 3.9, 7.0];
+        const sizes = [3.2, 5.4, 9.5];
         for (let i = 0; i < 3; i++) {
           a += (rnd() - 0.5) * 0.42;
-          const len = (i === 0 ? R + 26 : (34 + rnd() * 34)) * (1 - shrink);
+          const len = (i === 0 ? R + 34 : (48 + rnd() * 42)) * (1 - shrink);
           x += Math.cos(a) * len; y += Math.sin(a) * len;
-          steps.push({ x: x, y: y, s: sizes[i] * (0.85 + rnd() * 0.35), at: i * 0.7 });
+          steps.push({ x: x, y: y, s: sizes[i] * (0.88 + rnd() * 0.3), at: i * 1.15 });
         }
         const tip = steps[2];
         const offs = [];
         const on = 3 + Math.floor(rnd() * 3);
         for (let i = 0; i < on; i++) {
           const oa = a + (rnd() - 0.5) * 1.5;
-          const od = (26 + rnd() * 34) * (1 - shrink);
+          const od = (40 + rnd() * 42) * (1 - shrink);
           const ox = tip.x + Math.cos(oa) * od, oy = tip.y + Math.sin(oa) * od;
-          offs.push({ x: ox, y: oy, a: oa, s: 1.9 + rnd() * 1.2, at: 2.35 + i * 0.16, grown: null });
+          offs.push({ x: ox, y: oy, a: oa, s: 2.7 + rnd() * 1.6, at: 3.6 + i * 0.3, grown: null });
         }
         const gn = 1 + Math.floor(rnd() * 2);
         const picks = offs.slice().sort(() => rnd() - 0.5).slice(0, gn);
         for (const o of picks) {
           const ga = o.a + (rnd() - 0.5) * 0.7;
-          const gd = (30 + rnd() * 30) * (1 - shrink);
+          const gd = (44 + rnd() * 36) * (1 - shrink);
           const gx = o.x + Math.cos(ga) * gd, gy = o.y + Math.sin(ga) * gd;
           const minis = [];
           const mn = 2 + Math.floor(rnd() * 2);
           for (let i = 0; i < mn; i++) {
             const ma = ga + (rnd() - 0.5) * 1.3;
-            const md = (16 + rnd() * 20) * (1 - shrink);
-            minis.push({ x: gx + Math.cos(ma) * md, y: gy + Math.sin(ma) * md, s: 1.3 + rnd() * 0.9, at: 5.2 + i * 0.15 });
+            const md = (22 + rnd() * 24) * (1 - shrink);
+            minis.push({ x: gx + Math.cos(ma) * md, y: gy + Math.sin(ma) * md, s: 2 + rnd() * 1.2, at: 7.6 + i * 0.3 });
           }
-          o.grown = { x: gx, y: gy, s: 4.4 + rnd() * 1.6, at: 4.3, minis: minis };
+          o.grown = { x: gx, y: gy, s: 6.4 + rnd() * 2.2, at: 6.2, minis: minis };
         }
 
         const pts = [];
@@ -1064,8 +1064,18 @@
     function addBranch() {
       const b = buildBranch();
       if (!b) return;
+      if (branches.length && rnd() < 0.4) {
+        let near = null, nd = 1e9;
+        const tip = b.steps[2];
+        for (const o of branches) {
+          const ot = o.steps[2];
+          const d = Math.hypot(ot.x - tip.x, ot.y - tip.y);
+          if (d < nd && d > 60) { nd = d; near = o; }
+        }
+        if (near && nd < 260) b.link = near;
+      }
       branches.push(b);
-      if (branches.length > 6) branches.shift();
+      if (branches.length > 5) branches.shift();
       pulse = 1;
       valueTxt = VALUES[vi++ % VALUES.length];
       valueA = 1; valueAt = b;
@@ -1086,7 +1096,7 @@
       }
 
       emitIn -= dt;
-      if (emitIn <= 0) { addBranch(); emitIn = 3.4 + rnd() * 1.4; }
+      if (emitIn <= 0) { addBranch(); emitIn = 5.6 + rnd() * 1.8; }
 
       slowIn -= dt;
       if (slowIn <= 0) {
@@ -1101,13 +1111,13 @@
       for (const b of branches) b.t += dt;
       for (const t of theirs) t.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
-      valueA = Math.max(0, valueA - dt * 0.24);
+      valueA = Math.max(0, valueA - dt * 0.16);
     }
 
     function drawBranch(b) {
       let px = CX, py = CY;
       for (const st of b.steps) {
-        const k = ease(clamp01((b.t - st.at) / 0.6));
+        const k = ease(clamp01((b.t - st.at) / 0.95));
         if (k <= 0) return;
         const x = px + (st.x - px) * k, y = py + (st.y - py) * k;
         line(px, py, x, y, 0.3);
@@ -1115,21 +1125,28 @@
         px = st.x; py = st.y;
       }
       const tip = b.steps[2];
+      if (b.link && branches.indexOf(b.link) >= 0) {
+        const lk = ease(clamp01((b.t - 4.4) / 1.2));
+        if (lk > 0) {
+          const lt = b.link.steps[2];
+          line(tip.x, tip.y, tip.x + (lt.x - tip.x) * lk, tip.y + (lt.y - tip.y) * lk, (0.16 * lk).toFixed(2), 0.9);
+        }
+      }
       for (const o of b.offs) {
-        const k = ease(clamp01((b.t - o.at) / 0.5));
+        const k = ease(clamp01((b.t - o.at) / 0.8));
         if (k <= 0) continue;
         const x = tip.x + (o.x - tip.x) * k, y = tip.y + (o.y - tip.y) * k;
         line(tip.x, tip.y, x, y, (0.22 * k).toFixed(2), 0.8);
         diamond(x, y, o.s, 'rgba(228,201,126,' + (0.8 * k).toFixed(2) + ')');
         if (!o.grown) continue;
         const g = o.grown;
-        const gk = ease(clamp01((b.t - g.at) / 0.7));
+        const gk = ease(clamp01((b.t - g.at) / 1.1));
         if (gk <= 0) continue;
         const gx = o.x + (g.x - o.x) * gk, gy = o.y + (g.y - o.y) * gk;
         line(o.x, o.y, gx, gy, (0.28 * gk).toFixed(2), 0.9);
         diamond(gx, gy, g.s * (0.5 + 0.5 * gk), goldFill(gx, gy, g.s), 'rgba(228,201,126,0.8)', 11);
         for (const m of g.minis) {
-          const mk = ease(clamp01((b.t - m.at) / 0.5));
+          const mk = ease(clamp01((b.t - m.at) / 0.8));
           if (mk <= 0) continue;
           const mx = g.x + (m.x - g.x) * mk, my = g.y + (m.y - g.y) * mk;
           line(g.x, g.y, mx, my, (0.18 * mk).toFixed(2), 0.7);
@@ -1244,7 +1261,7 @@
           ctx.shadowColor = 'rgba(228,201,126,0.5)';
           ctx.shadowBlur = 14;
           ctx.fillStyle = '#E4C97E';
-          ctx.font = '500 26px "Cormorant Garamond", serif';
+          ctx.font = '500 30px "Cormorant Garamond", serif';
           ctx.fillText(valueTxt, tip.x, tip.y - 22);
           ctx.restore();
         }
@@ -1262,7 +1279,7 @@
     window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
     layout();
     if (reduce) {
-      for (let i = 0; i < 5; i++) { addBranch(); branches[branches.length - 1].t = 7 - i * 1.3; }
+      for (let i = 0; i < 5; i++) { addBranch(); branches[branches.length - 1].t = 10 - i * 1.9; }
       for (let i = 0; i < 3; i++) { slowIn = 0; step(0.02); theirs[theirs.length - 1].t = 3; }
       for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
@@ -1328,7 +1345,7 @@
           // ring the network: densest just outside our orbit, thinning outward,
           // and never drifting into the text column on the left
           const ga = litRand() * Math.PI * 2;
-          const gr = 152 + Math.pow(litRand(), 1.7) * 300;
+          const gr = 138 + Math.pow(litRand(), 1.7) * 330;
           x = ign.x + Math.cos(ga) * gr;
           y = ign.y + Math.sin(ga) * gr;
           if (x < w * 0.53 || x > w - 14 || y < 14 || y > h - 14) { litRand(); continue; }
@@ -1336,7 +1353,7 @@
           x = litRand() * w;
           y = litRand() * h;
         }
-        const s = 2.4 + litRand() * 2.4;
+        const s = 2.8 + litRand() * 3.2;
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(Math.PI / 4);
@@ -1355,7 +1372,7 @@
       if (ign) {
         ctx.save();
         ctx.beginPath();
-        ctx.arc(ign.x, ign.y, 46, 0, Math.PI * 2);
+        ctx.arc(ign.x, ign.y, 60, 0, Math.PI * 2);
         ctx.fillStyle = '#120E1B';
         ctx.fill();
         ctx.strokeStyle = 'rgba(196,181,253,0.4)';
@@ -1363,17 +1380,17 @@
         ctx.stroke();
         ctx.restore();
 
-        const gs = 42;
+        const gs = 56;
         ctx.save();
         ctx.translate(ign.x, ign.y);
         ctx.rotate(Math.PI / 4);
         ctx.shadowColor = '#8b5cf6';
-        ctx.shadowBlur = 26;
+        ctx.shadowBlur = 32;
         const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
         gg.addColorStop(0, '#C4B5FD');
         gg.addColorStop(1, '#6D28D9');
         ctx.fillStyle = gg;
-        const cr = 8;
+        const cr = 11;
         ctx.beginPath();
         ctx.moveTo(-gs / 2 + cr, -gs / 2);
         ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
@@ -1390,17 +1407,17 @@
           o.ignition.satellites.forEach(function (sat, si) {
             const kr = mulberry32(Math.round(sat.r * 7 + sat.ang) + si);
             let a = sat.ang * Math.PI / 180;
-            let px = ign.x + Math.cos(a) * 46, py = ign.y + Math.sin(a) * 46;
+            let px = ign.x + Math.cos(a) * 62, py = ign.y + Math.sin(a) * 62;
             const sizes = [sat.size * 0.34, sat.size * 0.58, sat.size];
             let tipx = px, tipy = py, tipa = a;
 
             for (let i = 0; i < 3; i++) {
               a += (kr() - 0.5) * 0.42;
-              const len = i === 0 ? sat.r * 0.42 : sat.r * (0.26 + kr() * 0.14);
+              const len = i === 0 ? sat.r * 0.34 : sat.r * (0.28 + kr() * 0.13);
               const nx = px + Math.cos(a) * len, ny = py + Math.sin(a) * len;
               ctx.save();
-              ctx.strokeStyle = 'rgba(228,201,126,0.3)';
-              ctx.lineWidth = 1;
+              ctx.strokeStyle = 'rgba(228,201,126,0.34)';
+              ctx.lineWidth = 1.3;
               ctx.beginPath();
               ctx.moveTo(px, py); ctx.lineTo(nx, ny);
               ctx.stroke();
@@ -1424,7 +1441,7 @@
             const on = 3 + Math.floor(kr() * 3);
             for (let k = 0; k < on; k++) {
               const oa = tipa + (kr() - 0.5) * 1.5;
-              const od = 26 + kr() * 32;
+              const od = 32 + kr() * 34;
               const ox = tipx + Math.cos(oa) * od, oy = tipy + Math.sin(oa) * od;
               ctx.save();
               ctx.strokeStyle = 'rgba(228,201,126,0.2)';
@@ -1435,14 +1452,14 @@
               ctx.stroke();
               ctx.translate(ox, oy);
               ctx.rotate(Math.PI / 4);
-              const os = 1.7 + kr() * 1.2;
+              const os = 2.6 + kr() * 1.7;
               ctx.fillStyle = 'rgba(228,201,126,' + (0.5 + kr() * 0.3).toFixed(2) + ')';
               ctx.fillRect(-os, -os, os * 2, os * 2);
               ctx.restore();
 
               if (kr() < 0.4) {
                 const ga = oa + (kr() - 0.5) * 0.7;
-                const gd = 26 + kr() * 26;
+                const gd = 32 + kr() * 28;
                 const gx = ox + Math.cos(ga) * gd, gy = oy + Math.sin(ga) * gd;
                 ctx.save();
                 ctx.strokeStyle = 'rgba(228,201,126,0.26)';
@@ -1452,7 +1469,7 @@
                 ctx.stroke();
                 ctx.translate(gx, gy);
                 ctx.rotate(Math.PI / 4);
-                const gsz = 3.6 + kr() * 1.6;
+                const gsz = 5.6 + kr() * 2.2;
                 const gg2 = ctx.createLinearGradient(-gsz, -gsz, gsz, gsz);
                 gg2.addColorStop(0, '#F0DCA0');
                 gg2.addColorStop(1, '#B08A3E');
@@ -1465,7 +1482,7 @@
                 const mn = 2 + Math.round(kr());
                 for (let m = 0; m < mn; m++) {
                   const ma = ga + (kr() - 0.5) * 1.3;
-                  const md = 14 + kr() * 18;
+                  const md = 18 + kr() * 20;
                   const mx = gx + Math.cos(ma) * md, my = gy + Math.sin(ma) * md;
                   ctx.save();
                   ctx.strokeStyle = 'rgba(228,201,126,0.15)';
@@ -1475,7 +1492,7 @@
                   ctx.stroke();
                   ctx.translate(mx, my);
                   ctx.rotate(Math.PI / 4);
-                  const ms = 1.2 + kr() * 0.9;
+                  const ms = 1.9 + kr() * 1.2;
                   ctx.fillStyle = 'rgba(228,201,126,' + (0.35 + kr() * 0.25).toFixed(2) + ')';
                   ctx.fillRect(-ms, -ms, ms * 2, ms * 2);
                   ctx.restore();
@@ -1491,15 +1508,15 @@
     const page = document.getElementById('page-field');
     if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
     const sky = document.getElementById('hero-field');
-    if (sky) fields.push([sky, { gems: 105, gemSeed: 33, ignition: {
+    if (sky) fields.push([sky, { gems: 240, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
       satellites: [
-        { ang: -74, r: 150, size: 7.5 },
-        { ang: -18, r: 168, size: 8 },
-        { ang: 42, r: 140, size: 6.5 },
-        { ang: 104, r: 152, size: 7 },
-        { ang: 160, r: 136, size: 6 },
-        { ang: -134, r: 146, size: 7 }
+        { ang: -74, r: 128, size: 11 },
+        { ang: -18, r: 140, size: 12 },
+        { ang: 42, r: 120, size: 10 },
+        { ang: 104, r: 130, size: 10.5 },
+        { ang: 160, r: 118, size: 9.5 },
+        { ang: -134, r: 126, size: 10.5 }
       ]
     } }]);
 
