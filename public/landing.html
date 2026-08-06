@@ -164,8 +164,8 @@
     .intake-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(560px, 76vh, 740px);
-      margin-top: 40px; margin-bottom: 34px;
+      height: clamp(440px, 56vh, 580px);
+      margin-top: 40px; margin-bottom: 0;
     }
     .intake-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     #see .pillar-n, #see .pillar-statement, #see .pillar-next { max-width: 900px; }
@@ -750,7 +750,7 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 340px; margin-top: 26px; margin-bottom: 22px; }
+      .intake-wrap { height: 300px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 300px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -793,7 +793,7 @@
     <h1 class="hero-headline reveal">
       We're building the next great <em>film franchises.</em>
     </h1>
-    <p class="hero-sub reveal">We find one-of-a-kind stories that Hollywood overlooks and turn them into global entertainment franchises.</p>
+    <p class="hero-sub reveal">We find one-of-a-kind stories that Hollywood overlooks and turn them into enduring global entertainment franchises.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>500,000,000+</b>
@@ -824,7 +824,7 @@
 
 <!-- See -->
 <section id="see">
-  <p class="pillar-statement reveal">We find the ideas Hollywood overlooks and turn them <em>into gold.</em></p>
+  <p class="pillar-statement reveal">We look everywhere for the rare ideas that can become <em>something great.</em></p>
 
   <div class="intake-wrap reveal">
     <canvas id="intake-field" aria-hidden="true"></canvas>
@@ -834,7 +834,7 @@
 
 <!-- Build -->
 <section id="build">
-  <p class="pillar-statement reveal">We find the path from idea <em>to global franchise.</em></p>
+  <p class="pillar-statement reveal">We find the right path from idea <em>to global franchise.</em></p>
 
   <div class="journey-wrap reveal">
     <canvas id="build-field" aria-hidden="true"></canvas>
@@ -921,39 +921,29 @@
 
     function build() {
       net = [];
-      const r = mul(11);
+      const r = mul(7);
       const base = Math.min(w, h);
-      for (let b = 0; b < 6; b++) {
-        const L = base * (0.115 + r() * 0.055);
-        let a = (b * 60 - 90) * Math.PI / 180 + (r() - 0.5) * 0.34;
+      const vals = ['$5.8B', '$3.2B', '$1.9B', '$4.4B', '$2.6B'];
+      for (let b = 0; b < 5; b++) {
+        const L = base * (0.17 + r() * 0.05);
+        let a = (b * 72 - 90) * Math.PI / 180 + (r() - 0.5) * 0.3;
         let px = CX + Math.cos(a) * (GS * 0.58), py = CY + Math.sin(a) * (GS * 0.58);
-        const sizes = [3.4 + r() * 1.1, 5.8 + r() * 1.6, 9.6 + r() * 3];
-        const legs = [0.40 + r() * 0.14, 0.28 + r() * 0.12, 0.26 + r() * 0.14];
-        let tx = px, ty = py, ta = a;
+        const sizes = [5.5 + r() * 1.4, 9 + r() * 2, 14 + r() * 3.5];
+        const legs = [0.42, 0.30, 0.30];
         for (let k = 0; k < 3; k++) {
-          a += (r() - 0.5) * 0.44;
+          a += (r() - 0.5) * 0.34;
           const nx = px + Math.cos(a) * L * legs[k], ny = py + Math.sin(a) * L * legs[k];
-          net.push({ x: nx, y: ny, px: px, py: py, s: sizes[k], ph: r() * 6.28, at: k * 0.55 });
-          px = nx; py = ny;
-          if (k === 2) { tx = nx; ty = ny; ta = a; }
-        }
-        const on = 2 + Math.floor(r() * 2);
-        for (let o = 0; o < on; o++) {
-          const oa = ta + (o - (on - 1) / 2) * 0.72 + (r() - 0.5) * 0.3;
-          const od = L * (0.24 + r() * 0.14);
-          const ox = tx + Math.cos(oa) * od, oy = ty + Math.sin(oa) * od;
-          net.push({ x: ox, y: oy, px: tx, py: ty, s: 2.6 + r() * 1.3, ph: r() * 6.28, at: 1.65 + o * 0.12 });
-          if (o === Math.floor(on / 2)) {
-            const gd = L * (0.24 + r() * 0.12);
-            const gx = ox + Math.cos(oa) * gd, gy = oy + Math.sin(oa) * gd;
-            net.push({ x: gx, y: gy, px: ox, py: oy, s: 5.6 + r() * 2, ph: r() * 6.28, at: 2.3 });
-            const mn = 2 + Math.round(r());
-            for (let m = 0; m < mn; m++) {
-              const ma = oa + (m - (mn - 1) / 2) * 0.78;
-              const md = L * (0.14 + r() * 0.1);
-              net.push({ x: gx + Math.cos(ma) * md, y: gy + Math.sin(ma) * md, px: gx, py: gy, s: 1.9 + r() * 1.1, ph: r() * 6.28, at: 2.85 + m * 0.1 });
-            }
+          const tip = k === 2;
+          net.push({
+            x: nx, y: ny, px: px, py: py, s: sizes[k], ph: r() * 6.28, at: k * 0.6,
+            val: tip ? vals[b] : null, va: a
+          });
+          if (!tip) {
+            const sa = a + (r() < 0.5 ? -1 : 1) * (0.85 + r() * 0.25);
+            const sd = L * (0.15 + r() * 0.08);
+            net.push({ x: nx + Math.cos(sa) * sd, y: ny + Math.sin(sa) * sd, px: nx, py: ny, s: sizes[k] * 0.4, ph: r() * 6.28, at: k * 0.6 + 0.3 });
           }
+          px = nx; py = ny;
         }
       }
     }
@@ -1039,6 +1029,15 @@
         const ns = n.s * (0.45 + 0.55 * e);
         ctx.fillRect(-ns, -ns, ns * 2, ns * 2);
         ctx.restore();
+        if (n.val && e > 0.6) {
+          ctx.save();
+          ctx.globalAlpha = (e - 0.6) / 0.4;
+          ctx.textAlign = 'center';
+          ctx.fillStyle = 'rgba(228,201,126,0.85)';
+          ctx.font = '500 17px "Cormorant Garamond", serif';
+          ctx.fillText(n.val, nx, ny + n.s + 24);
+          ctx.restore();
+        }
       }
 
       const pl = 0.9 + 0.1 * Math.sin(t * 0.8) + pulse * 0.4;
@@ -1286,8 +1285,8 @@
     function spawn(seeded) {
       const b = Math.floor(rnd() * SOURCES.length);
       return {
-        x: seeded ? XS + rnd() * (CX - R - XS) : XS - rnd() * 120,
-        y0: bandY(b) + (rnd() - 0.5) * (wide ? 22 : 18),
+        x: seeded ? rnd() * (CX - R) : -rnd() * 140,
+        y0: bandY(b) + (rnd() - 0.5) * (wide ? 34 : 24),
         s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 14 + rnd() * 22
       };
     }
@@ -1295,7 +1294,7 @@
     function seedTree() {
       nodes = []; links = []; trunks = []; fails = 0; frozen = false;
       tseed = 20260805;
-      MAXT = wide ? 9 : 6;
+      MAXT = wide ? 6 : 4;
       addTrunk(); addTrunk();
     }
 
@@ -1311,7 +1310,7 @@
       CX = w * 0.52; CY = h * 0.5;
       R = wide ? 52 : 40;
       parts = [];
-      const n = wide ? 170 : 100;
+      const n = wide ? 210 : 110;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
@@ -1396,7 +1395,7 @@
       if (!inBounds(x, y) || !clear(x, y, 3.4)) return false;
       const n = {
         x: x, y: y, px: CX + Math.cos(a) * (R + 4), py: CY + Math.sin(a) * (R + 4),
-        s: 3 + trnd() * 0.9, t: 0, big: false
+        s: 4.5 + trnd() * 1.2, t: 0, big: false, rev: 0
       };
       nodes.push(n);
       trunks.push({ lane: lane, a: a, tip: n, done: false });
@@ -1411,10 +1410,10 @@
         const d = 48 + trnd() * 30;
         const x = p.x + Math.cos(a) * d, y = p.y + Math.sin(a) * d;
         if (!inBounds(x, y)) { tr.done = true; return; }
-        const sz = Math.min(11, p.s * (1.13 + trnd() * 0.13));
+        const sz = Math.min(15, p.s * (1.2 + trnd() * 0.14));
         if (!clear(x, y, sz)) continue;
         const big = sz > 7.5 && trnd() < 0.5;
-        const node = { x: x, y: y, px: p.x, py: p.y, s: sz, t: 0, big: big };
+        const node = { x: x, y: y, px: p.x, py: p.y, s: sz, t: 0, big: big, rev: (p.rev || 0) * 3 + 18 + Math.round(trnd() * 30) };
         nodes.push(node);
         tr.tip = node;
         if (trnd() < 0.45) {
@@ -1437,7 +1436,7 @@
     }
 
     function grow() {
-      if (nodes.length > 190) return;
+      if (nodes.length > 130) return;
       if (trunks.length < MAXT && trnd() < 0.55) { if (addTrunk()) return; }
       const live = trunks.filter(t => !t.done);
       if (live.length) { growTrunk(live[Math.floor(trnd() * live.length)]); return; }
@@ -1447,7 +1446,7 @@
     function step(dt) {
       for (const p of parts) {
         p.x += p.v * dt;
-        const k = ease(clamp01((p.x - XS) / (CX - R - XS)));
+        const k = ease(clamp01(p.x / (CX - R)));
         p.y = p.y0 + (CY - p.y0) * k;
         if (p.x > CX - R + 4) Object.assign(p, spawn(false));
       }
@@ -1507,6 +1506,15 @@
         line(n.px, n.py, x, y, (0.3 * k).toFixed(2), n.s > 5 ? 1.2 : 0.8);
         if (n.s > 4.5) diamond(x, y, n.s * (0.5 + 0.5 * k), goldFill(x, y, n.s), 'rgba(228,201,126,0.85)', 13);
         else diamond(x, y, n.s * (0.5 + 0.5 * k), 'rgba(228,201,126,' + (0.55 + 0.3 * k).toFixed(2) + ')');
+        if (n.s > 8 && k > 0.7) {
+          ctx.save();
+          ctx.globalAlpha = (k - 0.7) / 0.3 * 0.8;
+          ctx.textAlign = 'center';
+          ctx.fillStyle = '#E4C97E';
+          ctx.font = '500 14px "Cormorant Garamond", serif';
+          ctx.fillText('$' + n.rev + 'M', x, y + n.s + 20);
+          ctx.restore();
+        }
       }
 
       let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + 90) * (1 + pulse * 0.25));
