@@ -752,7 +752,7 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 560px; margin-top: 26px; margin-bottom: 0; }
+      .intake-wrap { height: 600px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -837,6 +837,43 @@
     .ai-cost { margin-bottom: 0; margin-top: 6px; }
     .ai-cost b { color: #F7E9C4; font-weight: 600; }
 
+    /* upside card: a waterfall — each factor picks up where the last left off */
+    .ai-step { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
+    .ai-sname { flex: 0 0 108px; font-size: 12px; color: rgba(243,239,232,0.8); }
+    .ai-strack { flex: 1; height: 12px; position: relative; }
+    .ai-strack::before {
+      content: ''; position: absolute; inset: 5px 0;
+      border-radius: 3px; background: rgba(255,255,255,0.05);
+    }
+    .ai-sbar {
+      position: absolute; top: 0; bottom: 0;
+      left: var(--o); width: 0; min-width: 4px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #B08A3E, #F0DCA0);
+      transition: width 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s;
+    }
+    .reveal.visible .ai-sbar { width: var(--w); }
+    .ai-sbar.lit { box-shadow: 0 0 16px -2px rgba(228,201,126,0.6); }
+    .ai-sval {
+      flex: 0 0 78px; text-align: right;
+      font-size: 13px; font-weight: 600; color: #F7E9C4;
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .ai-total {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-top: 16px; padding-top: 14px;
+      border-top: 1px solid rgba(228,201,126,0.28);
+    }
+    .ai-total span {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold-soft);
+    }
+    .ai-total b {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px; font-weight: 400; color: #F7E9C4;
+      font-variant-numeric: tabular-nums;
+    }
+
     /* projection card: parts list + vertical bars */
     .ai-graphic.split { display: flex; gap: 24px; align-items: stretch; }
     .ai-parts { flex: 1.15; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
@@ -901,6 +938,8 @@
     @media (max-width: 560px) {
       .ai-card { padding: 20px 18px 18px; }
       .ai-graphic.split { flex-direction: column; gap: 18px; }
+      .ai-sname { flex-basis: 88px; font-size: 11.5px; }
+      .ai-sval { flex-basis: 70px; font-size: 12.5px; }
       .ai-bars { min-height: 130px; }
       .ai-vcol { min-height: 130px; }
       .ai-name { flex-basis: 92px; font-size: 12px; }
@@ -1039,21 +1078,35 @@
     </div>
 
     <div class="ai-card reveal">
-      <div class="ai-label">Revenue projection</div>
-      <p class="ai-line">It puts dollars on every component of a story.</p>
-      <div class="ai-graphic split">
-        <div class="ai-parts">
-          <div class="ai-part"><span>The survival lane</span><b>$40&ndash;55M</b></div>
-          <div class="ai-part"><span>An original take</span><b>+$12&ndash;25M</b></div>
-          <div class="ai-part"><span>Spectacle at low cost</span><b>+$25&ndash;55M</b></div>
-          <div class="ai-part"><span>Viral scenes</span><b>+$10&ndash;22M</b></div>
-          <div class="ai-part"><span>Cast &amp; awards upside</span><b>+$393M</b></div>
+      <div class="ai-label">Upside</div>
+      <p class="ai-line">It finds what unlocks the commercial upside of a project.</p>
+      <div class="ai-graphic">
+        <div class="ai-step">
+          <span class="ai-sname">The survival lane</span>
+          <span class="ai-strack"><span class="ai-sbar" style="--o:0%;--w:9%"></span></span>
+          <span class="ai-sval">$40&ndash;55M</span>
         </div>
-        <div class="ai-bars">
-          <div class="ai-vcol"><span class="ai-vval">$87M</span><span class="ai-vbar" style="--h:26%"></span><span class="ai-vcap">Conservative</span></div>
-          <div class="ai-vcol"><span class="ai-vval">$157M</span><span class="ai-vbar" style="--h:46%"></span><span class="ai-vcap">Good</span></div>
-          <div class="ai-vcol"><span class="ai-vval">~$550M</span><span class="ai-vbar lit" style="--h:100%"></span><span class="ai-vcap">Great</span></div>
+        <div class="ai-step">
+          <span class="ai-sname">An original take</span>
+          <span class="ai-strack"><span class="ai-sbar" style="--o:9%;--w:3.4%"></span></span>
+          <span class="ai-sval">+$12&ndash;25M</span>
         </div>
+        <div class="ai-step">
+          <span class="ai-sname">Spectacle, cheap</span>
+          <span class="ai-strack"><span class="ai-sbar" style="--o:12.4%;--w:7.3%"></span></span>
+          <span class="ai-sval">+$25&ndash;55M</span>
+        </div>
+        <div class="ai-step">
+          <span class="ai-sname">Viral scenes</span>
+          <span class="ai-strack"><span class="ai-sbar" style="--o:19.7%;--w:2.9%"></span></span>
+          <span class="ai-sval">+$10&ndash;22M</span>
+        </div>
+        <div class="ai-step">
+          <span class="ai-sname">Cast &amp; awards</span>
+          <span class="ai-strack"><span class="ai-sbar lit" style="--o:22.6%;--w:71.4%"></span></span>
+          <span class="ai-sval">+$393M</span>
+        </div>
+        <div class="ai-total"><span>Worldwide</span><b>~$550M</b></div>
       </div>
       <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>We expect $87&ndash;157M worldwide, with upside to ~$550M. We believe it costs $25&ndash;45M to make.</p>
     </div>
@@ -1617,21 +1670,25 @@
         SOURCES.forEach((name, i) => SRC.push({ name: name, x: X0 + 7, y: h * 0.14 + i * step, tx: X0 + 28 }));
         return;
       }
-      // One row across the top: icon above name, five columns, centred.
-      // Gaps close up before the type shrinks, so it always fits the width.
-      srcFont = '600 11px Inter, sans-serif';
+      // Two balanced rows, icon above each name — one row forced the type down
+      // to 11px, which is too small to carry the point.
+      srcFont = '600 14px Inter, sans-serif';
       ctx.font = srcFont;
-      const TOP = 18, LABEL_DY = 17;
-      const colW = SOURCES.map(n => Math.max(22, ctx.measureText(n).width));
-      const sumW = colW.reduce((a, b) => a + b, 0);
-      const gap = Math.max(4, Math.min(12, (w - 16 - sumW) / (SOURCES.length - 1)));
-      let x = (w - (sumW + gap * (SOURCES.length - 1))) / 2;
-      SOURCES.forEach((name, i) => {
-        const cx = x + colW[i] / 2;
-        SRC.push({ name: name, x: cx, y: TOP, tx: cx, ty: TOP + LABEL_DY });
-        x += colW[i] + gap;
+      const TOP = 16, ROWH = 48, LABEL_DY = 19;
+      const split = Math.ceil(SOURCES.length / 2);
+      const rows = [SOURCES.slice(0, split), SOURCES.slice(split)];
+      rows.forEach((row, ri) => {
+        const ws = row.map(n => Math.max(24, ctx.measureText(n).width));
+        const sum = ws.reduce((a, b) => a + b, 0);
+        const gap = Math.max(14, Math.min(30, (w - 24 - sum) / Math.max(1, row.length - 1)));
+        let x = (w - (sum + gap * (row.length - 1))) / 2;
+        row.forEach((name, i) => {
+          const cx = x + ws[i] / 2;
+          SRC.push({ name: name, x: cx, y: TOP + ri * ROWH, tx: cx, ty: TOP + ri * ROWH + LABEL_DY });
+          x += ws[i] + gap;
+        });
       });
-      SRC.bottom = TOP + LABEL_DY + 6;
+      SRC.bottom = TOP + rows.length * ROWH - 12;
     }
 
     // A drifting idea: travels from its source to the gem along a straight
@@ -1670,7 +1727,7 @@
       if (vert) {
         // sources sit across the top; the gem hangs below them and the tree
         // grows down into the rest of the frame
-        CX = w * 0.5; CY = (SRC.bottom || 60) + 132;
+        CX = w * 0.5; CY = (SRC.bottom || 60) + 122;
         R = 34;
       } else {
         CX = w * 0.40; CY = h * 0.5;
@@ -1747,7 +1804,7 @@
     function icon(kind, x, y) {
       ctx.save();
       ctx.translate(x, y);
-      if (vert) ctx.scale(0.72, 0.72);
+      if (vert) ctx.scale(0.85, 0.85);
       ctx.strokeStyle = 'rgba(196,181,253,0.85)';
       ctx.lineWidth = 1.35; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       ctx.beginPath();
@@ -2029,7 +2086,8 @@
       // times the desktop density. And a speck is never allowed below one
       // device pixel, or it renders as a sub-pixel smear and the field reads
       // as a grey haze instead of stars.
-      const area = (w * h) / (1440 * 900);
+      // narrow screens are held closer, so the same density reads as haze
+      const area = (w * h) / (1440 * 900) * (w < 900 ? 0.55 : 1);
       const minR = 1 / dpr;
       function dust(seed, per, rBase, rVar, aBase, aVar) {
         const rand = mulberry32(seed);
