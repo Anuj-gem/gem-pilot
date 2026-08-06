@@ -1192,7 +1192,7 @@
     const c = document.getElementById('hero-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900;
+    const reduce = true;   // every graphic is a still frame — see STILL_ONLY note
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 56, RX = 0, RY = 0, wide = true, SPAN = 0;
     let net = [], ideas = [], t = 0, last = 0, pulse = 0;
@@ -1287,8 +1287,8 @@
       return {
         a: a,
         d: seeded ? GS + Math.random() * (E - GS) : E + Math.random() * 90,
-        r: 1.4 + Math.random() * 2.3,
-        o: 0.22 + Math.random() * 0.4,
+        r: 1.5 + Math.random() * 2.2,
+        o: 0.16 + Math.random() * 0.26,
         v: 10 + Math.random() * 20
       };
     }
@@ -1320,7 +1320,7 @@
       }
       build();
       ideas = [];
-      const n = wide ? 190 : 90;
+      const n = wide ? 110 : 60;
       for (let i = 0; i < n; i++) ideas.push(idea(true));
     }
 
@@ -1356,8 +1356,8 @@
         const nx = n.px + (n.x - n.px) * e, ny = n.py + (n.y - n.py) * e;
         const tw = 0.78 + 0.22 * Math.sin(t * 0.85 + n.ph);
         ctx.save();
-        ctx.strokeStyle = 'rgba(228,201,126,' + (0.3 * tw * e).toFixed(2) + ')';
-        ctx.lineWidth = n.s > 5 ? 1.3 : 0.85;
+        ctx.strokeStyle = 'rgba(228,201,126,' + (0.46 * tw * e).toFixed(2) + ')';
+        ctx.lineWidth = n.s > 5 ? 2.3 : 1.5;
         ctx.beginPath();
         ctx.moveTo(n.px, n.py); ctx.lineTo(nx, ny);
         ctx.stroke();
@@ -1428,9 +1428,11 @@
     // On the static path nothing repaints on its own, so a resize has to
     // re-lay out AND repaint or the canvas is left blank.
     const still = () => { t = 8; draw(); };
-    let rt;
+    let rt, lastW = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
+      if (window.innerWidth === lastW) return;   // ignore iOS address-bar resizes
+      lastW = window.innerWidth;
       rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
     });
     layout();
@@ -1443,7 +1445,7 @@
     const c = document.getElementById('build-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900;
+    const reduce = true;   // every graphic is a still frame — see STILL_ONLY note
 
     const ROUTES = [
       [['Web series', '$2M', 0.30], ['TV series', '$48M', 0.44], ['Feature film', '$190M', 0.66], ['Feature film', '$540M', 0.94]],
@@ -1612,9 +1614,11 @@
     }
 
     const still = () => { t = 99; live = false; draw(); };
-    let rt;
+    let rt, lastW = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
+      if (window.innerWidth === lastW) return;   // ignore iOS address-bar resizes
+      lastW = window.innerWidth;
       rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
     });
     layout();
@@ -1638,7 +1642,7 @@
     const c = document.getElementById('intake-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900;
+    const reduce = true;   // every graphic is a still frame — see STILL_ONLY note
 
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
     const VALUES = ['$8.8B', '$4.2B', '$1.2B', '$6.5B', '$2.9B', '$3.7B'];
@@ -1734,7 +1738,7 @@
         R = 52;
       }
       parts = [];
-      const n = vert ? 95 : 210;
+      const n = vert ? 80 : 150;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
@@ -1963,13 +1967,13 @@
       for (const l of links) {
         const k = ease(clamp01(l.t / 1.4));
         if (k <= 0) continue;
-        line(l.a.x, l.a.y, l.a.x + (l.b.x - l.a.x) * k, l.a.y + (l.b.y - l.a.y) * k, (0.14 * k).toFixed(2), 0.85);
+        line(l.a.x, l.a.y, l.a.x + (l.b.x - l.a.x) * k, l.a.y + (l.b.y - l.a.y) * k, (0.22 * k).toFixed(2), 1.4);
       }
       for (const n of nodes) {
         const k = ease(clamp01(n.t / 1.0));
         if (k <= 0) continue;
         const x = n.px + (n.x - n.px) * k, y = n.py + (n.y - n.py) * k;
-        line(n.px, n.py, x, y, (0.3 * k).toFixed(2), n.s > 5 ? 1.2 : 0.8);
+        line(n.px, n.py, x, y, (0.46 * k).toFixed(2), n.s > 5 ? 2.1 : 1.4);
         if (n.s > 4.5) diamond(x, y, n.s * (0.5 + 0.5 * k), goldFill(x, y, n.s), 'rgba(228,201,126,0.85)', 13);
         else diamond(x, y, n.s * (0.5 + 0.5 * k), 'rgba(228,201,126,' + (0.55 + 0.3 * k).toFixed(2) + ')');
       }
@@ -2040,9 +2044,11 @@
       settled = true; settleAge = 3;
       draw();
     };
-    let rt;
+    let rt, lastW = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
+      if (window.innerWidth === lastW) return;   // ignore iOS address-bar resizes
+      lastW = window.innerWidth;
       rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
     });
     layout();
