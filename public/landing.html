@@ -793,7 +793,7 @@
     <h1 class="hero-headline reveal">
       We're building the next great <em>film franchises.</em>
     </h1>
-    <p class="hero-sub reveal">We find one-of-a-kind stories that Hollywood overlooks and turn them into enduring global entertainment franchises.</p>
+    <p class="hero-sub reveal">We bet on one-of-a-kind stories that Hollywood overlooks, and combine genius creatives, modern media, and advanced technology to grow them into global entertainment franchises.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>500,000,000+</b>
@@ -1033,9 +1033,11 @@
           ctx.save();
           ctx.globalAlpha = (e - 0.6) / 0.4;
           ctx.textAlign = 'center';
-          ctx.fillStyle = 'rgba(228,201,126,0.85)';
-          ctx.font = '500 17px "Cormorant Garamond", serif';
-          ctx.fillText(n.val, nx, ny + n.s * 1.42 + 24);
+          ctx.shadowColor = 'rgba(10,8,16,0.9)';
+          ctx.shadowBlur = 8;
+          ctx.fillStyle = '#F5E3B0';
+          ctx.font = '500 21px "Cormorant Garamond", serif';
+          ctx.fillText(n.val, Math.min(w - 44, Math.max(44, nx)), Math.min(h - 14, ny + n.s * 1.42 + 26));
           ctx.restore();
         }
       }
@@ -1198,9 +1200,11 @@
         ctx.fillStyle = 'rgba(255,255,255,0.92)';
         ctx.font = '600 13px Inter, sans-serif';
         ctx.fillText(n.label, n.x, n.y - n.s - 14);
-        ctx.fillStyle = '#E4C97E';
-        ctx.font = '500 19px "Cormorant Garamond", serif';
-        ctx.fillText(n.value, n.x, n.y + n.s + 26);
+        ctx.shadowColor = 'rgba(10,8,16,0.9)';
+        ctx.shadowBlur = 8;
+        ctx.fillStyle = '#F5E3B0';
+        ctx.font = '500 22px "Cormorant Garamond", serif';
+        ctx.fillText(n.value, n.x, n.y + n.s + 28);
         ctx.restore();
       }
 
@@ -1372,7 +1376,7 @@
     }
 
     function inBounds(x, y) {
-      return y > 26 && y < h - 20 && x < w - 22 && x > CX - R - 6;
+      return y > 34 && y < h - 52 && x < w - 74 && x > CX - R - 6;
     }
     function clear(x, y, s) {
       if (Math.hypot(x - CX, y - CY) < R + 38) return false;
@@ -1399,7 +1403,7 @@
         s: 4.5 + trnd() * 1.2, t: 0, big: false, rev: 0
       };
       nodes.push(n);
-      trunks.push({ lane: lane, a: a, tip: n, done: false, val: VALUES[trunks.length % VALUES.length] });
+      trunks.push({ lane: lane, a: a, tip: n, root: n, done: false, val: VALUES[trunks.length % VALUES.length] });
       return true;
     }
 
@@ -1511,14 +1515,19 @@
 
       for (const tr of trunks) {
         const n = tr.tip;
+        if (n === tr.root) continue;
         const k = ease(clamp01(n.t / 1.0));
-        if (k < 0.75 || n.s < 7) continue;
+        if (k < 0.7) continue;
+        const lx = Math.min(w - 46, Math.max(46, n.x));
+        const ly = Math.min(h - 16, n.y + n.s + 30);
         ctx.save();
-        ctx.globalAlpha = (k - 0.75) / 0.25;
+        ctx.globalAlpha = (k - 0.7) / 0.3;
         ctx.textAlign = 'center';
-        ctx.fillStyle = '#E4C97E';
-        ctx.font = '500 19px "Cormorant Garamond", serif';
-        ctx.fillText(tr.val, n.x, n.y + n.s + 26);
+        ctx.shadowColor = 'rgba(10,8,16,0.9)';
+        ctx.shadowBlur = 8;
+        ctx.fillStyle = '#F5E3B0';
+        ctx.font = '500 23px "Cormorant Garamond", serif';
+        ctx.fillText(tr.val, lx, ly);
         ctx.restore();
       }
 
