@@ -804,7 +804,7 @@
 <section id="see">
   <p class="pillar-n reveal">See</p>
   <p class="pillar-statement reveal">We find ideas that Hollywood is unable — <em>and often unwilling</em> — to look for.</p>
-  <p class="pillar-next reveal">We've built the technology, the partnerships, and the creative development team to study opportunities at a scale and a depth no film studio in history has been capable of. That's how we find the ideas that would never have been looked at anywhere else.</p>
+  <p class="pillar-next reveal">We believe there is immense talent out there, and ideas with immense potential, that most of the entertainment industry completely overlooks. We study everything, and we scout rigorously across many formats to find the unique, one-of-a-kind stories that have the potential to become global franchises.</p>
 
   <div class="intake-wrap reveal">
     <canvas id="intake-field" aria-hidden="true"></canvas>
@@ -1123,15 +1123,15 @@
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
 
-    let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, TX = 0, TCY = 0, DIV = 0, R = 0, wide = true;
-    let parts = [], slow = [], nodes = [], links = [], trunks = [], theirs = [], vi = 0, MAXT = 15;
-    let pulse = 0, growIn = 0.8, slowIn = 5, fails = 0, frozen = false;
+    let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
+    let parts = [], nodes = [], links = [], trunks = [], vi = 0, MAXT = 15;
+    let pulse = 0, growIn = 0.8, fails = 0, frozen = false;
     let valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
     const ease = t => t * t * (3 - 2 * t);
     const clamp01 = t => Math.min(1, Math.max(0, t));
-    const bandY = i => (h * 0.48) + i * ((h * 0.43) / (SOURCES.length - 1));
+    const bandY = i => (h * 0.14) + i * ((h * 0.72) / (SOURCES.length - 1));
 
     function spawn(seeded) {
       const b = Math.floor(rnd() * SOURCES.length);
@@ -1139,13 +1139,6 @@
         x: seeded ? XS + rnd() * (CX - R - XS) : XS - rnd() * 120,
         y0: bandY(b) + (rnd() - 0.5) * (wide ? 22 : 18),
         s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 14 + rnd() * 22
-      };
-    }
-    function spawnSlow(seeded) {
-      return {
-        x: seeded ? XS + rnd() * (TX - XS) : XS - rnd() * 200,
-        yb: TCY + (rnd() - 0.5) * 46,
-        s: 1.6 + rnd() * 1.1, o: 0.18 + rnd() * 0.13, v: 5 + rnd() * 4
       };
     }
 
@@ -1164,13 +1157,11 @@
       wide = w >= 780;
       X0 = wide ? Math.max(30, w * 0.06) : 14;
       XS = wide ? w * 0.24 : 26;
-      CX = w * 0.52; TCY = h * 0.175; TX = w * 0.40; DIV = h * 0.31; CY = h * 0.67;
+      CX = w * 0.52; CY = h * 0.5;
       R = wide ? 52 : 40;
-      parts = []; slow = [];
+      parts = [];
       const n = wide ? 170 : 100;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
-      for (let i = 0; i < 6; i++) slow.push(spawnSlow(true));
-      theirs = [];
       seedTree();
       growIn = 0.8;
     }
@@ -1230,7 +1221,7 @@
     }
 
     function inBounds(x, y) {
-      return y > DIV + 30 && y < h - 14 && x < w - 22 && x > CX - R - 6;
+      return y > 26 && y < h - 20 && x < w - 22 && x > CX - R - 6;
     }
     function clear(x, y, s) {
       if (Math.hypot(x - CX, y - CY) < R + 38) return false;
@@ -1309,29 +1300,13 @@
         p.y = p.y0 + (CY - p.y0) * k;
         if (p.x > CX - R + 4) Object.assign(p, spawn(false));
       }
-      for (const p of slow) {
-        p.x += p.v * dt;
-        const k = ease(clamp01((p.x - XS) / (TX - 20 - XS)));
-        p.y = p.yb + (TCY - p.yb) * k;
-        if (p.x > TX - 16) Object.assign(p, spawnSlow(false));
-      }
 
       growIn -= dt;
       if (growIn <= 0 && !frozen) { grow(); growIn = 0.26 + rnd() * 0.3; }
 
-      slowIn -= dt;
-      if (slowIn <= 0) {
-        const a = (rnd() - 0.5) * 2.4;
-        const d = 40 + rnd() * 22;
-        const x = TX + Math.cos(a) * d, y = TCY + Math.sin(a) * d * 0.7;
-        theirs.push({ x: x, y: y, a: a, t: 0, mini: { x: x + Math.cos(a) * 17, y: y + Math.sin(a) * 17 } });
-        if (theirs.length > 4) theirs.shift();
-        slowIn = 9 + rnd() * 4;
-      }
 
       for (const n of nodes) n.t += dt;
       for (const l of links) l.t += dt;
-      for (const t of theirs) t.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
       valueA = Math.max(0, valueA - dt * 0.16);
     }
@@ -1339,59 +1314,9 @@
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
-      if (wide) {
-        ctx.save();
-        ctx.textAlign = 'left';
-        ctx.fillStyle = 'rgba(243,239,232,0.5)';
-        ctx.font = '700 13px Inter, sans-serif';
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-        ctx.fillText('TRADITIONAL HOLLYWOOD', X0, TCY + 5);
-        ctx.restore();
-      }
-      for (const p of slow) {
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.s * 0.9, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(139,92,246,' + Math.min(0.7, p.o * 1.5).toFixed(2) + ')';
-        ctx.fill();
-        ctx.restore();
-      }
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(TX, TCY, 15, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(196,181,253,0.28)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      ctx.restore();
-      for (const t of theirs) {
-        const k = ease(clamp01(t.t / 0.8));
-        const x = TX + (t.x - TX) * k, y = TCY + (t.y - TCY) * k;
-        line(TX + Math.cos(t.a) * 16, TCY + Math.sin(t.a) * 11, x, y, (0.22 * k).toFixed(2), 0.9);
-        diamond(x, y, 3.6, goldFill(x, y, 3.6), 'rgba(228,201,126,0.6)', 9);
-        const mk = ease(clamp01((t.t - 1.1) / 0.6));
-        if (mk > 0) {
-          const mx = t.x + (t.mini.x - t.x) * mk, my = t.y + (t.mini.y - t.y) * mk;
-          line(t.x, t.y, mx, my, (0.15 * mk).toFixed(2), 0.7);
-          diamond(mx, my, 1.5, 'rgba(228,201,126,' + (0.55 * mk).toFixed(2) + ')');
-        }
-      }
 
-      ctx.save();
-      ctx.strokeStyle = 'rgba(255,255,255,0.07)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(X0, DIV); ctx.lineTo(w - X0, DIV);
-      ctx.stroke();
-      ctx.restore();
 
       if (wide) {
-        ctx.save();
-        ctx.textAlign = 'left';
-        ctx.fillStyle = 'rgba(228,201,126,0.95)';
-        ctx.font = '700 13px Inter, sans-serif';
-        if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
-        ctx.fillText('GEM STUDIOS', X0, h * 0.40);
-        ctx.restore();
         ctx.save();
         ctx.textAlign = 'left';
         SOURCES.forEach((sname, i) => {
@@ -1490,7 +1415,6 @@
       for (let i = 0; i < 220 && !frozen; i++) grow();
       for (const n of nodes) n.t = 3;
       for (const l of links) l.t = 3;
-      for (let i = 0; i < 3; i++) { slowIn = 0; step(0.02); theirs[theirs.length - 1].t = 3; }
       for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
     } else requestAnimationFrame(frame);
