@@ -925,11 +925,11 @@
       const base = Math.min(w, h);
       const vals = ['$5.8B', '$3.2B', '$1.9B', '$4.4B', '$2.6B'];
       for (let b = 0; b < 5; b++) {
-        const L = base * (0.17 + r() * 0.05);
+        const L = base * (0.22 + r() * 0.06);
         let a = (b * 72 - 90) * Math.PI / 180 + (r() - 0.5) * 0.3;
         let px = CX + Math.cos(a) * (GS * 0.58), py = CY + Math.sin(a) * (GS * 0.58);
         const sizes = [5.5 + r() * 1.4, 9 + r() * 2, 14 + r() * 3.5];
-        const legs = [0.42, 0.30, 0.30];
+        const legs = [0.40, 0.32, 0.34];
         for (let k = 0; k < 3; k++) {
           a += (r() - 0.5) * 0.34;
           const nx = px + Math.cos(a) * L * legs[k], ny = py + Math.sin(a) * L * legs[k];
@@ -940,7 +940,7 @@
           });
           if (!tip) {
             const sa = a + (r() < 0.5 ? -1 : 1) * (0.85 + r() * 0.25);
-            const sd = L * (0.15 + r() * 0.08);
+            const sd = L * (0.19 + r() * 0.07);
             net.push({ x: nx + Math.cos(sa) * sd, y: ny + Math.sin(sa) * sd, px: nx, py: ny, s: sizes[k] * 0.4, ph: r() * 6.28, at: k * 0.6 + 0.3 });
           }
           px = nx; py = ny;
@@ -970,8 +970,8 @@
       CX = wide ? w * 0.73 : w * 0.5;
       CY = wide ? h * 0.46 : h * 0.72;
       GS = wide ? 58 : 44;
-      RX = wide ? w * 0.30 : w * 0.5;
-      RY = h * (wide ? 0.46 : 0.28);
+      RX = wide ? w * 0.34 : w * 0.5;
+      RY = h * (wide ? 0.52 : 0.28);
       build();
       ideas = [];
       const n = wide ? 190 : 90;
@@ -1035,7 +1035,7 @@
           ctx.textAlign = 'center';
           ctx.fillStyle = 'rgba(228,201,126,0.85)';
           ctx.font = '500 17px "Cormorant Garamond", serif';
-          ctx.fillText(n.val, nx, ny + n.s + 24);
+          ctx.fillText(n.val, nx, ny + n.s * 1.42 + 24);
           ctx.restore();
         }
       }
@@ -1045,7 +1045,7 @@
       g.addColorStop(0, 'rgba(139,92,246,' + (0.2 + pulse * 0.16).toFixed(2) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
-      ctx.fillRect(CX - GS * 3, CY - GS * 3, GS * 6, GS * 6);
+      ctx.fillRect(0, 0, w, h);
 
       ctx.save();
       ctx.translate(CX, CY);
@@ -1094,7 +1094,7 @@
       [['TV series', '$25M', 0.34], ['Feature film', '$160M', 0.54], ['Mobile game', '$240M', 0.66], ['Feature film', '$610M', 0.96]],
       [['Feature film', '$180M', 0.48], ['Feature film', '$420M', 0.66], ['Feature film', '$780M', 0.82], ['Feature film', '$1.2B', 1.0]]
     ];
-    const COLX = [0.27, 0.47, 0.68, 0.89];
+    const COLX = [0.32, 0.51, 0.70, 0.89];
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 44;
     let stages = [], ideas = [], t = 0, last = 0, live = false, pulse = 0;
@@ -1109,7 +1109,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const wide = w >= 700;
       GS = wide ? 44 : 30;
-      CX = w * 0.075; CY = h * 0.5;
+      CX = w * 0.13; CY = h * 0.5;
       const rowY = [h * 0.2, h * 0.5, h * 0.8];
       const maxS = wide ? 30 : 18;
       stages = [];
@@ -1126,14 +1126,14 @@
         });
       });
       ideas = [];
-      const n = wide ? 70 : 34;
+      const n = wide ? 110 : 50;
       for (let i = 0; i < n; i++) ideas.push(idea(true));
     }
 
     function idea(seeded) {
       return {
-        x: seeded ? Math.random() * CX : -Math.random() * 90,
-        y0: h * (0.12 + Math.random() * 0.76),
+        x: seeded ? -60 + Math.random() * (CX + 60) : -40 - Math.random() * 120,
+        y0: h * (0.06 + Math.random() * 0.88),
         r: 1.3 + Math.random() * 1.9,
         o: 0.24 + Math.random() * 0.34,
         v: 12 + Math.random() * 20
@@ -1144,7 +1144,7 @@
       if (live) t += dt;
       for (const p of ideas) {
         p.x += p.v * dt;
-        const k = ease((p.x) / (CX - GS * 0.5));
+        const k = ease((p.x + 60) / (CX - GS * 0.5 + 60));
         p.y = p.y0 + (CY - p.y0) * k;
         if (p.x > CX - GS * 0.4) { Object.assign(p, idea(false)); pulse = Math.min(1, pulse + 0.1); }
       }
@@ -1209,7 +1209,7 @@
       g.addColorStop(0, 'rgba(139,92,246,' + (0.2 + pulse * 0.15).toFixed(2) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
-      ctx.fillRect(CX - GS * 3, CY - GS * 3, GS * 6, GS * 6);
+      ctx.fillRect(0, 0, w, h);
       ctx.save();
       ctx.translate(CX, CY);
       ctx.rotate(Math.PI / 4);
@@ -1264,7 +1264,7 @@
     const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
 
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
-    const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
+    const VALUES = ['$8.8B', '$4.2B', '$1.2B', '$6.5B', '$2.9B', '$3.7B'];
 
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
     let parts = [], nodes = [], links = [], trunks = [], vi = 0, MAXT = 15;
@@ -1399,7 +1399,7 @@
         s: 4.5 + trnd() * 1.2, t: 0, big: false, rev: 0
       };
       nodes.push(n);
-      trunks.push({ lane: lane, a: a, tip: n, done: false });
+      trunks.push({ lane: lane, a: a, tip: n, done: false, val: VALUES[trunks.length % VALUES.length] });
       return true;
     }
 
@@ -1507,22 +1507,26 @@
         line(n.px, n.py, x, y, (0.3 * k).toFixed(2), n.s > 5 ? 1.2 : 0.8);
         if (n.s > 4.5) diamond(x, y, n.s * (0.5 + 0.5 * k), goldFill(x, y, n.s), 'rgba(228,201,126,0.85)', 13);
         else diamond(x, y, n.s * (0.5 + 0.5 * k), 'rgba(228,201,126,' + (0.55 + 0.3 * k).toFixed(2) + ')');
-        if (n.s > 8 && k > 0.7) {
-          ctx.save();
-          ctx.globalAlpha = (k - 0.7) / 0.3 * 0.8;
-          ctx.textAlign = 'center';
-          ctx.fillStyle = '#E4C97E';
-          ctx.font = '500 14px "Cormorant Garamond", serif';
-          ctx.fillText('$' + n.rev + 'M', x, y + n.s + 20);
-          ctx.restore();
-        }
+      }
+
+      for (const tr of trunks) {
+        const n = tr.tip;
+        const k = ease(clamp01(n.t / 1.0));
+        if (k < 0.75 || n.s < 7) continue;
+        ctx.save();
+        ctx.globalAlpha = (k - 0.75) / 0.25;
+        ctx.textAlign = 'center';
+        ctx.fillStyle = '#E4C97E';
+        ctx.font = '500 19px "Cormorant Garamond", serif';
+        ctx.fillText(tr.val, n.x, n.y + n.s + 26);
+        ctx.restore();
       }
 
       let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + 90) * (1 + pulse * 0.25));
       g.addColorStop(0, 'rgba(139,92,246,' + (0.16 + pulse * 0.22).toFixed(2) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
-      ctx.fillRect(CX - R - 120, CY - R - 120, (R + 120) * 2, (R + 120) * 2);
+      ctx.fillRect(0, 0, w, h);
 
       const gs = R * 1.5;
       ctx.save();
