@@ -839,7 +839,7 @@
 
     /* upside card: a waterfall — each factor picks up where the last left off */
     .ai-step { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
-    .ai-sname { flex: 0 0 172px; font-size: 12px; line-height: 1.35; color: rgba(243,239,232,0.8); }
+    .ai-sname { flex: 0 0 140px; font-size: 12px; line-height: 1.35; color: rgba(243,239,232,0.8); }
     .ai-strack { flex: 1; height: 12px; position: relative; }
     .ai-strack::before {
       content: ''; position: absolute; inset: 5px 0;
@@ -923,14 +923,24 @@
     }
     .ai-format.lit b { color: #F7E9C4; }
 
-    /* the verdict — a message from the model */
+    /* the read — points, not one compound sentence */
     .ai-verdict {
-      margin-top: 22px;
-      display: flex; align-items: flex-start; gap: 11px;
-      padding: 13px 16px; border-radius: 10px;
+      margin-top: 22px; list-style: none;
+      padding: 14px 17px; border-radius: 10px;
       background: rgba(139,92,246,0.08);
       border: 1px solid rgba(139,92,246,0.22);
+    }
+    .ai-verdict li {
+      position: relative; padding-left: 20px;
       font-size: 13.5px; line-height: 1.55; color: #DED8F0;
+    }
+    .ai-verdict li + li { margin-top: 10px; }
+    .ai-verdict li::before {
+      content: ''; position: absolute; left: 0; top: 6px;
+      width: 8px; height: 8px; border-radius: 2px;
+      background: linear-gradient(135deg,#C4B5FD,#7C3AED);
+      transform: rotate(45deg);
+      box-shadow: 0 0 10px rgba(139,92,246,0.7);
     }
     .ai-gem {
       width: 8px; height: 8px; border-radius: 2px; flex: none;
@@ -971,7 +981,7 @@
   <div class="nav-links">
     <a href="#see">What we do</a>
     <a href="/blog">Blog</a>
-    <a href="mailto:info@gem.studio?subject=Joining%20GEM" class="nav-cta">Join us</a>
+    <a href="mailto:info@gem.studio" class="nav-cta">Partner with us</a>
   </div>
 </nav>
 
@@ -1003,7 +1013,7 @@
       </div>
     </div>
     <div class="hero-actions reveal">
-      <a href="mailto:info@gem.studio?subject=Joining%20GEM" class="btn-primary">Join us</a>
+      <a href="mailto:info@gem.studio" class="btn-primary">Partner with us</a>
       <a href="#see" class="btn-text">Learn more ↓</a>
     </div>
   </div>
@@ -1054,7 +1064,11 @@
           <div class="ai-format"><span>Mobile game</span><b>$85M</b></div>
         </div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>Take them off the ship, keep the comedy, and this is a major feature. It costs $30M at least &mdash; but the audience it already has puts a $50M floor under it, and the ceiling is far higher.</p>
+      <ul class="ai-verdict">
+        <li>Contained to one ship, this is a strong comedy series for a streamer.</li>
+        <li>Take them off it and it's a grand space adventure comedy &mdash; the spectacle of space behind the comedy that already works.</li>
+        <li>$30M at least to make, and the audience it has already puts a $50M floor under it.</li>
+      </ul>
     </div>
 
     <div class="ai-card reveal">
@@ -1062,33 +1076,37 @@
       <p class="ai-line">We find what unlocks the commercial upside of a project.</p>
       <div class="ai-graphic">
         <div class="ai-step">
-          <span class="ai-sname">Action-adventure, true story</span>
+          <span class="ai-sname">Survival story</span>
           <span class="ai-strack"><span class="ai-sbar" style="--o:0%;--w:15.8%"></span></span>
           <span class="ai-sval">$40&ndash;55M</span>
         </div>
         <div class="ai-step">
-          <span class="ai-sname">A premise nobody's filmed</span>
+          <span class="ai-sname">Originality</span>
           <span class="ai-strack"><span class="ai-sbar" style="--o:15.8%;--w:6.2%"></span></span>
           <span class="ai-sval">+$12&ndash;25M</span>
         </div>
         <div class="ai-step">
-          <span class="ai-sname">Spectacle the budget shouldn't allow</span>
+          <span class="ai-sname">Visual spectacle</span>
           <span class="ai-strack"><span class="ai-sbar" style="--o:22%;--w:13.3%"></span></span>
           <span class="ai-sval">+$25&ndash;55M</span>
         </div>
         <div class="ai-step">
-          <span class="ai-sname">Scenes people will clip</span>
+          <span class="ai-sname">Viral scenes</span>
           <span class="ai-strack"><span class="ai-sbar" style="--o:35.3%;--w:5.3%"></span></span>
           <span class="ai-sval">+$10&ndash;22M</span>
         </div>
         <div class="ai-step">
-          <span class="ai-sname">A star who can act</span>
+          <span class="ai-sname">An awards-caliber star</span>
           <span class="ai-strack"><span class="ai-sbar lit" style="--o:40.6%;--w:50%"></span></span>
           <span class="ai-sval">+$150M</span>
         </div>
         <div class="ai-total"><span>Worldwide</span><b>~$300M</b></div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>Almost all of the upside sits on one decision. Survival films need a real draw, and this one also needs an Oscar-level performance out of that same person &mdash; without someone who can do both, it doesn't just underperform, it collapses.</p>
+      <ul class="ai-verdict">
+        <li>Almost all of the upside sits on one decision.</li>
+        <li>Survival films need a real draw, and this one needs an Oscar-level performance from that same person.</li>
+        <li>Without someone who can do both, it doesn't underperform. It collapses.</li>
+      </ul>
     </div>
 
     <div class="ai-card reveal">
@@ -1108,7 +1126,11 @@
         </div>
         <div class="ai-cost">The harder way costs <b>$11M</b> more and is worth <b>+$40M</b></div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>Computer graphics still can't carry this much realism and this much emotion in the same shot, and audiences can tell. The action on that ship is the reason they'd come to a theatre at all &mdash; spend the $11M.</p>
+      <ul class="ai-verdict">
+        <li>Computer graphics can't carry this much realism and this much emotion in the same shot, and audiences can tell.</li>
+        <li>The action on that ship is the reason they'd come to a theatre at all.</li>
+        <li>Spend the $11M.</li>
+      </ul>
     </div>
 
     <div class="ai-card reveal">
@@ -1138,7 +1160,11 @@
           </div>
         </div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>A major star brings some marketing value and a huge price tag. This role is hard enough that an actor who can't deliver it &mdash; famous or not &mdash; hurts this film far more than it would most films. Cast for fit.</p>
+      <ul class="ai-verdict">
+        <li>A major star brings some marketing value here, and a huge price tag.</li>
+        <li>This role is hard enough that an actor who can't deliver it &mdash; famous or not &mdash; hurts this film far more than it would most films.</li>
+        <li>Cast for fit.</li>
+      </ul>
     </div>
 
   </div>
@@ -1170,10 +1196,10 @@
 
 <!-- The door -->
 <section class="door" id="partner">
-  <h2 class="door-h reveal">Join us.</h2>
-  <p class="door-sub reveal">We're looking for partners on the projects we're building, and we're always scouting for new ideas. If you want in, reach out.</p>
+  <h2 class="door-h reveal">Partner with us.</h2>
+  <p class="door-sub reveal">If you finance or distribute films, or you're a creator with an incredible idea, we want to hear from you.</p>
   <div class="reveal">
-    <a href="mailto:info@gem.studio?subject=Joining%20GEM" class="btn-primary" style="padding:16px 44px;font-size:13px;">Join us — info@gem.studio</a>
+    <a href="mailto:info@gem.studio" class="btn-primary" style="padding:16px 44px;font-size:13px;">Partner with us — info@gem.studio</a>
   </div>
 </section>
 
