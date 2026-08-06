@@ -946,20 +946,17 @@
     }
     .ai-format.lit b { color: #F7E9C4; }
 
-    /* the read — points, not one compound sentence */
+    /* the read — one line, because the graphic already said it */
     .ai-verdict {
-      margin-top: 22px; list-style: none;
-      padding: 14px 17px; border-radius: 10px;
+      position: relative;
+      margin-top: 22px; padding: 13px 17px 13px 37px;
+      border-radius: 10px;
       background: rgba(139,92,246,0.08);
       border: 1px solid rgba(139,92,246,0.22);
+      font-size: 13.5px; line-height: 1.5; color: #DED8F0;
     }
-    .ai-verdict li {
-      position: relative; padding-left: 20px;
-      font-size: 13.5px; line-height: 1.55; color: #DED8F0;
-    }
-    .ai-verdict li + li { margin-top: 10px; }
-    .ai-verdict li::before {
-      content: ''; position: absolute; left: 0; top: 6px;
+    .ai-verdict::before {
+      content: ''; position: absolute; left: 17px; top: 18px;
       width: 8px; height: 8px; border-radius: 2px;
       background: linear-gradient(135deg,#C4B5FD,#7C3AED);
       transform: rotate(45deg);
@@ -1081,10 +1078,7 @@
         <div class="ai-opt"><span>As a limited series</span><b>$45M</b><b>$55M</b></div>
         <div class="ai-opt lit"><span>As a feature film</span><b>$35M</b><b>$150M</b></div>
       </div>
-      <ul class="ai-verdict">
-        <li>The ordeal is one continuous stretch, and cutting it into episodes loses the scale that sells it.</li>
-        <li>The feature is cheaper to make and earns nearly three times as much.</li>
-      </ul>
+      <p class="ai-verdict">Cut into episodes, the ordeal loses the scale that sells it.</p>
     </div>
 
     <div class="ai-card reveal">
@@ -1118,10 +1112,7 @@
         </div>
         <div class="ai-total"><span>Worldwide</span><b>~$300M</b></div>
       </div>
-      <ul class="ai-verdict">
-        <li>Survival films need a real draw, and this one needs an Oscar-level performance out of that same person &mdash; almost all of the upside sits on finding someone who is both.</li>
-        <li>Without them the film doesn't underperform, it collapses.</li>
-      </ul>
+      <p class="ai-verdict">Nearly all of it rides on finding a star who can also act.</p>
     </div>
 
     <div class="ai-card reveal">
@@ -1133,10 +1124,7 @@
         <div class="ai-opt"><span>Made on a computer</span><b>$7M</b><b>$110M</b></div>
         <div class="ai-opt lit"><span>Filmed for real, at sea</span><b>$18M</b><b>$150M</b></div>
       </div>
-      <ul class="ai-verdict">
-        <li>Computer graphics can't carry this much realism and this much emotion in the same shot, and audiences can tell.</li>
-        <li>The shipwreck is the reason anyone buys a ticket, so the extra $11M comes back four times over.</li>
-      </ul>
+      <p class="ai-verdict">Audiences can tell the difference, and the shipwreck is why they buy a ticket.</p>
     </div>
 
     <div class="ai-card reveal">
@@ -1166,10 +1154,7 @@
           </div>
         </div>
       </div>
-      <ul class="ai-verdict">
-        <li>A major star brings some marketing value here, and a huge price tag.</li>
-        <li>This part is hard enough that a famous actor who can't play it loses more than their name brings, so cast for who can play it first.</li>
-      </ul>
+      <p class="ai-verdict">A famous actor who can't play this part loses more than the name brings.</p>
     </div>
 
   </div>
