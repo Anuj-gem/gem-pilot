@@ -134,11 +134,18 @@
     .jl { font-family: 'Inter', sans-serif; font-size: 14px; fill: rgba(243,239,232,0.5); }
     .jl.gold { fill: var(--gold-soft); font-weight: 600; }
     .recviz .rc { fill: none; stroke: rgba(228,201,126,0.45); stroke-width: 1.4; stroke-dasharray: 5 5; }
-    .rec-nums { display: flex; gap: 56px; flex-wrap: wrap; margin-top: 34px; }
+    .rec-plat { display: flex; align-items: center; gap: 26px; margin-top: 40px; }
+    .rec-plat svg { width: 30px; height: 30px; color: rgba(228,201,126,0.85); }
+    .rec-soon {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(22px, 2.4vw, 30px);
+      color: var(--gold-soft); margin-top: 40px;
+    }
+    .rec-nums { display: flex; gap: 64px; flex-wrap: wrap; margin-top: 44px; }
     .rnum b {
       display: block;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 3vw, 42px);
+      font-size: clamp(30px, 3.6vw, 52px);
       font-weight: 300; line-height: 1; color: var(--on-screen);
       font-variant-numeric: tabular-nums;
     }
@@ -468,11 +475,6 @@
     .mini-g .mg-wave { stroke: rgba(196,181,253,0.5); stroke-width: 1.4; fill: none; stroke-linecap: round; }
     .mini-g .mg-marquee { fill: rgba(228,201,126,0.1); stroke: rgba(228,201,126,0.6); stroke-width: 1.2; }
     .mini-g .mg-mq { font-family: 'Inter', sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; fill: #E4C97E; }
-    .rec-soon {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 20px; color: var(--gold-soft);
-      margin-top: 26px;
-    }
     .team-band .bignums { gap: 40px; margin: 24px 0 4px; }
     .team-band .bignum b { font-size: clamp(30px, 3.4vw, 48px); }
     .team-band .twin-d { margin-top: 4px; max-width: 62ch; }
@@ -769,7 +771,7 @@
   <div class="nav-links">
     <a href="#see">What we do</a>
     <a href="/blog">Blog</a>
-    <a href="mailto:info@gem.studio?subject=Pitch" class="nav-cta">Pitch us</a>
+    <a href="mailto:info@gem.studio?subject=Joining%20GEM" class="nav-cta">Join us</a>
   </div>
 </nav>
 
@@ -801,7 +803,7 @@
       </div>
     </div>
     <div class="hero-actions reveal">
-      <a href="mailto:info@gem.studio?subject=Pitch" class="btn-primary">Pitch us</a>
+      <a href="mailto:info@gem.studio?subject=Joining%20GEM" class="btn-primary">Join us</a>
       <a href="#see" class="btn-text">Learn more ↓</a>
     </div>
   </div>
@@ -811,7 +813,6 @@
 
 <!-- See -->
 <section id="see">
-  <p class="pillar-n reveal">See</p>
   <p class="pillar-statement reveal">We find the ideas Hollywood overlooks and turn them <em>into gold.</em></p>
 
   <div class="intake-wrap reveal">
@@ -822,7 +823,6 @@
 
 <!-- Build -->
 <section id="build">
-  <p class="pillar-n reveal">Build</p>
   <p class="pillar-statement reveal">We find the path from idea <em>to global franchise.</em></p>
 
   <div class="journey-wrap reveal">
@@ -916,26 +916,32 @@
 
 <!-- The record -->
 <section id="record">
-  <p class="pillar-n reveal">So far</p>
-  <p class="pillar-statement reveal">We've already put stories in front of <em>half a billion people.</em></p>
+  <p class="pillar-statement reveal">In less than 12 months, we've turned ideas into <em>massive viral hits.</em></p>
 
   <div class="rec-nums reveal">
     <div class="rnum"><b>1,000,000,000+</b><span>Views</span></div>
     <div class="rnum"><b>500,000,000+</b><span>Viewers</span></div>
     <div class="rnum"><b>400,000+</b><span>Followers</span></div>
+    <div class="rnum"><b>10+</b><span>Media brands</span></div>
   </div>
 
+  <div class="rec-plat reveal" aria-hidden="true">
+    <svg viewBox="0 0 24 24" aria-label="YouTube"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="currentColor"/><path d="M10 9.2 15.5 12 10 14.8z" fill="#0E0B14"/></svg>
+    <svg viewBox="0 0 24 24" aria-label="TikTok" fill="currentColor"><path d="M14 3h3c.3 2.4 1.7 3.9 4 4.2v3c-1.6-.05-3-.55-4-1.4V15a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.2A3 3 0 1 0 14 15z"/></svg>
+    <svg viewBox="0 0 24 24" aria-label="Instagram" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
+  </div>
+
+  <p class="rec-soon reveal">And much bigger things are coming soon.</p>
 </section>
 
 <div class="rule"></div>
 
 <!-- The door -->
 <section class="door" id="partner">
-  <div class="section-marker reveal">The door</div>
-  <h2 class="door-h reveal">Think you have <em>the next one?</em></h2>
-  <p class="door-sub reveal">We look at anybody with a good idea, in any format. If you think you can create the next enduring global entertainment franchise — and you just need the right help to bring it to the world — we want to hear from you.</p>
+  <h2 class="door-h reveal">Join us.</h2>
+  <p class="door-sub reveal">We're looking for partners on the projects we're building, and we're always scouting for new ideas. If you want in, reach out.</p>
   <div class="reveal">
-    <a href="mailto:info@gem.studio?subject=Pitch" class="btn-primary" style="padding:16px 44px;font-size:13px;">Pitch us — info@gem.studio</a>
+    <a href="mailto:info@gem.studio?subject=Joining%20GEM" class="btn-primary" style="padding:16px 44px;font-size:13px;">Join us — info@gem.studio</a>
   </div>
 </section>
 
