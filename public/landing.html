@@ -793,7 +793,7 @@
     <h1 class="hero-headline reveal">
       We're building the next great <em>film franchises.</em>
     </h1>
-    <p class="hero-sub reveal">We bet on one-of-a-kind stories that Hollywood overlooks, and combine genius creatives, modern media, and advanced technology to grow them into global entertainment franchises.</p>
+    <p class="hero-sub reveal">We find one-of-a-kind stories that Hollywood overlooks, then combine genius creatives, modern media, and advanced technology to grow them into global entertainment franchises.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>500,000,000+</b>
@@ -948,6 +948,36 @@
       }
     }
 
+
+    // put a label where it collides with nothing
+    function placeLabel(list, n, halfW, halfH) {
+      const base = Math.atan2(n.y - n.py, n.x - n.px);
+      let best = null, bestScore = -1e9;
+      for (let ring = 0; ring < 4; ring++) {
+        const rad = n.s * 1.42 + Math.max(halfW, halfH) + 13 + ring * 15;
+        for (let i = 0; i < 14; i++) {
+          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.48;
+          const lx = n.x + Math.cos(a) * rad;
+          const ly = n.y + Math.sin(a) * rad;
+          if (lx - halfW < 6 || lx + halfW > w - 6 || ly - halfH < 10 || ly + halfH > h - 8) continue;
+          let clear = 1e9;
+          for (let j = 0; j < list.length; j++) {
+            const m = list[j];
+            if (m === n) continue;
+            const mr = m.s * 1.42;
+            const gx = Math.abs(lx - m.x) - (halfW + mr + 6);
+            const gy = Math.abs(ly - m.y) - (halfH + mr + 6);
+            clear = Math.min(clear, Math.max(gx, gy));
+            if (clear < -40) break;
+          }
+          const score = clear - ring * 3 - Math.abs(i) * 0.4;
+          if (score > bestScore) { bestScore = score; best = [lx, ly]; }
+          if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
+        }
+      }
+      return best ? [best[0], best[1] + halfH * 0.72] : null;
+    }
+
     function idea(seeded) {
       const a = Math.random() * Math.PI * 2;
       const E = edge(a);
@@ -1030,14 +1060,17 @@
         ctx.fillRect(-ns, -ns, ns * 2, ns * 2);
         ctx.restore();
         if (n.val && e > 0.6) {
+          const pos = placeLabel(net, n, n.val.length * 5.9 + 4, 9.5);
+          if (!pos) continue;
+          const lx = pos[0], ly = pos[1];
           ctx.save();
           ctx.globalAlpha = (e - 0.6) / 0.4;
           ctx.textAlign = 'center';
-          ctx.shadowColor = 'rgba(10,8,16,0.9)';
-          ctx.shadowBlur = 8;
-          ctx.fillStyle = '#F5E3B0';
-          ctx.font = '500 21px "Cormorant Garamond", serif';
-          ctx.fillText(n.val, Math.min(w - 44, Math.max(44, nx)), Math.min(h - 14, ny + n.s * 1.42 + 26));
+          ctx.shadowColor = 'rgba(8,6,14,0.95)';
+          ctx.shadowBlur = 10;
+          ctx.fillStyle = '#7FE0A8';
+          ctx.font = '700 19px Inter, sans-serif';
+          ctx.fillText(n.val, lx, ly);
           ctx.restore();
         }
       }
@@ -1200,11 +1233,11 @@
         ctx.fillStyle = 'rgba(255,255,255,0.92)';
         ctx.font = '600 13px Inter, sans-serif';
         ctx.fillText(n.label, n.x, n.y - n.s - 14);
-        ctx.shadowColor = 'rgba(10,8,16,0.9)';
-        ctx.shadowBlur = 8;
-        ctx.fillStyle = '#F5E3B0';
-        ctx.font = '500 22px "Cormorant Garamond", serif';
-        ctx.fillText(n.value, n.x, n.y + n.s + 28);
+        ctx.shadowColor = 'rgba(8,6,14,0.95)';
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = '#7FE0A8';
+        ctx.font = '700 19px Inter, sans-serif';
+        ctx.fillText(n.value, n.x, n.y + n.s + 30);
         ctx.restore();
       }
 
@@ -1345,6 +1378,36 @@
       ctx.stroke();
       ctx.restore();
     }
+
+    // put a label where it collides with nothing
+    function placeLabel(list, n, halfW, halfH) {
+      const base = Math.atan2(n.y - n.py, n.x - n.px);
+      let best = null, bestScore = -1e9;
+      for (let ring = 0; ring < 4; ring++) {
+        const rad = n.s * 1.42 + Math.max(halfW, halfH) + 13 + ring * 15;
+        for (let i = 0; i < 14; i++) {
+          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.48;
+          const lx = n.x + Math.cos(a) * rad;
+          const ly = n.y + Math.sin(a) * rad;
+          if (lx - halfW < 6 || lx + halfW > w - 6 || ly - halfH < 10 || ly + halfH > h - 8) continue;
+          let clear = 1e9;
+          for (let j = 0; j < list.length; j++) {
+            const m = list[j];
+            if (m === n) continue;
+            const mr = m.s * 1.42;
+            const gx = Math.abs(lx - m.x) - (halfW + mr + 6);
+            const gy = Math.abs(ly - m.y) - (halfH + mr + 6);
+            clear = Math.min(clear, Math.max(gx, gy));
+            if (clear < -40) break;
+          }
+          const score = clear - ring * 3 - Math.abs(i) * 0.4;
+          if (score > bestScore) { bestScore = score; best = [lx, ly]; }
+          if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
+        }
+      }
+      return best ? [best[0], best[1] + halfH * 0.72] : null;
+    }
+
     function icon(kind, x, y) {
       ctx.save();
       ctx.translate(x, y);
@@ -1518,15 +1581,16 @@
         if (n === tr.root) continue;
         const k = ease(clamp01(n.t / 1.0));
         if (k < 0.7) continue;
-        const lx = Math.min(w - 46, Math.max(46, n.x));
-        const ly = Math.min(h - 16, n.y + n.s + 30);
+        const pos = placeLabel(nodes, n, tr.val.length * 6.2 + 4, 10);
+        if (!pos) continue;
+        const lx = pos[0], ly = pos[1];
         ctx.save();
         ctx.globalAlpha = (k - 0.7) / 0.3;
         ctx.textAlign = 'center';
-        ctx.shadowColor = 'rgba(10,8,16,0.9)';
-        ctx.shadowBlur = 8;
-        ctx.fillStyle = '#F5E3B0';
-        ctx.font = '500 23px "Cormorant Garamond", serif';
+        ctx.shadowColor = 'rgba(8,6,14,0.95)';
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = '#7FE0A8';
+        ctx.font = '700 20px Inter, sans-serif';
         ctx.fillText(tr.val, lx, ly);
         ctx.restore();
       }
