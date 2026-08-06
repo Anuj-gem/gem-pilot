@@ -893,6 +893,14 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
+  // Shared label type for all three graphics. Gold is the asset; the number that
+  // comes off it is a lighter warm cream so it reads as the same family, one step
+  // brighter. The format name sits under it, cool and quiet, so the money leads.
+  const VALUE_INK = '#F7E9C4';
+  const VALUE_FONT = '600 17px Inter, sans-serif';
+  const NAME_INK = 'rgba(222,216,240,0.6)';
+  const NAME_FONT = '500 12px Inter, sans-serif';
+
   // The hero — ideas streaming in from every direction, and what we've already made of them.
   (function () {
     const c = document.getElementById('hero-field');
@@ -954,12 +962,15 @@
       const base = Math.atan2(n.y - n.py, n.x - n.px);
       let best = null, bestScore = -1e9;
       for (let ring = 0; ring < 4; ring++) {
-        const rad = n.s * 1.42 + Math.max(halfW, halfH) + 13 + ring * 15;
+        const rad = n.s * 1.42 + 12 + ring * 13;
         for (let i = 0; i < 14; i++) {
-          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.48;
-          const lx = n.x + Math.cos(a) * rad;
-          const ly = n.y + Math.sin(a) * rad;
-          if (lx - halfW < 6 || lx + halfW > w - 6 || ly - halfH < 10 || ly + halfH > h - 8) continue;
+          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.42;
+          // reach only as far as the label's own extent in that direction, so a
+          // label sitting sideways isn't flung as far as a tall one would be
+          const ext = Math.abs(Math.cos(a)) * halfW + Math.abs(Math.sin(a)) * halfH;
+          const lx = n.x + Math.cos(a) * (rad + ext);
+          const ly = n.y + Math.sin(a) * (rad + ext);
+          if (lx - halfW < 10 || lx + halfW > w - 10 || ly - halfH < 16 || ly + halfH > h - 12) continue;
           let clear = 1e9;
           for (let j = 0; j < list.length; j++) {
             const m = list[j];
@@ -970,14 +981,14 @@
             clear = Math.min(clear, Math.max(gx, gy));
             if (clear < -40) break;
           }
-          const score = clear - ring * 3 - Math.abs(i) * 0.4;
+          const score = clear - ring * 4 - Math.abs(i) * 1.2;
           if (score > bestScore) { bestScore = score; best = [lx, ly]; }
           if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
         }
       }
       if (best) return [best[0], best[1] + halfH * 0.72];
-      const fx = Math.min(w - halfW - 6, Math.max(halfW + 6, n.x));
-      const fy = Math.min(h - 8, Math.max(halfH + 12, n.y + n.s * 1.42 + halfH + 13));
+      const fx = Math.min(w - halfW - 10, Math.max(halfW + 10, n.x));
+      const fy = Math.min(h - 12, Math.max(halfH + 18, n.y + n.s * 1.42 + halfH + 12));
       return [fx, fy + halfH * 0.4];
     }
 
@@ -1063,17 +1074,16 @@
         ctx.fillRect(-ns, -ns, ns * 2, ns * 2);
         ctx.restore();
         if (n.val && e > 0.6) {
-          const pos = placeLabel(net, n, n.val.length * 5.9 + 4, 9.5);
+          const pos = placeLabel(net, n, n.val.length * 4.9 + 4, 8.5);
           if (!pos) continue;
-          const lx = pos[0], ly = pos[1];
           ctx.save();
           ctx.globalAlpha = (e - 0.6) / 0.4;
           ctx.textAlign = 'center';
           ctx.shadowColor = 'rgba(8,6,14,0.95)';
-          ctx.shadowBlur = 10;
-          ctx.fillStyle = '#7FE0A8';
-          ctx.font = '700 19px Inter, sans-serif';
-          ctx.fillText(n.val, lx, ly);
+          ctx.shadowBlur = 9;
+          ctx.fillStyle = VALUE_INK;
+          ctx.font = VALUE_FONT;
+          ctx.fillText(n.val, pos[0], pos[1]);
           ctx.restore();
         }
       }
@@ -1233,14 +1243,16 @@
         ctx.save();
         ctx.globalAlpha = e;
         ctx.textAlign = 'center';
-        ctx.fillStyle = 'rgba(255,255,255,0.92)';
-        ctx.font = '600 13px Inter, sans-serif';
-        ctx.fillText(n.label, n.x, n.y - n.s - 14);
         ctx.shadowColor = 'rgba(8,6,14,0.95)';
-        ctx.shadowBlur = 10;
-        ctx.fillStyle = '#7FE0A8';
-        ctx.font = '700 19px Inter, sans-serif';
-        ctx.fillText(n.value, n.x, n.y + n.s + 30);
+        ctx.shadowBlur = 9;
+        ctx.fillStyle = NAME_INK;
+        ctx.font = NAME_FONT;
+        // the diamonds are rotated squares, so their real reach is s * √2
+        const rr = n.s * 1.42;
+        ctx.fillText(n.label, n.x, n.y - rr - 11);
+        ctx.fillStyle = VALUE_INK;
+        ctx.font = VALUE_FONT;
+        ctx.fillText(n.value, n.x, n.y + rr + 24);
         ctx.restore();
       }
 
@@ -1309,7 +1321,7 @@
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
     let parts = [], nodes = [], links = [], trunks = [], vi = 0, MAXT = 15;
     let pulse = 0, growIn = 0.8, fails = 0, frozen = false;
-    let valueTxt = '', valueA = 0, valueAt = null, last = 0;
+    let last = 0, settled = false, settleAge = 0;
 
     const rnd = () => Math.random();
     let tseed = 0;
@@ -1355,6 +1367,7 @@
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
+      settled = false; settleAge = 0;
     }
 
     function diamond(x, y, s, fill, glow, blur) {
@@ -1387,12 +1400,15 @@
       const base = Math.atan2(n.y - n.py, n.x - n.px);
       let best = null, bestScore = -1e9;
       for (let ring = 0; ring < 4; ring++) {
-        const rad = n.s * 1.42 + Math.max(halfW, halfH) + 13 + ring * 15;
+        const rad = n.s * 1.42 + 12 + ring * 13;
         for (let i = 0; i < 14; i++) {
-          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.48;
-          const lx = n.x + Math.cos(a) * rad;
-          const ly = n.y + Math.sin(a) * rad;
-          if (lx - halfW < 6 || lx + halfW > w - 6 || ly - halfH < 10 || ly + halfH > h - 8) continue;
+          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.42;
+          // reach only as far as the label's own extent in that direction, so a
+          // label sitting sideways isn't flung as far as a tall one would be
+          const ext = Math.abs(Math.cos(a)) * halfW + Math.abs(Math.sin(a)) * halfH;
+          const lx = n.x + Math.cos(a) * (rad + ext);
+          const ly = n.y + Math.sin(a) * (rad + ext);
+          if (lx - halfW < 10 || lx + halfW > w - 10 || ly - halfH < 16 || ly + halfH > h - 12) continue;
           let clear = 1e9;
           for (let j = 0; j < list.length; j++) {
             const m = list[j];
@@ -1403,14 +1419,14 @@
             clear = Math.min(clear, Math.max(gx, gy));
             if (clear < -40) break;
           }
-          const score = clear - ring * 3 - Math.abs(i) * 0.4;
+          const score = clear - ring * 4 - Math.abs(i) * 1.2;
           if (score > bestScore) { bestScore = score; best = [lx, ly]; }
           if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
         }
       }
       if (best) return [best[0], best[1] + halfH * 0.72];
-      const fx = Math.min(w - halfW - 6, Math.max(halfW + 6, n.x));
-      const fy = Math.min(h - 8, Math.max(halfH + 12, n.y + n.s * 1.42 + halfH + 13));
+      const fx = Math.min(w - halfW - 10, Math.max(halfW + 10, n.x));
+      const fy = Math.min(h - 12, Math.max(halfH + 18, n.y + n.s * 1.42 + halfH + 12));
       return [fx, fy + halfH * 0.4];
     }
 
@@ -1500,11 +1516,7 @@
             nodes.push({ x: sx, y: sy, px: x, py: y, s: ss, t: 0, big: false });
           }
         }
-        if (big) {
-          pulse = 1;
-          valueTxt = VALUES[vi++ % VALUES.length];
-          valueA = 1; valueAt = node;
-        }
+        if (big) pulse = 1;
         return;
       }
       tr.done = true;
@@ -1527,17 +1539,20 @@
       }
 
       growIn -= dt;
-      if (growIn <= 0 && !frozen) { grow(); growIn = 0.4 + trnd() * 0.4; }
+      if (growIn <= 0 && !frozen) { grow(); growIn = 0.2 + trnd() * 0.2; }
 
 
       for (const n of nodes) n.t += dt;
-      for (const tr of trunks) {
-        tr.age += dt;
-        if (tr.tip !== tr.root && tr.tip.t >= 1) tr.anchor = tr.tip;
-      }
       for (const l of links) l.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
-      valueA = Math.max(0, valueA - dt * 0.16);
+
+      // the values only appear once the whole constellation has finished growing
+      if (!settled) {
+        const doneGrowing = frozen || nodes.length > 130;
+        if (doneGrowing && nodes.every(n => n.t >= 1.1)) settled = true;
+      } else {
+        settleAge += dt;
+      }
     }
 
     function draw() {
@@ -1587,22 +1602,22 @@
         else diamond(x, y, n.s * (0.5 + 0.5 * k), 'rgba(228,201,126,' + (0.55 + 0.3 * k).toFixed(2) + ')');
       }
 
-      for (const tr of trunks) {
-        const n = tr.anchor;
-        if (!n) continue;
-        const k = ease(clamp01((tr.age - 1.4) / 0.9));
-        if (k <= 0) continue;
-        const pos = placeLabel(nodes, n, tr.val.length * 6.2 + 4, 10);
-        if (!pos) continue;
-        const lx = pos[0], ly = pos[1];
+      if (settled) {
+        const k = ease(clamp01(settleAge / 1.1));
         ctx.save();
-        ctx.globalAlpha = k;
         ctx.textAlign = 'center';
+        ctx.globalAlpha = k;
         ctx.shadowColor = 'rgba(8,6,14,0.95)';
-        ctx.shadowBlur = 10;
-        ctx.fillStyle = '#7FE0A8';
-        ctx.font = '700 20px Inter, sans-serif';
-        ctx.fillText(tr.val, lx, ly);
+        ctx.shadowBlur = 9;
+        ctx.fillStyle = VALUE_INK;
+        ctx.font = VALUE_FONT;
+        for (const tr of trunks) {
+          const n = tr.tip;
+          if (n === tr.root) continue;
+          const pos = placeLabel(nodes, n, tr.val.length * 4.9 + 4, 8.5);
+          if (!pos) continue;
+          ctx.fillText(tr.val, pos[0], pos[1]);
+        }
         ctx.restore();
       }
 
@@ -1633,20 +1648,6 @@
       ctx.fill();
       ctx.restore();
 
-      if (valueA > 0.01 && valueTxt && valueAt) {
-        const k = ease(clamp01((valueAt.t - 0.6) / 0.8));
-        if (k > 0) {
-          ctx.save();
-          ctx.globalAlpha = Math.min(1, valueA * 1.7) * k;
-          ctx.textAlign = 'center';
-          ctx.shadowColor = 'rgba(228,201,126,0.5)';
-          ctx.shadowBlur = 14;
-          ctx.fillStyle = '#E4C97E';
-          ctx.font = '500 28px "Cormorant Garamond", serif';
-          ctx.fillText(valueTxt, valueAt.x, valueAt.y - valueAt.s - 16);
-          ctx.restore();
-        }
-      }
     }
 
     function frame(ts) {
@@ -1663,6 +1664,7 @@
       for (let i = 0; i < 150 && !frozen; i++) grow();
       for (const n of nodes) n.t = 3;
       for (const l of links) l.t = 3;
+      settled = true; settleAge = 3;
       for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
     } else requestAnimationFrame(frame);
