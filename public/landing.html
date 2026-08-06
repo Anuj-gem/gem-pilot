@@ -896,8 +896,8 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
-  // The intake — Hollywood's small repeated wins above; below, ideas that grow,
-  // branch, and grow again.
+  // The intake — Hollywood's small repeated wins above; below, a network that only
+  // ever grows outward, until it has taken all the room there is.
   (function () {
     const c = document.getElementById('intake-field');
     if (!c) return;
@@ -908,8 +908,9 @@
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
 
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, TX = 0, TCY = 0, DIV = 0, R = 0, wide = true;
-    let parts = [], slow = [], branches = [], theirs = [], vi = 0;
-    let pulse = 0, emitIn = 1.4, slowIn = 5, valueTxt = '', valueA = 0, valueAt = null, last = 0;
+    let parts = [], slow = [], nodes = [], links = [], theirs = [], vi = 0;
+    let pulse = 0, growIn = 0.8, slowIn = 5, fails = 0, frozen = false;
+    let valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
     const ease = t => t * t * (3 - 2 * t);
@@ -932,6 +933,19 @@
       };
     }
 
+    function seedTree() {
+      nodes = []; links = []; fails = 0; frozen = false;
+      for (let i = 0; i < 3; i++) {
+        const a = (rnd() - 0.5) * 2.2;
+        const d = R + 42;
+        nodes.push({
+          x: CX + Math.cos(a) * d, y: CY + Math.sin(a) * d,
+          px: CX + Math.cos(a) * (R + 4), py: CY + Math.sin(a) * (R + 4),
+          s: 4.5 + rnd() * 2, t: 0, big: false
+        });
+      }
+    }
+
     function layout() {
       const box = c.parentElement;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -947,8 +961,9 @@
       const n = wide ? 170 : 100;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       for (let i = 0; i < 6; i++) slow.push(spawnSlow(true));
-      branches = []; theirs = [];
-      emitIn = 0.6;
+      theirs = [];
+      seedTree();
+      growIn = 0.8;
     }
 
     function diamond(x, y, s, fill, glow, blur) {
@@ -1005,80 +1020,46 @@
       ctx.restore();
     }
 
-    // one idea: three growing steps, then it branches, then some of those grow too
-    function buildBranch() {
-      for (let attempt = 0; attempt < 10; attempt++) {
-        let ang = 0, bestGap = -1;
-        for (let i = 0; i < 10; i++) {
-          const a = (rnd() - 0.5) * 2.9;
-          let gap = 99;
-          for (const b of branches) gap = Math.min(gap, Math.abs(b.ang - a));
-          if (gap > bestGap) { bestGap = gap; ang = a; }
-        }
-        const shrink = attempt * 0.12;
-        const steps = [];
-        let x = CX, y = CY, a = ang;
-        const sizes = [3.2, 5.4, 9.5];
-        for (let i = 0; i < 3; i++) {
-          a += (rnd() - 0.5) * 0.42;
-          const len = (i === 0 ? R + 34 : (48 + rnd() * 42)) * (1 - shrink);
-          x += Math.cos(a) * len; y += Math.sin(a) * len;
-          steps.push({ x: x, y: y, s: sizes[i] * (0.88 + rnd() * 0.3), at: i * 1.15 });
-        }
-        const tip = steps[2];
-        const offs = [];
-        const on = 3 + Math.floor(rnd() * 3);
-        for (let i = 0; i < on; i++) {
-          const oa = a + (rnd() - 0.5) * 1.5;
-          const od = (40 + rnd() * 42) * (1 - shrink);
-          const ox = tip.x + Math.cos(oa) * od, oy = tip.y + Math.sin(oa) * od;
-          offs.push({ x: ox, y: oy, a: oa, s: 2.7 + rnd() * 1.6, at: 3.6 + i * 0.3, grown: null });
-        }
-        const gn = 1 + Math.floor(rnd() * 2);
-        const picks = offs.slice().sort(() => rnd() - 0.5).slice(0, gn);
-        for (const o of picks) {
-          const ga = o.a + (rnd() - 0.5) * 0.7;
-          const gd = (44 + rnd() * 36) * (1 - shrink);
-          const gx = o.x + Math.cos(ga) * gd, gy = o.y + Math.sin(ga) * gd;
-          const minis = [];
-          const mn = 2 + Math.floor(rnd() * 2);
-          for (let i = 0; i < mn; i++) {
-            const ma = ga + (rnd() - 0.5) * 1.3;
-            const md = (22 + rnd() * 24) * (1 - shrink);
-            minis.push({ x: gx + Math.cos(ma) * md, y: gy + Math.sin(ma) * md, s: 2 + rnd() * 1.2, at: 7.6 + i * 0.3 });
-          }
-          o.grown = { x: gx, y: gy, s: 6.4 + rnd() * 2.2, at: 6.2, minis: minis };
-        }
-
-        const pts = [];
-        steps.forEach(p => pts.push(p));
-        offs.forEach(o => { pts.push(o); if (o.grown) { pts.push(o.grown); o.grown.minis.forEach(m => pts.push(m)); } });
+    // one more node, always further out, never back
+    function grow() {
+      if (frozen || nodes.length > 420) return;
+      for (let att = 0; att < 22; att++) {
+        const parent = nodes[Math.floor(rnd() * nodes.length)];
+        const base = Math.atan2(parent.y - CY, parent.x - CX);
+        const a = base + (rnd() - 0.5) * 1.5;
+        const d = 44 + rnd() * 54;
+        const x = parent.x + Math.cos(a) * d, y = parent.y + Math.sin(a) * d;
+        if (y < DIV + 34 || y > h - 22 || x > w - 28 || x < CX - R - 6) continue;
+        if (Math.hypot(x - CX, y - CY) < Math.hypot(parent.x - CX, parent.y - CY) - 6) continue;
+        const big = rnd() < 0.13;
+        let s = Math.max(2.1, Math.min(10, parent.s * (0.62 + rnd() * 0.7)));
+        if (big) s = Math.min(11.5, s * 1.7);
         let ok = true;
-        for (const p of pts) {
-          if (p.y < DIV + 26 || p.y > h - 16 || p.x > w - 26 || p.x < CX - R - 30) { ok = false; break; }
+        if (Math.hypot(x - CX, y - CY) < R + 38) ok = false;
+        if (ok) for (const n of nodes) {
+          if (Math.hypot(n.x - x, n.y - y) < n.s + s + 17) { ok = false; break; }
         }
-        if (ok || attempt === 9) return { ang: ang, t: 0, steps: steps, offs: offs };
-      }
-    }
-
-    function addBranch() {
-      const b = buildBranch();
-      if (!b) return;
-      if (branches.length && rnd() < 0.4) {
-        let near = null, nd = 1e9;
-        const tip = b.steps[2];
-        for (const o of branches) {
-          const ot = o.steps[2];
-          const d = Math.hypot(ot.x - tip.x, ot.y - tip.y);
-          if (d < nd && d > 60) { nd = d; near = o; }
+        if (!ok) continue;
+        const node = { x: x, y: y, px: parent.x, py: parent.y, s: s, t: 0, big: big };
+        nodes.push(node);
+        if (rnd() < 0.1) {
+          for (const n of nodes) {
+            if (n !== node && n !== parent && Math.hypot(n.x - x, n.y - y) < 130) {
+              links.push({ a: node, b: n, t: 0 });
+              break;
+            }
+          }
         }
-        if (near && nd < 260) b.link = near;
+        if (big) {
+          pulse = 1;
+          valueTxt = VALUES[vi++ % VALUES.length];
+          valueA = 1; valueAt = node;
+        }
+        fails = 0;
+        return;
       }
-      branches.push(b);
-      if (branches.length > 5) branches.shift();
-      pulse = 1;
-      valueTxt = VALUES[vi++ % VALUES.length];
-      valueA = 1; valueAt = b;
+      fails++;
+      if (fails > 26) frozen = true;
     }
 
     function step(dt) {
@@ -1095,8 +1076,8 @@
         if (p.x > TX - 16) Object.assign(p, spawnSlow(false));
       }
 
-      emitIn -= dt;
-      if (emitIn <= 0) { addBranch(); emitIn = 5.6 + rnd() * 1.8; }
+      growIn -= dt;
+      if (growIn <= 0) { grow(); growIn = 0.34 + rnd() * 0.4; }
 
       slowIn -= dt;
       if (slowIn <= 0) {
@@ -1108,51 +1089,11 @@
         slowIn = 9 + rnd() * 4;
       }
 
-      for (const b of branches) b.t += dt;
+      for (const n of nodes) n.t += dt;
+      for (const l of links) l.t += dt;
       for (const t of theirs) t.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
       valueA = Math.max(0, valueA - dt * 0.16);
-    }
-
-    function drawBranch(b) {
-      let px = CX, py = CY;
-      for (const st of b.steps) {
-        const k = ease(clamp01((b.t - st.at) / 0.95));
-        if (k <= 0) return;
-        const x = px + (st.x - px) * k, y = py + (st.y - py) * k;
-        line(px, py, x, y, 0.3);
-        diamond(x, y, st.s * (0.5 + 0.5 * k), goldFill(x, y, st.s), 'rgba(228,201,126,0.85)', 13);
-        px = st.x; py = st.y;
-      }
-      const tip = b.steps[2];
-      if (b.link && branches.indexOf(b.link) >= 0) {
-        const lk = ease(clamp01((b.t - 4.4) / 1.2));
-        if (lk > 0) {
-          const lt = b.link.steps[2];
-          line(tip.x, tip.y, tip.x + (lt.x - tip.x) * lk, tip.y + (lt.y - tip.y) * lk, (0.16 * lk).toFixed(2), 0.9);
-        }
-      }
-      for (const o of b.offs) {
-        const k = ease(clamp01((b.t - o.at) / 0.8));
-        if (k <= 0) continue;
-        const x = tip.x + (o.x - tip.x) * k, y = tip.y + (o.y - tip.y) * k;
-        line(tip.x, tip.y, x, y, (0.22 * k).toFixed(2), 0.8);
-        diamond(x, y, o.s, 'rgba(228,201,126,' + (0.8 * k).toFixed(2) + ')');
-        if (!o.grown) continue;
-        const g = o.grown;
-        const gk = ease(clamp01((b.t - g.at) / 1.1));
-        if (gk <= 0) continue;
-        const gx = o.x + (g.x - o.x) * gk, gy = o.y + (g.y - o.y) * gk;
-        line(o.x, o.y, gx, gy, (0.28 * gk).toFixed(2), 0.9);
-        diamond(gx, gy, g.s * (0.5 + 0.5 * gk), goldFill(gx, gy, g.s), 'rgba(228,201,126,0.8)', 11);
-        for (const m of g.minis) {
-          const mk = ease(clamp01((b.t - m.at) / 0.8));
-          if (mk <= 0) continue;
-          const mx = g.x + (m.x - g.x) * mk, my = g.y + (m.y - g.y) * mk;
-          line(g.x, g.y, mx, my, (0.18 * mk).toFixed(2), 0.7);
-          diamond(mx, my, m.s, 'rgba(228,201,126,' + (0.7 * mk).toFixed(2) + ')');
-        }
-      }
     }
 
     function draw() {
@@ -1222,7 +1163,19 @@
         if (a > 0.01) diamond(p.x, p.y, p.s, 'rgba(196,181,253,' + a.toFixed(2) + ')');
       }
 
-      for (const b of branches) drawBranch(b);
+      for (const l of links) {
+        const k = ease(clamp01(l.t / 1.4));
+        if (k <= 0) continue;
+        line(l.a.x, l.a.y, l.a.x + (l.b.x - l.a.x) * k, l.a.y + (l.b.y - l.a.y) * k, (0.14 * k).toFixed(2), 0.85);
+      }
+      for (const n of nodes) {
+        const k = ease(clamp01(n.t / 1.0));
+        if (k <= 0) continue;
+        const x = n.px + (n.x - n.px) * k, y = n.py + (n.y - n.py) * k;
+        line(n.px, n.py, x, y, (0.3 * k).toFixed(2), n.s > 5 ? 1.2 : 0.8);
+        if (n.s > 4.5) diamond(x, y, n.s * (0.5 + 0.5 * k), goldFill(x, y, n.s), 'rgba(228,201,126,0.85)', 13);
+        else diamond(x, y, n.s * (0.5 + 0.5 * k), 'rgba(228,201,126,' + (0.55 + 0.3 * k).toFixed(2) + ')');
+      }
 
       let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + 90) * (1 + pulse * 0.25));
       g.addColorStop(0, 'rgba(139,92,246,' + (0.16 + pulse * 0.22).toFixed(2) + ')');
@@ -1252,8 +1205,7 @@
       ctx.restore();
 
       if (valueA > 0.01 && valueTxt && valueAt) {
-        const tip = valueAt.steps[2];
-        const k = ease(clamp01((valueAt.t - 1.4) / 0.6));
+        const k = ease(clamp01((valueAt.t - 0.6) / 0.8));
         if (k > 0) {
           ctx.save();
           ctx.globalAlpha = Math.min(1, valueA * 1.7) * k;
@@ -1261,8 +1213,8 @@
           ctx.shadowColor = 'rgba(228,201,126,0.5)';
           ctx.shadowBlur = 14;
           ctx.fillStyle = '#E4C97E';
-          ctx.font = '500 30px "Cormorant Garamond", serif';
-          ctx.fillText(valueTxt, tip.x, tip.y - 22);
+          ctx.font = '500 28px "Cormorant Garamond", serif';
+          ctx.fillText(valueTxt, valueAt.x, valueAt.y - valueAt.s - 16);
           ctx.restore();
         }
       }
@@ -1279,7 +1231,9 @@
     window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
     layout();
     if (reduce) {
-      for (let i = 0; i < 5; i++) { addBranch(); branches[branches.length - 1].t = 10 - i * 1.9; }
+      for (let i = 0; i < 260 && !frozen; i++) grow();
+      for (const n of nodes) n.t = 3;
+      for (const l of links) l.t = 3;
       for (let i = 0; i < 3; i++) { slowIn = 0; step(0.02); theirs[theirs.length - 1].t = 3; }
       for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
