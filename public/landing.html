@@ -103,6 +103,34 @@
       background: rgba(255,255,255,0.08);
     }
     .rule { height: 1px; background: rgba(255,255,255,0.08); }
+    .journey-wrap, .rec-wrap {
+      width: 100vw; margin-left: calc(50% - 50vw);
+      margin-top: 42px;
+    }
+    .journeys, .recviz { display: block; width: 100%; height: auto; min-width: 900px; }
+    .journeys .jp { fill: none; stroke: rgba(228,201,126,0.4); stroke-linecap: round; }
+    .journeys .jt { fill: none; stroke: rgba(243,239,232,0.42); stroke-width: 1.1; }
+    .journeys .jg { fill: none; stroke: rgba(196,181,253,0.6); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+    .jl { font-family: 'Inter', sans-serif; font-size: 14px; fill: rgba(243,239,232,0.5); }
+    .jl.gold { fill: var(--gold-soft); font-weight: 600; }
+    .recviz .rc { fill: none; stroke: rgba(228,201,126,0.45); stroke-width: 1.4; stroke-dasharray: 5 5; }
+    .rec-nums { display: flex; gap: 56px; flex-wrap: wrap; margin-top: 34px; }
+    .rnum b {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 300; line-height: 1; color: var(--on-screen);
+      font-variant-numeric: tabular-nums;
+    }
+    .rnum span {
+      display: block; margin-top: 9px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold-soft);
+    }
+    .journey-wrap, .rec-wrap { overflow-x: auto; }
+    @media (max-width: 760px) {
+      .rec-nums { gap: 26px; }
+    }
     .intake-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
@@ -732,7 +760,7 @@
     <h1 class="hero-headline reveal">
       We're building the next great <em>film franchises.</em>
     </h1>
-    <p class="hero-sub reveal">Powered by <b>Walt</b>, the most powerful AI creative executive ever built, we find one-of-a-kind storytellers that the industry overlooks and help them turn their ideas into enduring global franchises.</p>
+    <p class="hero-sub reveal">Powered by <b>Walt</b>, the most powerful AI creative executive ever built, we find one-of-a-kind stories the industry overlooks — and bring together the people who turn them into enduring global franchises.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>500,000,000+</b>
@@ -771,101 +799,204 @@
     <canvas id="intake-field" aria-hidden="true"></canvas>
   </div>
 
-  <p class="open-note reveal">No agent, no representation, no track record required.</p>
-  <p class="cap-cta reveal"><a href="mailto:info@gem.studio?subject=My%20idea">Pitch us an idea &rarr;</a></p>
 </section>
 
 <!-- Build -->
 <section id="build" style="padding-top:0;">
-  <div class="pillar-card reveal">
-    <p class="pillar-n">Build</p>
-    <p class="pillar-statement">Great franchises aren't greenlit — <em>they're grown.</em></p>
-    <p class="pillar-next">Once we find a hidden gem, we grow it the way Walt Disney would today.</p>
+  <p class="pillar-n reveal">Build</p>
+  <p class="pillar-statement reveal">Great franchises aren't greenlit — <em>they're grown.</em></p>
+  <p class="pillar-next reveal">Every story has its own path, and no two look alike. We find that path and walk it — building an audience, learning at every step, bringing together the people who can realize the vision, and scaling our investment as the work proves itself.</p>
 
-    <div class="film-cards three-up">
-      <div class="fcard reveal">
-        <p class="fcard-k">Grow</p>
-        <svg class="mini-g" viewBox="0 0 340 230" aria-hidden="true">
-          <defs>
-            <linearGradient id="pgold2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
-            </linearGradient>
-            <radialGradient id="pglow2">
-              <stop offset="0" stop-color="rgba(228,201,126,0.5)"/><stop offset="1" stop-color="rgba(228,201,126,0)"/>
-            </radialGradient>
-            <linearGradient id="pviol" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#7C3AED"/>
-            </linearGradient>
-          </defs>
-          <line x1="150" y1="122" x2="72" y2="52" class="gl-ray lit"/>
-          <line x1="150" y1="122" x2="250" y2="60" class="gl-ray lit"/>
-          <line x1="150" y1="122" x2="278" y2="140" class="gl-ray mid"/>
-          <line x1="150" y1="122" x2="222" y2="196" class="gl-ray dim"/>
-          <line x1="150" y1="122" x2="66" y2="180" class="gl-ray dim"/>
-          <circle cx="150" cy="122" r="40" fill="url(#pglow2)"/>
-          <rect x="-13" y="-13" width="26" height="26" rx="5" transform="translate(150 122) rotate(45)" fill="url(#pgold2)"/>
-          <circle cx="72" cy="52" r="5" class="gl-star lit"/>
-          <text class="mg-lbl" x="72" y="34" text-anchor="middle">Short-form</text>
-          <circle cx="250" cy="60" r="5" class="gl-star lit"/>
-          <text class="mg-lbl" x="250" y="42" text-anchor="middle">Social</text>
-          <circle cx="278" cy="140" r="5" class="gl-star mid"/>
-          <text class="mg-lbl" x="278" y="164" text-anchor="middle">Film</text>
-          <circle cx="222" cy="196" r="4" class="gl-star dim"/>
-          <text class="mg-lbl dim" x="222" y="218" text-anchor="middle">Series</text>
-          <circle cx="66" cy="180" r="4" class="gl-star dim"/>
-          <text class="mg-lbl dim" x="66" y="204" text-anchor="middle">Games</text>
-        </svg>
-        <p class="fcard-d">We grow each property across every channel modern media offers. We start where its audience lives, and as the brand takes hold we carry it into bigger formats — each stage building the next.</p>
-      </div>
-
-      <div class="fcard reveal">
-        <p class="fcard-k">Invest</p>
-        <svg class="mini-g" viewBox="0 0 340 230" aria-hidden="true">
-          <line x1="30" y1="192" x2="316" y2="192" class="mg-ax"/>
-          <path d="M30 178 C 90 174, 140 160, 190 128 C 240 96, 280 66, 310 44" class="lc-curve"/>
-          <line x1="96" y1="192" x2="96" y2="168" class="lc-tick"/>
-          <circle cx="96" cy="168" r="3.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="96" y="212" text-anchor="middle">Draft 1</text>
-          <text class="mg-val dim" x="96" y="150" text-anchor="middle">$45M</text>
-          <line x1="190" y1="192" x2="190" y2="128" class="lc-tick"/>
-          <circle cx="190" cy="128" r="3.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="190" y="212" text-anchor="middle">Draft 2</text>
-          <text class="mg-val" x="190" y="110" text-anchor="middle">$78M</text>
-          <line x1="284" y1="192" x2="284" y2="62" class="lc-tick"/>
-          <circle cx="284" cy="62" r="16" fill="url(#pglow2)"/>
-          <rect x="-6" y="-6" width="12" height="12" rx="2.5" transform="translate(284 62) rotate(45)" fill="url(#pgold2)"/>
-          <text class="mg-lbl" x="284" y="212" text-anchor="middle">Draft 3</text>
-          <text class="mg-val gold" x="284" y="38" text-anchor="middle">$120M+</text>
-        </svg>
-        <p class="fcard-d">Every investment is informed. Walt's analytics guide each step — what a draft is worth, what a cast adds, when to put real capital behind a property — so we scale what works and learn from everything.</p>
-      </div>
-
-      <div class="fcard reveal">
-        <p class="fcard-k">Assemble</p>
-        <svg class="mini-g" viewBox="0 0 340 230" aria-hidden="true">
-          <path d="M170 118 L 96 60 M170 118 L 252 54 M170 118 L 282 150 M170 118 L 208 202 M170 118 L 74 176" class="cn-line"/>
-          <path d="M96 60 L 252 54 M282 150 L 208 202" class="cn-line faint"/>
-          <circle cx="170" cy="118" r="34" fill="url(#pglow2)"/>
-          <rect x="-11" y="-11" width="22" height="22" rx="4.5" transform="translate(170 118) rotate(45)" fill="url(#pgold2)"/>
-          <text class="mg-lbl" x="170" y="96" text-anchor="middle">The storyteller</text>
-          <circle cx="96" cy="60" r="5.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="96" y="42" text-anchor="middle">Director</text>
-          <circle cx="252" cy="54" r="5.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="252" y="36" text-anchor="middle">Producers</text>
-          <circle cx="282" cy="150" r="5.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="282" y="174" text-anchor="middle">Cast</text>
-          <circle cx="208" cy="202" r="5.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="208" y="224" text-anchor="middle">Crew</text>
-          <circle cx="74" cy="176" r="5.5" class="gl-star mid"/>
-          <text class="mg-lbl" x="74" y="200" text-anchor="middle">Composer</text>
-        </svg>
-        <p class="fcard-d">We surround each storyteller with the best collaborators in entertainment — the director, producers, cast, and crew who can make their long-term vision real.</p>
-      </div>
-    </div>
+  <div class="journey-wrap reveal">
+    <svg class="journeys" viewBox="0 0 1000 470" aria-hidden="true">
+      <defs>
+        <linearGradient id="jgold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
+        </linearGradient>
+      </defs>
+      <path d="M92 118 Q 175.0 119.0 258 88" class="jp" stroke-width="1.1"/>
+          <path d="M258 88 Q 348.0 99.0 438 142" class="jp" stroke-width="1.7"/>
+          <path d="M438 142 Q 531.0 133.0 624 92" class="jp" stroke-width="2.3"/>
+          <path d="M624 92 Q 730.0 94.0 836 128" class="jp" stroke-width="3.0"/>
+          <rect x="-5" y="-5" width="10" height="10" rx="1.1" transform="translate(92 118) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="275.6" cy="100.6" r="3.1" class="jt"/>
+          <circle cx="235.8" cy="72.1" r="3.1" class="jt"/>
+          <rect x="-8" y="-8" width="16" height="16" rx="1.8" transform="translate(258 88) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="442.6" cy="164.6" r="3.1" class="jt"/>
+          <circle cx="405.5" cy="146.8" r="3.1" class="jt"/>
+          <circle cx="433.4" cy="119.4" r="3.1" class="jt"/>
+          <circle cx="470.5" cy="137.2" r="3.1" class="jt"/>
+          <rect x="-12" y="-12" width="24" height="24" rx="2.6" transform="translate(438 142) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="607.8" cy="115.5" r="3.1" class="jt"/>
+          <circle cx="586.0" cy="91.8" r="3.1" class="jt"/>
+          <circle cx="608.2" cy="68.4" r="3.1" class="jt"/>
+          <circle cx="643.2" cy="64.1" r="3.1" class="jt"/>
+          <circle cx="656.0" cy="92.2" r="3.1" class="jt"/>
+          <circle cx="642.8" cy="120.1" r="3.1" class="jt"/>
+          <rect x="-17" y="-17" width="34" height="34" rx="3.7" transform="translate(624 92) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="800.2" cy="138.8" r="3.1" class="jt"/>
+          <circle cx="796.3" cy="111.9" r="3.1" class="jt"/>
+          <circle cx="823.3" cy="97.6" r="3.1" class="jt"/>
+          <circle cx="854.9" cy="94.2" r="3.1" class="jt"/>
+          <circle cx="871.8" cy="117.2" r="3.1" class="jt"/>
+          <circle cx="875.7" cy="144.1" r="3.1" class="jt"/>
+          <circle cx="848.7" cy="158.4" r="3.1" class="jt"/>
+          <circle cx="817.1" cy="161.8" r="3.1" class="jt"/>
+          <rect x="-23" y="-23" width="46" height="46" rx="5.1" transform="translate(836 128) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <g class="jg" transform="translate(258 61)"><rect x="-5" y="-4" width="10" height="8" rx="1.5"/><path d="M-1 -1.6 l2.6 1.6 -2.6 1.6z" fill="#8B7BC8" stroke="none"/></g>
+          <g class="jg" transform="translate(438 111)"><path d="M-4.5 -4 v8 l4.5 -1.2 4.5 1.2 v-8 l-4.5 1.2z"/></g>
+          <g class="jg" transform="translate(624 56)"><rect x="-5.5" y="-4" width="11" height="8" rx="1.5"/><path d="M-2 4 h4"/></g>
+          <g class="jg" transform="translate(836 86)"><rect x="-6" y="-3.5" width="12" height="7" rx="3.5"/><path d="M-3 0 h2.4 M-1.8 -1.2 v2.4"/></g>
+          <path d="M84 252 Q 210.0 276.0 336 268" class="jp" stroke-width="1.1"/>
+          <path d="M336 268 Q 491.0 236.0 646 236" class="jp" stroke-width="1.7"/>
+          <path d="M646 236 Q 763.0 263.0 880 258" class="jp" stroke-width="2.3"/>
+          <rect x="-5" y="-5" width="10" height="10" rx="1.1" transform="translate(84 252) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="355.1" cy="281.7" r="3.1" class="jt"/>
+          <circle cx="312.3" cy="251.0" r="3.1" class="jt"/>
+          <rect x="-10" y="-10" width="20" height="20" rx="2.2" transform="translate(336 268) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="651.3" cy="262.0" r="3.1" class="jt"/>
+          <circle cx="609.5" cy="241.3" r="3.1" class="jt"/>
+          <circle cx="640.7" cy="210.0" r="3.1" class="jt"/>
+          <circle cx="682.5" cy="230.7" r="3.1" class="jt"/>
+          <rect x="-16" y="-16" width="32" height="32" rx="3.5" transform="translate(646 236) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="860.3" cy="286.6" r="3.1" class="jt"/>
+          <circle cx="835.0" cy="257.8" r="3.1" class="jt"/>
+          <circle cx="860.7" cy="229.2" r="3.1" class="jt"/>
+          <circle cx="902.7" cy="225.0" r="3.1" class="jt"/>
+          <circle cx="919.0" cy="258.2" r="3.1" class="jt"/>
+          <circle cx="902.3" cy="291.2" r="3.1" class="jt"/>
+          <rect x="-24" y="-24" width="48" height="48" rx="5.3" transform="translate(880 258) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <g class="jg" transform="translate(336 239)"><rect x="-1.6" y="-4.5" width="3.2" height="5.5" rx="1.6"/><path d="M-3.4 -0.6 a3.4 3.4 0 0 0 6.8 0 M0 3 v2"/></g>
+          <g class="jg" transform="translate(646 201)"><rect x="-5" y="-4" width="10" height="8" rx="1.5"/><path d="M-1 -1.6 l2.6 1.6 -2.6 1.6z" fill="#8B7BC8" stroke="none"/></g>
+          <g class="jg" transform="translate(880 215)"><rect x="-5.5" y="-4" width="11" height="8" rx="1.5"/><path d="M-2 4 h4"/></g>
+          <path d="M100 382 Q 156.0 414.0 212 414" class="jp" stroke-width="1.1"/>
+          <path d="M212 414 Q 287.0 371.0 362 360" class="jp" stroke-width="1.7"/>
+          <path d="M362 360 Q 424.0 398.0 486 404" class="jp" stroke-width="2.3"/>
+          <path d="M486 404 Q 571.0 370.0 656 368" class="jp" stroke-width="3.0"/>
+          <path d="M656 368 Q 757.0 396.0 858 392" class="jp" stroke-width="3.6"/>
+          <rect x="-4" y="-4" width="8" height="8" rx="0.9" transform="translate(100 382) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="228.8" cy="426.0" r="3.1" class="jt"/>
+          <circle cx="190.6" cy="398.7" r="3.1" class="jt"/>
+          <rect x="-7" y="-7" width="14" height="14" rx="1.5" transform="translate(212 414) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="366.2" cy="380.9" r="3.1" class="jt"/>
+          <circle cx="331.5" cy="364.5" r="3.1" class="jt"/>
+          <circle cx="357.8" cy="339.1" r="3.1" class="jt"/>
+          <circle cx="392.5" cy="355.5" r="3.1" class="jt"/>
+          <rect x="-10" y="-10" width="20" height="20" rx="2.2" transform="translate(362 360) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="471.9" cy="424.5" r="3.1" class="jt"/>
+          <circle cx="452.0" cy="403.8" r="3.1" class="jt"/>
+          <circle cx="472.1" cy="383.3" r="3.1" class="jt"/>
+          <circle cx="503.2" cy="379.1" r="3.1" class="jt"/>
+          <circle cx="514.0" cy="404.1" r="3.1" class="jt"/>
+          <circle cx="502.8" cy="429.1" r="3.1" class="jt"/>
+          <rect x="-13" y="-13" width="26" height="26" rx="2.9" transform="translate(486 404) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="625.8" cy="377.1" r="3.1" class="jt"/>
+          <circle cx="621.7" cy="354.1" r="3.1" class="jt"/>
+          <circle cx="645.3" cy="342.4" r="3.1" class="jt"/>
+          <circle cx="672.3" cy="338.8" r="3.1" class="jt"/>
+          <circle cx="686.2" cy="358.9" r="3.1" class="jt"/>
+          <circle cx="690.3" cy="381.9" r="3.1" class="jt"/>
+          <circle cx="666.7" cy="393.6" r="3.1" class="jt"/>
+          <circle cx="639.7" cy="397.2" r="3.1" class="jt"/>
+          <rect x="-17" y="-17" width="34" height="34" rx="3.7" transform="translate(656 368) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <circle cx="823.4" cy="381.0" r="3.1" class="jt"/>
+          <circle cx="834.3" cy="361.5" r="3.1" class="jt"/>
+          <circle cx="859.6" cy="360.6" r="3.1" class="jt"/>
+          <circle cx="884.8" cy="363.4" r="3.1" class="jt"/>
+          <circle cx="893.7" cy="383.6" r="3.1" class="jt"/>
+          <circle cx="898.3" cy="404.8" r="3.1" class="jt"/>
+          <circle cx="878.4" cy="418.2" r="3.1" class="jt"/>
+          <circle cx="856.1" cy="428.5" r="3.1" class="jt"/>
+          <circle cx="834.9" cy="416.6" r="3.1" class="jt"/>
+          <circle cx="816.6" cy="401.7" r="3.1" class="jt"/>
+          <rect x="-22" y="-22" width="44" height="44" rx="4.8" transform="translate(858 392) rotate(45)" fill="url(#jgold)" class="jd"/>
+          <g class="jg" transform="translate(212 388)"><path d="M-4.5 -4 v8 l4.5 -1.2 4.5 1.2 v-8 l-4.5 1.2z"/></g>
+          <g class="jg" transform="translate(362 331)"><rect x="-5" y="-4" width="10" height="8" rx="1.5"/><path d="M-1 -1.6 l2.6 1.6 -2.6 1.6z" fill="#8B7BC8" stroke="none"/></g>
+          <g class="jg" transform="translate(486 372)"><rect x="-1.6" y="-4.5" width="3.2" height="5.5" rx="1.6"/><path d="M-3.4 -0.6 a3.4 3.4 0 0 0 6.8 0 M0 3 v2"/></g>
+          <g class="jg" transform="translate(656 332)"><rect x="-5.5" y="-4" width="11" height="8" rx="1.5"/><path d="M-2 4 h4"/></g>
+          <g class="jg" transform="translate(858 351)"><rect x="-6" y="-3.5" width="12" height="7" rx="3.5"/><path d="M-3 0 h2.4 M-1.8 -1.2 v2.4"/></g>
+      <text class="jl" x="84" y="446">An overlooked story</text>
+      <text class="jl gold" x="916" y="446" text-anchor="end">An enduring franchise</text>
+    </svg>
   </div>
 </section>
 
 
+
+<div class="rule"></div>
+
+<!-- The record -->
+<section id="record">
+  <p class="pillar-n reveal">So far</p>
+  <p class="pillar-statement reveal">We've already put stories in front of <em>half a billion people.</em></p>
+
+  <div class="rec-nums reveal">
+    <div class="rnum"><b>1,000,000,000+</b><span>Views</span></div>
+    <div class="rnum"><b>500,000,000+</b><span>Viewers</span></div>
+    <div class="rnum"><b>400,000+</b><span>Followers</span></div>
+  </div>
+
+  <div class="rec-wrap reveal">
+    <svg class="recviz" viewBox="0 0 1000 170" aria-hidden="true">
+      <defs>
+        <linearGradient id="rgold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
+        </linearGradient>
+      </defs>
+      <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(40 30) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(77 83) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(114 136) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(151 69) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(188 122) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(225 55) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(262 108) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(299 41) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(336 94) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(373 147) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(410 80) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(447 133) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(64 66) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(101 119) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(138 52) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(175 105) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(212 38) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(249 91) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(286 144) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(323 77) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(360 130) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(397 63) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(434 116) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(51 49) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(88 102) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(125 35) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(162 88) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(199 141) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(236 74) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(273 127) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(310 60) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(347 113) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(384 46) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(421 99) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(458 32) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(75 85) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(112 138) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(149 71) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(186 124) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(223 57) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(260 110) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(297 43) rotate(45)" fill="url(#rgold)" opacity="0.64"/>
+          <rect x="-5.8" y="-5.8" width="11.6" height="11.6" rx="1.2" transform="translate(334 96) rotate(45)" fill="url(#rgold)" opacity="0.73"/>
+          <rect x="-7.199999999999999" y="-7.199999999999999" width="14.399999999999999" height="14.399999999999999" rx="1.2" transform="translate(371 149) rotate(45)" fill="url(#rgold)" opacity="0.82"/>
+          <rect x="-3.0" y="-3.0" width="6.0" height="6.0" rx="1.2" transform="translate(408 82) rotate(45)" fill="url(#rgold)" opacity="0.91"/>
+          <rect x="-4.4" y="-4.4" width="8.8" height="8.8" rx="1.2" transform="translate(445 135) rotate(45)" fill="url(#rgold)" opacity="0.55"/>
+      <rect x="-26" y="-26" width="52" height="52" rx="5.2" transform="translate(640 84) rotate(45)" class="rc"/>
+          <rect x="-32" y="-32" width="64" height="64" rx="6.4" transform="translate(760 84) rotate(45)" class="rc"/>
+          <rect x="-38" y="-38" width="76" height="76" rx="7.6" transform="translate(890 84) rotate(45)" class="rc"/>
+      <text class="jl" x="40" y="166">What we've made</text>
+      <text class="jl gold" x="960" y="166" text-anchor="end">And bigger ones coming</text>
+    </svg>
+  </div>
+</section>
 
 <div class="rule"></div>
 
@@ -901,7 +1032,7 @@
     const c = document.getElementById('hero-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 56, RX = 0, RY = 0, wide = true;
     let net = [], ideas = [], t = 0, last = 0, pulse = 0;
@@ -1089,7 +1220,7 @@
     const c = document.getElementById('intake-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
 
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
