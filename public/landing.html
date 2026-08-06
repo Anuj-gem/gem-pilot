@@ -895,6 +895,15 @@
     .ai-vbar.lit { box-shadow: 0 0 18px rgba(228,201,126,0.5); }
     .ai-vcap { margin-top: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: rgba(222,216,240,0.55); }
 
+    /* adaptation card: what it is now vs what's inside it */
+    .ai-read { margin: 16px 0 18px; }
+    .ai-readrow {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+      padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);
+      font-size: 12.5px; color: rgba(222,216,240,0.62);
+    }
+    .ai-readrow b { font-weight: 500; color: var(--on-screen); text-align: right; }
+
     /* adaptation card */
     .ai-story {
       display: flex; align-items: center; gap: 10px;
@@ -1032,7 +1041,11 @@
       <div class="ai-label">Adaptation</div>
       <p class="ai-line">We find the format where a story wins.</p>
       <div class="ai-graphic">
-        <div class="ai-story"><span class="ai-gem big" aria-hidden="true"></span>One story</div>
+        <div class="ai-story"><span class="ai-gem big" aria-hidden="true"></span>Space Priest &middot; web comedy &middot; 100M viewers</div>
+        <div class="ai-read">
+          <div class="ai-readrow"><span>Why it works now</span><b>Contained comedy, one ship</b></div>
+          <div class="ai-readrow"><span>What's underneath</span><b>A grand space adventure</b></div>
+        </div>
         <div class="ai-formats">
           <div class="ai-format"><span>Web series</span><b>$4M</b></div>
           <div class="ai-format"><span>TV series</span><b>$46M</b></div>
@@ -1040,7 +1053,7 @@
           <div class="ai-format"><span>Mobile game</span><b>$85M</b></div>
         </div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>This one's a feature first.</p>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>Contained comedy on one ship is exactly why it works as a series. Open it up into a real space adventure and keep the comedy that made it, and it's a far bigger film &mdash; it takes the investment, but the audience is already there.</p>
     </div>
 
     <div class="ai-card reveal">
@@ -1093,7 +1106,7 @@
           <span class="ai-val">+$40M</span>
         </div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>This is the sequence that sells the ticket. Audiences show up for it &mdash; don't shrink it.</p>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>The spectacle is the reason audiences show up for this one. If the wreck doesn't feel real, the rest of the film has nothing to stand on.</p>
     </div>
 
     <div class="ai-card reveal">
@@ -1112,18 +1125,18 @@
         </div>
         <div class="ai-meters">
           <div class="ai-row meter">
-            <span class="ai-name">Actor craft</span>
+            <span class="ai-name">Role difficulty</span>
             <span class="ai-track"><span class="ai-bar violet" style="--w:94%"></span></span>
-            <span class="ai-note">critical</span>
+            <span class="ai-note">extreme</span>
           </div>
           <div class="ai-row meter">
-            <span class="ai-name">Actor fame</span>
+            <span class="ai-name">Fame value</span>
             <span class="ai-track"><span class="ai-bar violet" style="--w:12%"></span></span>
-            <span class="ai-note">minor</span>
+            <span class="ai-note">limited</span>
           </div>
         </div>
       </div>
-      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>Fame won't carry this one. Cast whoever can deliver the viral comedy in this script.</p>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>A major star brings some marketing value and a huge price tag. This role is hard enough that an actor who can't deliver it &mdash; famous or not &mdash; hurts this film far more than it would most films. Cast for fit.</p>
     </div>
 
   </div>
