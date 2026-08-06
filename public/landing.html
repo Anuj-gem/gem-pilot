@@ -752,7 +752,7 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 470px; margin-top: 26px; margin-bottom: 0; }
+      .intake-wrap { height: 420px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -1139,7 +1139,7 @@
     const c = document.getElementById('hero-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
+    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900;
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 56, RX = 0, RY = 0, wide = true, SPAN = 0;
     let net = [], ideas = [], t = 0, last = 0, pulse = 0;
@@ -1169,7 +1169,10 @@
         const L = base * (0.22 + r() * 0.06);
         let a = (b * 72 - 90) * Math.PI / 180 + (r() - 0.5) * 0.3;
         let px = CX + Math.cos(a) * (GS * 0.58), py = CY + Math.sin(a) * (GS * 0.58);
-        const sizes = [5.5 + r() * 1.4, 9 + r() * 2, 14 + r() * 3.5];
+        // sizes must scale with SPAN too — otherwise the legs shrink on a
+        // phone and the diamonds don't, and the chains pile into each other
+        const k = Math.min(1, base / 620);
+        const sizes = [(5.5 + r() * 1.4) * k, (9 + r() * 2) * k, (14 + r() * 3.5) * k];
         const legs = [0.40, 0.32, 0.34];
         for (let k = 0; k < 3; k++) {
           a += (r() - 0.5) * 0.34;
@@ -1254,12 +1257,12 @@
         const inner = box.querySelector && box.querySelector('.hero-inner');
         const bottom = inner ? inner.offsetTop + inner.offsetHeight : h * 0.45;
         const band = Math.max(230, h - bottom - 14);
-        CX = w * 0.5; CY = h - band * 0.5; GS = 42;
+        CX = w * 0.5; CY = h - band * 0.5 + 8; GS = 34;
         RX = w * 0.52; RY = band * 0.44;
         // A spoke's tip (three legs plus the tip diamond) lands about 0.42 * SPAN
         // from the centre. Size SPAN so that reach, plus room for a value label,
         // fits inside the band both ways — measured, not guessed.
-        const REACH = 0.42;
+        const REACH = 0.46;
         SPAN = Math.max(150, Math.min((band * 0.5 - 14) / REACH, (w * 0.5 - 52) / REACH));
       }
       build();
@@ -1387,7 +1390,7 @@
     const c = document.getElementById('build-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
+    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900;
 
     const ROUTES = [
       [['Web series', '$2M', 0.30], ['TV series', '$48M', 0.44], ['Feature film', '$190M', 0.66], ['Feature film', '$540M', 0.94]],
@@ -1582,7 +1585,7 @@
     const c = document.getElementById('intake-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
+    const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 900;
 
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
     const VALUES = ['$8.8B', '$4.2B', '$1.2B', '$6.5B', '$2.9B', '$3.7B'];
@@ -1659,7 +1662,7 @@
     function seedTree() {
       nodes = []; links = []; trunks = []; fails = 0; frozen = false;
       tseed = 20260805;
-      MAXT = wide ? 6 : 4;
+      MAXT = wide ? 6 : 3;
       addTrunk(); addTrunk();
     }
 
@@ -1789,7 +1792,7 @@
     function clear(x, y, s) {
       if (Math.hypot(x - CX, y - CY) < R + 38) return false;
       for (const n of nodes) {
-        if (Math.hypot(n.x - x, n.y - y) < (n.s + s) * 1.7 + 16) return false;
+        if (Math.hypot(n.x - x, n.y - y) < (n.s + s) * 1.7 + (vert ? 24 : 16)) return false;
       }
       return true;
     }
@@ -1821,18 +1824,18 @@
     function growTrunk(tr) {
       const p = tr.tip;
       for (let att = 0; att < 6; att++) {
-        const a = tr.a + (trnd() - 0.5) * 0.55;
-        const d = 48 + trnd() * 30;
+        const a = tr.a + (trnd() - 0.5) * (vert ? 0.42 : 0.55);
+        const d = (vert ? 54 : 48) + trnd() * 30;
         const x = p.x + Math.cos(a) * d, y = p.y + Math.sin(a) * d;
         if (!inBounds(x, y)) { tr.done = true; return; }
-        const sz = Math.min(15, p.s * (1.2 + trnd() * 0.14));
+        const sz = Math.min(vert ? 11 : 15, p.s * (1.2 + trnd() * 0.14));
         if (!clear(x, y, sz)) continue;
         const big = sz > 7.5 && trnd() < 0.5;
         const node = { x: x, y: y, px: p.x, py: p.y, s: sz, t: 0, big: big, rev: (p.rev || 0) * 3 + 18 + Math.round(trnd() * 30) };
         nodes.push(node);
         tr.prev = tr.tip;
         tr.tip = node;
-        if (trnd() < 0.45) {
+        if (trnd() < (vert ? 0.28 : 0.45)) {
           const sa = a + (trnd() < 0.5 ? -1 : 1) * (0.7 + trnd() * 0.5);
           const sd = 30 + trnd() * 22;
           const sx = x + Math.cos(sa) * sd, sy = y + Math.sin(sa) * sd;
@@ -1848,7 +1851,7 @@
     }
 
     function grow() {
-      if (nodes.length > 130) return;
+      if (nodes.length > (vert ? 34 : 130)) return;
       if (trunks.length < MAXT && trnd() < 0.55) { if (addTrunk()) return; }
       const live = trunks.filter(t => !t.done);
       if (live.length) { growTrunk(live[Math.floor(trnd() * live.length)]); return; }
@@ -1871,7 +1874,7 @@
 
       // the values only appear once the whole constellation has finished growing
       if (!settled) {
-        const doneGrowing = frozen || nodes.length > 130;
+        const doneGrowing = frozen || nodes.length > (vert ? 34 : 130);
         if (doneGrowing && nodes.every(n => n.t >= 1.1)) settled = true;
       } else {
         settleAge += dt;
