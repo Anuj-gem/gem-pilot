@@ -114,15 +114,22 @@
     .journeys .bd { filter: drop-shadow(0 0 12px rgba(228,201,126,0.6)); }
     .journeys .bgm { filter: drop-shadow(0 0 16px rgba(139,92,246,0.75)); }
     .journeys .bi { fill: rgba(139,92,246,0.55); }
+    .lever-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 46px; margin-top: 52px;
+    }
+    .lever { border-top: 1px solid rgba(228,201,126,0.3); padding-top: 22px; }
+    .lever-k {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2.3vw, 29px); font-weight: 500;
+      letter-spacing: -0.01em; color: var(--on-screen);
+      margin-bottom: 12px;
+    }
+    .lever-d { font-size: 16px; color: rgba(243,239,232,0.75); line-height: 1.72; }
+    @media (max-width: 860px) { .lever-row { grid-template-columns: 1fr; gap: 30px; margin-top: 34px; } }
     .journeys .bm {
       font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500;
       fill: #E4C97E; letter-spacing: 1px;
-    }
-    .build-close {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: clamp(20px, 2.2vw, 27px);
-      color: var(--gold-soft); line-height: 1.4;
-      max-width: 40ch; margin-top: 42px;
     }
     .journeys .bp-p { fill: none; stroke: rgba(243,239,232,0.62); stroke-width: 1.3; stroke-linecap: round; }
     .journey-wrap, .rec-wrap {
@@ -827,7 +834,7 @@
 <section id="build" style="padding-top:0;">
   <p class="pillar-n reveal">Build</p>
   <p class="pillar-statement reveal">We find the right path <em>for every story.</em></p>
-  <p class="pillar-next reveal">There is no cookie-cutter process here. We identify the places a story will resonate most and distribute it there. We assemble the collaborators who will bring the most out of it. We open revenue channels most studios never touch. And when a property starts to command an audience, we put serious capital behind it.</p>
+  <p class="pillar-next reveal">There is no cookie-cutter process here. Every story gets a path built for it alone.</p>
 
   <div class="journey-wrap reveal">
     <svg class="journeys" viewBox="0 0 1000 460" aria-hidden="true">
@@ -936,7 +943,20 @@
     </svg>
   </div>
 
-  <p class="build-close reveal">It runs on research and technology no other studio has ever had.</p>
+  <div class="lever-row reveal">
+    <div class="lever">
+      <p class="lever-k">Where it belongs</p>
+      <p class="lever-d">Most studios decide the format before they read the first page. We model where a story will actually land — social, series, theatrical — and start it there, then open every other channel it can live in.</p>
+    </div>
+    <div class="lever">
+      <p class="lever-k">Who makes it</p>
+      <p class="lever-d">We research directors, cast and crew far past the usual shortlist: who fits this material, who reaches this audience, who raises the ceiling. Filmmakers end up with collaborators they would never have found alone.</p>
+    </div>
+    <div class="lever">
+      <p class="lever-k">What goes behind it</p>
+      <p class="lever-d">Every stage is funded on evidence. Once a property commands an audience and earns across channels, we put serious capital behind it — and we keep going.</p>
+    </div>
+  </div>
 </section>
 
 
