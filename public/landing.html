@@ -975,7 +975,10 @@
           if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
         }
       }
-      return best ? [best[0], best[1] + halfH * 0.72] : null;
+      if (best) return [best[0], best[1] + halfH * 0.72];
+      const fx = Math.min(w - halfW - 6, Math.max(halfW + 6, n.x));
+      const fy = Math.min(h - 8, Math.max(halfH + 12, n.y + n.s * 1.42 + halfH + 13));
+      return [fx, fy + halfH * 0.4];
     }
 
     function idea(seeded) {
@@ -1405,7 +1408,10 @@
           if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
         }
       }
-      return best ? [best[0], best[1] + halfH * 0.72] : null;
+      if (best) return [best[0], best[1] + halfH * 0.72];
+      const fx = Math.min(w - halfW - 6, Math.max(halfW + 6, n.x));
+      const fy = Math.min(h - 8, Math.max(halfH + 12, n.y + n.s * 1.42 + halfH + 13));
+      return [fx, fy + halfH * 0.4];
     }
 
     function icon(kind, x, y) {
@@ -1466,7 +1472,7 @@
         s: 4.5 + trnd() * 1.2, t: 0, big: false, rev: 0
       };
       nodes.push(n);
-      trunks.push({ lane: lane, a: a, tip: n, root: n, done: false, val: VALUES[trunks.length % VALUES.length] });
+      trunks.push({ lane: lane, a: a, tip: n, prev: n, root: n, age: 0, done: false, val: VALUES[trunks.length % VALUES.length] });
       return true;
     }
 
@@ -1483,6 +1489,7 @@
         const big = sz > 7.5 && trnd() < 0.5;
         const node = { x: x, y: y, px: p.x, py: p.y, s: sz, t: 0, big: big, rev: (p.rev || 0) * 3 + 18 + Math.round(trnd() * 30) };
         nodes.push(node);
+        tr.prev = tr.tip;
         tr.tip = node;
         if (trnd() < 0.45) {
           const sa = a + (trnd() < 0.5 ? -1 : 1) * (0.7 + trnd() * 0.5);
@@ -1520,10 +1527,14 @@
       }
 
       growIn -= dt;
-      if (growIn <= 0 && !frozen) { grow(); growIn = 0.4 + rnd() * 0.4; }
+      if (growIn <= 0 && !frozen) { grow(); growIn = 0.4 + trnd() * 0.4; }
 
 
       for (const n of nodes) n.t += dt;
+      for (const tr of trunks) {
+        tr.age += dt;
+        if (tr.tip !== tr.root && tr.tip.t >= 1) tr.anchor = tr.tip;
+      }
       for (const l of links) l.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
       valueA = Math.max(0, valueA - dt * 0.16);
@@ -1577,15 +1588,15 @@
       }
 
       for (const tr of trunks) {
-        const n = tr.tip;
-        if (n === tr.root) continue;
-        const k = ease(clamp01(n.t / 1.0));
-        if (k < 0.7) continue;
+        const n = tr.anchor;
+        if (!n) continue;
+        const k = ease(clamp01((tr.age - 1.4) / 0.9));
+        if (k <= 0) continue;
         const pos = placeLabel(nodes, n, tr.val.length * 6.2 + 4, 10);
         if (!pos) continue;
         const lx = pos[0], ly = pos[1];
         ctx.save();
-        ctx.globalAlpha = (k - 0.7) / 0.3;
+        ctx.globalAlpha = k;
         ctx.textAlign = 'center';
         ctx.shadowColor = 'rgba(8,6,14,0.95)';
         ctx.shadowBlur = 10;
