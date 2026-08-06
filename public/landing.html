@@ -752,7 +752,7 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 470px; margin-top: 26px; margin-bottom: 0; }
+      .intake-wrap { height: 560px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -1617,26 +1617,29 @@
         SOURCES.forEach((name, i) => SRC.push({ name: name, x: X0 + 7, y: h * 0.14 + i * step, tx: X0 + 28 }));
         return;
       }
-      // One per line, left-aligned as a block and centred — the desktop reads
-      // clearly because the sources are a scannable list, so keep them a list.
-      srcFont = '600 13px Inter, sans-serif';
+      // One row across the top: icon above name, five columns, centred.
+      // Gaps close up before the type shrinks, so it always fits the width.
+      srcFont = '600 11px Inter, sans-serif';
       ctx.font = srcFont;
-      const ICON = 15, PAD = 8, ROW = 22, TOP = 14;
-      const widest = Math.max.apply(null, SOURCES.map(n => ctx.measureText(n).width));
-      const left = (w - (ICON + PAD + widest)) / 2;
+      const TOP = 18, LABEL_DY = 17;
+      const colW = SOURCES.map(n => Math.max(22, ctx.measureText(n).width));
+      const sumW = colW.reduce((a, b) => a + b, 0);
+      const gap = Math.max(4, Math.min(12, (w - 16 - sumW) / (SOURCES.length - 1)));
+      let x = (w - (sumW + gap * (SOURCES.length - 1))) / 2;
       SOURCES.forEach((name, i) => {
-        const y = TOP + i * ROW;
-        SRC.push({ name: name, x: left + ICON / 2, y: y, tx: left + ICON + PAD });
+        const cx = x + colW[i] / 2;
+        SRC.push({ name: name, x: cx, y: TOP, tx: cx, ty: TOP + LABEL_DY });
+        x += colW[i] + gap;
       });
-      SRC.bottom = TOP + SOURCES.length * ROW;
+      SRC.bottom = TOP + LABEL_DY + 6;
     }
 
     // A drifting idea: travels from its source to the gem along a straight
     // line, parameterised 0..1 so the same code serves both orientations.
     function spawn(seeded) {
       const src = SRC[Math.floor(rnd() * SRC.length)] || { x: XS, y: h * 0.5 };
-      const sx = vert ? src.x + (rnd() - 0.5) * 34 : XS - rnd() * 40;
-      const sy = vert ? src.y + 10 : src.y + (rnd() - 0.5) * 34;
+      const sx = vert ? src.x + (rnd() - 0.5) * 30 : XS - rnd() * 40;
+      const sy = vert ? (src.ty || src.y) + 9 : src.y + (rnd() - 0.5) * 34;
       return {
         sx: sx, sy: sy,
         u: seeded ? rnd() : -rnd() * 0.3,
@@ -1649,7 +1652,7 @@
     function seedTree() {
       nodes = []; links = []; trunks = []; fails = 0; frozen = false;
       tseed = 20260805;
-      MAXT = wide ? 6 : 3;
+      MAXT = 6;
       addTrunk(); addTrunk();
     }
 
@@ -1667,14 +1670,14 @@
       if (vert) {
         // sources sit across the top; the gem hangs below them and the tree
         // grows down into the rest of the frame
-        CX = w * 0.5; CY = (SRC.bottom || 60) + 62;
-        R = 30;
+        CX = w * 0.5; CY = (SRC.bottom || 60) + 132;
+        R = 34;
       } else {
         CX = w * 0.40; CY = h * 0.5;
         R = 52;
       }
       parts = [];
-      const n = vert ? 0 : 210;
+      const n = vert ? 95 : 210;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
@@ -1838,7 +1841,7 @@
     }
 
     function grow() {
-      if (nodes.length > (vert ? 34 : 130)) return;
+      if (nodes.length > (vert ? 76 : 130)) return;
       if (trunks.length < MAXT && trnd() < 0.55) { if (addTrunk()) return; }
       const live = trunks.filter(t => !t.done);
       if (live.length) { growTrunk(live[Math.floor(trnd() * live.length)]); return; }
@@ -1861,7 +1864,7 @@
 
       // the values only appear once the whole constellation has finished growing
       if (!settled) {
-        const doneGrowing = frozen || nodes.length > (vert ? 34 : 130);
+        const doneGrowing = frozen || nodes.length > (vert ? 76 : 130);
         if (doneGrowing && nodes.every(n => n.t >= 1.1)) settled = true;
       } else {
         settleAge += dt;
@@ -1874,12 +1877,12 @@
 
 
       ctx.save();
-      ctx.textAlign = 'left';
+      ctx.textAlign = vert ? 'center' : 'left';
       SRC.forEach((sc, i) => {
         icon(i, sc.x, sc.y);
         ctx.fillStyle = 'rgba(255,255,255,0.92)';
         ctx.font = srcFont;
-        ctx.fillText(sc.name, sc.tx, sc.y + (vert ? 4 : 5));
+        ctx.fillText(sc.name, sc.tx, vert ? sc.ty : sc.y + 5);
       });
       ctx.restore();
 
