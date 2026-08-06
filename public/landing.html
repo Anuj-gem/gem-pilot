@@ -110,21 +110,25 @@
     .mini-g .ct-on { fill: rgba(228,201,126,0.25); stroke: #E4C97E; stroke-width: 1.6; }
     .mini-g .ct-link { stroke: rgba(228,201,126,0.4); stroke-width: 1.1; }
     .mini-g .cl { font-family: 'Inter', sans-serif; font-size: 12px; fill: rgba(243,239,232,0.45); }
-    .journeys .bp { fill: none; stroke: rgba(228,201,126,0.5); stroke-linecap: round; }
-    .journeys .bt { fill: none; stroke: rgba(243,239,232,0.42); stroke-width: 1.2; }
-    .journeys .bt-l { stroke: rgba(243,239,232,0.16); stroke-width: 0.9; }
-    .journeys .bi { fill: rgba(139,92,246,0.5); }
-    .journeys .bg-i { fill: none; stroke: rgba(196,181,253,0.55); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .journeys .bp { fill: none; stroke: rgba(228,201,126,0.55); stroke-linecap: round; }
+    .journeys .bd { filter: drop-shadow(0 0 12px rgba(228,201,126,0.6)); }
+    .journeys .bgm { filter: drop-shadow(0 0 16px rgba(139,92,246,0.75)); }
+    .journeys .bi { fill: rgba(139,92,246,0.55); }
+    .journeys .bp-p { fill: none; stroke: rgba(243,239,232,0.62); stroke-width: 1.3; stroke-linecap: round; }
+    .journeys .bl {
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+      fill: rgba(255,255,255,0.92); letter-spacing: 0.01em;
+    }
     .lever-row {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 40px; margin-top: 40px;
     }
     .lever-k {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold-soft);
-      margin-bottom: 12px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px; font-weight: 500; letter-spacing: -0.01em;
+      color: var(--on-screen); margin-bottom: 10px;
     }
-    .lever-d { font-size: 15px; color: rgba(243,239,232,0.72); line-height: 1.7; }
+    .lever-d { font-size: 16px; color: rgba(243,239,232,0.75); line-height: 1.7; }
     @media (max-width: 860px) { .lever-row { grid-template-columns: 1fr; gap: 26px; } }
     .journey-wrap, .rec-wrap {
       width: 100vw; margin-left: calc(50% - 50vw);
@@ -827,11 +831,11 @@
 <!-- Build -->
 <section id="build" style="padding-top:0;">
   <p class="pillar-n reveal">Build</p>
-  <p class="pillar-statement reveal">We maximize the potential of every property — <em>in ways no one else can.</em></p>
-  <p class="pillar-next reveal">Three things decide how far a story goes: the path it takes to an audience, the capital behind it, and the people who make it. We do all three differently.</p>
+  <p class="pillar-statement reveal">We take a story further than <em>anyone else can.</em></p>
+  <p class="pillar-next reveal">Nothing becomes a franchise in one leap. A story grows — from its first small audience to its biggest — and we push it forward at every stage.</p>
 
   <div class="journey-wrap reveal">
-    <svg class="journeys" viewBox="0 0 1000 360" aria-hidden="true">
+    <svg class="journeys" viewBox="0 0 1000 330" aria-hidden="true">
       <defs>
         <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
@@ -840,114 +844,70 @@
           <stop offset="0" stop-color="#C4B5FD"/><stop offset="1" stop-color="#6D28D9"/>
         </linearGradient>
         <radialGradient id="bhalo">
-          <stop offset="0" stop-color="rgba(139,92,246,0.3)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
+          <stop offset="0" stop-color="rgba(139,92,246,0.32)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
         </radialGradient>
       </defs>
-      <circle cx="8" cy="70" r="1.6" class="bi"/>
-        <circle cx="31" cy="131" r="2.3" class="bi"/>
-        <circle cx="54" cy="192" r="3.0" class="bi"/>
-        <circle cx="77" cy="253" r="3.7" class="bi"/>
-        <circle cx="22" cy="94" r="1.6" class="bi"/>
-        <circle cx="45" cy="155" r="2.3" class="bi"/>
-        <circle cx="68" cy="216" r="3.0" class="bi"/>
-        <circle cx="13" cy="277" r="3.7" class="bi"/>
-        <circle cx="36" cy="118" r="1.6" class="bi"/>
-        <circle cx="59" cy="179" r="2.3" class="bi"/>
-        <circle cx="82" cy="240" r="3.0" class="bi"/>
-        <circle cx="27" cy="81" r="3.7" class="bi"/>
-        <circle cx="50" cy="142" r="1.6" class="bi"/>
-        <circle cx="73" cy="203" r="2.3" class="bi"/>
-        <circle cx="18" cy="264" r="3.0" class="bi"/>
-        <circle cx="41" cy="105" r="3.7" class="bi"/>
-        <circle cx="64" cy="166" r="1.6" class="bi"/>
-        <circle cx="9" cy="227" r="2.3" class="bi"/>
-        <circle cx="32" cy="288" r="3.0" class="bi"/>
-        <circle cx="55" cy="129" r="3.7" class="bi"/>
-        <circle cx="78" cy="190" r="1.6" class="bi"/>
-        <circle cx="23" cy="251" r="2.3" class="bi"/>
-        <circle cx="46" cy="92" r="3.0" class="bi"/>
-        <circle cx="69" cy="153" r="3.7" class="bi"/>
-        <circle cx="14" cy="214" r="1.6" class="bi"/>
-        <circle cx="37" cy="275" r="2.3" class="bi"/>
-        <path d="M129 180 Q 208 195 275 182" class="bp" stroke-width="1.6"/>
-        <path d="M297 182 Q 386 157 456 160" class="bp" stroke-width="2.6"/>
-        <path d="M492 160 Q 582 187 646 186" class="bp" stroke-width="3.6"/>
-        <path d="M698 186 Q 791 161 847 164" class="bp" stroke-width="4.6"/>
-        <line x1="302.0" y1="182.0" x2="321.0" y2="182.0" class="bt-l"/>
-        <circle cx="321.0" cy="182.0" r="4.2" class="bt"/>
-        <line x1="270.0" y1="182.0" x2="243.0" y2="182.0" class="bt-l"/>
-        <circle cx="243.0" cy="182.0" r="4.2" class="bt"/>
-        <rect x="-11" y="-11" width="22" height="22" rx="2.4" transform="translate(286 182) rotate(45)" fill="url(#bg)"/>
-        <g class="bg-i" transform="translate(286 137)"><rect x="-7" y="-10" width="14" height="20" rx="3"/><path d="M-2.4 -3 l5 2.6 -5 2.6z" fill="#8B7BC8" stroke="none"/></g>
-        <line x1="493.0" y1="171.7" x2="508.7" y2="181.3" class="bt-l"/>
-        <circle cx="508.7" cy="181.3" r="4.2" class="bt"/>
-        <line x1="461.0" y1="177.1" x2="445.8" y2="197.1" class="bt-l"/>
-        <circle cx="445.8" cy="197.1" r="4.2" class="bt"/>
-        <line x1="455.0" y1="148.3" x2="439.3" y2="138.7" class="bt-l"/>
-        <circle cx="439.3" cy="138.7" r="4.2" class="bt"/>
-        <line x1="487.0" y1="142.9" x2="502.2" y2="122.9" class="bt-l"/>
-        <circle cx="502.2" cy="122.9" r="4.2" class="bt"/>
-        <rect x="-18" y="-18" width="36" height="36" rx="4.0" transform="translate(474 160) rotate(45)" fill="url(#bg)"/>
-        <g class="bg-i" transform="translate(474 108)"><rect x="-10" y="-7" width="20" height="14" rx="2.5"/><path d="M-4 7 v3 M4 7 v3 M-7 10 h14"/></g>
-        <line x1="683.2" y1="212.0" x2="690.1" y2="227.9" class="bt-l"/>
-        <circle cx="690.1" cy="227.9" r="4.2" class="bt"/>
-        <line x1="656.4" y1="210.1" x2="642.8" y2="231.1" class="bt-l"/>
-        <circle cx="642.8" cy="231.1" r="4.2" class="bt"/>
-        <line x1="641.3" y1="190.1" x2="622.5" y2="192.6" class="bt-l"/>
-        <circle cx="622.5" cy="192.6" r="4.2" class="bt"/>
-        <line x1="649.3" y1="167.0" x2="629.6" y2="150.4" class="bt-l"/>
-        <circle cx="629.6" cy="150.4" r="4.2" class="bt"/>
-        <line x1="674.4" y1="158.2" x2="675.9" y2="141.1" class="bt-l"/>
-        <circle cx="675.9" cy="141.1" r="4.2" class="bt"/>
-        <line x1="697.7" y1="170.4" x2="720.0" y2="156.7" class="bt-l"/>
-        <circle cx="720.0" cy="156.7" r="4.2" class="bt"/>
-        <line x1="701.6" y1="194.3" x2="719.7" y2="199.4" class="bt-l"/>
-        <circle cx="719.7" cy="199.4" r="4.2" class="bt"/>
-        <rect x="-26" y="-26" width="52" height="52" rx="5.7" transform="translate(672 186) rotate(45)" fill="url(#bg)"/>
-        <g class="bg-i" transform="translate(672 126)"><rect x="-11" y="-5" width="22" height="10" rx="1.6"/><path d="M-7 -5 l3 5 M-1 -5 l3 5 M5 -5 l3 5"/><rect x="-11" y="1" width="22" height="9" rx="1.6"/></g>
-        <line x1="874.5" y1="200.8" x2="870.1" y2="217.5" class="bt-l"/>
-        <circle cx="870.1" cy="217.5" r="4.2" class="bt"/>
-        <line x1="853.9" y1="190.3" x2="834.5" y2="207.2" class="bt-l"/>
-        <circle cx="834.5" cy="207.2" r="4.2" class="bt"/>
-        <line x1="842.8" y1="171.5" x2="824.2" y2="174.9" class="bt-l"/>
-        <circle cx="824.2" cy="174.9" r="4.2" class="bt"/>
-        <line x1="844.9" y1="150.3" x2="819.7" y2="141.4" class="bt-l"/>
-        <circle cx="819.7" cy="141.4" r="4.2" class="bt"/>
-        <line x1="859.3" y1="133.4" x2="848.2" y2="119.6" class="bt-l"/>
-        <circle cx="848.2" cy="119.6" r="4.2" class="bt"/>
-        <line x1="881.6" y1="126.3" x2="880.1" y2="102.0" class="bt-l"/>
-        <circle cx="880.1" cy="102.0" r="4.2" class="bt"/>
-        <line x1="904.7" y1="131.1" x2="914.0" y2="116.2" class="bt-l"/>
-        <circle cx="914.0" cy="116.2" r="4.2" class="bt"/>
-        <line x1="921.2" y1="146.4" x2="945.0" y2="135.1" class="bt-l"/>
-        <circle cx="945.0" cy="135.1" r="4.2" class="bt"/>
-        <line x1="925.8" y1="167.3" x2="944.8" y2="168.7" class="bt-l"/>
-        <circle cx="944.8" cy="168.7" r="4.2" class="bt"/>
-        <line x1="917.2" y1="187.1" x2="938.6" y2="202.0" class="bt-l"/>
-        <circle cx="938.6" cy="202.0" r="4.2" class="bt"/>
-        <line x1="898.1" y1="199.6" x2="904.5" y2="215.7" class="bt-l"/>
-        <circle cx="904.5" cy="215.7" r="4.2" class="bt"/>
-        <rect x="-37" y="-37" width="74" height="74" rx="8.1" transform="translate(884 164) rotate(45)" fill="url(#bg)"/>
-        <g class="bg-i" transform="translate(884 93)"><path d="M-9 -9 h18 v18 h-18z" opacity="0"/><rect x="-11" y="-5" width="22" height="10" rx="1.6"/><path d="M-7 -5 l3 5 M-1 -5 l3 5 M5 -5 l3 5"/><rect x="-11" y="1" width="22" height="9" rx="1.6"/></g>
-      <circle cx="104" cy="180" r="86" fill="url(#bhalo)"/>
-      <rect x="-23" y="-23" width="46" height="46" rx="9" transform="translate(104 180) rotate(45)" fill="url(#bgem)"/>
-      <text class="jl" x="252" y="336">An overlooked story</text>
-      <text class="jl gold" x="972" y="336" text-anchor="end">An enduring franchise</text>
+      <circle cx="10" cy="76" r="1.6" class="bi"/>
+        <circle cx="29" cy="143" r="2.3" class="bi"/>
+        <circle cx="48" cy="210" r="3.0" class="bi"/>
+        <circle cx="67" cy="87" r="1.6" class="bi"/>
+        <circle cx="22" cy="154" r="2.3" class="bi"/>
+        <circle cx="41" cy="221" r="3.0" class="bi"/>
+        <circle cx="60" cy="98" r="1.6" class="bi"/>
+        <circle cx="15" cy="165" r="2.3" class="bi"/>
+        <circle cx="34" cy="232" r="3.0" class="bi"/>
+        <circle cx="53" cy="109" r="1.6" class="bi"/>
+        <circle cx="72" cy="176" r="2.3" class="bi"/>
+        <circle cx="27" cy="243" r="3.0" class="bi"/>
+        <circle cx="46" cy="120" r="1.6" class="bi"/>
+        <circle cx="65" cy="187" r="2.3" class="bi"/>
+        <circle cx="20" cy="254" r="3.0" class="bi"/>
+        <circle cx="39" cy="131" r="1.6" class="bi"/>
+        <circle cx="58" cy="198" r="2.3" class="bi"/>
+        <circle cx="13" cy="265" r="3.0" class="bi"/>
+        <circle cx="32" cy="142" r="1.6" class="bi"/>
+        <circle cx="51" cy="209" r="2.3" class="bi"/>
+        <circle cx="70" cy="86" r="3.0" class="bi"/>
+        <circle cx="25" cy="153" r="1.6" class="bi"/>
+        <path d="M136 168 Q 242 193 328 182" class="bp" stroke-width="2.0"/>
+        <path d="M368 182 Q 490 152 581 158" class="bp" stroke-width="3.3"/>
+        <path d="M643 158 Q 764 184 839 174" class="bp" stroke-width="4.6"/>
+        <rect x="-16" y="-16" width="32" height="32" rx="3.5" transform="translate(348 182) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p" opacity="1.0"><circle cx="340" cy="228" r="2.7"/><path d="M335 237 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="356" cy="228" r="2.7"/><path d="M350 237 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <text class="bl" x="348" y="146" text-anchor="middle">Short-form</text>
+        <rect x="-27" y="-27" width="54" height="54" rx="5.9" transform="translate(612 158) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p" opacity="1.0"><circle cx="590" cy="215" r="2.7"/><path d="M584 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="604" cy="215" r="2.7"/><path d="M599 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="620" cy="215" r="2.7"/><path d="M614 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="634" cy="215" r="2.7"/><path d="M629 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <text class="bl" x="612" y="111" text-anchor="middle">Series</text>
+        <rect x="-41" y="-41" width="82" height="82" rx="9.0" transform="translate(884 174) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p" opacity="1.0"><circle cx="862" cy="245" r="2.7"/><path d="M856 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="876" cy="245" r="2.7"/><path d="M871 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="892" cy="245" r="2.7"/><path d="M886 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="906" cy="245" r="2.7"/><path d="M901 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="862" cy="265" r="2.7"/><path d="M856 274 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="876" cy="265" r="2.7"/><path d="M871 274 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <g class="bp-p" opacity="1.0"><circle cx="892" cy="265" r="2.7"/><path d="M886 274 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
+        <text class="bl" x="884" y="113" text-anchor="middle">Feature film</text>
+      <circle cx="108" cy="168" r="92" fill="url(#bhalo)"/>
+      <rect x="-25" y="-25" width="50" height="50" rx="10" transform="translate(108 168) rotate(45)" fill="url(#bgem)" class="bgm"/>
     </svg>
   </div>
 
   <div class="lever-row reveal">
     <div class="lever">
-      <p class="lever-k">The path</p>
-      <p class="lever-d">No two properties are alike. We identify where a story will resonate first — social, series, film — and nurture it there, growing the brand across every channel modern media offers.</p>
+      <p class="lever-k">We find the right path</p>
+      <p class="lever-d">Where a story starts matters. Some begin on social, some as a series, some go straight to the screen. We work out which one fits, and take it there first.</p>
     </div>
     <div class="lever">
-      <p class="lever-k">The capital</p>
-      <p class="lever-d">As a story proves itself and its audience grows, we scale our investment behind it — so the people making it have the funding, the tools, and the technology to realize the vision.</p>
+      <p class="lever-k">We fund every step</p>
+      <p class="lever-d">Each time an audience proves out, we put more money behind the work — so the people making it have what they need to go bigger.</p>
     </div>
     <div class="lever">
-      <p class="lever-k">The team</p>
-      <p class="lever-d">We do extensive research to assemble the right team at every stage — giving filmmakers access to information they have never had, to find the unlikely, perfect fits who bring the most out of a project.</p>
+      <p class="lever-k">We build the team</p>
+      <p class="lever-d">We research who is genuinely right for a project — not just who is available — and we bring them together around it.</p>
     </div>
   </div>
 </section>
