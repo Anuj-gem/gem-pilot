@@ -125,7 +125,7 @@
     .journey-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(380px, 40vw, 500px);
+      height: clamp(430px, 44vw, 560px);
       margin-top: 40px;
     }
     .journey-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -730,7 +730,7 @@
     .footer-right { font-size: 11px; color: rgba(243,239,232,0.45); }
 
     /* ── Mobile ── */
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       body { overflow-x: hidden; }
       nav { padding: 16px 18px; }
       .nav-links { gap: 18px; }
@@ -739,8 +739,10 @@
 
       h1.hero-headline { font-size: clamp(31px, 8.6vw, 46px); max-width: 100%; }
       .hero { padding: 34px 20px 58px; }
+      /* room under the copy for the constellation, which is otherwise behind it */
+      .hero { padding-bottom: 330px; }
       .hero-sub { font-size: 16px; margin-bottom: 26px; max-width: 100%; }
-      .hero-record { flex-direction: column; align-items: flex-start; gap: 18px; padding: 20px 22px; margin-bottom: 26px; max-width: 100%; }
+      .hero-record { display: flex; width: 100%; flex-direction: column; align-items: flex-start; gap: 18px; padding: 20px 22px; margin-bottom: 26px; max-width: 100%; }
       .hero-actions { flex-direction: row; gap: 20px; flex-wrap: wrap; }
       .hrec-gem { display: none; }
       .hrec b { font-size: 27px; }
@@ -750,8 +752,8 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 300px; margin-top: 26px; margin-bottom: 0; }
-      .journey-wrap { margin-top: 26px; height: 320px; }
+      .intake-wrap { height: 360px; margin-top: 26px; margin-bottom: 0; }
+      .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
 
@@ -1139,7 +1141,7 @@
     const ctx = c.getContext('2d');
     const reduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || window.innerWidth < 820;
 
-    let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 56, RX = 0, RY = 0, wide = true;
+    let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 56, RX = 0, RY = 0, wide = true, SPAN = 0;
     let net = [], ideas = [], t = 0, last = 0, pulse = 0;
 
     function mul(a) {
@@ -1161,7 +1163,7 @@
     function build() {
       net = [];
       const r = mul(7);
-      const base = Math.min(w, h);
+      const base = SPAN;
       const vals = ['$5.8B', '$3.2B', '$1.9B', '$4.4B', '$2.6B'];
       for (let b = 0; b < 5; b++) {
         const L = base * (0.22 + r() * 0.06);
@@ -1242,11 +1244,24 @@
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       wide = w >= 900;
-      CX = wide ? w * 0.73 : w * 0.5;
-      CY = wide ? h * 0.46 : h * 0.72;
-      GS = wide ? 58 : 44;
-      RX = wide ? w * 0.34 : w * 0.5;
-      RY = h * (wide ? 0.52 : 0.28);
+      if (wide) {
+        CX = w * 0.73; CY = h * 0.46; GS = 58;
+        RX = w * 0.34; RY = h * 0.52;
+        SPAN = Math.min(w, h);
+      } else {
+        // narrow: the copy sits on top of this canvas, so the constellation
+        // lives in the reserved band underneath it and is sized to fit there
+        const inner = box.querySelector && box.querySelector('.hero-inner');
+        const bottom = inner ? inner.offsetTop + inner.offsetHeight : h * 0.45;
+        const band = Math.max(230, h - bottom - 14);
+        CX = w * 0.5; CY = h - band * 0.5; GS = 42;
+        RX = w * 0.52; RY = band * 0.44;
+        // A spoke's tip (three legs plus the tip diamond) lands about 0.42 * SPAN
+        // from the centre. Size SPAN so that reach, plus room for a value label,
+        // fits inside the band both ways — measured, not guessed.
+        const REACH = 0.42;
+        SPAN = Math.max(150, Math.min((band * 0.5 - 14) / REACH, (w * 0.5 - 52) / REACH));
+      }
       build();
       ideas = [];
       const n = wide ? 190 : 90;
@@ -1354,10 +1369,16 @@
       requestAnimationFrame(frame);
     }
 
+    // On the static path nothing repaints on its own, so a resize has to
+    // re-lay out AND repaint or the canvas is left blank.
+    const still = () => { t = 8; draw(); };
     let rt;
-    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
+    });
     layout();
-    if (reduce) { t = 8; draw(); }
+    if (reduce) still();
     else requestAnimationFrame(frame);
   })();
 
@@ -1376,7 +1397,7 @@
     const COLX = [0.30, 0.50, 0.70, 0.895];
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 44;
-    let stages = [], ideas = [], t = 0, last = 0, live = false, pulse = 0;
+    let stages = [], ideas = [], t = 0, last = 0, live = false, pulse = 0, small = false;
 
     const ease = k => { k = Math.min(1, Math.max(0, k)); return k * k * (3 - 2 * k); };
 
@@ -1387,16 +1408,22 @@
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const wide = w >= 700;
+      small = w < 700;
       GS = wide ? 44 : 30;
       CX = w * 0.115; CY = h * 0.5;
-      const rowY = [h * 0.2, h * 0.5, h * 0.8];
-      const maxS = wide ? 30 : 18;
+      // Three evenly-spread rows. Each node carries a name above and a value
+      // below, so cap the diamond so that stack always fits inside one row's
+      // share of the height — otherwise rows collide at narrow widths.
+      const rowY = [h / 6, h / 2, h * 5 / 6];
+      const jitter = h * 0.014;
+      const stack = (small ? 46 : 59) + jitter * 2;
+      const maxS = Math.max(6, Math.min(wide ? 30 : 17, (h / 3 - stack - 10) / 2.84));
       stages = [];
       ROUTES.forEach((route, ri) => {
         let prev = { x: CX + GS * 0.55, y: CY };
         route.forEach((st, i) => {
           const node = {
-            x: w * COLX[i], y: rowY[ri] + (i % 2 ? -1 : 1) * h * 0.02,
+            x: w * COLX[i], y: rowY[ri] + (i % 2 ? -1 : 1) * jitter,
             s: Math.max(7, maxS * st[2]), label: st[0], value: st[1],
             px: prev.x, py: prev.y, at: 0.5 + i * 1.15, lw: 1.4 + i * 0.85
           };
@@ -1477,13 +1504,13 @@
         ctx.shadowColor = 'rgba(8,6,14,0.95)';
         ctx.shadowBlur = 9;
         ctx.fillStyle = NAME_INK;
-        ctx.font = NAME_FONT;
         // the diamonds are rotated squares, so their real reach is s * √2
         const rr = n.s * 1.42;
-        ctx.fillText(n.label, n.x, n.y - rr - 11);
+        ctx.font = small ? '500 11px Inter, sans-serif' : NAME_FONT;
+        ctx.fillText(n.label, n.x, n.y - rr - (small ? 9 : 11));
         ctx.fillStyle = VALUE_INK;
-        ctx.font = VALUE_FONT;
-        ctx.fillText(n.value, n.x, n.y + rr + 24);
+        ctx.font = small ? '600 15px Inter, sans-serif' : VALUE_FONT;
+        ctx.fillText(n.value, n.x, n.y + rr + (small ? 20 : 24));
         ctx.restore();
       }
 
@@ -1521,10 +1548,14 @@
       requestAnimationFrame(frame);
     }
 
+    const still = () => { t = 99; live = false; draw(); };
     let rt;
-    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
+    });
     layout();
-    if (reduce) { t = 99; live = false; draw(); }
+    if (reduce) still();
     else {
       if (window.IntersectionObserver) {
         const io = new IntersectionObserver(en => {
@@ -1591,8 +1622,8 @@
       wide = w >= 780;
       X0 = wide ? Math.max(28, w * 0.05) : 14;
       XS = wide ? w * 0.185 : 24;
-      CX = w * 0.40; CY = h * 0.5;
-      R = wide ? 52 : 40;
+      CX = wide ? w * 0.40 : w * 0.30; CY = h * 0.5;
+      R = wide ? 52 : 34;
       parts = [];
       const n = wide ? 210 : 110;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
@@ -1888,17 +1919,24 @@
       requestAnimationFrame(frame);
     }
 
-    let rt;
-    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
-    layout();
-    if (reduce) {
+    // Static path: grow the whole tree at once, then paint it. A resize rebuilds
+    // the tree, so it has to run this again or the canvas is left blank.
+    const still = () => {
       for (let i = 0; i < 150 && !frozen; i++) grow();
       for (const n of nodes) n.t = 3;
       for (const l of links) l.t = 3;
       settled = true; settleAge = 3;
       for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
-    } else requestAnimationFrame(frame);
+    };
+    let rt;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
+    });
+    layout();
+    if (reduce) still();
+    else requestAnimationFrame(frame);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
   })();
 
