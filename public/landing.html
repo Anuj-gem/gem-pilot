@@ -752,7 +752,7 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 360px; margin-top: 26px; margin-bottom: 0; }
+      .intake-wrap { height: 470px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -1395,6 +1395,11 @@
       [['Feature film', '$180M', 0.48], ['Feature film', '$420M', 0.66], ['Feature film', '$780M', 0.82], ['Feature film', '$1.2B', 1.0]]
     ];
     const COLX = [0.30, 0.50, 0.70, 0.895];
+    // Narrow screens can't carry four stages — 'Feature film' alone is most of
+    // the gap between them. Drop the second beat of each route and spread the
+    // remaining three; the story (one idea, three paths, growing values) holds.
+    const COLX_S = [0.30, 0.585, 0.855];
+    const ROUTES_S = ROUTES.map(r => [r[0], r[2], r[3]]);
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 44;
     let stages = [], ideas = [], t = 0, last = 0, live = false, pulse = 0, small = false;
@@ -1417,13 +1422,15 @@
       const rowY = [h / 6, h / 2, h * 5 / 6];
       const jitter = h * 0.014;
       const stack = (small ? 46 : 59) + jitter * 2;
-      const maxS = Math.max(6, Math.min(wide ? 30 : 17, (h / 3 - stack - 10) / 2.84));
+      const maxS = Math.max(6, Math.min(wide ? 30 : 19, (h / 3 - stack - 10) / 2.84));
+      const cols = small ? COLX_S : COLX;
+      const routes = small ? ROUTES_S : ROUTES;
       stages = [];
-      ROUTES.forEach((route, ri) => {
+      routes.forEach((route, ri) => {
         let prev = { x: CX + GS * 0.55, y: CY };
         route.forEach((st, i) => {
           const node = {
-            x: w * COLX[i], y: rowY[ri] + (i % 2 ? -1 : 1) * jitter,
+            x: w * cols[i], y: rowY[ri] + (i % 2 ? -1 : 1) * jitter,
             s: Math.max(7, maxS * st[2]), label: st[0], value: st[1],
             px: prev.x, py: prev.y, at: 0.5 + i * 1.15, lw: 1.4 + i * 0.85
           };
@@ -1581,6 +1588,8 @@
     const VALUES = ['$8.8B', '$4.2B', '$1.2B', '$6.5B', '$2.9B', '$3.7B'];
 
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
+    // vert = the narrow layout: sources across the top, flow downward
+    let vert = false, SRC = [], srcFont = '600 15px Inter, sans-serif';
     let parts = [], nodes = [], links = [], trunks = [], vi = 0, MAXT = 15;
     let pulse = 0, growIn = 0.8, fails = 0, frozen = false;
     let last = 0, settled = false, settleAge = 0;
@@ -1595,16 +1604,57 @@
     }
     const ease = t => t * t * (3 - 2 * t);
     const clamp01 = t => Math.min(1, Math.max(0, t));
-    const bandY = i => (h * 0.14) + i * ((h * 0.72) / (SOURCES.length - 1));
+    // Where each source sits. Wide: a column down the left. Narrow: rows packed
+    // across the top, measured so they always fit the width they're given.
+    function placeSources() {
+      SRC = [];
+      if (!vert) {
+        srcFont = '600 15px Inter, sans-serif';
+        const step = (h * 0.72) / (SOURCES.length - 1);
+        SOURCES.forEach((name, i) => SRC.push({ name: name, x: X0 + 7, y: h * 0.14 + i * step, tx: X0 + 28 }));
+        return;
+      }
+      srcFont = '600 12px Inter, sans-serif';
+      ctx.font = srcFont;
+      const ICON = 13, PAD = 5, GAP = 16, MAXW = w - 20;
+      const items = SOURCES.map(n => ({ name: n, tw: ctx.measureText(n).width }));
+      const rows = [[]];
+      let used = 0;
+      for (const it of items) {
+        const iw = ICON + PAD + it.tw;
+        if (used && used + GAP + iw > MAXW) { rows.push([]); used = 0; }
+        rows[rows.length - 1].push(it);
+        used += (used ? GAP : 0) + iw;
+      }
+      const rowH = 21;
+      const top = 16;
+      rows.forEach((row, ri) => {
+        const total = row.reduce((a, it) => a + ICON + PAD + it.tw, 0) + GAP * (row.length - 1);
+        let x = (w - total) / 2;
+        const y = top + ri * rowH;
+        for (const it of row) {
+          SRC.push({ name: it.name, x: x + ICON / 2, y: y, tx: x + ICON / 2 + PAD + 2 });
+          x += ICON + PAD + it.tw + GAP;
+        }
+      });
+      SRC.rows = rows.length;
+      SRC.bottom = top + rows.length * rowH;
+    }
 
+    // A drifting idea: travels from its source to the gem along a straight
+    // line, parameterised 0..1 so the same code serves both orientations.
     function spawn(seeded) {
-      const b = Math.floor(rnd() * SOURCES.length);
+      const src = SRC[Math.floor(rnd() * SRC.length)] || { x: XS, y: h * 0.5 };
+      const sx = vert ? src.x + (rnd() - 0.5) * 34 : XS - rnd() * 40;
+      const sy = vert ? src.y + 10 : src.y + (rnd() - 0.5) * 34;
       return {
-        x: seeded ? XS + rnd() * (CX - R - XS) : XS - rnd() * 90,
-        y0: bandY(b) + (rnd() - 0.5) * (wide ? 34 : 24),
-        s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 14 + rnd() * 22
+        sx: sx, sy: sy,
+        u: seeded ? rnd() : -rnd() * 0.3,
+        s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 0.16 + rnd() * 0.22
       };
     }
+    const partX = p => p.sx + (CX - p.sx) * ease(clamp01(p.u));
+    const partY = p => p.sy + (CY - p.sy) * ease(clamp01(p.u));
 
     function seedTree() {
       nodes = []; links = []; trunks = []; fails = 0; frozen = false;
@@ -1620,12 +1670,21 @@
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       wide = w >= 780;
+      vert = !wide;
       X0 = wide ? Math.max(28, w * 0.05) : 14;
       XS = wide ? w * 0.185 : 24;
-      CX = wide ? w * 0.40 : w * 0.30; CY = h * 0.5;
-      R = wide ? 52 : 34;
+      placeSources();
+      if (vert) {
+        // sources sit across the top; the gem hangs below them and the tree
+        // grows down into the rest of the frame
+        CX = w * 0.5; CY = (SRC.bottom || 60) + 58;
+        R = 30;
+      } else {
+        CX = w * 0.40; CY = h * 0.5;
+        R = 52;
+      }
       parts = [];
-      const n = wide ? 210 : 110;
+      const n = wide ? 210 : 70;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
@@ -1695,6 +1754,7 @@
     function icon(kind, x, y) {
       ctx.save();
       ctx.translate(x, y);
+      if (vert) ctx.scale(0.72, 0.72);
       ctx.strokeStyle = 'rgba(196,181,253,0.85)';
       ctx.lineWidth = 1.35; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       ctx.beginPath();
@@ -1723,6 +1783,7 @@
     }
 
     function inBounds(x, y) {
+      if (vert) return y > CY - R - 6 && y < h - 40 && x > 44 && x < w - 44;
       return y > 34 && y < h - 52 && x < w - 74 && x > CX - R - 6;
     }
     function clear(x, y, s) {
@@ -1741,7 +1802,9 @@
       for (let i = 0; i < MAXT; i++) if (used.indexOf(i) < 0) free.push(i);
       if (!free.length) return false;
       const lane = free[Math.floor(trnd() * free.length)];
-      const a = -1.3 + (lane / (MAXT - 1)) * 2.6 + (trnd() - 0.5) * 0.1;
+      const spread = vert ? 1.15 : 1.3;
+      const mid = vert ? Math.PI / 2 : 0;
+      const a = mid - spread + (lane / (MAXT - 1)) * spread * 2 + (trnd() - 0.5) * 0.1;
       const d = R + 40 + trnd() * 14;
       const x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d;
       if (!inBounds(x, y) || !clear(x, y, 3.4)) return false;
@@ -1794,10 +1857,8 @@
 
     function step(dt) {
       for (const p of parts) {
-        p.x += p.v * dt;
-        const k = ease(clamp01((p.x - XS) / (CX - R - XS)));
-        p.y = p.y0 + (CY - p.y0) * k;
-        if (p.x > CX - R + 4) Object.assign(p, spawn(false));
+        p.u += p.v * dt;
+        if (p.u >= 1) Object.assign(p, spawn(false));
       }
 
       growIn -= dt;
@@ -1822,26 +1883,25 @@
 
 
 
-      if (wide) {
-        ctx.save();
-        ctx.textAlign = 'left';
-        SOURCES.forEach((sname, i) => {
-          const y = bandY(i);
-          icon(i, X0 + 7, y);
-          ctx.fillStyle = 'rgba(255,255,255,0.92)';
-          ctx.font = '600 15px Inter, sans-serif';
-          ctx.fillText(sname, X0 + 28, y + 5);
-        });
-        ctx.restore();
-      }
+      ctx.save();
+      ctx.textAlign = 'left';
+      SRC.forEach((sc, i) => {
+        icon(i, sc.x, sc.y);
+        ctx.fillStyle = 'rgba(255,255,255,0.92)';
+        ctx.font = srcFont;
+        ctx.fillText(sc.name, sc.tx, sc.y + (vert ? 4 : 5));
+      });
+      ctx.restore();
 
       for (const p of parts) {
-        const fade = clamp01((CX - R - p.x) / 46);
+        if (p.u < 0) continue;
+        // fade in as it leaves the source, out as it reaches the gem
+        const fade = Math.min(clamp01(p.u / 0.1), clamp01((1 - p.u) / 0.16));
         const a = Math.min(0.85, p.o * fade * 1.35);
         if (a > 0.01) {
           ctx.save();
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.s * 0.9, 0, Math.PI * 2);
+          ctx.arc(partX(p), partY(p), p.s * 0.9, 0, Math.PI * 2);
           ctx.fillStyle = 'rgba(139,92,246,' + a.toFixed(2) + ')';
           ctx.shadowColor = 'rgba(139,92,246,0.55)';
           ctx.shadowBlur = 6;
@@ -1926,7 +1986,6 @@
       for (const n of nodes) n.t = 3;
       for (const l of links) l.t = 3;
       settled = true; settleAge = 3;
-      for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
     };
     let rt;
@@ -1971,12 +2030,19 @@
             : { x: o.ignition.fx * w, y: o.ignition.fy * h })
         : null;
 
-      function dust(seed, count, rBase, rVar, aBase, aVar) {
+      // Density per unit area, not a fixed count — otherwise a phone gets four
+      // times the desktop density. And a speck is never allowed below one
+      // device pixel, or it renders as a sub-pixel smear and the field reads
+      // as a grey haze instead of stars.
+      const area = (w * h) / (1440 * 900);
+      const minR = 1 / dpr;
+      function dust(seed, per, rBase, rVar, aBase, aVar) {
         const rand = mulberry32(seed);
+        const count = Math.round(per * area);
         for (let i = 0; i < count; i++) {
           const x = rand() * w, y = rand() * h;
-          let a = aBase + rand() * aVar;
-          const r = rBase + rand() * rVar;
+          const a = aBase + rand() * aVar;
+          const r = Math.max(minR, rBase + rand() * rVar);
           ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
           ctx.fillRect(x, y, r, r);
         }
@@ -1987,12 +2053,13 @@
         dust(12, 4500, 0.7, 0.3, 0.06, 0.06);
         dust(13, 1500, 1.0, 0.35, 0.10, 0.06);
       } else {
-        dust(7, 13000, 0.5, 0.5, 0.03, 0.12);
+        dust(7, 11000, 0.55, 0.5, 0.03, 0.11);
       }
 
       // Tiny violet gem diamonds in the dust
       const litRand = mulberry32(o.gemSeed);
-      for (let i = 0; i < o.gems; i++) {
+      const gemCount = Math.max(10, Math.round(o.gems * Math.min(1.15, Math.max(0.4, area))));
+      for (let i = 0; i < gemCount; i++) {
         let x, y;
         if (ign) {
           // ring the network: densest just outside our orbit, thinning outward,
@@ -2006,7 +2073,7 @@
           x = litRand() * w;
           y = litRand() * h;
         }
-        const s = 2.8 + litRand() * 3.2;
+        const s = (2.8 + litRand() * 3.2) * (w < 700 ? 0.85 : 1);
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(Math.PI / 4);
