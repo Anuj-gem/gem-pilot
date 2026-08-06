@@ -114,22 +114,15 @@
     .journeys .bd { filter: drop-shadow(0 0 12px rgba(228,201,126,0.6)); }
     .journeys .bgm { filter: drop-shadow(0 0 16px rgba(139,92,246,0.75)); }
     .journeys .bi { fill: rgba(139,92,246,0.55); }
+    .journeys .bm {
+      font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500;
+      fill: #E4C97E; letter-spacing: 1px;
+    }
+    .build-close {
+      font-size: 17px; color: rgba(243,239,232,0.78); line-height: 1.72;
+      max-width: 74ch; margin-top: 40px;
+    }
     .journeys .bp-p { fill: none; stroke: rgba(243,239,232,0.62); stroke-width: 1.3; stroke-linecap: round; }
-    .journeys .bl {
-      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
-      fill: rgba(255,255,255,0.92); letter-spacing: 0.01em;
-    }
-    .lever-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 40px; margin-top: 40px;
-    }
-    .lever-k {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 25px; font-weight: 500; letter-spacing: -0.01em;
-      color: var(--on-screen); margin-bottom: 10px;
-    }
-    .lever-d { font-size: 16px; color: rgba(243,239,232,0.75); line-height: 1.7; }
-    @media (max-width: 860px) { .lever-row { grid-template-columns: 1fr; gap: 26px; } }
     .journey-wrap, .rec-wrap {
       width: 100vw; margin-left: calc(50% - 50vw);
       margin-top: 42px;
@@ -831,11 +824,11 @@
 <!-- Build -->
 <section id="build" style="padding-top:0;">
   <p class="pillar-n reveal">Build</p>
-  <p class="pillar-statement reveal">We take a story further than <em>anyone else can.</em></p>
-  <p class="pillar-next reveal">Nothing becomes a franchise in one leap. A story grows — from its first small audience to its biggest — and we push it forward at every stage.</p>
+  <p class="pillar-statement reveal">Every story takes a path <em>of its own.</em></p>
+  <p class="pillar-next reveal">We don't run a cookie-cutter process. From social media to feature films, we work out how to adapt each story, build the right team around it, and invest the capital it needs to reach an audience — and become a success.</p>
 
   <div class="journey-wrap reveal">
-    <svg class="journeys" viewBox="0 0 1000 330" aria-hidden="true">
+    <svg class="journeys" viewBox="0 0 1000 460" aria-hidden="true">
       <defs>
         <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#F0DCA0"/><stop offset="1" stop-color="#B08A3E"/>
@@ -847,69 +840,101 @@
           <stop offset="0" stop-color="rgba(139,92,246,0.32)"/><stop offset="1" stop-color="rgba(139,92,246,0)"/>
         </radialGradient>
       </defs>
-      <circle cx="10" cy="76" r="1.6" class="bi"/>
-        <circle cx="29" cy="143" r="2.3" class="bi"/>
-        <circle cx="48" cy="210" r="3.0" class="bi"/>
-        <circle cx="67" cy="87" r="1.6" class="bi"/>
-        <circle cx="22" cy="154" r="2.3" class="bi"/>
-        <circle cx="41" cy="221" r="3.0" class="bi"/>
-        <circle cx="60" cy="98" r="1.6" class="bi"/>
-        <circle cx="15" cy="165" r="2.3" class="bi"/>
-        <circle cx="34" cy="232" r="3.0" class="bi"/>
-        <circle cx="53" cy="109" r="1.6" class="bi"/>
-        <circle cx="72" cy="176" r="2.3" class="bi"/>
-        <circle cx="27" cy="243" r="3.0" class="bi"/>
-        <circle cx="46" cy="120" r="1.6" class="bi"/>
-        <circle cx="65" cy="187" r="2.3" class="bi"/>
-        <circle cx="20" cy="254" r="3.0" class="bi"/>
-        <circle cx="39" cy="131" r="1.6" class="bi"/>
-        <circle cx="58" cy="198" r="2.3" class="bi"/>
-        <circle cx="13" cy="265" r="3.0" class="bi"/>
-        <circle cx="32" cy="142" r="1.6" class="bi"/>
-        <circle cx="51" cy="209" r="2.3" class="bi"/>
-        <circle cx="70" cy="86" r="3.0" class="bi"/>
-        <circle cx="25" cy="153" r="1.6" class="bi"/>
-        <path d="M136 168 Q 242 193 328 182" class="bp" stroke-width="2.0"/>
-        <path d="M368 182 Q 490 152 581 158" class="bp" stroke-width="3.3"/>
-        <path d="M643 158 Q 764 184 839 174" class="bp" stroke-width="4.6"/>
-        <rect x="-16" y="-16" width="32" height="32" rx="3.5" transform="translate(348 182) rotate(45)" fill="url(#bg)" class="bd"/>
-        <g class="bp-p" opacity="1.0"><circle cx="340" cy="228" r="2.7"/><path d="M335 237 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="356" cy="228" r="2.7"/><path d="M350 237 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <text class="bl" x="348" y="146" text-anchor="middle">Short-form</text>
-        <rect x="-27" y="-27" width="54" height="54" rx="5.9" transform="translate(612 158) rotate(45)" fill="url(#bg)" class="bd"/>
-        <g class="bp-p" opacity="1.0"><circle cx="590" cy="215" r="2.7"/><path d="M584 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="604" cy="215" r="2.7"/><path d="M599 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="620" cy="215" r="2.7"/><path d="M614 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="634" cy="215" r="2.7"/><path d="M629 224 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <text class="bl" x="612" y="111" text-anchor="middle">Series</text>
-        <rect x="-41" y="-41" width="82" height="82" rx="9.0" transform="translate(884 174) rotate(45)" fill="url(#bg)" class="bd"/>
-        <g class="bp-p" opacity="1.0"><circle cx="862" cy="245" r="2.7"/><path d="M856 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="876" cy="245" r="2.7"/><path d="M871 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="892" cy="245" r="2.7"/><path d="M886 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="906" cy="245" r="2.7"/><path d="M901 254 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="862" cy="265" r="2.7"/><path d="M856 274 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="876" cy="265" r="2.7"/><path d="M871 274 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <g class="bp-p" opacity="1.0"><circle cx="892" cy="265" r="2.7"/><path d="M886 274 c0-3.4 2.4-5.2 5.2-5.2 s5.2 1.8 5.2 5.2"/></g>
-        <text class="bl" x="884" y="113" text-anchor="middle">Feature film</text>
-      <circle cx="108" cy="168" r="92" fill="url(#bhalo)"/>
-      <rect x="-25" y="-25" width="50" height="50" rx="10" transform="translate(108 168) rotate(45)" fill="url(#bgem)" class="bgm"/>
+      <circle cx="8" cy="104" r="1.5" class="bi"/>
+        <circle cx="25" cy="175" r="2.2" class="bi"/>
+        <circle cx="42" cy="246" r="2.9" class="bi"/>
+        <circle cx="59" cy="317" r="1.5" class="bi"/>
+        <circle cx="14" cy="148" r="2.2" class="bi"/>
+        <circle cx="31" cy="219" r="2.9" class="bi"/>
+        <circle cx="48" cy="290" r="1.5" class="bi"/>
+        <circle cx="65" cy="121" r="2.2" class="bi"/>
+        <circle cx="20" cy="192" r="2.9" class="bi"/>
+        <circle cx="37" cy="263" r="1.5" class="bi"/>
+        <circle cx="54" cy="334" r="2.2" class="bi"/>
+        <circle cx="9" cy="165" r="2.9" class="bi"/>
+        <circle cx="26" cy="236" r="1.5" class="bi"/>
+        <circle cx="43" cy="307" r="2.2" class="bi"/>
+        <circle cx="60" cy="138" r="2.9" class="bi"/>
+        <circle cx="15" cy="209" r="1.5" class="bi"/>
+        <circle cx="32" cy="280" r="2.2" class="bi"/>
+        <circle cx="49" cy="111" r="2.9" class="bi"/>
+        <circle cx="66" cy="182" r="1.5" class="bi"/>
+        <circle cx="21" cy="253" r="2.2" class="bi"/>
+        <circle cx="38" cy="324" r="2.9" class="bi"/>
+        <circle cx="55" cy="155" r="1.5" class="bi"/>
+        <circle cx="10" cy="226" r="2.2" class="bi"/>
+        <circle cx="27" cy="297" r="2.9" class="bi"/>
+        <path d="M133 222 Q 262 187 368 112" class="bp" stroke-width="1.8"/>
+        <path d="M416 112 Q 594 79 734 86" class="bp" stroke-width="3.0"/>
+        <rect x="-20" y="-20" width="40" height="40" rx="4.4" transform="translate(392 112) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="385" cy="154" r="2.6"/><path d="M380 163 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="399" cy="154" r="2.6"/><path d="M394 163 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="392" y="76" text-anchor="middle">$</text>
+        <rect x="-34" y="-34" width="68" height="68" rx="7.5" transform="translate(772 86) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="751" cy="142" r="2.6"/><path d="M746 151 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="765" cy="142" r="2.6"/><path d="M760 151 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="779" cy="142" r="2.6"/><path d="M774 151 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="793" cy="142" r="2.6"/><path d="M788 151 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="772" y="36" text-anchor="middle">$$</text>
+        <path d="M133 222 Q 216 199 284 216" class="bp" stroke-width="1.8"/>
+        <path d="M316 216 Q 406 247 474 238" class="bp" stroke-width="3.0"/>
+        <path d="M518 238 Q 604 203 659 208" class="bp" stroke-width="4.1"/>
+        <path d="M721 208 Q 814 237 865 226" class="bp" stroke-width="5.2"/>
+        <rect x="-12" y="-12" width="24" height="24" rx="2.6" transform="translate(300 216) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="293" cy="250" r="2.6"/><path d="M288 259 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="307" cy="250" r="2.6"/><path d="M302 259 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="300" y="188" text-anchor="middle">$</text>
+        <rect x="-18" y="-18" width="36" height="36" rx="4.0" transform="translate(496 238) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="475" cy="278" r="2.6"/><path d="M470 287 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="489" cy="278" r="2.6"/><path d="M484 287 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="503" cy="278" r="2.6"/><path d="M498 287 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="517" cy="278" r="2.6"/><path d="M512 287 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="496" y="204" text-anchor="middle">$$</text>
+        <rect x="-27" y="-27" width="54" height="54" rx="5.9" transform="translate(690 208) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="669" cy="257" r="2.6"/><path d="M664 266 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="683" cy="257" r="2.6"/><path d="M678 266 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="697" cy="257" r="2.6"/><path d="M692 266 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="711" cy="257" r="2.6"/><path d="M706 266 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="669" cy="275" r="2.6"/><path d="M664 284 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="683" cy="275" r="2.6"/><path d="M678 284 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="690" y="165" text-anchor="middle">$$$</text>
+        <rect x="-39" y="-39" width="78" height="78" rx="8.6" transform="translate(908 226) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="887" cy="287" r="2.6"/><path d="M882 296 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="901" cy="287" r="2.6"/><path d="M896 296 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="915" cy="287" r="2.6"/><path d="M910 296 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="929" cy="287" r="2.6"/><path d="M924 296 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="887" cy="305" r="2.6"/><path d="M882 314 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="901" cy="305" r="2.6"/><path d="M896 314 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="915" cy="305" r="2.6"/><path d="M910 314 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="929" cy="305" r="2.6"/><path d="M924 314 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="908" y="171" text-anchor="middle">$$$$</text>
+        <path d="M133 222 Q 250 304 350 346" class="bp" stroke-width="1.8"/>
+        <path d="M386 346 Q 509 343 604 380" class="bp" stroke-width="3.0"/>
+        <path d="M660 380 Q 773 386 846 352" class="bp" stroke-width="4.1"/>
+        <rect x="-14" y="-14" width="28" height="28" rx="3.1" transform="translate(368 346) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="361" cy="382" r="2.6"/><path d="M356 391 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="375" cy="382" r="2.6"/><path d="M370 391 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="368" y="316" text-anchor="middle">$</text>
+        <rect x="-24" y="-24" width="48" height="48" rx="5.3" transform="translate(632 380) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="611" cy="426" r="2.6"/><path d="M606 435 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="625" cy="426" r="2.6"/><path d="M620 435 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="639" cy="426" r="2.6"/><path d="M634 435 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="653" cy="426" r="2.6"/><path d="M648 435 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="632" y="340" text-anchor="middle">$$</text>
+        <rect x="-36" y="-36" width="72" height="72" rx="7.9" transform="translate(886 352) rotate(45)" fill="url(#bg)" class="bd"/>
+        <g class="bp-p"><circle cx="865" cy="410" r="2.6"/><path d="M860 419 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="879" cy="410" r="2.6"/><path d="M874 419 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="893" cy="410" r="2.6"/><path d="M888 419 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="907" cy="410" r="2.6"/><path d="M902 419 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="865" cy="428" r="2.6"/><path d="M860 437 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <g class="bp-p"><circle cx="879" cy="428" r="2.6"/><path d="M874 437 c0-3.2 2.3-5 5-5 s5 1.8 5 5"/></g>
+        <text class="bm" x="886" y="300" text-anchor="middle">$$$</text>
+      <circle cx="104" cy="222" r="96" fill="url(#bhalo)"/>
+      <rect x="-26" y="-26" width="52" height="52" rx="10" transform="translate(104 222) rotate(45)" fill="url(#bgem)" class="bgm"/>
     </svg>
   </div>
 
-  <div class="lever-row reveal">
-    <div class="lever">
-      <p class="lever-k">We find the right path</p>
-      <p class="lever-d">Where a story starts matters. Some begin on social, some as a series, some go straight to the screen. We work out which one fits, and take it there first.</p>
-    </div>
-    <div class="lever">
-      <p class="lever-k">We fund every step</p>
-      <p class="lever-d">Each time an audience proves out, we put more money behind the work — so the people making it have what they need to go bigger.</p>
-    </div>
-    <div class="lever">
-      <p class="lever-k">We build the team</p>
-      <p class="lever-d">We research who is genuinely right for a project — not just who is available — and we bring them together around it.</p>
-    </div>
-  </div>
+  <p class="build-close reveal">At every stage we put the world's best entertainers together as collaborators, and give them the research, the technology, and the capital they need — not just to make something incredible, but to put it in front of the widest audience there is.</p>
 </section>
 
 
