@@ -896,7 +896,8 @@
     setTimeout(() => el.classList.add('visible'), 80 + i * 120)
   );
 
-  // The intake — the industry's trickle above, ours below.
+  // The intake — Hollywood's small repeated wins above; below, ideas that grow,
+  // branch, and grow again.
   (function () {
     const c = document.getElementById('intake-field');
     if (!c) return;
@@ -904,35 +905,30 @@
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video', 'Podcasts'];
-
     const VALUES = ['$9.3B', '$2.8B', '$4.6B', '$1.9B', '$6.1B', '$3.4B'];
 
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, TX = 0, TCY = 0, DIV = 0, R = 0, wide = true;
     let parts = [], slow = [], branches = [], theirs = [], vi = 0;
-    let pulse = 0, emitIn = 2.0, slowIn = 9, valueTxt = '', valueA = 0, valueAt = null, last = 0;
+    let pulse = 0, emitIn = 1.4, slowIn = 5, valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
     const ease = t => t * t * (3 - 2 * t);
+    const clamp01 = t => Math.min(1, Math.max(0, t));
     const bandY = i => (h * 0.48) + i * ((h * 0.43) / (SOURCES.length - 1));
-
 
     function spawn(seeded) {
       const b = Math.floor(rnd() * SOURCES.length);
       return {
         x: seeded ? XS + rnd() * (CX - R - XS) : XS - rnd() * 120,
         y0: bandY(b) + (rnd() - 0.5) * (wide ? 22 : 18),
-        s: 1.3 + rnd() * 2,
-        o: 0.3 + rnd() * 0.4,
-        v: 14 + rnd() * 22
+        s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 14 + rnd() * 22
       };
     }
     function spawnSlow(seeded) {
       return {
         x: seeded ? XS + rnd() * (TX - XS) : XS - rnd() * 200,
         yb: TCY + (rnd() - 0.5) * 46,
-        s: 1.6 + rnd() * 1.1,
-        o: 0.18 + rnd() * 0.13,
-        v: 5 + rnd() * 4
+        s: 1.6 + rnd() * 1.1, o: 0.18 + rnd() * 0.13, v: 5 + rnd() * 4
       };
     }
 
@@ -945,14 +941,14 @@
       wide = w >= 780;
       X0 = wide ? Math.max(30, w * 0.06) : 14;
       XS = wide ? w * 0.24 : 26;
-      CX = w * 0.52;
-      TCY = h * 0.175; TX = w * 0.40; DIV = h * 0.31; CY = h * 0.67;
-      R = wide ? 54 : 40;
+      CX = w * 0.52; TCY = h * 0.175; TX = w * 0.40; DIV = h * 0.31; CY = h * 0.67;
+      R = wide ? 52 : 40;
       parts = []; slow = [];
       const n = wide ? 170 : 100;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       for (let i = 0; i < 6; i++) slow.push(spawnSlow(true));
       branches = []; theirs = [];
+      emitIn = 0.6;
     }
 
     function diamond(x, y, s, fill, glow, blur) {
@@ -970,13 +966,20 @@
       g.addColorStop(1, '#B08A3E');
       return g;
     }
+    function line(x1, y1, x2, y2, a, lw) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(228,201,126,' + a + ')';
+      ctx.lineWidth = lw || 1;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.restore();
+    }
     function icon(kind, x, y) {
       ctx.save();
       ctx.translate(x, y);
       ctx.strokeStyle = 'rgba(196,181,253,0.85)';
-      ctx.lineWidth = 1.35;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
+      ctx.lineWidth = 1.35; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       ctx.beginPath();
       if (kind === 0) {
         ctx.rect(-6, -8, 12, 16);
@@ -993,84 +996,151 @@
       } else if (kind === 3) {
         ctx.rect(-8, -6, 16, 12);
         ctx.moveTo(-1.5, -3); ctx.lineTo(3.5, 0); ctx.lineTo(-1.5, 3); ctx.closePath();
-      } else if (kind === 4) {
+      } else {
         ctx.rect(-2.6, -8, 5.2, 9);
         ctx.moveTo(-5.5, -1); ctx.arc(0, -1, 5.5, 0, Math.PI, false);
         ctx.moveTo(0, 4.5); ctx.lineTo(0, 8);
-      } else {
-        ctx.arc(0, -3, 3.6, 0, Math.PI * 2);
-        ctx.moveTo(-7, 8); ctx.bezierCurveTo(-7, 2, 7, 2, 7, 8);
       }
       ctx.stroke();
       ctx.restore();
     }
 
+    // one idea: three growing steps, then it branches, then some of those grow too
+    function buildBranch() {
+      for (let attempt = 0; attempt < 10; attempt++) {
+        let ang = 0, bestGap = -1;
+        for (let i = 0; i < 10; i++) {
+          const a = (rnd() - 0.5) * 2.3;
+          let gap = 99;
+          for (const b of branches) gap = Math.min(gap, Math.abs(b.ang - a));
+          if (gap > bestGap) { bestGap = gap; ang = a; }
+        }
+        const shrink = attempt * 0.12;
+        const steps = [];
+        let x = CX, y = CY, a = ang;
+        const sizes = [2.3, 3.9, 7.0];
+        for (let i = 0; i < 3; i++) {
+          a += (rnd() - 0.5) * 0.42;
+          const len = (i === 0 ? R + 26 : (34 + rnd() * 34)) * (1 - shrink);
+          x += Math.cos(a) * len; y += Math.sin(a) * len;
+          steps.push({ x: x, y: y, s: sizes[i] * (0.85 + rnd() * 0.35), at: i * 0.7 });
+        }
+        const tip = steps[2];
+        const offs = [];
+        const on = 3 + Math.floor(rnd() * 3);
+        for (let i = 0; i < on; i++) {
+          const oa = a + (rnd() - 0.5) * 1.5;
+          const od = (26 + rnd() * 34) * (1 - shrink);
+          const ox = tip.x + Math.cos(oa) * od, oy = tip.y + Math.sin(oa) * od;
+          offs.push({ x: ox, y: oy, a: oa, s: 1.9 + rnd() * 1.2, at: 2.35 + i * 0.16, grown: null });
+        }
+        const gn = 1 + Math.floor(rnd() * 2);
+        const picks = offs.slice().sort(() => rnd() - 0.5).slice(0, gn);
+        for (const o of picks) {
+          const ga = o.a + (rnd() - 0.5) * 0.7;
+          const gd = (30 + rnd() * 30) * (1 - shrink);
+          const gx = o.x + Math.cos(ga) * gd, gy = o.y + Math.sin(ga) * gd;
+          const minis = [];
+          const mn = 2 + Math.floor(rnd() * 2);
+          for (let i = 0; i < mn; i++) {
+            const ma = ga + (rnd() - 0.5) * 1.3;
+            const md = (16 + rnd() * 20) * (1 - shrink);
+            minis.push({ x: gx + Math.cos(ma) * md, y: gy + Math.sin(ma) * md, s: 1.3 + rnd() * 0.9, at: 5.2 + i * 0.15 });
+          }
+          o.grown = { x: gx, y: gy, s: 4.4 + rnd() * 1.6, at: 4.3, minis: minis };
+        }
+
+        const pts = [];
+        steps.forEach(p => pts.push(p));
+        offs.forEach(o => { pts.push(o); if (o.grown) { pts.push(o.grown); o.grown.minis.forEach(m => pts.push(m)); } });
+        let ok = true;
+        for (const p of pts) {
+          if (p.y < DIV + 26 || p.y > h - 16 || p.x > w - 26 || p.x < CX - R - 30) { ok = false; break; }
+        }
+        if (ok || attempt === 9) return { ang: ang, t: 0, steps: steps, offs: offs };
+      }
+    }
+
     function addBranch() {
-      let ang = 0, bestGap = -1;
-      for (let i = 0; i < 12; i++) {
-        const a = (rnd() - 0.5) * 2.3;
-        let gap = 99;
-        for (const b of branches) gap = Math.min(gap, Math.abs(b.ang - a));
-        if (gap > bestGap) { bestGap = gap; ang = a; }
-      }
-      let r = w * 0.085 + rnd() * w * 0.06;
-      const up = Math.sin(ang), rt = Math.cos(ang);
-      if (up < -0.05) r = Math.min(r, (CY - DIV - 70) / -up);
-      if (rt > 0.05) r = Math.min(r, (w - 60 - CX) / rt);
-      r = Math.max(R + 40, r);
-      const bx = CX + Math.cos(ang) * r, by = CY + Math.sin(ang) * r;
-      const kids = [];
-      const kn = 3 + Math.floor(rnd() * 4);
-      for (let i = 0; i < kn; i++) {
-        const ka = ang + (rnd() - 0.5) * 1.1;
-        let kd = (wide ? 32 : 22) + rnd() * (wide ? 40 : 26);
-        const ku = Math.sin(ka), kr = Math.cos(ka);
-        if (ku < -0.05) kd = Math.min(kd, (by - DIV - 26) / -ku);
-        if (kr > 0.05) kd = Math.min(kd, (w - 24 - bx) / kr);
-        kids.push({ ka: ka, kd: Math.max(12, kd), ks: 1.7 + rnd() * 1.4, at: 0.5 + i * 0.1 });
-      }
-      branches.push({ ang: ang, r: r, s: 5 + rnd() * 2.4, t: 0, kids: kids });
-      if (branches.length > 8) branches.shift();
+      const b = buildBranch();
+      if (!b) return;
+      branches.push(b);
+      if (branches.length > 6) branches.shift();
+      pulse = 1;
+      valueTxt = VALUES[vi++ % VALUES.length];
+      valueA = 1; valueAt = b;
     }
 
     function step(dt) {
       for (const p of parts) {
         p.x += p.v * dt;
-        const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (CX - R - XS))));
+        const k = ease(clamp01((p.x - XS) / (CX - R - XS)));
         p.y = p.y0 + (CY - p.y0) * k;
         if (p.x > CX - R + 4) Object.assign(p, spawn(false));
       }
       for (const p of slow) {
         p.x += p.v * dt;
-        const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (TX - 20 - XS))));
+        const k = ease(clamp01((p.x - XS) / (TX - 20 - XS)));
         p.y = p.yb + (TCY - p.yb) * k;
         if (p.x > TX - 16) Object.assign(p, spawnSlow(false));
       }
 
       emitIn -= dt;
-      if (emitIn <= 0) {
-        addBranch(); pulse = 1;
-        valueTxt = VALUES[vi++ % VALUES.length]; valueA = 1;
-        valueAt = branches[branches.length - 1];
-        emitIn = 4.6 + rnd() * 1.8;
-      }
+      if (emitIn <= 0) { addBranch(); emitIn = 3.4 + rnd() * 1.4; }
+
       slowIn -= dt;
       if (slowIn <= 0) {
-        theirs.push({ x: TX + 44 + rnd() * 22, y: TCY + (rnd() - 0.5) * 12, t: 0 });
-        if (theirs.length > 2) theirs.shift();
-        slowIn = 26 + rnd() * 8;
+        const a = (rnd() - 0.5) * 2.4;
+        const d = 40 + rnd() * 22;
+        const x = TX + Math.cos(a) * d, y = TCY + Math.sin(a) * d * 0.7;
+        theirs.push({ x: x, y: y, a: a, t: 0, mini: { x: x + Math.cos(a) * 17, y: y + Math.sin(a) * 17 } });
+        if (theirs.length > 4) theirs.shift();
+        slowIn = 9 + rnd() * 4;
       }
 
       for (const b of branches) b.t += dt;
       for (const t of theirs) t.t += dt;
       pulse = Math.max(0, pulse - dt * 0.9);
-      valueA = Math.max(0, valueA - dt * 0.26);
+      valueA = Math.max(0, valueA - dt * 0.24);
+    }
+
+    function drawBranch(b) {
+      let px = CX, py = CY;
+      for (const st of b.steps) {
+        const k = ease(clamp01((b.t - st.at) / 0.6));
+        if (k <= 0) return;
+        const x = px + (st.x - px) * k, y = py + (st.y - py) * k;
+        line(px, py, x, y, 0.3);
+        diamond(x, y, st.s * (0.5 + 0.5 * k), goldFill(x, y, st.s), 'rgba(228,201,126,0.85)', 13);
+        px = st.x; py = st.y;
+      }
+      const tip = b.steps[2];
+      for (const o of b.offs) {
+        const k = ease(clamp01((b.t - o.at) / 0.5));
+        if (k <= 0) continue;
+        const x = tip.x + (o.x - tip.x) * k, y = tip.y + (o.y - tip.y) * k;
+        line(tip.x, tip.y, x, y, (0.22 * k).toFixed(2), 0.8);
+        diamond(x, y, o.s, 'rgba(228,201,126,' + (0.8 * k).toFixed(2) + ')');
+        if (!o.grown) continue;
+        const g = o.grown;
+        const gk = ease(clamp01((b.t - g.at) / 0.7));
+        if (gk <= 0) continue;
+        const gx = o.x + (g.x - o.x) * gk, gy = o.y + (g.y - o.y) * gk;
+        line(o.x, o.y, gx, gy, (0.28 * gk).toFixed(2), 0.9);
+        diamond(gx, gy, g.s * (0.5 + 0.5 * gk), goldFill(gx, gy, g.s), 'rgba(228,201,126,0.8)', 11);
+        for (const m of g.minis) {
+          const mk = ease(clamp01((b.t - m.at) / 0.5));
+          if (mk <= 0) continue;
+          const mx = g.x + (m.x - g.x) * mk, my = g.y + (m.y - g.y) * mk;
+          line(g.x, g.y, mx, my, (0.18 * mk).toFixed(2), 0.7);
+          diamond(mx, my, m.s, 'rgba(228,201,126,' + (0.7 * mk).toFixed(2) + ')');
+        }
+      }
     }
 
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
-      // ── traditional Hollywood ──
       if (wide) {
         ctx.save();
         ctx.textAlign = 'left';
@@ -1080,39 +1150,35 @@
         ctx.fillText('TRADITIONAL HOLLYWOOD', X0, TCY + 5);
         ctx.restore();
       }
-      for (const p of slow) {
-        diamond(p.x, p.y, p.s, 'rgba(196,181,253,' + p.o.toFixed(2) + ')');
-      }
+      for (const p of slow) diamond(p.x, p.y, p.s, 'rgba(196,181,253,' + p.o.toFixed(2) + ')');
       ctx.save();
       ctx.beginPath();
-      ctx.arc(TX, TCY, 16, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(243,239,232,0.2)';
+      ctx.arc(TX, TCY, 15, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(196,181,253,0.28)';
       ctx.lineWidth = 1;
       ctx.stroke();
       ctx.restore();
       for (const t of theirs) {
-        const a = Math.min(1, t.t / 1.2);
-        ctx.save();
-        ctx.strokeStyle = 'rgba(243,239,232,0.13)';
-        ctx.lineWidth = 0.8;
-        ctx.beginPath();
-        ctx.moveTo(TX + 17, TCY);
-        ctx.lineTo(t.x, t.y);
-        ctx.stroke();
-        ctx.restore();
-        diamond(t.x, t.y, 4, 'rgba(243,239,232,' + (0.3 * a).toFixed(2) + ')');
+        const k = ease(clamp01(t.t / 0.8));
+        const x = TX + (t.x - TX) * k, y = TCY + (t.y - TCY) * k;
+        line(TX + Math.cos(t.a) * 16, TCY + Math.sin(t.a) * 11, x, y, (0.22 * k).toFixed(2), 0.9);
+        diamond(x, y, 3.6, goldFill(x, y, 3.6), 'rgba(228,201,126,0.6)', 9);
+        const mk = ease(clamp01((t.t - 1.1) / 0.6));
+        if (mk > 0) {
+          const mx = t.x + (t.mini.x - t.x) * mk, my = t.y + (t.mini.y - t.y) * mk;
+          line(t.x, t.y, mx, my, (0.15 * mk).toFixed(2), 0.7);
+          diamond(mx, my, 1.5, 'rgba(228,201,126,' + (0.55 * mk).toFixed(2) + ')');
+        }
       }
 
       ctx.save();
       ctx.strokeStyle = 'rgba(255,255,255,0.07)';
       ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(X0, DIV);
-      ctx.lineTo(w - X0, DIV);
+      ctx.moveTo(X0, DIV); ctx.lineTo(w - X0, DIV);
       ctx.stroke();
       ctx.restore();
 
-      // ── us ──
       if (wide) {
         ctx.save();
         ctx.textAlign = 'left';
@@ -1134,40 +1200,12 @@
       }
 
       for (const p of parts) {
-        const fade = Math.min(1, Math.max(0, (CX - R - p.x) / 46));
+        const fade = clamp01((CX - R - p.x) / 46);
         const a = p.o * fade;
         if (a > 0.01) diamond(p.x, p.y, p.s, 'rgba(196,181,253,' + a.toFixed(2) + ')');
       }
 
-      for (const b of branches) {
-        const g = Math.min(1, b.t / 0.5);
-        const e = ease(g);
-        const d = R + (b.r - R) * e;
-        const bx = CX + Math.cos(b.ang) * d, by = CY + Math.sin(b.ang) * d;
-        ctx.save();
-        ctx.strokeStyle = 'rgba(228,201,126,0.32)';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(CX + Math.cos(b.ang) * (R + 2), CY + Math.sin(b.ang) * (R + 2));
-        ctx.lineTo(bx, by);
-        ctx.stroke();
-        ctx.restore();
-        diamond(bx, by, b.s * (0.45 + 0.55 * e), goldFill(bx, by, b.s), 'rgba(228,201,126,0.85)', 14);
-        for (const k of b.kids) {
-          const ka = Math.min(1, Math.max(0, (b.t - k.at) / 0.45));
-          if (ka <= 0) continue;
-          const kx = bx + Math.cos(k.ka) * k.kd * ka, ky = by + Math.sin(k.ka) * k.kd * ka;
-          ctx.save();
-          ctx.strokeStyle = 'rgba(228,201,126,' + (0.2 * ka).toFixed(2) + ')';
-          ctx.lineWidth = 0.7;
-          ctx.beginPath();
-          ctx.moveTo(bx + Math.cos(k.ka) * (b.s + 4), by + Math.sin(k.ka) * (b.s + 4));
-          ctx.lineTo(kx, ky);
-          ctx.stroke();
-          ctx.restore();
-          diamond(kx, ky, k.ks, 'rgba(228,201,126,' + (0.75 * ka).toFixed(2) + ')');
-        }
-      }
+      for (const b of branches) drawBranch(b);
 
       let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + 90) * (1 + pulse * 0.25));
       g.addColorStop(0, 'rgba(139,92,246,' + (0.16 + pulse * 0.22).toFixed(2) + ')');
@@ -1197,18 +1235,19 @@
       ctx.restore();
 
       if (valueA > 0.01 && valueTxt && valueAt) {
-        const e = ease(Math.min(1, valueAt.t / 0.5));
-        const d = R + (valueAt.r - R) * e;
-        const bx = CX + Math.cos(valueAt.ang) * d, by = CY + Math.sin(valueAt.ang) * d;
-        ctx.save();
-        ctx.globalAlpha = Math.min(1, valueA * 1.7);
-        ctx.textAlign = 'center';
-        ctx.shadowColor = 'rgba(228,201,126,0.5)';
-        ctx.shadowBlur = 14;
-        ctx.fillStyle = '#E4C97E';
-        ctx.font = '500 28px "Cormorant Garamond", serif';
-        ctx.fillText(valueTxt, bx, by - 26);
-        ctx.restore();
+        const tip = valueAt.steps[2];
+        const k = ease(clamp01((valueAt.t - 1.4) / 0.6));
+        if (k > 0) {
+          ctx.save();
+          ctx.globalAlpha = Math.min(1, valueA * 1.7) * k;
+          ctx.textAlign = 'center';
+          ctx.shadowColor = 'rgba(228,201,126,0.5)';
+          ctx.shadowBlur = 14;
+          ctx.fillStyle = '#E4C97E';
+          ctx.font = '500 26px "Cormorant Garamond", serif';
+          ctx.fillText(valueTxt, tip.x, tip.y - 22);
+          ctx.restore();
+        }
       }
     }
 
@@ -1223,10 +1262,9 @@
     window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
     layout();
     if (reduce) {
-      for (let i = 0; i < 6; i++) addBranch();
-      for (const b of branches) b.t = 3;
-      theirs.push({ x: TX + 52, y: TCY, t: 3 });
-      for (const p of parts) { const k = ease(Math.min(1, Math.max(0, (p.x - XS) / (CX - R - XS)))); p.y = p.y0 + (CY - p.y0) * k; }
+      for (let i = 0; i < 5; i++) { addBranch(); branches[branches.length - 1].t = 7 - i * 1.3; }
+      for (let i = 0; i < 3; i++) { slowIn = 0; step(0.02); theirs[theirs.length - 1].t = 3; }
+      for (const p of parts) { const k = ease(clamp01((p.x - XS) / (CX - R - XS))); p.y = p.y0 + (CY - p.y0) * k; }
       draw();
     } else requestAnimationFrame(frame);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
