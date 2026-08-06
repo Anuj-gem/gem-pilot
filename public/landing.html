@@ -1387,90 +1387,98 @@
 
 
         if (o.ignition.satellites && w >= 700) {
-          const pts = o.ignition.satellites.map(function (sat) {
-            const a2 = sat.ang * Math.PI / 180;
-            return [ign.x + Math.cos(a2) * sat.r, ign.y + Math.sin(a2) * sat.r];
-          });
-          ctx.save();
-          ctx.strokeStyle = 'rgba(228,201,126,0.09)';
-          ctx.lineWidth = 0.8;
-          for (let i = 0; i < pts.length; i++) {
-            const nxt = pts[(i + 1) % pts.length];
-            ctx.beginPath();
-            ctx.moveTo(pts[i][0], pts[i][1]);
-            ctx.lineTo(nxt[0], nxt[1]);
-            ctx.stroke();
-          }
-          ctx.restore();
+          o.ignition.satellites.forEach(function (sat, si) {
+            const kr = mulberry32(Math.round(sat.r * 7 + sat.ang) + si);
+            let a = sat.ang * Math.PI / 180;
+            let px = ign.x + Math.cos(a) * 46, py = ign.y + Math.sin(a) * 46;
+            const sizes = [sat.size * 0.34, sat.size * 0.58, sat.size];
+            let tipx = px, tipy = py, tipa = a;
 
-          o.ignition.satellites.forEach(function (sat) {
-            const a = sat.ang * Math.PI / 180;
-            const sx = ign.x + Math.cos(a) * sat.r;
-            const sy = ign.y + Math.sin(a) * sat.r;
+            for (let i = 0; i < 3; i++) {
+              a += (kr() - 0.5) * 0.42;
+              const len = i === 0 ? sat.r * 0.42 : sat.r * (0.26 + kr() * 0.14);
+              const nx = px + Math.cos(a) * len, ny = py + Math.sin(a) * len;
+              ctx.save();
+              ctx.strokeStyle = 'rgba(228,201,126,0.3)';
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(px, py); ctx.lineTo(nx, ny);
+              ctx.stroke();
+              ctx.restore();
+              ctx.save();
+              ctx.translate(nx, ny);
+              ctx.rotate(Math.PI / 4);
+              ctx.shadowColor = 'rgba(228,201,126,0.85)';
+              ctx.shadowBlur = 6 + i * 5;
+              const sz = sizes[i];
+              const sg = ctx.createLinearGradient(-sz, -sz, sz, sz);
+              sg.addColorStop(0, '#F0DCA0');
+              sg.addColorStop(1, '#B08A3E');
+              ctx.fillStyle = sg;
+              ctx.fillRect(-sz, -sz, sz * 2, sz * 2);
+              ctx.restore();
+              px = nx; py = ny;
+              if (i === 2) { tipx = nx; tipy = ny; tipa = a; }
+            }
 
-            ctx.save();
-            ctx.strokeStyle = 'rgba(228,201,126,0.28)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(ign.x + Math.cos(a) * 48, ign.y + Math.sin(a) * 48);
-            ctx.lineTo(ign.x + Math.cos(a) * (sat.r - sat.size - 8), ign.y + Math.sin(a) * (sat.r - sat.size - 8));
-            ctx.stroke();
-            ctx.restore();
+            const on = 3 + Math.floor(kr() * 3);
+            for (let k = 0; k < on; k++) {
+              const oa = tipa + (kr() - 0.5) * 1.5;
+              const od = 26 + kr() * 32;
+              const ox = tipx + Math.cos(oa) * od, oy = tipy + Math.sin(oa) * od;
+              ctx.save();
+              ctx.strokeStyle = 'rgba(228,201,126,0.2)';
+              ctx.lineWidth = 0.7;
+              ctx.beginPath();
+              ctx.moveTo(tipx + Math.cos(oa) * (sat.size + 4), tipy + Math.sin(oa) * (sat.size + 4));
+              ctx.lineTo(ox, oy);
+              ctx.stroke();
+              ctx.translate(ox, oy);
+              ctx.rotate(Math.PI / 4);
+              const os = 1.7 + kr() * 1.2;
+              ctx.fillStyle = 'rgba(228,201,126,' + (0.5 + kr() * 0.3).toFixed(2) + ')';
+              ctx.fillRect(-os, -os, os * 2, os * 2);
+              ctx.restore();
 
-            ctx.save();
-            ctx.translate(sx, sy);
-            ctx.rotate(Math.PI / 4);
-            ctx.shadowColor = 'rgba(228,201,126,0.85)';
-            ctx.shadowBlur = 14;
-            const sg = ctx.createLinearGradient(-sat.size, -sat.size, sat.size, sat.size);
-            sg.addColorStop(0, '#F0DCA0');
-            sg.addColorStop(1, '#B08A3E');
-            ctx.fillStyle = sg;
-            ctx.fillRect(-sat.size, -sat.size, sat.size * 2, sat.size * 2);
-            ctx.restore();
-
-            if (sat.kids) {
-              const kr = mulberry32(Math.round(sat.r * 7 + sat.ang));
-              for (let k = 0; k < sat.kids; k++) {
-                const ka = a + (kr() - 0.5) * 1.35;
-                const kd = 32 + kr() * 38;
-                const kx = sx + Math.cos(ka) * kd;
-                const ky = sy + Math.sin(ka) * kd;
+              if (kr() < 0.4) {
+                const ga = oa + (kr() - 0.5) * 0.7;
+                const gd = 26 + kr() * 26;
+                const gx = ox + Math.cos(ga) * gd, gy = oy + Math.sin(ga) * gd;
                 ctx.save();
-                ctx.strokeStyle = 'rgba(228,201,126,0.2)';
-                ctx.lineWidth = 0.7;
+                ctx.strokeStyle = 'rgba(228,201,126,0.26)';
+                ctx.lineWidth = 0.9;
                 ctx.beginPath();
-                ctx.moveTo(sx + Math.cos(ka) * (sat.size + 5), sy + Math.sin(ka) * (sat.size + 5));
-                ctx.lineTo(kx, ky);
+                ctx.moveTo(ox, oy); ctx.lineTo(gx, gy);
                 ctx.stroke();
-                ctx.translate(kx, ky);
+                ctx.translate(gx, gy);
                 ctx.rotate(Math.PI / 4);
-                const ks = 1.8 + kr() * 1.6;
-                ctx.fillStyle = 'rgba(228,201,126,' + (0.45 + kr() * 0.35).toFixed(2) + ')';
-                ctx.fillRect(-ks, -ks, ks * 2, ks * 2);
+                const gsz = 3.6 + kr() * 1.6;
+                const gg2 = ctx.createLinearGradient(-gsz, -gsz, gsz, gsz);
+                gg2.addColorStop(0, '#F0DCA0');
+                gg2.addColorStop(1, '#B08A3E');
+                ctx.fillStyle = gg2;
+                ctx.shadowColor = 'rgba(228,201,126,0.7)';
+                ctx.shadowBlur = 10;
+                ctx.fillRect(-gsz, -gsz, gsz * 2, gsz * 2);
                 ctx.restore();
 
-                if (kr() < 0.45) {
-                  const gn = 1 + Math.round(kr());
-                  for (let gk = 0; gk < gn; gk++) {
-                    const ga = ka + (kr() - 0.5) * 1.6;
-                    const gd = 18 + kr() * 26;
-                    const gx = kx + Math.cos(ga) * gd;
-                    const gy = ky + Math.sin(ga) * gd;
-                    ctx.save();
-                    ctx.strokeStyle = 'rgba(228,201,126,0.12)';
-                    ctx.lineWidth = 0.6;
-                    ctx.beginPath();
-                    ctx.moveTo(kx + Math.cos(ga) * 4, ky + Math.sin(ga) * 4);
-                    ctx.lineTo(gx, gy);
-                    ctx.stroke();
-                    ctx.translate(gx, gy);
-                    ctx.rotate(Math.PI / 4);
-                    const gsz = 1 + kr() * 1;
-                    ctx.fillStyle = 'rgba(228,201,126,' + (0.3 + kr() * 0.25).toFixed(2) + ')';
-                    ctx.fillRect(-gsz, -gsz, gsz * 2, gsz * 2);
-                    ctx.restore();
-                  }
+                const mn = 2 + Math.round(kr());
+                for (let m = 0; m < mn; m++) {
+                  const ma = ga + (kr() - 0.5) * 1.3;
+                  const md = 14 + kr() * 18;
+                  const mx = gx + Math.cos(ma) * md, my = gy + Math.sin(ma) * md;
+                  ctx.save();
+                  ctx.strokeStyle = 'rgba(228,201,126,0.15)';
+                  ctx.lineWidth = 0.6;
+                  ctx.beginPath();
+                  ctx.moveTo(gx, gy); ctx.lineTo(mx, my);
+                  ctx.stroke();
+                  ctx.translate(mx, my);
+                  ctx.rotate(Math.PI / 4);
+                  const ms = 1.2 + kr() * 0.9;
+                  ctx.fillStyle = 'rgba(228,201,126,' + (0.35 + kr() * 0.25).toFixed(2) + ')';
+                  ctx.fillRect(-ms, -ms, ms * 2, ms * 2);
+                  ctx.restore();
                 }
               }
             }
@@ -1486,17 +1494,12 @@
     if (sky) fields.push([sky, { gems: 105, gemSeed: 33, ignition: {
       fx: 0.72, fy: 0.46,
       satellites: [
-        { ang: -78, r: 120, size: 9, kids: 7 },
-        { ang: -38, r: 86, size: 5, kids: 3 },
-        { ang: -10, r: 124, size: 8, kids: 5 },
-        { ang: 20, r: 88, size: 5, kids: 3 },
-        { ang: 55, r: 106, size: 7.5, kids: 4 },
-        { ang: 80, r: 130, size: 6, kids: 4 },
-        { ang: 102, r: 88, size: 5.5, kids: 3 },
-        { ang: 145, r: 110, size: 7, kids: 4 },
-        { ang: 170, r: 86, size: 4.5, kids: 2 },
-        { ang: -120, r: 90, size: 4.5, kids: 2 },
-        { ang: -155, r: 114, size: 7, kids: 5 }
+        { ang: -74, r: 150, size: 7.5 },
+        { ang: -18, r: 168, size: 8 },
+        { ang: 42, r: 140, size: 6.5 },
+        { ang: 104, r: 152, size: 7 },
+        { ang: 160, r: 136, size: 6 },
+        { ang: -134, r: 146, size: 7 }
       ]
     } }]);
 
