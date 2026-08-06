@@ -1172,6 +1172,13 @@
     let valueTxt = '', valueA = 0, valueAt = null, last = 0;
 
     const rnd = () => Math.random();
+    let tseed = 0;
+    function trnd() {
+      tseed |= 0; tseed = (tseed + 0x6D2B79F5) | 0;
+      let x = Math.imul(tseed ^ (tseed >>> 15), 1 | tseed);
+      x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+      return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+    }
     const ease = t => t * t * (3 - 2 * t);
     const clamp01 = t => Math.min(1, Math.max(0, t));
     const bandY = i => (h * 0.14) + i * ((h * 0.72) / (SOURCES.length - 1));
@@ -1187,6 +1194,7 @@
 
     function seedTree() {
       nodes = []; links = []; trunks = []; fails = 0; frozen = false;
+      tseed = 20260805;
       MAXT = wide ? 9 : 6;
       addTrunk(); addTrunk();
     }
@@ -1281,14 +1289,14 @@
       const free = [];
       for (let i = 0; i < MAXT; i++) if (used.indexOf(i) < 0) free.push(i);
       if (!free.length) return false;
-      const lane = free[Math.floor(rnd() * free.length)];
-      const a = -1.3 + (lane / (MAXT - 1)) * 2.6 + (rnd() - 0.5) * 0.1;
-      const d = R + 40 + rnd() * 14;
+      const lane = free[Math.floor(trnd() * free.length)];
+      const a = -1.3 + (lane / (MAXT - 1)) * 2.6 + (trnd() - 0.5) * 0.1;
+      const d = R + 40 + trnd() * 14;
       const x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d;
       if (!inBounds(x, y) || !clear(x, y, 3.4)) return false;
       const n = {
         x: x, y: y, px: CX + Math.cos(a) * (R + 4), py: CY + Math.sin(a) * (R + 4),
-        s: 3 + rnd() * 0.9, t: 0, big: false
+        s: 3 + trnd() * 0.9, t: 0, big: false
       };
       nodes.push(n);
       trunks.push({ lane: lane, a: a, tip: n, done: false });
@@ -1299,19 +1307,19 @@
     function growTrunk(tr) {
       const p = tr.tip;
       for (let att = 0; att < 6; att++) {
-        const a = tr.a + (rnd() - 0.5) * 0.55;
-        const d = 48 + rnd() * 30;
+        const a = tr.a + (trnd() - 0.5) * 0.55;
+        const d = 48 + trnd() * 30;
         const x = p.x + Math.cos(a) * d, y = p.y + Math.sin(a) * d;
         if (!inBounds(x, y)) { tr.done = true; return; }
-        const sz = Math.min(11, p.s * (1.13 + rnd() * 0.13));
+        const sz = Math.min(11, p.s * (1.13 + trnd() * 0.13));
         if (!clear(x, y, sz)) continue;
-        const big = sz > 7.5 && rnd() < 0.5;
+        const big = sz > 7.5 && trnd() < 0.5;
         const node = { x: x, y: y, px: p.x, py: p.y, s: sz, t: 0, big: big };
         nodes.push(node);
         tr.tip = node;
-        if (rnd() < 0.45) {
-          const sa = a + (rnd() < 0.5 ? -1 : 1) * (0.7 + rnd() * 0.5);
-          const sd = 30 + rnd() * 22;
+        if (trnd() < 0.45) {
+          const sa = a + (trnd() < 0.5 ? -1 : 1) * (0.7 + trnd() * 0.5);
+          const sd = 30 + trnd() * 22;
           const sx = x + Math.cos(sa) * sd, sy = y + Math.sin(sa) * sd;
           const ss = Math.max(2, sz * 0.45);
           if (inBounds(sx, sy) && clear(sx, sy, ss)) {
@@ -1330,9 +1338,9 @@
 
     function grow() {
       if (nodes.length > 190) return;
-      if (trunks.length < MAXT && rnd() < 0.55) { if (addTrunk()) return; }
+      if (trunks.length < MAXT && trnd() < 0.55) { if (addTrunk()) return; }
       const live = trunks.filter(t => !t.done);
-      if (live.length) { growTrunk(live[Math.floor(rnd() * live.length)]); return; }
+      if (live.length) { growTrunk(live[Math.floor(trnd() * live.length)]); return; }
       if (!addTrunk()) frozen = true;
     }
 
