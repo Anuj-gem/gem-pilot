@@ -124,9 +124,9 @@
     .journeys .bi { fill: rgba(139,92,246,0.55); }
     .journey-wrap {
       position: relative;
-      width: 100%; max-width: 1120px;
-      height: clamp(360px, 42vw, 470px);
-      margin: 40px auto 0;
+      width: 100vw; margin-left: calc(50% - 50vw);
+      height: clamp(380px, 40vw, 500px);
+      margin-top: 40px;
     }
     .journey-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     .rec-wrap { width: 100%; margin-top: 40px; }
@@ -751,7 +751,7 @@
       .pillar-next { max-width: 100%; font-size: 16px; }
 
       .intake-wrap { height: 300px; margin-top: 26px; margin-bottom: 0; }
-      .journey-wrap { margin-top: 26px; height: 300px; }
+      .journey-wrap { margin-top: 26px; height: 320px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
 
@@ -1094,7 +1094,7 @@
       [['TV series', '$25M', 0.34], ['Feature film', '$160M', 0.54], ['Mobile game', '$240M', 0.66], ['Feature film', '$610M', 0.96]],
       [['Feature film', '$180M', 0.48], ['Feature film', '$420M', 0.66], ['Feature film', '$780M', 0.82], ['Feature film', '$1.2B', 1.0]]
     ];
-    const COLX = [0.32, 0.51, 0.70, 0.89];
+    const COLX = [0.30, 0.50, 0.70, 0.895];
 
     let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 44;
     let stages = [], ideas = [], t = 0, last = 0, live = false, pulse = 0;
@@ -1109,7 +1109,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const wide = w >= 700;
       GS = wide ? 44 : 30;
-      CX = w * 0.13; CY = h * 0.5;
+      CX = w * 0.115; CY = h * 0.5;
       const rowY = [h * 0.2, h * 0.5, h * 0.8];
       const maxS = wide ? 30 : 18;
       stages = [];
@@ -1126,13 +1126,13 @@
         });
       });
       ideas = [];
-      const n = wide ? 110 : 50;
+      const n = wide ? 150 : 60;
       for (let i = 0; i < n; i++) ideas.push(idea(true));
     }
 
     function idea(seeded) {
       return {
-        x: seeded ? -60 + Math.random() * (CX + 60) : -40 - Math.random() * 120,
+        x: seeded ? -150 + Math.random() * (CX + 150) : -50 - Math.random() * 200,
         y0: h * (0.06 + Math.random() * 0.88),
         r: 1.3 + Math.random() * 1.9,
         o: 0.24 + Math.random() * 0.34,
@@ -1144,7 +1144,7 @@
       if (live) t += dt;
       for (const p of ideas) {
         p.x += p.v * dt;
-        const k = ease((p.x + 60) / (CX - GS * 0.5 + 60));
+        const k = ease((p.x + 150) / (CX - GS * 0.5 + 150));
         p.y = p.y0 + (CY - p.y0) * k;
         if (p.x > CX - GS * 0.4) { Object.assign(p, idea(false)); pulse = Math.min(1, pulse + 0.1); }
       }
