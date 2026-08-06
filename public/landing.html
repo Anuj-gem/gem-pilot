@@ -767,6 +767,144 @@
 
       footer { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
     }
+
+    /* The engine — four slices of real model output */
+    .ai-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 26px; margin-top: 48px; max-width: 1120px;
+    }
+    .ai-card {
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      padding: 26px 28px 24px;
+      background: linear-gradient(160deg, rgba(139,92,246,0.05), rgba(20,16,27,0.5) 45%);
+      display: flex; flex-direction: column;
+    }
+    .ai-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold-soft);
+    }
+    .ai-line {
+      margin-top: 10px; margin-bottom: 22px;
+      font-size: 15.5px; line-height: 1.55;
+      color: rgba(222,216,240,0.78);
+    }
+    .ai-graphic { flex: 1; }
+
+    /* horizontal bar rows */
+    .ai-row {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 12px;
+    }
+    .ai-name {
+      flex: 0 0 108px; font-size: 12.5px; font-weight: 500;
+      color: rgba(243,239,232,0.85);
+    }
+    .ai-name.wide { flex-basis: 178px; }
+    .ai-track {
+      flex: 1; height: 9px; border-radius: 5px;
+      background: rgba(255,255,255,0.06); overflow: hidden;
+    }
+    .ai-bar {
+      display: block; height: 100%; border-radius: 5px;
+      width: 0; transition: width 1.1s cubic-bezier(0.22,1,0.36,1) 0.35s;
+    }
+    .reveal.visible .ai-bar { width: var(--w); }
+    .ai-bar.gold { background: linear-gradient(90deg, #B08A3E, #F0DCA0); }
+    .ai-bar.gold.lit { box-shadow: 0 0 14px rgba(228,201,126,0.55); }
+    .ai-bar.gold.dim { opacity: 0.45; }
+    .ai-bar.violet { background: linear-gradient(90deg, #5B21B6, #A78BFA); }
+    .ai-val {
+      flex: 0 0 52px; text-align: right;
+      font-size: 14.5px; font-weight: 600; color: #F7E9C4;
+      font-variant-numeric: tabular-nums;
+    }
+    .ai-val.dim { color: rgba(247,233,196,0.45); }
+    .ai-note {
+      flex: 0 0 52px; text-align: right;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent-soft);
+    }
+    .ai-meters { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .ai-row.meter { margin-bottom: 10px; }
+    .ai-row.meter .ai-track { height: 6px; }
+    .ai-case, .ai-cost {
+      font-size: 12px; color: rgba(222,216,240,0.55);
+      margin-bottom: 14px; letter-spacing: 0.02em;
+    }
+    .ai-cost { margin-bottom: 0; margin-top: 6px; }
+    .ai-cost b { color: #F7E9C4; font-weight: 600; }
+
+    /* projection card: parts list + vertical bars */
+    .ai-graphic.split { display: flex; gap: 24px; align-items: stretch; }
+    .ai-parts { flex: 1.15; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+    .ai-part {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+      font-size: 12.5px; color: rgba(243,239,232,0.85);
+      border-bottom: 1px dashed rgba(255,255,255,0.08); padding-bottom: 7px;
+    }
+    .ai-part b { font-weight: 600; color: #F7E9C4; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .ai-bars { flex: 1; display: flex; gap: 14px; align-items: flex-end; }
+    .ai-vcol { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; min-height: 150px; }
+    .ai-vval { font-size: 13px; font-weight: 600; color: #F7E9C4; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+    .ai-vbar {
+      width: 100%; max-width: 54px; border-radius: 6px 6px 2px 2px;
+      background: linear-gradient(180deg, #F0DCA0, #B08A3E);
+      height: 0; transition: height 1.1s cubic-bezier(0.22,1,0.36,1) 0.35s;
+    }
+    .reveal.visible .ai-vbar { height: var(--h); }
+    .ai-vbar.lit { box-shadow: 0 0 18px rgba(228,201,126,0.5); }
+    .ai-vcap { margin-top: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: rgba(222,216,240,0.55); }
+
+    /* adaptation card */
+    .ai-story {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 500; color: rgba(243,239,232,0.85);
+      margin-bottom: 18px;
+    }
+    .ai-formats { display: flex; flex-wrap: wrap; gap: 10px; }
+    .ai-format {
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
+      padding: 10px 14px; font-size: 12.5px; color: rgba(222,216,240,0.6);
+    }
+    .ai-format b { display: block; margin-top: 4px; font-size: 14.5px; font-weight: 600; color: rgba(247,233,196,0.5); font-variant-numeric: tabular-nums; }
+    .ai-format.lit {
+      border-color: rgba(228,201,126,0.5); color: var(--on-screen);
+      background: linear-gradient(135deg, rgba(228,201,126,0.1), rgba(228,201,126,0.03));
+      box-shadow: 0 0 20px -6px rgba(228,201,126,0.45);
+    }
+    .ai-format.lit b { color: #F7E9C4; }
+
+    /* the verdict — a message from the model */
+    .ai-verdict {
+      margin-top: 22px;
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 13px 16px; border-radius: 10px;
+      background: rgba(139,92,246,0.08);
+      border: 1px solid rgba(139,92,246,0.22);
+      font-size: 13.5px; line-height: 1.55; color: #DED8F0;
+    }
+    .ai-gem {
+      width: 8px; height: 8px; border-radius: 2px; flex: none;
+      margin-top: 5px;
+      background: linear-gradient(135deg,#C4B5FD,#7C3AED);
+      transform: rotate(45deg);
+      box-shadow: 0 0 10px rgba(139,92,246,0.7);
+    }
+    .ai-gem.big { width: 12px; height: 12px; margin-top: 0; }
+
+    @media (max-width: 980px) {
+      .ai-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
+    @media (max-width: 560px) {
+      .ai-card { padding: 20px 18px 18px; }
+      .ai-graphic.split { flex-direction: column; gap: 18px; }
+      .ai-bars { min-height: 130px; }
+      .ai-vcol { min-height: 130px; }
+      .ai-name { flex-basis: 92px; font-size: 12px; }
+      .ai-row { flex-wrap: wrap; row-gap: 7px; }
+      .ai-name.wide { flex-basis: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -841,7 +979,100 @@
   </div>
 </section>
 
+<div class="rule"></div>
 
+<!-- The engine -->
+<section id="engine">
+  <p class="pillar-statement reveal">We trained our own AI to help us bring out <em>the potential in every story.</em></p>
+
+  <div class="ai-grid">
+
+    <div class="ai-card reveal">
+      <div class="ai-label">Casting &amp; crew</div>
+      <p class="ai-line">It finds the people who unlock a story, famous or not.</p>
+      <div class="ai-graphic">
+        <div class="ai-row">
+          <span class="ai-name">A-list star</span>
+          <span class="ai-track"><span class="ai-bar gold" style="--w:88%"></span></span>
+          <span class="ai-val">$118M</span>
+        </div>
+        <div class="ai-row">
+          <span class="ai-name">Unknown actor</span>
+          <span class="ai-track"><span class="ai-bar gold" style="--w:83%"></span></span>
+          <span class="ai-val">$112M</span>
+        </div>
+        <div class="ai-meters">
+          <div class="ai-row meter">
+            <span class="ai-name">Actor craft</span>
+            <span class="ai-track"><span class="ai-bar violet" style="--w:94%"></span></span>
+            <span class="ai-note">critical</span>
+          </div>
+          <div class="ai-row meter">
+            <span class="ai-name">Actor fame</span>
+            <span class="ai-track"><span class="ai-bar violet" style="--w:12%"></span></span>
+            <span class="ai-note">minor</span>
+          </div>
+        </div>
+      </div>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>Fame won't carry this one. Cast whoever can deliver the viral comedy in this script.</p>
+    </div>
+
+    <div class="ai-card reveal">
+      <div class="ai-label">Production</div>
+      <p class="ai-line">It helps ambitious filmmakers justify the cost of their vision.</p>
+      <div class="ai-graphic">
+        <div class="ai-case">The shipwreck sequence, at full scale</div>
+        <div class="ai-row">
+          <span class="ai-name wide">What it adds to the budget</span>
+          <span class="ai-track"><span class="ai-bar gold dim" style="--w:13%"></span></span>
+          <span class="ai-val dim">+$6M</span>
+        </div>
+        <div class="ai-row">
+          <span class="ai-name wide">What it adds to the film</span>
+          <span class="ai-track"><span class="ai-bar gold lit" style="--w:86%"></span></span>
+          <span class="ai-val">+$40M</span>
+        </div>
+      </div>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>This is the sequence that sells the ticket. Audiences show up for it &mdash; don't shrink it.</p>
+    </div>
+
+    <div class="ai-card reveal">
+      <div class="ai-label">Revenue projection</div>
+      <p class="ai-line">It puts dollars on every component of a story.</p>
+      <div class="ai-graphic split">
+        <div class="ai-parts">
+          <div class="ai-part"><span>The survival lane</span><b>$40&ndash;55M</b></div>
+          <div class="ai-part"><span>An original take</span><b>+$12&ndash;25M</b></div>
+          <div class="ai-part"><span>Spectacle at low cost</span><b>+$25&ndash;55M</b></div>
+          <div class="ai-part"><span>Viral scenes</span><b>+$10&ndash;22M</b></div>
+          <div class="ai-part"><span>Cast &amp; awards upside</span><b>+$393M</b></div>
+        </div>
+        <div class="ai-bars">
+          <div class="ai-vcol"><span class="ai-vval">$87M</span><span class="ai-vbar" style="--h:26%"></span><span class="ai-vcap">Conservative</span></div>
+          <div class="ai-vcol"><span class="ai-vval">$157M</span><span class="ai-vbar" style="--h:46%"></span><span class="ai-vcap">Good</span></div>
+          <div class="ai-vcol"><span class="ai-vval">~$550M</span><span class="ai-vbar lit" style="--h:100%"></span><span class="ai-vcap">Great</span></div>
+        </div>
+      </div>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>We expect $87&ndash;157M worldwide, with upside to ~$550M. We believe it costs $25&ndash;45M to make.</p>
+    </div>
+
+    <div class="ai-card reveal">
+      <div class="ai-label">Adaptation</div>
+      <p class="ai-line">It finds the format where a story wins.</p>
+      <div class="ai-graphic">
+        <div class="ai-story"><span class="ai-gem big" aria-hidden="true"></span>One story</div>
+        <div class="ai-formats">
+          <div class="ai-format"><span>Web series</span><b>$4M</b></div>
+          <div class="ai-format"><span>TV series</span><b>$46M</b></div>
+          <div class="ai-format lit"><span>Feature film</span><b>$210M</b></div>
+          <div class="ai-format"><span>Mobile game</span><b>$85M</b></div>
+        </div>
+      </div>
+      <p class="ai-verdict"><span class="ai-gem" aria-hidden="true"></span>This one's a feature first.</p>
+    </div>
+
+  </div>
+</section>
 
 <div class="rule"></div>
 
