@@ -935,15 +935,78 @@
 
     function seedTree() {
       nodes = []; links = []; fails = 0; frozen = false;
-      for (let i = 0; i < 3; i++) {
-        const a = (rnd() - 0.5) * 2.2;
-        const d = R + 42;
-        nodes.push({
-          x: CX + Math.cos(a) * d, y: CY + Math.sin(a) * d,
-          px: CX + Math.cos(a) * (R + 4), py: CY + Math.sin(a) * (R + 4),
-          s: 4.5 + rnd() * 2, t: 0, big: false
-        });
+      for (let i = 0; i < 2; i++) tryRoot();
+    }
+
+    function inBounds(x, y) {
+      return y > DIV + 34 && y < h - 22 && x < w - 28 && x > CX - R - 6;
+    }
+    function clear(x, y, s) {
+      if (Math.hypot(x - CX, y - CY) < R + 40) return false;
+      for (const n of nodes) {
+        if (Math.hypot(n.x - x, n.y - y) < (n.s + s) * 1.55 + 9) return false;
       }
+      return true;
+    }
+
+    // a brand new original, straight out of GEM
+    function tryRoot() {
+      for (let att = 0; att < 18; att++) {
+        let a = 0, best = -1;
+        for (let i = 0; i < 10; i++) {
+          const cand = (rnd() - 0.5) * 2.7;
+          let gap = 99;
+          for (const r of nodes) if (r.root) gap = Math.min(gap, Math.abs(r.a - cand));
+          if (gap > best) { best = gap; a = cand; }
+        }
+        const d = R + 44 + rnd() * 30;
+        const x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d;
+        if (!inBounds(x, y) || !clear(x, y, 5)) continue;
+        nodes.push({
+          x: x, y: y, px: CX + Math.cos(a) * (R + 4), py: CY + Math.sin(a) * (R + 4),
+          s: 4.4 + rnd() * 2.6, t: 0, big: false, root: true, a: a
+        });
+        return true;
+      }
+      return false;
+    }
+
+    // an existing one grows further out
+    function tryExtend() {
+      for (let att = 0; att < 20; att++) {
+        let parent = nodes[Math.floor(rnd() * nodes.length)];
+        for (let i = 0; i < 2; i++) {
+          const alt = nodes[Math.floor(rnd() * nodes.length)];
+          if (Math.hypot(alt.x - CX, alt.y - CY) > Math.hypot(parent.x - CX, parent.y - CY)) parent = alt;
+        }
+        const base = Math.atan2(parent.y - CY, parent.x - CX);
+        const a = base + (rnd() - 0.5) * 1.5;
+        const d = 46 + rnd() * 52;
+        const x = parent.x + Math.cos(a) * d, y = parent.y + Math.sin(a) * d;
+        if (!inBounds(x, y)) continue;
+        if (Math.hypot(x - CX, y - CY) < Math.hypot(parent.x - CX, parent.y - CY) - 6) continue;
+        const big = rnd() < 0.14;
+        let sz = Math.max(2.2, Math.min(10, parent.s * (0.64 + rnd() * 0.7)));
+        if (big) sz = Math.min(11.5, sz * 1.7);
+        if (!clear(x, y, sz)) continue;
+        const node = { x: x, y: y, px: parent.x, py: parent.y, s: sz, t: 0, big: big };
+        nodes.push(node);
+        if (rnd() < 0.1) {
+          for (const n of nodes) {
+            if (n !== node && n !== parent && Math.hypot(n.x - x, n.y - y) < 130) {
+              links.push({ a: node, b: n, t: 0 });
+              break;
+            }
+          }
+        }
+        if (big) {
+          pulse = 1;
+          valueTxt = VALUES[vi++ % VALUES.length];
+          valueA = 1; valueAt = node;
+        }
+        return true;
+      }
+      return false;
     }
 
     function layout() {
@@ -1020,46 +1083,15 @@
       ctx.restore();
     }
 
-    // one more node, always further out, never back
+    // keep making new originals; extend the ones we have
     function grow() {
-      if (frozen || nodes.length > 420) return;
-      for (let att = 0; att < 22; att++) {
-        const parent = nodes[Math.floor(rnd() * nodes.length)];
-        const base = Math.atan2(parent.y - CY, parent.x - CX);
-        const a = base + (rnd() - 0.5) * 1.5;
-        const d = 44 + rnd() * 54;
-        const x = parent.x + Math.cos(a) * d, y = parent.y + Math.sin(a) * d;
-        if (y < DIV + 34 || y > h - 22 || x > w - 28 || x < CX - R - 6) continue;
-        if (Math.hypot(x - CX, y - CY) < Math.hypot(parent.x - CX, parent.y - CY) - 6) continue;
-        const big = rnd() < 0.13;
-        let s = Math.max(2.1, Math.min(10, parent.s * (0.62 + rnd() * 0.7)));
-        if (big) s = Math.min(11.5, s * 1.7);
-        let ok = true;
-        if (Math.hypot(x - CX, y - CY) < R + 38) ok = false;
-        if (ok) for (const n of nodes) {
-          if (Math.hypot(n.x - x, n.y - y) < n.s + s + 17) { ok = false; break; }
-        }
-        if (!ok) continue;
-        const node = { x: x, y: y, px: parent.x, py: parent.y, s: s, t: 0, big: big };
-        nodes.push(node);
-        if (rnd() < 0.1) {
-          for (const n of nodes) {
-            if (n !== node && n !== parent && Math.hypot(n.x - x, n.y - y) < 130) {
-              links.push({ a: node, b: n, t: 0 });
-              break;
-            }
-          }
-        }
-        if (big) {
-          pulse = 1;
-          valueTxt = VALUES[vi++ % VALUES.length];
-          valueA = 1; valueAt = node;
-        }
-        fails = 0;
-        return;
-      }
+      if (frozen || nodes.length > 460) return;
+      const wantRoot = rnd() < 0.45;
+      if (wantRoot && tryRoot()) { fails = 0; return; }
+      if (tryExtend()) { fails = 0; return; }
+      if (!wantRoot && tryRoot()) { fails = 0; return; }
       fails++;
-      if (fails > 26) frozen = true;
+      if (fails > 30) frozen = true;
     }
 
     function step(dt) {
