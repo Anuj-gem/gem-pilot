@@ -1246,8 +1246,9 @@
       if (window.IntersectionObserver) {
         const io = new IntersectionObserver(en => {
           en.forEach(x => { if (x.isIntersecting) { live = true; io.disconnect(); } });
-        }, { threshold: 0.25 });
+        }, { threshold: 0.12 });
         io.observe(c.parentElement);
+        setTimeout(function () { live = true; }, 4000);
       } else live = true;
       requestAnimationFrame(frame);
     }
@@ -1285,7 +1286,7 @@
     function spawn(seeded) {
       const b = Math.floor(rnd() * SOURCES.length);
       return {
-        x: seeded ? rnd() * (CX - R) : -rnd() * 140,
+        x: seeded ? XS + rnd() * (CX - R - XS) : XS - rnd() * 90,
         y0: bandY(b) + (rnd() - 0.5) * (wide ? 34 : 24),
         s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 14 + rnd() * 22
       };
@@ -1305,9 +1306,9 @@
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       wide = w >= 780;
-      X0 = wide ? Math.max(30, w * 0.06) : 14;
-      XS = wide ? w * 0.24 : 26;
-      CX = w * 0.52; CY = h * 0.5;
+      X0 = wide ? Math.max(28, w * 0.05) : 14;
+      XS = wide ? w * 0.185 : 24;
+      CX = w * 0.40; CY = h * 0.5;
       R = wide ? 52 : 40;
       parts = [];
       const n = wide ? 210 : 110;
@@ -1446,7 +1447,7 @@
     function step(dt) {
       for (const p of parts) {
         p.x += p.v * dt;
-        const k = ease(clamp01(p.x / (CX - R)));
+        const k = ease(clamp01((p.x - XS) / (CX - R - XS)));
         p.y = p.y0 + (CY - p.y0) * k;
         if (p.x > CX - R + 4) Object.assign(p, spawn(false));
       }
