@@ -939,6 +939,80 @@
       addTrunk(); addTrunk();
     }
 
+    function layout() {
+      const box = c.parentElement;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = box.clientWidth; h = box.clientHeight;
+      c.width = w * dpr; c.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      wide = w >= 780;
+      X0 = wide ? Math.max(30, w * 0.06) : 14;
+      XS = wide ? w * 0.24 : 26;
+      CX = w * 0.52; TCY = h * 0.175; TX = w * 0.40; DIV = h * 0.31; CY = h * 0.67;
+      R = wide ? 52 : 40;
+      parts = []; slow = [];
+      const n = wide ? 170 : 100;
+      for (let i = 0; i < n; i++) parts.push(spawn(true));
+      for (let i = 0; i < 6; i++) slow.push(spawnSlow(true));
+      theirs = [];
+      seedTree();
+      growIn = 0.8;
+    }
+
+    function diamond(x, y, s, fill, glow, blur) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      if (glow) { ctx.shadowColor = glow; ctx.shadowBlur = blur || 12; }
+      ctx.fillStyle = fill;
+      ctx.fillRect(-s, -s, s * 2, s * 2);
+      ctx.restore();
+    }
+    function goldFill(x, y, s) {
+      const g = ctx.createLinearGradient(x - s, y - s, x + s, y + s);
+      g.addColorStop(0, '#F0DCA0');
+      g.addColorStop(1, '#B08A3E');
+      return g;
+    }
+    function line(x1, y1, x2, y2, a, lw) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(228,201,126,' + a + ')';
+      ctx.lineWidth = lw || 1;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.restore();
+    }
+    function icon(kind, x, y) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.strokeStyle = 'rgba(196,181,253,0.85)';
+      ctx.lineWidth = 1.35; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.beginPath();
+      if (kind === 0) {
+        ctx.rect(-6, -8, 12, 16);
+        ctx.moveTo(-3, -4); ctx.lineTo(3, -4);
+        ctx.moveTo(-3, 0); ctx.lineTo(3, 0);
+        ctx.moveTo(-3, 4); ctx.lineTo(1, 4);
+      } else if (kind === 1) {
+        ctx.moveTo(-7, -6); ctx.lineTo(-7, 7); ctx.lineTo(0, 5); ctx.lineTo(7, 7); ctx.lineTo(7, -6);
+        ctx.lineTo(0, -4); ctx.closePath();
+        ctx.moveTo(0, -4); ctx.lineTo(0, 5);
+      } else if (kind === 2) {
+        ctx.rect(-7, -7, 6, 6); ctx.rect(1, -7, 6, 6);
+        ctx.rect(-7, 1, 6, 6); ctx.rect(1, 1, 6, 6);
+      } else if (kind === 3) {
+        ctx.rect(-8, -6, 16, 12);
+        ctx.moveTo(-1.5, -3); ctx.lineTo(3.5, 0); ctx.lineTo(-1.5, 3); ctx.closePath();
+      } else {
+        ctx.rect(-2.6, -8, 5.2, 9);
+        ctx.moveTo(-5.5, -1); ctx.arc(0, -1, 5.5, 0, Math.PI, false);
+        ctx.moveTo(0, 4.5); ctx.lineTo(0, 8);
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
     function inBounds(x, y) {
       return y > DIV + 30 && y < h - 14 && x < w - 22 && x > CX - R - 6;
     }
