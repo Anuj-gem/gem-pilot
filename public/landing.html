@@ -752,7 +752,7 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 420px; margin-top: 26px; margin-bottom: 0; }
+      .intake-wrap { height: 470px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -1617,31 +1617,18 @@
         SOURCES.forEach((name, i) => SRC.push({ name: name, x: X0 + 7, y: h * 0.14 + i * step, tx: X0 + 28 }));
         return;
       }
-      srcFont = '600 12px Inter, sans-serif';
+      // One per line, left-aligned as a block and centred — the desktop reads
+      // clearly because the sources are a scannable list, so keep them a list.
+      srcFont = '600 13px Inter, sans-serif';
       ctx.font = srcFont;
-      const ICON = 13, PAD = 5, GAP = 16, MAXW = w - 20;
-      const items = SOURCES.map(n => ({ name: n, tw: ctx.measureText(n).width }));
-      const rows = [[]];
-      let used = 0;
-      for (const it of items) {
-        const iw = ICON + PAD + it.tw;
-        if (used && used + GAP + iw > MAXW) { rows.push([]); used = 0; }
-        rows[rows.length - 1].push(it);
-        used += (used ? GAP : 0) + iw;
-      }
-      const rowH = 21;
-      const top = 16;
-      rows.forEach((row, ri) => {
-        const total = row.reduce((a, it) => a + ICON + PAD + it.tw, 0) + GAP * (row.length - 1);
-        let x = (w - total) / 2;
-        const y = top + ri * rowH;
-        for (const it of row) {
-          SRC.push({ name: it.name, x: x + ICON / 2, y: y, tx: x + ICON / 2 + PAD + 2 });
-          x += ICON + PAD + it.tw + GAP;
-        }
+      const ICON = 15, PAD = 8, ROW = 22, TOP = 14;
+      const widest = Math.max.apply(null, SOURCES.map(n => ctx.measureText(n).width));
+      const left = (w - (ICON + PAD + widest)) / 2;
+      SOURCES.forEach((name, i) => {
+        const y = TOP + i * ROW;
+        SRC.push({ name: name, x: left + ICON / 2, y: y, tx: left + ICON + PAD });
       });
-      SRC.rows = rows.length;
-      SRC.bottom = top + rows.length * rowH;
+      SRC.bottom = TOP + SOURCES.length * ROW;
     }
 
     // A drifting idea: travels from its source to the gem along a straight
@@ -1680,14 +1667,14 @@
       if (vert) {
         // sources sit across the top; the gem hangs below them and the tree
         // grows down into the rest of the frame
-        CX = w * 0.5; CY = (SRC.bottom || 60) + 58;
+        CX = w * 0.5; CY = (SRC.bottom || 60) + 62;
         R = 30;
       } else {
         CX = w * 0.40; CY = h * 0.5;
         R = 52;
       }
       parts = [];
-      const n = wide ? 210 : 70;
+      const n = vert ? 0 : 210;
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
@@ -1896,6 +1883,26 @@
       });
       ctx.restore();
 
+      if (vert) {
+        // The narrow layout states the connection outright rather than implying
+        // it with drifting dust: a line from every source into the gem.
+        ctx.save();
+        ctx.lineWidth = 1;
+        ctx.lineCap = 'round';
+        SRC.forEach(sc => {
+          const sx = sc.x + 2, sy = sc.y + 8;
+          const g = ctx.createLinearGradient(sx, sy, CX, CY - R);
+          g.addColorStop(0, 'rgba(167,139,250,0.10)');
+          g.addColorStop(1, 'rgba(167,139,250,0.55)');
+          ctx.strokeStyle = g;
+          ctx.beginPath();
+          ctx.moveTo(sx, sy);
+          ctx.quadraticCurveTo(sx + (CX - sx) * 0.5, CY - R - 34, CX, CY - R - 2);
+          ctx.stroke();
+        });
+        ctx.restore();
+      }
+
       for (const p of parts) {
         if (p.u < 0) continue;
         // fade in as it leaves the source, out as it reaches the gem
@@ -1946,8 +1953,10 @@
         ctx.restore();
       }
 
-      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + 90) * (1 + pulse * 0.25));
-      g.addColorStop(0, 'rgba(139,92,246,' + (0.16 + pulse * 0.22).toFixed(2) + ')');
+      // glow scaled to the gem, not a fixed +90 — on a phone that was a 120px
+      // violet wash across a third of the frame
+      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + (vert ? 42 : 90)) * (1 + pulse * 0.25));
+      g.addColorStop(0, 'rgba(139,92,246,' + ((vert ? 0.11 : 0.16) + pulse * 0.22).toFixed(2) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
