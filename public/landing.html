@@ -895,6 +895,29 @@
     .ai-vbar.lit { box-shadow: 0 0 18px rgba(228,201,126,0.5); }
     .ai-vcap { margin-top: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: rgba(222,216,240,0.55); }
 
+    /* a choice, priced: what it costs against what it earns */
+    .ai-opt {
+      display: grid; grid-template-columns: 1fr 74px 74px;
+      align-items: baseline; gap: 10px;
+      padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 13.5px; color: rgba(243,239,232,0.82);
+    }
+    .ai-opt b {
+      text-align: right; font-weight: 600; color: #F7E9C4;
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .ai-opt.head {
+      border-bottom: none; padding-bottom: 4px;
+      font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .ai-opt.head b { color: var(--gold-soft); font-weight: 700; font-size: 10.5px; }
+    .ai-opt.lit {
+      color: var(--on-screen);
+      border-bottom-color: rgba(228,201,126,0.4);
+    }
+    .ai-opt.lit span { font-weight: 500; }
+    .ai-opt.lit b { text-shadow: 0 0 16px rgba(228,201,126,0.5); }
+
     /* adaptation card: what it is now vs what's inside it */
     .ai-read { margin: 16px 0 18px; }
     .ai-readrow {
@@ -957,6 +980,7 @@
     @media (max-width: 560px) {
       .ai-card { padding: 20px 18px 18px; }
       .ai-graphic.split { flex-direction: column; gap: 18px; }
+      .ai-opt { grid-template-columns: 1fr 58px 62px; gap: 8px; font-size: 13px; }
       .ai-step { flex-wrap: wrap; row-gap: 6px; }
       .ai-sname { flex-basis: 100%; font-size: 12px; }
       .ai-sval { flex-basis: 70px; font-size: 12.5px; }
@@ -1052,22 +1076,14 @@
       <div class="ai-label">Adaptation</div>
       <p class="ai-line">We find the format where a story wins.</p>
       <div class="ai-graphic">
-        <div class="ai-story"><span class="ai-gem big" aria-hidden="true"></span>Space Priest &middot; web comedy &middot; 100M viewers</div>
-        <div class="ai-read">
-          <div class="ai-readrow"><span>Why it works now</span><b>Contained comedy, one ship</b></div>
-          <div class="ai-readrow"><span>What's underneath</span><b>A grand space adventure</b></div>
-        </div>
-        <div class="ai-formats">
-          <div class="ai-format"><span>Web series</span><b>$4M</b></div>
-          <div class="ai-format"><span>TV series</span><b>$46M</b></div>
-          <div class="ai-format lit"><span>Feature film</span><b>$210M</b></div>
-          <div class="ai-format"><span>Mobile game</span><b>$85M</b></div>
-        </div>
+        <div class="ai-case"><span class="ai-gem big" aria-hidden="true"></span>Surviving Sand Island &mdash; a true story from 1761</div>
+        <div class="ai-opt head"><span></span><b>Costs</b><b>Earns</b></div>
+        <div class="ai-opt"><span>As a limited series</span><b>$45M</b><b>$55M</b></div>
+        <div class="ai-opt lit"><span>As a feature film</span><b>$35M</b><b>$150M</b></div>
       </div>
       <ul class="ai-verdict">
-        <li>Contained to one ship, this is a strong comedy series for a streamer at around $25M.</li>
-        <li>Off the ship it becomes a grand space adventure comedy at roughly $60M, and the audience it already has puts a $50M floor under the box office.</li>
-        <li>The feature has a far higher ceiling and builds a brand a contained series never will.</li>
+        <li>The ordeal is one continuous stretch, and cutting it into episodes loses the scale that sells it.</li>
+        <li>The feature is cheaper to make and earns nearly three times as much.</li>
       </ul>
     </div>
 
@@ -1096,7 +1112,7 @@
           <span class="ai-sval">+$10&ndash;22M</span>
         </div>
         <div class="ai-step">
-          <span class="ai-sname">An awards-caliber star</span>
+          <span class="ai-sname">A star who can win an Oscar</span>
           <span class="ai-strack"><span class="ai-sbar lit" style="--o:40.6%;--w:50%"></span></span>
           <span class="ai-sval">+$150M</span>
         </div>
@@ -1112,22 +1128,14 @@
       <div class="ai-label">Production</div>
       <p class="ai-line">We help find the ways to stretch budgets to deliver what audiences really want.</p>
       <div class="ai-graphic">
-        <div class="ai-case">The action at sea &mdash; two ways to shoot it</div>
-        <div class="ai-row">
-          <span class="ai-name wide">Mostly computer-generated</span>
-          <span class="ai-track"><span class="ai-bar gold dim" style="--w:39%"></span></span>
-          <span class="ai-val dim">$7M</span>
-        </div>
-        <div class="ai-row">
-          <span class="ai-name wide">Shot practically, at sea</span>
-          <span class="ai-track"><span class="ai-bar gold lit" style="--w:100%"></span></span>
-          <span class="ai-val">$18M</span>
-        </div>
-        <div class="ai-cost">The harder way costs <b>$11M</b> more and is worth <b>+$40M</b></div>
+        <div class="ai-case"><span class="ai-gem big" aria-hidden="true"></span>The shipwreck &mdash; how to shoot it</div>
+        <div class="ai-opt head"><span></span><b>Costs</b><b>Earns</b></div>
+        <div class="ai-opt"><span>Made on a computer</span><b>$7M</b><b>$110M</b></div>
+        <div class="ai-opt lit"><span>Filmed for real, at sea</span><b>$18M</b><b>$150M</b></div>
       </div>
       <ul class="ai-verdict">
         <li>Computer graphics can't carry this much realism and this much emotion in the same shot, and audiences can tell.</li>
-        <li>The action on that ship is the reason anyone comes to a theatre for this, so spend the extra $11M.</li>
+        <li>The shipwreck is the reason anyone buys a ticket, so the extra $11M comes back four times over.</li>
       </ul>
     </div>
 
@@ -1136,31 +1144,31 @@
       <p class="ai-line">We find the people who unlock a story, famous or not.</p>
       <div class="ai-graphic">
         <div class="ai-row">
-          <span class="ai-name">A-list star</span>
-          <span class="ai-track"><span class="ai-bar gold" style="--w:88%"></span></span>
-          <span class="ai-val">$118M</span>
+          <span class="ai-name wide">The right star for this part</span>
+          <span class="ai-track"><span class="ai-bar gold lit" style="--w:100%"></span></span>
+          <span class="ai-val">$150M</span>
         </div>
         <div class="ai-row">
-          <span class="ai-name">Unknown actor</span>
-          <span class="ai-track"><span class="ai-bar gold" style="--w:83%"></span></span>
-          <span class="ai-val">$112M</span>
+          <span class="ai-name wide">A big name who's wrong for it</span>
+          <span class="ai-track"><span class="ai-bar gold dim" style="--w:47%"></span></span>
+          <span class="ai-val dim">$70M</span>
         </div>
         <div class="ai-meters">
           <div class="ai-row meter">
-            <span class="ai-name">Role difficulty</span>
+            <span class="ai-name wide">How hard the part is</span>
             <span class="ai-track"><span class="ai-bar violet" style="--w:94%"></span></span>
             <span class="ai-note">extreme</span>
           </div>
           <div class="ai-row meter">
-            <span class="ai-name">Fame value</span>
+            <span class="ai-name wide">What fame alone is worth</span>
             <span class="ai-track"><span class="ai-bar violet" style="--w:12%"></span></span>
-            <span class="ai-note">limited</span>
+            <span class="ai-note">little</span>
           </div>
         </div>
       </div>
       <ul class="ai-verdict">
         <li>A major star brings some marketing value here, and a huge price tag.</li>
-        <li>This role is hard enough that an actor who can't deliver it &mdash; famous or not &mdash; hurts this film far more than it would most, so cast for fit.</li>
+        <li>This part is hard enough that a famous actor who can't play it loses more than their name brings, so cast for who can play it first.</li>
       </ul>
     </div>
 
