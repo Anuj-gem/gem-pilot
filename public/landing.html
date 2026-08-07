@@ -895,6 +895,19 @@
     .ai-vbar.lit { box-shadow: 0 0 18px rgba(228,201,126,0.5); }
     .ai-vcap { margin-top: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: rgba(222,216,240,0.55); }
 
+    /* one film, two versions — drawn in the sky like everything else */
+    .vs-wrap {
+      position: relative;
+      width: 100vw; margin-left: calc(50% - 50vw);
+      height: clamp(400px, 34vw, 480px);
+      margin-top: 40px;
+    }
+    .vs-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    #engine { padding-bottom: 20px; }
+    @media (max-width: 900px) {
+      .vs-wrap { height: 590px; margin-top: 24px; }
+    }
+
     /* casting: two packages, weighed against each other and priced */
     .ai-pkg {
       border: 1px solid rgba(255,255,255,0.09);
@@ -1100,86 +1113,8 @@
 <section id="engine">
   <p class="pillar-statement reveal">We trained our own AI to help us bring out <em>the potential in every story.</em></p>
 
-  <div class="ai-grid">
-
-    <div class="ai-card reveal">
-      <div class="ai-label">Adaptation</div>
-      <p class="ai-line">We find the format where a story wins.</p>
-      <div class="ai-graphic">
-        <div class="ai-case"><span class="ai-gem big" aria-hidden="true"></span>A true survival story</div>
-        <div class="ai-opt head"><span></span><b>Costs</b><b>Earns</b></div>
-        <div class="ai-opt"><span>As a limited series</span><b>$45M</b><b>$55M</b></div>
-        <div class="ai-opt lit"><span>As a feature film</span><b>$35M</b><b>$150M</b></div>
-      </div>
-      <p class="ai-verdict">Cut into episodes, the ordeal loses the scale that sells it.</p>
-    </div>
-
-    <div class="ai-card reveal">
-      <div class="ai-label">Upside</div>
-      <p class="ai-line">We find what unlocks the commercial upside of a project.</p>
-      <div class="ai-graphic">
-        <div class="ai-step">
-          <span class="ai-sname">Survival story</span>
-          <span class="ai-strack"><span class="ai-sbar" style="--o:0%;--w:15.8%"></span></span>
-          <span class="ai-sval">$40&ndash;55M</span>
-        </div>
-        <div class="ai-step">
-          <span class="ai-sname">Originality</span>
-          <span class="ai-strack"><span class="ai-sbar" style="--o:15.8%;--w:6.2%"></span></span>
-          <span class="ai-sval">+$12&ndash;25M</span>
-        </div>
-        <div class="ai-step">
-          <span class="ai-sname">Visual spectacle</span>
-          <span class="ai-strack"><span class="ai-sbar" style="--o:22%;--w:13.3%"></span></span>
-          <span class="ai-sval">+$25&ndash;55M</span>
-        </div>
-        <div class="ai-step">
-          <span class="ai-sname">Viral scenes</span>
-          <span class="ai-strack"><span class="ai-sbar" style="--o:35.3%;--w:5.3%"></span></span>
-          <span class="ai-sval">+$10&ndash;22M</span>
-        </div>
-        <div class="ai-step">
-          <span class="ai-sname">A star who can win an Oscar</span>
-          <span class="ai-strack"><span class="ai-sbar lit" style="--o:40.6%;--w:50%"></span></span>
-          <span class="ai-sval">+$150M</span>
-        </div>
-        <div class="ai-total"><span>Worldwide</span><b>~$300M</b></div>
-      </div>
-      <p class="ai-verdict">Nearly all of it rides on finding a star who can also act.</p>
-    </div>
-
-    <div class="ai-card reveal">
-      <div class="ai-label">Production</div>
-      <p class="ai-line">We help filmmakers make the creative choices that deliver what audiences want.</p>
-      <div class="ai-graphic">
-        <div class="ai-case"><span class="ai-gem big" aria-hidden="true"></span>The shipwreck &mdash; how to shoot it</div>
-        <div class="ai-opt head"><span></span><b>Costs</b><b>Earns</b></div>
-        <div class="ai-opt"><span>Made on a computer</span><b>$7M</b><b>$110M</b></div>
-        <div class="ai-opt lit"><span>Filmed for real, at sea</span><b>$18M</b><b>$150M</b></div>
-      </div>
-      <p class="ai-verdict">Audiences can tell the difference, and the shipwreck is why they buy a ticket.</p>
-    </div>
-
-    <div class="ai-card reveal">
-      <div class="ai-label">Casting &amp; crew</div>
-      <p class="ai-line">We find the people who unlock a story, famous or not.</p>
-      <div class="ai-graphic">
-        <div class="ai-pkg lit">
-          <div class="ai-pkghead"><span>Package A</span><b>$150M</b></div>
-          <div class="ai-pkgrow"><span>Lead</span><b>Choice 1</b></div>
-          <div class="ai-pkgrow"><span>Director</span><b>Choice 2</b></div>
-          <div class="ai-pkgrow"><span>Cinematographer</span><b>Choice 1</b></div>
-        </div>
-        <div class="ai-pkg">
-          <div class="ai-pkghead"><span>Package B</span><b>$95M</b></div>
-          <div class="ai-pkgrow"><span>Lead</span><b>Choice 3</b></div>
-          <div class="ai-pkgrow"><span>Director</span><b>Choice 1</b></div>
-          <div class="ai-pkgrow"><span>Cinematographer</span><b>Choice 4</b></div>
-        </div>
-      </div>
-      <p class="ai-verdict">A famous actor who can't play this part loses more than the name brings.</p>
-    </div>
-
+  <div class="vs-wrap reveal">
+    <canvas id="vs-field" aria-hidden="true"></canvas>
   </div>
 </section>
 
@@ -2143,6 +2078,204 @@
     if (reduce) still();
     else requestAnimationFrame(frame);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  })();
+
+  // One film, two versions — a dull diamond, the decisions, and what it becomes.
+  (function () {
+    const c = document.getElementById('vs-field');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let w = 0, h = 0, dpr = 1;
+
+    const CREAM = '#F7E9C4', GOLD = '#E4C97E', VIOLET = '#C4B5FD';
+
+    function diamond(x, y, s, alpha, glow) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.globalAlpha = alpha;
+      if (glow) { ctx.shadowColor = 'rgba(228,201,126,0.85)'; ctx.shadowBlur = 26; }
+      const g = ctx.createLinearGradient(-s, -s, s, s);
+      g.addColorStop(0, '#F0DCA0');
+      g.addColorStop(1, '#B08A3E');
+      ctx.fillStyle = g;
+      ctx.fillRect(-s, -s, s * 2, s * 2);
+      ctx.restore();
+    }
+
+    function text(str, x, y, font, color, alpha, spacing) {
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.globalAlpha = alpha;
+      ctx.font = font;
+      try { if (spacing) ctx.letterSpacing = spacing; } catch (e) {}
+      ctx.shadowColor = 'rgba(8,6,14,0.9)';
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = color;
+      ctx.fillText(str, x, y);
+      ctx.restore();
+    }
+
+    // one decision as a small table in the sky: two options, what each costs,
+    // what each adds to the box office. The taken row is lit.
+    function tleft(str, x, y, font, color, alpha) {
+      ctx.save(); ctx.textAlign = 'left'; ctx.globalAlpha = alpha; ctx.font = font;
+      ctx.shadowColor = 'rgba(8,6,14,0.9)'; ctx.shadowBlur = 8; ctx.fillStyle = color;
+      ctx.fillText(str, x, y); ctx.restore();
+    }
+    function tright(str, x, y, font, color, alpha) {
+      ctx.save(); ctx.textAlign = 'right'; ctx.globalAlpha = alpha; ctx.font = font;
+      ctx.shadowColor = 'rgba(8,6,14,0.9)'; ctx.shadowBlur = 8; ctx.fillStyle = color;
+      ctx.fillText(str, x, y); ctx.restore();
+    }
+    function fork(x, y, cap, rows, why) {
+      const W = 316, L = x - W / 2, R = x + W / 2, COSTX = R - 62;
+      let yy = y;
+      tleft(cap, L, yy, '700 10px Inter, sans-serif', GOLD, 0.7);
+      tright('COSTS', COSTX, yy, '700 9px Inter, sans-serif', GOLD, 0.45);
+      tright('ADDS', R, yy, '700 9px Inter, sans-serif', GOLD, 0.45);
+      for (const r of rows) {
+        yy += r.taken ? 22 : 20;
+        const a = r.taken ? 0.95 : 0.4;
+        const f = r.taken ? '500 13px Inter, sans-serif' : '400 12px Inter, sans-serif';
+        if (r.taken) diamond(L + 4, yy - 4, 4, 0.95, false);
+        tleft(r.label, L + (r.taken ? 14 : 14), yy, f, '#F3EFE8', a);
+        tright(r.cost, COSTX, yy, f, CREAM, r.taken ? 0.95 : 0.4);
+        tright(r.adds, R, yy, r.taken ? '600 13px Inter, sans-serif' : f, CREAM, r.taken ? 1 : 0.4);
+      }
+      if (why) { yy += 21; text(why, x, yy, '400 12.5px Inter, sans-serif', VIOLET, 0.9); }
+      return yy;
+    }
+
+    function qp(S, C, E, t) {
+      const u = 1 - t;
+      return {
+        x: u * u * S.x + 2 * u * t * C.x + t * t * E.x,
+        y: u * u * S.y + 2 * u * t * C.y + t * t * E.y,
+      };
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      const wide = w >= 900;
+
+      if (wide) {
+        const S = { x: w * 0.13, y: h * 0.62 };
+        const E = { x: w * 0.79, y: h * 0.30 };
+        const C = { x: (S.x + E.x) / 2, y: (S.y + E.y) / 2 + h * 0.14 };
+
+        ctx.save();
+        ctx.strokeStyle = 'rgba(228,201,126,0.4)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(S.x, S.y);
+        ctx.quadraticCurveTo(C.x, C.y, E.x, E.y);
+        ctx.stroke();
+        ctx.restore();
+
+        // the safe bet — small, dull
+        diamond(S.x, S.y, 13, 0.45, false);
+        text('THE SAFE BET', S.x, S.y + 44, '700 10.5px Inter, sans-serif', GOLD, 0.5, '0.14em');
+        text('$60M', S.x, S.y + 66, '600 17px Inter, sans-serif', CREAM, 0.5);
+        text('costs $50M', S.x, S.y + 84, '400 11px Inter, sans-serif', '#F3EFE8', 0.35);
+
+        // decision one — above the line
+        const n1 = qp(S, C, E, 0.40);
+        diamond(n1.x, n1.y, 6, 0.85, false);
+        fork(n1.x, n1.y - 106,
+          'LOCATIONS & EFFECTS',
+          [
+            { label: 'Practical, on location', cost: '$18M', adds: '+$45M', taken: true },
+            { label: 'Green screen, on a stage', cost: '$7M', adds: '+$6M' },
+          ],
+          "CGI can't capture it — audiences can tell");
+
+        // decision two — below the line, kept clear of the big label on
+        // short canvases (the wide layout can be as low as 400px tall)
+        const n2 = qp(S, C, E, 0.70);
+        diamond(n2.x, n2.y, 6, 0.85, false);
+        const bx = Math.min(n2.x, E.x - 102 - 172 - 14);
+        // The table hangs below the path, but the path is lower at the table's
+        // left edge than at its node — so clear the path where the table
+        // actually starts, not where the marker is. And on short canvases the
+        // clamped fork slides toward node one, so clear that marker too.
+        let pathY = n2.y;
+        for (let t = 0; t <= 1; t += 0.02) {
+          const q = qp(S, C, E, t);
+          if (q.x >= bx - 158 && q.x <= bx + 158 && q.y > pathY) pathY = q.y;
+        }
+        fork(bx, Math.max(pathY + 24, n2.y + (h < 440 ? 62 : 42)),
+          'THE LEAD',
+          [
+            { label: "The director's choice", cost: '$3M', adds: '+$38M', taken: true },
+            { label: 'An A-list star', cost: '$12M', adds: '+$11M' },
+          ],
+          'the money belongs in the world on screen, not the name');
+
+        // the director's version — big, lit
+        diamond(E.x, E.y, 40, 1, true);
+        text("THE DIRECTOR'S VERSION", E.x, E.y - 74, '700 11px Inter, sans-serif', GOLD, 0.95, '0.15em');
+        text('$350M + awards', E.x, E.y + 92, '600 26px Inter, sans-serif', CREAM, 1);
+        text('costs $80M', E.x, E.y + 114, '400 11.5px Inter, sans-serif', GOLD, 0.7);
+      } else {
+        const cx = w / 2;
+        const line = (y0, y1) => {
+          ctx.save();
+          ctx.strokeStyle = 'rgba(228,201,126,0.35)';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.moveTo(cx, y0); ctx.lineTo(cx, y1); ctx.stroke();
+          ctx.restore();
+        };
+
+        text('THE SAFE BET', cx, 26, '700 10.5px Inter, sans-serif', GOLD, 0.5, '0.14em');
+        diamond(cx, 66, 12, 0.45, false);
+        text('$60M · costs $50M', cx, 108, '500 13px Inter, sans-serif', CREAM, 0.5);
+
+        line(122, 148);
+        let yEnd = fork(cx, 164,
+          'LOCATIONS & EFFECTS',
+          [
+            { label: 'Practical, on location', cost: '$18M', adds: '+$45M', taken: true },
+            { label: 'Green screen, on a stage', cost: '$7M', adds: '+$6M' },
+          ],
+          "CGI can't capture it");
+
+        line(yEnd + 14, yEnd + 44);
+        yEnd = fork(cx, yEnd + 58,
+          'THE LEAD',
+          [
+            { label: "The director's choice", cost: '$3M', adds: '+$38M', taken: true },
+            { label: 'An A-list star', cost: '$12M', adds: '+$11M' },
+          ],
+          'the money belongs in the world, not the name');
+
+        line(yEnd + 14, yEnd + 46);
+        const by = yEnd + 96;
+        text("THE DIRECTOR'S VERSION", cx, yEnd + 70, '700 10.5px Inter, sans-serif', GOLD, 0.95, '0.14em');
+        diamond(cx, by + 30, 32, 1, true);
+        text('$350M + awards', cx, by + 106, '600 23px Inter, sans-serif', CREAM, 1);
+        text('costs $80M', cx, by + 126, '400 11.5px Inter, sans-serif', GOLD, 0.7);
+      }
+    }
+
+    function layout() {
+      const box = c.parentElement;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = box.clientWidth; h = box.clientHeight;
+      c.width = w * dpr; c.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw();
+    }
+
+    let rt, lastW = window.innerWidth;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      if (window.innerWidth === lastW) return;
+      lastW = window.innerWidth;
+      rt = setTimeout(layout, 150);
+    });
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
   })();
 
   // Night fields — the team-band dust, and the hero sky where one gem has ignited.
