@@ -1742,7 +1742,7 @@
       for (let i = 0; i < n; i++) parts.push(spawn(true));
       seedTree();
       growIn = 0.8;
-      settled = false; settleAge = 0;
+      settled = false; settleAge = 0; trunks.valsDealt = false;
     }
 
     function diamond(x, y, s, fill, glow, blur) {
@@ -1890,7 +1890,7 @@
         s: 4.5 + trnd() * 1.2, t: 0, big: false, rev: 0
       };
       nodes.push(n);
-      trunks.push({ lane: lane, a: a, tip: n, prev: n, root: n, age: 0, done: false, val: VALUES[trunks.length % VALUES.length] });
+      trunks.push({ lane: lane, a: a, tip: n, prev: n, root: n, age: 0, done: false, len: 1, val: null });
       return true;
     }
 
@@ -1909,6 +1909,7 @@
         nodes.push(node);
         tr.prev = tr.tip;
         tr.tip = node;
+        tr.len++;
         if (trnd() < (vert ? 0.28 : 0.45)) {
           const sa = a + (trnd() < 0.5 ? -1 : 1) * (0.7 + trnd() * 0.5);
           const sd = 30 + trnd() * 22;
@@ -2002,6 +2003,13 @@
       }
 
       if (settled) {
+        if (!trunks.valsDealt) {
+          trunks.valsDealt = true;
+          const vals = VALUES.slice().sort((a, b) => parseFloat(b.slice(1)) - parseFloat(a.slice(1)));
+          trunks.slice()
+            .sort((a, b) => (b.len - a.len) || (b.tip.s - a.tip.s))
+            .forEach((tr, i) => { tr.val = vals[i % vals.length]; });
+        }
         const k = ease(clamp01(settleAge / 1.1));
         ctx.save();
         ctx.textAlign = 'center';
