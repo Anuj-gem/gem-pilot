@@ -194,10 +194,10 @@
     .hero-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
     h1.hero-headline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(40px, 5vw, 72px);
-      font-weight: 500; line-height: 1.08;
+      font-size: clamp(38px, 4.4vw, 62px);
+      font-weight: 500; line-height: 1.1;
       letter-spacing: -0.02em; color: var(--on-screen);
-      max-width: 680px; margin: 0 0 20px;
+      max-width: 900px; margin: 0 0 30px;
       text-wrap: pretty;
     }
     h1.hero-headline em { font-style: italic; color: #C4B5FD; }
@@ -243,8 +243,8 @@
       margin: 0 auto;
     }
     .hero-record {
-      display: inline-flex; align-items: center; gap: 38px; flex-wrap: wrap;
-      max-width: 640px;
+      display: inline-flex; align-items: center; gap: 32px; flex-wrap: wrap;
+      max-width: 820px;
       padding: 22px 32px; margin-bottom: 26px;
       border: 1px solid rgba(228,201,126,0.28);
       border-radius: 14px;
@@ -1057,9 +1057,8 @@
   <canvas id="hero-field" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <h1 class="hero-headline reveal">
-      We're building the next great <em>film franchises.</em>
+      We build AI that helps producers find and develop IP with <em>global audience appeal.</em>
     </h1>
-    <p class="hero-sub reveal">We find one-of-a-kind storytellers that Hollywood overlooks, then pair them with genius collaborators, modern media, and advanced technology to grow their ideas into global entertainment franchises.</p>
     <div class="hero-record reveal">
       <div class="hrec">
         <b>500,000,000+</b>
@@ -1068,6 +1067,11 @@
           <svg class="hi" viewBox="0 0 24 24" aria-label="TikTok" fill="currentColor"><path d="M14 3h3c.3 2.4 1.7 3.9 4 4.2v3c-1.6-.05-3-.55-4-1.4V15a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.2A3 3 0 1 0 14 15z"/></svg>
           <svg class="hi" viewBox="0 0 24 24" aria-label="Instagram" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>
         </span>
+      </div>
+      <span class="hrec-gem" aria-hidden="true"></span>
+      <div class="hrec">
+        <b>500+</b>
+        <span>Creative partners</span>
       </div>
       <span class="hrec-gem" aria-hidden="true"></span>
       <div class="hrec">
@@ -1202,32 +1206,32 @@
       return g;
     }
 
+    // Ideas stream in from everywhere; a few chains of finished work grow out
+    // the other side, each bigger than the last.
     function build() {
       net = [];
       const r = mul(7);
-      const base = SPAN;
-      const vals = ['$5.8B', '$3.2B', '$1.9B', '$4.4B', '$2.6B'];
-      for (let b = 0; b < 5; b++) {
-        const L = base * (0.22 + r() * 0.06);
-        let a = (b * 72 - 90) * Math.PI / 180 + (r() - 0.5) * 0.3;
+      const vals = ['$5.8B', '$3.2B', '$4.4B'];
+      const fan = [-0.62, 0.05, 0.66];
+      // diamonds scale with the chain length, or they pile up on a phone
+      const kk = Math.max(0.55, Math.min(1, SPAN / 430));
+      for (let b = 0; b < 3; b++) {
+        let a = fan[b] + (r() - 0.5) * 0.12;
         let px = CX + Math.cos(a) * (GS * 0.58), py = CY + Math.sin(a) * (GS * 0.58);
-        // sizes must scale with SPAN too — otherwise the legs shrink on a
-        // phone and the diamonds don't, and the chains pile into each other
-        const k = Math.min(1, base / 620);
-        const sizes = [(5.5 + r() * 1.4) * k, (9 + r() * 2) * k, (14 + r() * 3.5) * k];
-        const legs = [0.40, 0.32, 0.34];
-        for (let k = 0; k < 3; k++) {
-          a += (r() - 0.5) * 0.34;
-          const nx = px + Math.cos(a) * L * legs[k], ny = py + Math.sin(a) * L * legs[k];
-          const tip = k === 2;
+        const sizes = [(5.5 + r() * 1.2) * kk, (8 + r() * 1.6) * kk, (11.5 + r() * 2) * kk, (15.5 + r() * 2.5) * kk];
+        const legs = [0.31, 0.26, 0.23, 0.20];
+        for (let i = 0; i < 4; i++) {
+          a += (r() - 0.5) * 0.2;
+          const nx = px + Math.cos(a) * SPAN * legs[i], ny = py + Math.sin(a) * SPAN * legs[i];
+          const tip = i === 3;
           net.push({
-            x: nx, y: ny, px: px, py: py, s: sizes[k], ph: r() * 6.28, at: k * 0.6,
+            x: nx, y: ny, px: px, py: py, s: sizes[i], ph: r() * 6.28, at: i * 0.5,
             val: tip ? vals[b] : null, va: a
           });
-          if (!tip) {
+          if (!tip && r() < 0.7) {
             const sa = a + (r() < 0.5 ? -1 : 1) * (0.85 + r() * 0.25);
-            const sd = L * (0.19 + r() * 0.07);
-            net.push({ x: nx + Math.cos(sa) * sd, y: ny + Math.sin(sa) * sd, px: nx, py: ny, s: sizes[k] * 0.4, ph: r() * 6.28, at: k * 0.6 + 0.3 });
+            const sd = SPAN * (0.10 + r() * 0.05);
+            net.push({ x: nx + Math.cos(sa) * sd, y: ny + Math.sin(sa) * sd, px: nx, py: ny, s: sizes[i] * 0.4, ph: r() * 6.28, at: i * 0.5 + 0.3 });
           }
           px = nx; py = ny;
         }
@@ -1290,22 +1294,20 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       wide = w >= 900;
       if (wide) {
-        CX = w * 0.73; CY = h * 0.46; GS = 58;
-        RX = w * 0.34; RY = h * 0.52;
-        SPAN = Math.min(w, h);
+        CX = w * 0.62; CY = h * 0.47; GS = 58;
+        RX = w * 0.30; RY = h * 0.52;
+        // the chains' full reach is about 1.0 * SPAN plus the gem offset and a
+        // label; the fan's outer angles cut the vertical extent to ~0.62
+        SPAN = Math.max(180, Math.min(w - CX - 130, (h * 0.5 - 48) / 0.72));
       } else {
         // narrow: the copy sits on top of this canvas, so the constellation
-        // lives in the reserved band underneath it and is sized to fit there
+        // lives in the reserved band underneath it, gem left, chains right
         const inner = box.querySelector && box.querySelector('.hero-inner');
         const bottom = inner ? inner.offsetTop + inner.offsetHeight : h * 0.45;
         const band = Math.max(230, h - bottom - 14);
-        CX = w * 0.5; CY = h - band * 0.5 + 8; GS = 34;
-        RX = w * 0.52; RY = band * 0.44;
-        // A spoke's tip (three legs plus the tip diamond) lands about 0.42 * SPAN
-        // from the centre. Size SPAN so that reach, plus room for a value label,
-        // fits inside the band both ways — measured, not guessed.
-        const REACH = 0.46;
-        SPAN = Math.max(150, Math.min((band * 0.5 - 14) / REACH, (w * 0.5 - 52) / REACH));
+        CX = w * 0.24; CY = h - band * 0.5 + 8; GS = 34;
+        RX = w * 0.40; RY = band * 0.44;
+        SPAN = Math.max(140, Math.min(w - CX - 96, (band * 0.5 - 48) / 0.72));
       }
       build();
       ideas = [];
