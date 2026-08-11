@@ -976,7 +976,7 @@
     .model-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     @media (max-width: 900px) {
       .vs-wrap { height: 590px; margin-top: 24px; }
-      .model-wrap { height: 720px; margin-top: 24px; }
+      .model-wrap { height: 1000px; margin-top: 24px; }
     }
 
     /* casting: two packages, weighed against each other and priced */
@@ -1128,7 +1128,7 @@
   <canvas id="hero-field" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <h1 class="hero-headline reveal">
-      We build AI that helps producers find and develop IP with <em>global audience appeal.</em>
+      We build AI that helps producers find and develop films with <em>global audience appeal.</em>
     </h1>
     <div class="hero-record reveal">
       <div class="hrec">
@@ -1161,10 +1161,21 @@
 
 <!-- The model — narrative decomposition against audience behavior -->
 <section id="model">
-  <p class="pillar-statement reveal">We built the most advanced audience projection model <em>ever.</em></p>
+  <p class="pillar-statement reveal">Our audience projection models understand why scripts <em>break out.</em></p>
 
   <div class="model-wrap reveal">
     <canvas id="model-field" aria-hidden="true"></canvas>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- The engine -->
+<section id="engine">
+  <p class="pillar-statement reveal">We navigate creative risks with precision to maximize <em>the potential of any story.</em></p>
+
+  <div class="vs-wrap reveal">
+    <canvas id="vs-field" aria-hidden="true"></canvas>
   </div>
 </section>
 
@@ -1178,17 +1189,6 @@
     <canvas id="intake-field" aria-hidden="true"></canvas>
   </div>
 
-</section>
-
-<div class="rule"></div>
-
-<!-- The engine -->
-<section id="engine">
-  <p class="pillar-statement reveal">We navigate creative risks with precision to maximize <em>the potential of any story.</em></p>
-
-  <div class="vs-wrap reveal">
-    <canvas id="vs-field" aria-hidden="true"></canvas>
-  </div>
 </section>
 
 <div class="rule"></div>
@@ -1250,17 +1250,17 @@
   const NAME_INK = 'rgba(222,216,240,0.6)';
   const NAME_FONT = '500 12px Inter, sans-serif';
 
-  // The hero — ideas streaming in from every direction, and what we've already made of them.
+  // The hero — ideas fall in from above, and the gem finds the few with
+  // massive potential: a vertical funnel, matching the rest of the page.
   (function () {
     const c = document.getElementById('hero-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = true;   // every graphic is a still frame — see STILL_ONLY note
+    let w = 0, h = 0, dpr = 1;
 
-    let w = 0, h = 0, dpr = 1, CX = 0, CY = 0, GS = 56, RX = 0, RY = 0, wide = true, SPAN = 0;
-    let net = [], ideas = [], t = 0, last = 0, pulse = 0;
+    const CREAM = '#F7E9C4';
 
-    function mul(a) {
+    function rng(a) {
       return function () {
         a |= 0; a = (a + 0x6D2B79F5) | 0;
         let x = Math.imul(a ^ (a >>> 15), 1 | a);
@@ -1268,92 +1268,132 @@
         return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
       };
     }
-    const edge = a => 1 / Math.sqrt(Math.pow(Math.cos(a) / RX, 2) + Math.pow(Math.sin(a) / RY, 2));
-    function goldFill(x, y, s) {
-      const g = ctx.createLinearGradient(x - s, y - s, x + s, y + s);
+
+    function txt(str, x, y, font, alpha, align) {
+      ctx.save();
+      ctx.textAlign = align || 'left';
+      ctx.globalAlpha = alpha;
+      ctx.font = font;
+      ctx.shadowColor = 'rgba(8,6,14,0.9)';
+      ctx.shadowBlur = 9;
+      ctx.fillStyle = CREAM;
+      ctx.fillText(str, x, y);
+      ctx.restore();
+    }
+
+    function goldDiamond(x, y, s) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.shadowColor = 'rgba(228,201,126,0.8)';
+      ctx.shadowBlur = 16;
+      const g = ctx.createLinearGradient(-s, -s, s, s);
       g.addColorStop(0, '#F0DCA0');
       g.addColorStop(1, '#B08A3E');
-      return g;
+      ctx.fillStyle = g;
+      ctx.fillRect(-s, -s, s * 2, s * 2);
+      ctx.restore();
     }
 
-    // Ideas stream in from everywhere; a few chains of finished work grow out
-    // the other side, each bigger than the last.
-    function build() {
-      net = [];
-      const r = mul(7);
-      const vals = ['$5.8B', '$3.2B', '$4.4B'];
-      const fan = [-0.62, 0.05, 0.66];
-      // diamonds scale with the chain length, or they pile up on a phone
-      const kk = Math.max(0.55, Math.min(1, SPAN / 430));
-      for (let b = 0; b < 3; b++) {
-        let a = fan[b] + (r() - 0.5) * 0.12;
-        let px = CX + Math.cos(a) * (GS * 0.58), py = CY + Math.sin(a) * (GS * 0.58);
-        const sizes = [(5.5 + r() * 1.2) * kk, (8 + r() * 1.6) * kk, (11.5 + r() * 2) * kk, (15.5 + r() * 2.5) * kk];
-        const legs = [0.31, 0.26, 0.23, 0.20];
-        for (let i = 0; i < 4; i++) {
-          a += (r() - 0.5) * 0.2;
-          const nx = px + Math.cos(a) * SPAN * legs[i], ny = py + Math.sin(a) * SPAN * legs[i];
-          const tip = i === 3;
-          net.push({
-            x: nx, y: ny, px: px, py: py, s: sizes[i], ph: r() * 6.28, at: i * 0.5,
-            val: tip ? vals[b] : null, va: a
-          });
-          if (!tip && r() < 0.7) {
-            const sa = a + (r() < 0.5 ? -1 : 1) * (0.85 + r() * 0.25);
-            const sd = SPAN * (0.10 + r() * 0.05);
-            net.push({ x: nx + Math.cos(sa) * sd, y: ny + Math.sin(sa) * sd, px: nx, py: ny, s: sizes[i] * 0.4, ph: r() * 6.28, at: i * 0.5 + 0.3 });
-          }
-          px = nx; py = ny;
-        }
+    function gem(x, y, gs) {
+      let g = ctx.createRadialGradient(x, y, 0, x, y, gs * 2.2);
+      g.addColorStop(0, 'rgba(139,92,246,0.16)');
+      g.addColorStop(1, 'rgba(139,92,246,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.shadowColor = '#8b5cf6';
+      ctx.shadowBlur = 28;
+      const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
+      gg.addColorStop(0, '#C4B5FD');
+      gg.addColorStop(1, '#6D28D9');
+      ctx.fillStyle = gg;
+      const cr = gs * 0.2;
+      ctx.beginPath();
+      ctx.moveTo(-gs / 2 + cr, -gs / 2);
+      ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
+      ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr);
+      ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr);
+      ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ideas raining down toward the gem — many, faint, converging
+    function stream(gx, gy, x0, x1, topY, n, seed) {
+      const r = rng(seed);
+      ctx.save();
+      for (let i = 0; i < n; i++) {
+        const sx = x0 + r() * (x1 - x0);
+        const t = Math.pow(r(), 0.8) * 0.9;
+        const x = sx + (gx - sx) * t + (r() - 0.5) * 14;
+        const y = topY + (gy - 40 - topY) * t + (r() - 0.5) * 12;
+        const d = 1.1 + r() * 1.7;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
+        ctx.globalAlpha = 0.22 + 0.5 * t;
+        ctx.fillStyle = '#E4C97E';
+        ctx.shadowColor = 'rgba(228,201,126,0.5)';
+        ctx.shadowBlur = 4;
+        ctx.fillRect(-d, -d, d * 2, d * 2);
+        ctx.restore();
       }
+      ctx.restore();
     }
 
+    // the few that come out the other side, each with its potential
+    function found(items, gx, gy) {
+      items.forEach(it => {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(228,201,126,0.4)';
+        ctx.lineWidth = 1.5;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(gx + (it[0] - gx) * 0.12, gy + 26);
+        ctx.lineTo(it[0], it[1] - it[2] * 1.42 - 6);
+        ctx.stroke();
+        ctx.restore();
+        goldDiamond(it[0], it[1], it[2]);
+        const left = it[4] === 'l';
+        txt(it[3], it[0] + (left ? -1 : 1) * (it[2] * 1.42 + 12), it[1] + 6,
+          '600 ' + it[5] + 'px Inter, sans-serif', 0.95, left ? 'right' : 'left');
+      });
+    }
 
-    // put a label where it collides with nothing
-    function placeLabel(list, n, halfW, halfH) {
-      const base = Math.atan2(n.y - n.py, n.x - n.px);
-      let best = null, bestScore = -1e9;
-      for (let ring = 0; ring < 4; ring++) {
-        const rad = n.s * 1.42 + 12 + ring * 13;
-        for (let i = 0; i < 14; i++) {
-          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.42;
-          // reach only as far as the label's own extent in that direction, so a
-          // label sitting sideways isn't flung as far as a tall one would be
-          const ext = Math.abs(Math.cos(a)) * halfW + Math.abs(Math.sin(a)) * halfH;
-          const lx = n.x + Math.cos(a) * (rad + ext);
-          const ly = n.y + Math.sin(a) * (rad + ext);
-          if (lx - halfW < 10 || lx + halfW > w - 10 || ly - halfH < 16 || ly + halfH > h - 12) continue;
-          let clear = 1e9;
-          for (let j = 0; j < list.length; j++) {
-            const m = list[j];
-            if (m === n) continue;
-            const mr = m.s * 1.42;
-            const gx = Math.abs(lx - m.x) - (halfW + mr + 6);
-            const gy = Math.abs(ly - m.y) - (halfH + mr + 6);
-            clear = Math.min(clear, Math.max(gx, gy));
-            if (clear < -40) break;
-          }
-          const score = clear - ring * 4 - Math.abs(i) * 1.2;
-          if (score > bestScore) { bestScore = score; best = [lx, ly]; }
-          if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
-        }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      const wide = w >= 900;
+
+      if (wide) {
+        const GX = w * 0.79, GY = h * 0.38, GS = 62;
+        stream(GX, GY, GX - w * 0.115, GX + w * 0.115, -12, 100, 7);
+        gem(GX, GY, GS);
+        found([
+          [w * 0.705, h * 0.60, 11, '$600M', 'l', 16],
+          [w * 0.865, h * 0.68, 15, '$950M', 'r', 17],
+          [w * 0.765, h * 0.85, 20, '$1.4B', 'r', 19],
+        ], GX, GY);
+      } else {
+        // the copy sits on top of this canvas; the funnel lives in the band
+        // reserved beneath it
+        const box = c.parentElement;
+        const inner = box.querySelector && box.querySelector('.hero-inner');
+        const bottom = inner ? inner.offsetTop + inner.offsetHeight : h * 0.45;
+        const band = Math.max(250, h - bottom - 14);
+        const top = h - band;
+        const GX = w * 0.5, GY = top + band * 0.34, GS = 48;
+        stream(GX, GY, w * 0.2, w * 0.8, top + 4, 70, 7);
+        gem(GX, GY, GS);
+        found([
+          [w * 0.28, top + band * 0.56, 9, '$600M', 'r', 12],
+          [w * 0.68, top + band * 0.68, 13, '$950M', 'r', 13],
+          [w * 0.42, top + band * 0.88, 17, '$1.4B', 'r', 14],
+        ], GX, GY);
       }
-      if (best) return [best[0], best[1] + halfH * 0.72];
-      const fx = Math.min(w - halfW - 10, Math.max(halfW + 10, n.x));
-      const fy = Math.min(h - 12, Math.max(halfH + 18, n.y + n.s * 1.42 + halfH + 12));
-      return [fx, fy + halfH * 0.4];
-    }
-
-    function idea(seeded) {
-      const a = Math.random() * Math.PI * 2;
-      const E = edge(a);
-      return {
-        a: a,
-        d: seeded ? GS + Math.random() * (E - GS) : E + Math.random() * 90,
-        r: 1.5 + Math.random() * 2.2,
-        o: 0.16 + Math.random() * 0.26,
-        v: 10 + Math.random() * 20
-      };
     }
 
     function layout() {
@@ -1362,176 +1402,44 @@
       w = box.clientWidth; h = box.clientHeight;
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      wide = w >= 900;
-      if (wide) {
-        CX = w * 0.62; CY = h * 0.47; GS = 58;
-        RX = w * 0.30; RY = h * 0.52;
-        // the chains' full reach is about 1.0 * SPAN plus the gem offset and a
-        // label; the fan's outer angles cut the vertical extent to ~0.62
-        SPAN = Math.max(180, Math.min(w - CX - 130, (h * 0.5 - 48) / 0.72));
-      } else {
-        // narrow: the copy sits on top of this canvas, so the constellation
-        // lives in the reserved band underneath it, gem left, chains right
-        const inner = box.querySelector && box.querySelector('.hero-inner');
-        const bottom = inner ? inner.offsetTop + inner.offsetHeight : h * 0.45;
-        const band = Math.max(230, h - bottom - 14);
-        CX = w * 0.24; CY = h - band * 0.5 + 8; GS = 34;
-        RX = w * 0.40; RY = band * 0.44;
-        SPAN = Math.max(140, Math.min(w - CX - 96, (band * 0.5 - 48) / 0.72));
-      }
-      build();
-      ideas = [];
-      const n = wide ? 110 : 60;
-      for (let i = 0; i < n; i++) ideas.push(idea(true));
+      draw();
     }
 
-    function step(dt) {
-      t += dt;
-      for (const p of ideas) {
-        p.d -= p.v * dt;
-        if (p.d <= GS * 0.72) { Object.assign(p, idea(false)); pulse = Math.min(1, pulse + 0.16); }
-      }
-      pulse = Math.max(0, pulse - dt * 0.7);
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-
-      for (const p of ideas) {
-        const x = CX + Math.cos(p.a) * p.d, y = CY + Math.sin(p.a) * p.d;
-        const fade = Math.min(1, Math.max(0, (p.d - GS * 0.72) / 70));
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(x, y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(139,92,246,' + (p.o * fade).toFixed(2) + ')';
-        ctx.shadowColor = 'rgba(139,92,246,0.5)';
-        ctx.shadowBlur = 6;
-        ctx.fill();
-        ctx.restore();
-      }
-
-      for (const n of net) {
-        const g = Math.min(1, Math.max(0, (t - 0.5 - n.at) / 0.75));
-        if (g <= 0) continue;
-        const e = g * g * (3 - 2 * g);
-        const nx = n.px + (n.x - n.px) * e, ny = n.py + (n.y - n.py) * e;
-        const tw = 0.78 + 0.22 * Math.sin(t * 0.85 + n.ph);
-        ctx.save();
-        ctx.strokeStyle = 'rgba(228,201,126,' + (0.46 * tw * e).toFixed(2) + ')';
-        ctx.lineWidth = n.s > 5 ? 2.3 : 1.5;
-        ctx.beginPath();
-        ctx.moveTo(n.px, n.py); ctx.lineTo(nx, ny);
-        ctx.stroke();
-        ctx.restore();
-        ctx.save();
-        ctx.translate(nx, ny);
-        ctx.rotate(Math.PI / 4);
-        if (n.s > 4.5) {
-          ctx.shadowColor = 'rgba(228,201,126,' + (0.85 * tw).toFixed(2) + ')';
-          ctx.shadowBlur = 10 + 8 * tw;
-          ctx.fillStyle = goldFill(0, 0, n.s);
-        } else {
-          ctx.fillStyle = 'rgba(240,220,160,' + (0.6 + 0.32 * tw).toFixed(2) + ')';
-        }
-        const ns = n.s * (0.45 + 0.55 * e);
-        ctx.fillRect(-ns, -ns, ns * 2, ns * 2);
-        ctx.restore();
-        if (n.val && e > 0.6) {
-          const pos = placeLabel(net, n, n.val.length * 4.9 + 4, 8.5);
-          if (!pos) continue;
-          ctx.save();
-          ctx.globalAlpha = (e - 0.6) / 0.4;
-          ctx.textAlign = 'center';
-          ctx.shadowColor = 'rgba(8,6,14,0.95)';
-          ctx.shadowBlur = 9;
-          ctx.fillStyle = VALUE_INK;
-          ctx.font = VALUE_FONT;
-          ctx.fillText(n.val, pos[0], pos[1]);
-          ctx.restore();
-        }
-      }
-
-      const pl = 0.9 + 0.1 * Math.sin(t * 0.8) + pulse * 0.4;
-      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, GS * 2.4 * pl);
-      g.addColorStop(0, 'rgba(139,92,246,' + (0.2 + pulse * 0.16).toFixed(2) + ')');
-      g.addColorStop(1, 'rgba(139,92,246,0)');
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, w, h);
-
-      ctx.save();
-      ctx.translate(CX, CY);
-      ctx.rotate(Math.PI / 4);
-      ctx.shadowColor = '#8b5cf6';
-      ctx.shadowBlur = 26 * pl;
-      const gg = ctx.createLinearGradient(-GS / 2, -GS / 2, GS / 2, GS / 2);
-      gg.addColorStop(0, '#C4B5FD');
-      gg.addColorStop(1, '#6D28D9');
-      ctx.fillStyle = gg;
-      const cr = GS * 0.2;
-      ctx.beginPath();
-      ctx.moveTo(-GS / 2 + cr, -GS / 2);
-      ctx.arcTo(GS / 2, -GS / 2, GS / 2, GS / 2, cr);
-      ctx.arcTo(GS / 2, GS / 2, -GS / 2, GS / 2, cr);
-      ctx.arcTo(-GS / 2, GS / 2, -GS / 2, -GS / 2, cr);
-      ctx.arcTo(-GS / 2, -GS / 2, GS / 2, -GS / 2, cr);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-    }
-
-    function frame(ts) {
-      const dt = Math.min(0.05, last ? (ts - last) / 1000 : 0.016);
-      last = ts;
-      step(dt); draw();
-      requestAnimationFrame(frame);
-    }
-
-    // On the static path nothing repaints on its own, so a resize has to
-    // re-lay out AND repaint or the canvas is left blank.
-    const still = () => { t = 8; draw(); };
     let rt, lastW = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
-      if (window.innerWidth === lastW) return;   // ignore iOS address-bar resizes
+      if (window.innerWidth === lastW) return;
       lastW = window.innerWidth;
-      rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
+      rt = setTimeout(layout, 150);
     });
     layout();
-    if (reduce) still();
-    else requestAnimationFrame(frame);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
   })();
 
 
-  // The intake — Hollywood's small repeated wins above; below, a network that only
-  // ever grows outward, until it has taken all the room there is.
+  // The intake — every kind of story streams into the gem, and the few with
+  // massive potential come out the other side.
   (function () {
     const c = document.getElementById('intake-field');
     if (!c) return;
     const ctx = c.getContext('2d');
-    const reduce = true;   // every graphic is a still frame — see STILL_ONLY note
 
-    // The material itself — any kind of story can carry the potential
     const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video',
                      'Podcasts', 'Stand-up comedy', 'News reports', 'Historical records'];
-    const VALUES = ['$8.8B', '$4.2B', '$1.2B', '$6.5B', '$2.9B', '$3.7B'];
 
     let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
-    // vert = the narrow layout: sources across the top, flow downward
     let vert = false, SRC = [], srcFont = '600 15px Inter, sans-serif';
-    let parts = [], nodes = [], links = [], trunks = [], vi = 0, MAXT = 15;
-    let pulse = 0, growIn = 0.8, fails = 0, frozen = false;
-    let last = 0, settled = false, settleAge = 0;
 
-    const rnd = () => Math.random();
-    let tseed = 0;
-    function trnd() {
-      tseed |= 0; tseed = (tseed + 0x6D2B79F5) | 0;
-      let x = Math.imul(tseed ^ (tseed >>> 15), 1 | tseed);
-      x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
-      return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+    function rng(a) {
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let x = Math.imul(a ^ (a >>> 15), 1 | a);
+        x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+        return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+      };
     }
     const ease = t => t * t * (3 - 2 * t);
-    const clamp01 = t => Math.min(1, Math.max(0, t));
+
     // Where each source sits. Wide: a column down the left. Narrow: rows packed
     // across the top, measured so they always fit the width they're given.
     function placeSources() {
@@ -1542,13 +1450,9 @@
         SOURCES.forEach((name, i) => SRC.push({ name: name, x: X0 + 7, y: h * 0.14 + i * step, tx: X0 + 28 }));
         return;
       }
-      // Two balanced rows, icon above each name — one row forced the type down
-      // to 11px, which is too small to carry the point.
       srcFont = '600 16px Inter, sans-serif';
       ctx.font = srcFont;
       const TOP = 18, ROWH = 54, LABEL_DY = 21;
-      // Pack by measured width, not a fixed split — the list has grown and will
-      // keep growing, so the row count has to follow it.
       const MAXW = w - 24;
       const rows = [[]];
       let used = 0;
@@ -1570,116 +1474,6 @@
         });
       });
       SRC.bottom = TOP + rows.length * ROWH - 12;
-    }
-
-    // A drifting idea: travels from its source to the gem along a straight
-    // line, parameterised 0..1 so the same code serves both orientations.
-    function spawn(seeded) {
-      const src = SRC[Math.floor(rnd() * SRC.length)] || { x: XS, y: h * 0.5 };
-      const sx = vert ? src.x + (rnd() - 0.5) * 40 : XS - rnd() * 40;
-      const sy = vert ? SRC.bottom + 8 + rnd() * 10 : src.y + (rnd() - 0.5) * 34;
-      return {
-        sx: sx, sy: sy,
-        u: seeded ? rnd() : -rnd() * 0.3,
-        s: 1.3 + rnd() * 2, o: 0.3 + rnd() * 0.4, v: 0.048 + rnd() * 0.062
-      };
-    }
-    const partX = p => p.sx + (CX - p.sx) * ease(clamp01(p.u));
-    const partY = p => p.sy + (CY - p.sy) * ease(clamp01(p.u));
-
-    function seedTree() {
-      nodes = []; links = []; trunks = []; fails = 0; frozen = false;
-      tseed = 20260805;
-      MAXT = 6;
-      addTrunk(); addTrunk();
-    }
-
-    function layout() {
-      const box = c.parentElement;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = box.clientWidth; h = box.clientHeight;
-      c.width = w * dpr; c.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      wide = w >= 780;
-      vert = !wide;
-      X0 = wide ? Math.max(28, w * 0.05) : 14;
-      XS = wide ? w * 0.185 : 24;
-      placeSources();
-      if (vert) {
-        // sources sit across the top; the gem hangs below them and the tree
-        // grows down into the rest of the frame
-        CX = w * 0.5; CY = (SRC.bottom || 60) + 122;
-        R = 34;
-      } else {
-        CX = w * 0.40; CY = h * 0.5;
-        R = 52;
-      }
-      parts = [];
-      const n = vert ? 80 : 150;
-      for (let i = 0; i < n; i++) parts.push(spawn(true));
-      seedTree();
-      growIn = 0.8;
-      settled = false; settleAge = 0; trunks.valsDealt = false;
-    }
-
-    function diamond(x, y, s, fill, glow, blur) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(Math.PI / 4);
-      if (glow) { ctx.shadowColor = glow; ctx.shadowBlur = blur || 12; }
-      ctx.fillStyle = fill;
-      ctx.fillRect(-s, -s, s * 2, s * 2);
-      ctx.restore();
-    }
-    function goldFill(x, y, s) {
-      const g = ctx.createLinearGradient(x - s, y - s, x + s, y + s);
-      g.addColorStop(0, '#F0DCA0');
-      g.addColorStop(1, '#B08A3E');
-      return g;
-    }
-    function line(x1, y1, x2, y2, a, lw) {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(228,201,126,' + a + ')';
-      ctx.lineWidth = lw || 1;
-      ctx.beginPath();
-      ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
-      ctx.stroke();
-      ctx.restore();
-    }
-
-    // put a label where it collides with nothing
-    function placeLabel(list, n, halfW, halfH) {
-      const base = Math.atan2(n.y - n.py, n.x - n.px);
-      let best = null, bestScore = -1e9;
-      for (let ring = 0; ring < 4; ring++) {
-        const rad = n.s * 1.42 + 12 + ring * 13;
-        for (let i = 0; i < 14; i++) {
-          const a = base + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * 0.42;
-          // reach only as far as the label's own extent in that direction, so a
-          // label sitting sideways isn't flung as far as a tall one would be
-          const ext = Math.abs(Math.cos(a)) * halfW + Math.abs(Math.sin(a)) * halfH;
-          const lx = n.x + Math.cos(a) * (rad + ext);
-          const ly = n.y + Math.sin(a) * (rad + ext);
-          if (lx - halfW < 10 || lx + halfW > w - 10 || ly - halfH < 16 || ly + halfH > h - 12) continue;
-          let clear = 1e9;
-          for (let j = 0; j < list.length; j++) {
-            const m = list[j];
-            if (m === n) continue;
-            const mr = m.s * 1.42;
-            const gx = Math.abs(lx - m.x) - (halfW + mr + 6);
-            const gy = Math.abs(ly - m.y) - (halfH + mr + 6);
-            clear = Math.min(clear, Math.max(gx, gy));
-            if (clear < -40) break;
-          }
-          const score = clear - ring * 4 - Math.abs(i) * 1.2;
-          if (score > bestScore) { bestScore = score; best = [lx, ly]; }
-          if (clear > 0 && ring === 0 && i < 3) return [lx, ly + halfH * 0.72];
-        }
-      }
-      if (best) return [best[0], best[1] + halfH * 0.72];
-      const fx = Math.min(w - halfW - 10, Math.max(halfW + 10, n.x));
-      const fy = Math.min(h - 12, Math.max(halfH + 18, n.y + n.s * 1.42 + halfH + 12));
-      return [fx, fy + halfH * 0.4];
     }
 
     function icon(kind, x, y) {
@@ -1736,179 +1530,91 @@
       ctx.restore();
     }
 
-    function inBounds(x, y) {
-      if (vert) return y > CY - R - 6 && y < h - 40 && x > 44 && x < w - 44;
-      return y > 34 && y < h - 52 && x < w - 74 && x > CX - R - 6;
-    }
-    function clear(x, y, s) {
-      if (Math.hypot(x - CX, y - CY) < R + 38) return false;
-      for (const n of nodes) {
-        if (Math.hypot(n.x - x, n.y - y) < (n.s + s) * 1.7 + (vert ? 24 : 16)) return false;
-      }
-      return true;
-    }
-
-    // a brand new original, in its own lane out of GEM
-    function addTrunk() {
-      if (trunks.length >= MAXT) return false;
-      const used = trunks.map(t => t.lane);
-      const free = [];
-      for (let i = 0; i < MAXT; i++) if (used.indexOf(i) < 0) free.push(i);
-      if (!free.length) return false;
-      const lane = free[Math.floor(trnd() * free.length)];
-      const spread = vert ? 1.15 : 1.3;
-      const mid = vert ? Math.PI / 2 : 0;
-      const a = mid - spread + (lane / (MAXT - 1)) * spread * 2 + (trnd() - 0.5) * 0.1;
-      const d = R + 40 + trnd() * 14;
-      const x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d;
-      if (!inBounds(x, y) || !clear(x, y, 3.4)) return false;
-      const n = {
-        x: x, y: y, px: CX + Math.cos(a) * (R + 4), py: CY + Math.sin(a) * (R + 4),
-        s: 4.5 + trnd() * 1.2, t: 0, big: false, rev: 0
-      };
-      nodes.push(n);
-      trunks.push({ lane: lane, a: a, tip: n, prev: n, root: n, age: 0, done: false, len: 1, val: null });
-      return true;
-    }
-
-    // it grows — each step a little bigger than the last
-    function growTrunk(tr) {
-      const p = tr.tip;
-      for (let att = 0; att < 6; att++) {
-        const a = tr.a + (trnd() - 0.5) * (vert ? 0.42 : 0.55);
-        const d = (vert ? 54 : 48) + trnd() * 30;
-        const x = p.x + Math.cos(a) * d, y = p.y + Math.sin(a) * d;
-        if (!inBounds(x, y)) { tr.done = true; return; }
-        const sz = Math.min(vert ? 11 : 15, p.s * (1.2 + trnd() * 0.14));
-        if (!clear(x, y, sz)) continue;
-        const big = sz > 7.5 && trnd() < 0.5;
-        const node = { x: x, y: y, px: p.x, py: p.y, s: sz, t: 0, big: big, rev: (p.rev || 0) * 3 + 18 + Math.round(trnd() * 30) };
-        nodes.push(node);
-        tr.prev = tr.tip;
-        tr.tip = node;
-        tr.len++;
-        if (trnd() < (vert ? 0.28 : 0.45)) {
-          const sa = a + (trnd() < 0.5 ? -1 : 1) * (0.7 + trnd() * 0.5);
-          const sd = 30 + trnd() * 22;
-          const sx = x + Math.cos(sa) * sd, sy = y + Math.sin(sa) * sd;
-          const ss = Math.max(2, sz * 0.45);
-          if (inBounds(sx, sy) && clear(sx, sy, ss)) {
-            nodes.push({ x: sx, y: sy, px: x, py: y, s: ss, t: 0, big: false });
-          }
-        }
-        if (big) pulse = 1;
-        return;
-      }
-      tr.done = true;
-    }
-
-    function grow() {
-      if (nodes.length > (vert ? 76 : 130)) return;
-      if (trunks.length < MAXT && trnd() < 0.55) { if (addTrunk()) return; }
-      const live = trunks.filter(t => !t.done);
-      if (live.length) { growTrunk(live[Math.floor(trnd() * live.length)]); return; }
-      if (!addTrunk()) frozen = true;
-    }
-
-    function step(dt) {
-      for (const p of parts) {
-        p.u += p.v * dt;
-        if (p.u >= 1) Object.assign(p, spawn(false));
-      }
-
-      growIn -= dt;
-      if (growIn <= 0 && !frozen) { grow(); growIn = 0.2 + trnd() * 0.2; }
-
-
-      for (const n of nodes) n.t += dt;
-      for (const l of links) l.t += dt;
-      pulse = Math.max(0, pulse - dt * 0.9);
-
-      // the values only appear once the whole constellation has finished growing
-      if (!settled) {
-        const doneGrowing = frozen || nodes.length > (vert ? 76 : 130);
-        if (doneGrowing && nodes.every(n => n.t >= 1.1)) settled = true;
-      } else {
-        settleAge += dt;
-      }
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-
-
-
+    function txt(str, x, y, font, alpha, align) {
       ctx.save();
-      ctx.textAlign = vert ? 'center' : 'left';
-      SRC.forEach((sc, i) => {
-        icon(i, sc.x, sc.y);
-        ctx.fillStyle = 'rgba(255,255,255,0.92)';
-        ctx.font = srcFont;
-        ctx.fillText(sc.name, sc.tx, vert ? sc.ty : sc.y + 5);
-      });
+      ctx.textAlign = align || 'left';
+      ctx.globalAlpha = alpha;
+      ctx.font = font;
+      ctx.shadowColor = 'rgba(8,6,14,0.9)';
+      ctx.shadowBlur = 9;
+      ctx.fillStyle = VALUE_INK;
+      ctx.fillText(str, x, y);
       ctx.restore();
+    }
 
-      for (const p of parts) {
-        if (p.u < 0) continue;
-        // fade in as it leaves the source, out as it reaches the gem
-        const fade = Math.min(clamp01(p.u / 0.1), clamp01((1 - p.u) / 0.16));
-        const a = Math.min(0.85, p.o * fade * 1.35);
-        if (a > 0.01) {
-          ctx.save();
-          ctx.beginPath();
-          ctx.arc(partX(p), partY(p), p.s * 0.9, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(139,92,246,' + a.toFixed(2) + ')';
-          ctx.shadowColor = 'rgba(139,92,246,0.55)';
-          ctx.shadowBlur = 6;
-          ctx.fill();
-          ctx.restore();
-        }
-      }
+    function line(x1, y1, x2, y2, a, lw) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(228,201,126,' + a + ')';
+      ctx.lineWidth = lw || 1;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.restore();
+    }
 
-      for (const l of links) {
-        const k = ease(clamp01(l.t / 1.4));
-        if (k <= 0) continue;
-        line(l.a.x, l.a.y, l.a.x + (l.b.x - l.a.x) * k, l.a.y + (l.b.y - l.a.y) * k, (0.22 * k).toFixed(2), 1.4);
-      }
-      for (const n of nodes) {
-        const k = ease(clamp01(n.t / 1.0));
-        if (k <= 0) continue;
-        const x = n.px + (n.x - n.px) * k, y = n.py + (n.y - n.py) * k;
-        line(n.px, n.py, x, y, (0.46 * k).toFixed(2), n.s > 5 ? 2.1 : 1.4);
-        if (n.s > 4.5) diamond(x, y, n.s * (0.5 + 0.5 * k), goldFill(x, y, n.s), 'rgba(228,201,126,0.85)', 13);
-        else diamond(x, y, n.s * (0.5 + 0.5 * k), 'rgba(228,201,126,' + (0.55 + 0.3 * k).toFixed(2) + ')');
-      }
+    function goldDiamond(x, y, s) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.shadowColor = 'rgba(228,201,126,0.8)';
+      ctx.shadowBlur = 16;
+      const g = ctx.createLinearGradient(-s, -s, s, s);
+      g.addColorStop(0, '#F0DCA0');
+      g.addColorStop(1, '#B08A3E');
+      ctx.fillStyle = g;
+      ctx.fillRect(-s, -s, s * 2, s * 2);
+      ctx.restore();
+    }
 
-      if (settled) {
-        if (!trunks.valsDealt) {
-          trunks.valsDealt = true;
-          const vals = VALUES.slice().sort((a, b) => parseFloat(b.slice(1)) - parseFloat(a.slice(1)));
-          trunks.slice()
-            .sort((a, b) => (b.len - a.len) || (b.tip.s - a.tip.s))
-            .forEach((tr, i) => { tr.val = vals[i % vals.length]; });
-        }
-        const k = ease(clamp01(settleAge / 1.1));
+    // the ideas mid-journey — mini gold diamonds drifting toward the gem
+    function drift(seed) {
+      const r = rng(seed);
+      const n = vert ? 60 : 110;
+      for (let i = 0; i < n; i++) {
+        const src = SRC[Math.floor(r() * SRC.length)] || { x: XS, y: h * 0.5 };
+        const sx = vert ? src.x + (r() - 0.5) * 40 : XS - r() * 40;
+        const sy = vert ? (SRC.bottom || 60) + 8 + r() * 10 : src.y + (r() - 0.5) * 34;
+        const u = r();
+        const fade = Math.min(1, u / 0.1, (1 - u) / 0.16);
+        const a = Math.min(0.85, (0.3 + r() * 0.4) * fade * 1.35);
+        if (a <= 0.02) continue;
+        const x = sx + (CX - sx) * ease(u), y = sy + (CY - sy) * ease(u);
+        const d = 1 + r() * 1.6;
         ctx.save();
-        ctx.textAlign = 'center';
-        ctx.globalAlpha = k;
-        ctx.shadowColor = 'rgba(8,6,14,0.95)';
-        ctx.shadowBlur = 9;
-        ctx.fillStyle = VALUE_INK;
-        ctx.font = VALUE_FONT;
-        for (const tr of trunks) {
-          const n = tr.tip;
-          if (n === tr.root) continue;
-          const pos = placeLabel(nodes, n, tr.val.length * 4.9 + 4, 8.5);
-          if (!pos) continue;
-          ctx.fillText(tr.val, pos[0], pos[1]);
-        }
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
+        ctx.globalAlpha = a;
+        ctx.fillStyle = '#E4C97E';
+        ctx.shadowColor = 'rgba(228,201,126,0.55)';
+        ctx.shadowBlur = 5;
+        ctx.fillRect(-d, -d, d * 2, d * 2);
         ctx.restore();
       }
+    }
 
-      // glow scaled to the gem, not a fixed +90 — on a phone that was a 120px
-      // violet wash across a third of the frame
-      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, (R + (vert ? 42 : 90)) * (1 + pulse * 0.25));
-      g.addColorStop(0, 'rgba(139,92,246,' + ((vert ? 0.11 : 0.16) + pulse * 0.22).toFixed(2) + ')');
+    // the few that come out the other side, each with its potential
+    function found(items) {
+      items.forEach(it => {
+        const dx = it[0] - CX, dy = it[1] - CY;
+        const dd = Math.hypot(dx, dy);
+        line(CX + dx / dd * (R + 14), CY + dy / dd * (R + 14),
+          it[0] - dx / dd * (it[2] * 1.42 + 6), it[1] - dy / dd * (it[2] * 1.42 + 6), 0.4, 1.5);
+        goldDiamond(it[0], it[1], it[2]);
+        if (it[4] === 'b') {
+          txt(it[3], it[0], it[1] + it[2] * 1.42 + 20,
+            '600 ' + it[5] + 'px Inter, sans-serif', 0.95, 'center');
+        } else {
+          const left = it[4] === 'l';
+          txt(it[3], it[0] + (left ? -1 : 1) * (it[2] * 1.42 + 12), it[1] + 6,
+            '600 ' + it[5] + 'px Inter, sans-serif', 0.95, left ? 'right' : 'left');
+        }
+      });
+    }
+
+    function gemDraw() {
+      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, R + (vert ? 42 : 90));
+      g.addColorStop(0, 'rgba(139,92,246,' + (vert ? 0.11 : 0.16) + ')');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
@@ -1918,7 +1624,7 @@
       ctx.translate(CX, CY);
       ctx.rotate(Math.PI / 4);
       ctx.shadowColor = '#8b5cf6';
-      ctx.shadowBlur = 24 + pulse * 30;
+      ctx.shadowBlur = 24;
       const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
       gg.addColorStop(0, '#C4B5FD');
       gg.addColorStop(1, '#6D28D9');
@@ -1933,41 +1639,74 @@
       ctx.closePath();
       ctx.fill();
       ctx.restore();
-
     }
 
-    function frame(ts) {
-      const dt = Math.min(0.05, last ? (ts - last) / 1000 : 0.016);
-      last = ts;
-      step(dt); draw();
-      requestAnimationFrame(frame);
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.save();
+      ctx.textAlign = vert ? 'center' : 'left';
+      SRC.forEach((sc, i) => {
+        icon(i, sc.x, sc.y);
+        ctx.fillStyle = 'rgba(255,255,255,0.92)';
+        ctx.font = srcFont;
+        ctx.fillText(sc.name, sc.tx, vert ? sc.ty : sc.y + 5);
+      });
+      ctx.restore();
+
+      drift(7);
+      gemDraw();
+
+      if (!vert) {
+        found([
+          [w * 0.57, h * 0.28, 11, '$550M', 'r', 16],
+          [w * 0.71, h * 0.70, 15, '$800M', 'r', 17],
+          [w * 0.86, h * 0.42, 19, '$1.2B', 'b', 19],
+        ]);
+      } else {
+        found([
+          [w * 0.28, CY + 104, 9, '$550M', 'r', 12],
+          [w * 0.72, CY + 170, 12, '$800M', 'l', 13],
+          [w * 0.46, CY + 268, 16, '$1.2B', 'r', 14],
+        ]);
+      }
     }
 
-    // Static path: grow the whole tree at once, then paint it. A resize rebuilds
-    // the tree, so it has to run this again or the canvas is left blank.
-    const still = () => {
-      for (let i = 0; i < 150 && !frozen; i++) grow();
-      for (const n of nodes) n.t = 3;
-      for (const l of links) l.t = 3;
-      settled = true; settleAge = 3;
+    function layout() {
+      const box = c.parentElement;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = box.clientWidth; h = box.clientHeight;
+      c.width = w * dpr; c.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      wide = w >= 780;
+      vert = !wide;
+      X0 = wide ? Math.max(28, w * 0.05) : 14;
+      XS = wide ? w * 0.185 : 24;
+      placeSources();
+      if (vert) {
+        CX = w * 0.5; CY = (SRC.bottom || 60) + 122;
+        R = 34;
+      } else {
+        CX = w * 0.40; CY = h * 0.5;
+        R = 52;
+      }
       draw();
-    };
+    }
+
     let rt, lastW = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
       if (window.innerWidth === lastW) return;   // ignore iOS address-bar resizes
       lastW = window.innerWidth;
-      rt = setTimeout(() => { layout(); if (reduce) still(); }, 150);
+      rt = setTimeout(layout, 150);
     });
     layout();
-    if (reduce) still();
-    else requestAnimationFrame(frame);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
   })();
 
-  // The model — data clouds above, a screenplay from the side, and the gem
-  // splitting the idea into thousands of strands — five of which surface
-  // with names: the specific things driving this one's potential.
+  // The model — a funnel in three distinct forms: the screenplay splits into
+  // thousands of dimensions (organic scatter), which distill into four ranked
+  // conclusions (an ordered column), which drive the projected range (bars).
   (function () {
     const c = document.getElementById('model-field');
     if (!c) return;
@@ -1976,13 +1715,24 @@
 
     const GOLD = '#E4C97E', VIOLET = '#C4B5FD', CREAM = '#F7E9C4';
 
-    const READINGS = [
-      'Potentially viral scenes',
-      'Extreme comedy',
-      'An anti-hero lead',
-      'Dense character relationships',
-      'Scale & spectacle',
+    const CONCLUSIONS = [
+      ['Hook strength', '99th percentile'],
+      ['Originality', '98th percentile'],
+      ['Character chemistry', '96th percentile'],
+      ['Viral potential', '95th percentile'],
     ];
+
+    // the raw split: an organic, unlabeled scatter — the thousands
+    const VERTS = [
+      [0, 0, 4], [55, -45, 5], [-30, -55, 3], [35, 40, 3.5], [110, -15, 2.5],
+      [-45, 25, 2.5], [192, 18, 4], [230, -20, 5], [215, 75, 5], [265, 30, 2.5],
+      [40, 118, 4], [135, 140, 5], [25, 135, 3], [175, 170, 2.5], [90, -70, 2.5],
+      [160, -55, 3],
+    ];
+    const EDGES = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [6, 7], [6, 8], [6, 9],
+      [0, 10], [10, 11], [10, 12], [10, 13], [1, 14], [6, 15]];
+    // which scatter points gather into each conclusion
+    const FEED = [[1, 14, 4], [7, 15, 9], [8, 13, 6], [11, 10, 12]];
 
     function rng(a) {
       return function () {
@@ -2037,12 +1787,12 @@
       ctx.restore();
     }
 
-    function goldDiamond(x, y, s2) {
+    function diamondGold(x, y, s2, alpha, glow) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(Math.PI / 4);
-      ctx.shadowColor = 'rgba(228,201,126,0.85)';
-      ctx.shadowBlur = 16;
+      ctx.globalAlpha = alpha;
+      if (glow) { ctx.shadowColor = 'rgba(228,201,126,0.85)'; ctx.shadowBlur = 15; }
       const g = ctx.createLinearGradient(-s2, -s2, s2, s2);
       g.addColorStop(0, '#F0DCA0');
       g.addColorStop(1, '#B08A3E');
@@ -2051,58 +1801,30 @@
       ctx.restore();
     }
 
-    function rgb(hex) {
-      return [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)];
-    }
-    function mix(a, b, t) {
-      return [Math.round(a[0] + (b[0] - a[0]) * t), Math.round(a[1] + (b[1] - a[1]) * t), Math.round(a[2] + (b[2] - a[2]) * t)];
-    }
-    const C_GOLD = rgb(GOLD), C_CREAM = rgb(CREAM), C_VIOLET = rgb(VIOLET);
-    function spectrum(t) {
-      const c2 = t < 0.5 ? mix(C_GOLD, C_CREAM, t * 2) : mix(C_CREAM, C_VIOLET, (t - 0.5) * 2);
-      return c2[0] + ',' + c2[1] + ',' + c2[2];
-    }
-
-    function cloud(cx, cy, rx, ry, count, seed) {
+    // the training data — a thick stream of dots pouring toward the gem.
+    // vert=false: flows left-to-right, bending into (x1,y1) late.
+    // vert=true: flows top-to-bottom the same way.
+    function stream(x0, y0, x1, y1, n, seed, vert) {
       const r = rng(seed);
       ctx.save();
-      for (let i = 0; i < count; i++) {
-        const a = r() * Math.PI * 2, d2 = Math.sqrt(r());
-        const x = cx + Math.cos(a) * rx * d2, y = cy + Math.sin(a) * ry * d2;
-        const violet = r() < 0.4;
-        const sz = 0.6 + r() * 1.5;
-        ctx.fillStyle = violet
-          ? 'rgba(167,139,250,' + (0.18 + r() * 0.4).toFixed(2) + ')'
-          : 'rgba(240,235,225,' + (0.12 + r() * 0.36).toFixed(2) + ')';
-        ctx.fillRect(x, y, sz, sz);
+      for (let i = 0; i < n; i++) {
+        const t = Math.pow(r(), 0.85) * 0.94;
+        const jit = 3 + t * 9;
+        let x, y;
+        if (vert) {
+          y = y0 + (y1 - y0) * t + (r() - 0.5) * 10;
+          x = x0 + (x1 - x0) * Math.pow(t, 1.7) + (r() - 0.5) * jit * 2;
+        } else {
+          x = x0 + (x1 - x0) * t + (r() - 0.5) * 10;
+          y = y0 + (y1 - y0) * Math.pow(t, 1.7) + (r() - 0.5) * jit * 2;
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, 1.4 + r() * 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(139,92,246,' + (0.2 + 0.45 * t).toFixed(2) + ')';
+        ctx.shadowColor = 'rgba(139,92,246,0.5)';
+        ctx.shadowBlur = 5;
+        ctx.fill();
       }
-      ctx.restore();
-    }
-
-    function icon(kind, x, y, k) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.scale(k, k);
-      ctx.strokeStyle = GOLD;
-      ctx.lineWidth = 1.6 / k;
-      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-      ctx.shadowColor = 'rgba(228,201,126,0.4)';
-      ctx.shadowBlur = 8;
-      ctx.beginPath();
-      if (kind === 0) {
-        ctx.rect(-13, -10, 26, 6);
-        ctx.moveTo(-10, -10); ctx.lineTo(-6.5, -4);
-        ctx.moveTo(-3, -10); ctx.lineTo(0.5, -4);
-        ctx.moveTo(4, -10); ctx.lineTo(7.5, -4);
-        ctx.rect(-13, -2, 26, 12);
-      } else if (kind === 1) {
-        ctx.rect(-13, -9, 26, 17);
-        ctx.moveTo(-5, 11); ctx.lineTo(5, 11);
-      } else {
-        ctx.rect(-6, -11, 12, 21);
-        ctx.moveTo(-1.5, -3); ctx.lineTo(3.5, 0); ctx.lineTo(-1.5, 3); ctx.closePath();
-      }
-      ctx.stroke();
       ctx.restore();
     }
 
@@ -2124,31 +1846,13 @@
       ctx.restore();
     }
 
-    // the split: a fan of fine strands in the given direction; five run longer
-    // and brighter, and their tip positions come back so they can be named
-    function refraction(gx, gy, gs, len, seed, dir, spread) {
-      const r = rng(seed);
-      const tips = [];
-      const BRIGHT = [14, 48, 84, 120, 155];
-      ctx.save();
-      ctx.lineCap = 'round';
-      const N = 170;
-      for (let i = 0; i < N; i++) {
-        const t = i / (N - 1);
-        const a = dir - spread + t * 2 * spread + (r() - 0.5) * 0.02;
-        const bright = BRIGHT.indexOf(i) >= 0;
-        const L = len * (bright ? 1.3 : 0.55 + r() * 0.45);
-        ctx.strokeStyle = 'rgba(' + spectrum(t) + ',' + (bright ? 0.65 : (0.08 + r() * 0.16)).toFixed(2) + ')';
-        ctx.lineWidth = bright ? 1.3 : 0.8;
-        ctx.beginPath();
-        ctx.moveTo(gx + Math.cos(a) * gs * 0.75, gy + Math.sin(a) * gs * 0.75);
-        const tx = gx + Math.cos(a) * (gs * 0.75 + L), ty = gy + Math.sin(a) * (gs * 0.75 + L);
-        ctx.lineTo(tx, ty);
-        ctx.stroke();
-        if (bright) tips.push({ x: tx, y: ty, t: t });
-      }
-      ctx.restore();
-      return tips;
+
+    // stage two of the funnel: the scatter, pure and unlabeled
+    function scatter(ax, ay, S) {
+      const pts = VERTS.map(v => [ax + v[0] * S, ay + v[1] * S]);
+      EDGES.forEach(e => line(pts[e[0]][0], pts[e[0]][1], pts[e[1]][0], pts[e[1]][1], 'rgba(228,201,126,0.28)', 1));
+      VERTS.forEach((v, vi) => diamondGold(pts[vi][0], pts[vi][1], v[2] * S, 0.4, false));
+      return pts;
     }
 
     function draw() {
@@ -2156,73 +1860,106 @@
       const wide = w >= 900;
 
       if (wide) {
-        txt('MILLIONS OF DATA POINTS ACROSS THE ENTIRE ENTERTAINMENT INDUSTRY', w / 2, 26, '700 10px Inter, sans-serif', VIOLET, 0.7, 'center', '0.12em');
+        const tight = w < 1170;
+        const S = tight ? 0.72 : 0.92;
+        const GX = w * (tight ? 0.2 : 0.21), GY = h * 0.55, GS = 46;
 
-        const cy = 96, cxs = [w * 0.32, w * 0.5, w * 0.68];
-        const labels = ['FILM', 'TV & STREAMING', 'SOCIAL'];
-        cxs.forEach((cx, i) => {
-          cloud(cx, cy, 92, 44, 130, 7 + i);
-          icon(i, cx, cy - 6, 1.15);
-          txt(labels[i], cx, cy + 42, '700 9px Inter, sans-serif', GOLD, 0.7, 'center', '0.13em');
+        // the training data pours down from above — the caption is its title,
+        // the three sources are the heads of the rain
+        const CAPX = Math.max(w * 0.17, 260);
+        txt('AUDIENCE DATA ACROSS ALL MEDIUMS', CAPX, 28, '700 13px Inter, sans-serif', VIOLET, 0.85, 'center', '0.12em');
+        const SRC = [['FILM', CAPX - 120], ['TV', CAPX], ['SOCIAL', CAPX + 120]];
+        SRC.forEach((s, i) => {
+          txt(s[0], s[1], 58, '700 12px Inter, sans-serif', GOLD, 0.85, 'center', '0.13em');
+          stream(s[1], 70, GX, GY - 44, 70, 7 + i, true);
         });
 
-        const GX = w * 0.42, GY = h * 0.47, GS = 46;
-        cxs.forEach(cx => line(cx, cy + 56, GX + (cx - GX) * 0.06, GY - GS * 0.9, 'rgba(139,92,246,0.22)', 1.1));
-
-        const PX = w * 0.13;
-        page(PX, GY, 1.25);
-        txt('A SCREENPLAY', PX, GY + 36, '700 9.5px Inter, sans-serif', CREAM, 0.85, 'center', '0.13em');
-        txt('OR AN IDEA, OR A SERIES BIBLE', PX, GY + 54, '700 8px Inter, sans-serif', '#F3EFE8', 0.4, 'center', '0.11em');
-        line(PX + 24, GY, GX - GS * 0.95, GY, 'rgba(240,220,160,0.55)', 1.6);
-
-        // the split opens down-right; five strands come out with names,
-        // stacked clear of the feed lines above and the sentence below
-        const len = Math.min(w * 0.15, 210);
-        const tips = refraction(GX, GY, GS, len, 13, 0.45, 0.5);
         gem(GX, GY, GS);
-        txt('SPLIT INTO THOUSANDS OF DIMENSIONS', GX - GS * 1.1, GY + GS * 1.42 + 26, '700 9px Inter, sans-serif', VIOLET, 0.6, 'right', '0.12em');
-        tips.sort((a, b) => a.y - b.y).forEach((tp, i) => {
-          txt(READINGS[i], tp.x + 12, tp.y + 4, '500 12.5px Inter, sans-serif', '#F3EFE8', 0.9, 'left');
+
+        // what it reads sits right beneath it
+        const PY = GY + 96;
+        line(GX, GY + 36, GX, PY - 22, 'rgba(240,220,160,0.55)', 1.6);
+        page(GX, PY, 1.25);
+        txt('SCREENPLAYS AND OTHER STORY IDEAS', GX, PY + 36, '700 12.5px Inter, sans-serif', CREAM, 0.95, 'center', '0.12em');
+        txt('SPLIT INTO THOUSANDS OF DIMENSIONS', GX, PY + 57, '700 12.5px Inter, sans-serif', VIOLET, 0.9, 'center', '0.12em');
+
+        // stage two: the scatter
+        const ax = GX + 105, ay = GY - 10;
+        line(GX + 32, GY, ax - 6, ay - 4, 'rgba(228,201,126,0.25)', 1);
+        const pts = scatter(ax, ay, S);
+
+        // stage three: the four conclusions, distilled and ranked
+        const CX = w * (tight ? 0.52 : 0.5);
+        const rows = [GY - 100, GY - 34, GY + 32, GY + 98];
+        const ends = [];
+        CONCLUSIONS.forEach((con, i) => {
+          const ry = rows[i];
+          FEED[i].forEach(vi => line(pts[vi][0] + 4, pts[vi][1], CX - 14, ry, 'rgba(228,201,126,0.13)', 1));
+          diamondGold(CX, ry, 8.5, 1, true);
+          txt(con[0], CX + 17, ry - 1, (tight ? '500 15px ' : '500 16px ') + 'Inter, sans-serif', '#F3EFE8', 0.95, 'left');
+          txt(con[1], CX + 17, ry + 18, '600 13.5px Inter, sans-serif', CREAM, 0.9, 'left');
+          ctx.font = (tight ? '500 15px ' : '500 16px ') + 'Inter, sans-serif';
+          ends.push({ x: CX + 17 + Math.max(ctx.measureText(con[0]).width, 140), y: ry });
         });
 
-        goldDiamond(w * 0.5 - 244, h - 25, 8);
-        txt('We expect $90–150M worldwide, with upside to ~$500M.', w * 0.5 + 12, h - 20, '500 16.5px Inter, sans-serif', CREAM, 1, 'center');
+        // the heading belongs to the four conclusions — they are the why
+        txt('WHY THIS ONE BREAKS OUT', CX + 92, rows[0] - 46, '700 13.5px Inter, sans-serif', GOLD, 0.9, 'center', '0.13em');
+
+        // stage four: the projection — one big find, front and center
+        const maxEnd = Math.max.apply(null, ends.map(e => e.x));
+        const BX = Math.min(w - 160, Math.max(w * 0.85, maxEnd + 170)), BY = h * 0.36;
+        line(maxEnd + 16, GY - 66, BX - 56, BY + 10, 'rgba(228,201,126,0.28)', 1.4);
+        diamondGold(BX, BY, 34, 1, true);
+        txt('~$500M', BX, BY + 86, '700 32px Inter, sans-serif', GOLD, 1, 'center');
+        txt('WORLDWIDE POTENTIAL', BX, BY + 112, '700 11.5px Inter, sans-serif', GOLD, 0.8, 'center', '0.14em');
+        txt('in the right hands', BX, BY + 134, '400 13.5px Inter, sans-serif', VIOLET, 0.9, 'center');
+        txt('We expect $90–150M worldwide.', BX, BY + 166, '500 16px Inter, sans-serif', CREAM, 0.95, 'center');
       } else {
-        txt('MILLIONS OF DATA POINTS', w / 2, 24, '700 9px Inter, sans-serif', VIOLET, 0.7, 'center', '0.11em');
-        txt('ACROSS THE ENTIRE ENTERTAINMENT INDUSTRY', w / 2, 41, '700 9px Inter, sans-serif', VIOLET, 0.5, 'center', '0.11em');
+        txt('AUDIENCE DATA ACROSS ALL MEDIUMS', w / 2, 28, '700 11.5px Inter, sans-serif', VIOLET, 0.85, 'center', '0.1em');
 
-        const cy = 106, cxs = [w * 0.2, w * 0.5, w * 0.8];
-        const labels = ['FILM', 'TV', 'SOCIAL'];
-        cxs.forEach((cx, i) => {
-          cloud(cx, cy, 52, 36, 80, 7 + i);
-          icon(i, cx, cy - 6, 0.95);
-          txt(labels[i], cx, cy + 36, '700 8px Inter, sans-serif', GOLD, 0.7, 'center', '0.12em');
+        const GX = w / 2, GY = 210, GS = 38;
+
+        // the training data streams down from the top
+        const SRC = [['FILM', w * 0.22], ['TV', w * 0.5], ['SOCIAL', w * 0.78]];
+        SRC.forEach((s, i) => {
+          txt(s[0], s[1], 62, '700 11px Inter, sans-serif', GOLD, 0.85, 'center', '0.1em');
+          stream(s[1], 74, GX, GY - 44, 55, 7 + i, true);
         });
 
-        const GX = w * 0.56, GY = h * 0.42, GS = 38;
-        cxs.forEach(cx => line(cx, cy + 48, GX + (cx - GX) * 0.08, GY - GS * 0.9, 'rgba(139,92,246,0.22)', 1));
-
-        const PX = w * 0.14;
-        page(PX, GY, 1.05);
-        txt('A SCREENPLAY', PX, GY + 32, '700 7.5px Inter, sans-serif', CREAM, 0.85, 'center', '0.1em');
-        line(PX + 18, GY, GX - GS * 0.95, GY, 'rgba(240,220,160,0.55)', 1.5);
-
-        // downward split, and the five named readings as a list beneath
-        const fl = Math.min(h * 0.15, 108);
-        refraction(GX, GY, GS, fl, 13, Math.PI / 2, 0.7);
         gem(GX, GY, GS);
-        let y = GY + GS * 0.75 + fl * 1.3 + 30;
-        txt('SPLIT INTO THOUSANDS OF DIMENSIONS — AMONG THEM:', w / 2, y, '700 8.5px Inter, sans-serif', VIOLET, 0.6, 'center', '0.1em');
-        y += 10;
-        READINGS.forEach(rd => {
-          y += 22;
-          goldDiamond(w / 2 - 92, y - 4, 3);
-          txt(rd, w / 2 - 80, y, '500 12px Inter, sans-serif', '#F3EFE8', 0.9, 'left');
+
+        const PY = GY + 76;
+        line(GX, GY + 30, GX, PY - 18, 'rgba(240,220,160,0.55)', 1.5);
+        page(GX, PY, 1.05);
+        txt('SCREENPLAYS AND OTHER STORY IDEAS', w / 2, PY + 32, '700 11px Inter, sans-serif', CREAM, 0.95, 'center', '0.1em');
+        txt('SPLIT INTO THOUSANDS OF DIMENSIONS', w / 2, PY + 52, '700 11px Inter, sans-serif', VIOLET, 0.9, 'center', '0.1em');
+
+        // the scatter, centered beneath the split
+        const spts = scatter(w / 2 - 73, GY + 190, 0.66);
+
+        // the four conclusions — fed by the scatter down the left rail,
+        // so the lines never cross the row text
+        txt('WHY THIS ONE BREAKS OUT', w / 2, GY + 330, '700 12.5px Inter, sans-serif', GOLD, 0.9, 'center', '0.12em');
+        let y = GY + 344;
+        CONCLUSIONS.forEach((con, i) => {
+          y += 34;
+          const p0 = spts[FEED[i][0]];
+          line(p0[0], p0[1] + 6, 40, GY + 260 + i * 8, 'rgba(228,201,126,0.14)', 1);
+          line(40, GY + 260 + i * 8, 40, y - 12, 'rgba(228,201,126,0.14)', 1);
+          line(40, y - 12, w / 2 - 136, y - 5, 'rgba(228,201,126,0.14)', 1);
+          diamondGold(w / 2 - 128, y - 4, 5, 1, true);
+          txt(con[0], w / 2 - 112, y, '500 14.5px Inter, sans-serif', '#F3EFE8', 0.95, 'left');
+          txt(con[1], w / 2 + 44, y, '600 13px Inter, sans-serif', CREAM, 0.95, 'left');
         });
 
-        y += 40;
-        txt('We expect $90–150M worldwide,', w / 2, y, '500 15px Inter, sans-serif', CREAM, 1, 'center');
-        txt('with upside to ~$500M.', w / 2, y + 22, '500 15px Inter, sans-serif', CREAM, 1, 'center');
+        // the projection — one big find beneath the four
+        const BY2 = y + 96;
+        line(w / 2, y + 18, w / 2, BY2 - 50, 'rgba(240,220,160,0.4)', 1.5);
+        diamondGold(w / 2, BY2, 30, 1, true);
+        txt('~$500M', w / 2, BY2 + 80, '700 28px Inter, sans-serif', GOLD, 1, 'center');
+        txt('WORLDWIDE POTENTIAL', w / 2, BY2 + 104, '700 11px Inter, sans-serif', GOLD, 0.8, 'center', '0.12em');
+        txt('in the right hands', w / 2, BY2 + 126, '400 13px Inter, sans-serif', VIOLET, 0.9, 'center');
+        txt('We expect $90–150M worldwide.', w / 2, BY2 + 156, '500 15.5px Inter, sans-serif', CREAM, 0.95, 'center');
       }
     }
 
@@ -2295,21 +2032,21 @@
       ctx.fillText(str, x, y); ctx.restore();
     }
     function fork(x, y, cap, rows, why) {
-      const W = 316, L = x - W / 2, R = x + W / 2, COSTX = R - 62;
+      const W = Math.min(352, w - 36), L = x - W / 2, R = x + W / 2, COSTX = R - 70;
       let yy = y;
-      tleft(cap, L, yy, '700 10px Inter, sans-serif', GOLD, 0.7);
-      tright('COSTS', COSTX, yy, '700 9px Inter, sans-serif', GOLD, 0.45);
-      tright('ADDS', R, yy, '700 9px Inter, sans-serif', GOLD, 0.45);
+      tleft(cap, L, yy, '700 12px Inter, sans-serif', GOLD, 0.8);
+      tright('COSTS', COSTX, yy, '700 10.5px Inter, sans-serif', GOLD, 0.55);
+      tright('ADDS', R, yy, '700 10.5px Inter, sans-serif', GOLD, 0.55);
       for (const r of rows) {
-        yy += r.taken ? 22 : 20;
-        const a = r.taken ? 0.95 : 0.4;
-        const f = r.taken ? '500 13px Inter, sans-serif' : '400 12px Inter, sans-serif';
-        if (r.taken) diamond(L + 4, yy - 4, 4, 0.95, false);
-        tleft(r.label, L + (r.taken ? 14 : 14), yy, f, '#F3EFE8', a);
-        tright(r.cost, COSTX, yy, f, CREAM, r.taken ? 0.95 : 0.4);
-        tright(r.adds, R, yy, r.taken ? '600 13px Inter, sans-serif' : f, CREAM, r.taken ? 1 : 0.4);
+        yy += r.taken ? 24 : 22;
+        const a = r.taken ? 0.95 : 0.45;
+        const f = r.taken ? '500 14.5px Inter, sans-serif' : '400 13px Inter, sans-serif';
+        if (r.taken) diamond(L + 4, yy - 4, 4.5, 0.95, false);
+        tleft(r.label, L + 16, yy, f, '#F3EFE8', a);
+        tright(r.cost, COSTX, yy, f, CREAM, r.taken ? 0.95 : 0.45);
+        tright(r.adds, R, yy, r.taken ? '600 14.5px Inter, sans-serif' : f, CREAM, r.taken ? 1 : 0.45);
       }
-      if (why) { yy += 21; text(why, x, yy, '400 12.5px Inter, sans-serif', VIOLET, 0.9); }
+      if (why) { yy += 23; text(why, x, yy, '400 13.5px Inter, sans-serif', VIOLET, 0.9); }
       return yy;
     }
 
@@ -2341,9 +2078,9 @@
 
         // the safe bet — small, dull
         diamond(S.x, S.y, 13, 0.45, false);
-        text('THE SAFE BET', S.x, S.y + 44, '700 10.5px Inter, sans-serif', GOLD, 0.5, '0.14em');
-        text('$60M', S.x, S.y + 66, '600 17px Inter, sans-serif', CREAM, 0.5);
-        text('costs $50M', S.x, S.y + 84, '400 11px Inter, sans-serif', '#F3EFE8', 0.35);
+        text('THE SAFE BET', S.x, S.y + 44, '700 12px Inter, sans-serif', GOLD, 0.55, '0.14em');
+        text('$90M', S.x, S.y + 68, '600 19px Inter, sans-serif', CREAM, 0.55);
+        text('costs $50M', S.x, S.y + 88, '400 12.5px Inter, sans-serif', '#F3EFE8', 0.4);
 
         // decision one — above the line
         const n1 = qp(S, C, E, 0.40);
@@ -2360,7 +2097,7 @@
         // short canvases (the wide layout can be as low as 400px tall)
         const n2 = qp(S, C, E, 0.70);
         diamond(n2.x, n2.y, 6, 0.85, false);
-        const bx = Math.min(n2.x, E.x - 102 - 172 - 14);
+        const bx = Math.min(n2.x, E.x - 118 - 176 - 14);
         // The table hangs below the path, but the path is lower at the table's
         // left edge than at its node — so clear the path where the table
         // actually starts, not where the marker is. And on short canvases the
@@ -2380,9 +2117,9 @@
 
         // the director's version — big, lit
         diamond(E.x, E.y, 40, 1, true);
-        text("THE DIRECTOR'S VERSION", E.x, E.y - 74, '700 11px Inter, sans-serif', GOLD, 0.95, '0.15em');
-        text('$350M + awards', E.x, E.y + 92, '600 26px Inter, sans-serif', CREAM, 1);
-        text('costs $80M', E.x, E.y + 114, '400 11.5px Inter, sans-serif', GOLD, 0.7);
+        text("THE DIRECTOR'S VERSION", E.x, E.y - 74, '700 12.5px Inter, sans-serif', GOLD, 0.95, '0.15em');
+        text('~$500M + awards', E.x, E.y + 92, '600 28px Inter, sans-serif', CREAM, 1);
+        text('costs $80M', E.x, E.y + 116, '400 13px Inter, sans-serif', GOLD, 0.7);
       } else {
         const cx = w / 2;
         const line = (y0, y1) => {
@@ -2393,9 +2130,9 @@
           ctx.restore();
         };
 
-        text('THE SAFE BET', cx, 26, '700 10.5px Inter, sans-serif', GOLD, 0.5, '0.14em');
+        text('THE SAFE BET', cx, 26, '700 12px Inter, sans-serif', GOLD, 0.55, '0.14em');
         diamond(cx, 66, 12, 0.45, false);
-        text('$60M · costs $50M', cx, 108, '500 13px Inter, sans-serif', CREAM, 0.5);
+        text('$90M · costs $50M', cx, 108, '500 14.5px Inter, sans-serif', CREAM, 0.55);
 
         line(122, 148);
         let yEnd = fork(cx, 164,
@@ -2417,10 +2154,10 @@
 
         line(yEnd + 14, yEnd + 46);
         const by = yEnd + 96;
-        text("THE DIRECTOR'S VERSION", cx, yEnd + 70, '700 10.5px Inter, sans-serif', GOLD, 0.95, '0.14em');
+        text("THE DIRECTOR'S VERSION", cx, yEnd + 70, '700 12px Inter, sans-serif', GOLD, 0.95, '0.14em');
         diamond(cx, by + 30, 32, 1, true);
-        text('$350M + awards', cx, by + 106, '600 23px Inter, sans-serif', CREAM, 1);
-        text('costs $80M', cx, by + 126, '400 11.5px Inter, sans-serif', GOLD, 0.7);
+        text('~$500M + awards', cx, by + 106, '600 25px Inter, sans-serif', CREAM, 1);
+        text('costs $80M', cx, by + 126, '400 13px Inter, sans-serif', GOLD, 0.7);
       }
     }
 
