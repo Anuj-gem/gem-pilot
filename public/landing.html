@@ -130,6 +130,14 @@
     }
     .journey-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     .rec-wrap { width: 100%; margin-top: 40px; }
+    .rec-viz-wrap {
+      position: relative;
+      width: 100vw; margin-left: calc(50% - 50vw);
+      height: clamp(360px, 26vw, 400px);
+      margin-top: 12px;
+    }
+    .rec-viz-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    @media (max-width: 900px) { .rec-viz-wrap { height: 460px; } }
     .journeys, .recviz { display: block; width: 100%; height: auto; }
     .journeys .jp { fill: none; stroke: rgba(228,201,126,0.4); stroke-linecap: round; }
     .journeys .jt { fill: none; stroke: rgba(243,239,232,0.42); stroke-width: 1.1; }
@@ -1132,11 +1140,6 @@
     </h1>
     <div class="hero-record reveal">
       <div class="hrec">
-        <b>500+</b>
-        <span>Creative partners</span>
-      </div>
-      <span class="hrec-gem" aria-hidden="true"></span>
-      <div class="hrec">
         <b>500,000,000+</b>
         <span>Global viewers &middot; last 12 mo</span>
       </div>
@@ -1193,25 +1196,14 @@
 
 <div class="rule"></div>
 
-<!-- The record — twelve months of progress, and just getting started -->
+<!-- The record — the same three worlds, with receipts -->
 <section id="record">
-  <p class="pillar-statement reveal">In under 12 months, we've made incredible progress &mdash; <em>and we're just getting started.</em></p>
+  <p class="pillar-statement reveal">We've already produced some of the internet's most viral videos &mdash; <em>much more coming soon.</em></p>
 
-  <div class="rec-big reveal">
-    <div class="rb"><b>500+</b><span>Creative partners</span></div>
-    <span class="nf-gem" aria-hidden="true"></span>
-    <div class="rb"><b>1,000,000,000+</b><span>Views on social</span></div>
-    <span class="nf-gem" aria-hidden="true"></span>
-    <div class="rb"><b>500,000,000+</b><span>Total global viewers</span></div>
+  <div class="rec-viz-wrap reveal">
+    <canvas id="record-field" aria-hidden="true"></canvas>
   </div>
 
-  <div class="rec-plat reveal" aria-hidden="true">
-    <svg viewBox="0 0 28 24" fill="none" stroke="#E4C97E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="2" width="26" height="6" rx="1.5"/><path d="M4 2 l3.5 6 M11 2 l3.5 6 M18 2 l3.5 6"/><rect x="1" y="10" width="26" height="12" rx="2"/></svg>
-    <svg viewBox="0 0 28 24" fill="none" stroke="#E4C97E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="2" width="26" height="17" rx="3"/><path d="M9 22 h10"/></svg>
-    <svg viewBox="0 0 28 24" fill="none" stroke="#E4C97E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="26" height="13" rx="6.5"/><path d="M7 10 v5 M4.5 12.5 h5"/><circle cx="19.5" cy="10.8" r="1" fill="#E4C97E" stroke="none"/><circle cx="22.5" cy="14" r="1" fill="#E4C97E" stroke="none"/></svg>
-    <svg viewBox="0 0 28 24" fill="none" stroke="#E4C97E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3 L3 20 L14 18 L25 20 L25 3 L14 5 Z"/><path d="M14 5 L14 18"/></svg>
-    <svg viewBox="0 0 28 24" fill="none" stroke="#E4C97E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="1" width="12" height="21" rx="3"/><path d="M12 9 l5.5 2.8 -5.5 2.8 z" fill="#E4C97E" stroke="none"/></svg>
-  </div>
 </section>
 
 <div class="rule"></div>
@@ -1702,6 +1694,204 @@
     });
     layout();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+  })();
+
+  // The record — ideas stream in from the left; what comes out is what
+  // we've already produced: social so far, film & TV next.
+  (function () {
+    const c = document.getElementById('record-field');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let w = 0, h = 0, dpr = 1;
+
+    const GOLD = '#E4C97E', CREAM = '#F7E9C4';
+
+    function rng(a) {
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let x = Math.imul(a ^ (a >>> 15), 1 | a);
+        x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+        return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function txt(str, x, y, font, color, alpha, spacing, glow) {
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.globalAlpha = alpha;
+      ctx.font = font;
+      try { if (spacing) ctx.letterSpacing = spacing; } catch (e) {}
+      ctx.shadowColor = glow ? 'rgba(228,201,126,0.45)' : 'rgba(8,6,14,0.9)';
+      ctx.shadowBlur = glow ? 26 : 9;
+      ctx.fillStyle = color;
+      ctx.fillText(str, x, y);
+      ctx.restore();
+    }
+
+    function line(x0, y0, x1, y1, rgba, lw) {
+      ctx.save();
+      ctx.strokeStyle = rgba;
+      ctx.lineWidth = lw || 1;
+      ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+      ctx.restore();
+    }
+
+    function gem(x, y, gs) {
+      let g = ctx.createRadialGradient(x, y, 0, x, y, gs * 2.2);
+      g.addColorStop(0, 'rgba(139,92,246,0.14)');
+      g.addColorStop(1, 'rgba(139,92,246,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.shadowColor = '#8b5cf6';
+      ctx.shadowBlur = 26;
+      const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
+      gg.addColorStop(0, '#C4B5FD');
+      gg.addColorStop(1, '#6D28D9');
+      ctx.fillStyle = gg;
+      const cr = gs * 0.2;
+      ctx.beginPath();
+      ctx.moveTo(-gs / 2 + cr, -gs / 2);
+      ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
+      ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr);
+      ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr);
+      ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // the ideas streaming in — gold minis, converging on the gem.
+    // vert=false: from the left. vert=true: from the top (narrow screens).
+    function stream(gx, gy, a0, a1, edge, n, seed, vert) {
+      const r = rng(seed);
+      for (let i = 0; i < n; i++) {
+        const s0 = a0 + r() * (a1 - a0);
+        const t = Math.pow(r(), 0.85) * 0.92;
+        let x, y;
+        if (vert) {
+          x = s0 + (gx - s0) * t + (r() - 0.5) * 14;
+          y = edge + (gy - 42 - edge) * t + (r() - 0.5) * 12;
+        } else {
+          y = s0 + (gy - s0) * t + (r() - 0.5) * 14;
+          x = edge + (gx - 42 - edge) * t + (r() - 0.5) * 12;
+        }
+        const d = 1.6 + r() * 2.3;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
+        ctx.globalAlpha = 0.25 + 0.5 * t;
+        ctx.fillStyle = '#E4C97E';
+        ctx.shadowColor = 'rgba(228,201,126,0.5)';
+        ctx.shadowBlur = 5;
+        ctx.fillRect(-d, -d, d * 2, d * 2);
+        ctx.restore();
+      }
+    }
+
+    // the platforms, drawn plainly enough to be unmistakable
+    function icon(kind, x, y) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.strokeStyle = GOLD;
+      ctx.lineWidth = 1.6;
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.shadowColor = 'rgba(228,201,126,0.4)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      if (kind === 0) {
+        // YouTube — rounded screen + play
+        ctx.moveTo(-6, -7);
+        ctx.arcTo(9, -7, 9, 7, 4);
+        ctx.arcTo(9, 7, -9, 7, 4);
+        ctx.arcTo(-9, 7, -9, -7, 4);
+        ctx.arcTo(-9, -7, 9, -7, 4);
+        ctx.closePath();
+        ctx.moveTo(-2.5, -3.5); ctx.lineTo(3.5, 0); ctx.lineTo(-2.5, 3.5); ctx.closePath();
+      } else if (kind === 1) {
+        // TikTok — the note
+        ctx.moveTo(1.5, 6);
+        ctx.arc(-2, 6, 3.5, 0, Math.PI * 2);
+        ctx.moveTo(1.5, 6); ctx.lineTo(1.5, -8);
+        ctx.moveTo(1.5, -8);
+        ctx.quadraticCurveTo(3, -3.5, 8, -3);
+      } else {
+        // Instagram — rounded square, lens, dot
+        ctx.moveTo(-4, -8);
+        ctx.arcTo(8, -8, 8, 8, 5);
+        ctx.arcTo(8, 8, -8, 8, 5);
+        ctx.arcTo(-8, 8, -8, -8, 5);
+        ctx.arcTo(-8, -8, 8, -8, 5);
+        ctx.closePath();
+        ctx.moveTo(3.8, 0); ctx.arc(0, 0, 3.8, 0, Math.PI * 2);
+        ctx.moveTo(5.4, -4.6); ctx.arc(4.7, -4.6, 0.7, 0, Math.PI * 2);
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      const wide = w >= 900;
+
+      if (wide) {
+        const GX = w * 0.30, GY = h * 0.52, GS = 56;
+        stream(GX, GY, GY - 120, GY + 120, 6, 110, 7, false);
+        gem(GX, GY, GS);
+        const LX = w * 0.64;
+        const NUM = w < 1170 ? 46 : 54;
+
+        line(GX + 46, GY - 10, LX - 215, h * 0.30, 'rgba(228,201,126,0.3)', 1.3);
+        txt('SOCIAL MEDIA VIEWERS', LX, h * 0.20, '700 12.5px Inter, sans-serif', GOLD, 0.85, '0.15em');
+        txt('500,000,000+', LX, h * 0.20 + 48, '300 ' + NUM + 'px "Cormorant Garamond", serif', CREAM, 1, '', true);
+        txt('LAST 12 MONTHS', LX, h * 0.20 + 78, '700 11.5px Inter, sans-serif', GOLD, 0.7, '0.16em');
+        icon(0, LX - 46, h * 0.20 + 114);
+        icon(1, LX, h * 0.20 + 114);
+        icon(2, LX + 46, h * 0.20 + 114);
+
+        line(GX + 46, GY + 10, LX - 215, h * 0.70, 'rgba(228,201,126,0.3)', 1.3);
+        txt('FILM & TV', LX, h * 0.63, '700 12.5px Inter, sans-serif', GOLD, 0.85, '0.15em');
+        txt('Multiple projects', LX, h * 0.63 + 44, '300 40px "Cormorant Garamond", serif', CREAM, 1, '', true);
+        txt('IN DEVELOPMENT', LX, h * 0.63 + 72, '700 11.5px Inter, sans-serif', GOLD, 0.7, '0.16em');
+      } else {
+        const GX = w / 2, GY = 90, GS = 46;
+        stream(GX, GY, w * 0.18, w * 0.82, 2, 75, 7, true);
+        gem(GX, GY, GS);
+
+        txt('SOCIAL MEDIA VIEWERS', GX, 176, '700 12px Inter, sans-serif', GOLD, 0.85, '0.14em');
+        txt('500,000,000+', GX, 222, '300 42px "Cormorant Garamond", serif', CREAM, 1, '', true);
+        txt('LAST 12 MONTHS', GX, 250, '700 11px Inter, sans-serif', GOLD, 0.7, '0.14em');
+        icon(0, GX - 46, 286);
+        icon(1, GX, 286);
+        icon(2, GX + 46, 286);
+
+        txt('FILM & TV', GX, 360, '700 12px Inter, sans-serif', GOLD, 0.85, '0.14em');
+        txt('Multiple projects', GX, 402, '300 36px "Cormorant Garamond", serif', CREAM, 1, '', true);
+        txt('IN DEVELOPMENT', GX, 430, '700 11px Inter, sans-serif', GOLD, 0.7, '0.14em');
+      }
+    }
+
+    function layout() {
+      const box = c.parentElement;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = box.clientWidth; h = box.clientHeight;
+      c.width = w * dpr; c.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw();
+    }
+
+    let rt, lastW = window.innerWidth;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      if (window.innerWidth === lastW) return;
+      lastW = window.innerWidth;
+      rt = setTimeout(layout, 150);
+    });
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
   })();
 
   // The model — a funnel in three distinct forms: the screenplay splits into
