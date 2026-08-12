@@ -239,7 +239,7 @@
     .uf-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: 470px;
+      height: 500px;
       margin-top: 36px;
     }
     .uf-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
@@ -1155,7 +1155,7 @@
 <!-- How we use AI — the three things, tight -->
 <section id="see">
   <p class="pillar-statement reveal">How we use <em>AI.</em></p>
-  <p class="use-sub reveal">Our AI doesn&rsquo;t replace people in the creative process &mdash; it allows the GEM team to find film projects with massive potential and develop them into huge hits.</p>
+  <p class="use-sub reveal">Our AI doesn&rsquo;t replace great entertainers &mdash; it makes them greater: finding ideas no one else can see, and making films that weren&rsquo;t possible before.</p>
 
   <div class="uf-wrap reveal">
     <canvas id="use-field" aria-hidden="true"></canvas>
@@ -1545,17 +1545,17 @@
       const r = rng(seed);
       for (let i = 0; i < n; i++) {
         const sx = x0 + r() * (x1 - x0), sy = y0 + r() * (y1 - y0);
-        const t = Math.pow(r(), 0.6) * 0.92;
+        const t = Math.pow(r(), 0.85) * 0.94;
         let x, y;
         if (vert) {
           y = sy + ((gy - 48) - sy) * t + (r() - 0.5) * 8;
-          x = sx + (gx - sx) * Math.pow(t, 1.2) + (r() - 0.5) * 8;
+          x = sx + (gx - sx) * Math.pow(t, 1.5) + (r() - 0.5) * 8;
         } else {
           x = sx + ((gx - 52) - sx) * t + (r() - 0.5) * 8;
-          y = sy + (gy - sy) * Math.pow(t, 1.2) + (r() - 0.5) * 8;
+          y = sy + (gy - sy) * Math.pow(t, 1.5) + (r() - 0.5) * 8;
         }
         if (Math.hypot(x - gx, y - gy) < 58) continue;
-        const d = 1.1 + r() * 1.8;
+        const d = 1.0 + r() * 1.2 + t * 1.2;
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(Math.PI / 4);
@@ -1580,7 +1580,7 @@
       txt(F.taken[0], L + 18, yy,
         (compact ? '500 15px ' : '500 16px ') + 'Inter, sans-serif', '#F3EFE8', 0.95, 'left');
       if (!compact) txt(F.taken[1], COSTX, yy, '500 16px Inter, sans-serif', CREAM, 0.95, 'right');
-      txt(F.taken[2], R, yy, '600 16px Inter, sans-serif', CREAM, 1, 'right');
+      txt(F.taken[2], R, yy, '600 16px Inter, sans-serif', '#8FCF9F', 1, 'right');
       yy += 26;
       txt(F.other[0], L + 18, yy, (compact ? '400 13.5px ' : '400 14.5px ') + 'Inter, sans-serif', '#F3EFE8', 0.45, 'left');
       if (!compact) txt(F.other[1], COSTX, yy, '400 14.5px Inter, sans-serif', CREAM, 0.45, 'right');
@@ -1600,10 +1600,13 @@
         const CW = Math.min(1100, w - 112), L0 = 56 + Math.max(0, (w - 1352) / 2);
         const cx = f => L0 + CW * f;
 
-        // the three stages, marked under their own zones
+        // the three stages, marked under their own zones — each with its line
         txt('SOURCE', cx(0.02), 452, '700 16px Inter, sans-serif', GOLD, 0.95, 'left', '0.2em');
+        txt('Look everywhere for great stories.', cx(0.02), 478, '400 14.5px Inter, sans-serif', '#F3EFE8', 0.8, 'left');
         txt('IDENTIFY', cx(0.30), 452, '700 16px Inter, sans-serif', GOLD, 0.95, 'left', '0.2em');
+        txt('Find the ones with huge global appeal.', cx(0.30), 478, '400 14.5px Inter, sans-serif', '#F3EFE8', 0.8, 'left');
         txt('DEVELOP', cx(0.58), 452, '700 16px Inter, sans-serif', GOLD, 0.95, 'left', '0.2em');
+        txt('Maximize the potential of every story.', cx(0.58), 478, '400 14.5px Inter, sans-serif', '#F3EFE8', 0.8, 'left');
 
         // source — and the scale of it
         FORMATS.forEach((f, i) => {
@@ -1612,7 +1615,7 @@
           txt(f[0], cx(0) + 18, fy, '500 15px Inter, sans-serif', '#F3EFE8', 0.85, 'left');
         });
         const G = [cx(0.30), 330];
-        drift(G[0], G[1], cx(0.135), cx(0.165), 96, 434, 150, 7, false);
+        drift(G[0], G[1], cx(0.13), cx(0.155), 96, 434, 150, 7, false);
         gem(G[0], G[1], 52);
 
         // the find — straight out of the gem, already worth ~$500M
@@ -1645,27 +1648,34 @@
       } else {
         const GX = w / 2;
         txt('SOURCE', 18, 18, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
+        txt('Look everywhere for great stories.', 18, 40, '400 14px Inter, sans-serif', '#F3EFE8', 0.8, 'left');
         FORMATS.forEach((f, i) => {
           const col = i % 2, row = (i - col) / 2;
-          const fx = w * (0.08 + col * 0.47), fy = 52 + row * 44;
+          const fx = w * (0.08 + col * 0.47), fy = 78 + row * 44;
           icon(f[1], fx, fy - 5);
           txt(f[0], fx + 18, fy, '500 14.5px Inter, sans-serif', '#F3EFE8', 0.85, 'left');
         });
-        drift(GX, 280, w * 0.14, w * 0.86, 192, 222, 80, 7, true);
-        gem(GX, 280, 46);
+        drift(GX, 306, w * 0.14, w * 0.86, 214, 246, 80, 7, true);
+        gem(GX, 306, 46);
 
-        txt('IDENTIFY', 18, 352, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
-        const F = [GX, 404];
-        line(GX, 318, GX, F[1] - 20, 'rgba(228,201,126,0.5)', 2);
+        txt('IDENTIFY', 18, 386, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
+        txt('Find the ones with huge global appeal.', 18, 408, '400 14px Inter, sans-serif', '#F3EFE8', 0.8, 'left');
+        const F = [GX, 448];
+        line(GX, 344, GX, 390, 'rgba(228,201,126,0.5)', 2);
+        line(GX, 418, GX, F[1] - 20, 'rgba(228,201,126,0.5)', 2);
         diamond(F[0], F[1], 13, 1, true);
         txt('~$500M', GX, F[1] + 42, '700 21px Inter, sans-serif', GOLD, 1, 'center');
 
-        txt('DEVELOP', 18, 512, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
-        line(GX, F[1] + 56, GX, 528, 'rgba(228,201,126,0.35)', 1.6);
-        let yy = fork(GX, 548, FORK1, Math.min(400, w - 36), true);
+        txt('DEVELOP', 18, 556, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
+        txt('Maximize the potential of every story.', 18, 578, '400 14px Inter, sans-serif', '#F3EFE8', 0.8, 'left');
+        line(GX, F[1] + 56, GX, 538, 'rgba(228,201,126,0.35)', 1.6);
+        line(GX, 590, GX, 600, 'rgba(228,201,126,0.35)', 1.6);
+        let yy = fork(GX, 616, FORK1, Math.min(400, w - 36), true);
         line(GX, yy + 18, GX, yy + 48, 'rgba(228,201,126,0.35)', 1.6);
+        upArrow(GX + 22, yy + 33);
         yy = fork(GX, yy + 68, FORK2, Math.min(400, w - 36), true);
         line(GX, yy + 18, GX, yy + 50, 'rgba(228,201,126,0.35)', 1.6);
+        upArrow(GX + 22, yy + 34);
 
         const E = [GX, yy + 96];
         diamond(E[0], E[1], 26, 1, true);
