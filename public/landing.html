@@ -232,15 +232,19 @@
     @media (max-width: 760px) {
       .rec-nums { gap: 26px; }
     }
-    .intake-wrap {
+    .use-sub {
+      margin: 18px 0 0; max-width: 780px;
+      font-size: 19px; line-height: 1.5; color: rgba(243,239,232,0.8);
+    }
+    .uf-wrap {
       position: relative;
       width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(440px, 56vh, 580px);
-      margin-top: 40px; margin-bottom: 0;
+      height: 470px;
+      margin-top: 36px;
     }
-    .intake-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .uf-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     #see .pillar-n, #see .pillar-statement, #see .pillar-next { max-width: 900px; }
-    section { padding: 92px 56px; }
+    section { padding: 92px 56px; max-width: 1352px; margin: 0 auto; }
     .sec-h {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(32px, 4.4vw, 58px);
@@ -823,7 +827,6 @@
       .pillar-statement { font-size: clamp(27px, 7.4vw, 38px); }
       .pillar-next { max-width: 100%; font-size: 16px; }
 
-      .intake-wrap { height: 680px; margin-top: 26px; margin-bottom: 0; }
       .journey-wrap { margin-top: 26px; height: 400px; }
       .journeys .bf { font-size: 22px; }
       .journeys .bv { font-size: 30px; }
@@ -966,25 +969,12 @@
     .ai-vbar.lit { box-shadow: 0 0 18px rgba(228,201,126,0.5); }
     .ai-vcap { margin-top: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: rgba(222,216,240,0.55); }
 
-    /* one film, two versions — drawn in the sky like everything else */
-    .vs-wrap {
-      position: relative;
-      width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(400px, 34vw, 480px);
-      margin-top: 40px;
+    @media (max-width: 1150px) {
+      .use-sub {
+      margin: 18px 0 0; max-width: 780px;
+      font-size: 19px; line-height: 1.5; color: rgba(243,239,232,0.8);
     }
-    .vs-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    #engine { padding-bottom: 20px; }
-    .model-wrap {
-      position: relative;
-      width: 100vw; margin-left: calc(50% - 50vw);
-      height: clamp(500px, 38vw, 560px);
-      margin-top: 40px;
-    }
-    .model-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    @media (max-width: 900px) {
-      .vs-wrap { height: 590px; margin-top: 24px; }
-      .model-wrap { height: 1000px; margin-top: 24px; }
+    .uf-wrap { height: 1010px; margin-top: 20px; }
     }
 
     /* casting: two packages, weighed against each other and priced */
@@ -1162,43 +1152,21 @@
 
 <div class="rule"></div>
 
-<!-- The model — narrative decomposition against audience behavior -->
-<section id="model">
-  <p class="pillar-statement reveal">Our audience projection models understand why stories <em>break out.</em></p>
-
-  <div class="model-wrap reveal">
-    <canvas id="model-field" aria-hidden="true"></canvas>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- The engine -->
-<section id="engine">
-  <p class="pillar-statement reveal">We navigate creative risks with precision to maximize <em>the potential of any story.</em></p>
-
-  <div class="vs-wrap reveal">
-    <canvas id="vs-field" aria-hidden="true"></canvas>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- See -->
+<!-- How we use AI — the three things, tight -->
 <section id="see">
-  <p class="pillar-statement reveal">We study every kind of story to find the ones with <em>massive potential.</em></p>
+  <p class="pillar-statement reveal">How we use <em>AI.</em></p>
+  <p class="use-sub reveal">Our AI doesn&rsquo;t replace people in the creative process &mdash; it allows the GEM team to find film projects with massive potential and develop them into huge hits.</p>
 
-  <div class="intake-wrap reveal">
-    <canvas id="intake-field" aria-hidden="true"></canvas>
+  <div class="uf-wrap reveal">
+    <canvas id="use-field" aria-hidden="true"></canvas>
   </div>
-
 </section>
 
 <div class="rule"></div>
 
 <!-- The record — the same three worlds, with receipts -->
 <section id="record">
-  <p class="pillar-statement reveal">We've already produced some of the internet's most viral videos &mdash; <em>much more coming soon.</em></p>
+  <p class="pillar-statement reveal">We've already made some of the internet's most viral videos &mdash; <em>much more coming soon.</em></p>
 
   <div class="rec-viz-wrap reveal">
     <canvas id="record-field" aria-hidden="true"></canvas>
@@ -1277,11 +1245,12 @@
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(Math.PI / 4);
-      ctx.shadowColor = 'rgba(228,201,126,0.8)';
-      ctx.shadowBlur = 16;
+      ctx.shadowColor = 'rgba(255,225,140,0.95)';
+      ctx.shadowBlur = 26;
       const g = ctx.createLinearGradient(-s, -s, s, s);
-      g.addColorStop(0, '#F0DCA0');
-      g.addColorStop(1, '#B08A3E');
+      g.addColorStop(0, '#FFF4C4');
+      g.addColorStop(0.45, '#F2DE9E');
+      g.addColorStop(1, '#C79B48');
       ctx.fillStyle = g;
       ctx.fillRect(-s, -s, s * 2, s * 2);
       ctx.restore();
@@ -1361,13 +1330,14 @@
       const wide = w >= 900;
 
       if (wide) {
-        const GX = w * 0.79, GY = h * 0.38, GS = 62;
-        stream(GX, GY, GX - w * 0.115, GX + w * 0.115, -12, 100, 7);
+        const colL = Math.max(0, (w - 1352) / 2), colW = Math.min(w, 1352);
+        const GX = colL + colW * 0.79, GY = h * 0.38, GS = 62;
+        stream(GX, GY, GX - colW * 0.115, GX + colW * 0.115, -12, 100, 7);
         gem(GX, GY, GS);
         found([
-          [w * 0.705, h * 0.60, 11, '$600M', 'l', 16],
-          [w * 0.865, h * 0.68, 15, '$950M', 'r', 17],
-          [w * 0.765, h * 0.85, 20, '$1.4B', 'r', 19],
+          [colL + colW * 0.705, h * 0.60, 11, '$600M', 'l', 16],
+          [colL + colW * 0.865, h * 0.68, 15, '$950M', 'r', 17],
+          [colL + colW * 0.765, h * 0.85, 20, '$1.4B', 'r', 19],
         ], GX, GY);
       } else {
         // the copy sits on top of this canvas; the funnel lives in the band
@@ -1409,18 +1379,36 @@
   })();
 
 
-  // The intake — every kind of story streams into the gem, and the few with
-  // massive potential come out the other side.
+
+
+
+
+  // How we use AI — one picture: every format pours into the gem, the find
+  // is already worth ~$500M, and the priced creative choices carry it to
+  // ~$1.5B, table by table.
   (function () {
-    const c = document.getElementById('intake-field');
+    const c = document.getElementById('use-field');
     if (!c) return;
     const ctx = c.getContext('2d');
+    let w = 0, h = 0, dpr = 1;
 
-    const SOURCES = ['Screenplays', 'Books', 'Comics', 'Online video',
-                     'Podcasts', 'Stand-up comedy', 'News reports', 'Historical records'];
-
-    let w = 0, h = 0, dpr = 1, X0 = 0, XS = 0, CX = 0, CY = 0, R = 0, wide = true;
-    let vert = false, SRC = [], srcFont = '600 15px Inter, sans-serif';
+    const GOLD = '#E4C97E', VIOLET = '#C4B5FD', CREAM = '#F7E9C4';
+    const FORMATS = [
+      ['Screenplays', 0], ['Books', 1], ['Podcasts', 4],
+      ['Online video', 3], ['News reports', 6], ['Historical records', 7],
+    ];
+    const FORK1 = {
+      cap: 'THE LEAD',
+      taken: ['A-list star — action and comedy', '$20M', '+$600M'],
+      other: ['A straight action star', '$15M', '+$150M'],
+      why: '',
+    };
+    const FORK2 = {
+      cap: 'LOCATIONS & EFFECTS',
+      taken: ['Practical, on location', '$60M', '+$400M'],
+      other: ['All computer-generated', '$25M', '+$50M'],
+      why: "CGI can't capture it — audiences can tell",
+    };
 
     function rng(a) {
       return function () {
@@ -1430,193 +1418,72 @@
         return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
       };
     }
-    const ease = t => t * t * (3 - 2 * t);
 
-    // Where each source sits. Wide: a column down the left. Narrow: rows packed
-    // across the top, measured so they always fit the width they're given.
-    function placeSources() {
-      SRC = [];
-      if (!vert) {
-        srcFont = '600 15px Inter, sans-serif';
-        const step = (h * 0.72) / (SOURCES.length - 1);
-        SOURCES.forEach((name, i) => SRC.push({ name: name, x: X0 + 7, y: h * 0.14 + i * step, tx: X0 + 28 }));
-        return;
-      }
-      srcFont = '600 16px Inter, sans-serif';
-      ctx.font = srcFont;
-      const TOP = 18, ROWH = 54, LABEL_DY = 21;
-      const MAXW = w - 24;
-      const rows = [[]];
-      let used = 0;
-      for (const name of SOURCES) {
-        const iw = Math.max(24, ctx.measureText(name).width);
-        if (used && used + 16 + iw > MAXW) { rows.push([]); used = 0; }
-        rows[rows.length - 1].push(name);
-        used += (used ? 16 : 0) + iw;
-      }
-      rows.forEach((row, ri) => {
-        const ws = row.map(n => Math.max(24, ctx.measureText(n).width));
-        const sum = ws.reduce((a, b) => a + b, 0);
-        const gap = Math.max(16, Math.min(52, (w - 44 - sum) / Math.max(1, row.length - 1)));
-        let x = (w - (sum + gap * (row.length - 1))) / 2;
-        row.forEach((name, i) => {
-          const cx = x + ws[i] / 2;
-          SRC.push({ name: name, x: cx, y: TOP + ri * ROWH, tx: cx, ty: TOP + ri * ROWH + LABEL_DY });
-          x += ws[i] + gap;
-        });
-      });
-      SRC.bottom = TOP + rows.length * ROWH - 12;
-    }
-
-    function icon(kind, x, y) {
+    function txt(str, x, y, font, color, alpha, align, spacing) {
       ctx.save();
-      ctx.translate(x, y);
-      if (vert) ctx.scale(0.95, 0.95);
-      ctx.strokeStyle = 'rgba(196,181,253,0.85)';
-      ctx.lineWidth = 1.35; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-      ctx.beginPath();
-      if (kind === 0) {
-        ctx.rect(-6, -8, 12, 16);
-        ctx.moveTo(-3, -4); ctx.lineTo(3, -4);
-        ctx.moveTo(-3, 0); ctx.lineTo(3, 0);
-        ctx.moveTo(-3, 4); ctx.lineTo(1, 4);
-      } else if (kind === 1) {
-        ctx.moveTo(-7, -6); ctx.lineTo(-7, 7); ctx.lineTo(0, 5); ctx.lineTo(7, 7); ctx.lineTo(7, -6);
-        ctx.lineTo(0, -4); ctx.closePath();
-        ctx.moveTo(0, -4); ctx.lineTo(0, 5);
-      } else if (kind === 2) {
-        ctx.rect(-7, -7, 6, 6); ctx.rect(1, -7, 6, 6);
-        ctx.rect(-7, 1, 6, 6); ctx.rect(1, 1, 6, 6);
-      } else if (kind === 3) {
-        ctx.rect(-8, -6, 16, 12);
-        ctx.moveTo(-1.5, -3); ctx.lineTo(3.5, 0); ctx.lineTo(-1.5, 3); ctx.closePath();
-      } else if (kind === 4) {
-        // podcaster — studio mic
-        ctx.rect(-2.6, -8, 5.2, 9);
-        ctx.moveTo(-5.5, -1); ctx.arc(0, -1, 5.5, 0, Math.PI, false);
-        ctx.moveTo(0, 4.5); ctx.lineTo(0, 8);
-      } else if (kind === 5) {
-        // comedian — mic on a stand
-        ctx.moveTo(3.5, -8); ctx.arc(5.5, -6, 2.8, -Math.PI / 2, Math.PI * 1.2, false);
-        ctx.moveTo(4.6, -3.4); ctx.lineTo(0, 3);
-        ctx.moveTo(0, 3); ctx.lineTo(0, 8);
-        ctx.moveTo(-4, 8); ctx.lineTo(4, 8);
-      } else if (kind === 6) {
-        // journalist — newspaper
-        ctx.rect(-8, -6, 13, 13);
-        ctx.moveTo(5, -3); ctx.lineTo(8, -3); ctx.lineTo(8, 5.5);
-        ctx.moveTo(-5.5, -3); ctx.lineTo(2.5, -3);
-        ctx.moveTo(-5.5, 0.5); ctx.lineTo(2.5, 0.5);
-        ctx.moveTo(-5.5, 4); ctx.lineTo(0, 4);
-      } else {
-        // historian — scroll
-        ctx.moveTo(-5, -7); ctx.lineTo(5, -7);
-        ctx.moveTo(-5, -7); ctx.arc(-5, -5, 2, -Math.PI / 2, Math.PI * 1.5, true);
-        ctx.moveTo(5, -7); ctx.lineTo(5, 5);
-        ctx.moveTo(5, 5); ctx.arc(5, 5.4, 2, -Math.PI / 2, Math.PI * 1.5, false);
-        ctx.moveTo(-5, -3); ctx.lineTo(-5, 7); ctx.lineTo(3, 7);
-        ctx.moveTo(-2, 0); ctx.lineTo(2, 0);
-        ctx.moveTo(-2, 3.5); ctx.lineTo(2, 3.5);
-      }
-      ctx.stroke();
-      ctx.restore();
-    }
-
-    function txt(str, x, y, font, alpha, align) {
-      ctx.save();
-      ctx.textAlign = align || 'left';
+      ctx.textAlign = align || 'center';
       ctx.globalAlpha = alpha;
       ctx.font = font;
+      try { if (spacing) ctx.letterSpacing = spacing; } catch (e) {}
       ctx.shadowColor = 'rgba(8,6,14,0.9)';
-      ctx.shadowBlur = 9;
-      ctx.fillStyle = VALUE_INK;
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = color;
       ctx.fillText(str, x, y);
       ctx.restore();
     }
 
-    function line(x1, y1, x2, y2, a, lw) {
+    function line(x0, y0, x1, y1, rgba, lw) {
       ctx.save();
-      ctx.strokeStyle = 'rgba(228,201,126,' + a + ')';
+      ctx.strokeStyle = rgba;
       ctx.lineWidth = lw || 1;
       ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+      ctx.restore();
+    }
+
+    function diamond(x, y, s2, alpha, glow) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.globalAlpha = alpha;
+      if (glow) { ctx.shadowColor = 'rgba(255,225,140,0.95)'; ctx.shadowBlur = 24; }
+      const g = ctx.createLinearGradient(-s2, -s2, s2, s2);
+      g.addColorStop(0, glow ? '#FFF4C4' : '#F0DCA0');
+      g.addColorStop(1, glow ? '#C79B48' : '#B08A3E');
+      ctx.fillStyle = g;
+      ctx.fillRect(-s2, -s2, s2 * 2, s2 * 2);
+      ctx.restore();
+    }
+
+    function upArrow(x, y) {
+      ctx.save();
+      ctx.strokeStyle = '#8FCF9F';
+      ctx.lineWidth = 2.6;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.shadowColor = 'rgba(143,207,159,0.7)';
+      ctx.shadowBlur = 10;
       ctx.beginPath();
-      ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+      ctx.moveTo(x, y + 9);
+      ctx.lineTo(x, y - 9);
+      ctx.moveTo(x - 6.5, y - 2.5);
+      ctx.lineTo(x, y - 9);
+      ctx.lineTo(x + 6.5, y - 2.5);
       ctx.stroke();
       ctx.restore();
     }
 
-    function goldDiamond(x, y, s) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(Math.PI / 4);
-      ctx.shadowColor = 'rgba(228,201,126,0.8)';
-      ctx.shadowBlur = 16;
-      const g = ctx.createLinearGradient(-s, -s, s, s);
-      g.addColorStop(0, '#F0DCA0');
-      g.addColorStop(1, '#B08A3E');
-      ctx.fillStyle = g;
-      ctx.fillRect(-s, -s, s * 2, s * 2);
-      ctx.restore();
-    }
-
-    // the ideas mid-journey — mini gold diamonds drifting toward the gem
-    function drift(seed) {
-      const r = rng(seed);
-      const n = vert ? 60 : 110;
-      for (let i = 0; i < n; i++) {
-        const src = SRC[Math.floor(r() * SRC.length)] || { x: XS, y: h * 0.5 };
-        const sx = vert ? src.x + (r() - 0.5) * 40 : XS - r() * 40;
-        const sy = vert ? (SRC.bottom || 60) + 8 + r() * 10 : src.y + (r() - 0.5) * 34;
-        const u = r();
-        const fade = Math.min(1, u / 0.1, (1 - u) / 0.16);
-        const a = Math.min(0.85, (0.3 + r() * 0.4) * fade * 1.35);
-        if (a <= 0.02) continue;
-        const x = sx + (CX - sx) * ease(u), y = sy + (CY - sy) * ease(u);
-        const d = 1 + r() * 1.6;
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.rotate(Math.PI / 4);
-        ctx.globalAlpha = a;
-        ctx.fillStyle = '#E4C97E';
-        ctx.shadowColor = 'rgba(228,201,126,0.55)';
-        ctx.shadowBlur = 5;
-        ctx.fillRect(-d, -d, d * 2, d * 2);
-        ctx.restore();
-      }
-    }
-
-    // the few that come out the other side, each with its potential
-    function found(items) {
-      items.forEach(it => {
-        const dx = it[0] - CX, dy = it[1] - CY;
-        const dd = Math.hypot(dx, dy);
-        line(CX + dx / dd * (R + 14), CY + dy / dd * (R + 14),
-          it[0] - dx / dd * (it[2] * 1.42 + 6), it[1] - dy / dd * (it[2] * 1.42 + 6), 0.4, 1.5);
-        goldDiamond(it[0], it[1], it[2]);
-        if (it[4] === 'b') {
-          txt(it[3], it[0], it[1] + it[2] * 1.42 + 20,
-            '600 ' + it[5] + 'px Inter, sans-serif', 0.95, 'center');
-        } else {
-          const left = it[4] === 'l';
-          txt(it[3], it[0] + (left ? -1 : 1) * (it[2] * 1.42 + 12), it[1] + 6,
-            '600 ' + it[5] + 'px Inter, sans-serif', 0.95, left ? 'right' : 'left');
-        }
-      });
-    }
-
-    function gemDraw() {
-      let g = ctx.createRadialGradient(CX, CY, 0, CX, CY, R + (vert ? 42 : 90));
-      g.addColorStop(0, 'rgba(139,92,246,' + (vert ? 0.11 : 0.16) + ')');
+    function gem(x, y, gs) {
+      let g = ctx.createRadialGradient(x, y, 0, x, y, gs * 1.8);
+      g.addColorStop(0, 'rgba(139,92,246,0.15)');
       g.addColorStop(1, 'rgba(139,92,246,0)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
-
-      const gs = R * 1.5;
       ctx.save();
-      ctx.translate(CX, CY);
+      ctx.translate(x, y);
       ctx.rotate(Math.PI / 4);
       ctx.shadowColor = '#8b5cf6';
-      ctx.shadowBlur = 24;
+      ctx.shadowBlur = 26;
       const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
       gg.addColorStop(0, '#C4B5FD');
       gg.addColorStop(1, '#6D28D9');
@@ -1633,34 +1500,177 @@
       ctx.restore();
     }
 
+    function icon(kind, x, y) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.strokeStyle = 'rgba(196,181,253,0.85)';
+      ctx.lineWidth = 1.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.beginPath();
+      if (kind === 0) {
+        ctx.rect(-6, -8, 12, 16);
+        ctx.moveTo(-3, -4); ctx.lineTo(3, -4);
+        ctx.moveTo(-3, 0); ctx.lineTo(3, 0);
+        ctx.moveTo(-3, 4); ctx.lineTo(1, 4);
+      } else if (kind === 1) {
+        ctx.moveTo(-7, -6); ctx.lineTo(-7, 7); ctx.lineTo(0, 5); ctx.lineTo(7, 7); ctx.lineTo(7, -6);
+        ctx.lineTo(0, -4); ctx.closePath();
+        ctx.moveTo(0, -4); ctx.lineTo(0, 5);
+      } else if (kind === 3) {
+        ctx.rect(-8, -6, 16, 12);
+        ctx.moveTo(-1.5, -3); ctx.lineTo(3.5, 0); ctx.lineTo(-1.5, 3); ctx.closePath();
+      } else if (kind === 4) {
+        ctx.rect(-2.6, -8, 5.2, 9);
+        ctx.moveTo(-5.5, -1); ctx.arc(0, -1, 5.5, 0, Math.PI, false);
+        ctx.moveTo(0, 4.5); ctx.lineTo(0, 8);
+      } else if (kind === 6) {
+        ctx.rect(-8, -6, 13, 13);
+        ctx.moveTo(5, -3); ctx.lineTo(8, -3); ctx.lineTo(8, 5.5);
+        ctx.moveTo(-5.5, -3); ctx.lineTo(2.5, -3);
+        ctx.moveTo(-5.5, 0.5); ctx.lineTo(2.5, 0.5);
+        ctx.moveTo(-5.5, 4); ctx.lineTo(0, 4);
+      } else {
+        ctx.moveTo(-5, -7); ctx.lineTo(5, -7);
+        ctx.moveTo(-5, -7); ctx.arc(-5, -5, 2, -Math.PI / 2, Math.PI * 1.5, true);
+        ctx.moveTo(5, -7); ctx.lineTo(5, 5);
+        ctx.moveTo(5, 5); ctx.arc(5, 5.4, 2, -Math.PI / 2, Math.PI * 1.5, false);
+        ctx.moveTo(-5, -3); ctx.lineTo(-5, 7); ctx.lineTo(3, 7);
+        ctx.moveTo(-2, 0); ctx.lineTo(2, 0);
+        ctx.moveTo(-2, 3.5); ctx.lineTo(2, 3.5);
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drift(gx, gy, x0, x1, y0, y1, n, seed, vert) {
+      const r = rng(seed);
+      for (let i = 0; i < n; i++) {
+        const sx = x0 + r() * (x1 - x0), sy = y0 + r() * (y1 - y0);
+        const t = Math.pow(r(), 0.6) * 0.92;
+        let x, y;
+        if (vert) {
+          y = sy + ((gy - 48) - sy) * t + (r() - 0.5) * 8;
+          x = sx + (gx - sx) * Math.pow(t, 1.2) + (r() - 0.5) * 8;
+        } else {
+          x = sx + ((gx - 52) - sx) * t + (r() - 0.5) * 8;
+          y = sy + (gy - sy) * Math.pow(t, 1.2) + (r() - 0.5) * 8;
+        }
+        if (Math.hypot(x - gx, y - gy) < 58) continue;
+        const d = 1.1 + r() * 1.8;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
+        ctx.globalAlpha = 0.22 + 0.45 * t;
+        ctx.fillStyle = '#E4C97E';
+        ctx.shadowColor = 'rgba(228,201,126,0.5)';
+        ctx.shadowBlur = 4;
+        ctx.fillRect(-d, -d, d * 2, d * 2);
+        ctx.restore();
+      }
+    }
+
+    // one priced choice, in the costs/adds table format.
+    // compact (narrow screens): adds only, shorter label, no costs column.
+    function fork(TX, y, F, TW, compact) {
+      const L = TX - TW / 2, R = TX + TW / 2, COSTX = R - 84;
+      txt(F.cap, L, y, '700 13.5px Inter, sans-serif', GOLD, 0.8, 'left', '0.1em');
+      if (!compact) txt('COSTS', COSTX, y, '700 12px Inter, sans-serif', GOLD, 0.55, 'right');
+      txt('ADDS', R, y, '700 12px Inter, sans-serif', GOLD, 0.55, 'right');
+      let yy = y + 28;
+      diamond(L + 5, yy - 5, 5, 0.95, false);
+      txt(F.taken[0], L + 18, yy,
+        (compact ? '500 15px ' : '500 16px ') + 'Inter, sans-serif', '#F3EFE8', 0.95, 'left');
+      if (!compact) txt(F.taken[1], COSTX, yy, '500 16px Inter, sans-serif', CREAM, 0.95, 'right');
+      txt(F.taken[2], R, yy, '600 16px Inter, sans-serif', CREAM, 1, 'right');
+      yy += 26;
+      txt(F.other[0], L + 18, yy, (compact ? '400 13.5px ' : '400 14.5px ') + 'Inter, sans-serif', '#F3EFE8', 0.45, 'left');
+      if (!compact) txt(F.other[1], COSTX, yy, '400 14.5px Inter, sans-serif', CREAM, 0.45, 'right');
+      txt(F.other[2], R, yy, '400 14.5px Inter, sans-serif', CREAM, 0.45, 'right');
+      if (F.why) {
+        yy += 26;
+        txt(F.why, compact ? TX : TX - 40, yy, '400 14px Inter, sans-serif', VIOLET, 0.9, 'center');
+      }
+      return yy;
+    }
+
     function draw() {
       ctx.clearRect(0, 0, w, h);
+      const wide = w >= 1150;
 
-      ctx.save();
-      ctx.textAlign = vert ? 'center' : 'left';
-      SRC.forEach((sc, i) => {
-        icon(i, sc.x, sc.y);
-        ctx.fillStyle = 'rgba(255,255,255,0.92)';
-        ctx.font = srcFont;
-        ctx.fillText(sc.name, sc.tx, vert ? sc.ty : sc.y + 5);
-      });
-      ctx.restore();
+      if (wide) {
+        const CW = Math.min(1100, w - 112), L0 = 56 + Math.max(0, (w - 1352) / 2);
+        const cx = f => L0 + CW * f;
 
-      drift(7);
-      gemDraw();
+        // the three stages, marked under their own zones
+        txt('SOURCE', cx(0.02), 452, '700 16px Inter, sans-serif', GOLD, 0.95, 'left', '0.2em');
+        txt('IDENTIFY', cx(0.30), 452, '700 16px Inter, sans-serif', GOLD, 0.95, 'left', '0.2em');
+        txt('DEVELOP', cx(0.58), 452, '700 16px Inter, sans-serif', GOLD, 0.95, 'left', '0.2em');
 
-      if (!vert) {
-        found([
-          [w * 0.57, h * 0.28, 11, '$550M', 'r', 16],
-          [w * 0.71, h * 0.70, 15, '$800M', 'r', 17],
-          [w * 0.86, h * 0.42, 19, '$1.2B', 'b', 19],
-        ]);
+        // source — and the scale of it
+        FORMATS.forEach((f, i) => {
+          const fy = 100 + i * 56;
+          icon(f[1], cx(0), fy - 5);
+          txt(f[0], cx(0) + 18, fy, '500 15px Inter, sans-serif', '#F3EFE8', 0.85, 'left');
+        });
+        const G = [cx(0.30), 330];
+        drift(G[0], G[1], cx(0.135), cx(0.165), 96, 434, 150, 7, false);
+        gem(G[0], G[1], 52);
+
+        // the find — straight out of the gem, already worth ~$500M
+        const F = [cx(0.44), 330];
+        line(G[0] + 40, G[1], F[0] - 20, F[1], 'rgba(228,201,126,0.5)', 2.2);
+        diamond(F[0], F[1], 14, 1, true);
+        txt('~$500M', F[0], F[1] + 42, '700 22px Inter, sans-serif', GOLD, 1, 'center');
+
+        // the climb — one staircase, each rise proportional to what it adds
+        const D1 = [cx(0.58), 206], D2 = [cx(0.70), 120], E = [cx(0.88), 96];
+        line(F[0] + 11, F[1] - 10, D1[0] - 13, D1[1] + 10, 'rgba(228,201,126,0.5)', 2.2);
+        line(D1[0] + 13, D1[1] - 10, D2[0] - 13, D2[1] + 10, 'rgba(228,201,126,0.5)', 2.2);
+        {
+          const dx = E[0] - D2[0], dy = E[1] - D2[1], dd = Math.hypot(dx, dy);
+          line(D2[0] + 13, D2[1] + dy / dd * 10, E[0] - dx / dd * 44, E[1] - dy / dd * 44, 'rgba(228,201,126,0.5)', 2.2);
+        }
+        upArrow(D1[0], D1[1]);
+        upArrow(D2[0], D2[1]);
+
+        // each decision hangs off its bend by a leader
+        line(D1[0] + 2, D1[1] + 15, D1[0] + 30, 316, 'rgba(228,201,126,0.3)', 1.3);
+        fork(cx(0.70), 330, FORK1, 400);
+        line(D2[0] - 11, D2[1] - 4, cx(0.48) + 208, 94, 'rgba(228,201,126,0.3)', 1.3);
+        fork(cx(0.48), 52, FORK2, 400);
+
+        // where the right choices take it
+        diamond(E[0], E[1], 28, 1, true);
+        txt('~$1.5B', E[0], E[1] + 78, '700 34px Inter, sans-serif', GOLD, 1, 'center');
+        txt('in the right hands', E[0], E[1] + 104, '400 14px Inter, sans-serif', VIOLET, 0.9, 'center');
       } else {
-        found([
-          [w * 0.28, CY + 104, 9, '$550M', 'r', 12],
-          [w * 0.72, CY + 170, 12, '$800M', 'l', 13],
-          [w * 0.46, CY + 268, 16, '$1.2B', 'r', 14],
-        ]);
+        const GX = w / 2;
+        txt('SOURCE', 18, 18, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
+        FORMATS.forEach((f, i) => {
+          const col = i % 2, row = (i - col) / 2;
+          const fx = w * (0.08 + col * 0.47), fy = 52 + row * 44;
+          icon(f[1], fx, fy - 5);
+          txt(f[0], fx + 18, fy, '500 14.5px Inter, sans-serif', '#F3EFE8', 0.85, 'left');
+        });
+        drift(GX, 280, w * 0.14, w * 0.86, 192, 222, 80, 7, true);
+        gem(GX, 280, 46);
+
+        txt('IDENTIFY', 18, 352, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
+        const F = [GX, 404];
+        line(GX, 318, GX, F[1] - 20, 'rgba(228,201,126,0.5)', 2);
+        diamond(F[0], F[1], 13, 1, true);
+        txt('~$500M', GX, F[1] + 42, '700 21px Inter, sans-serif', GOLD, 1, 'center');
+
+        txt('DEVELOP', 18, 512, '700 15px Inter, sans-serif', GOLD, 0.95, 'left', '0.18em');
+        line(GX, F[1] + 56, GX, 528, 'rgba(228,201,126,0.35)', 1.6);
+        let yy = fork(GX, 548, FORK1, Math.min(400, w - 36), true);
+        line(GX, yy + 18, GX, yy + 48, 'rgba(228,201,126,0.35)', 1.6);
+        yy = fork(GX, yy + 68, FORK2, Math.min(400, w - 36), true);
+        line(GX, yy + 18, GX, yy + 50, 'rgba(228,201,126,0.35)', 1.6);
+
+        const E = [GX, yy + 96];
+        diamond(E[0], E[1], 26, 1, true);
+        txt('~$1.5B', GX, E[1] + 68, '700 30px Inter, sans-serif', GOLD, 1, 'center');
+        txt('in the right hands', GX, E[1] + 94, '400 13.5px Inter, sans-serif', VIOLET, 0.9, 'center');
       }
     }
 
@@ -1670,30 +1680,18 @@
       w = box.clientWidth; h = box.clientHeight;
       c.width = w * dpr; c.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      wide = w >= 780;
-      vert = !wide;
-      X0 = wide ? Math.max(28, w * 0.05) : 14;
-      XS = wide ? w * 0.185 : 24;
-      placeSources();
-      if (vert) {
-        CX = w * 0.5; CY = (SRC.bottom || 60) + 122;
-        R = 34;
-      } else {
-        CX = w * 0.40; CY = h * 0.5;
-        R = 52;
-      }
       draw();
     }
 
     let rt, lastW = window.innerWidth;
     window.addEventListener('resize', () => {
       clearTimeout(rt);
-      if (window.innerWidth === lastW) return;   // ignore iOS address-bar resizes
+      if (window.innerWidth === lastW) return;
       lastW = window.innerWidth;
       rt = setTimeout(layout, 150);
     });
     layout();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
   })();
 
   // The record — ideas stream in from the left; what comes out is what
@@ -1838,10 +1836,11 @@
       const wide = w >= 900;
 
       if (wide) {
-        const GX = w * 0.30, GY = h * 0.52, GS = 56;
-        stream(GX, GY, GY - 120, GY + 120, 6, 110, 7, false);
+        const CW = Math.min(1100, w - 112), L0 = 56 + Math.max(0, (w - 1352) / 2);
+        const GX = L0 + CW * 0.30, GY = h * 0.52, GS = 56;
+        stream(GX, GY, GY - 120, GY + 120, L0, 110, 7, false);
         gem(GX, GY, GS);
-        const LX = w * 0.64;
+        const LX = L0 + CW * 0.64;
         const NUM = w < 1170 ? 46 : 54;
 
         line(GX + 46, GY - 10, LX - 215, h * 0.30, 'rgba(228,201,126,0.3)', 1.3);
@@ -1894,482 +1893,11 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
   })();
 
-  // The model — a funnel in three distinct forms: the screenplay splits into
-  // thousands of dimensions (organic scatter), which distill into four ranked
-  // conclusions (an ordered column), which drive the projected range (bars).
-  (function () {
-    const c = document.getElementById('model-field');
-    if (!c) return;
-    const ctx = c.getContext('2d');
-    let w = 0, h = 0, dpr = 1;
-
-    const GOLD = '#E4C97E', VIOLET = '#C4B5FD', CREAM = '#F7E9C4';
-
-    const CONCLUSIONS = [
-      ['Hook strength', '99th percentile'],
-      ['Originality', '98th percentile'],
-      ['Character chemistry', '96th percentile'],
-      ['Viral potential', '95th percentile'],
-    ];
-
-    // the raw split: an organic, unlabeled scatter — the thousands
-    const VERTS = [
-      [0, 0, 4], [55, -45, 5], [-30, -55, 3], [35, 40, 3.5], [110, -15, 2.5],
-      [-45, 25, 2.5], [192, 18, 4], [230, -20, 5], [215, 75, 5], [265, 30, 2.5],
-      [40, 118, 4], [135, 140, 5], [25, 135, 3], [175, 170, 2.5], [90, -70, 2.5],
-      [160, -55, 3],
-    ];
-    const EDGES = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [6, 7], [6, 8], [6, 9],
-      [0, 10], [10, 11], [10, 12], [10, 13], [1, 14], [6, 15]];
-    // which scatter points gather into each conclusion
-    const FEED = [[1, 14, 4], [7, 15, 9], [8, 13, 6], [11, 10, 12]];
-
-    function rng(a) {
-      return function () {
-        a |= 0; a = (a + 0x6D2B79F5) | 0;
-        let x = Math.imul(a ^ (a >>> 15), 1 | a);
-        x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
-        return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
-      };
-    }
-
-    function txt(str, x, y, font, color, alpha, align, spacing) {
-      ctx.save();
-      ctx.textAlign = align || 'center';
-      ctx.globalAlpha = alpha;
-      ctx.font = font;
-      try { if (spacing) ctx.letterSpacing = spacing; } catch (e) {}
-      ctx.shadowColor = 'rgba(8,6,14,0.9)';
-      ctx.shadowBlur = 8;
-      ctx.fillStyle = color;
-      ctx.fillText(str, x, y);
-      ctx.restore();
-    }
-
-    function line(x0, y0, x1, y1, rgba, lw) {
-      ctx.save();
-      ctx.strokeStyle = rgba;
-      ctx.lineWidth = lw || 1;
-      ctx.lineCap = 'round';
-      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
-      ctx.restore();
-    }
-
-    function gem(x, y, gs) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(Math.PI / 4);
-      ctx.shadowColor = '#8b5cf6';
-      ctx.shadowBlur = 30;
-      const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
-      gg.addColorStop(0, '#C4B5FD');
-      gg.addColorStop(1, '#6D28D9');
-      ctx.fillStyle = gg;
-      const cr = gs * 0.2;
-      ctx.beginPath();
-      ctx.moveTo(-gs / 2 + cr, -gs / 2);
-      ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
-      ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr);
-      ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr);
-      ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-    }
-
-    function diamondGold(x, y, s2, alpha, glow) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(Math.PI / 4);
-      ctx.globalAlpha = alpha;
-      if (glow) { ctx.shadowColor = 'rgba(228,201,126,0.85)'; ctx.shadowBlur = 15; }
-      const g = ctx.createLinearGradient(-s2, -s2, s2, s2);
-      g.addColorStop(0, '#F0DCA0');
-      g.addColorStop(1, '#B08A3E');
-      ctx.fillStyle = g;
-      ctx.fillRect(-s2, -s2, s2 * 2, s2 * 2);
-      ctx.restore();
-    }
-
-    // the training data — a thick stream of dots pouring toward the gem.
-    // vert=false: flows left-to-right, bending into (x1,y1) late.
-    // vert=true: flows top-to-bottom the same way.
-    function stream(x0, y0, x1, y1, n, seed, vert) {
-      const r = rng(seed);
-      ctx.save();
-      for (let i = 0; i < n; i++) {
-        const t = Math.pow(r(), 0.85) * 0.94;
-        const jit = 3 + t * 9;
-        let x, y;
-        if (vert) {
-          y = y0 + (y1 - y0) * t + (r() - 0.5) * 10;
-          x = x0 + (x1 - x0) * Math.pow(t, 1.7) + (r() - 0.5) * jit * 2;
-        } else {
-          x = x0 + (x1 - x0) * t + (r() - 0.5) * 10;
-          y = y0 + (y1 - y0) * Math.pow(t, 1.7) + (r() - 0.5) * jit * 2;
-        }
-        ctx.beginPath();
-        ctx.arc(x, y, 1.4 + r() * 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(139,92,246,' + (0.2 + 0.45 * t).toFixed(2) + ')';
-        ctx.shadowColor = 'rgba(139,92,246,0.5)';
-        ctx.shadowBlur = 5;
-        ctx.fill();
-      }
-      ctx.restore();
-    }
-
-    function page(x, y, k) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.scale(k, k);
-      ctx.strokeStyle = '#F0DCA0';
-      ctx.lineWidth = 1.5 / k;
-      ctx.lineCap = 'round';
-      ctx.shadowColor = 'rgba(228,201,126,0.55)';
-      ctx.shadowBlur = 10;
-      ctx.beginPath();
-      ctx.rect(-10, -13, 20, 26);
-      ctx.moveTo(-5, -6); ctx.lineTo(5, -6);
-      ctx.moveTo(-5, -1); ctx.lineTo(5, -1);
-      ctx.moveTo(-5, 4); ctx.lineTo(2, 4);
-      ctx.stroke();
-      ctx.restore();
-    }
 
 
-    // stage two of the funnel: the scatter, pure and unlabeled
-    function scatter(ax, ay, S) {
-      const pts = VERTS.map(v => [ax + v[0] * S, ay + v[1] * S]);
-      EDGES.forEach(e => line(pts[e[0]][0], pts[e[0]][1], pts[e[1]][0], pts[e[1]][1], 'rgba(228,201,126,0.28)', 1));
-      VERTS.forEach((v, vi) => diamondGold(pts[vi][0], pts[vi][1], v[2] * S, 0.4, false));
-      return pts;
-    }
 
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      const wide = w >= 900;
 
-      if (wide) {
-        const tight = w < 1170;
-        const S = tight ? 0.72 : 0.92;
-        const GX = w * (tight ? 0.2 : 0.21), GY = h * 0.55, GS = 46;
 
-        // the training data pours down from above — the caption is its title,
-        // the three sources are the heads of the rain
-        const CAPX = Math.max(w * 0.17, 260);
-        txt('AUDIENCE DATA ACROSS ALL MEDIUMS', CAPX, 28, '700 13px Inter, sans-serif', VIOLET, 0.85, 'center', '0.12em');
-        const SRC = [['FILM', CAPX - 120], ['TV', CAPX], ['SOCIAL', CAPX + 120]];
-        SRC.forEach((s, i) => {
-          txt(s[0], s[1], 58, '700 12px Inter, sans-serif', GOLD, 0.85, 'center', '0.13em');
-          stream(s[1], 70, GX, GY - 44, 70, 7 + i, true);
-        });
-
-        gem(GX, GY, GS);
-
-        // what it reads sits right beneath it
-        const PY = GY + 96;
-        line(GX, GY + 36, GX, PY - 22, 'rgba(240,220,160,0.55)', 1.6);
-        page(GX, PY, 1.25);
-        txt('SCREENPLAYS AND OTHER STORY IDEAS', GX, PY + 36, '700 12.5px Inter, sans-serif', CREAM, 0.95, 'center', '0.12em');
-        txt('SPLIT INTO THOUSANDS OF DIMENSIONS', GX, PY + 57, '700 12.5px Inter, sans-serif', VIOLET, 0.9, 'center', '0.12em');
-
-        // stage two: the scatter
-        const ax = GX + 105, ay = GY - 10;
-        line(GX + 32, GY, ax - 6, ay - 4, 'rgba(228,201,126,0.25)', 1);
-        const pts = scatter(ax, ay, S);
-
-        // stage three: the four conclusions, distilled and ranked
-        const CX = w * (tight ? 0.52 : 0.5);
-        const rows = [GY - 100, GY - 34, GY + 32, GY + 98];
-        const ends = [];
-        CONCLUSIONS.forEach((con, i) => {
-          const ry = rows[i];
-          FEED[i].forEach(vi => line(pts[vi][0] + 4, pts[vi][1], CX - 14, ry, 'rgba(228,201,126,0.13)', 1));
-          diamondGold(CX, ry, 8.5, 1, true);
-          txt(con[0], CX + 17, ry - 1, (tight ? '500 15px ' : '500 16px ') + 'Inter, sans-serif', '#F3EFE8', 0.95, 'left');
-          txt(con[1], CX + 17, ry + 18, '600 13.5px Inter, sans-serif', CREAM, 0.9, 'left');
-          ctx.font = (tight ? '500 15px ' : '500 16px ') + 'Inter, sans-serif';
-          ends.push({ x: CX + 17 + Math.max(ctx.measureText(con[0]).width, 140), y: ry });
-        });
-
-        // the heading belongs to the four conclusions — they are the why
-        txt('WHY THIS ONE BREAKS OUT', CX + 92, rows[0] - 46, '700 13.5px Inter, sans-serif', GOLD, 0.9, 'center', '0.13em');
-
-        // stage four: the projection — one big find, front and center
-        const maxEnd = Math.max.apply(null, ends.map(e => e.x));
-        const BX = Math.min(w - 160, Math.max(w * 0.85, maxEnd + 170)), BY = h * 0.36;
-        line(maxEnd + 16, GY - 66, BX - 56, BY + 10, 'rgba(228,201,126,0.28)', 1.4);
-        diamondGold(BX, BY, 34, 1, true);
-        txt('~$500M', BX, BY + 86, '700 32px Inter, sans-serif', GOLD, 1, 'center');
-        txt('WORLDWIDE POTENTIAL', BX, BY + 112, '700 11.5px Inter, sans-serif', GOLD, 0.8, 'center', '0.14em');
-        txt('in the right hands', BX, BY + 134, '400 13.5px Inter, sans-serif', VIOLET, 0.9, 'center');
-        txt('We expect $90–150M worldwide.', BX, BY + 166, '500 16px Inter, sans-serif', CREAM, 0.95, 'center');
-      } else {
-        txt('AUDIENCE DATA ACROSS ALL MEDIUMS', w / 2, 28, '700 11.5px Inter, sans-serif', VIOLET, 0.85, 'center', '0.1em');
-
-        const GX = w / 2, GY = 210, GS = 38;
-
-        // the training data streams down from the top
-        const SRC = [['FILM', w * 0.22], ['TV', w * 0.5], ['SOCIAL', w * 0.78]];
-        SRC.forEach((s, i) => {
-          txt(s[0], s[1], 62, '700 11px Inter, sans-serif', GOLD, 0.85, 'center', '0.1em');
-          stream(s[1], 74, GX, GY - 44, 55, 7 + i, true);
-        });
-
-        gem(GX, GY, GS);
-
-        const PY = GY + 76;
-        line(GX, GY + 30, GX, PY - 18, 'rgba(240,220,160,0.55)', 1.5);
-        page(GX, PY, 1.05);
-        txt('SCREENPLAYS AND OTHER STORY IDEAS', w / 2, PY + 32, '700 11px Inter, sans-serif', CREAM, 0.95, 'center', '0.1em');
-        txt('SPLIT INTO THOUSANDS OF DIMENSIONS', w / 2, PY + 52, '700 11px Inter, sans-serif', VIOLET, 0.9, 'center', '0.1em');
-
-        // the scatter, centered beneath the split
-        const spts = scatter(w / 2 - 73, GY + 190, 0.66);
-
-        // the four conclusions — fed by the scatter down the left rail,
-        // so the lines never cross the row text
-        txt('WHY THIS ONE BREAKS OUT', w / 2, GY + 330, '700 12.5px Inter, sans-serif', GOLD, 0.9, 'center', '0.12em');
-        let y = GY + 344;
-        CONCLUSIONS.forEach((con, i) => {
-          y += 34;
-          const p0 = spts[FEED[i][0]];
-          line(p0[0], p0[1] + 6, 40, GY + 260 + i * 8, 'rgba(228,201,126,0.14)', 1);
-          line(40, GY + 260 + i * 8, 40, y - 12, 'rgba(228,201,126,0.14)', 1);
-          line(40, y - 12, w / 2 - 136, y - 5, 'rgba(228,201,126,0.14)', 1);
-          diamondGold(w / 2 - 128, y - 4, 5, 1, true);
-          txt(con[0], w / 2 - 112, y, '500 14.5px Inter, sans-serif', '#F3EFE8', 0.95, 'left');
-          txt(con[1], w / 2 + 44, y, '600 13px Inter, sans-serif', CREAM, 0.95, 'left');
-        });
-
-        // the projection — one big find beneath the four
-        const BY2 = y + 96;
-        line(w / 2, y + 18, w / 2, BY2 - 50, 'rgba(240,220,160,0.4)', 1.5);
-        diamondGold(w / 2, BY2, 30, 1, true);
-        txt('~$500M', w / 2, BY2 + 80, '700 28px Inter, sans-serif', GOLD, 1, 'center');
-        txt('WORLDWIDE POTENTIAL', w / 2, BY2 + 104, '700 11px Inter, sans-serif', GOLD, 0.8, 'center', '0.12em');
-        txt('in the right hands', w / 2, BY2 + 126, '400 13px Inter, sans-serif', VIOLET, 0.9, 'center');
-        txt('We expect $90–150M worldwide.', w / 2, BY2 + 156, '500 15.5px Inter, sans-serif', CREAM, 0.95, 'center');
-      }
-    }
-
-    function layout() {
-      const box = c.parentElement;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = box.clientWidth; h = box.clientHeight;
-      c.width = w * dpr; c.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      draw();
-    }
-
-    let rt, lastW = window.innerWidth;
-    window.addEventListener('resize', () => {
-      clearTimeout(rt);
-      if (window.innerWidth === lastW) return;
-      lastW = window.innerWidth;
-      rt = setTimeout(layout, 150);
-    });
-    layout();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
-  })();
-
-  // One film, two versions — a dull diamond, the decisions, and what it becomes.
-  (function () {
-    const c = document.getElementById('vs-field');
-    if (!c) return;
-    const ctx = c.getContext('2d');
-    let w = 0, h = 0, dpr = 1;
-
-    const CREAM = '#F7E9C4', GOLD = '#E4C97E', VIOLET = '#C4B5FD';
-
-    function diamond(x, y, s, alpha, glow) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(Math.PI / 4);
-      ctx.globalAlpha = alpha;
-      if (glow) { ctx.shadowColor = 'rgba(228,201,126,0.85)'; ctx.shadowBlur = 26; }
-      const g = ctx.createLinearGradient(-s, -s, s, s);
-      g.addColorStop(0, '#F0DCA0');
-      g.addColorStop(1, '#B08A3E');
-      ctx.fillStyle = g;
-      ctx.fillRect(-s, -s, s * 2, s * 2);
-      ctx.restore();
-    }
-
-    function text(str, x, y, font, color, alpha, spacing) {
-      ctx.save();
-      ctx.textAlign = 'center';
-      ctx.globalAlpha = alpha;
-      ctx.font = font;
-      try { if (spacing) ctx.letterSpacing = spacing; } catch (e) {}
-      ctx.shadowColor = 'rgba(8,6,14,0.9)';
-      ctx.shadowBlur = 8;
-      ctx.fillStyle = color;
-      ctx.fillText(str, x, y);
-      ctx.restore();
-    }
-
-    // one decision as a small table in the sky: two options, what each costs,
-    // what each adds to the box office. The taken row is lit.
-    function tleft(str, x, y, font, color, alpha) {
-      ctx.save(); ctx.textAlign = 'left'; ctx.globalAlpha = alpha; ctx.font = font;
-      ctx.shadowColor = 'rgba(8,6,14,0.9)'; ctx.shadowBlur = 8; ctx.fillStyle = color;
-      ctx.fillText(str, x, y); ctx.restore();
-    }
-    function tright(str, x, y, font, color, alpha) {
-      ctx.save(); ctx.textAlign = 'right'; ctx.globalAlpha = alpha; ctx.font = font;
-      ctx.shadowColor = 'rgba(8,6,14,0.9)'; ctx.shadowBlur = 8; ctx.fillStyle = color;
-      ctx.fillText(str, x, y); ctx.restore();
-    }
-    function fork(x, y, cap, rows, why) {
-      const W = Math.min(352, w - 36), L = x - W / 2, R = x + W / 2, COSTX = R - 70;
-      let yy = y;
-      tleft(cap, L, yy, '700 12px Inter, sans-serif', GOLD, 0.8);
-      tright('COSTS', COSTX, yy, '700 10.5px Inter, sans-serif', GOLD, 0.55);
-      tright('ADDS', R, yy, '700 10.5px Inter, sans-serif', GOLD, 0.55);
-      for (const r of rows) {
-        yy += r.taken ? 24 : 22;
-        const a = r.taken ? 0.95 : 0.45;
-        const f = r.taken ? '500 14.5px Inter, sans-serif' : '400 13px Inter, sans-serif';
-        if (r.taken) diamond(L + 4, yy - 4, 4.5, 0.95, false);
-        tleft(r.label, L + 16, yy, f, '#F3EFE8', a);
-        tright(r.cost, COSTX, yy, f, CREAM, r.taken ? 0.95 : 0.45);
-        tright(r.adds, R, yy, r.taken ? '600 14.5px Inter, sans-serif' : f, CREAM, r.taken ? 1 : 0.45);
-      }
-      if (why) { yy += 23; text(why, x, yy, '400 13.5px Inter, sans-serif', VIOLET, 0.9); }
-      return yy;
-    }
-
-    function qp(S, C, E, t) {
-      const u = 1 - t;
-      return {
-        x: u * u * S.x + 2 * u * t * C.x + t * t * E.x,
-        y: u * u * S.y + 2 * u * t * C.y + t * t * E.y,
-      };
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      const wide = w >= 900;
-
-      if (wide) {
-        const S = { x: w * 0.13, y: h * 0.62 };
-        const E = { x: w * 0.79, y: h * 0.30 };
-        const C = { x: (S.x + E.x) / 2, y: (S.y + E.y) / 2 + h * 0.14 };
-
-        ctx.save();
-        ctx.strokeStyle = 'rgba(228,201,126,0.4)';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(S.x, S.y);
-        ctx.quadraticCurveTo(C.x, C.y, E.x, E.y);
-        ctx.stroke();
-        ctx.restore();
-
-        // the safe bet — small, dull
-        diamond(S.x, S.y, 13, 0.45, false);
-        text('THE SAFE BET', S.x, S.y + 44, '700 12px Inter, sans-serif', GOLD, 0.55, '0.14em');
-        text('$90M', S.x, S.y + 68, '600 19px Inter, sans-serif', CREAM, 0.55);
-        text('costs $50M', S.x, S.y + 88, '400 12.5px Inter, sans-serif', '#F3EFE8', 0.4);
-
-        // decision one — above the line
-        const n1 = qp(S, C, E, 0.40);
-        diamond(n1.x, n1.y, 6, 0.85, false);
-        fork(n1.x, n1.y - 106,
-          'LOCATIONS & EFFECTS',
-          [
-            { label: 'Practical, on location', cost: '$18M', adds: '+$45M', taken: true },
-            { label: 'Green screen, on a stage', cost: '$7M', adds: '+$6M' },
-          ],
-          "CGI can't capture it — audiences can tell");
-
-        // decision two — below the line, kept clear of the big label on
-        // short canvases (the wide layout can be as low as 400px tall)
-        const n2 = qp(S, C, E, 0.70);
-        diamond(n2.x, n2.y, 6, 0.85, false);
-        const bx = Math.min(n2.x, E.x - 118 - 176 - 14);
-        // The table hangs below the path, but the path is lower at the table's
-        // left edge than at its node — so clear the path where the table
-        // actually starts, not where the marker is. And on short canvases the
-        // clamped fork slides toward node one, so clear that marker too.
-        let pathY = n2.y;
-        for (let t = 0; t <= 1; t += 0.02) {
-          const q = qp(S, C, E, t);
-          if (q.x >= bx - 158 && q.x <= bx + 158 && q.y > pathY) pathY = q.y;
-        }
-        fork(bx, Math.max(pathY + 24, n2.y + (h < 440 ? 62 : 42)),
-          'THE LEAD',
-          [
-            { label: "The director's choice", cost: '$3M', adds: '+$38M', taken: true },
-            { label: 'An A-list star', cost: '$12M', adds: '+$11M' },
-          ],
-          'the money belongs in the world on screen, not the name');
-
-        // the director's version — big, lit
-        diamond(E.x, E.y, 40, 1, true);
-        text("THE DIRECTOR'S VERSION", E.x, E.y - 74, '700 12.5px Inter, sans-serif', GOLD, 0.95, '0.15em');
-        text('~$500M + awards', E.x, E.y + 92, '600 28px Inter, sans-serif', CREAM, 1);
-        text('costs $80M', E.x, E.y + 116, '400 13px Inter, sans-serif', GOLD, 0.7);
-      } else {
-        const cx = w / 2;
-        const line = (y0, y1) => {
-          ctx.save();
-          ctx.strokeStyle = 'rgba(228,201,126,0.35)';
-          ctx.lineWidth = 1.5;
-          ctx.beginPath(); ctx.moveTo(cx, y0); ctx.lineTo(cx, y1); ctx.stroke();
-          ctx.restore();
-        };
-
-        text('THE SAFE BET', cx, 26, '700 12px Inter, sans-serif', GOLD, 0.55, '0.14em');
-        diamond(cx, 66, 12, 0.45, false);
-        text('$90M · costs $50M', cx, 108, '500 14.5px Inter, sans-serif', CREAM, 0.55);
-
-        line(122, 148);
-        let yEnd = fork(cx, 164,
-          'LOCATIONS & EFFECTS',
-          [
-            { label: 'Practical, on location', cost: '$18M', adds: '+$45M', taken: true },
-            { label: 'Green screen, on a stage', cost: '$7M', adds: '+$6M' },
-          ],
-          "CGI can't capture it");
-
-        line(yEnd + 14, yEnd + 44);
-        yEnd = fork(cx, yEnd + 58,
-          'THE LEAD',
-          [
-            { label: "The director's choice", cost: '$3M', adds: '+$38M', taken: true },
-            { label: 'An A-list star', cost: '$12M', adds: '+$11M' },
-          ],
-          'the money belongs in the world, not the name');
-
-        line(yEnd + 14, yEnd + 46);
-        const by = yEnd + 96;
-        text("THE DIRECTOR'S VERSION", cx, yEnd + 70, '700 12px Inter, sans-serif', GOLD, 0.95, '0.14em');
-        diamond(cx, by + 30, 32, 1, true);
-        text('~$500M + awards', cx, by + 106, '600 25px Inter, sans-serif', CREAM, 1);
-        text('costs $80M', cx, by + 126, '400 13px Inter, sans-serif', GOLD, 0.7);
-      }
-    }
-
-    function layout() {
-      const box = c.parentElement;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = box.clientWidth; h = box.clientHeight;
-      c.width = w * dpr; c.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      draw();
-    }
-
-    let rt, lastW = window.innerWidth;
-    window.addEventListener('resize', () => {
-      clearTimeout(rt);
-      if (window.innerWidth === lastW) return;
-      lastW = window.innerWidth;
-      rt = setTimeout(layout, 150);
-    });
-    layout();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
-  })();
 
   // Night fields — the team-band dust, and the hero sky where one gem has ignited.
   (function () {
