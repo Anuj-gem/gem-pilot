@@ -30,6 +30,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      // standalone HTML research post, served via middleware rewrite
+      url: `${SITE_URL}/blog/overperformers`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/writers`,
       lastModified: now,
       changeFrequency: 'monthly',

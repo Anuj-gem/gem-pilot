@@ -54,6 +54,13 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL('/pitch.html', request.url))
   }
 
+  // Standalone HTML research posts live in /public/blog/<slug>.html and
+  // are served at /blog/<slug> — checked before the /blog whitelist so
+  // they don't fall through to the markdown renderer's 404.
+  if (pathname === '/blog/overperformers') {
+    return NextResponse.rewrite(new URL('/blog/overperformers.html', request.url))
+  }
+
   // Old .html URLs → 301 redirect to clean versions
   if (pathname === '/landing.html') {
     return NextResponse.redirect(new URL('/', request.url), { status: 301 })
