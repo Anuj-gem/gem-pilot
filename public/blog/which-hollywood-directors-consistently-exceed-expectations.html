@@ -17,6 +17,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#0E0B14; color:#F2ECDD; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
        line-height:1.62; font-size:17px; }
+#page-field { position:fixed; inset:0; z-index:-1; width:100%; height:100%; display:block; }
 /* ── site nav, same as gem.studio ── */
 nav.site {
   padding:22px 56px; display:flex; align-items:center; justify-content:space-between;
@@ -69,6 +70,7 @@ td.best { white-space:normal; min-width:190px; }
 @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 </style></head>
 <body>
+<canvas id="page-field" aria-hidden="true"></canvas>
 <nav class="site">
   <a class="logo" href="/">
     <div class="diamond"></div>
@@ -125,4 +127,6 @@ td.best { white-space:normal; min-width:190px; }
 &#8220;Expectations&#8221; are the 50th percentile of each film&#8217;s simulated range given what was known before release, computed out of sample. All dollars are worldwide gross, adjusted for inflation to 2024 dollars; English-language theatrical features with reported outcomes; co-directing credits count. Our data does not hold every film of every director; where a listed career is missing an early film, it is a minor one and including it would lower, not raise, that total.
 </div>
 
-</div></body></html>
+</div>
+<script src="/gem-sky.js"></script>
+</body></html>

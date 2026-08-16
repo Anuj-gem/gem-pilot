@@ -33,7 +33,8 @@ export default async function BlogIndexPage() {
   ].sort((a, b) => (a.date < b.date ? 1 : -1))
 
   return (
-    <div style={{ background: NIGHT, minHeight: '100vh', color: CREAM, fontFamily: 'Inter, -apple-system, sans-serif' }}>
+    <div style={{ minHeight: '100vh', color: CREAM, fontFamily: 'Inter, -apple-system, sans-serif' }}>
+      <canvas id="page-field" aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: -1, width: '100%', height: '100%', display: 'block' }} />
       <GemStudiosNav />
       <main style={{ maxWidth: 940, margin: '0 auto', padding: '70px 28px 120px' }}>
         <header style={{ marginBottom: 48 }}>
@@ -106,7 +107,9 @@ export default async function BlogIndexPage() {
         )}
       </main>
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+      <script src="/gem-sky.js" async />
       <style>{`
+        html, body { background: ${NIGHT} !important; }
         .gem-post-card:hover { border-color: rgba(228,201,126,0.45) !important; background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(139,92,246,0.08)) !important; }
       `}</style>
     </div>
