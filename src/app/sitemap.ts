@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       // standalone HTML research post, served via middleware rewrite
-      url: `${SITE_URL}/blog/overperformers`,
+      url: `${SITE_URL}/blog/which-hollywood-directors-consistently-exceed-expectations`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,

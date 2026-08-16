@@ -57,8 +57,11 @@ export async function middleware(request: NextRequest) {
   // Standalone HTML research posts live in /public/blog/<slug>.html and
   // are served at /blog/<slug> — checked before the /blog whitelist so
   // they don't fall through to the markdown renderer's 404.
+  if (pathname === '/blog/which-hollywood-directors-consistently-exceed-expectations') {
+    return NextResponse.rewrite(new URL('/blog/which-hollywood-directors-consistently-exceed-expectations.html', request.url))
+  }
   if (pathname === '/blog/overperformers') {
-    return NextResponse.rewrite(new URL('/blog/overperformers.html', request.url))
+    return NextResponse.redirect(new URL('/blog/which-hollywood-directors-consistently-exceed-expectations', request.url), { status: 301 })
   }
 
   // Old .html URLs → 301 redirect to clean versions

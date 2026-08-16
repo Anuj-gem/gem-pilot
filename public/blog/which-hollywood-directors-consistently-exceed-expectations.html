@@ -6,14 +6,33 @@
 <meta property="og:title" content="Which Hollywood directors consistently exceed &#8220;expectations&#8221;?">
 <meta property="og:description" content="Some directors hit it out of the park, over and over, beyond what anyone could reasonably have expected. We set out to understand who does it, and what makes it happen.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://gem.studio/blog/overperformers">
+<meta property="og:url" content="https://gem.studio/blog/which-hollywood-directors-consistently-exceed-expectations">
 <meta property="og:site_name" content="GEM Studios">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { background:#0D0A1C; color:#F2ECDD; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+body { background:#0E0B14; color:#F2ECDD; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
        line-height:1.62; font-size:17px; }
+/* ── site nav, same as gem.studio ── */
+nav.site {
+  padding:22px 56px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.08); position:sticky; top:0;
+  background:rgba(14,11,20,0.72); backdrop-filter:saturate(160%) blur(12px); z-index:100;
+  font-family:'Inter',-apple-system,sans-serif;
+}
+nav.site .logo { display:flex; align-items:center; gap:11px; text-decoration:none; }
+nav.site .diamond { width:16px; height:16px; background:linear-gradient(135deg,#8b5cf6,#5B21B6); border-radius:3px; transform:rotate(45deg); flex-shrink:0; }
+nav.site .logo-text { font-size:12px; font-weight:600; letter-spacing:0.14em; color:#fff; text-transform:uppercase; }
+nav.site .nav-links { display:flex; gap:36px; align-items:center; }
+nav.site .nav-links a { font-size:11px; letter-spacing:0.1em; color:rgba(243,239,232,0.6); text-decoration:none; text-transform:uppercase; transition:color .2s; }
+nav.site .nav-links a:hover { color:#fff; }
+nav.site .nav-links a.nav-cta { color:#C4B5FD; border-bottom:1px solid rgba(196,181,253,0.45); padding-bottom:2px; font-weight:600; }
+nav.site .nav-links a.nav-cta:hover { color:#fff; }
+@media (max-width:640px) { nav.site { padding:16px 18px; } nav.site .nav-links { gap:18px; } }
 .wrap { max-width:940px; margin:0 auto; padding:70px 28px 90px; position:relative; }
 h1,h2 { font-family:Georgia,'Times New Roman',serif; font-weight:400; color:#F2ECDD; }
 h1 { font-size:54px; line-height:1.12; margin:26px 0 18px; }
@@ -31,9 +50,9 @@ ul { margin:0 0 18px 4px; list-style:none; }
 li { margin:0 0 12px; padding-left:26px; position:relative; color:#F2ECDD; opacity:0.92; }
 li::before { content:"\25C6"; position:absolute; left:0; top:1px; color:#E9C874; font-size:12px; }
 .standfirst { font-size:21px; font-family:Georgia,serif; color:#A9A3C2; margin:6px 0 30px; line-height:1.5; }
-.fig { margin:34px 0 10px; background:#151129; border:1px solid #2A2344; border-radius:14px; padding:26px 20px 16px; }
+.fig { margin:34px 0 10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:26px 20px 16px; }
 .caption { font-size:15px; margin:10px 6px 0; }
-.tablewrap { overflow-x:auto; margin:30px 0 8px; background:#151129; border:1px solid #2A2344; border-radius:14px; }
+.tablewrap { overflow-x:auto; margin:30px 0 8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; }
 table { border-collapse:collapse; width:100%; min-width:820px; font-size:15px; }
 th { text-align:left; padding:14px 14px; color:#A9A3C2; font-weight:600; font-size:12.5px; letter-spacing:0.06em;
      text-transform:uppercase; border-bottom:1px solid #2A2344; }
@@ -50,10 +69,21 @@ td.best { white-space:normal; min-width:190px; }
 @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 </style></head>
 <body>
+<nav class="site">
+  <a class="logo" href="/">
+    <div class="diamond"></div>
+    <span class="logo-text">GEM Studios</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#see">What we do</a>
+    <a href="/blog">Blog</a>
+    <a href="mailto:info@gem.studio" class="nav-cta">Partner with us</a>
+  </div>
+</nav>
 <div class="wrap">
 
 <div class="hero">
-<div class="eyebrow">GEM Research</div>
+<div class="eyebrow">GEM Studios</div>
 <h1>Which Hollywood directors consistently <em>exceed &#8220;expectations&#8221;</em>?</h1>
 <div class="standfirst">Some directors clearly hit it out of the park, over and over, beyond what anyone could reasonably have expected. That is usually written off as unknowable. We set out to understand it: who does it, and what makes it happen. This is a small portion of what we found.</div>
 <div class="numnote">A note on the numbers: every dollar figure in this piece is worldwide box office, adjusted for inflation to 2024 dollars.</div>

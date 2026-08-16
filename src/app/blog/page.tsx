@@ -1,14 +1,14 @@
-// /blog — index listing of all published posts.
+// /blog — index listing of all published posts, on the same night sky
+// as the rest of gem.studio. Cards sit a shade lighter than the ground.
 
-import Link from 'next/link'
 import GemStudiosNav from '@/components/gem-studios-nav'
-import { ArrowRight } from 'lucide-react'
 import { getAllPosts } from '@/lib/blog'
+import { STATIC_POSTS } from '@/lib/blog-static'
 
 export const metadata = {
   title: 'Blog — GEM Studios',
   description:
-    'Notes from the GEM Studios development team — what we\'re building, what we\'re watching, and how we think about finding great projects.',
+    'Notes from GEM Studios — what we\'re building, what we\'re finding, and how we think about making great films.',
 }
 
 // Posts are read off disk on each request. We tried `force-static` but
@@ -20,70 +20,100 @@ export const metadata = {
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+const NIGHT = '#0E0B14'
+const CREAM = '#F3EFE8'
+const GOLD = '#E4C97E'
+const VIOLET = '#C4B5FD'
+
 export default async function BlogIndexPage() {
-  const posts = await getAllPosts()
+  const md = await getAllPosts()
+  const posts = [
+    ...STATIC_POSTS.map(p => ({ ...p, kind: 'static' as const })),
+    ...md.map(p => ({ slug: p.slug, title: p.title, date: p.date, summary: p.summary, kind: 'md' as const })),
+  ].sort((a, b) => (a.date < b.date ? 1 : -1))
+
   return (
-    <>
+    <div style={{ background: NIGHT, minHeight: '100vh', color: CREAM, fontFamily: 'Inter, -apple-system, sans-serif' }}>
       <GemStudiosNav />
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14 pb-24">
-        <header className="mb-10 sm:mb-14">
-          <h1 className="text-[36px] sm:text-[48px] font-extrabold tracking-tight text-[var(--gem-gray-50)] leading-[1.05] m-0 mb-4 font-[family-name:var(--font-display)]">
-            Notes from GEM Studios.
+      <main style={{ maxWidth: 940, margin: '0 auto', padding: '70px 28px 120px' }}>
+        <header style={{ marginBottom: 48 }}>
+          <div style={{ letterSpacing: '0.22em', fontSize: 12.5, color: GOLD, textTransform: 'uppercase', fontWeight: 600 }}>
+            GEM Studios
+          </div>
+          <h1
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontWeight: 500,
+              fontSize: 'clamp(40px, 5.2vw, 60px)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.02em',
+              margin: '18px 0 16px',
+              color: CREAM,
+            }}
+          >
+            Notes from <em style={{ fontStyle: 'italic', color: VIOLET }}>GEM Studios.</em>
           </h1>
-          <p className="text-[15.5px] sm:text-[16px] text-[var(--gem-gray-300)] leading-[1.6] m-0 max-w-[60ch]">
-            What we&apos;re building, what we&apos;re watching, and how we think about finding great projects.
+          <p style={{ fontSize: 18, lineHeight: 1.55, color: 'rgba(243,239,232,0.7)', margin: 0, maxWidth: '58ch' }}>
+            What we&apos;re building, what we&apos;re finding, and how we think about making great films.
           </p>
         </header>
 
         {posts.length === 0 ? (
-          <p className="text-[15px] text-[var(--gem-gray-400)] m-0">
-            No posts yet — first one ships at launch.
-          </p>
+          <p style={{ fontSize: 15, color: 'rgba(243,239,232,0.5)', margin: 0 }}>No posts yet.</p>
         ) : (
-          <ul className="list-none p-0 m-0 space-y-4">
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 18 }}>
             {posts.map(post => (
               <li key={post.slug}>
-                <Link
+                <a
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-2xl p-5 sm:p-6 transition-all hover:border-[var(--gem-gold)]"
+                  className="gem-post-card"
                   style={{
-                    background: '#fff',
-                    border: '1px solid var(--gem-gray-700)',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+                    display: 'block',
+                    borderRadius: 16,
+                    padding: '28px 30px 26px',
+                    textDecoration: 'none',
+                    background: 'linear-gradient(160deg, rgba(255,255,255,0.055), rgba(139,92,246,0.05))',
+                    border: '1px solid rgba(255,255,255,0.10)',
+                    transition: 'border-color .2s, background .2s',
                   }}
                 >
-                  <p className="text-[12px] uppercase tracking-[0.16em] font-bold text-[var(--gem-gray-500)] m-0 mb-2">
+                  <p style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.16em', fontWeight: 600, color: GOLD, margin: '0 0 12px' }}>
                     {formatDate(post.date)}
                   </p>
                   <h2
-                    className="text-[22px] sm:text-[26px] font-bold tracking-tight text-[var(--gem-gray-50)] leading-tight m-0 mb-2 group-hover:text-[var(--gem-accent)] transition-colors"
-                    style={{ fontFamily: 'Georgia, serif' }}
+                    style={{
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontWeight: 500,
+                      fontSize: 'clamp(26px, 3.2vw, 34px)',
+                      lineHeight: 1.15,
+                      letterSpacing: '-0.01em',
+                      color: CREAM,
+                      margin: '0 0 12px',
+                    }}
                   >
                     {post.title}
                   </h2>
-                  <p className="text-[14.5px] text-[var(--gem-gray-300)] leading-[1.55] m-0 mb-3">
+                  <p style={{ fontSize: 16, lineHeight: 1.6, color: 'rgba(243,239,232,0.72)', margin: '0 0 16px', maxWidth: '68ch' }}>
                     {post.summary}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--gem-accent)] group-hover:underline">
-                    Read post
-                    <ArrowRight size={13} />
+                  <span style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: VIOLET }}>
+                    Read the post →
                   </span>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         )}
       </main>
-    </>
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+      <style>{`
+        .gem-post-card:hover { border-color: rgba(228,201,126,0.45) !important; background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(139,92,246,0.08)) !important; }
+      `}</style>
+    </div>
   )
 }
 
 function formatDate(iso: string): string {
   const d = new Date(iso + 'T00:00:00Z')
-  return d.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  })
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
 }

@@ -12,7 +12,7 @@ export default function GemStudiosNav() {
         borderBottom: '0.5px solid rgba(255,255,255,0.08)',
         position: 'sticky',
         top: 0,
-        background: '#0A0A0A',
+        background: 'rgba(14,11,20,0.92)',
         zIndex: 100,
         fontFamily: 'Inter, -apple-system, sans-serif',
         fontWeight: 300,
@@ -31,7 +31,7 @@ export default function GemStudiosNav() {
           style={{
             width: '15px',
             height: '15px',
-            background: '#7C3AED',
+            background: 'linear-gradient(135deg,#8b5cf6,#5B21B6)',
             borderRadius: '2px',
             transform: 'rotate(45deg)',
             flexShrink: 0,
@@ -39,10 +39,10 @@ export default function GemStudiosNav() {
         />
         <span
           style={{
-            fontSize: '11px',
-            fontWeight: 400,
+            fontSize: '12px',
+            fontWeight: 600,
             letterSpacing: '0.14em',
-            color: 'rgba(255,255,255,0.85)',
+            color: '#fff',
             textTransform: 'uppercase',
           }}
         >
@@ -52,11 +52,23 @@ export default function GemStudiosNav() {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
         <a
+          href="/#see"
+          style={{
+            fontSize: '11px',
+            letterSpacing: '0.1em',
+            color: 'rgba(243,239,232,0.6)',
+            textDecoration: 'none',
+            textTransform: 'uppercase',
+          }}
+        >
+          What we do
+        </a>
+        <a
           href="/blog"
           style={{
             fontSize: '11px',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.52)',
+            color: 'rgba(243,239,232,0.6)',
             textDecoration: 'none',
             textTransform: 'uppercase',
           }}
@@ -68,14 +80,15 @@ export default function GemStudiosNav() {
           style={{
             fontSize: '11px',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.75)',
-            borderBottom: '0.5px solid rgba(255,255,255,0.25)',
+            color: '#C4B5FD',
+            borderBottom: '1px solid rgba(196,181,253,0.45)',
             paddingBottom: '2px',
+            fontWeight: 600,
             textDecoration: 'none',
             textTransform: 'uppercase',
           }}
         >
-          Get in touch
+          Partner with us
         </a>
       </div>
     </nav>
