@@ -154,7 +154,11 @@
     .led-arrow { position: relative; }
     .led-arrow span { position: absolute; left: 12px; right: 12px; top: 50%; height: 1.5px; background: rgba(228,201,126,0.55); }
     .led-arrow span::after { content: ""; position: absolute; right: -1px; top: -5px; border-style: solid; border-width: 5.5px 0 5.5px 9px; border-color: transparent transparent transparent rgba(228,201,126,0.8); }
-    .led .slate3 { margin-top: 22px; }
+    .led .slate3 { margin-top: 26px; }
+    .led-line { font-size: 20px; line-height: 1.5; color: rgba(243,239,232,0.88); max-width: 820px; }
+    .led-line b { color: var(--gold-soft); font-weight: 600; }
+    .led-more { margin-top: 26px; font-size: 19px; color: rgba(243,239,232,0.85); }
+    .led-more b { color: var(--gold-soft); font-weight: 600; }
     /* ── Founder note ── */
     .founder-note { margin-top: 44px; max-width: 900px; padding: 30px 34px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.22); background: linear-gradient(160deg, rgba(228,201,126,0.06), rgba(139,92,246,0.05)); }
     .founder-note .cap { display: block; margin-bottom: 14px; }
@@ -345,19 +349,7 @@
   <p class="selz-one reveal">Selznick sits at every level of the creative process, from writing, directing, and producing to marketing and finance, in our organization and our partners&rsquo;. It understands every unique narrative in incredible detail: what actually makes it different from everything ever made in its category. It understands the market at enormous scale. And it studies people: which teams, when they come together, make something incredible. Every person in the process draws on that understanding to make their own creative decisions, and the work comes out bigger and better than was possible before, reaching bigger audiences and made more sustainably. That&rsquo;s why we can take bigger creative risks than anyone.</p>
 
   <div class="led reveal">
-    <div class="led-row">
-      <div class="led-cell led-social">
-        <span class="cap">Social &middot; 2025</span>
-        <b>500 million viewers</b>
-        <p>Where we started, and where we proved this approach to creativity works at scale.</p>
-      </div>
-      <div class="led-arrow" aria-hidden="true"><span></span></div>
-      <div class="led-cell led-film">
-        <span class="cap">Film &amp; series &middot; now</span>
-        <b>Two projects in development</b>
-        <p>Selznick became a thousand times more powerful in the last six months to make this jump. More announcements coming soon.</p>
-      </div>
-    </div>
+    <p class="led-line">Selznick powered the videos that reached <b>500 million viewers</b> in our first twelve months. Now it&rsquo;s developing our first feature film and series.</p>
     <div class="slate3 two-up">
       <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg');background-size:cover;background-position:center">
         <span class="tag">In development</span>
@@ -368,6 +360,7 @@
         <div class="poster-cap"><b>I Work in Marketing</b><span>Series &middot; comedy</span></div>
       </div>
     </div>
+    <p class="led-more reveal">More projects and partnerships are in the works. <b>Announcements coming soon.</b></p>
     <div class="cta-row reveal">
       <a href="mailto:info@gem.studio" class="btn btn-primary">Partner with us</a>
       <span class="cta-note">Writers, producers, studios, financiers: we want to hear from you.</span>
