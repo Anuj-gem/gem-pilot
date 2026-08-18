@@ -115,7 +115,7 @@
     /* ── Selznick figure ── */
     .selz-fig { position: relative; width: 100%; max-width: 1240px; height: 680px; margin-top: 44px; border-radius: 16px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(139,92,246,0.04)); overflow: hidden; }
     .selz-fig canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .selz-one { margin-top: 32px; max-width: 900px; font-size: 17.5px; line-height: 1.62; color: rgba(243,239,232,0.86); }
+    .selz-one { margin-top: 32px; max-width: 900px; font-size: 18.5px; line-height: 1.62; color: rgba(243,239,232,0.88); }
     .selz-one a { color: var(--violet); text-decoration: none; border-bottom: 1px solid rgba(196,181,253,0.4); }
     .selz-cols .cap { display: block; margin-bottom: 12px; }
     @media (max-width: 900px) {
@@ -238,6 +238,9 @@
     .svm-gold2 { left: 30px; top: 6px; width: 20px; height: 20px; }
     .cta-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 26px; }
     .cta-note { font-size: 15px; color: rgba(243,239,232,0.7); }
+    .lead b.gold { color: var(--gold-soft); font-weight: 600; }
+    .open-door { margin-top: 34px; padding: 26px 30px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.22); background: linear-gradient(160deg, rgba(228,201,126,0.06), rgba(139,92,246,0.05)); max-width: 900px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .open-door p { flex: 1 1 420px; font-size: 17px; line-height: 1.55; color: rgba(243,239,232,0.88); margin: 0; }
     .svc-close { margin-top: 30px; font-size: 18px; color: rgba(243,239,232,0.85); max-width: 760px; }
     @media (max-width: 900px) { .svc { grid-template-columns: 1fr; gap: 14px; } .sv b { font-size: 24px; } }
 
@@ -312,7 +315,8 @@
   </a>
   <div class="nav-links">
     <a href="#how">What we do</a>
-    <a href="#open">Work with us</a>
+    <a href="#slate">Our work</a>
+    <a href="#open">Add us as a producer</a>
     <a href="/blog">Blog</a>
     <a href="mailto:info@gem.studio" class="nav-cta">Partner with us</a>
   </div>
@@ -348,32 +352,37 @@
 
   <p class="selz-one reveal">Selznick sits at every level of the creative process, from writing, directing, and producing to marketing and finance, in our organization and our partners&rsquo;. It understands every unique narrative in incredible detail: what actually makes it different from everything ever made in its category. It understands the market at enormous scale. And it studies people: which teams, when they come together, make something incredible. Every person in the process draws on that understanding to make their own creative decisions, and the work comes out bigger and better than was possible before, reaching bigger audiences and made more sustainably. That&rsquo;s why we can take bigger creative risks than anyone.</p>
 
-  <div class="led reveal">
-    <p class="led-line">Selznick powered the videos that reached <b>500 million viewers</b> in our first twelve months. Now it&rsquo;s developing our first feature film and series.</p>
-    <div class="slate3 two-up">
-      <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg');background-size:cover;background-position:center">
-        <span class="tag">In development</span>
-        <div class="poster-cap"><b>Overlord</b><span>Feature film &middot; sci-fi</span></div>
-      </div>
-      <div class="poster" style="background-image:url('screenshots/marketing-keyart-web.jpg');background-size:cover;background-position:center">
-        <span class="tag">In development</span>
-        <div class="poster-cap"><b>I Work in Marketing</b><span>Series &middot; comedy</span></div>
-      </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- Our own work -->
+<section id="slate">
+  <p class="h2 reveal">Our own <em>work.</em></p>
+  <p class="lead reveal">We develop, finance, and produce our own work, built by our in-house creative team on Selznick. In less than twelve months the results have been staggering: <b class="gold">500 million viewers</b> on our own channels, and now our first feature film and series in development. There&rsquo;s a lot more coming.</p>
+  <div class="slate3 two-up reveal">
+    <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg');background-size:cover;background-position:center">
+      <span class="tag">In development</span>
+      <div class="poster-cap"><b>Overlord</b><span>Feature film &middot; sci-fi</span></div>
     </div>
-    <p class="led-more reveal">More projects and partnerships are in the works. <b>Announcements coming soon.</b></p>
-    <div class="cta-row reveal">
-      <a href="mailto:info@gem.studio" class="btn btn-primary">Partner with us</a>
-      <span class="cta-note">Writers, producers, studios, financiers: we want to hear from you.</span>
+    <div class="poster" style="background-image:url('screenshots/marketing-keyart-web.jpg');background-size:cover;background-position:center">
+      <span class="tag">In development</span>
+      <div class="poster-cap"><b>I Work in Marketing</b><span>Series &middot; comedy</span></div>
     </div>
+  </div>
+  <p class="led-more reveal">More projects and partnerships are in the works. <b>Announcements coming soon.</b></p>
+  <div class="open-door reveal">
+    <p>Any writer or creator can send us an idea. We accept open submissions, everyone gets fair consideration, and when the idea is right we&rsquo;ll co-produce it with you.</p>
+    <a href="mailto:info@gem.studio?subject=An%20idea%20for%20GEM" class="btn btn-primary">Send us an idea</a>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- Work with us — the things people call us for -->
+<!-- Add us as a producer -->
 <section id="open">
-  <p class="h2 reveal">Work with <em>us.</em></p>
-  <p class="lead reveal">Everything Selznick understands about stories, people, and the market applies to your project too. Here&rsquo;s what that looks like in practice.</p>
+  <p class="h2 reveal">Add us as a producer on <em>your project.</em></p>
+  <p class="lead reveal">We work directly with the best entertainers, production companies, and studios in the world, bringing Selznick and our team onto their film and television projects to make the best entertainment possible. This is what we bring to a project as a producer.</p>
 
   <div class="svc reveal">
     <div class="sv">
@@ -437,10 +446,9 @@
     </div>
   </div>
 
-  <p class="svc-close reveal">We&rsquo;re open to anyone, and to any way of working together. Reach out, and we&rsquo;ll figure out how to bring Selznick to your next project.</p>
+  <p class="svc-close reveal">We&rsquo;re open to any way of working together. Tell us about your project and we&rsquo;ll figure out how to bring Selznick and our team to it.</p>
   <div class="cta-row reveal">
-    <a href="mailto:info@gem.studio" class="btn btn-primary">Partner with us</a>
-    <a href="mailto:info@gem.studio?subject=An%20idea%20for%20GEM" class="btn-text">Send us an idea ↗</a>
+    <a href="mailto:info@gem.studio?subject=Add%20GEM%20as%20a%20producer" class="btn btn-primary">Add us as a producer</a>
   </div>
 
   <div class="founder-note reveal">
