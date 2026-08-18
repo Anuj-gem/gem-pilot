@@ -239,6 +239,10 @@
     .cta-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 26px; }
     .cta-note { font-size: 15px; color: rgba(243,239,232,0.7); }
     .lead b.gold { color: var(--gold-soft); font-weight: 600; }
+    .own-stat { margin-top: 30px; }
+    .own-stat .cap { display: block; margin-bottom: 8px; }
+    .own-stat b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(44px, 5.4vw, 76px); line-height: 1; color: var(--gold-soft); text-shadow: 0 0 34px rgba(228,201,126,0.4); }
+    .own-sub { display: block; margin-top: 12px; font-size: 19px; line-height: 1.5; color: rgba(243,239,232,0.85); max-width: 640px; }
     .open-door { margin-top: 34px; padding: 26px 30px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.22); background: linear-gradient(160deg, rgba(228,201,126,0.06), rgba(139,92,246,0.05)); max-width: 900px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
     .open-door p { flex: 1 1 420px; font-size: 17px; line-height: 1.55; color: rgba(243,239,232,0.88); margin: 0; }
     .svc-close { margin-top: 30px; font-size: 18px; color: rgba(243,239,232,0.85); max-width: 760px; }
@@ -359,7 +363,13 @@
 <!-- Our own work -->
 <section id="slate">
   <p class="h2 reveal">Our own <em>work.</em></p>
-  <p class="lead reveal">We develop, finance, and produce our own work, built by our in-house creative team on Selznick. In less than twelve months the results have been staggering: <b class="gold">500 million viewers</b> on our own channels, and now our first feature film and series in development. There&rsquo;s a lot more coming.</p>
+  <p class="lead reveal">We develop, finance, and produce our own work, built by our in-house creative team on Selznick.</p>
+  <div class="own-stat reveal">
+    <span class="cap">Social &middot; the last twelve months</span>
+    <b>500 million viewers</b>
+    <span class="own-sub">on our own channels. Now we&rsquo;re producing our own film and TV series.</span>
+  </div>
+  <p class="cap reveal" style="margin-top:36px">Film &amp; series &middot; two projects in development</p>
   <div class="slate3 two-up reveal">
     <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg');background-size:cover;background-position:center">
       <span class="tag">In development</span>
