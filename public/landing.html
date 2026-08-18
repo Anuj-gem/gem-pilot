@@ -113,7 +113,7 @@
 
 
     /* ── Selznick figure ── */
-    .selz-fig { position: relative; width: 100%; max-width: 1240px; height: 660px; margin-top: 44px; border-radius: 16px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(139,92,246,0.04)); overflow: hidden; }
+    .selz-fig { position: relative; width: 100%; max-width: 1240px; height: 700px; margin-top: 44px; border-radius: 16px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(139,92,246,0.04)); overflow: hidden; }
     .selz-fig canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     .spec { display: grid; grid-template-columns: 1fr 1.4fr; gap: 36px; align-items: center; margin-top: 30px; padding: 26px 30px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.2); background: linear-gradient(160deg, rgba(228,201,126,0.05), rgba(139,92,246,0.05)); max-width: 1240px; }
     .spec-txt .cap { display: block; margin-bottom: 10px; }
@@ -121,7 +121,7 @@
     .spec-fig { position: relative; height: 190px; }
     .spec-fig canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     @media (max-width: 900px) { .spec { grid-template-columns: 1fr; } .spec-fig { height: 160px; } }
-    .legend { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 30px; margin-top: 34px; max-width: 1240px; }
+    .legend { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 44px; margin-top: 52px; max-width: 1240px; }
     .lg b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; margin: 12px 0 6px; }
     .lg p { font-size: 16.5px; line-height: 1.6; color: rgba(243,239,232,0.86); }
     .lg-mark { position: relative; height: 34px; width: 90px; }
@@ -416,7 +416,7 @@
     <div class="lg">
       <div class="lg-mark" aria-hidden="true"><span class="lgm-gem"></span></div>
       <b>What Selznick is</b>
-      <p>Selznick decomposes every narrative and studies it element by element. It combines that with market data at enormous scale, and with our own study of the individual people in entertainment: their skills, their histories, and the impact each one has on a project. Nobody has modeled all three together before.</p>
+      <p>Selznick is the most advanced model of entertainment ever built. It decomposes every narrative down to its individual elements, measures the entire market at a scale no one else has attempted, and studies the people who make films: what each has delivered, and what they add to a given project. It is the only model that does all three at once, which is why it can tell you what a story could become and what it takes to get there.</p>
     </div>
     <div class="lg">
       <div class="lg-mark" aria-hidden="true"><span class="lgm-p"></span><span class="lgm-p lgm-p2"></span><span class="lgm-p lgm-p3"></span></div>
@@ -789,61 +789,52 @@
       ctx.clearRect(0, 0, w, h);
       const wide = w >= 900;
       if (wide) {
-        const L = w * 0.07, R = w * 0.66;
-        const SY = h * 0.44, HIGH_END = h * 0.10, LOW_END = h * 0.92;
+        const L = w * 0.17, R = w * 0.72;
+        const SY = h * 0.52, END_Y = h * 0.13;
         const n = STAGES.length;
-        const hiX = t => L + (R - L) * t, hiY = t => SY + (HIGH_END - SY) * Math.pow(t, 0.85);
-        const loX = t => L + (R - L) * t, loY = t => SY + (LOW_END - SY) * Math.pow(t, 1.05);
+        const sx = t => L + (R - L) * t, sy = t => SY + (END_Y - SY) * Math.pow(t, 0.9);
 
-        // Selznick sits inside the wedge, between the two roads
-        const GX = w * 0.50, GY = h * 0.56, GS = 58;
+        // Selznick, beneath, informing every decision
+        const GX = w * 0.40, GY = h * 0.72, GS = 52;
+        for (let i = 0; i < n; i++) { const t = (i + 1) / (n + 0.6); arrow(GX + (sx(t) - GX) * 0.10, GY - GS * 0.62, sx(t), sy(t) + 16, 'rgba(196,181,253,0.45)', 1.3); }
 
-        // its arrows to every stage — drawn first, beneath the roads
-        for (let i = 0; i < n; i++) { const t = (i + 1) / (n + 0.5); arrow(GX + (hiX(t) - GX) * 0.10, GY - GS * 0.62, hiX(t), hiY(t) + 14, 'rgba(196,181,253,0.45)', 1.3); }
+        // the start: the same script, made the ordinary way
+        dia(L, SY, 11, false, 0.7);
+        txt('$90M', L, SY + 34, '600 20px Inter, sans-serif', 'rgba(143,207,159,0.75)', 1, 'center');
+        txt('MADE THE ORDINARY WAY', L, SY + 56, '700 11px Inter, sans-serif', SOFT, 1, 'center', '0.12em');
+        txt('the same script', L, SY - 30, '400 14px Inter, sans-serif', SOFT, 1, 'center');
 
-        page(L, SY, 1.4);
-        txt('THE SCREENPLAY', L, SY + 44, '700 12px Inter, sans-serif', INK, 1, 'center', '0.14em');
-        txt('the same script,', L, SY + 66, '400 14px Inter, sans-serif', SOFT, 1, 'center');
-        txt('two ways of making it', L, SY + 84, '400 14px Inter, sans-serif', SOFT, 1, 'center');
+        // the climb
+        const pts = [[L + 16, SY - 6]];
+        for (let i = 0; i < n; i++) { const t = (i + 1) / (n + 0.6); pts.push([sx(t), sy(t)]); }
+        pts.push([R, END_Y]);
+        poly(pts, 'rgba(228,201,126,0.72)', 3, true);
+        for (let i = 0; i < n; i++) { const p = pts[i + 1]; dia(p[0], p[1], 7, true); txt(STAGES[i], p[0], p[1] - 20, '700 12.5px Inter, sans-serif', GOLD, 1, 'center', '0.14em'); }
 
-        // lower road — drops away to the bottom, labels below it
-        const lowPts = [[L + 24, SY + 6]];
-        for (let i = 0; i < n; i++) { const t = (i + 1) / (n + 0.5); lowPts.push([loX(t), loY(t)]); }
-        lowPts.push([R, LOW_END]);
-        poly(lowPts, 'rgba(228,201,126,0.22)', 1.6, false);
-        for (let i = 0; i < n; i++) { const p = lowPts[i + 1]; dia(p[0], p[1], 4.5, false, 0.6); txt(SAFE[i], p[0], p[1] + 22, '400 13px Inter, sans-serif', SOFT, 1, 'center'); }
-        dia(R + 12, LOW_END, 9, false, 0.65);
-        txt('$90M', R + 34, LOW_END - 4, '600 18px Inter, sans-serif', 'rgba(143,207,159,0.7)', 1, 'left');
-        txt('the ordinary decisions', R + 34, LOW_END + 16, '400 13px Inter, sans-serif', SOFT, 1, 'left');
-
-        // upper road — climbs, stage labels above it
-        const hiPts = [[L + 24, SY - 6]];
-        for (let i = 0; i < n; i++) { const t = (i + 1) / (n + 0.5); hiPts.push([hiX(t), hiY(t)]); }
-        hiPts.push([R, HIGH_END]);
-        poly(hiPts, 'rgba(228,201,126,0.72)', 2.8, true);
-        for (let i = 0; i < n; i++) { const p = hiPts[i + 1]; dia(p[0], p[1], 6.5, true); txt(STAGES[i], p[0], p[1] - 18, '700 12px Inter, sans-serif', GOLD, 1, 'center', '0.14em'); }
-        const TX = hiPts[3][0], TY = hiPts[3][1] - 62;
+        // the team, riding the climb
+        const TX = pts[3][0], TY = pts[3][1] - 74;
         [-40, -13, 13, 40].forEach(dx => person(TX + dx, TY, 0.85));
-        txt('THE RIGHT TEAM, INFORMED AT EVERY STAGE', TX, TY - 36, '700 12px Inter, sans-serif', INK, 1, 'center', '0.14em');
-        dia(R + 12, HIGH_END, 26, true);
-        txt('~$500M', R + 48, HIGH_END + 8, '700 30px Inter, sans-serif', GREEN, 1, 'left');
-        txt('every decision informed', R + 48, HIGH_END + 30, '400 14px Inter, sans-serif', SOFT, 1, 'left');
+        txt('THE RIGHT TEAM, INFORMED AT EVERY STAGE', TX, TY - 38, '700 12px Inter, sans-serif', INK, 1, 'center', '0.14em');
 
-        // the gem itself, with its label beneath and inputs to its right
-        txt('INFORMS EVERY STAGE', GX - GS * 0.7 - 16, GY + 4, '700 11px Inter, sans-serif', VIOLET, 0.9, 'right', '0.16em');
+        // the end
+        dia(R + 14, END_Y, 28, true);
+        txt('~$500M', R + 52, END_Y + 8, '700 32px Inter, sans-serif', GREEN, 1, 'left');
+        txt('every decision informed', R + 52, END_Y + 30, '400 14px Inter, sans-serif', SOFT, 1, 'left');
+
         gem(GX, GY, GS);
-        txt('SELZNICK', GX, GY + GS * 0.85 + 10, '700 13px Inter, sans-serif', VIOLET, 1, 'center', '0.22em');
-        txt('the world’s most powerful AI creative partner', GX, GY + GS * 0.85 + 30, '400 13.5px Inter, sans-serif', SOFT, 1, 'center');
+        txt('SELZNICK', GX + GS * 0.85 + 16, GY - 4, '700 13px Inter, sans-serif', VIOLET, 1, 'left', '0.22em');
+        txt('informing every decision along the way', GX + GS * 0.85 + 16, GY + 18, '400 14px Inter, sans-serif', SOFT, 1, 'left');
 
-        const IX = GX + GS * 0.75 + 34;
-        txt('WHAT IT STUDIES', IX, GY - 74, '700 11px Inter, sans-serif', VIOLET, 0.9, 'left', '0.16em');
-        INPUTS.forEach((inp, i) => {
-          const y = GY - 38 + i * 44;
-          cluster(IX + 10, y - 4, 12, 10, 14, 41 + i);
-          txt(inp[0], IX + 32, y - 6, '700 12px Inter, sans-serif', GOLD, 1, 'left', '0.14em');
-          txt(inp[1] + ' ' + inp[2], IX + 32, y + 12, '400 12.5px Inter, sans-serif', SOFT, 1, 'left');
-          arrow(IX - 4, y - 4, GX + GS * 0.64, GY + (y - GY) * 0.3, 'rgba(196,181,253,0.5)', 1.2);
+        // what it is built on, as a compact band beneath
+        const BY = GY + GS * 0.72 + 66, BW = Math.min(1000, w - 140), BX = (w - BW) / 2;
+        const BUILT = ['EVERY NARRATIVE, DECOMPOSED', 'THE ENTIRE MARKET, MEASURED', 'EVERY FILMMAKER, STUDIED'];
+        BUILT.forEach((b, i) => {
+          const x = BX + BW * (0.16 + i * 0.34);
+          cluster(x, BY, 13, 11, 20, 41 + i);
+          txt(b, x, BY + 30, '700 11.5px Inter, sans-serif', GOLD, 1, 'center', '0.13em');
+          arrow(x, BY - 16, GX + (x - GX) * 0.18, GY + GS * 0.66, 'rgba(196,181,253,0.4)', 1.2);
         });
+        txt('BUILT ON', BX, BY - 34, '700 11px Inter, sans-serif', VIOLET, 0.85, 'left', '0.16em');
       } else {
         const SX = w / 2;
         const LX = w * 0.25, HX = w * 0.73;
@@ -855,7 +846,7 @@
         const TOP = 158;
         line(SX - 10, 110, LX, TOP - 26, 'rgba(228,201,126,0.22)', 1.4);
         line(SX + 10, 110, HX, TOP - 26, 'rgba(228,201,126,0.65)', 2);
-        txt('THE ORDINARY WAY', LX, TOP - 12, '700 9px Inter, sans-serif', SOFT, 1, 'center', '0.08em');
+        txt('THE ORDINARY WAY', LX, TOP - 12, '700 9.5px Inter, sans-serif', SOFT, 1, 'center', '0.08em');
         txt('EVERY DECISION INFORMED', HX, TOP - 12, '700 9px Inter, sans-serif', GOLD, 1, 'center', '0.08em');
         // the two columns
         const step = 62, n = STAGES.length;
@@ -863,7 +854,6 @@
         line(HX, TOP - 4, HX, TOP + step * (n - 1) + 30, 'rgba(228,201,126,0.65)', 2);
         STAGES.forEach((st, i) => {
           const y = TOP + 16 + i * step;
-          dia(LX, y, 4.5, false, 0.6); txt(SAFE[i], LX, y + 22, '400 12px Inter, sans-serif', SOFT, 1, 'center');
           dia(HX, y, 6, true); txt(st, HX, y + 22, '700 10px Inter, sans-serif', GOLD, 1, 'center', '0.1em');
         });
         // the ends
