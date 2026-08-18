@@ -182,6 +182,36 @@
     .post-card p { font-size: 15px; color: rgba(243,239,232,0.75); margin-bottom: 12px; }
     @media (max-width: 900px) { .after { grid-template-columns: 1fr; gap: 36px; } }
 
+
+    /* ── Services ── */
+    .svc { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; margin-top: 40px; max-width: 1240px; }
+    .sv { border-radius: 16px; padding: 26px 28px 22px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.045), rgba(139,92,246,0.05)); }
+    .sv b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; line-height: 1.15; margin: 14px 0 8px; color: var(--on-screen); }
+    .sv p { font-size: 16px; line-height: 1.55; color: rgba(243,239,232,0.82); margin-bottom: 12px; }
+    .sv ul { list-style: none; margin: 0; padding: 0; }
+    .sv li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.55; color: rgba(243,239,232,0.74); margin-bottom: 7px; }
+    .sv li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 6px; height: 6px; transform: rotate(45deg); background: var(--gold-soft); opacity: 0.85; }
+    .sv-mark { position: relative; height: 40px; width: 80px; }
+    .svm-page { position: absolute; left: 0; top: 4px; width: 22px; height: 30px; border: 1.6px solid #F0DCA0; border-radius: 2px; box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-page::before, .svm-page::after { content: ""; position: absolute; left: 5px; right: 5px; height: 1.4px; background: #F0DCA0; }
+    .svm-page::before { top: 9px; } .svm-page::after { top: 16px; right: 9px; }
+    .svm-p { position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 1.6px solid var(--gold-soft); box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-p::after { content: ""; position: absolute; left: -5px; right: -5px; top: 15px; height: 11px; border: 1.6px solid var(--gold-soft); border-bottom: none; border-radius: 10px 10px 0 0; }
+    .svm-p2 { left: 30px; }
+    .svm-clap { position: absolute; left: 0; top: 8px; width: 34px; height: 24px; border: 1.6px solid var(--gold-soft); border-radius: 2px; box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-clap::before { content: ""; position: absolute; left: -1.6px; right: -1.6px; top: -9px; height: 7px; border: 1.6px solid var(--gold-soft); border-radius: 2px 2px 0 0; background: repeating-linear-gradient(115deg, transparent 0 5px, rgba(228,201,126,0.7) 5px 7px); }
+    .svm-curve { position: absolute; left: 0; bottom: 4px; width: 60px; height: 30px; border-bottom: 1.6px solid rgba(228,201,126,0.4); }
+    .svm-curve::before { content: ""; position: absolute; left: 0; bottom: 0; width: 60px; height: 30px; border-radius: 0 0 60px 0 / 0 0 30px 0; border-right: 2px solid var(--gold-soft); border-bottom: 2px solid var(--gold-soft); box-sizing: border-box; clip-path: polygon(0 100%, 100% 100%, 100% 0); }
+    .svm-curve::after { content: ""; position: absolute; right: -4px; top: -6px; width: 10px; height: 10px; transform: rotate(45deg); background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 12px rgba(255,225,140,0.8); }
+    .svm-globe { position: absolute; left: 0; top: 4px; width: 32px; height: 32px; border-radius: 50%; border: 1.6px solid var(--gold-soft); box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-globe::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 14px; transform: translateX(-50%); border-radius: 50%; border: 1.4px solid rgba(228,201,126,0.7); }
+    .svm-globe::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.4px; background: rgba(228,201,126,0.7); }
+    .svm-gem { position: absolute; left: 6px; top: 8px; width: 22px; height: 22px; transform: rotate(45deg); border-radius: 5px; background: linear-gradient(135deg,#C4B5FD,#6D28D9); box-shadow: 0 0 18px rgba(139,92,246,0.7); }
+    .svm-gold { position: absolute; left: 4px; top: 12px; width: 14px; height: 14px; transform: rotate(45deg); background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 12px rgba(255,225,140,0.7); }
+    .svm-gold2 { left: 30px; top: 6px; width: 20px; height: 20px; }
+    .svc-close { margin-top: 30px; font-size: 18px; color: rgba(243,239,232,0.85); max-width: 760px; }
+    @media (max-width: 900px) { .svc { grid-template-columns: 1fr; gap: 14px; } .sv b { font-size: 24px; } }
+
     /* ── Slate ── */
     .poster { position: relative; aspect-ratio: 2 / 3; border-radius: 14px; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.8); overflow: hidden; border: 1px solid var(--hair);
       background: radial-gradient(120% 90% at 20% 90%, rgba(139,92,246,0.35), transparent 60%), radial-gradient(90% 70% at 85% 10%, rgba(228,201,126,0.22), transparent 55%), linear-gradient(180deg, #17122A, #0B0912); }
@@ -253,7 +283,7 @@
   </a>
   <div class="nav-links">
     <a href="#how">What we do</a>
-    <a href="#open">How we work</a>
+    <a href="#open">Work with us</a>
     <a href="/blog">Blog</a>
     <a href="mailto:info@gem.studio" class="nav-cta">Partner with us</a>
   </div>
@@ -318,49 +348,83 @@
 
 <div class="rule"></div>
 
-<!-- How we work — the team, the partners, and the open door -->
+<!-- Work with us — the things people call us for -->
 <section id="open">
-  <p class="h2 reveal">How we <em>work.</em></p>
+  <p class="h2 reveal">Work with <em>us.</em></p>
+  <p class="lead reveal">We built Selznick to make our own work. We also bring it to yours. Studios, production companies, financiers, IP owners, and creators come to us for the things below, and because everything we do is informed by our modeling, we do each of them better than anyone.</p>
 
-  <div class="work reveal">
-    <div class="work-row">
-      <div class="work-fig" aria-hidden="true">
-        <span class="wf-gem"></span>
-        <span class="wf-p" style="left:8px;top:22px"></span><span class="wf-p" style="left:44px;top:6px"></span><span class="wf-p" style="left:80px;top:22px"></span>
-        <span class="wf-p" style="left:26px;top:58px"></span><span class="wf-p" style="left:62px;top:58px"></span>
-      </div>
-      <div>
-        <h3>We have the best creative team in the world.</h3>
-        <p>We originally built Selznick as a tool for ourselves, to write and produce our own social media content. We&rsquo;ve assembled a team of the greatest storytellers in the world, and powered by Selznick, we take immense creative risks and make things that others would never make. The videos that reached 500 million people were written and produced by that team.</p>
-      </div>
+  <div class="svc reveal">
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-page"></span></div>
+      <b>Script development and adaptation</b>
+      <p>We help make scripts better, and we adapt existing material into new formats.</p>
+      <ul>
+        <li>Notes and rewrites on scripts you&rsquo;re developing: what&rsquo;s working, what isn&rsquo;t, and how to fix it</li>
+        <li>Adapting books, comics, podcasts, articles, and true stories into films and series</li>
+        <li>Finding the version of an idea with the most potential, and the format it belongs in</li>
+      </ul>
     </div>
-
-    <div class="work-row">
-      <div class="work-fig" aria-hidden="true">
-        <span class="wf-gem"></span>
-        <span class="wf-tag" style="left:0;top:4px">Writers</span><span class="wf-tag" style="left:0;top:34px">Creators</span>
-        <span class="wf-tag" style="left:0;top:64px">Studios</span><span class="wf-tag" style="right:0;top:34px">Financiers</span>
-      </div>
-      <div>
-        <h3>We partner with the best of the best.</h3>
-        <p>We partner with other companies and creators who have unique ideas and capabilities, from writers and online creators to studios and financiers, and we integrate Selznick into their creative process, so that together we can bring out the full potential of any idea.</p>
-      </div>
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-p"></span><span class="svm-p svm-p2"></span></div>
+      <b>Casting</b>
+      <p>We have better modeling on cast and crew than anyone in the industry.</p>
+      <ul>
+        <li>Who to cast, and what each choice adds to the project</li>
+        <li>Which directors, writers, and department heads to bring on</li>
+        <li>Advice on your shortlist, or we run the search ourselves</li>
+      </ul>
     </div>
-
-    <div class="work-row">
-      <div class="work-fig" aria-hidden="true">
-        <span class="wf-door"></span>
-        <span class="wf-p dim" style="left:0;top:8px"></span><span class="wf-p dim" style="left:0;top:44px"></span><span class="wf-p dim" style="left:0;top:80px"></span>
-        <span class="wf-line"></span>
-      </div>
-      <div>
-        <h3>And we&rsquo;re open to anyone.</h3>
-        <p>We think there is immense untapped potential out there. So unlike other studios, we&rsquo;re not closed off: powered by Selznick, we actively seek out new ideas, people, and companies to work with, and we take open submissions from anyone. Thousands of writers, producers, and companies have already reached out to us. We can only work with so many, and we only work with the best, but everyone gets fair consideration. And we&rsquo;re just getting started.</p>
-        <a href="mailto:info@gem.studio?subject=An%20idea%20for%20GEM" class="btn btn-primary" style="margin-top:8px">Send us an idea</a>
-      </div>
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-clap"></span></div>
+      <b>Production planning and budgeting</b>
+      <p>Detailed production plans and budgets, including how to use modern VFX and AI production well.</p>
+      <ul>
+        <li>Line-item budgets and schedules</li>
+        <li>What to shoot practically and what to build with VFX or AI</li>
+        <li>Where the money makes the biggest difference on screen</li>
+      </ul>
+    </div>
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-curve"></span></div>
+      <b>Revenue projections and underwriting</b>
+      <p>The full range of outcomes for a project, before you commit to it.</p>
+      <ul>
+        <li>Box office and viewership projections</li>
+        <li>Financial breakdowns for financiers and studios</li>
+        <li>What raises the ceiling and what lowers the floor</li>
+      </ul>
+    </div>
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-globe"></span></div>
+      <b>Distribution and marketing</b>
+      <p>Where a project should live and how to reach its audience.</p>
+      <ul>
+        <li>Theatrical, streaming, or social, and in what order</li>
+        <li>Marketing built on what we know about the audience</li>
+        <li>We built some of the most viral channels on the internet</li>
+      </ul>
+    </div>
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-gem"></span></div>
+      <b>Integrating Selznick into your company</b>
+      <p>Bring Selznick inside your own creative and financial process.</p>
+      <ul>
+        <li>We deploy engineers to connect it with the systems you already have</li>
+        <li>Your team makes its own decisions with our modeling behind them</li>
+      </ul>
+    </div>
+    <div class="sv">
+      <div class="sv-mark" aria-hidden="true"><span class="svm-gold"></span><span class="svm-gold svm-gold2"></span></div>
+      <b>Co-financing and co-production</b>
+      <p>In some cases we put our own money and our own team behind a project and make it with you.</p>
+      <ul>
+        <li>Co-development, co-production, or co-financing</li>
+        <li>We&rsquo;re open to any arrangement, and we don&rsquo;t need the credit</li>
+      </ul>
     </div>
   </div>
 
+  <p class="svc-close reveal">No pricing, no packages. Tell us what you&rsquo;re doing and we&rsquo;ll tell you how we can help.</p>
 
   <div class="founder-note reveal">
     <p class="cap">From the founder</p>
@@ -396,7 +460,7 @@
 <!-- Door -->
 <section class="door" id="partner">
   <h2 class="door-h reveal">Partner with us.</h2>
-  <p class="door-sub reveal">Send us an idea. Or, if you&rsquo;re about to make a big bet, on a script, a cast, a budget, talk to us first. We&rsquo;ll tell you what it could become and how to get there. Writers, producers, studios, financiers: we want to hear from you.</p>
+  <p class="door-sub reveal">We&rsquo;re open to anyone. Writers who want to collaborate on our productions, studios and companies that want help with any of the above, IP owners, financiers, creators: send us an idea, or tell us what you&rsquo;re doing. Everyone gets fair consideration. Thousands have already reached out, and we&rsquo;re just getting started.</p>
   <div class="reveal"><a href="mailto:info@gem.studio" class="btn btn-primary" style="padding:16px 44px;">Partner with us: info@gem.studio</a></div>
 </section>
 
