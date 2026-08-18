@@ -96,7 +96,7 @@
     .selz-one a { color: var(--violet); text-decoration: none; border-bottom: 1px solid rgba(196,181,253,0.4); }
     .selz-cols .cap { display: block; margin-bottom: 12px; }
     @media (max-width: 900px) {
-      .selz-fig { height: 900px; }
+      .selz-fig { height: 830px; }
     }
 
 
@@ -228,7 +228,9 @@
     footer { display: flex; justify-content: space-between; padding: 26px 56px 40px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--hair); max-width: 1352px; margin: 0 auto; }
 
     @media (max-width: 900px) {
-      nav { padding: 16px 18px; } .nav-links { gap: 18px; }
+      nav { padding: 16px 18px; } .nav-links { gap: 16px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .logo-text { font-size: 11px; }
       section { padding: 64px 18px; }
       .hero { padding: 64px 18px 260px; min-height: 0; }
       h1 { font-size: clamp(34px, 9vw, 44px); }
@@ -250,9 +252,9 @@
     <span class="logo-text">GEM Studios</span>
   </a>
   <div class="nav-links">
-    <a href="#how">What makes us different</a>
+    <a href="#how">What we do</a>
     <a href="#open">How we work</a>
-    <a href="/blog">Research</a>
+    <a href="/blog">Blog</a>
     <a href="mailto:info@gem.studio" class="nav-cta">Partner with us</a>
   </div>
 </nav>
@@ -657,18 +659,18 @@
 
       if (wide) {
         // ---- TOP: what comes out ----
-        const OY = 92;
-        diamond(CX - 78, OY, 8, false);
-        line(CX - 66, OY, CX - 36, OY, 'rgba(228,201,126,0.6)', 2);
-        line(CX - 44, OY - 6, CX - 36, OY, 'rgba(228,201,126,0.8)', 2); line(CX - 44, OY + 6, CX - 36, OY, 'rgba(228,201,126,0.8)', 2);
-        diamond(CX, OY, 22, true);
-        txt('the idea', CX - 78, OY + 26, '400 12.5px Inter, sans-serif', 'rgba(243,239,232,0.6)', 1, 'center');
-        txt('THE GREATEST FORM OF THE IDEA', CX + 44, OY - 8, '700 13.5px Inter, sans-serif', INK, 0.95, 'left', '0.14em');
-        txt('bigger and better than was possible before,', CX + 44, OY + 13, '400 13.5px Inter, sans-serif', 'rgba(243,239,232,0.75)', 1, 'left');
-        txt('reaching bigger audiences, made more sustainably', CX + 44, OY + 32, '400 13.5px Inter, sans-serif', 'rgba(243,239,232,0.75)', 1, 'left');
+        const OY = 96;
+        diamond(CX - 120, OY, 10, false);
+        line(CX - 104, OY, CX - 50, OY, 'rgba(228,201,126,0.6)', 2.2);
+        line(CX - 60, OY - 7, CX - 50, OY, 'rgba(228,201,126,0.85)', 2.2); line(CX - 60, OY + 7, CX - 50, OY, 'rgba(228,201,126,0.85)', 2.2);
+        diamond(CX, OY, 32, true);
+        txt('the idea', CX - 120, OY + 30, '400 13px Inter, sans-serif', 'rgba(243,239,232,0.6)', 1, 'center');
+        txt('THE GREATEST FORM OF THE IDEA', CX + 58, OY - 12, '700 17px Inter, sans-serif', INK, 1, 'left', '0.14em');
+        txt('bigger and better than was possible before,', CX + 58, OY + 12, '400 15px Inter, sans-serif', 'rgba(243,239,232,0.8)', 1, 'left');
+        txt('reaching bigger audiences, made more sustainably', CX + 58, OY + 33, '400 15px Inter, sans-serif', 'rgba(243,239,232,0.8)', 1, 'left');
 
         // ---- MIDDLE: everyone in the process ----
-        const PY = 250;
+        const PY = 262;
         txt('EVERYONE IN THE PROCESS DRAWS ON IT', CX, PY - 62, '700 12px Inter, sans-serif', VIOLET, 0.85, 'center', '0.18em');
         txt('at every level, in our organization and our partners’', CX, PY - 42, '400 13px Inter, sans-serif', 'rgba(243,239,232,0.6)', 1, 'center');
         const span = Math.min(w * 0.86, 1080), x0 = CX - span / 2, step = span / (PEOPLE.length - 1);
@@ -676,7 +678,7 @@
         PEOPLE.forEach((nm, i) => {
           const x = x0 + step * i;
           // each person's decisions feed the result
-          line(x, PY - 30, CX + (x - CX) * 0.08, OY + 30, 'rgba(228,201,126,0.22)', 1);
+          line(x, PY - 30, CX + (x - CX) * 0.08, OY + 40, 'rgba(228,201,126,0.22)', 1);
           person(x, PY, 1.05);
           txt(nm, x, PY + 44, '700 11px Inter, sans-serif', GOLD, 0.95, 'center', '0.14em');
           // Selznick underneath each of them
@@ -710,23 +712,29 @@
         txt('something incredible', CX - CW / 2 + 56, PCY + 67, '400 12.5px Inter, sans-serif', 'rgba(243,239,232,0.75)', 1, 'left');
       } else {
         // narrow — same three tiers, compact
-        const OY = 70;
-        diamond(CX - 60, OY, 7, false); line(CX - 48, OY, CX - 26, OY, 'rgba(228,201,126,0.6)', 2); diamond(CX, OY, 18, true);
-        txt('THE GREATEST FORM OF THE IDEA', CX, OY + 40, '700 12px Inter, sans-serif', INK, 0.95, 'center', '0.12em');
-        txt('bigger and better than was possible before', CX, OY + 60, '400 12.5px Inter, sans-serif', 'rgba(243,239,232,0.75)', 1, 'center');
-        txt('EVERYONE IN THE PROCESS DRAWS ON IT', CX, 172, '700 11px Inter, sans-serif', VIOLET, 0.85, 'center', '0.14em');
+        const OY = 76;
+        diamond(CX - 84, OY, 9, false);
+        line(CX - 70, OY, CX - 40, OY, 'rgba(228,201,126,0.6)', 2);
+        line(CX - 48, OY - 6, CX - 40, OY, 'rgba(228,201,126,0.85)', 2); line(CX - 48, OY + 6, CX - 40, OY, 'rgba(228,201,126,0.85)', 2);
+        diamond(CX, OY, 28, true);
+        txt('THE GREATEST FORM OF THE IDEA', CX, OY + 56, '700 12.5px Inter, sans-serif', INK, 1, 'center', '0.1em');
+        txt('bigger and better than was possible before', CX, OY + 78, '400 13.5px Inter, sans-serif', 'rgba(243,239,232,0.8)', 1, 'center');
+        // everyone — with lines up to the result and down to the gem
+        txt('EVERYONE IN THE PROCESS DRAWS ON IT', CX, 196, '700 10px Inter, sans-serif', VIOLET, 0.85, 'center', '0.1em');
         const cols = 4, rowH = 96, gx = (w - 32) / cols;
+        const GY = 490, GS = 66;
         PEOPLE.forEach((nm, i) => {
-          const cx = 16 + gx * (i % cols) + gx / 2, cy = 226 + Math.floor(i / cols) * rowH;
-          person(cx, cy, 0.85); txt(nm, cx, cy + 36, '700 9.5px Inter, sans-serif', GOLD, 0.95, 'center', '0.1em');
+          const cx = 16 + gx * (i % cols) + gx / 2, cy = 250 + Math.floor(i / cols) * rowH;
+          line(cx, cy - 28, CX + (cx - CX) * 0.15, OY + 96, 'rgba(228,201,126,0.18)', 1);
+          line(CX + (cx - CX) * 0.12, GY - GS * 0.55, cx, cy + 44, 'rgba(196,181,253,0.28)', 1);
+          person(cx, cy, 0.8); txt(nm, cx, cy + 34, '700 8.5px Inter, sans-serif', GOLD, 0.95, 'center', '0.06em');
         });
-        const GY = 470, GS = 66;
         gem(CX, GY, GS);
         txt('SELZNICK', CX, GY + GS * 0.9, '700 13px Inter, sans-serif', VIOLET, 0.95, 'center', '0.2em');
-        txt('the world’s most powerful AI creative partner', CX, GY + GS * 0.9 + 20, '400 12.5px Inter, sans-serif', 'rgba(243,239,232,0.7)', 1, 'center');
+        txt('the world’s most powerful AI creative partner', CX, GY + GS * 0.9 + 20, '400 12px Inter, sans-serif', 'rgba(243,239,232,0.7)', 1, 'center');
         const CARDS = [['THE NARRATIVE', 'every unique story, in incredible detail'], ['THE MARKET', 'box office, reviews, social, audience data'], ['THE PEOPLE', 'which teams, together, make something incredible']];
         CARDS.forEach((cd, i) => {
-          const y = 578 + i * 72, ht = 60;
+          const y = 598 + i * 72, ht = 60;
           card(16, y, w - 32, ht);
           cluster(40, y + ht / 2, 12, 10, 12, 31 + i);
           txt(cd[0], 66, y + 26, '700 12px Inter, sans-serif', GOLD, 0.95, 'left', '0.14em');
