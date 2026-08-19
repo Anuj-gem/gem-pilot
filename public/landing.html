@@ -69,7 +69,7 @@
   .acts{margin-top:34px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 
   /* selznick */
-  .fig{position:relative;width:100%;max-width:1240px;height:600px;margin-top:46px;border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(139,92,246,.04));overflow:hidden}
+  .fig{position:relative;width:100%;max-width:1240px;height:520px;margin-top:46px;border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(139,92,246,.04));overflow:hidden}
   .fig canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
   .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:42px;margin-top:52px;max-width:1240px}
   .three h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;line-height:1.1;margin-bottom:12px}
@@ -131,6 +131,8 @@
     .hero{padding:48px 18px 30px;min-height:0}
     h1{font-size:34px}.big b{font-size:34px}.big p{font-size:17px}
     .fig{height:680px;margin-top:34px}
+  #f-fin{height:520px}
+  .fig:has(#f-fin){height:520px}
     .three{grid-template-columns:1fr;gap:28px;margin-top:34px}
     .kick{font-size:21px;margin-top:34px}
     .stg{grid-template-columns:1fr;gap:22px}
@@ -194,7 +196,7 @@
 
 <section id="financing">
   <h2 class="rv">Production financing.</h2>
-  <p class="lead rv">We determine the budget a project should be made for. Underfunding a film costs more than it saves, and overfunding it adds nothing an audience will ever see. Selznick prices the creative decisions that set that number, so we can work through them with the writer and the director rather than guess at them: the location instead of the stage, the practical build instead of the digital one, the extra days on the sequence everyone says is too expensive. We produce across practical, digital, and AI production, and we know where each one earns its place, so efficiency never comes at the expense of what reaches the screen. Once the number is right, we bring the capital and the financing partners to meet it.</p>
+  <p class="lead rv">We set the budget a project should be made for, and decide where the money goes inside it. Cutting a budget is the easy move, and it usually means the film the director set out to make never gets made. Selznick prices the creative decisions that drive the number, and we hold detailed performance data on cast, crew, and the vendors and specialists a production depends on, so the money goes where it realizes the director&rsquo;s vision and maximizes commercial appeal. We then finance the film at that budget, with our own capital and our financing partners.</p>
   <div class="fig rv"><canvas id="f-fin" aria-hidden="true"></canvas></div>
 </section>
 
@@ -518,49 +520,38 @@ mount('f-ip',function(T,w,h,x){
   }
 });
 
-/* 2 — Production financing: the optimal budget, and the decisions that set it */
+/* 2 — Production financing: two budgets for the same film, side by side */
 mount('f-fin',function(T,w,h,x){
   var n=w<900, X0=n?16:56, X1=w-(n?16:56);
-  var PT=[[0.16,0.30,'UNDERFUNDED','$30M'],[0.52,0.86,'THE RIGHT BUDGET','$45M'],[0.88,0.80,'OVERFUNDED','$70M']];
-  T.t(n?'THE BUDGET IT SHOULD BE MADE FOR':'THE BUDGET A FILM SHOULD BE MADE FOR',X0,n?32:44,'700 '+(n?12:14)+'px Inter, sans-serif',T.INK,1,'left','.14em');
-  var LX=X0+(n?34:56), RX=X1-(n?10:40), TOP=n?86:116, BASE=n?h*0.50:h*0.52;
-  var px=function(t){return LX+(RX-LX)*t}, py=function(v){return BASE-(BASE-TOP)*v};
-  T.l(LX,BASE,RX,BASE,'rgba(243,239,232,.22)',1);
-  T.l(LX,TOP-10,LX,BASE,'rgba(243,239,232,.22)',1);
-  T.t('RETURN',LX-(n?6:10),TOP-24,'700 '+(n?11:12)+'px Inter, sans-serif',T.INK,.9,'left','.14em');
-  T.t('BUDGET',RX,BASE+(n?44:48),'700 '+(n?11:12)+'px Inter, sans-serif',T.INK,.9,'right','.14em');
-  // the curve
-  x.save();x.strokeStyle='rgba(228,201,126,.8)';x.lineWidth=2.6;x.lineCap='round';x.shadowColor='rgba(228,201,126,.45)';x.shadowBlur=12;x.beginPath();
-  for(var t=0;t<=1.001;t+=0.02){var v=1.55*t-0.72*t*t*1.2; v=Math.max(0.06,0.24+1.9*t-1.55*t*t); if(t===0)x.moveTo(px(t),py(v)); else x.lineTo(px(t),py(v));}
-  x.stroke();x.restore();
-  PT.forEach(function(p,k){
-    var X=px(p[0]), Y=py(p[1]), on=k===1;
-    T.l(X,Y,X,BASE,'rgba(228,201,126,'+(on?'.4':'.18')+')',1.2,[4,6]);
-    T.dia(X,Y,on?15:8,true);
-    T.t(p[2],X,Y-(on?32:24),'700 '+(n?12:13.5)+'px Inter, sans-serif',on?T.GOLD:'rgba(243,239,232,.7)',1,'center','.12em');
-    T.t(p[3],X,BASE+(n?20:24),'600 '+(n?12.5:14)+'px Inter, sans-serif',on?T.GREEN:'rgba(243,239,232,.7)',1,'center');
-  });
-  if(n){
-    T.t('SPEND LESS AND THE FILM LOSES',X0,BASE+66,'700 11px Inter, sans-serif',T.INK,.95,'left','.1em');
-    T.t('MORE THAN IT SAVES. SPEND MORE',X0,BASE+83,'700 11px Inter, sans-serif',T.INK,.95,'left','.1em');
-    T.t('AND NOTHING REACHES THE SCREEN.',X0,BASE+100,'700 11px Inter, sans-serif',T.INK,.95,'left','.1em');
+  var A=['THE BUDGET CUT','$30M','$180M'], B=["THE DIRECTOR'S VISION MADE",'$45M','$420M'];
+  T.t('THE SAME FILM, TWO BUDGETS',X0,n?34:46,'700 '+(n?12.5:14)+'px Inter, sans-serif',T.INK,1,'left','.16em');
+  if(!n){
+    var CY=h*0.54, LX=X0+(X1-X0)*0.24, RX=X0+(X1-X0)*0.74;
+    [[LX,A,10,'rgba(243,239,232,.75)'],[RX,B,30,T.GOLD]].forEach(function(c,k){
+      var X=c[0], d=c[1], on=k===1;
+      T.t(d[0],X,CY-118,'700 15px Inter, sans-serif',on?T.GOLD:'rgba(243,239,232,.75)',1,'center','.13em');
+      T.dia(X,CY-58,c[2],on);
+      T.t('COST TO MAKE',X,CY+14,'700 12px Inter, sans-serif',T.INK,.85,'center','.14em');
+      T.t(d[1],X,CY+46,'700 30px Inter, sans-serif',T.INK,1,'center');
+      T.t('WHAT IT RETURNS',X,CY+92,'700 12px Inter, sans-serif',T.INK,.85,'center','.14em');
+      T.t(d[2],X,CY+128,'700 '+(on?42:30)+'px Inter, sans-serif',T.GREEN,on?1:.72,'center');
+    });
+    T.l((LX+RX)/2,CY-118,(LX+RX)/2,CY+140,'rgba(243,239,232,.12)',1);
+    T.t('$15M LESS TO MAKE. $240M LESS IN RETURN.',X0,h-34,'700 14px Inter, sans-serif',T.INK,1,'left','.13em');
   } else {
-    T.t('SPEND LESS AND THE FILM LOSES MORE THAN IT SAVES',X0,BASE+78,'700 13px Inter, sans-serif',T.INK,.95,'left','.12em');
-    T.t('SPEND MORE AND NOTHING REACHES THE SCREEN',X1,BASE+78,'700 13px Inter, sans-serif',T.INK,.95,'right','.12em');
+    var Y0=78;
+    [[A,10,false],[B,26,true]].forEach(function(c,k){
+      var d=c[0], on=c[2], y=Y0+k*162;
+      T.t(d[0],X0,y,'700 12.5px Inter, sans-serif',on?T.GOLD:'rgba(243,239,232,.75)',1,'left','.12em');
+      T.dia(X0+22,y+44,c[1],on);
+      T.t('COST TO MAKE',X0+56,y+38,'700 11px Inter, sans-serif',T.INK,.85,'left','.14em');
+      T.t(d[1],X0+56,y+62,'700 22px Inter, sans-serif',T.INK,1,'left');
+      T.t('WHAT IT RETURNS',X0+56,y+96,'700 11px Inter, sans-serif',T.INK,.85,'left','.14em');
+      T.t(d[2],X0+56,y+126,'700 '+(on?32:24)+'px Inter, sans-serif',T.GREEN,on?1:.72,'left');
+    });
+    T.t('$15M LESS TO MAKE.',X0,h-46,'700 12.5px Inter, sans-serif',T.INK,1,'left','.12em');
+    T.t('$240M LESS IN RETURN.',X0,h-26,'700 12.5px Inter, sans-serif',T.INK,1,'left','.12em');
   }
-  // what sets the number
-  var DY=BASE+(n?142:132);
-  T.t('THE DECISIONS THAT SET IT',X0,DY,'700 '+(n?12:13.5)+'px Inter, sans-serif',T.VIOLET,1,'left','.14em');
-  var D=[['The location, not the stage','+$9M','+$34M'],['The practical build','+$6M','+$22M'],['Four more days on the sequence','+$4M','+$15M'],['The second unit','+$3M','nothing']];
-  var RH=n?32:38, CX1=X0+(X1-X0)*(n?0.68:0.46), CX2=X1;
-  T.t('COST',CX1,DY-(n?18:0),'700 '+(n?11:12)+'px Inter, sans-serif',T.INK,.85,'right','.14em');
-  T.t('ADDS',CX2,DY-(n?18:0),'700 '+(n?11:12)+'px Inter, sans-serif',T.INK,.85,'right','.14em');
-  D.forEach(function(d,k){
-    var y=DY+(n?14:30)+k*RH, on=k<3;
-    T.t(d[0],X0,y,'400 '+(n?11:14)+'px Inter, sans-serif',on?T.INK:'rgba(243,239,232,.7)',1,'left');
-    T.t(d[1],CX1,y,'600 '+(n?12.5:14)+'px Inter, sans-serif',T.GOLD,on?1:.75,'right');
-    T.t(d[2],CX2,y,'700 '+(n?12.5:14)+'px Inter, sans-serif',on?T.GREEN:T.ROSE,1,'right');
-  });
 });
 
 /* 3 — Cast and crew: who they are, what they add together, what that is worth */
