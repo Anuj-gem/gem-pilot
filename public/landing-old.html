@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEM Studios</title>
+  <meta name="description" content="GEM Studios. We make the best entertainment in the world, with Selznick, the world&rsquo;s most powerful AI creative partner. 500+ million viewers in our first twelve months. Feature films and TV series coming soon.">
+  <meta property="og:title" content="GEM Studios">
+  <meta property="og:description" content="We make the best entertainment in the world. 500+ million viewers in our first twelve months. Feature films and TV series coming soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gem.studio/">
+  <meta property="og:site_name" content="GEM Studios">
+  <meta property="og:image" content="https://gem.studio/og/gem-studios.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --night:#0E0B14;
+      --on-screen:#F3EFE8;
+      --muted:rgba(243,239,232,0.62);
+      --gold:#B08A3E;
+      --gold-soft:#E4C97E;
+      --violet:#C4B5FD;
+      --green:#8FCF9F;
+      --hair:rgba(255,255,255,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    #page-field { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; display: block; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--night); color: var(--on-screen); font-family: 'Inter', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ── Nav ── */
+    nav {
+      padding: 22px 56px; display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--hair); position: sticky; top: 0;
+      background: rgba(14,11,20,0.72); backdrop-filter: saturate(160%) blur(12px); z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .diamond { width: 16px; height: 16px; background: linear-gradient(135deg,#8b5cf6,#5B21B6); border-radius: 3px; transform: rotate(45deg); flex-shrink: 0; }
+    .logo-text { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #fff; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.1em; color: rgba(243,239,232,0.6); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.nav-cta { color: var(--violet); border-bottom: 1px solid rgba(196,181,253,0.45); padding-bottom: 2px; font-weight: 600; }
+    .nav-links a.nav-cta:hover { color: #fff; }
+
+    /* ── Column ── */
+    section { padding: 96px 56px; max-width: 1352px; margin: 0 auto; }
+    .rule { height: 1px; background: var(--hair); max-width: 1240px; margin: 0 auto; }
+    .h2 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.2vw, 56px);
+      font-weight: 500; line-height: 1.12; letter-spacing: -0.02em; color: var(--on-screen);
+      text-wrap: pretty; margin-bottom: 18px; max-width: 900px;
+    }
+    .h2 em { font-style: italic; color: var(--violet); }
+    .lead { font-size: 19px; line-height: 1.55; color: rgba(243,239,232,0.8); max-width: 760px; }
+    .cap { font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
+
+    /* ── Hero ── */
+    .hero { position: relative; min-height: 700px; padding: 104px 56px 88px; overflow: hidden; }
+    #hero-field { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .hero-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; }
+    h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.9vw, 56px);
+      font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; color: var(--on-screen);
+      max-width: 600px; margin: 0 0 22px; text-wrap: pretty;
+    }
+    h1 em { font-style: italic; color: var(--violet); }
+    .hero-actions { margin-top: 36px; display: flex; gap: 22px; align-items: center; }
+    .btn { display: inline-block; padding: 14px 30px; border-radius: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; }
+    .btn-primary { background: linear-gradient(135deg,#7C3AED,#5B21B6); color: #fff; box-shadow: 0 0 24px rgba(124,58,237,0.35); }
+    .btn-text { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(243,239,232,0.6); text-decoration: none; border-bottom: 1px solid rgba(243,239,232,0.25); padding-bottom: 3px; }
+
+
+    /* ── Story ── */
+    .portrait { width: 300px; aspect-ratio: 4 / 5; border-radius: 16px; border: 1px solid var(--hair); position: relative; overflow: hidden;
+      background: radial-gradient(90% 70% at 30% 20%, rgba(139,92,246,0.35), transparent 60%), linear-gradient(180deg, #17122A, #0B0912); display: flex; align-items: center; justify-content: center; }
+    
+
+
+    /* ── Next row ── */
+
+    /* ── Different ── */
+    
+
+
+    /* ── Big number ── */
+    .big { margin: 6px 0 26px; max-width: 620px; }
+    .big b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(34px, 3.6vw, 50px); line-height: 1.05; color: var(--gold-soft); letter-spacing: -0.01em; text-shadow: 0 0 28px rgba(228,201,126,0.35); }
+    .big span { display: block; margin-top: 8px; font-size: 19px; line-height: 1.5; color: rgba(243,239,232,0.85); }
+    .big .big-pre { margin: 0 0 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
+
+    /* ── Selznick ── */
+    .selz { margin-top: 40px; padding: 30px 34px; border-radius: 16px; border: 1px solid rgba(196,181,253,0.22); background: linear-gradient(160deg, rgba(139,92,246,0.10), rgba(255,255,255,0.03)); max-width: 1000px; }
+    .selz p { font-size: 17.5px; line-height: 1.6; color: rgba(243,239,232,0.86); }
+    .demo-panel .cap { display: block; margin-bottom: 14px; }
+    @media (max-width: 900px) {
+      .big b { font-size: 34px; }
+    }
+
+
+    /* ── Selznick figure ── */
+    .selz-fig { position: relative; width: 100%; max-width: 1240px; height: 560px; margin-top: 44px; border-radius: 16px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(139,92,246,0.04)); overflow: hidden; }
+    .selz-fig canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .spec { display: grid; grid-template-columns: 1fr 1.4fr; gap: 36px; align-items: center; margin-top: 30px; padding: 26px 30px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.2); background: linear-gradient(160deg, rgba(228,201,126,0.05), rgba(139,92,246,0.05)); max-width: 1240px; }
+    .spec-txt .cap { display: block; margin-bottom: 10px; }
+    .spec-txt p:not(.cap) { font-size: 17px; line-height: 1.6; color: rgba(243,239,232,0.86); }
+    .spec-fig { position: relative; height: 190px; }
+    .spec-fig canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    @media (max-width: 900px) { .spec { grid-template-columns: 1fr; } .spec-fig { height: 160px; } }
+    .legend { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 44px; margin-top: 52px; max-width: 1240px; }
+    .lg b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; margin: 12px 0 6px; }
+    .lg p { font-size: 16.5px; line-height: 1.6; color: rgba(243,239,232,0.86); }
+    .lg-mark { position: relative; height: 34px; width: 90px; }
+    .lgm-stages { position: absolute; left: 0; top: 16px; width: 84px; height: 2px; background: linear-gradient(90deg, rgba(228,201,126,0.4), #E4C97E); }
+    .lgm-stages::before, .lgm-stages::after { content: ""; position: absolute; top: -4px; width: 8px; height: 8px; transform: rotate(45deg); background: #E4C97E; box-shadow: 0 0 8px rgba(255,225,140,0.7); }
+    .lgm-stages::before { left: 18px; } .lgm-stages::after { left: 56px; }
+    .lgm-p { position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #E4C97E; }
+    .lgm-p::after { content: ""; position: absolute; left: -4px; right: -4px; top: 13px; height: 9px; border: 1.5px solid #E4C97E; border-bottom: none; border-radius: 9px 9px 0 0; }
+    .lgm-p2 { left: 24px; } .lgm-p3 { left: 48px; }
+    .lgm-gem { position: absolute; left: 6px; top: 6px; width: 20px; height: 20px; transform: rotate(45deg); border-radius: 5px; background: linear-gradient(135deg,#C4B5FD,#6D28D9); box-shadow: 0 0 16px rgba(139,92,246,0.7); }
+    .lgm-gold { position: absolute; left: 6px; top: 6px; width: 20px; height: 20px; transform: rotate(45deg); background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 16px rgba(255,225,140,0.8); }
+    @media (max-width: 900px) { .legend { grid-template-columns: 1fr; gap: 22px; } }
+    .selz-one { margin-top: 32px; max-width: 900px; font-size: 18.5px; line-height: 1.62; color: rgba(243,239,232,0.88); }
+    .selz-one a { color: var(--violet); text-decoration: none; border-bottom: 1px solid rgba(196,181,253,0.4); }
+    .selz-cols .cap { display: block; margin-bottom: 12px; }
+    @media (max-width: 900px) {
+      .selz-fig { height: 700px; }
+    }
+
+
+    /* ── Results ── */
+    .result .cap { display: block; margin-bottom: 12px; }
+    .slate3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; margin-top: 22px; max-width: 1240px; }
+    .slate3.two-up { grid-template-columns: 1fr 1fr; }
+    .slate3.two-up .poster { aspect-ratio: 3 / 4; }
+    .slate3 .poster { aspect-ratio: 2 / 3; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.8); }
+    .poster.tease { background: radial-gradient(90% 70% at 30% 20%, rgba(139,92,246,0.35), transparent 60%), radial-gradient(70% 60% at 80% 90%, rgba(228,201,126,0.18), transparent 60%), linear-gradient(180deg, #17122A, #0B0912); }
+    .poster.tease2 { background: radial-gradient(90% 70% at 70% 30%, rgba(228,201,126,0.22), transparent 60%), radial-gradient(70% 60% at 20% 90%, rgba(139,92,246,0.3), transparent 60%), linear-gradient(180deg, #14101F, #0B0912); }
+    .poster.tease::after { content: ""; position: absolute; inset: 0; backdrop-filter: blur(0); background-image: radial-gradient(1.2px 1.2px at 20% 30%, rgba(255,255,255,0.5) 50%, transparent 51%), radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.4) 50%, transparent 51%), radial-gradient(1.4px 1.4px at 45% 80%, rgba(255,255,255,0.45) 50%, transparent 51%); }
+    .poster-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 18px 18px; background: linear-gradient(180deg, transparent, rgba(8,6,14,0.85)); }
+    .poster-cap b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; line-height: 1.05; color: #F3EFE8; }
+    .poster-cap span { display: block; margin-top: 4px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    @media (max-width: 900px) {
+      .slate3 { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+      .poster-cap { padding: 40px 10px 10px; } .poster-cap b { font-size: 18px; } .poster-cap span { font-size: 9px; }
+    }
+    /* ── Guide line — the connective tissue down the page ── */
+    .guide { position: fixed; left: 26px; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, transparent, rgba(228,201,126,0.22) 12%, rgba(228,201,126,0.22) 88%, transparent); pointer-events: none; z-index: 1; }
+    @media (max-width: 900px) { .guide { display: none; } }
+
+
+    /* ── Where it's led ── */
+    .led { margin-top: 44px; max-width: 1240px; }
+    .led-row { display: grid; grid-template-columns: 1fr 64px 1fr; gap: 0; align-items: stretch; }
+    .led-cell { border-radius: 16px; padding: 26px 28px 24px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(139,92,246,0.05)); }
+    .led-cell .cap { display: block; margin-bottom: 10px; }
+    .led-cell b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; color: var(--gold-soft); text-shadow: 0 0 26px rgba(228,201,126,0.35); margin-bottom: 8px; }
+    .led-cell p { font-size: 15.5px; line-height: 1.55; color: rgba(243,239,232,0.78); }
+    .led-arrow { position: relative; }
+    .led-arrow span { position: absolute; left: 12px; right: 12px; top: 50%; height: 1.5px; background: rgba(228,201,126,0.55); }
+    .led-arrow span::after { content: ""; position: absolute; right: -1px; top: -5px; border-style: solid; border-width: 5.5px 0 5.5px 9px; border-color: transparent transparent transparent rgba(228,201,126,0.8); }
+    .led .slate3 { margin-top: 26px; }
+    .led-line { font-size: 20px; line-height: 1.5; color: rgba(243,239,232,0.88); max-width: 820px; }
+    .led-line b { color: var(--gold-soft); font-weight: 600; }
+    .led-more { margin-top: 26px; font-size: 19px; color: rgba(243,239,232,0.85); }
+    .led-more b { color: var(--gold-soft); font-weight: 600; }
+    /* ── Founder note ── */
+    .founder-note { margin-top: 44px; max-width: 900px; padding: 30px 34px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.22); background: linear-gradient(160deg, rgba(228,201,126,0.06), rgba(139,92,246,0.05)); }
+    .founder-note .cap { display: block; margin-bottom: 14px; }
+    .founder-note p { font-size: 17.5px; line-height: 1.62; color: rgba(243,239,232,0.86); margin-bottom: 16px; }
+    .founder-note p:last-of-type { margin-bottom: 0; }
+    .sig-link { font-family: 'Inter', sans-serif; font-style: normal; font-size: 13px; color: var(--muted); }
+    .sig-link a { color: var(--violet); text-decoration: none; border-bottom: 1px solid rgba(196,181,253,0.4); }
+    @media (max-width: 900px) {
+      .led-row { grid-template-columns: 1fr; }
+      .led-arrow { height: 40px; }
+      .led-arrow span { left: 50%; right: auto; top: 6px; width: 1.5px; height: 28px; }
+      .led-arrow span::after { right: -4px; top: auto; bottom: -1px; border-width: 9px 5.5px 0 5.5px; border-color: rgba(228,201,126,0.8) transparent transparent transparent; }
+    }
+
+
+    /* ── How we work ── */
+    .work { display: grid; gap: 44px; margin-top: 40px; max-width: 1000px; }
+    .work-row { display: grid; grid-template-columns: 120px 1fr; gap: 34px; align-items: start; }
+    .work-fig { position: relative; width: 104px; height: 100px; }
+    .wf-gem { position: absolute; left: 44px; top: 30px; width: 20px; height: 20px; transform: rotate(45deg); border-radius: 5px; background: linear-gradient(135deg,#C4B5FD,#6D28D9); box-shadow: 0 0 20px rgba(139,92,246,0.7); }
+    .wf-p { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 1.6px solid var(--gold-soft); box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .wf-p::after { content: ""; position: absolute; left: -4px; right: -4px; top: 14px; height: 10px; border: 1.6px solid var(--gold-soft); border-bottom: none; border-radius: 10px 10px 0 0; }
+    .wf-p.dim { opacity: 0.45; box-shadow: none; }
+    .wf-tag { position: absolute; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-soft); border: 1px solid rgba(228,201,126,0.4); border-radius: 999px; padding: 3px 8px; }
+    .wf-door { position: absolute; left: 60px; top: 14px; width: 30px; height: 72px; border: 1.6px solid var(--gold-soft); border-radius: 4px 4px 0 0; box-shadow: 0 0 14px rgba(228,201,126,0.4); }
+    .wf-door::after { content: ""; position: absolute; right: 5px; top: 34px; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-soft); }
+    .wf-line { position: absolute; left: 18px; top: 50px; width: 40px; height: 1.5px; background: rgba(228,201,126,0.5); }
+    .work-row h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .work-row p { font-size: 17px; line-height: 1.62; color: rgba(243,239,232,0.84); margin-bottom: 14px; }
+    @media (max-width: 900px) {
+      .work-row { grid-template-columns: 1fr; gap: 14px; }
+      .work-row h3 { font-size: 26px; }
+    }
+
+
+    .after { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 56px; max-width: 1100px; }
+    .after-block .cap { display: block; margin-bottom: 12px; }
+    .after-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; line-height: 1.15; margin-bottom: 10px; }
+    .after-block p { font-size: 16.5px; line-height: 1.6; color: rgba(243,239,232,0.82); margin-bottom: 14px; }
+    .after-block .go { font-size: 13px; }
+    .soc-links { display: flex; gap: 14px; margin-top: 4px; flex-wrap: wrap; }
+    .soc-links a { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 10px; border: 1px solid rgba(228,201,126,0.35); color: var(--on-screen); text-decoration: none; font-size: 14.5px; font-weight: 600; transition: border-color .2s, background .2s; }
+    .soc-links a:hover { border-color: rgba(228,201,126,0.7); background: rgba(228,201,126,0.06); }
+    .soc-links svg { width: 20px; height: 20px; fill: var(--gold-soft); color: var(--gold-soft); }
+    .post-card { margin-top: 6px; padding: 24px 26px 22px; }
+    .post-card .pill { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-soft); border: 1px solid rgba(228,201,126,0.4); border-radius: 999px; padding: 4px 10px; margin-bottom: 14px; }
+    .post-card h3 { font-size: 24px; margin-bottom: 8px; }
+    .post-card p { font-size: 15px; color: rgba(243,239,232,0.75); margin-bottom: 12px; }
+    @media (max-width: 900px) { .after { grid-template-columns: 1fr; gap: 36px; } }
+
+
+    /* ── Services ── */
+    .svc { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; margin-top: 40px; max-width: 1240px; }
+    .sv { border-radius: 16px; padding: 26px 28px 22px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.045), rgba(139,92,246,0.05)); }
+    .sv b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; line-height: 1.15; margin: 14px 0 8px; color: var(--on-screen); }
+    .sv p { font-size: 16px; line-height: 1.55; color: rgba(243,239,232,0.82); margin-bottom: 12px; }
+    .sv ul { list-style: none; margin: 0; padding: 0; }
+    .sv li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.55; color: rgba(243,239,232,0.74); margin-bottom: 7px; }
+    .sv li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 6px; height: 6px; transform: rotate(45deg); background: var(--gold-soft); opacity: 0.85; }
+    .sv-mark { position: relative; height: 40px; width: 80px; }
+    .svm-page { position: absolute; left: 0; top: 4px; width: 22px; height: 30px; border: 1.6px solid #F0DCA0; border-radius: 2px; box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-page::before, .svm-page::after { content: ""; position: absolute; left: 5px; right: 5px; height: 1.4px; background: #F0DCA0; }
+    .svm-page::before { top: 9px; } .svm-page::after { top: 16px; right: 9px; }
+    .svm-p { position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 1.6px solid var(--gold-soft); box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-p::after { content: ""; position: absolute; left: -5px; right: -5px; top: 15px; height: 11px; border: 1.6px solid var(--gold-soft); border-bottom: none; border-radius: 10px 10px 0 0; }
+    .svm-p2 { left: 30px; }
+    .svm-clap { position: absolute; left: 0; top: 8px; width: 34px; height: 24px; border: 1.6px solid var(--gold-soft); border-radius: 2px; box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-clap::before { content: ""; position: absolute; left: -1.6px; right: -1.6px; top: -9px; height: 7px; border: 1.6px solid var(--gold-soft); border-radius: 2px 2px 0 0; background: repeating-linear-gradient(115deg, transparent 0 5px, rgba(228,201,126,0.7) 5px 7px); }
+    .svm-curve { position: absolute; left: 0; bottom: 4px; width: 60px; height: 30px; border-bottom: 1.6px solid rgba(228,201,126,0.4); }
+    .svm-curve::before { content: ""; position: absolute; left: 0; bottom: 0; width: 60px; height: 30px; border-radius: 0 0 60px 0 / 0 0 30px 0; border-right: 2px solid var(--gold-soft); border-bottom: 2px solid var(--gold-soft); box-sizing: border-box; clip-path: polygon(0 100%, 100% 100%, 100% 0); }
+    .svm-curve::after { content: ""; position: absolute; right: -4px; top: -6px; width: 10px; height: 10px; transform: rotate(45deg); background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 12px rgba(255,225,140,0.8); }
+    .svm-globe { position: absolute; left: 0; top: 4px; width: 32px; height: 32px; border-radius: 50%; border: 1.6px solid var(--gold-soft); box-shadow: 0 0 10px rgba(228,201,126,0.4); }
+    .svm-globe::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 14px; transform: translateX(-50%); border-radius: 50%; border: 1.4px solid rgba(228,201,126,0.7); }
+    .svm-globe::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.4px; background: rgba(228,201,126,0.7); }
+    .svm-gem { position: absolute; left: 6px; top: 8px; width: 22px; height: 22px; transform: rotate(45deg); border-radius: 5px; background: linear-gradient(135deg,#C4B5FD,#6D28D9); box-shadow: 0 0 18px rgba(139,92,246,0.7); }
+    .svm-gold { position: absolute; left: 4px; top: 12px; width: 14px; height: 14px; transform: rotate(45deg); background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 12px rgba(255,225,140,0.7); }
+    .svm-gold2 { left: 30px; top: 6px; width: 20px; height: 20px; }
+    .cta-row { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 26px; }
+    .cta-note { font-size: 15px; color: rgba(243,239,232,0.7); }
+    .lead b.gold { color: var(--gold-soft); font-weight: 600; }
+    .own-stat { margin-top: 30px; }
+    .own-stat .cap { display: block; margin-bottom: 8px; }
+    .own-stat b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(44px, 5.4vw, 76px); line-height: 1; color: var(--gold-soft); text-shadow: 0 0 34px rgba(228,201,126,0.4); }
+    .own-sub { display: block; margin-top: 12px; font-size: 19px; line-height: 1.5; color: rgba(243,239,232,0.85); max-width: 640px; }
+    .open-door { margin-top: 34px; padding: 26px 30px; border-radius: 16px; border: 1px solid rgba(228,201,126,0.22); background: linear-gradient(160deg, rgba(228,201,126,0.06), rgba(139,92,246,0.05)); max-width: 900px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .open-door p { flex: 1 1 420px; font-size: 17px; line-height: 1.55; color: rgba(243,239,232,0.88); margin: 0; }
+    .git { margin-top: 44px; padding: 34px 36px; border-radius: 16px; border: 1px solid rgba(196,181,253,0.25); background: linear-gradient(160deg, rgba(139,92,246,0.10), rgba(255,255,255,0.03)); max-width: 1240px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .git-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 2.6vw, 32px); font-weight: 500; line-height: 1.2; color: var(--on-screen); max-width: 720px; margin: 0; }
+    .btn-lg { padding: 18px 40px; font-size: 14.5px; }
+    .svc-close { margin-top: 30px; font-size: 18px; color: rgba(243,239,232,0.85); max-width: 760px; }
+    @media (max-width: 900px) { .svc { grid-template-columns: 1fr; gap: 14px; } .sv b { font-size: 24px; } }
+
+
+    /* ── Project cards ── */
+    .proj { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; margin-top: 40px; max-width: 1240px; }
+    .pc { border-radius: 16px; padding: 24px 26px 24px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.045), rgba(139,92,246,0.05)); }
+    .pc-icon { position: relative; height: 40px; width: 90px; margin-bottom: 16px; }
+    .pcm-page { position: absolute; left: 0; top: 2px; width: 26px; height: 34px; border: 1.7px solid #F0DCA0; border-radius: 3px; box-shadow: 0 0 12px rgba(228,201,126,0.35); }
+    .pcm-page::before, .pcm-page::after { content: ""; position: absolute; left: 6px; right: 6px; height: 1.6px; background: #F0DCA0; }
+    .pcm-page::before { top: 10px; } .pcm-page::after { top: 18px; right: 12px; }
+    .pcm-p { position: absolute; left: 0; top: 4px; width: 15px; height: 15px; border-radius: 50%; border: 1.7px solid var(--gold-soft); box-shadow: 0 0 10px rgba(228,201,126,0.35); }
+    .pcm-p::after { content: ""; position: absolute; left: -5px; right: -5px; top: 16px; height: 12px; border: 1.7px solid var(--gold-soft); border-bottom: none; border-radius: 12px 12px 0 0; }
+    .pcm-p2 { left: 26px; }
+    .pcm-clap { position: absolute; left: 0; top: 10px; width: 38px; height: 26px; border: 1.7px solid var(--gold-soft); border-radius: 3px; box-shadow: 0 0 12px rgba(228,201,126,0.35); }
+    .pcm-clap::before { content: ""; position: absolute; left: -1.7px; right: -1.7px; top: -11px; height: 9px; border: 1.7px solid var(--gold-soft); border-radius: 3px 3px 0 0; background: repeating-linear-gradient(115deg, transparent 0 6px, rgba(228,201,126,0.65) 6px 9px); }
+    .pcm-curve { position: absolute; left: 0; bottom: 4px; width: 62px; height: 32px; border-bottom: 1.7px solid rgba(228,201,126,0.35); }
+    .pcm-curve::before { content: ""; position: absolute; left: 0; bottom: 0; width: 62px; height: 32px; border-right: 2px solid var(--gold-soft); border-bottom: 2px solid var(--gold-soft); border-radius: 0 0 62px 0 / 0 0 32px 0; box-sizing: border-box; clip-path: polygon(0 100%, 100% 100%, 100% 0); }
+    .pcm-curve::after { content: ""; position: absolute; right: -5px; top: -7px; width: 12px; height: 12px; transform: rotate(45deg); background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 14px rgba(255,225,140,0.8); }
+    .pcm-adapt { position: absolute; left: 0; top: 6px; width: 20px; height: 26px; border: 1.7px solid var(--gold-soft); border-radius: 3px; box-shadow: 0 0 10px rgba(228,201,126,0.3); }
+    .pcm-adapt::before { content: ""; position: absolute; left: 30px; top: 3px; width: 30px; height: 20px; border: 1.7px solid var(--gold-soft); border-radius: 3px; box-shadow: 0 0 12px rgba(228,201,126,0.4); }
+    .pcm-adapt::after { content: ""; position: absolute; left: 22px; top: 11px; width: 7px; height: 7px; border-top: 1.7px solid var(--gold-soft); border-right: 1.7px solid var(--gold-soft); transform: rotate(45deg); }
+    .pcm-gold { position: absolute; left: 2px; top: 12px; width: 16px; height: 16px; transform: rotate(45deg); background: linear-gradient(135deg,#F0DCA0,#B08A3E); border-radius: 2px; }
+    .pcm-gold2 { left: 26px; top: 4px; width: 24px; height: 24px; background: linear-gradient(135deg,#FFF4C4,#C79B48); box-shadow: 0 0 16px rgba(255,225,140,0.75); }
+    .pcm-globe { position: absolute; left: 0; top: 2px; width: 34px; height: 34px; border-radius: 50%; border: 1.7px solid var(--gold-soft); box-shadow: 0 0 12px rgba(228,201,126,0.35); }
+    .pcm-globe::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 15px; transform: translateX(-50%); border-radius: 50%; border: 1.5px solid rgba(228,201,126,0.75); }
+    .pcm-globe::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; background: rgba(228,201,126,0.75); }
+    .pc b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; line-height: 1.15; margin-bottom: 10px; color: var(--on-screen); }
+    .pc p { font-size: 16.5px; line-height: 1.62; color: rgba(243,239,232,0.86); }
+
+    .pc-cta { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 22px; border-color: rgba(196,181,253,0.28); background: linear-gradient(160deg, rgba(139,92,246,0.12), rgba(255,255,255,0.03)); }
+    .pc-cta .git-h { max-width: none; }
+    .pc-cta-sub { font-size: 15px; line-height: 1.55; color: rgba(243,239,232,0.7); margin: -6px 0 0; }
+    .ent { margin-top: 44px; padding: 28px 32px; border-radius: 16px; border: 1px solid var(--hair); background: rgba(255,255,255,0.025); max-width: 1240px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .ent .cap { display: block; margin-bottom: 8px; }
+    .ent p:not(.cap) { font-size: 16px; line-height: 1.6; color: rgba(243,239,232,0.82); max-width: 820px; margin: 0; }
+    @media (max-width: 900px) { .proj { grid-template-columns: 1fr; gap: 14px; } .pc b { font-size: 24px; } }
+
+    /* ── Stage pillars ── */
+    .pillar { display: grid; grid-template-columns: 1fr 1.1fr; gap: 54px; align-items: center; max-width: 1240px; margin-top: 58px; padding-top: 52px; border-top: 1px solid var(--hair); }
+    .pillar:first-of-type { border-top: none; padding-top: 0; margin-top: 46px; }
+    .pl-num { font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px; }
+    .pillar h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.14; letter-spacing: -0.01em; color: var(--on-screen); margin-bottom: 14px; }
+    .pl-copy > p:not(.pl-num) { font-size: 16.5px; line-height: 1.62; color: rgba(243,239,232,0.86); }
+    .pl-copy > p + p { margin-top: 14px; }
+    .pl-fig { position: relative; width: 100%; height: 360px; border-radius: 16px; border: 1px solid var(--hair); background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(139,92,246,0.04)); overflow: hidden; }
+    .pl-fig canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .git .pc-cta-sub { margin-top: 12px; max-width: 720px; }
+    @media (max-width: 900px) {
+      .pillar { grid-template-columns: 1fr; gap: 26px; margin-top: 44px; padding-top: 40px; }
+      .pl-fig { height: 300px; }
+      .git { flex-direction: column; align-items: flex-start; padding: 26px 22px; }
+    }
+
+    /* ── Slate ── */
+    .poster { position: relative; aspect-ratio: 2 / 3; border-radius: 14px; box-shadow: 0 30px 80px -30px rgba(0,0,0,0.8); overflow: hidden; border: 1px solid var(--hair);
+      background: radial-gradient(120% 90% at 20% 90%, rgba(139,92,246,0.35), transparent 60%), radial-gradient(90% 70% at 85% 10%, rgba(228,201,126,0.22), transparent 55%), linear-gradient(180deg, #17122A, #0B0912); }
+    .poster .sky { position: absolute; inset: 0; background-image: radial-gradient(1.2px 1.2px at 12% 18%, rgba(255,255,255,0.7) 50%, transparent 51%), radial-gradient(1px 1px at 78% 30%, rgba(255,255,255,0.6) 50%, transparent 51%), radial-gradient(1.4px 1.4px at 60% 12%, rgba(255,255,255,0.75) 50%, transparent 51%), radial-gradient(1px 1px at 35% 45%, rgba(255,255,255,0.5) 50%, transparent 51%), radial-gradient(1.2px 1.2px at 88% 62%, rgba(255,255,255,0.6) 50%, transparent 51%), radial-gradient(1px 1px at 22% 70%, rgba(255,255,255,0.45) 50%, transparent 51%); }
+    .poster .horizon { position: absolute; left: 0; right: 0; bottom: 0; height: 38%; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6)); }
+    .poster .ship { position: absolute; left: 50%; top: 34%; width: 46%; height: 9%; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse at center, rgba(196,181,253,0.55), rgba(124,58,237,0.25) 55%, transparent 72%); box-shadow: 0 0 60px rgba(139,92,246,0.55); }
+    .poster .beam { position: absolute; left: 50%; top: 40%; width: 8%; height: 60%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(196,181,253,0.35), transparent); clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%); }
+    .poster .figure { position: absolute; left: 50%; bottom: 8%; width: 3.2%; height: 16%; transform: translateX(-50%); background: #0A0810; border-radius: 40% 40% 10% 10%; box-shadow: 0 0 18px rgba(228,201,126,0.35); }
+    .poster .figure::before { content: ""; position: absolute; left: 50%; top: -22%; width: 70%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: #0A0810; }
+    .poster .tag { position: absolute; top: 16px; right: 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); border: 1px solid rgba(228,201,126,0.4); border-radius: 999px; padding: 6px 12px; background: rgba(14,11,20,0.5); }
+
+    /* ── Three results ── */
+    .gd.dim { background: linear-gradient(135deg,#E4C97E,#8A6A2A); box-shadow: none; opacity: 0.45; }
+    .gd.big { width: 24px; height: 24px; box-shadow: 0 0 22px rgba(255,225,140,0.85); }
+
+    /* ── Proof row ── */
+    .card { display: block; border-radius: 16px; padding: 26px 28px 24px; text-decoration: none; background: linear-gradient(160deg, rgba(255,255,255,0.055), rgba(139,92,246,0.05)); border: 1px solid rgba(255,255,255,0.10); transition: border-color .2s, background .2s; }
+    a.card:hover { border-color: rgba(228,201,126,0.45); background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(139,92,246,0.08)); }
+    .card .cap { margin-bottom: 12px; display: block; }
+    .card b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; line-height: 1; margin-bottom: 8px; text-shadow: 0 0 22px rgba(228,201,126,0.3); }
+    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 25px; font-weight: 500; line-height: 1.15; margin-bottom: 8px; }
+    .card p { font-size: 15px; line-height: 1.5; color: rgba(243,239,232,0.72); margin-bottom: 14px; }
+    .card .go { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet); }
+
+
+    .card.feature { max-width: 900px; margin-top: 34px; padding: 32px 36px 30px; background: linear-gradient(160deg, rgba(228,201,126,0.10), rgba(139,92,246,0.08)); border-color: rgba(228,201,126,0.28); }
+    .card.feature h3 { font-size: clamp(28px, 3vw, 38px); }
+    .card.feature p { font-size: 17px; color: rgba(243,239,232,0.82); }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 900px) { .two { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ── Social ── */
+
+    /* ── Founder ── */
+    .founder { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+    .founder p { font-size: 17.5px; line-height: 1.6; color: rgba(243,239,232,0.85); margin-bottom: 16px; }
+    .sig { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: var(--gold-soft); }
+
+    /* ── Door ── */
+    .door { text-align: center; padding: 96px 56px 100px; }
+    .door-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 84px); font-weight: 500; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 18px; }
+    .door-sub { font-size: 18px; line-height: 1.6; color: rgba(243,239,232,0.75); max-width: 640px; margin: 0 auto 32px; }
+
+    footer { display: flex; justify-content: space-between; padding: 26px 56px 40px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--hair); max-width: 1352px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 18px; } .nav-links { gap: 16px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .logo-text { font-size: 11px; }
+      section { padding: 64px 18px; }
+      .hero { padding: 64px 18px 330px; min-height: 0; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 18px; }
+      h1 { font-size: clamp(34px, 9vw, 44px); }
+      .poster { max-width: 260px; }
+      .founder { grid-template-columns: 1fr; gap: 24px; }
+      .door { padding: 64px 18px; }
+      footer { padding: 22px 18px 32px; flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="page-field" aria-hidden="true"></canvas>
+<div class="guide" aria-hidden="true"></div>
+
+<nav>
+  <a class="logo" href="/">
+    <div class="diamond"></div>
+    <span class="logo-text">GEM Studios</span>
+  </a>
+  <div class="nav-links">
+    <a href="#how">Selznick</a>
+    <a href="#work">What we do</a>
+    <a href="#slate">Our work</a>
+    <a href="/blog">Blog</a>
+    <a href="mailto:info@gem.studio" class="nav-cta">Partner with us</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <canvas id="hero-field" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <h1 class="reveal">We make the best entertainment <em>in the world.</em></h1>
+    <div class="big reveal">
+      <span class="big-pre">Launched 2025.</span>
+      <b>500+ million viewers</b>
+      <span>in our first twelve months. Feature films and TV series coming soon.</span>
+    </div>
+    <div class="hero-actions reveal">
+      <a href="mailto:info@gem.studio" class="btn btn-primary">Partner with us</a>
+      <a href="#work" class="btn-text">What we do ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- Selznick — the foundation under every stage -->
+<section id="how">
+  <p class="h2 reveal">Selznick, the foundation <em>under every decision.</em></p>
+  <p class="lead reveal">Every other media company treats technology as something that sits beside the creative work, or underneath the cost line. We built ours to sit inside the decisions themselves. Selznick is the world&rsquo;s most powerful AI creative partner, and it runs under every stage of a project, from the material we acquire through the way it goes out. It never makes a decision. The people making the film do that.</p>
+
+  <div class="selz-fig reveal">
+    <canvas id="selz-field" aria-hidden="true"></canvas>
+  </div>
+
+  <div class="legend reveal">
+    <div class="lg">
+      <div class="lg-mark" aria-hidden="true"><span class="lgm-gem"></span></div>
+      <b>What Selznick is</b>
+      <p>The most advanced model of entertainment ever built. It decomposes every narrative down to its individual elements, measures the entire market at a scale no one else has attempted, and studies the people who make films: what each of them has delivered, and what they add to a specific project. Nothing else does all three at once. That is why it can tell you what a story could become, and what it would take to get there.</p>
+    </div>
+    <div class="lg">
+      <div class="lg-mark" aria-hidden="true"><span class="lgm-p"></span><span class="lgm-p lgm-p2"></span><span class="lgm-p lgm-p3"></span></div>
+      <b>How it is used</b>
+      <p>The writer, the director, the producers, casting, production, marketing, and finance all make their own calls, exactly as they always have. What changes is that every one of them can see what a choice will do before they commit to it, so no one has to argue from a feeling or take a note on faith. None of the work moves out of human hands, and we would not want it to. The judgment is the job.</p>
+    </div>
+    <div class="lg">
+      <div class="lg-mark" aria-hidden="true"><span class="lgm-gold"></span></div>
+      <b>What it changes</b>
+      <p>A handful of decisions at each stage set what a project becomes: which draft gets made, who plays the lead, what the money actually buys, where it goes out and in what order. Made blind, those decisions are where films quietly lose most of their potential. Made with the numbers on the table, the same film reaches a far bigger audience and a far bigger result, without spending more to do it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- What we do — stage by stage, in the industry's own terms -->
+<section id="work">
+  <p class="h2 reveal">What we do, <em>stage by stage.</em></p>
+  <p class="lead reveal">We work at every stage of a project: acquisition, financing, development, casting and crew, production, and release. Work with us on one stage or on all of them.</p>
+
+  <div class="pillar reveal">
+    <div class="pl-copy">
+      <p class="pl-num">Stage 01</p>
+      <h3>IP acquisition</h3>
+      <p>We buy material and we back the people who bring it to us: screenplays, books, comics, articles, true stories, life rights, and franchises moving into a new medium. We also acquire finished films for theatrical release, including films that played festivals without a buyer.</p>
+      <p>We know what a story is worth before a dollar has been spent on it, in every form it could take and at every budget it could be made for. A project&rsquo;s fate no longer rests on whose desk it landed on, or on who happened to read it that week, or on whether the writer already had a name.</p>
+      <p>That is why we move on material the rest of the market walks past, and why we can pay for it with conviction. Send us what you have. We read everything that comes to us, and we will tell you what we think it can be.</p>
+    </div>
+    <div class="pl-fig" aria-hidden="true"><canvas id="fig-acquire"></canvas></div>
+  </div>
+
+  <div class="pillar reveal">
+    <div class="pl-copy">
+      <p class="pl-num">Stage 02</p>
+      <h3>Production financing</h3>
+      <p>We invest in projects directly, and we raise capital for the ones we partner on, from studios, independent financiers, and equity partners.</p>
+      <p>Every number we put in front of a financier is built from the story itself at a specific budget, with the range, the break-even, and the downside all stated. A financier can see where the number comes from and what moves it, so the days of underwriting a film on a stack of comparable titles and a feeling in the room are over.</p>
+      <p>It is the most rigorous case anyone in this industry can make for a project. That is why capital commits to our films on evidence instead of on instinct, and why we are willing to put our own money in beside it.</p>
+    </div>
+    <div class="pl-fig" aria-hidden="true"><canvas id="fig-finance"></canvas></div>
+  </div>
+
+  <div class="pillar reveal">
+    <div class="pl-copy">
+      <p class="pl-num">Stage 03</p>
+      <h3>Creative development</h3>
+      <p>We develop material with the writer, draft by draft, from a pitch through a locked draft.</p>
+      <p>For the first time, a writer, a director, and the rest of a team can see what each creative choice does to the audience and to the economics of the film while they are still making it. Every choice stays theirs. What changes is that the days of taking a studio&rsquo;s notes on faith, or fighting them on faith, are over.</p>
+      <p>That is what lets a filmmaker take a project to its full commercial potential without giving up the vision that made it worth making, and nothing like it has existed before. The hundreds of writers and directors we have worked with have never had anything close.</p>
+    </div>
+    <div class="pl-fig" aria-hidden="true"><canvas id="fig-develop"></canvas></div>
+  </div>
+
+  <div class="pillar reveal">
+    <div class="pl-copy">
+      <p class="pl-num">Stage 04</p>
+      <h3>Casting and crew</h3>
+      <p>We build the cast and the crew for a project, from leads and supporting roles through directors, writers, and department heads. We can assemble the list or pressure-test the one you already have.</p>
+      <p>We understand what a person does to a film, in audience and in cost, at a level no one else in this industry can match: what each one adds to this specific project at this specific budget, and how a particular combination performs together. And we are not confined to the short list already circling the material. We can assess every performer and filmmaker in the world.</p>
+      <p>That is how we find people far outside Hollywood&rsquo;s usual radar who turn out to be exactly right for a film, and how a ten million dollar picture ends up with the lead that raises its ceiling instead of the one who happened to be available. Cast and crew are where that ceiling gets set. This is where we raise it.</p>
+    </div>
+    <div class="pl-fig" aria-hidden="true"><canvas id="fig-cast"></canvas></div>
+  </div>
+
+  <div class="pillar reveal">
+    <div class="pl-copy">
+      <p class="pl-num">Stage 05</p>
+      <h3>Physical and digital production</h3>
+      <p>We build the plan, the schedule, and the budget, and we produce in both worlds: practical photography, and digital and AI production.</p>
+      <p>We know which expenditures change the finished film and which ones never reach the screen: a location, a sequence, an added shooting day, a set built instead of shot. Every one of them carries a number on both sides before anyone commits to it, so the days of finding out in the edit are over.</p>
+      <p>That is the difference between a budget that buys a film and a budget that buys overhead. It is how a production spends where an audience will feel it, and nowhere else.</p>
+    </div>
+    <div class="pl-fig" aria-hidden="true"><canvas id="fig-produce"></canvas></div>
+  </div>
+
+  <div class="pillar reveal">
+    <div class="pl-copy">
+      <p class="pl-num">Stage 06</p>
+      <h3>Distribution and marketing</h3>
+      <p>We set the release across theatrical, streaming, television, and social, including the order between them, and we build and run the campaign.</p>
+      <p>The plan is worth as much as the film. We know what each path and each sequence returns before we commit to one, and which elements of the story and the cast will actually bring an audience out. A release no longer gets decided by whoever bids first, and a campaign no longer gets cut to a template.</p>
+      <p>We reached more than 500 million viewers on our own channels in the past year doing precisely this. We do not have to go rent an audience to find out whether something works. We already have one.</p>
+    </div>
+    <div class="pl-fig" aria-hidden="true"><canvas id="fig-release"></canvas></div>
+  </div>
+
+  <div class="git reveal">
+    <div>
+      <p class="git-h">Have a project? Filmmakers, writers, producers, studios: get in touch and we&rsquo;ll tell you how we can help.</p>
+      <p class="pc-cta-sub">Some large companies don&rsquo;t want us to produce anything; they want Selznick inside their own decision-making, on their own systems. We partner with a small number of enterprises on that too.</p>
+    </div>
+    <a href="mailto:info@gem.studio?subject=Working%20with%20GEM" class="btn btn-primary btn-lg">Get in touch</a>
+  </div>
+
+</section>
+
+<div class="rule"></div>
+
+<!-- Our own work -->
+<section id="slate">
+  <p class="h2 reveal">Our own work, <em>made with Selznick.</em></p>
+  <p class="lead reveal">We do all of this on our own projects first, developed, financed, and produced in house.</p>
+  <div class="own-stat reveal">
+    <span class="cap">Social &middot; the last twelve months</span>
+    <b>500+ million viewers</b>
+    <span class="own-sub">on our own channels. Now we&rsquo;re producing our own film and TV series.</span>
+  </div>
+  <p class="cap reveal" style="margin-top:36px">Film &amp; series &middot; two projects in development</p>
+  <div class="slate3 two-up reveal">
+    <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg');background-size:cover;background-position:center">
+      <span class="tag">In development</span>
+      <div class="poster-cap"><b>Overlord</b><span>Feature film &middot; sci-fi</span></div>
+    </div>
+    <div class="poster" style="background-image:url('screenshots/marketing-keyart-web.jpg');background-size:cover;background-position:center">
+      <span class="tag">In development</span>
+      <div class="poster-cap"><b>I Work in Marketing</b><span>Series &middot; comedy</span></div>
+    </div>
+  </div>
+  <p class="led-more reveal">More projects and partnerships are in the works. <b>Announcements coming soon.</b></p>
+  <div class="open-door reveal">
+    <p>Any writer or creator can send us an idea. We accept open submissions, everyone gets fair consideration, and when the idea is right we&rsquo;ll co-produce it with you.</p>
+    <a href="mailto:info@gem.studio?subject=An%20idea%20for%20GEM" class="btn btn-primary">Send us an idea</a>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- The rest — founder, blog, social -->
+<section id="more">
+  <div class="founder-note reveal">
+    <p class="cap">From the founder</p>
+    <p>Entertainment is in my blood. My dad spent 27 years at Disney. I grew up going to Disneyland several times a year and watching every film they made, and I interned at Walt Disney Studios in college. Then I spent my career building technology and AI at some of the world&rsquo;s leading technology companies.</p>
+    <p>This industry has been pointing that technology at the wrong thing. Everyone is trying to make films cheaper. We use it to make them better, in a way no other company can or will, and a film that is ten percent better is worth more than any amount ever saved on one.</p>
+    <p>Parts of this business are having a hard time right now. What I see is the most abundant moment entertainment has ever had, with more ways for a great story to reach an audience than at any point in history. We are wide open, anyone can bring us an idea, and we have a direct relationship with fans that no studio can match. We are here to build the greatest entertainment company of all time.</p>
+    <p class="sig">&mdash; Anuj Kommareddy, founder <span class="sig-link">(<a href="https://www.linkedin.com/in/anujkommareddy" target="_blank" rel="noopener">LinkedIn</a>)</span></p>
+  </div>
+
+  <div class="after reveal">
+    <div class="after-block">
+      <p class="cap">Our blog</p>
+      <p>We publish research findings, product updates, and announcements on upcoming productions and partnerships on our blog. Check it out to stay up to date.</p>
+      <a class="card post-card" href="/blog/which-hollywood-directors-consistently-exceed-expectations">
+        <span class="pill">Latest post</span>
+        <h3>Which Hollywood directors consistently exceed &ldquo;expectations&rdquo;?</h3>
+        <p>Joker was &ldquo;expected&rdquo; to make $248M. It made $1.33B. We studied every English-language film to find the directors who do this again and again, and what makes it happen.</p>
+        <span class="go">Read it &rarr;</span>
+      </a>
+    </div>
+    <div class="after-block">
+      <p class="cap">Social</p>
+      <p>Follow us to keep up with our latest content and announcements.</p>
+      <div class="soc-links">
+        <a href="https://www.tiktok.com/@gemstudios1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 3v10.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .6 0 .9.1V7.9a5.4 5.4 0 1 0 4.5 5.3V8.6a6.5 6.5 0 0 0 3.8 1.2V7.1A3.9 3.9 0 0 1 16.2 3h-2.7z"/></svg>TikTok</a>
+        <a href="https://www.instagram.com/trygemstudios" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1"/></svg>Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- Door -->
+<section class="door" id="partner">
+  <h2 class="door-h reveal">Partner with us.</h2>
+  <p class="door-sub reveal">Send us an idea, or tell us what you&rsquo;re working on. Everyone gets fair consideration. Thousands have already reached out, and we&rsquo;re just getting started.</p>
+  <div class="reveal"><a href="mailto:info@gem.studio" class="btn btn-primary" style="padding:16px 44px;">Partner with us: info@gem.studio</a></div>
+</section>
+
+<footer>
+  <div>GEM Studios &middot; gem.studio &middot; info@gem.studio</div>
+  <div>&copy; 2026</div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 80 + i * 120));
+
+  const VALUE_INK = '#F7E9C4';
+  const VALUE_FONT = '600 17px Inter, sans-serif';
+  const NAME_INK = 'rgba(222,216,240,0.6)';
+  const NAME_FONT = '500 12px Inter, sans-serif';
+
+  // The hero — the whole world tuning in. A real dot-map of the Earth in
+  // the sky's dust; the gem sits on it, and hundreds of fine gold lines run
+  // from every continent into it.
+  (function () {
+    const c = document.getElementById('hero-field');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let w = 0, h = 0, dpr = 1;
+
+    function rng(a) {
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let x = Math.imul(a ^ (a >>> 15), 1 | a);
+        x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+        return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    // continents as lat/lon polygons (coarse but honest — Mercator-ish
+    // silhouettes people recognise). [lon, lat] pairs.
+    const LAND = [
+      // North America
+      [[-168,66],[-140,70],[-95,72],[-78,62],[-62,47],[-70,42],[-76,35],[-81,25],[-97,26],[-105,22],[-115,30],[-125,40],[-130,52],[-150,60],[-166,60]],
+      // Central America + Caribbean
+      [[-105,22],[-87,15],[-77,8],[-80,7],[-90,14],[-97,18]],
+      // South America
+      [[-80,8],[-60,10],[-50,0],[-35,-6],[-38,-15],[-48,-25],[-55,-35],[-65,-45],[-70,-55],[-73,-40],[-72,-18],[-80,-5]],
+      // Europe
+      [[-10,36],[-9,43],[-5,48],[0,50],[5,58],[12,62],[25,70],[40,68],[35,55],[30,45],[22,38],[12,38],[0,38]],
+      // British Isles
+      [[-10,51],[-2,50],[2,53],[-1,58],[-6,58],[-10,54]],
+      // Africa
+      [[-17,15],[-17,28],[-5,35],[10,37],[32,31],[42,12],[50,10],[40,-5],[35,-25],[20,-35],[15,-30],[10,-5],[8,4],[-15,10]],
+      // Middle East
+      [[35,31],[42,37],[48,30],[58,25],[55,17],[45,13],[38,20]],
+      // Asia
+      [[40,68],[60,72],[90,75],[120,72],[140,68],[160,66],[178,68],[170,60],[150,58],[135,45],[122,38],[118,24],[108,10],[100,10],[98,20],[85,20],[78,8],[72,20],[65,25],[58,25],[48,30],[42,37],[35,55]],
+      // Japan
+      [[130,31],[132,34],[137,35],[141,40],[143,44],[140,42],[135,34]],
+      // Indonesia / SE Asia islands
+      [[95,5],[105,-6],[115,-8],[125,-9],[132,-4],[140,-8],[128,0],[118,2],[105,2]],
+      // Australia
+      [[114,-22],[122,-18],[132,-12],[142,-11],[146,-18],[152,-25],[153,-33],[147,-38],[140,-36],[130,-32],[116,-35],[114,-28]],
+      // New Zealand
+      [[167,-45],[171,-44],[176,-38],[173,-35],[168,-42]],
+      // Greenland
+      [[-52,60],[-40,62],[-20,70],[-25,80],[-45,82],[-60,76],[-55,68]],
+    ];
+
+    function inPoly(x, y, poly) {
+      let inside = false;
+      for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+        const xi = poly[i][0], yi = poly[i][1], xj = poly[j][0], yj = poly[j][1];
+        if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) inside = !inside;
+      }
+      return inside;
+    }
+    function onLand(lon, lat) { for (const p of LAND) if (inPoly(lon, lat, p)) return true; return false; }
+
+    function gem(x, y, gs) {
+      let g = ctx.createRadialGradient(x, y, 0, x, y, gs * 2.6);
+      g.addColorStop(0, 'rgba(139,92,246,0.24)');
+      g.addColorStop(1, 'rgba(139,92,246,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI / 4);
+      ctx.shadowColor = '#8b5cf6';
+      ctx.shadowBlur = 34;
+      const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
+      gg.addColorStop(0, '#C4B5FD');
+      gg.addColorStop(1, '#6D28D9');
+      ctx.fillStyle = gg;
+      const cr = gs * 0.2;
+      ctx.beginPath();
+      ctx.moveTo(-gs / 2 + cr, -gs / 2);
+      ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
+      ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr);
+      ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr);
+      ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      const wide = w >= 1000;
+      const colL = Math.max(0, (w - 1352) / 2), colW = Math.min(w, 1352);
+
+      // map box (equirectangular): lon -180..180 → MX..MX+MW, lat 75..-58 → MY..MY+MH
+      let MX, MY, MW, MH;
+      if (wide) {
+        MW = colW * 0.56; MH = MW * 0.42;
+        MX = colL + colW * 0.47; MY = h * 0.5 - MH * 0.46;
+      } else {
+        MW = w * 0.92; MH = MW * 0.46;
+        MX = w * 0.04; MY = h - MH - 30;
+      }
+      const px = (lon, lat) => [MX + (lon + 180) / 360 * MW, MY + (75 - lat) / 133 * MH];
+
+      // the gem: on the map, mid-Atlantic-ish so lines come from both sides
+      const G = px(-30, 28);
+      const GS = wide ? 46 : 38;
+
+      // land as dust
+      const r = rng(7);
+      const N = wide ? 12000 : 4500;
+      for (let i = 0; i < N; i++) {
+        const lon = r() * 360 - 180, lat = 75 - r() * 133;
+        if (!onLand(lon, lat)) continue;
+        const [x, y] = px(lon, lat);
+        const a = 0.26 + r() * 0.34;
+        ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
+        const sz = 1.2 + r() * 0.9;
+        ctx.fillRect(x, y, sz, sz);
+      }
+
+      // the whole world tuning in — fine gold lines from land into the gem
+      const g = rng(11);
+      const M = wide ? 320 : 130;
+      let placed = 0, tries = 0;
+      ctx.save();
+      ctx.lineCap = 'round';
+      while (placed < M && tries < M * 40) {
+        tries++;
+        const lon = g() * 360 - 180, lat = 75 - g() * 133;
+        if (!onLand(lon, lat)) continue;
+        const [x, y] = px(lon, lat);
+        const d = Math.hypot(x - G[0], y - G[1]);
+        if (d < GS * 1.6) continue;
+        // curve slightly so the bundle reads as flow, not spokes
+        const mx = (x + G[0]) / 2 + (y - G[1]) * 0.12, my = (y + G[1]) / 2 - (x - G[0]) * 0.12;
+        ctx.strokeStyle = 'rgba(228,201,126,' + (0.12 + g() * 0.16).toFixed(3) + ')';
+        ctx.lineWidth = 0.9;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.quadraticCurveTo(mx, my, G[0] + (x - G[0]) / d * GS * 0.9, G[1] + (y - G[1]) / d * GS * 0.9);
+        ctx.stroke();
+        // the source point
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
+        ctx.globalAlpha = 0.5 + g() * 0.5;
+        ctx.fillStyle = '#E4C97E';
+        ctx.shadowColor = 'rgba(228,201,126,0.7)';
+        ctx.shadowBlur = 5;
+        const s2 = 1.1 + g() * 1.3;
+        ctx.fillRect(-s2, -s2, s2 * 2, s2 * 2);
+        ctx.restore();
+        placed++;
+      }
+      ctx.restore();
+
+      gem(G[0], G[1], GS);
+    }
+
+    function layout() {
+      const box = c.parentElement;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = box.clientWidth; h = box.clientHeight;
+      c.width = w * dpr; c.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw();
+    }
+
+    let rt, lastW = window.innerWidth;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      if (window.innerWidth === lastW) return;
+      lastW = window.innerWidth;
+      rt = setTimeout(layout, 150);
+    });
+    layout();
+  })();
+
+
+  // Selznick — the foundation. What it is built on feeds up into it, and it
+  // feeds up into every stage of a project. It informs; it never decides.
+  (function () {
+    const c = document.getElementById('selz-field');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let w = 0, h = 0, dpr = 1;
+    const GOLD = '#E4C97E', VIOLET = '#C4B5FD', INK = '#F3EFE8', SOFT = 'rgba(243,239,232,0.82)';
+
+    function txt(str, x, y, font, color, alpha, align, sp) { ctx.save(); ctx.textAlign = align || 'left'; ctx.globalAlpha = alpha; ctx.font = font; try { if (sp) ctx.letterSpacing = sp; } catch (e) {} ctx.shadowColor = 'rgba(8,6,14,0.95)'; ctx.shadowBlur = 8; ctx.fillStyle = color; ctx.fillText(str, x, y); ctx.restore(); }
+    function line(x0, y0, x1, y1, rgba, lw) { ctx.save(); ctx.strokeStyle = rgba; ctx.lineWidth = lw || 1; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.restore(); }
+    function arrow(x0, y0, x1, y1, rgba, lw) {
+      line(x0, y0, x1, y1, rgba, lw);
+      const a = Math.atan2(y1 - y0, x1 - x0), L = 8;
+      line(x1, y1, x1 - L * Math.cos(a - 0.45), y1 - L * Math.sin(a - 0.45), rgba, lw);
+      line(x1, y1, x1 - L * Math.cos(a + 0.45), y1 - L * Math.sin(a + 0.45), rgba, lw);
+    }
+    function dia(x, y, s2, glow, alpha) { ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4); ctx.globalAlpha = alpha == null ? 1 : alpha; if (glow) { ctx.shadowColor = 'rgba(255,225,140,0.95)'; ctx.shadowBlur = 26; } const g = ctx.createLinearGradient(-s2, -s2, s2, s2); g.addColorStop(0, glow ? '#FFF4C4' : '#F0DCA0'); g.addColorStop(1, glow ? '#C79B48' : '#B08A3E'); ctx.fillStyle = g; ctx.fillRect(-s2, -s2, s2 * 2, s2 * 2); ctx.restore(); }
+    function gem(x, y, gs) { let g = ctx.createRadialGradient(x, y, 0, x, y, gs * 2.2); g.addColorStop(0, 'rgba(139,92,246,0.22)'); g.addColorStop(1, 'rgba(139,92,246,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4); ctx.shadowColor = '#8b5cf6'; ctx.shadowBlur = 40; const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2); gg.addColorStop(0, '#C4B5FD'); gg.addColorStop(1, '#6D28D9'); ctx.fillStyle = gg; const cr = gs * 0.2; ctx.beginPath(); ctx.moveTo(-gs / 2 + cr, -gs / 2); ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr); ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr); ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr); ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr); ctx.closePath(); ctx.fill(); ctx.restore(); }
+    function cluster(cx, cy, rx, ry, n, seed) { let a0 = seed | 0; const r = () => { a0 = (a0 + 0x6D2B79F5) | 0; let x = Math.imul(a0 ^ (a0 >>> 15), 1 | a0); x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x; return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; for (let i = 0; i < n; i++) { const a = r() * Math.PI * 2, d = Math.sqrt(r()); const x = cx + Math.cos(a) * rx * d, y = cy + Math.sin(a) * ry * d; const s2 = 0.9 + r() * 1.5; ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4); ctx.globalAlpha = 0.3 + r() * 0.5; ctx.fillStyle = GOLD; ctx.fillRect(-s2, -s2, s2 * 2, s2 * 2); ctx.restore(); } }
+
+    const STAGES = ['IP ACQUISITION', 'FINANCING', 'DEVELOPMENT', 'CASTING & CREW', 'PRODUCTION', 'DISTRIBUTION'];
+    const BUILT = ['EVERY NARRATIVE, DECOMPOSED', 'THE ENTIRE MARKET, MEASURED', 'EVERY FILMMAKER, STUDIED'];
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      const wide = w >= 900;
+      if (wide) {
+        const BW = Math.min(1120, w - 80), BX = (w - BW) / 2;
+        const TY = h * 0.19;
+        const GX = w / 2, GY = h * 0.53, GS = 58;
+        const xs = STAGES.map((s, i) => BX + BW * (i + 0.5) / STAGES.length);
+
+        // the stages of a project, along the top
+        txt('EVERY STAGE OF A PROJECT', BX, TY - 54, '700 11.5px Inter, sans-serif', INK, 1, 'left', '0.16em');
+        line(xs[0], TY, xs[xs.length - 1], TY, 'rgba(228,201,126,0.28)', 1.2);
+        xs.forEach((x, i) => {
+          dia(x, TY, 8, true);
+          txt(STAGES[i], x, TY - 24, '700 12px Inter, sans-serif', GOLD, 1, 'center', '0.13em');
+          arrow(GX + (x - GX) * 0.12, GY - GS * 0.62, x, TY + 18, 'rgba(196,181,253,0.45)', 1.3);
+        });
+
+        // Selznick, underneath all of it
+        gem(GX, GY, GS);
+        txt('SELZNICK', GX + GS * 0.82 + 18, GY - 6, '700 13px Inter, sans-serif', VIOLET, 1, 'left', '0.22em');
+        txt('informs every decision. it never makes them.', GX + GS * 0.82 + 18, GY + 18, '400 15px Inter, sans-serif', SOFT, 1, 'left');
+
+        // what it is built on
+        const BY = h * 0.87;
+        txt('BUILT ON', BX, BY - 42, '700 11.5px Inter, sans-serif', VIOLET, 0.9, 'left', '0.16em');
+        BUILT.forEach((b, i) => {
+          const x = BX + BW * (0.17 + i * 0.33);
+          cluster(x, BY, 14, 11, 22, 41 + i);
+          txt(b, x, BY + 32, '700 11.5px Inter, sans-serif', GOLD, 1, 'center', '0.13em');
+          arrow(x, BY - 18, GX + (x - GX) * 0.16, GY + GS * 0.66, 'rgba(196,181,253,0.4)', 1.2);
+        });
+      } else {
+        const SX = w / 2;
+        // what it is built on, at the top
+        txt('BUILT ON', 16, 26, '700 11px Inter, sans-serif', VIOLET, 0.9, 'left', '0.16em');
+        BUILT.forEach((b, i) => {
+          const y = 56 + i * 44;
+          cluster(30, y - 4, 10, 9, 12, 41 + i);
+          txt(b, 54, y + 1, '700 11px Inter, sans-serif', GOLD, 1, 'left', '0.11em');
+        });
+        arrow(32, 156, SX - 24, 212, 'rgba(196,181,253,0.45)', 1.3);
+
+        // Selznick
+        const GY = 248, GS = 46;
+        gem(SX, GY, GS);
+        txt('SELZNICK', SX, GY + GS * 0.72 + 26, '700 12px Inter, sans-serif', VIOLET, 1, 'center', '0.2em');
+        txt('informs every decision.', SX, GY + GS * 0.72 + 48, '400 13px Inter, sans-serif', SOFT, 1, 'center');
+        txt('it never makes them.', SX, GY + GS * 0.72 + 68, '400 13px Inter, sans-serif', SOFT, 1, 'center');
+
+        // every stage of a project, down one rail
+        const RX = w * 0.17, TOP = 406, STEP = 46;
+        txt('EVERY STAGE OF A PROJECT', w - 14, 388, '700 11px Inter, sans-serif', INK, 1, 'right', '0.14em');
+        arrow(SX - 26, 360, RX, TOP - 16, 'rgba(196,181,253,0.45)', 1.3);
+        line(RX, TOP - 8, RX, TOP + STEP * (STAGES.length - 1) + 8, 'rgba(228,201,126,0.3)', 1.4);
+        STAGES.forEach((st, i) => {
+          const y = TOP + i * STEP;
+          dia(RX, y, 7, true);
+          txt(st, RX + 24, y + 5, '700 11.5px Inter, sans-serif', GOLD, 1, 'left', '0.12em');
+        });
+      }
+    }
+    function layout() { const box = c.parentElement; dpr = Math.min(window.devicePixelRatio || 1, 2); w = box.clientWidth; h = box.clientHeight; c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw(); }
+    let rt, lastW = window.innerWidth;
+    window.addEventListener('resize', () => { clearTimeout(rt); if (window.innerWidth === lastW) return; lastW = window.innerWidth; rt = setTimeout(layout, 150); });
+    layout(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => draw());
+  })();
+
+
+  // The six stages — one figure each. Shared toolkit, one draw per canvas.
+  (function () {
+    const GOLD = '#E4C97E', VIOLET = '#C4B5FD', INK = '#F3EFE8', SOFT = 'rgba(243,239,232,0.82)', GREEN = '#8FCF9F', ROSE = '#D98A8A';
+    const CAP = '700 11.5px Inter, sans-serif';
+
+    function mk(ctx) {
+      const T = {};
+      T.txt = (str, x, y, font, color, alpha, align, sp) => { ctx.save(); ctx.textAlign = align || 'left'; ctx.globalAlpha = alpha == null ? 1 : alpha; ctx.font = font; try { if (sp) ctx.letterSpacing = sp; } catch (e) {} ctx.shadowColor = 'rgba(8,6,14,0.95)'; ctx.shadowBlur = 8; ctx.fillStyle = color; ctx.fillText(str, x, y); ctx.restore(); };
+      T.line = (x0, y0, x1, y1, rgba, lw) => { ctx.save(); ctx.strokeStyle = rgba; ctx.lineWidth = lw || 1; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.restore(); };
+      T.arrow = (x0, y0, x1, y1, rgba, lw) => { T.line(x0, y0, x1, y1, rgba, lw); const a = Math.atan2(y1 - y0, x1 - x0), L = 7.5; T.line(x1, y1, x1 - L * Math.cos(a - 0.45), y1 - L * Math.sin(a - 0.45), rgba, lw); T.line(x1, y1, x1 - L * Math.cos(a + 0.45), y1 - L * Math.sin(a + 0.45), rgba, lw); };
+      T.poly = (pts, rgba, lw, glow) => { ctx.save(); ctx.strokeStyle = rgba; ctx.lineWidth = lw; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; if (glow) { ctx.shadowColor = 'rgba(228,201,126,0.45)'; ctx.shadowBlur = 10; } ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.stroke(); ctx.restore(); };
+      T.dia = (x, y, s2, glow, alpha) => { ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4); ctx.globalAlpha = alpha == null ? 1 : alpha; if (glow) { ctx.shadowColor = 'rgba(255,225,140,0.95)'; ctx.shadowBlur = 24; } const g = ctx.createLinearGradient(-s2, -s2, s2, s2); g.addColorStop(0, glow ? '#FFF4C4' : '#F0DCA0'); g.addColorStop(1, glow ? '#C79B48' : '#B08A3E'); ctx.fillStyle = g; ctx.fillRect(-s2, -s2, s2 * 2, s2 * 2); ctx.restore(); };
+      T.page = (x, y, k, alpha, color) => { ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.globalAlpha = alpha == null ? 1 : alpha; ctx.strokeStyle = color || '#F0DCA0'; ctx.lineWidth = 1.5 / k; ctx.lineCap = 'round'; ctx.beginPath(); ctx.rect(-10, -13, 20, 26); ctx.moveTo(-5, -6); ctx.lineTo(5, -6); ctx.moveTo(-5, -1); ctx.lineTo(5, -1); ctx.moveTo(-5, 4); ctx.lineTo(2, 4); ctx.stroke(); ctx.restore(); };
+      T.person = (x, y, k, alpha, glow) => { ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.globalAlpha = alpha == null ? 1 : alpha; ctx.strokeStyle = GOLD; ctx.lineWidth = 1.8 / k; ctx.lineCap = 'round'; if (glow) { ctx.shadowColor = 'rgba(228,201,126,0.65)'; ctx.shadowBlur = 12; } ctx.beginPath(); ctx.arc(0, -13, 7.5, 0, Math.PI * 2); ctx.stroke(); ctx.beginPath(); ctx.moveTo(-13, 17); ctx.quadraticCurveTo(-13, -1, 0, -1); ctx.quadraticCurveTo(13, -1, 13, 17); ctx.stroke(); ctx.restore(); };
+      T.dot = (x, y, r, rgba) => { ctx.save(); ctx.fillStyle = rgba; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); ctx.restore(); };
+      T.bar = (x, y, len, hgt, fill, stroke) => { ctx.save(); const r = hgt / 2; ctx.beginPath(); ctx.moveTo(x + r, y); ctx.lineTo(x + len - r, y); ctx.arcTo(x + len, y, x + len, y + hgt, r); ctx.arcTo(x + len, y + hgt, x + len - r, y + hgt, r); ctx.lineTo(x + r, y + hgt); ctx.arcTo(x, y + hgt, x, y, r); ctx.arcTo(x, y, x + len, y, r); ctx.closePath(); if (fill) { ctx.fillStyle = fill; ctx.fill(); } if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1.2; ctx.stroke(); } ctx.restore(); };
+      T.lane = (x, y, wd, hgt, rgba) => { ctx.save(); ctx.strokeStyle = rgba; ctx.lineWidth = 1.2; const r = 10; ctx.beginPath(); ctx.moveTo(x + r, y); ctx.lineTo(x + wd - r, y); ctx.arcTo(x + wd, y, x + wd, y + hgt, r); ctx.arcTo(x + wd, y + hgt, x + wd - r, y + hgt, r); ctx.lineTo(x + r, y + hgt); ctx.arcTo(x, y + hgt, x, y, r); ctx.arcTo(x, y, x + wd, y, r); ctx.closePath(); ctx.stroke(); ctx.restore(); };
+      return T;
+    }
+
+    // Each figure is a specimen of the output: named decisions, priced.
+    const FIGS = {
+      // What material is worth, in the form it belongs in.
+      'fig-acquire': (T, w, h) => {
+        const n = w < 480, F = n ? 12 : 13.5, C = n ? '700 11px Inter, sans-serif' : CAP;
+        const X1 = n ? 12 : w * 0.05, X2 = w * (n ? 0.42 : 0.44), X3 = n ? w - 12 : w * 0.96;
+        const ROWS = [
+          ['Spec screenplay', 'as a feature', '$180M', 1],
+          ['Unadapted novel', 'as a limited series', '$240M', 1],
+          ['Festival film, no buyer', 'theatrical release', '$60M', 1],
+          ['Spec drama', 'as a feature', '$14M', 0],
+        ];
+        T.txt('MATERIAL', X1, h * 0.16, C, INK, 0.75, 'left', '0.13em');
+        T.txt(n ? 'FORM' : 'BEST FORM', X2, h * 0.16, C, INK, 0.75, 'left', '0.13em');
+        T.txt(n ? 'REVENUE' : 'ESTIMATED REVENUE', X3, h * 0.16, C, INK, 0.75, 'right', '0.13em');
+        ROWS.forEach((r, i) => {
+          const y = h * (0.34 + i * 0.155), take = r[3];
+          T.txt(r[0], X1, y, '400 ' + F + 'px Inter, sans-serif', take ? INK : 'rgba(243,239,232,0.45)', 1, 'left');
+          T.txt(r[1], X2, y, '400 ' + (F - 1) + 'px Inter, sans-serif', take ? GOLD : 'rgba(243,239,232,0.4)', 1, 'left');
+          T.txt(r[2], X3, y + 1, '700 ' + (n ? 15 : 17) + 'px Inter, sans-serif', take ? GREEN : ROSE, 1, 'right');
+        });
+        T.txt(n ? 'example: we option the first three, we pass on the fourth' : 'example: four submissions. we option the first three and pass on the fourth.',
+          w / 2, h * 0.93, '400 12px Inter, sans-serif', SOFT, 1, 'center');
+      },
+
+      // What a project returns at a given budget, with the range.
+      'fig-finance': (T, w, h) => {
+        const n = w < 480, C = n ? '700 11px Inter, sans-serif' : CAP;
+        const AX0 = w * (n ? 0.12 : 0.10), AX1 = w * (n ? 0.88 : 0.90), AY = h * 0.60;
+        T.txt('BUDGET  $45M', n ? 12 : w * 0.05, h * 0.16, C, GOLD, 1, 'left', '0.13em');
+        T.txt('ESTIMATED REVENUE', n ? w - 12 : w * 0.95, h * 0.16, C, INK, 0.75, 'right', '0.13em');
+        T.line(AX0, AY, AX1, AY, 'rgba(243,239,232,0.22)', 1);
+        const px = t => AX0 + (AX1 - AX0) * t;
+        // the range, and the expected number inside it
+        T.bar(px(0.10), AY - 10, px(0.92) - px(0.10), 20, 'rgba(143,207,159,0.16)', 'rgba(143,207,159,0.5)');
+        T.dia(px(0.42), AY, 10, true);
+        T.txt('EXPECTED', px(0.42), AY - (n ? 52 : 58), '700 11px Inter, sans-serif', GREEN, 1, 'center', '0.13em');
+        T.txt('$210M', px(0.42), AY - (n ? 26 : 30), '700 ' + (n ? 22 : 26) + 'px Inter, sans-serif', GREEN, 1, 'center');
+        T.txt('LOW', px(0.10), AY - 38, '700 10.5px Inter, sans-serif', SOFT, 0.85, 'center', '0.13em');
+        T.txt('$90M', px(0.10), AY - 20, '600 ' + (n ? 13 : 14) + 'px Inter, sans-serif', SOFT, 1, 'center');
+        T.txt('HIGH', px(0.92), AY - 38, '700 10.5px Inter, sans-serif', SOFT, 0.85, 'center', '0.13em');
+        T.txt('$480M', px(0.92), AY - 20, '600 ' + (n ? 13 : 14) + 'px Inter, sans-serif', SOFT, 1, 'center');
+        // break-even, marked on the same axis, below it
+        T.line(px(0.13), AY + 12, px(0.13), AY + 22, 'rgba(217,138,138,0.85)', 1.6);
+        T.txt('BREAK-EVEN  $95M', px(0.13) - 6, AY + 40, '700 11px Inter, sans-serif', ROSE, 1, 'left', '0.12em');
+        T.txt(n ? 'example: one feature at a $45M budget' : 'example: one feature at a $45M budget, before a frame is shot',
+          w / 2, h * 0.93, '400 12px Inter, sans-serif', SOFT, 1, 'center');
+      },
+
+      // The choice in front of the writer, both ways, priced.
+      'fig-develop': (T, w, h) => {
+        const n = w < 480;
+        const L = w * 0.14, R = w * (n ? 0.78 : 0.80), SY = h * 0.72, EY = h * 0.34;
+        const FORKS = [
+          { t: n ? 0.30 : 0.34, took: n ? 'ACT ONE REBUILT' : 'ACT ONE REBUILT', gain: '+$160M',
+            alt: n ? 'AS WRITTEN' : 'LEFT AS WRITTEN', altv: 'no change' },
+          { t: n ? 0.60 : 0.68, took: n ? 'ENDING KEPT' : 'THE HARD ENDING KEPT', gain: '+$250M',
+            alt: n ? 'SOFTENED' : 'ENDING SOFTENED', altv: '-$120M' },
+        ];
+        const sx = t => L + (R - L) * t, sy = t => SY + (EY - SY) * t;
+
+        // the script, and where it ends up
+        T.dia(L, SY, 9, false, 0.7);
+        T.txt('$90M', L, SY + 30, '600 18px Inter, sans-serif', 'rgba(143,207,159,0.7)', 1, 'center');
+        T.txt('FIRST DRAFT', n ? 10 : L, SY + 50, '700 11px Inter, sans-serif', SOFT, 1, n ? 'left' : 'center', '0.12em');
+        T.poly([[L + 14, SY - 5], [sx(FORKS[0].t), sy(FORKS[0].t)], [sx(FORKS[1].t), sy(FORKS[1].t)], [R - 18, EY + 5]],
+          'rgba(228,201,126,0.72)', 3, true);
+        T.dia(R, EY, n ? 16 : 19, true);
+        T.txt('~$500M', n ? w - 10 : R, EY - (n ? 48 : 54), n ? '700 23px Inter, sans-serif' : '700 26px Inter, sans-serif', GREEN, 1, n ? 'right' : 'center');
+        T.txt('FINAL DRAFT', n ? w - 10 : R, EY - (n ? 28 : 30), '700 11px Inter, sans-serif', INK, 1, n ? 'right' : 'center', '0.12em');
+
+        // at each turn: what the writer took, and what it was weighed against
+        FORKS.forEach((f, i) => {
+          const x = sx(f.t), y = sy(f.t);
+          T.dia(x, y, 7, true);
+          T.txt(f.took, x, y - 30, '700 11.5px Inter, sans-serif', GOLD, 1, 'center', '0.12em');
+          T.txt(f.gain, x, y - 13, '700 14px Inter, sans-serif', GREEN, 1, 'center');
+          const ax = x + (n ? 42 : 58), ay = y + (n ? 34 : 42);
+          T.line(x + 6, y + 6, ax, ay, 'rgba(217,138,138,0.4)', 1.4);
+          T.dia(ax, ay, 6, false, 0.4);
+          T.txt(f.alt, ax, ay + 20, '700 11px Inter, sans-serif', 'rgba(243,239,232,0.5)', 1, 'center', '0.1em');
+          T.txt(f.altv, ax, ay + 36, '600 12.5px Inter, sans-serif', ROSE, 0.9, 'center');
+        });
+        T.txt(n ? 'example: two turns on one script, both options priced' : 'example: two turns on one script. the writer chose both; each option was priced.',
+          w / 2, h * 0.96, '400 12px Inter, sans-serif', SOFT, 1, 'center');
+      },
+
+      // What a lead is worth on this project, against the fee.
+      'fig-cast': (T, w, h) => {
+        const n = w < 480, F = n ? 12 : 13.5, C = n ? '700 11px Inter, sans-serif' : CAP;
+        const X1 = n ? 12 : w * 0.05, X2 = w * (n ? 0.62 : 0.58), X3 = n ? w - 12 : w * 0.96;
+        const ROWS = [
+          ['Unknown lead', '$0', '$150M', 0],
+          ['Rising lead', '$2M', '$215M', 0],
+          ['Genre star', '$6M', '$295M', 1],
+          ['Global star', '$14M', '$290M', 0],
+        ];
+        T.txt('LEAD', X1, h * 0.16, C, INK, 0.75, 'left', '0.13em');
+        T.txt('FEE', X2, h * 0.16, C, INK, 0.75, 'right', '0.13em');
+        T.txt(n ? 'REVENUE' : 'ESTIMATED REVENUE', X3, h * 0.16, C, INK, 0.75, 'right', '0.13em');
+        ROWS.forEach((r, i) => {
+          const y = h * (0.34 + i * 0.155), pick = r[3];
+          if (pick) T.line(X1 - 11, y - 12, X1 - 11, y + 6, GOLD, 3);
+          T.txt(r[0], X1, y, '400 ' + F + 'px Inter, sans-serif', pick ? INK : 'rgba(243,239,232,0.7)', 1, 'left');
+          T.txt(r[1], X2, y, '600 ' + F + 'px Inter, sans-serif', GOLD, pick ? 1 : 0.75, 'right');
+          T.txt(r[2], X3, y + 1, '700 ' + (n ? 15 : 17) + 'px Inter, sans-serif', GREEN, pick ? 1 : 0.62, 'right');
+        });
+        T.txt(n ? 'example: one role, one $40M feature' : 'example: one role on one $40M feature. the genre star nets more than the global star.',
+          w / 2, h * 0.93, '400 12px Inter, sans-serif', SOFT, 1, 'center');
+      },
+
+      // What each production decision costs, and what it returns.
+      'fig-produce': (T, w, h) => {
+        const n = w < 480, F = n ? 12 : 13.5, C = n ? '700 11px Inter, sans-serif' : CAP;
+        const X1 = n ? 12 : w * 0.05, X2 = w * (n ? 0.66 : 0.62), X3 = n ? w - 12 : w * 0.96;
+        const ROWS = [
+          ['Location shoot, 12 days', '+$9M', '+$140M', 1],
+          ['Practical creature build', '+$3M', '+$60M', 1],
+          ['AI set extensions', '-$4M', 'no change', 1],
+          ['Second unit', '+$2M', 'none', 0],
+          ['Reshoots', '+$5M', 'none', 0],
+        ];
+        T.txt('DECISION', X1, h * 0.14, C, INK, 0.75, 'left', '0.13em');
+        T.txt('COST', X2, h * 0.14, C, INK, 0.75, 'right', '0.13em');
+        T.txt(n ? 'IMPACT' : 'REVENUE IMPACT', X3, h * 0.14, C, INK, 0.75, 'right', '0.13em');
+        ROWS.forEach((r, i) => {
+          const y = h * (0.30 + i * 0.135), on = r[3], paid = r[2].charAt(0) === '+';
+          T.txt(r[0], X1, y, '400 ' + F + 'px Inter, sans-serif', on ? INK : 'rgba(243,239,232,0.45)', 1, 'left');
+          T.txt(r[1], X2, y, '600 ' + F + 'px Inter, sans-serif', on ? GOLD : 'rgba(243,239,232,0.45)', 1, 'right');
+          T.txt(r[2], X3, y + 1, paid ? '700 ' + (n ? 15 : 16) + 'px Inter, sans-serif' : '400 ' + F + 'px Inter, sans-serif',
+            paid ? GREEN : (on ? SOFT : ROSE), 1, 'right');
+        });
+        T.txt('example: five decisions on one film, each priced on its own',
+          w / 2, h * 0.94, '400 12px Inter, sans-serif', SOFT, 1, 'center');
+      },
+
+      // What the release plan itself is worth.
+      'fig-release': (T, w, h) => {
+        const n = w < 480, F = n ? 12 : 13.5, C = n ? '700 11px Inter, sans-serif' : CAP;
+        const X1 = n ? 12 : w * 0.05, X3 = n ? w - 12 : w * 0.96;
+        const ROWS = [
+          [n ? 'Social first, then theatrical' : 'Social campaign first, then theatrical', '$310M', 1],
+          [n ? 'Theatrical, then streaming' : 'Theatrical first, then streaming', '$240M', 0],
+          ['Streaming only', '$95M', 0],
+        ];
+        T.txt('RELEASE PLAN', X1, h * 0.18, C, INK, 0.75, 'left', '0.13em');
+        T.txt(n ? 'REVENUE' : 'ESTIMATED REVENUE', X3, h * 0.18, C, INK, 0.75, 'right', '0.13em');
+        ROWS.forEach((r, i) => {
+          const y = h * (0.38 + i * 0.19), pick = r[2];
+          if (pick) T.line(X1 - 11, y - 13, X1 - 11, y + 7, GOLD, 3);
+          T.txt(r[0], X1, y, '400 ' + F + 'px Inter, sans-serif', pick ? INK : 'rgba(243,239,232,0.7)', 1, 'left');
+          T.txt(r[1], X3, y + 1, '700 ' + (n ? 16 : 18) + 'px Inter, sans-serif', GREEN, pick ? 1 : 0.62, 'right');
+        });
+        T.txt('example: the same finished film, three release plans',
+          w / 2, h * 0.93, '400 12px Inter, sans-serif', SOFT, 1, 'center');
+      },
+    };
+
+    Object.keys(FIGS).forEach(id => {
+      const c = document.getElementById(id);
+      if (!c) return;
+      const ctx = c.getContext('2d');
+      const T = mk(ctx);
+      let w = 0, h = 0;
+      function layout() {
+        const box = c.parentElement;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = box.clientWidth; h = box.clientHeight;
+        c.width = w * dpr; c.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        FIGS[id](T, w, h);
+      }
+      let rt, lastW = window.innerWidth;
+      window.addEventListener('resize', () => { clearTimeout(rt); if (window.innerWidth === lastW) return; lastW = window.innerWidth; rt = setTimeout(layout, 150); });
+      layout();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    });
+  })();
+
+
+
+  // Night fields — the team-band dust, and the hero sky where one gem has ignited.
+  (function () {
+    function mulberry32(a) {
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+    function smoothstep(e0, e1, x) {
+      const t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0)));
+      return t * t * (3 - 2 * t);
+    }
+
+    function drawField(canvas, o) {
+      const ctx = canvas.getContext('2d');
+      const panel = canvas.parentElement;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = canvas.id === 'page-field' ? window.innerWidth : panel.clientWidth;
+      const h = canvas.id === 'page-field' ? window.innerHeight : panel.clientHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+
+      const ign = o.ignition
+        ? (w < 700
+            ? { x: 0.5 * w, y: 0.84 * h }
+            : { x: o.ignition.fx * w, y: o.ignition.fy * h })
+        : null;
+
+      // Density per unit area, not a fixed count — otherwise a phone gets four
+      // times the desktop density. And a speck is never allowed below one
+      // device pixel, or it renders as a sub-pixel smear and the field reads
+      // as a grey haze instead of stars.
+      // narrow screens are held closer, so the same density reads as haze
+      const area = (w * h) / (1440 * 900) * (w < 900 ? 0.55 : 1);
+      const minR = 1 / dpr;
+      function dust(seed, per, rBase, rVar, aBase, aVar) {
+        const rand = mulberry32(seed);
+        const count = Math.round(per * area);
+        for (let i = 0; i < count; i++) {
+          const x = rand() * w, y = rand() * h;
+          const a = aBase + rand() * aVar;
+          const r = Math.max(minR, rBase + rand() * rVar);
+          ctx.fillStyle = 'rgba(240,235,225,' + a.toFixed(3) + ')';
+          ctx.fillRect(x, y, r, r);
+        }
+      }
+
+      if (o.ignition) {
+        dust(11, 9000, 0.5, 0.25, 0.03, 0.05);
+        dust(12, 4500, 0.7, 0.3, 0.06, 0.06);
+        dust(13, 1500, 1.0, 0.35, 0.10, 0.06);
+      } else {
+        dust(7, 11000, 0.55, 0.5, 0.03, 0.11);
+      }
+
+      // Tiny violet gem diamonds in the dust
+      const litRand = mulberry32(o.gemSeed);
+      const gemCount = Math.max(10, Math.round(o.gems * Math.min(1.15, Math.max(0.4, area))));
+      for (let i = 0; i < gemCount; i++) {
+        let x, y;
+        if (ign) {
+          // ring the network: densest just outside our orbit, thinning outward,
+          // and never drifting into the text column on the left
+          const ga = litRand() * Math.PI * 2;
+          const gr = 138 + Math.pow(litRand(), 1.7) * 330;
+          x = ign.x + Math.cos(ga) * gr;
+          y = ign.y + Math.sin(ga) * gr;
+          if (x < w * 0.53 || x > w - 14 || y < 14 || y > h - 14) { litRand(); continue; }
+        } else {
+          x = litRand() * w;
+          y = litRand() * h;
+        }
+        const s = (2.8 + litRand() * 3.2) * (w < 700 ? 0.85 : 1);
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(Math.PI / 4);
+        ctx.shadowColor = 'rgba(167,139,250,' + (o.ignition ? 0.55 : 0.9) + ')';
+        ctx.shadowBlur = 10;
+        const g = ctx.createLinearGradient(-s / 2, -s / 2, s / 2, s / 2);
+        g.addColorStop(0, '#A78BFA');
+        g.addColorStop(1, '#7C3AED');
+        ctx.globalAlpha = o.ignition ? 0.7 : 1;
+        ctx.fillStyle = g;
+        ctx.fillRect(-s / 2, -s / 2, s, s);
+        ctx.restore();
+      }
+
+      // THE ONE — the only gold in the sky
+      if (ign) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(ign.x, ign.y, 60, 0, Math.PI * 2);
+        ctx.fillStyle = '#120E1B';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(196,181,253,0.4)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.restore();
+
+        const gs = 56;
+        ctx.save();
+        ctx.translate(ign.x, ign.y);
+        ctx.rotate(Math.PI / 4);
+        ctx.shadowColor = '#8b5cf6';
+        ctx.shadowBlur = 32;
+        const gg = ctx.createLinearGradient(-gs / 2, -gs / 2, gs / 2, gs / 2);
+        gg.addColorStop(0, '#C4B5FD');
+        gg.addColorStop(1, '#6D28D9');
+        ctx.fillStyle = gg;
+        const cr = 11;
+        ctx.beginPath();
+        ctx.moveTo(-gs / 2 + cr, -gs / 2);
+        ctx.arcTo(gs / 2, -gs / 2, gs / 2, gs / 2, cr);
+        ctx.arcTo(gs / 2, gs / 2, -gs / 2, gs / 2, cr);
+        ctx.arcTo(-gs / 2, gs / 2, -gs / 2, -gs / 2, cr);
+        ctx.arcTo(-gs / 2, -gs / 2, gs / 2, -gs / 2, cr);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+
+
+        if (o.ignition.satellites && w >= 700) {
+          o.ignition.satellites.forEach(function (sat, si) {
+            const kr = mulberry32(Math.round(sat.r * 7 + sat.ang) + si);
+            let a = sat.ang * Math.PI / 180;
+            let px = ign.x + Math.cos(a) * 62, py = ign.y + Math.sin(a) * 62;
+            const sizes = [sat.size * 0.34, sat.size * 0.58, sat.size];
+            let tipx = px, tipy = py, tipa = a;
+
+            for (let i = 0; i < 3; i++) {
+              a += (kr() - 0.5) * 0.42;
+              const len = i === 0 ? sat.r * 0.34 : sat.r * (0.28 + kr() * 0.13);
+              const nx = px + Math.cos(a) * len, ny = py + Math.sin(a) * len;
+              ctx.save();
+              ctx.strokeStyle = 'rgba(228,201,126,0.34)';
+              ctx.lineWidth = 1.3;
+              ctx.beginPath();
+              ctx.moveTo(px, py); ctx.lineTo(nx, ny);
+              ctx.stroke();
+              ctx.restore();
+              ctx.save();
+              ctx.translate(nx, ny);
+              ctx.rotate(Math.PI / 4);
+              ctx.shadowColor = 'rgba(228,201,126,0.85)';
+              ctx.shadowBlur = 6 + i * 5;
+              const sz = sizes[i];
+              const sg = ctx.createLinearGradient(-sz, -sz, sz, sz);
+              sg.addColorStop(0, '#F0DCA0');
+              sg.addColorStop(1, '#B08A3E');
+              ctx.fillStyle = sg;
+              ctx.fillRect(-sz, -sz, sz * 2, sz * 2);
+              ctx.restore();
+              px = nx; py = ny;
+              if (i === 2) { tipx = nx; tipy = ny; tipa = a; }
+            }
+
+            const on = 3 + Math.floor(kr() * 3);
+            for (let k = 0; k < on; k++) {
+              const oa = tipa + (kr() - 0.5) * 1.5;
+              const od = 32 + kr() * 34;
+              const ox = tipx + Math.cos(oa) * od, oy = tipy + Math.sin(oa) * od;
+              ctx.save();
+              ctx.strokeStyle = 'rgba(228,201,126,0.2)';
+              ctx.lineWidth = 0.7;
+              ctx.beginPath();
+              ctx.moveTo(tipx + Math.cos(oa) * (sat.size + 4), tipy + Math.sin(oa) * (sat.size + 4));
+              ctx.lineTo(ox, oy);
+              ctx.stroke();
+              ctx.translate(ox, oy);
+              ctx.rotate(Math.PI / 4);
+              const os = 2.6 + kr() * 1.7;
+              ctx.fillStyle = 'rgba(228,201,126,' + (0.5 + kr() * 0.3).toFixed(2) + ')';
+              ctx.fillRect(-os, -os, os * 2, os * 2);
+              ctx.restore();
+
+              if (kr() < 0.4) {
+                const ga = oa + (kr() - 0.5) * 0.7;
+                const gd = 32 + kr() * 28;
+                const gx = ox + Math.cos(ga) * gd, gy = oy + Math.sin(ga) * gd;
+                ctx.save();
+                ctx.strokeStyle = 'rgba(228,201,126,0.26)';
+                ctx.lineWidth = 0.9;
+                ctx.beginPath();
+                ctx.moveTo(ox, oy); ctx.lineTo(gx, gy);
+                ctx.stroke();
+                ctx.translate(gx, gy);
+                ctx.rotate(Math.PI / 4);
+                const gsz = 5.6 + kr() * 2.2;
+                const gg2 = ctx.createLinearGradient(-gsz, -gsz, gsz, gsz);
+                gg2.addColorStop(0, '#F0DCA0');
+                gg2.addColorStop(1, '#B08A3E');
+                ctx.fillStyle = gg2;
+                ctx.shadowColor = 'rgba(228,201,126,0.7)';
+                ctx.shadowBlur = 10;
+                ctx.fillRect(-gsz, -gsz, gsz * 2, gsz * 2);
+                ctx.restore();
+
+                const mn = 2 + Math.round(kr());
+                for (let m = 0; m < mn; m++) {
+                  const ma = ga + (kr() - 0.5) * 1.3;
+                  const md = 18 + kr() * 20;
+                  const mx = gx + Math.cos(ma) * md, my = gy + Math.sin(ma) * md;
+                  ctx.save();
+                  ctx.strokeStyle = 'rgba(228,201,126,0.15)';
+                  ctx.lineWidth = 0.6;
+                  ctx.beginPath();
+                  ctx.moveTo(gx, gy); ctx.lineTo(mx, my);
+                  ctx.stroke();
+                  ctx.translate(mx, my);
+                  ctx.rotate(Math.PI / 4);
+                  const ms = 1.9 + kr() * 1.2;
+                  ctx.fillStyle = 'rgba(228,201,126,' + (0.35 + kr() * 0.25).toFixed(2) + ')';
+                  ctx.fillRect(-ms, -ms, ms * 2, ms * 2);
+                  ctx.restore();
+                }
+              }
+            }
+          });
+        }
+      }
+    }
+
+    const fields = [];
+    const page = document.getElementById('page-field');
+    if (page) fields.push([page, { gems: 44, gemSeed: 5 }]);
+
+    function drawAll() { fields.forEach(([c, o]) => drawField(c, o)); }
+    let t;
+    window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(drawAll, 150); });
+    requestAnimationFrame(drawAll);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
+  })();
+</script>
+
+</body>
+</html>
