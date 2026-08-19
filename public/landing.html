@@ -69,7 +69,7 @@
   .acts{margin-top:34px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 
   /* selznick */
-  .fig{position:relative;width:100%;max-width:1240px;height:460px;margin-top:46px;border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(139,92,246,.04));overflow:hidden}
+  .fig{position:relative;width:100%;max-width:1240px;height:480px;margin-top:46px;border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(139,92,246,.04));overflow:hidden}
   .fig canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
   .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:42px;margin-top:52px;max-width:1240px}
   .three h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;line-height:1.1;margin-bottom:12px}
@@ -130,7 +130,7 @@
     section{padding:64px 18px}
     .hero{padding:48px 18px 30px;min-height:0}
     h1{font-size:34px}.big b{font-size:34px}.big p{font-size:17px}
-    .fig{height:620px;margin-top:34px}
+    .fig{height:680px;margin-top:34px}
     .three{grid-template-columns:1fr;gap:28px;margin-top:34px}
     .kick{font-size:21px;margin-top:34px}
     .stg{grid-template-columns:1fr;gap:22px}
@@ -178,21 +178,6 @@
   <p class="lead rv">Selznick is the most powerful AI creative partner ever built. It breaks down narratives, studies massive amounts of market data, and studies the people who make films, in a way nothing else ever has. That lets us understand the potential of any project in incredible detail, and make informed, intelligent investment and creative decisions at every single stage of it.</p>
 
   <div class="fig rv"><canvas id="f-selz" aria-hidden="true"></canvas></div>
-
-  <div class="three rv">
-    <div>
-      <h3>Every story ever made</h3>
-      <p>Selznick has read every story the business has ever told and broken each one into the elements that actually move an audience. It reads new material the same way, whether that material is a screenplay, a book, a true story, or an idea nobody has written yet.</p>
-    </div>
-    <div>
-      <h3>A century of box office</h3>
-      <p>Selznick knows what audiences actually paid for, worldwide, across a century of film, and what they watch on television and social today. It compares a project against the entire market rather than against the handful of comparable titles a studio happens to pick.</p>
-    </div>
-    <div>
-      <h3>Every filmmaker and performer</h3>
-      <p>Selznick knows every filmmaker and performer as themselves rather than as an average: what each one has delivered film by film, on this kind of material, at this kind of budget, and alongside these particular people.</p>
-    </div>
-  </div>
 
   <p class="kick rv">Apart, each of these exists somewhere in this business. Together, on one project, they exist nowhere else. That is the difference between an opinion about a film and a price on it.</p>
 </section>
@@ -390,6 +375,13 @@ function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a
   function AR(a,b,cc,dd,col,lw){L(a,b,cc,dd,col,lw);var an=Math.atan2(dd-b,cc-a),k=8;L(cc,dd,cc-k*Math.cos(an-.45),dd-k*Math.sin(an-.45),col,lw);L(cc,dd,cc-k*Math.cos(an+.45),dd-k*Math.sin(an+.45),col,lw)}
   function DIA(X,Y,s,glow){x.save();x.translate(X,Y);x.rotate(Math.PI/4);if(glow){x.shadowColor='rgba(255,225,140,.95)';x.shadowBlur=18}var g=x.createLinearGradient(-s,-s,s,s);g.addColorStop(0,'#FFF4C4');g.addColorStop(1,'#C79B48');x.fillStyle=g;x.fillRect(-s,-s,s*2,s*2);x.restore()}
   function GEM(X,Y,s){var g=x.createRadialGradient(X,Y,0,X,Y,s*2.8);g.addColorStop(0,'rgba(139,92,246,.26)');g.addColorStop(1,'rgba(139,92,246,0)');x.fillStyle=g;x.fillRect(0,0,w,h);x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.shadowColor='#8b5cf6';x.shadowBlur=44;var gg=x.createLinearGradient(-s/2,-s/2,s/2,s/2);gg.addColorStop(0,'#C4B5FD');gg.addColorStop(1,'#6D28D9');x.fillStyle=gg;var cr=s*.2;x.beginPath();x.moveTo(-s/2+cr,-s/2);x.arcTo(s/2,-s/2,s/2,s/2,cr);x.arcTo(s/2,s/2,-s/2,s/2,cr);x.arcTo(-s/2,s/2,-s/2,-s/2,cr);x.arcTo(-s/2,-s/2,s/2,-s/2,cr);x.closePath();x.fill();x.restore()}
+  function ICON(k,X,Y){
+    x.save();x.translate(X,Y);x.strokeStyle=GOLD;x.fillStyle=GOLD;x.lineWidth=1.8;x.lineCap='round';x.shadowColor='rgba(228,201,126,.55)';x.shadowBlur=10;
+    if(k===0){x.beginPath();x.rect(-8,-11,16,22);x.moveTo(-4,-5);x.lineTo(4,-5);x.moveTo(-4,0);x.lineTo(4,0);x.moveTo(-4,5);x.lineTo(2,5);x.stroke()}
+    else if(k===1){[[-6,6],[0,10],[6,4]].forEach(function(b){x.fillRect(b[0]-3,8-b[1],6,b[1])});}
+    else{x.beginPath();x.arc(0,-7,5.5,0,Math.PI*2);x.stroke();x.beginPath();x.moveTo(-9,11);x.quadraticCurveTo(-9,0,0,0);x.quadraticCurveTo(9,0,9,11);x.stroke()}
+    x.restore();
+  }
   function cluster(cx,cy,rx,ry,n,seed){var a0=seed|0,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};for(var q=0;q<n;q++){var an=rr()*Math.PI*2,dd=Math.sqrt(rr());var px=cx+Math.cos(an)*rx*dd,py=cy+Math.sin(an)*ry*dd,s2=0.9+rr()*1.4;x.save();x.translate(px,py);x.rotate(Math.PI/4);x.globalAlpha=0.3+rr()*0.5;x.fillStyle=GOLD;x.fillRect(-s2,-s2,s2*2,s2*2);x.restore()}}
   function curve(x0,y0,x1,y1,bend,col){x.save();x.strokeStyle=col;x.lineWidth=1.4;x.setLineDash([5,7]);var mx=(x0+x1)/2,my=(y0+y1)/2;var nx=-(y1-y0),ny=(x1-x0),len=Math.hypot(nx,ny)||1;mx+=nx/len*bend;my+=ny/len*bend;x.beginPath();x.moveTo(x0,y0);x.quadraticCurveTo(mx,my,x1,y1);x.stroke();x.restore()}
   var A=[
@@ -401,52 +393,59 @@ function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a
     x.clearRect(0,0,w,h);
     var wide=w>=900;
     if(wide){
-      var CY=h*0.52, GX=w*0.42, GS=52, AX=w*0.72;
-      T('WHAT SELZNICK IS BUILT ON',56,50,'700 13px Inter, sans-serif',VIOLET,.95,'left','.16em');
-      T('WHAT IT ASSESSES ON A PROJECT',AX-40,50,'700 13px Inter, sans-serif',INK,.9,'left','.16em');
-      var SRC=['EVERY STORY EVER MADE','A CENTURY OF BOX OFFICE','EVERY FILMMAKER AND PERFORMER'];
+      var CY=h*0.54, GX=w*0.42, GS=48, AX=w*0.60, RX=w-84;
+      T('WHAT SELZNICK IS BUILT ON',52,46,'700 13px Inter, sans-serif',VIOLET,.95,'left','.16em');
+      T('WHAT IT INFORMS',AX-34,46,'700 13px Inter, sans-serif',INK,.9,'left','.16em');
+      var SRC=[['DETAILED NARRATIVE BREAKDOWN','every screenplay, book, and idea,','in thousands of components'],
+               ['BOX OFFICE PERFORMANCE','nearly every film of the last','fifty years'],
+               ['FILMMAKER AND CAST PERFORMANCE','thousands of directors, writers,','cast and crew']];
       SRC.forEach(function(t,k){
-        var y=CY-66+k*66;
-        cluster(74,y-5,10,8,14,41+k);
-        T(t,100,y,'700 13px Inter, sans-serif',GOLD,1,'left','.12em');
-        AR(430,y,GX-GS*0.98,CY+(y-CY)*0.22,'rgba(196,181,253,.5)',1.3);
+        var y=CY-108+k*108;
+        cluster(66,y-9,10,8,14,41+k);
+        T(t[0],92,y-4,'700 13.5px Inter, sans-serif',GOLD,1,'left','.12em');
+        T(t[1],92,y+16,'400 13.5px Inter, sans-serif',SOFT,1,'left');
+        T(t[2],92,y+34,'400 13.5px Inter, sans-serif',SOFT,1,'left');
+        AR(372,y+4,GX-GS*1.05,CY+(y-CY)*0.22,'rgba(196,181,253,.5)',1.3);
       });
       GEM(GX,CY,GS);
-      T('SELZNICK',GX,CY+GS*0.9+26,'700 13.5px Inter, sans-serif',VIOLET,1,'center','.22em');
-      T('BOX OFFICE POTENTIAL',GX,CY-GS*0.9-44,'700 13.5px Inter, sans-serif',GREEN,1,'center','.16em');
-      T('at its core',GX,CY-GS*0.9-24,'400 13px Inter, sans-serif',SOFT,.9,'center');
+      T('SELZNICK',GX,CY+GS*0.95+26,'700 13.5px Inter, sans-serif',VIOLET,1,'center','.22em');
       var YS=[CY-96,CY,CY+96];
       A.forEach(function(a,k){
         var y=YS[k];
-        // two-way: it informs the decision, the decision moves the potential
-        AR(GX+GS*0.9,CY+(y-CY)*0.22,AX-22,y,'rgba(196,181,253,.5)',1.3);
-        AR(AX-22,y+9,GX+GS*0.9,CY+(y-CY)*0.22+9,'rgba(143,207,159,.45)',1.3);
-        DIA(AX,y,11,true);
-        T(a[0],AX+26,y-2,'700 14px Inter, sans-serif',GOLD,1,'left','.13em');
-        T(a[1],AX+26,y+20,'400 13.5px Inter, sans-serif',SOFT,1,'left');
+        AR(GX+GS*0.95,CY+(y-CY)*0.22,AX-30,y,'rgba(196,181,253,.5)',1.3);
+        ICON(k,AX-8,y);
+        T(a[0],AX+18,y-2,'700 13.5px Inter, sans-serif',GOLD,1,'left','.12em');
+        T(a[1],AX+18,y+18,'400 13px Inter, sans-serif',SOFT,1,'left');
+        L(AX+250,y+(k===0?6:(k===2?-6:0)),RX-44,CY+(y-CY)*0.10,'rgba(228,201,126,.35)',1.2);
       });
-      T('every assessment moves the potential, and the potential moves every assessment',56,h-34,'400 13.5px Inter, sans-serif',SOFT,1,'left');
+      DIA(RX,CY,30,true);
+      T('A MASSIVE HIT',RX,CY+62,'700 13.5px Inter, sans-serif',GOLD,1,'center','.14em');
     } else {
-      var X0=16, CX2=w*0.26, GY=170, GS2=40;
+      var X0=16, CX2=w*0.26, GY=272, GS2=38;
       T('WHAT SELZNICK IS BUILT ON',X0,32,'700 11.5px Inter, sans-serif',VIOLET,.95,'left','.14em');
-      ['EVERY STORY EVER MADE','A CENTURY OF BOX OFFICE','EVERY FILMMAKER AND PERFORMER'].forEach(function(t,k){
-        var y=60+k*26; cluster(X0+8,y-5,7,6,10,41+k); T(t,X0+26,y,'700 11.5px Inter, sans-serif',GOLD,1,'left','.1em');
+      [['DETAILED NARRATIVE BREAKDOWN','every screenplay, book, and idea,','in thousands of components'],
+       ['BOX OFFICE PERFORMANCE','nearly every film of the last','fifty years'],
+       ['FILMMAKER AND CAST PERFORMANCE','thousands of directors, writers,','cast and crew']].forEach(function(t,k){
+        var y=62+k*58; cluster(X0+8,y-5,7,6,10,41+k);
+        T(t[0],X0+26,y,'700 11.5px Inter, sans-serif',GOLD,1,'left','.1em');
+        T(t[1],X0+26,y+17,'400 12px Inter, sans-serif',SOFT,1,'left');
+        T(t[2],X0+26,y+33,'400 12px Inter, sans-serif',SOFT,1,'left');
       });
-      AR(X0+10,150,CX2-GS2*0.5,GY-GS2*0.6,'rgba(196,181,253,.5)',1.3);
+      AR(X0+10,244,CX2-GS2*0.5,GY-GS2*0.7,'rgba(196,181,253,.5)',1.3);
       GEM(CX2,GY,GS2);
-      T('SELZNICK',CX2+GS2*0.8+12,GY+5,'700 12px Inter, sans-serif',VIOLET,1,'left','.18em');
-      T('BOX OFFICE POTENTIAL',X0+120,GY+GS2+2,'700 12px Inter, sans-serif',GREEN,1,'left','.14em');
-      T('at its core',X0+120,GY+GS2+20,'400 12px Inter, sans-serif',SOFT,.9,'left');
-      T('WHAT IT ASSESSES',X0,GY+GS2+72,'700 11.5px Inter, sans-serif',INK,.9,'left','.14em');
+      T('SELZNICK',CX2+GS2*0.85+12,GY+5,'700 12px Inter, sans-serif',VIOLET,1,'left','.18em');
+      T('WHAT IT INFORMS',X0,GY+GS2+52,'700 11.5px Inter, sans-serif',INK,.9,'left','.14em');
+      var Y0=GY+GS2+84;
       A.forEach(function(a,k){
-        var y=GY+GS2+104+k*58;
-        DIA(X0+12,y,9,true);
-        T(a[0],X0+34,y-2,'700 12.5px Inter, sans-serif',GOLD,1,'left','.12em');
-        T(a[1],X0+34,y+17,'400 12.5px Inter, sans-serif',SOFT,1,'left');
-        AR(CX2+GS2*0.2,GY+GS2*0.7,X0+22,y-13,'rgba(196,181,253,.3)',1.1);
+        var y=Y0+k*58;
+        ICON(k,X0+14,y);
+        T(a[0],X0+38,y-2,'700 12px Inter, sans-serif',GOLD,1,'left','.1em');
+        T(a[1],X0+38,y+17,'400 12px Inter, sans-serif',SOFT,1,'left');
+        AR(CX2,GY+GS2*0.72,X0+14,y-16,'rgba(196,181,253,.3)',1.1);
+        L(X0+14,y+16,w*0.42,Y0+2*58+62,'rgba(228,201,126,.3)',1.1);
       });
-      T('every assessment moves the potential,',X0,h-38,'400 12px Inter, sans-serif',SOFT,1,'left');
-      T('and the potential moves every assessment',X0,h-20,'400 12px Inter, sans-serif',SOFT,1,'left');
+      DIA(w*0.42,Y0+2*58+84,20,true);
+      T('A MASSIVE HIT',w*0.42+30,Y0+2*58+90,'700 12px Inter, sans-serif',GOLD,1,'left','.14em');
     }
   }
   function lay(){d=Math.min(devicePixelRatio||1,2);w=c.clientWidth||c.parentElement.clientWidth;h=c.clientHeight||c.parentElement.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
