@@ -108,6 +108,14 @@ Common patterns:
   webhooks/server actions under `src/app/api/<integration>/`. Env vars
   documented in this file.
 
+## Public copy
+
+**`COPY.md` at the repo root is the source of truth for how we talk on
+gem.studio.** Rules, approved paragraphs per section, and the banned
+vocabulary live there. Read it before writing any public copy, and add
+newly approved language (or newly banned constructions) to it when Anuj
+signs off. It exists so we stop relitigating the same wording.
+
 ## Key conventions
 
 - **Marketing nav**: `src/components/nav.tsx` is the single source of
