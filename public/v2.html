@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEM Studios</title>
+<meta name="description" content="GEM Studios. Selznick breaks down the narrative, studies massive amounts of market data, and studies the role that individual people can play in maximizing the success of any project.">
+<meta property="og:title" content="GEM Studios">
+<meta property="og:description" content="We make the best entertainment in the world.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gem.studio/">
+<meta property="og:site_name" content="GEM Studios">
+<meta property="og:image" content="https://gem.studio/og/gem-studios.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#0E0B14; --ink:#F3EFE8; --muted:rgba(243,239,232,0.62);
+    --gold:#E4C97E; --violet:#C4B5FD; --green:#8FCF9F; --hair:rgba(255,255,255,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--night);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  #sky{position:fixed;inset:0;z-index:-1;width:100%;height:100%;display:block}
+
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .rv.on{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+  nav{padding:22px 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair);position:sticky;top:0;background:rgba(14,11,20,.72);backdrop-filter:saturate(160%) blur(12px);z-index:100}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .logo i{width:16px;height:16px;background:linear-gradient(135deg,#8b5cf6,#5B21B6);border-radius:3px;transform:rotate(45deg)}
+  .logo span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .nl{display:flex;gap:34px;align-items:center}
+  .nl a{font-size:11px;letter-spacing:.1em;color:rgba(243,239,232,.6);text-decoration:none;text-transform:uppercase}
+  .nl a:hover{color:#fff}
+  .nl a.cta{color:var(--violet);border-bottom:1px solid rgba(196,181,253,.45);padding-bottom:2px;font-weight:600}
+
+  section{padding:104px 56px;max-width:1352px;margin:0 auto}
+  .rule{height:1px;background:var(--hair);max-width:1240px;margin:0 auto}
+  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.4vw,58px);font-weight:500;line-height:1.1;letter-spacing:-.02em;margin-bottom:22px;max-width:1000px}
+  h2 em{font-style:italic;color:var(--violet)}
+  .lead{font-size:20px;line-height:1.55;color:rgba(243,239,232,.86);max-width:840px}
+  .cap{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .btn{display:inline-block;padding:15px 32px;border-radius:10px;font-size:13.5px;font-weight:600;letter-spacing:.04em;text-decoration:none;background:linear-gradient(135deg,#7C3AED,#5B21B6);color:#fff;box-shadow:0 0 26px rgba(124,58,237,.35)}
+  .link{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,232,.6);text-decoration:none;border-bottom:1px solid rgba(243,239,232,.25);padding-bottom:3px}
+
+  /* hero */
+  .hero{position:relative;min-height:720px;padding:110px 56px 90px;overflow:hidden}
+  #f-hero{position:absolute;inset:0;width:100%;height:100%;display:block}
+  @media (max-width:900px){.hero{display:flex;flex-direction:column}#f-hero{position:relative;inset:auto;order:2;width:100%;height:420px;margin-top:24px}.hero-in{order:1}}
+  .hero-in{position:relative;z-index:1;max-width:1240px;margin:0 auto}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4vw,58px);font-weight:500;line-height:1.06;letter-spacing:-.02em;max-width:620px;margin-bottom:26px}
+  h1 em{font-style:italic;color:var(--violet)}
+  .big{max-width:760px}
+  .big .k{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .big b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(36px,3.6vw,52px);line-height:1.04;color:var(--gold);text-shadow:0 0 28px rgba(228,201,126,.35)}
+  .big p{margin-top:10px;font-size:19px;line-height:1.5;color:rgba(243,239,232,.86)}
+  .big .tech{margin-top:18px;font-size:19px;line-height:1.5;color:rgba(243,239,232,.86)}
+  .acts{margin-top:34px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+
+  /* selznick */
+  .fig{position:relative;width:100%;max-width:1240px;height:460px;margin-top:46px;border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(139,92,246,.04));overflow:hidden}
+  .fig canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:42px;margin-top:52px;max-width:1240px}
+  .three h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;line-height:1.1;margin-bottom:12px}
+  .three p{font-size:16.5px;line-height:1.62;color:rgba(243,239,232,.86)}
+  .kick{margin-top:50px;max-width:1000px;font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.35;color:var(--ink)}
+
+  /* stages */
+  .stg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 44px;margin-top:48px;max-width:1240px}
+  .stg div{padding-top:20px;border-top:1px solid var(--hair)}
+  .stg h3{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .stg p{font-size:16px;line-height:1.6;color:rgba(243,239,232,.86)}
+
+  /* work */
+  .stat{margin-top:32px}
+  .stat .cap{display:block;margin-bottom:8px}
+  .stat b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,5.4vw,76px);line-height:1;color:var(--gold);text-shadow:0 0 34px rgba(228,201,126,.4)}
+  .stat p{margin-top:10px;font-size:19px;color:rgba(243,239,232,.86)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px;max-width:1240px}
+  .poster{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid var(--hair);box-shadow:0 30px 80px -30px rgba(0,0,0,.8);background-size:cover;background-position:center}
+  .poster .tag{position:absolute;top:14px;left:14px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(228,201,126,.5);border-radius:999px;padding:4px 10px;background:rgba(8,6,14,.55)}
+  .poster .cp{position:absolute;left:0;right:0;bottom:0;padding:60px 18px 18px;background:linear-gradient(180deg,transparent,rgba(8,6,14,.85))}
+  .poster .cp b{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;line-height:1.05}
+  .poster .cp span{display:block;margin-top:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+  /* work with us */
+  .ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px;max-width:1240px}
+  .way{border-radius:16px;padding:26px 28px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(139,92,246,.05))}
+  .way h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;line-height:1.15;margin-bottom:10px}
+  .way p{font-size:16.5px;line-height:1.6;color:rgba(243,239,232,.86)}
+  .wcta{margin-top:34px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;max-width:1240px}
+  .wcta p{flex:1 1 420px;font-size:15px;line-height:1.55;color:rgba(243,239,232,.7)}
+
+  /* founder + after */
+  .note{max-width:920px;padding:32px 36px;border-radius:16px;border:1px solid rgba(228,201,126,.22);background:linear-gradient(160deg,rgba(228,201,126,.06),rgba(139,92,246,.05))}
+  .note .cap{display:block;margin-bottom:14px}
+  .note p{font-size:17.5px;line-height:1.62;color:rgba(243,239,232,.86);margin-bottom:16px}
+  .note p:last-child{margin-bottom:0}
+  .sig{font-size:15px;color:var(--muted)}
+  .sig a{color:var(--violet)}
+  .after{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;margin-top:56px;max-width:1240px}
+  .after p.k{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .after p{font-size:16.5px;line-height:1.6;color:rgba(243,239,232,.86)}
+  .card{display:block;margin-top:16px;padding:24px 26px;border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(139,92,246,.05));text-decoration:none}
+  .card .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(228,201,126,.4);border-radius:999px;padding:4px 10px;margin-bottom:14px}
+  .card h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;line-height:1.15;margin-bottom:8px}
+  .card .go{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
+  .soc{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap}
+  .soc a{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:1px solid rgba(228,201,126,.35);text-decoration:none;font-size:14.5px;font-weight:600}
+  .soc svg{width:20px;height:20px;fill:var(--gold)}
+
+  .door{text-align:center;padding:120px 56px 140px}
+  .door h2{margin:0 auto 18px;max-width:900px}
+  .door p{max-width:720px;margin:0 auto 30px;font-size:19px;line-height:1.55;color:rgba(243,239,232,.8)}
+  footer{padding:40px 56px 60px;text-align:center;font-size:12.5px;color:rgba(243,239,232,.45);border-top:1px solid var(--hair)}
+
+  @media (max-width:900px){
+    nav{padding:16px 18px}.nl{gap:0}.nl a:not(.cta){display:none}
+    section{padding:64px 18px}
+    .hero{padding:48px 18px 30px;min-height:0}
+    h1{font-size:34px}.big b{font-size:34px}.big p{font-size:17px}
+    .fig{height:620px;margin-top:34px}
+    .three{grid-template-columns:1fr;gap:28px;margin-top:34px}
+    .kick{font-size:21px;margin-top:34px}
+    .stg{grid-template-columns:1fr;gap:22px}
+    .two{gap:12px}.poster .cp b{font-size:20px}
+    .ways{grid-template-columns:1fr;gap:14px}
+    .after{grid-template-columns:1fr;gap:34px}
+    .door{padding:76px 18px 90px}
+  }
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<nav>
+  <a class="logo" href="/"><i></i><span>GEM Studios</span></a>
+  <div class="nl">
+    <a href="#selznick">Selznick</a>
+    <a href="#acquisition">What we do</a>
+    <a href="#work">Our work</a>
+    <a href="/blog">Blog</a>
+    <a class="cta" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <canvas id="f-hero" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <h1 class="rv">We make the best entertainment <em>in the world.</em></h1>
+    <div class="big rv">
+      <p class="k">Launched 2025.</p>
+      <b>500+ million viewers so far</b>
+      <p class="tech">We&rsquo;ve built a powerful AI, Selznick, that helps us find projects that everyone else overlooks and develop them into massive hits.</p>
+    </div>
+    <div class="acts rv">
+      <a class="btn" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
+      <a class="link" href="#selznick">Selznick ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="selznick">
+  <h2 class="rv">Selznick.</h2>
+  <p class="lead rv">Selznick breaks down the narrative, studies massive amounts of market data, and studies the role that individual people can play in maximizing the success of any project. That is completely unprecedented, and it allows us to make smarter investment and creative decisions at every single stage of a project, and turn ideas into massive hits.</p>
+
+  <div class="fig rv"><canvas id="f-selz" aria-hidden="true"></canvas></div>
+
+  <div class="three rv">
+    <div>
+      <h3>Every story ever made</h3>
+      <p>Selznick has read every story the business has ever told and broken each one into the elements that actually move an audience. It reads new material the same way, whether that material is a screenplay, a book, a true story, or an idea nobody has written yet.</p>
+    </div>
+    <div>
+      <h3>A century of box office</h3>
+      <p>Selznick knows what audiences actually paid for, worldwide, across a century of film, and what they watch on television and social today. It compares a project against the entire market rather than against the handful of comparable titles a studio happens to pick.</p>
+    </div>
+    <div>
+      <h3>Every filmmaker and performer</h3>
+      <p>Selznick knows every filmmaker and performer as themselves rather than as an average: what each one has delivered film by film, on this kind of material, at this kind of budget, and alongside these particular people.</p>
+    </div>
+  </div>
+
+  <p class="kick rv">Apart, each of these exists somewhere in this business. Together, on one project, they exist nowhere else. That is the difference between an opinion about a film and a price on it.</p>
+</section>
+
+<div class="rule"></div>
+
+<section id="acquisition">
+  <h2 class="rv">IP acquisition.</h2>
+  <p class="lead rv">Everything that comes to us is read. Screenplays, books, comics, articles, true stories, finished films, and ideas nobody has written yet. Selznick prices each one in every form it could take and at every budget it could be made for, before a dollar is spent on it. That is why we can move on material the rest of the market has no way to price.</p>
+  <div class="fig rv"><canvas id="f-ip" aria-hidden="true"></canvas></div>
+</section>
+
+<div class="rule"></div>
+
+<section id="financing">
+  <h2 class="rv">Production financing.</h2>
+  <p class="lead rv">The job is spending money to reach the filmmaker&rsquo;s vision while the film stays sustainable. Selznick prices the specific risks a director wants to take before they are taken: the location instead of the stage, the practical build instead of the digital one, the extra days on the sequence everyone says is too expensive. The conversation stops being whether it is affordable in the abstract and becomes which risks earn their place.</p>
+  <div class="fig rv"><canvas id="f-fin" aria-hidden="true"></canvas></div>
+</section>
+
+<div class="rule"></div>
+
+<section id="cast">
+  <h2 class="rv">Cast and crew.</h2>
+  <p class="lead rv">We find people on what they have done, how they work, and who they do their best work with, across every performer and filmmaker rather than the short list already circling a project. Selznick judges what each one adds to this specific story, how they execute together, and what that contribution is worth against the cost of attaching them.</p>
+  <div class="fig rv"><canvas id="f-cast" aria-hidden="true"></canvas></div>
+</section>
+
+<div class="rule"></div>
+
+<section id="work">
+  <h2 class="rv">Our work.</h2>
+  <p class="lead rv">We chose it, financed it, produced it, and released it ourselves, with Selznick on every decision.</p>
+  <div class="stat rv">
+    <span class="cap">Social &middot; the last twelve months</span>
+    <b>500+ million viewers</b>
+    <p>on our own channels. Feature film and television are in development.</p>
+  </div>
+  <p class="cap rv" style="margin-top:40px">Film &amp; series &middot; two projects in development</p>
+  <div class="two rv">
+    <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg')">
+      <span class="tag">In development</span>
+      <div class="cp"><b>Overlord</b><span>Feature film &middot; sci-fi</span></div>
+    </div>
+    <div class="poster" style="background-image:url('screenshots/marketing-keyart-web.jpg')">
+      <span class="tag">In development</span>
+      <div class="cp"><b>I Work in Marketing</b><span>Series &middot; comedy</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="with">
+  <h2 class="rv">Work with <em>us.</em></h2>
+  <div class="ways rv">
+    <div class="way">
+      <h3>Bring us a project</h3>
+      <p>A script, a book, a package, a finished film. We price it, and we tell you what would move the number.</p>
+    </div>
+    <div class="way">
+      <h3>Tell us what you invest in</h3>
+      <p>Format, budget range, what you want to own. We source at a scale nobody else can and bring you what fits.</p>
+    </div>
+    <div class="way">
+      <h3>Make something with us</h3>
+      <p>We co-invest and produce, and Selznick runs on every decision from acquisition through release.</p>
+    </div>
+  </div>
+  <div class="wcta rv">
+    <a class="btn" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
+    <p>Some companies want Selznick inside their own decision-making, on their own systems. We partner with a small number of them on that too.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="more">
+  <div class="note rv">
+    <p class="cap">From the founder</p>
+    <p>Entertainment is in my blood. My dad spent 27 years at Disney. I grew up going to Disneyland several times a year and watching every film they made, and I interned at Walt Disney Studios in college. Then I spent my career building technology and AI at some of the world&rsquo;s leading technology companies.</p>
+    <p>This industry has been pointing that technology at the wrong thing. Everyone is trying to make films cheaper. We use it to make them better, in a way no other company can or will, and a film that is ten percent better is worth more than any amount ever saved on one.</p>
+    <p>Parts of this business are having a hard time right now. What I see is the most abundant moment entertainment has ever had, with more ways for a great story to reach an audience than at any point in history. We are wide open, anyone can bring us an idea, and we have a direct relationship with fans that no studio can match. We are here to build the greatest entertainment company of all time.</p>
+    <p class="sig">&mdash; Anuj Kommareddy, founder (<a href="https://www.linkedin.com/in/anujkommareddy" target="_blank" rel="noopener">LinkedIn</a>)</p>
+  </div>
+
+  <div class="after rv">
+    <div>
+      <p class="k">Our blog</p>
+      <p>We publish research findings, product updates, and announcements on upcoming productions and partnerships.</p>
+      <a class="card" href="/blog/which-hollywood-directors-consistently-exceed-expectations">
+        <span class="pill">Latest post</span>
+        <h3>Which Hollywood directors consistently exceed &ldquo;expectations&rdquo;?</h3>
+        <p>Joker was &ldquo;expected&rdquo; to make $248M. It made $1.33B. We studied every English-language film to find the directors who do this again and again, and what makes it happen.</p>
+        <span class="go">Read it &rarr;</span>
+      </a>
+    </div>
+    <div>
+      <p class="k">Social</p>
+      <p>Follow us to keep up with our latest content and announcements.</p>
+      <div class="soc">
+        <a href="https://www.tiktok.com/@gemstudios1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 3v10.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .6 0 .9.1V7.9a5.4 5.4 0 1 0 4.5 5.3V8.6a6.5 6.5 0 0 0 3.8 1.2V7.1A3.9 3.9 0 0 1 16.2 3h-2.7z"/></svg>TikTok</a>
+        <a href="https://www.instagram.com/trygemstudios" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1"/></svg>Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="door">
+  <h2 class="rv">Bring us a project.</h2>
+  <p class="rv">A script, a package, a finished film, or a mandate. We read everything that comes to us.</p>
+  <div class="rv"><a class="btn" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM" style="padding:16px 44px">info@gem.studio</a></div>
+</section>
+
+<footer>&copy; 2026 GEM Studios</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}})},{rootMargin:'-40px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+
+function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}}
+
+/* ── the sky ── */
+(function(){
+  var c=document.getElementById('sky'),x=c.getContext('2d'),w,h,d;
+  function draw(){
+    x.clearRect(0,0,w,h);
+    var r=mulberry(3),i,a,s;
+    for(i=0;i<520;i++){a=r();s=r()*1.2+0.3;x.globalAlpha=0.10+r()*0.35;x.fillStyle='#F3EFE8';x.fillRect(r()*w,r()*h,s,s);}
+    x.globalAlpha=1;
+    for(i=0;i<44;i++){var gx=r()*w,gy=r()*h,g=2.2+r()*2.6;x.save();x.translate(gx,gy);x.rotate(Math.PI/4);x.shadowColor='rgba(139,92,246,.9)';x.shadowBlur=10;x.fillStyle='#8b5cf6';x.fillRect(-g,-g,g*2,g*2);x.restore();}
+  }
+  function lay(){d=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
+  addEventListener('resize',lay);lay();
+})();
+
+/* ── hero: overlooked ideas stream into Selznick; each decision adds; it comes out a hit ── */
+(function(){
+  var c=document.getElementById('f-hero');if(!c)return;
+  var x=c.getContext('2d'),w,h,d;
+  var GOLD='#E4C97E',VIOLET='#C4B5FD',GREEN='#8FCF9F',SOFT='rgba(243,239,232,0.82)';
+  var STEP=[['MATERIAL',13],['BUDGET',20],['CAST',34]];
+  function T(s,X,Y,f,col,al,ali,sp){x.save();x.textAlign=ali||'left';x.globalAlpha=al==null?1:al;x.font=f;try{if(sp)x.letterSpacing=sp}catch(e){}x.shadowColor='rgba(8,6,14,.95)';x.shadowBlur=8;x.fillStyle=col;x.fillText(s,X,Y);x.restore()}
+  function DIA(X,Y,s,glow,alpha){x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.globalAlpha=alpha==null?1:alpha;if(glow){x.shadowColor='rgba(255,225,140,.95)';x.shadowBlur=14+s}var g=x.createLinearGradient(-s,-s,s,s);g.addColorStop(0,glow?'#FFF4C4':'#F3EFE8');g.addColorStop(1,glow?'#C79B48':'#F3EFE8');x.fillStyle=g;x.fillRect(-s,-s,s*2,s*2);x.restore()}
+  function GEM(X,Y,s){var g=x.createRadialGradient(X,Y,0,X,Y,s*2.6);g.addColorStop(0,'rgba(139,92,246,.26)');g.addColorStop(1,'rgba(139,92,246,0)');x.fillStyle=g;x.fillRect(0,0,w,h);x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.shadowColor='#8b5cf6';x.shadowBlur=40;var gg=x.createLinearGradient(-s/2,-s/2,s/2,s/2);gg.addColorStop(0,'#C4B5FD');gg.addColorStop(1,'#6D28D9');x.fillStyle=gg;var cr=s*.2;x.beginPath();x.moveTo(-s/2+cr,-s/2);x.arcTo(s/2,-s/2,s/2,s/2,cr);x.arcTo(s/2,s/2,-s/2,s/2,cr);x.arcTo(-s/2,s/2,-s/2,-s/2,cr);x.arcTo(-s/2,-s/2,s/2,-s/2,cr);x.closePath();x.fill();x.restore()}
+  function draw(){
+    x.clearRect(0,0,w,h);
+    var wide=w>=900, L0=56+Math.max(0,(w-1352)/2);
+    var r=mulberry(31), i;
+    var CX=wide?(L0+1030):(w*0.42);
+    // lay the chain out first so nothing can overlap: every gap is >= the two radii
+    var sizes=STEP.map(function(st){return st[1]*(wide?1:0.62)});
+    var GS=wide?52:34, GAPMIN=wide?26:18;
+    var TOP=wide?110:56;                       // where the ideas start falling
+    var FIELD=wide?150:104;                    // fall height into the gem
+    var GY=TOP+FIELD+GS;                       // gem centre
+    var ys=[], y=GY+GS*0.72;
+    for(i=0;i<sizes.length;i++){ y+= (i?sizes[i-1]:0)+sizes[i]+GAPMIN+(wide?18:10); ys.push(y); }
+    var BOT=ys[ys.length-1]+sizes[sizes.length-1];
+    // the field of overlooked ideas
+    for(i=0;i<(wide?300:150);i++){
+      var t=r(), px=CX+(r()-0.5)*2*(wide?150:74)*(1-t*0.72), py=TOP+(GY-GS-14-TOP)*t;
+      DIA(px,py,1.5+r()*1.0,false,0.09+r()*0.16);
+    }
+    T('OVERLOOKED IDEAS',CX,TOP-18,'700 '+(wide?16:12.5)+'px Inter, sans-serif',SOFT,.9,'center','.14em');
+    GEM(CX,GY,GS);
+    T('SELZNICK',CX+GS*0.8+16,GY+5,'700 '+(wide?13.5:12)+'px Inter, sans-serif',VIOLET,1,'left','.2em');
+    var prev=[CX,GY+GS*0.72];
+    STEP.forEach(function(st,k){
+      var py2=ys[k], sz=sizes[k];
+      x.save();x.strokeStyle='rgba(228,201,126,.35)';x.lineWidth=1.4;x.setLineDash([5,7]);x.beginPath();x.moveTo(prev[0],prev[1]);x.lineTo(CX,py2-sz-5);x.stroke();x.restore();
+      DIA(CX,py2,sz,true,1);
+      T(st[0],CX+sz+16,py2+5,'700 '+(wide?14:12.5)+'px Inter, sans-serif',GOLD,1,'left','.12em');
+      T('+$',CX-sz-16,py2+5,'700 '+(wide?15:13.5)+'px Inter, sans-serif',GREEN,1,'right');
+      prev=[CX,py2+sz+5];
+    });
+    T('A MASSIVE HIT',CX,BOT+(wide?34:26),'700 '+(wide?16:12.5)+'px Inter, sans-serif',GOLD,1,'center','.14em');
+  }
+  function lay(){d=Math.min(devicePixelRatio||1,2);w=c.clientWidth||c.parentElement.clientWidth;h=c.clientHeight||c.parentElement.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
+  var t,lw=innerWidth;addEventListener('resize',function(){clearTimeout(t);if(innerWidth===lw)return;lw=innerWidth;t=setTimeout(lay,150)});
+  lay();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);
+})();
+
+/* ── selznick: the model at the centre; three assessments that move each other ── */
+(function(){
+  var c=document.getElementById('f-selz');if(!c)return;
+  var x=c.getContext('2d'),w,h,d;
+  var GOLD='#E4C97E',VIOLET='#C4B5FD',INK='#F3EFE8',SOFT='rgba(243,239,232,0.82)',GREEN='#8FCF9F';
+  function T(s,X,Y,f,col,al,ali,sp){x.save();x.textAlign=ali||'left';x.globalAlpha=al==null?1:al;x.font=f;try{if(sp)x.letterSpacing=sp}catch(e){}x.shadowColor='rgba(8,6,14,.95)';x.shadowBlur=8;x.fillStyle=col;x.fillText(s,X,Y);x.restore()}
+  function L(a,b,cc,dd,col,lw,dash){x.save();x.strokeStyle=col;x.lineWidth=lw||1;x.lineCap='round';if(dash)x.setLineDash(dash);x.beginPath();x.moveTo(a,b);x.lineTo(cc,dd);x.stroke();x.restore()}
+  function AR(a,b,cc,dd,col,lw){L(a,b,cc,dd,col,lw);var an=Math.atan2(dd-b,cc-a),k=8;L(cc,dd,cc-k*Math.cos(an-.45),dd-k*Math.sin(an-.45),col,lw);L(cc,dd,cc-k*Math.cos(an+.45),dd-k*Math.sin(an+.45),col,lw)}
+  function DIA(X,Y,s,glow){x.save();x.translate(X,Y);x.rotate(Math.PI/4);if(glow){x.shadowColor='rgba(255,225,140,.95)';x.shadowBlur=18}var g=x.createLinearGradient(-s,-s,s,s);g.addColorStop(0,'#FFF4C4');g.addColorStop(1,'#C79B48');x.fillStyle=g;x.fillRect(-s,-s,s*2,s*2);x.restore()}
+  function GEM(X,Y,s){var g=x.createRadialGradient(X,Y,0,X,Y,s*2.8);g.addColorStop(0,'rgba(139,92,246,.26)');g.addColorStop(1,'rgba(139,92,246,0)');x.fillStyle=g;x.fillRect(0,0,w,h);x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.shadowColor='#8b5cf6';x.shadowBlur=44;var gg=x.createLinearGradient(-s/2,-s/2,s/2,s/2);gg.addColorStop(0,'#C4B5FD');gg.addColorStop(1,'#6D28D9');x.fillStyle=gg;var cr=s*.2;x.beginPath();x.moveTo(-s/2+cr,-s/2);x.arcTo(s/2,-s/2,s/2,s/2,cr);x.arcTo(s/2,s/2,-s/2,s/2,cr);x.arcTo(-s/2,s/2,-s/2,-s/2,cr);x.arcTo(-s/2,-s/2,s/2,-s/2,cr);x.closePath();x.fill();x.restore()}
+  function cluster(cx,cy,rx,ry,n,seed){var a0=seed|0,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};for(var q=0;q<n;q++){var an=rr()*Math.PI*2,dd=Math.sqrt(rr());var px=cx+Math.cos(an)*rx*dd,py=cy+Math.sin(an)*ry*dd,s2=0.9+rr()*1.4;x.save();x.translate(px,py);x.rotate(Math.PI/4);x.globalAlpha=0.3+rr()*0.5;x.fillStyle=GOLD;x.fillRect(-s2,-s2,s2*2,s2*2);x.restore()}}
+  function curve(x0,y0,x1,y1,bend,col){x.save();x.strokeStyle=col;x.lineWidth=1.4;x.setLineDash([5,7]);var mx=(x0+x1)/2,my=(y0+y1)/2;var nx=-(y1-y0),ny=(x1-x0),len=Math.hypot(nx,ny)||1;mx+=nx/len*bend;my+=ny/len*bend;x.beginPath();x.moveTo(x0,y0);x.quadraticCurveTo(mx,my,x1,y1);x.stroke();x.restore()}
+  var A=[
+    ['IP ACQUISITION','what the material could become'],
+    ['PRODUCTION FINANCING','what it costs to make'],
+    ['CAST AND CREW','who makes it, and what they add']
+  ];
+  function draw(){
+    x.clearRect(0,0,w,h);
+    var wide=w>=900;
+    if(wide){
+      var CY=h*0.52, GX=w*0.42, GS=52, AX=w*0.72;
+      T('WHAT SELZNICK IS BUILT ON',56,50,'700 13px Inter, sans-serif',VIOLET,.95,'left','.16em');
+      T('WHAT IT ASSESSES ON A PROJECT',AX-40,50,'700 13px Inter, sans-serif',INK,.9,'left','.16em');
+      var SRC=['EVERY STORY EVER MADE','A CENTURY OF BOX OFFICE','EVERY FILMMAKER AND PERFORMER'];
+      SRC.forEach(function(t,k){
+        var y=CY-66+k*66;
+        cluster(74,y-5,10,8,14,41+k);
+        T(t,100,y,'700 13px Inter, sans-serif',GOLD,1,'left','.12em');
+        AR(430,y,GX-GS*0.98,CY+(y-CY)*0.22,'rgba(196,181,253,.5)',1.3);
+      });
+      GEM(GX,CY,GS);
+      T('SELZNICK',GX,CY+GS*0.9+26,'700 13.5px Inter, sans-serif',VIOLET,1,'center','.22em');
+      T('BOX OFFICE POTENTIAL',GX,CY-GS*0.9-44,'700 13.5px Inter, sans-serif',GREEN,1,'center','.16em');
+      T('at its core',GX,CY-GS*0.9-24,'400 13px Inter, sans-serif',SOFT,.9,'center');
+      var YS=[CY-96,CY,CY+96];
+      A.forEach(function(a,k){
+        var y=YS[k];
+        // two-way: it informs the decision, the decision moves the potential
+        AR(GX+GS*0.9,CY+(y-CY)*0.22,AX-22,y,'rgba(196,181,253,.5)',1.3);
+        AR(AX-22,y+9,GX+GS*0.9,CY+(y-CY)*0.22+9,'rgba(143,207,159,.45)',1.3);
+        DIA(AX,y,11,true);
+        T(a[0],AX+26,y-2,'700 14px Inter, sans-serif',GOLD,1,'left','.13em');
+        T(a[1],AX+26,y+20,'400 13.5px Inter, sans-serif',SOFT,1,'left');
+      });
+      T('every assessment moves the potential, and the potential moves every assessment',56,h-34,'400 13.5px Inter, sans-serif',SOFT,1,'left');
+    } else {
+      var X0=16, CX2=w*0.26, GY=170, GS2=40;
+      T('WHAT SELZNICK IS BUILT ON',X0,32,'700 11.5px Inter, sans-serif',VIOLET,.95,'left','.14em');
+      ['EVERY STORY EVER MADE','A CENTURY OF BOX OFFICE','EVERY FILMMAKER AND PERFORMER'].forEach(function(t,k){
+        var y=60+k*26; cluster(X0+8,y-5,7,6,10,41+k); T(t,X0+26,y,'700 11.5px Inter, sans-serif',GOLD,1,'left','.1em');
+      });
+      AR(X0+10,150,CX2-GS2*0.5,GY-GS2*0.6,'rgba(196,181,253,.5)',1.3);
+      GEM(CX2,GY,GS2);
+      T('SELZNICK',CX2+GS2*0.8+12,GY+5,'700 12px Inter, sans-serif',VIOLET,1,'left','.18em');
+      T('BOX OFFICE POTENTIAL',X0+120,GY+GS2+2,'700 12px Inter, sans-serif',GREEN,1,'left','.14em');
+      T('at its core',X0+120,GY+GS2+20,'400 12px Inter, sans-serif',SOFT,.9,'left');
+      T('WHAT IT ASSESSES',X0,GY+GS2+72,'700 11.5px Inter, sans-serif',INK,.9,'left','.14em');
+      A.forEach(function(a,k){
+        var y=GY+GS2+104+k*58;
+        DIA(X0+12,y,9,true);
+        T(a[0],X0+34,y-2,'700 12.5px Inter, sans-serif',GOLD,1,'left','.12em');
+        T(a[1],X0+34,y+17,'400 12.5px Inter, sans-serif',SOFT,1,'left');
+        AR(CX2+GS2*0.2,GY+GS2*0.7,X0+22,y-13,'rgba(196,181,253,.3)',1.1);
+      });
+      T('every assessment moves the potential,',X0,h-38,'400 12px Inter, sans-serif',SOFT,1,'left');
+      T('and the potential moves every assessment',X0,h-20,'400 12px Inter, sans-serif',SOFT,1,'left');
+    }
+  }
+  function lay(){d=Math.min(devicePixelRatio||1,2);w=c.clientWidth||c.parentElement.clientWidth;h=c.clientHeight||c.parentElement.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
+  var t,lw=innerWidth;addEventListener('resize',function(){clearTimeout(t);if(innerWidth===lw)return;lw=innerWidth;t=setTimeout(lay,150)});
+  lay();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);
+})();
+
+/* ── shared toolkit for the three section figures ── */
+function mkT(x){
+  var GOLD='#E4C97E',VIOLET='#C4B5FD',INK='#F3EFE8',SOFT='rgba(243,239,232,0.82)',GREEN='#8FCF9F',ROSE='#D98A8A';
+  var T={GOLD:GOLD,VIOLET:VIOLET,INK:INK,SOFT:SOFT,GREEN:GREEN,ROSE:ROSE};
+  T.t=function(s,X,Y,f,col,al,ali,sp){x.save();x.textAlign=ali||'left';x.globalAlpha=al==null?1:al;x.font=f;try{if(sp)x.letterSpacing=sp}catch(e){}x.shadowColor='rgba(8,6,14,.95)';x.shadowBlur=8;x.fillStyle=col;x.fillText(s,X,Y);x.restore()};
+  T.l=function(a,b,c2,d2,col,lw,dash){x.save();x.strokeStyle=col;x.lineWidth=lw||1;x.lineCap='round';if(dash)x.setLineDash(dash);x.beginPath();x.moveTo(a,b);x.lineTo(c2,d2);x.stroke();x.restore()};
+  T.ar=function(a,b,c2,d2,col,lw){T.l(a,b,c2,d2,col,lw);var an=Math.atan2(d2-b,c2-a),k=8;T.l(c2,d2,c2-k*Math.cos(an-.45),d2-k*Math.sin(an-.45),col,lw);T.l(c2,d2,c2-k*Math.cos(an+.45),d2-k*Math.sin(an+.45),col,lw)};
+  T.dia=function(X,Y,s,glow,al){x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.globalAlpha=al==null?1:al;if(glow){x.shadowColor='rgba(255,225,140,.95)';x.shadowBlur=16+s}var g=x.createLinearGradient(-s,-s,s,s);g.addColorStop(0,glow?'#FFF4C4':'#F0DCA0');g.addColorStop(1,glow?'#C79B48':'#B08A3E');x.fillStyle=g;x.fillRect(-s,-s,s*2,s*2);x.restore()};
+  T.gem=function(X,Y,s){var g=x.createRadialGradient(X,Y,0,X,Y,s*2.6);g.addColorStop(0,'rgba(139,92,246,.24)');g.addColorStop(1,'rgba(139,92,246,0)');x.fillStyle=g;x.fillRect(0,0,9999,9999);x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.shadowColor='#8b5cf6';x.shadowBlur=38;var gg=x.createLinearGradient(-s/2,-s/2,s/2,s/2);gg.addColorStop(0,'#C4B5FD');gg.addColorStop(1,'#6D28D9');x.fillStyle=gg;var cr=s*.2;x.beginPath();x.moveTo(-s/2+cr,-s/2);x.arcTo(s/2,-s/2,s/2,s/2,cr);x.arcTo(s/2,s/2,-s/2,s/2,cr);x.arcTo(-s/2,s/2,-s/2,-s/2,cr);x.arcTo(-s/2,-s/2,s/2,-s/2,cr);x.closePath();x.fill();x.restore()};
+  T.person=function(X,Y,k,al,col){x.save();x.translate(X,Y);x.scale(k,k);x.globalAlpha=al==null?1:al;x.strokeStyle=col||GOLD;x.lineWidth=1.9/k;x.lineCap='round';x.beginPath();x.arc(0,-10,7,0,Math.PI*2);x.stroke();x.beginPath();x.moveTo(-12,15);x.quadraticCurveTo(-12,0,0,0);x.quadraticCurveTo(12,0,12,15);x.stroke();x.restore()};
+  T.rect=function(X,Y,wd,hg,fill,stroke){x.save();var r=4;x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+wd,Y,X+wd,Y+hg,r);x.arcTo(X+wd,Y+hg,X,Y+hg,r);x.arcTo(X,Y+hg,X,Y,r);x.arcTo(X,Y,X+wd,Y,r);x.closePath();if(fill){x.fillStyle=fill;x.fill()}if(stroke){x.strokeStyle=stroke;x.lineWidth=1.2;x.stroke()}x.restore()};
+  T.dust=function(cx,cy,rx,ry,n,seed,al){var a0=seed|0,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};for(var q=0;q<n;q++){var an=rr()*Math.PI*2,dd=Math.sqrt(rr());T.dia(cx+Math.cos(an)*rx*dd,cy+Math.sin(an)*ry*dd,0.9+rr()*1.3,false,(al||0.4)*(0.4+rr()*0.8))}};
+  return T;
+}
+function mount(id,draw){
+  var c=document.getElementById(id);if(!c)return;
+  var x=c.getContext('2d'),T=mkT(x),w,h,d;
+  function lay(){d=Math.min(devicePixelRatio||1,2);w=c.clientWidth||c.parentElement.clientWidth;h=c.clientHeight||c.parentElement.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,w,h);draw(T,w,h,x)}
+  var t,lw=innerWidth;addEventListener('resize',function(){clearTimeout(t);if(innerWidth===lw)return;lw=innerWidth;t=setTimeout(lay,150)});
+  lay();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);
+}
+
+/* 1 — IP acquisition: every kind of material in, priced in the form it belongs in */
+mount('f-ip',function(T,w,h,x){
+  var n=w<900, X0=n?16:56, X1=w-(n?16:56);
+  var SRC=['SCREENPLAYS','BOOKS','COMICS','ARTICLES','TRUE STORIES','FINISHED FILMS'];
+  var GX=n?w*0.5:X0+(X1-X0)*0.42, GY=n?260:h*0.52, GS=n?40:52;
+  if(!n){
+    SRC.forEach(function(t,i){
+      var y=GY-130+i*52;
+      T.t(t,X0,y+4,'700 13px Inter, sans-serif',T.GOLD,1,'left','.12em');
+      T.dust((X0+GX)/2+40,y,90,7,26,7+i,0.5);
+      T.l(X0+156,y,GX-GS*0.9,GY+(y-GY)*0.18,'rgba(228,201,126,.22)',1.1);
+    });
+    T.t('EVERYTHING THAT COMES TO US',X0,44,'700 13px Inter, sans-serif',T.INK,.9,'left','.16em');
+    T.gem(GX,GY,GS);
+    T.t('SELZNICK',GX,GY+GS*0.8+24,'700 13px Inter, sans-serif',T.VIOLET,1,'center','.2em');
+    var OUT=[['AS A FEATURE',26],['AS A SERIES',18],['AS A SOCIAL SERIES',12]];
+    var OX=GX+GS+150;
+    T.t('PRICED IN EVERY FORM IT COULD TAKE',OX-40,44,'700 13px Inter, sans-serif',T.INK,.9,'left','.16em');
+    OUT.forEach(function(o,i){
+      var y=GY-70+i*70;
+      T.ar(GX+GS*0.86,GY+(y-GY)*0.2,OX-o[1]-16,y,'rgba(196,181,253,.5)',1.3);
+      T.dia(OX,y,o[1],i===0);
+      T.t(o[0],OX+o[1]+18,y+5,'700 13.5px Inter, sans-serif',i===0?T.GOLD:'rgba(243,239,232,0.6)',1,'left','.12em');
+    });
+    T.t('we take it in the form it is worth most',OX-40,h-34,'400 13.5px Inter, sans-serif',T.SOFT,1,'left');
+  } else {
+    T.t('EVERYTHING THAT COMES TO US',X0,32,'700 11.5px Inter, sans-serif',T.INK,.9,'left','.14em');
+    SRC.forEach(function(t,i){T.t(t,X0,62+i*26,'700 12px Inter, sans-serif',T.GOLD,1,'left','.1em')});
+    T.dust(w*0.72,140,52,60,60,9,0.5);
+    T.gem(GX,GY,GS);
+    T.t('SELZNICK',GX+GS*0.8+12,GY+5,'700 12px Inter, sans-serif',T.VIOLET,1,'left','.18em');
+    var O2=[['AS A FEATURE',20],['AS A SERIES',14],['AS A SOCIAL SERIES',10]];
+    O2.forEach(function(o,i){var y=340+i*58;T.dia(X0+30,y,o[1],i===0);T.t(o[0],X0+62,y+5,'700 12px Inter, sans-serif',i===0?T.GOLD:'rgba(243,239,232,0.6)',1,'left','.1em')});
+    T.t('we take it in the form it is worth most',X0,h-18,'400 12px Inter, sans-serif',T.SOFT,1,'left');
+  }
+});
+
+/* 2 — Production financing: the director's risks, priced against what the film can sustain */
+mount('f-fin',function(T,w,h,x){
+  var n=w<900, X0=n?16:56, X1=w-(n?16:56);
+  var R=[['The location, not the stage',9,34,1],['The practical build',6,22,1],['Four more days on the sequence',4,15,1],['The second unit',3,0,0]];
+  T.t("THE DIRECTOR'S RISKS, PRICED BEFORE THEY ARE TAKEN",X0,n?32:44,'700 '+(n?11.5:13)+'px Inter, sans-serif',T.INK,.9,'left','.16em');
+  var LW=n?w*0.52:w*0.34, BX=X0+LW, BW=X1-BX-(n?54:96), TOP=n?66:88, RH=n?54:62;
+  var MAXC=10;
+  R.forEach(function(r,i){
+    var y=TOP+i*RH, on=r[3];
+    T.t(r[0],X0,y+5,'400 '+(n?12:14)+'px Inter, sans-serif',on?T.INK:'rgba(243,239,232,0.5)',1,'left');
+    var cw=BW*0.42*(r[1]/MAXC);
+    T.rect(BX,y-9,cw,18,on?'rgba(228,201,126,.30)':'rgba(217,138,138,.18)',on?'rgba(228,201,126,.7)':'rgba(217,138,138,.5)');
+    T.t('$'+r[1]+'M',BX+cw+8,y+5,'600 '+(n?11.5:13)+'px Inter, sans-serif',on?T.GOLD:T.ROSE,1,'left');
+    if(r[2]){var vw=BW*0.5*(r[2]/40); T.rect(BX+BW*0.5,y-9,vw,18,'rgba(143,207,159,.28)','rgba(143,207,159,.6)');T.t('+$'+r[2]+'M',BX+BW*0.5+vw+8,y+5,'700 '+(n?12:13.5)+'px Inter, sans-serif',T.GREEN,1,'left')}
+    else T.t('adds nothing',BX+BW*0.5,y+5,'400 '+(n?11.5:13)+'px Inter, sans-serif',T.ROSE,1,'left');
+  });
+  T.t('COST',BX,TOP-22,'700 11px Inter, sans-serif',T.SOFT,.85,'left','.14em');
+  T.t('WHAT IT ADDS ON SCREEN',BX+BW*0.5,TOP-22,'700 11px Inter, sans-serif',T.SOFT,.85,'left','.14em');
+  var BY=TOP+R.length*RH+(n?14:22);
+  T.l(X0,BY,X1,BY,'rgba(243,239,232,.12)',1);
+  T.t('funded: the first three. cut: the one that adds nothing.',X0,BY+(n?26:30),'400 '+(n?12:13.5)+'px Inter, sans-serif',T.SOFT,1,'left');
+  T.t('the vision, made sustainable',X1,BY+(n?26:30),'700 '+(n?12:13.5)+'px Inter, sans-serif',T.GOLD,1,'right','.12em');
+});
+
+/* 3 — Cast and crew: who they are, what they add together, what that is worth */
+mount('f-cast',function(T,w,h,x){
+  var n=w<900, X0=n?16:56, X1=w-(n?16:56);
+  T.t(n?'NARROWED TO THIS STORY':'EVERY PERFORMER, NARROWED TO THIS STORY',X0,n?32:44,'700 '+(n?11:13)+'px Inter, sans-serif',T.INK,.9,'left','.16em');
+  var FX=X0+(n?10:30), FY=n?150:h*0.46, FW=n?w*0.34:w*0.24;
+  var a0=5,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};
+  for(var i=0;i<(n?26:46);i++){T.person(FX+rr()*FW,FY-(n?60:110)+rr()*(n?120:220),n?0.34:0.42,0.14+rr()*0.14)}
+  var pick=[[0.30,-0.55],[0.62,-0.05],[0.24,0.42],[0.72,0.58]];
+  pick.forEach(function(p,k){T.person(FX+FW*p[0],FY+(n?70:130)*p[1],n?0.42:0.52,1)});
+  T.t('two of these four were nowhere near the list',FX,FY+(n?96:172),'400 '+(n?11.5:13)+'px Inter, sans-serif',T.SOFT,.9,'left');
+  T.t('SKILLS  ·  RECORD  ·  CHEMISTRY',FX,FY-(n?86:132),'700 '+(n?11:12.5)+'px Inter, sans-serif',T.GOLD,1,'left','.14em');
+  var CX=X0+(n?w*0.52:w*0.42), CW=X1-CX;
+  T.t('WHAT EACH ADDS, AGAINST THE FEE',CX,n?32:44,'700 '+(n?11:13)+'px Inter, sans-serif',T.INK,.9,'left','.16em');
+  var ROWS=[['Lead','$6M','+$120M'],['Second lead','$2M','+$40M'],['Director','$4M','+$70M'],['Cinematographer','$1M','+$20M']];
+  var TOP=n?70:96, RH=n?42:52;
+  ROWS.forEach(function(r,k){
+    var y=TOP+k*RH;
+    T.person(CX+12,y,n?0.4:0.46,1);
+    T.t(r[0],CX+40,y+5,'400 '+(n?12:14)+'px Inter, sans-serif',T.INK,1,'left');
+    T.t(r[1],CX+CW*(n?0.62:0.56),y+5,'600 '+(n?12:13.5)+'px Inter, sans-serif',T.GOLD,1,'right');
+    T.t(r[2],X1,y+5,'700 '+(n?13:15)+'px Inter, sans-serif',T.GREEN,1,'right');
+  });
+  var BY=TOP+ROWS.length*RH+(n?6:14);
+  T.l(CX+40,BY,X1,BY,'rgba(243,239,232,.18)',1);
+  T.t('together',CX+40,BY+(n?24:28),'700 '+(n?12:14)+'px Inter, sans-serif',T.INK,1,'left','.12em');
+  T.t('$13M',CX+CW*(n?0.62:0.56),BY+(n?24:28),'600 '+(n?12:13.5)+'px Inter, sans-serif',T.GOLD,1,'right');
+  T.t('+$310M',X1,BY+(n?24:30),'700 '+(n?16:20)+'px Inter, sans-serif',T.GREEN,1,'right');
+  T.t('more than the four of them apart',CX+40,BY+(n?44:52),'400 '+(n?11.5:13.5)+'px Inter, sans-serif',T.SOFT,1,'left');
+});
+</script>
+</body>
+</html>
