@@ -84,8 +84,18 @@
   .clc p{font-size:16.5px;line-height:1.6;color:rgba(243,239,232,.88);margin:0 26px}
   @media (max-width:900px){.cl{grid-template-columns:1fr;gap:16px}.clf{height:180px}.clc h3{font-size:24px;margin:18px 18px 8px}.clc p{margin:0 18px;font-size:15.5px}}
   #fig-plan{height:520px}
-  #fig-thesis{height:440px}
-  @media (max-width:900px){#fig-thesis{height:380px}}
+  .thx{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start;max-width:1240px}
+  .ths{border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(139,92,246,.045));padding:30px 32px}
+  .thk{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);line-height:1.5;margin-bottom:26px}
+  .thr{display:grid;grid-template-columns:58px 1fr 66px;align-items:center;gap:14px;margin-bottom:18px}
+  .thy{font-size:13px;font-weight:600;letter-spacing:.1em;color:rgba(243,239,232,.7)}
+  .thb{display:block;height:14px;border-radius:8px;background:rgba(243,239,232,.07);overflow:hidden}
+  .thb i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,rgba(228,201,126,.55),#E4C97E)}
+  .thb i.now{background:linear-gradient(90deg,rgba(217,138,138,.45),#D98A8A)}
+  .thv{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;color:var(--gold);line-height:1;text-align:right}
+  .thv.now{color:#D98A8A}
+  .thn{margin-top:22px;font-size:14.5px;line-height:1.55;color:rgba(243,239,232,.72)}
+  @media (max-width:900px){.thx{grid-template-columns:1fr;gap:32px}.ths{padding:24px 22px}.thv{font-size:26px}}
   @media (max-width:900px){#fig-plan{height:560px}}
   .claims{list-style:none;padding:0;margin:30px 0 0;max-width:900px}
   .claims li{position:relative;padding-left:26px;font-size:18px;line-height:1.55;color:rgba(243,239,232,.9);margin-bottom:16px}
@@ -100,6 +110,14 @@
   .stg p{font-size:16px;line-height:1.6;color:rgba(243,239,232,.86)}
 
   /* work */
+  .tl{margin-top:44px;max-width:1000px;border-left:1px solid rgba(228,201,126,.35);padding-left:0}
+  .tli{position:relative;padding:0 0 34px 34px}
+  .tli:last-child{padding-bottom:0}
+  .tli::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;transform:rotate(45deg);background:linear-gradient(135deg,#FFF4C4,#C79B48);box-shadow:0 0 12px rgba(228,201,126,.6)}
+  .tly{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .tli p:not(.tly){font-size:17.5px;line-height:1.6;color:rgba(243,239,232,.88)}
+  .tli b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;color:var(--gold);line-height:1}
+  @media (max-width:900px){.tli{padding-left:24px;padding-bottom:28px}.tli p:not(.tly){font-size:16px}.tli b{font-size:26px}}
   .stat{margin-top:32px}
   .stat .cap{display:block;margin-bottom:8px}
   .stat b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,5.4vw,76px);line-height:1;color:var(--gold);text-shadow:0 0 34px rgba(228,201,126,.4)}
@@ -170,6 +188,7 @@
     <a href="#plan">The plan</a>
     <a href="#selznick">Selznick</a>
     <a href="#dev">In development</a>
+    <a href="#work">Our story</a>
     <a href="/blog">Blog</a>
     <a class="cta" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
   </div>
@@ -180,9 +199,9 @@
   <div class="hero-in">
     <h1 class="rv">We&rsquo;re bringing original blockbusters <em>back to Hollywood.</em></h1>
     <div class="big rv">
-      <p class="k">Launched 2025 on social media.</p>
-      <b>500+ million viewers so far</b>
-      <p class="tech">Our first feature film is coming soon.</p>
+      <p class="k">We started on social media in 2025.</p>
+      <b>500+ million viewers</b>
+      <p class="tech">Now we have our sights set on something bigger.</p>
     </div>
     <div class="acts rv">
       <a class="btn" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
@@ -195,10 +214,27 @@
 
 <section id="thesis">
   <h2 class="rv">Hollywood is stuck <em>in the 20th century.</em></h2>
-  <p class="lead rv">The market has changed. There are more ways than ever for a great idea to win: more screens, more channels, more paths to a global audience. There are also more ways than ever to lose, and making films has never carried more risk.</p>
-  <p class="lead rv" style="margin-top:18px">In that environment, Hollywood still sizes up risk and opportunity the way David O. Selznick and the great executives of the early 1900s did: instinct, relationships, and a handful of comparable titles. The methods have not changed in a hundred years while the market has changed completely. Faced with risk they cannot measure, studios retreat to what feels safe: franchises, sequels, and remakes. Original films disappeared from theaters not because audiences stopped wanting them, but because nobody in Hollywood is able to take that risk anymore.</p>
-  <p class="lead rv" style="margin-top:18px">Taking a flyer on a great idea has always been part of this business, and Hollywood has never actually gotten better at it. We have figured out how to solve that problem for good, and we intend to build the biggest media company in the world on the back of it.</p>
-  <div class="fig rv" id="fig-thesis"><canvas id="f-thesis" aria-hidden="true"></canvas></div>
+  <div class="thx">
+    <div class="thc rv">
+      <p class="lead">The market has changed. There are more ways than ever for a great idea to win: more screens, more channels, more paths to a global audience. There are also more ways than ever to lose, and making films has never carried more risk.</p>
+      <p class="lead" style="margin-top:18px">In that environment, Hollywood still sizes up risk and opportunity the way David O. Selznick and the great executives of the early 1900s did: instinct, relationships, and a handful of comparable titles. The methods have not changed in a hundred years while the market has changed completely. Faced with risk they cannot measure, studios retreat to what feels safe: franchises, sequels, and remakes. Original films disappeared from theaters not because audiences stopped wanting them, but because nobody in Hollywood is able to take that risk anymore.</p>
+      <p class="lead" style="margin-top:18px">Taking a flyer on a great idea has always been part of this business, and Hollywood has never actually gotten better at it. We have figured out how to solve that problem for good, and we intend to build the biggest media company in the world on the back of it.</p>
+    </div>
+    <div class="ths rv">
+      <p class="thk">Share of global box office from original films</p>
+      <div class="thr">
+        <span class="thy">2000</span>
+        <span class="thb"><i style="width:83%"></i></span>
+        <span class="thv">83%</span>
+      </div>
+      <div class="thr">
+        <span class="thy">2025</span>
+        <span class="thb"><i class="now" style="width:34%"></i></span>
+        <span class="thv now">34%</span>
+      </div>
+      <p class="thn">Originals earned $19B worldwide in 2000 and $6.5B in 2025, in today&rsquo;s dollars.</p>
+    </div>
+  </div>
 </section>
 
 <div class="rule"></div>
@@ -264,11 +300,25 @@
 <div class="rule"></div>
 
 <section id="work">
-  <h2 class="rv">Our work so far.</h2>
-  <div class="stat rv">
-    <span class="cap">Social &middot; the last twelve months</span>
-    <b>500+ million viewers</b>
-    <p>on our own channels, on original content we wrote and produced ourselves.</p>
+  <h2 class="rv">Our story.</h2>
+  <p class="lead rv">We are new, and we have moved quickly.</p>
+  <div class="tl rv">
+    <div class="tli">
+      <p class="tly">Before</p>
+      <p>Our founder spent his career building technology and AI at some of the world&rsquo;s leading technology companies, after growing up inside the film business.</p>
+    </div>
+    <div class="tli">
+      <p class="tly">2025</p>
+      <p>We launched on social media, writing and producing original content ourselves, and built the first version of Selznick to decide what to make.</p>
+    </div>
+    <div class="tli">
+      <p class="tly">The last twelve months</p>
+      <p><b>500+ million viewers</b> on our own channels, on original content we chose, wrote, and produced.</p>
+    </div>
+    <div class="tli">
+      <p class="tly">Now</p>
+      <p>Selznick reads material from every source in the world, our first feature film is in development, and more is coming soon.</p>
+    </div>
   </div>
 </section>
 
@@ -720,24 +770,36 @@ mount('c-draft',function(T,w,h,x){
   });
 });
 
-/* ── thesis: share of top box office from original films, by year (placeholder data, replace SHARE) ── */
+/* ── thesis: worldwide box office in today's dollars, originals vs franchise IP.
+   ORIG and FRAN are 2000..2025 in $B. Replace with the real series. ── */
 mount('f-thesis',function(T,w,h,x){
-  var n=w<900, X0=n?44:76, X1=w-(n?16:56), TOP=n?70:86, BASE=h-(n?70:78);
-  var Y0=2000, SHARE=[52,50,47,49,44,46,41,43,38,36,35,31,33,28,27,25,24,21,22,19,20,17,16,15,14,13]; // 2000..2025, percent of top-20 box office from originals
-  var px=function(i){return X0+(X1-X0-(n?40:70))*i/(SHARE.length-1)}, py=function(v){return BASE-(BASE-TOP)*v/60};
-  T.t(n?'TOP BOX OFFICE FROM ORIGINAL FILMS':'SHARE OF TOP-20 BOX OFFICE THAT CAME FROM ORIGINAL FILMS',X0-(n?28:20),n?34:46,'700 '+(n?12:14)+'px Inter, sans-serif',T.INK,1,'left','.14em');
-  [0,20,40,60].forEach(function(v){T.l(X0,py(v),X1,py(v),'rgba(243,239,232,.08)',1);T.t(v+'%',X0-10,py(v)+4,'600 12px Inter, sans-serif','rgba(243,239,232,.6)',1,'right')});
-  // area
-  x.save();x.beginPath();x.moveTo(px(0),BASE);SHARE.forEach(function(v,i){x.lineTo(px(i),py(v))});x.lineTo(px(SHARE.length-1),BASE);x.closePath();var g=x.createLinearGradient(0,TOP,0,BASE);g.addColorStop(0,'rgba(228,201,126,.22)');g.addColorStop(1,'rgba(228,201,126,.02)');x.fillStyle=g;x.fill();x.restore();
-  x.save();x.strokeStyle='rgba(228,201,126,.9)';x.lineWidth=2.4;x.lineJoin='round';x.lineCap='round';x.shadowColor='rgba(228,201,126,.45)';x.shadowBlur=10;x.beginPath();SHARE.forEach(function(v,i){i?x.lineTo(px(i),py(v)):x.moveTo(px(i),py(v))});x.stroke();x.restore();
-  [0,5,10,15,20,25].forEach(function(i){T.t(String(Y0+i),px(i),BASE+24,'600 12px Inter, sans-serif','rgba(243,239,232,.7)',1,'center')});
-  T.t(SHARE[0]+'%',px(0),py(SHARE[0])-16,'700 15px Inter, sans-serif',T.GOLD,1,'left');
-  T.t(SHARE[SHARE.length-1]+'%',px(SHARE.length-1),py(SHARE[SHARE.length-1])-16,'700 15px Inter, sans-serif',T.GOLD,1,'center');
-  // us, at the far right, breaking the line
-  var ux=X1-(n?14:26), uy=py(SHARE[SHARE.length-1]);
-  T.ar(px(SHARE.length-1)+10,uy,ux-16,uy-(n?54:70),'rgba(228,201,126,.5)',1.4);
-  T.dia(ux,uy-(n?66:84),n?12:15,true);
-  T.t('GEM',ux,uy-(n?66:84)-(n?22:26),'700 12px Inter, sans-serif',T.GOLD,1,'center','.16em');
+  var n=w<900, X0=n?46:78, X1=w-(n?18:60), TOP=n?74:92, BASE=h-(n?66:76);
+  var Y0=2000;
+  var ORIG=[19.0,18.4,18.6,17.9,17.4,16.6,16.2,15.7,15.0,14.6,13.9,13.2,12.8,12.2,11.5,10.9,10.2,9.6,9.1,8.7,7.4,7.0,7.4,7.2,6.8,6.5];
+  var FRAN=[4.0,4.4,4.9,5.3,5.8,6.2,6.6,7.0,7.5,7.9,8.4,8.8,9.2,9.5,9.8,10.1,10.4,9.7,10.6,11.2,9.4,10.2,11.4,11.8,12.1,12.5];
+  var MAX=20;
+  var px=function(i){return X0+(X1-X0)*i/(ORIG.length-1)}, py=function(v){return BASE-(BASE-TOP)*v/MAX};
+  T.t(n?'WORLDWIDE BOX OFFICE':'WORLDWIDE BOX OFFICE, IN TODAY’S DOLLARS',X0-(n?30:22),n?34:46,'700 '+(n?12:14)+'px Inter, sans-serif',T.INK,1,'left','.14em');
+  [0,5,10,15,20].forEach(function(v){T.l(X0,py(v),X1,py(v),'rgba(243,239,232,.07)',1);T.t('$'+v+'B',X0-10,py(v)+4,'600 '+(n?11:12)+'px Inter, sans-serif','rgba(243,239,232,.55)',1,'right')});
+  // franchise line, dim
+  x.save();x.strokeStyle='rgba(243,239,232,.45)';x.lineWidth=2;x.lineJoin='round';x.lineCap='round';x.beginPath();FRAN.forEach(function(v,i){i?x.lineTo(px(i),py(v)):x.moveTo(px(i),py(v))});x.stroke();x.restore();
+  // originals line, gold
+  x.save();x.strokeStyle='rgba(228,201,126,.95)';x.lineWidth=2.6;x.lineJoin='round';x.lineCap='round';x.shadowColor='rgba(228,201,126,.45)';x.shadowBlur=10;x.beginPath();ORIG.forEach(function(v,i){i?x.lineTo(px(i),py(v)):x.moveTo(px(i),py(v))});x.stroke();x.restore();
+  // the crossover
+  var ci=17;
+  T.l(px(ci),TOP-6,px(ci),BASE,'rgba(217,138,138,.35)',1.2,[4,6]);
+  (function(){x.save();x.fillStyle='rgba(217,138,138,.95)';x.beginPath();x.arc(px(ci),py((ORIG[ci]+FRAN[ci])/2),4.5,0,Math.PI*2);x.fill();x.restore()})();
+  T.t('2017',px(ci),TOP-(n?14:16),'700 '+(n?11:12.5)+'px Inter, sans-serif',T.ROSE,1,'center','.12em');
+  if(n){T.t('FRANCHISE PASSES',px(ci)-8,TOP+12,'700 10px Inter, sans-serif',T.ROSE,.95,'right','.1em');T.t('ORIGINALS',px(ci)-8,TOP+26,'700 10px Inter, sans-serif',T.ROSE,.95,'right','.1em');}
+  else T.t('THE YEAR FRANCHISE IP PASSED ORIGINALS',px(ci)+10,TOP+14,'700 12px Inter, sans-serif',T.ROSE,.95,'left','.1em');
+  // end labels
+  T.t('ORIGINAL FILMS',px(0),py(ORIG[0])-(n?30:34),'700 '+(n?11:12.5)+'px Inter, sans-serif',T.GOLD,1,'left','.12em');
+  T.t('$'+ORIG[0]+'B',px(0),py(ORIG[0])-(n?12:14),'700 '+(n?14:16)+'px Inter, sans-serif',T.GOLD,1,'left');
+  T.t('$'+ORIG[ORIG.length-1]+'B',px(ORIG.length-1),py(ORIG[ORIG.length-1])+(n?24:26),'700 '+(n?14:16)+'px Inter, sans-serif',T.GOLD,1,'right');
+  T.t('SEQUELS AND FRANCHISE IP',px(0),py(FRAN[0])+(n?26:30),'700 '+(n?11:12.5)+'px Inter, sans-serif','rgba(243,239,232,.7)',1,'left','.12em');
+  T.t('$'+FRAN[0]+'B',px(0),py(FRAN[0])+(n?44:48),'700 '+(n?13:15)+'px Inter, sans-serif','rgba(243,239,232,.7)',1,'left');
+  T.t('$'+FRAN[FRAN.length-1]+'B',px(FRAN.length-1),py(FRAN[FRAN.length-1])-(n?14:16),'700 '+(n?13:15)+'px Inter, sans-serif','rgba(243,239,232,.85)',1,'right');
+  [0,5,10,15,20,25].forEach(function(i){T.t(String(Y0+i),px(i),BASE+(n?22:24),'600 '+(n?11:12)+'px Inter, sans-serif','rgba(243,239,232,.7)',1,i===0?'left':(i===25?'right':'center'))});
 });
 </script>
 </body>
