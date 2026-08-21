@@ -55,9 +55,9 @@
   .link{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,232,.6);text-decoration:none;border-bottom:1px solid rgba(243,239,232,.25);padding-bottom:3px}
 
   /* hero */
-  .hero{position:relative;min-height:560px;padding:110px 56px 90px;overflow:hidden}
+  .hero{position:relative;min-height:620px;padding:110px 56px 90px;overflow:hidden}
   #f-hero{position:absolute;inset:0;width:100%;height:100%;display:block}
-  @media (max-width:900px){.hero{display:flex;flex-direction:column}#f-hero{position:relative;inset:auto;order:2;width:100%;height:340px;margin-top:24px}.hero-in{order:1}}
+  @media (max-width:900px){.hero{display:flex;flex-direction:column}#f-hero{position:relative;inset:auto;order:2;width:100%;height:380px;margin-top:24px}.hero-in{order:1}}
   .hero-in{position:relative;z-index:1;max-width:1240px;margin:0 auto}
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4vw,58px);font-weight:500;line-height:1.06;letter-spacing:-.02em;max-width:680px;margin-bottom:26px}
   h1 em{font-style:italic;color:var(--violet)}
@@ -84,6 +84,8 @@
   .clc p{font-size:16.5px;line-height:1.6;color:rgba(243,239,232,.88);margin:0 26px}
   @media (max-width:900px){.cl{grid-template-columns:1fr;gap:16px}.clf{height:180px}.clc h3{font-size:24px;margin:18px 18px 8px}.clc p{margin:0 18px;font-size:15.5px}}
   #fig-plan{height:520px}
+  #fig-thesis{height:440px}
+  @media (max-width:900px){#fig-thesis{height:380px}}
   @media (max-width:900px){#fig-plan{height:560px}}
   .claims{list-style:none;padding:0;margin:30px 0 0;max-width:900px}
   .claims li{position:relative;padding-left:26px;font-size:18px;line-height:1.55;color:rgba(243,239,232,.9);margin-bottom:16px}
@@ -196,6 +198,7 @@
   <p class="lead rv">The market has changed. There are more ways than ever for a great idea to win: more screens, more channels, more paths to a global audience. There are also more ways than ever to lose, and making films has never carried more risk.</p>
   <p class="lead rv" style="margin-top:18px">In that environment, Hollywood still sizes up risk and opportunity the way David O. Selznick and the great executives of the early 1900s did: instinct, relationships, and a handful of comparable titles. The methods have not changed in a hundred years while the market has changed completely. Faced with risk they cannot measure, studios retreat to what feels safe: franchises, sequels, and remakes. Original films disappeared from theaters not because audiences stopped wanting them, but because nobody in Hollywood is able to take that risk anymore.</p>
   <p class="lead rv" style="margin-top:18px">Taking a flyer on a great idea has always been part of this business, and Hollywood has never actually gotten better at it. We have figured out how to solve that problem for good, and we intend to build the biggest media company in the world on the back of it.</p>
+  <div class="fig rv" id="fig-thesis"><canvas id="f-thesis" aria-hidden="true"></canvas></div>
 </section>
 
 <div class="rule"></div>
@@ -216,31 +219,31 @@
   <div class="cl rv">
     <div class="clc">
       <div class="clf"><canvas id="c-read" aria-hidden="true"></canvas></div>
-      <h3>We read a thousand times more ideas than any studio.</h3>
-      <p>Hollywood is closed. A studio sees only what its own network sends it, a few hundred scripts a year, and reads them by hand. Our doors are open to anyone, we seek out ideas across the internet and through our partners, and Selznick reads all of it: screenplays, books, articles, pitches, ideas nobody has written yet. It tells us which of them could be a major theatrical film, so we can consider a thousand times more ideas than any other studio and find the one that can be enormous.</p>
+      <h3>We find the ideas Hollywood is not even looking at.</h3>
+      <p>Hollywood is a closed system. A studio reads a few hundred scripts a year, all of them from its own network, all of them by hand. The original thinkers, the daring visions, the ideas that do not look like anything already made: a studio has no way to find those people and no way to judge what they are worth. With Selznick we consider thousands of times more ideas, from sources a studio would never look at, and we know which of them can be enormous. That comes from our technology and from our own time making things for modern audiences, which is what tells us when an idea has real potential and when it only looks like it does.</p>
     </div>
     <div class="clc">
       <div class="clf"><canvas id="c-box" aria-hidden="true"></canvas></div>
-      <h3>We project box office from the script, in full detail.</h3>
-      <p>Hollywood sizes a film by a handful of comparable titles and a guess. Selznick projects the full range of outcomes for a film, downside to upside, domestic and international, market by market, from the script alone, and it re-projects every time the script, the cast, or the budget changes. We make every decision on a film knowing what it does to the box office.</p>
+      <h3>We make more advanced financial projections than any studio in the world.</h3>
+      <p>From the script alone, before anyone is attached, Selznick projects the full range of outcomes for a film, downside to upside, domestic and international, market by market. Every decision after that sharpens it: a new draft, a lead, a director, the crew, the budget, the release. Each one moves the number and narrows the range. By the time real money is committed, we know more about that film than anyone in Hollywood has ever known about a film before it was made, and that is why we can take risks a studio cannot.</p>
     </div>
     <div class="clc">
       <div class="clf"><canvas id="c-people" aria-hidden="true"></canvas></div>
       <h3>We cast on fit, not fame.</h3>
-      <p>Hollywood casts from a short list of famous names that agents put forward. Selznick knows the full career of every actor, director, writer, and key crew member in the industry: what each delivered, on what material, at what budget, alongside whom, and what each would add to this specific film. That lets us find people Hollywood would never think of who are exactly right for a director&rsquo;s vision, and it makes us a real partner to directors in finding them, whatever their fame.</p>
+      <p>Hollywood casts from a short list of famous names that agents put forward. Selznick knows the full career of every actor, director, writer, and key crew member in the industry: every credit, what each delivered on what material and at what budget, who they do their best work with, how much attention they carry today. For any role in any film it names the people in the world best suited to it and what each would add to the box office. Many of them are on no casting agent&rsquo;s list, and that is how a director finds exactly the right person for their vision, whatever their fame.</p>
     </div>
     <div class="clc">
       <div class="clf"><canvas id="c-cost" aria-hidden="true"></canvas></div>
       <h3>We put every dollar where the audience will feel it.</h3>
-      <p>Hollywood budgets by precedent and then cuts. Selznick reads a script for what it will cost, locations, cast size, night shoots, period detail, stunts, what has to be built or created digitally, and for what each of those does to the box office. We set the budget where the money turns into audience, and we fund the director&rsquo;s vision instead of cutting it.</p>
+      <p>Hollywood budgets by precedent and then cuts. Selznick reads a script for what it will cost, line by line: locations, cast size, night shoots, period detail, stunts, what has to be built or created digitally. It also knows what each of those lines does to the box office, because the parts of a story that drive the cost are the parts that drive the audience. We put the money where an audience will feel it, we fund the director&rsquo;s vision instead of cutting it, and the film still returns.</p>
     </div>
     <div class="clc">
       <div class="clf"><canvas id="c-draft" aria-hidden="true"></canvas></div>
-      <h3>We develop scripts with a number on every draft.</h3>
-      <p>Hollywood develops by notes and instinct. Selznick shows which elements of a story carry its potential, so as we work with a writer draft by draft we can see what each change does to the film, and measure every draft against the last.</p>
+      <h3>We give filmmakers total creative control.</h3>
+      <p>We invest in filmmakers whose vision we believe in, and then we stay out of the creative decisions. We decide what to finance and at what budget. They decide what the film is, with access to Selznick and the same numbers we have: what a new draft does to the film, what an actor adds, what a location or another shooting day buys on screen. Drafts, casting, budget, they make those calls. No studio can offer this, because no studio has the information to give, so every note becomes an argument between people guessing. We give filmmakers the information and the room, and ambition and a sound investment stop being in conflict.</p>
     </div>
   </div>
-  <p class="lead rv" style="margin-top:34px">Every decision we make, from what to acquire to whom to cast to how much to spend, is made with Selznick&rsquo;s projection in front of us.</p>
+  <p class="lead rv" style="margin-top:34px">We make the financial decisions with Selznick in front of us. The filmmakers make the creative decisions with the same thing in front of them.</p>
 </section>
 
 <div class="rule"></div>
@@ -350,9 +353,10 @@ function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a
   function draw(){
     x.clearRect(0,0,w,h);
     var r=mulberry(3),i,a,s;
-    for(i=0;i<520;i++){a=r();s=r()*1.2+0.3;x.globalAlpha=0.10+r()*0.35;x.fillStyle='#F3EFE8';x.fillRect(r()*w,r()*h,s,s);}
+    var narrow=w<900;
+    for(i=0;i<(narrow?300:520);i++){a=r();s=r()*0.9+0.3;x.globalAlpha=0.08+r()*0.22;x.fillStyle='#C4B5FD';x.fillRect(r()*w,r()*h,s,s);}
     x.globalAlpha=1;
-    for(i=0;i<44;i++){var gx=r()*w,gy=r()*h,g=2.2+r()*2.6;x.save();x.translate(gx,gy);x.rotate(Math.PI/4);x.shadowColor='rgba(139,92,246,.9)';x.shadowBlur=10;x.fillStyle='#8b5cf6';x.fillRect(-g,-g,g*2,g*2);x.restore();}
+    for(i=0;i<(narrow?26:40);i++){var gx=r()*w,gy=r()*h,g=1.0+r()*1.1;x.save();x.translate(gx,gy);x.rotate(Math.PI/4);x.shadowColor='rgba(228,201,126,.7)';x.shadowBlur=6;x.globalAlpha=0.5+r()*0.4;x.fillStyle='#E4C97E';x.fillRect(-g,-g,g*2,g*2);x.restore();}
   }
   function lay(){d=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
   addEventListener('resize',lay);lay();
@@ -370,7 +374,7 @@ function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a
     x.clearRect(0,0,w,h);
     var wide=w>=900, L0=56+Math.max(0,(w-1352)/2);
     var X0=wide?L0+720:28, X1=wide?w-64:w-28;
-    var Y1=wide?h*0.30:90, Y2=wide?h*0.66:250;
+    var Y1=wide?h*0.26:84, Y2=wide?h*0.64:252;
     var F=wide?13:12;
     // Hollywood: the same film, running down
     T('HOLLYWOOD',X0,Y1-(wide?58:44),'700 '+F+'px Inter, sans-serif',DIM,1,'left','.16em');
@@ -382,15 +386,20 @@ function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a
       DIA(px,Y1,sz,false,al,k>0);
       if(wide||k===0||k===n1-1)T(k===0?'ORIGINAL':'PART '+(k+1),px,Y1+sz+(wide?20:16),'700 '+(wide?11.5:11)+'px Inter, sans-serif',k===0?INK:DIM,al,'center','.1em');
     }
-    // GEM: new originals, each one its own
-    T('GEM STUDIOS',X0,Y2-(wide?58:44),'700 '+F+'px Inter, sans-serif',GOLD,1,'left','.16em');
-    T('a new original, every time',X0,Y2-(wide?38:26),'400 '+(wide?14:12.5)+'px Inter, sans-serif',SOFT,1,'left');
-    var n2=wide?5:4, step2=(X1-X0)/(n2-0.3);
-    for(var q=0;q<n2;q++){
-      var qx=X0+14+q*step2, qs=(wide?14:10)+q*(wide?3.5:2.5);
-      DIA(qx,Y2,qs,true,1,false);
-      if(wide||q===0||q===n2-1)T('ORIGINAL',qx,Y2+qs+(wide?20:16),'700 '+(wide?11.5:11)+'px Inter, sans-serif',GOLD,1,'center','.1em');
-    }
+    // GEM: originals, each one new, radiating out of the gem
+    T('GEM STUDIOS',X0,Y2-(wide?72:56),'700 '+F+'px Inter, sans-serif',GOLD,1,'left','.16em');
+    T('a new original, every time',X0,Y2-(wide?52:38),'400 '+(wide?14:12.5)+'px Inter, sans-serif',SOFT,1,'left');
+    var GX=X0+(wide?34:26), GS=wide?40:30;
+    (function(){var g=x.createRadialGradient(GX,Y2,0,GX,Y2,GS*2.4);g.addColorStop(0,'rgba(139,92,246,.26)');g.addColorStop(1,'rgba(139,92,246,0)');x.fillStyle=g;x.fillRect(0,0,w,h);x.save();x.translate(GX,Y2);x.rotate(Math.PI/4);x.shadowColor='#8b5cf6';x.shadowBlur=34;var gg=x.createLinearGradient(-GS/2,-GS/2,GS/2,GS/2);gg.addColorStop(0,'#C4B5FD');gg.addColorStop(1,'#6D28D9');x.fillStyle=gg;var cr=GS*.2;x.beginPath();x.moveTo(-GS/2+cr,-GS/2);x.arcTo(GS/2,-GS/2,GS/2,GS/2,cr);x.arcTo(GS/2,GS/2,-GS/2,GS/2,cr);x.arcTo(-GS/2,GS/2,-GS/2,-GS/2,cr);x.arcTo(-GS/2,-GS/2,GS/2,-GS/2,cr);x.closePath();x.fill();x.restore()})();
+    var R=wide?[[-0.62,0.52,12],[-0.34,0.74,15],[-0.02,0.92,19],[0.30,0.74,16],[0.58,0.52,13]]:[[-0.30,0.46,10],[0.20,0.80,15],[0.72,0.50,12]];
+    var span=X1-GX-(wide?40:120), vs=wide?96:56;
+    R.forEach(function(r,ri){
+      var px=GX+span*r[1], py=Y2+vs*r[0];
+      L(GX+GS*0.7,Y2+(py-Y2)*0.12,px-r[2]-6,py,'rgba(228,201,126,.45)',1.3);
+      DIA(px,py,r[2],true,1,false);
+      if(wide&&ri===2)T('ORIGINALS',px+r[2]+16,py+5,'700 12px Inter, sans-serif',GOLD,1,'left','.14em');
+      if(!wide&&ri===1)T('ORIGINALS',px+r[2]+14,py+5,'700 11px Inter, sans-serif',GOLD,1,'left','.14em');
+    });
   }
   function lay(){d=Math.min(devicePixelRatio||1,2);w=c.clientWidth||c.parentElement.clientWidth;h=c.clientHeight||c.parentElement.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
   var t,lw=innerWidth;addEventListener('resize',function(){clearTimeout(t);if(innerWidth===lw)return;lw=innerWidth;t=setTimeout(lay,150)});
@@ -635,46 +644,43 @@ mount('f-plan',function(T,w,h,x){
 
 /* ── Selznick claims: five small figures ── */
 mount('c-read',function(T,w,h,x){
-  var n=w<480, X0=n?14:24, L=n?[['SCRIPT',0],['BOOK',1],['IDEA',3]]:[['SCRIPT',0],['BOOK',1],['ARTICLE',2],['IDEA',3]], y=h*0.50;
-  L.forEach(function(l,k){
-    var px=X0+22+k*(n?64:78);
-    x.save();x.translate(px,y-6);x.strokeStyle=T.GOLD;x.lineWidth=1.7;x.lineCap='round';x.shadowColor='rgba(228,201,126,.45)';x.shadowBlur=8;
-    var g=l[1];
-    if(g===0){x.beginPath();x.rect(-9,-12,18,24);x.moveTo(-4,-5);x.lineTo(4,-5);x.moveTo(-4,0);x.lineTo(4,0);x.moveTo(-4,5);x.lineTo(2,5);x.stroke()}
-    else if(g===1){x.beginPath();x.rect(-10,-12,20,24);x.moveTo(-3,-12);x.lineTo(-3,12);x.stroke()}
-    else if(g===2){x.beginPath();x.rect(-11,-9,22,18);x.moveTo(-7,-3);x.lineTo(7,-3);x.moveTo(-7,2);x.lineTo(3,2);x.stroke()}
-    else{x.beginPath();x.arc(0,-2,9,0,Math.PI*2);x.stroke();x.beginPath();x.moveTo(-4,9);x.lineTo(4,9);x.stroke()}
-    x.restore();
-    T.t(l[0],px,y+30,'700 11.5px Inter, sans-serif',T.GOLD,.95,'center','.1em');
+  var n=w<480, X0=n?14:22, X1=w-(n?14:22);
+  var SRC=n?['SCREENPLAYS','BOOKS','ARTICLES','CREATORS','PITCHES','FESTIVAL FILMS']
+          :['SCREENPLAYS','BOOKS','COMICS','ARTICLES','TRUE STORIES','PITCHES','CREATORS','FESTIVAL FILMS','IP PARTNERS','UNWRITTEN IDEAS'];
+  var GX=X1-(n?54:70), GY=h*0.52, GS=n?26:30;
+  // a dense field of material streaming toward the gem
+  var a0=13,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};
+  var FX0=X0+(n?86:120), span=h*0.42;
+  for(var i=0;i<(n?260:520);i++){
+    var t=rr(), py=GY+(rr()-0.5)*2*span*(1-t*0.8), px=FX0+(GX-GS-10-FX0)*t;
+    T.dia(px,py,0.8+rr()*1.0,false,0.10+rr()*0.22);
+  }
+  // sources listed down the left
+  SRC.forEach(function(sname,k){
+    var y=(h*0.52)-((SRC.length-1)/2)*(n?16:14.5)+k*(n?16:14.5);
+    T.t(sname,X0,y+4,'700 '+(n?9.5:10)+'px Inter, sans-serif',T.GOLD,.9,'left','.1em');
   });
-  var ax=X0+22+(L.length-1)*(n?64:78)+30, gx=w-(n?56:80);
-  T.ar(ax,y-6,gx-26,y-6,'rgba(196,181,253,.55)',1.3);
-  T.dia(gx,y-6,14,true);
-  T.t('THEATRICAL',gx,y+28,'700 11.5px Inter, sans-serif',T.GOLD,1,'center','.12em');
-  T.t('POTENTIAL',gx,y+44,'700 11.5px Inter, sans-serif',T.GOLD,1,'center','.12em');
+  // the gem, and the rare find out the other side
+  T.gem(GX,GY,GS);
+  T.t('SELZNICK',GX,GY+GS*0.9+(n?16:18),'700 '+(n?10:11)+'px Inter, sans-serif',T.VIOLET,1,'center','.18em');
+  T.t('THOUSANDS OF TIMES MORE IDEAS',X0,n?18:20,'700 '+(n?10:11.5)+'px Inter, sans-serif',T.INK,.9,'left','.13em');
 });
 
 mount('c-box',function(T,w,h,x){
-  var n=w<480, X0=26, X1=w-26, y=h*0.42;
-  var px=function(t){return X0+(X1-X0)*t};
-  T.rect(px(0.08),y-8,px(0.92)-px(0.08),16,'rgba(143,207,159,.14)','rgba(143,207,159,.45)');
-  T.dia(px(0.46),y,9,true);
-  T.t('LOW',px(0.08),y+30,'700 11.5px Inter, sans-serif',T.INK,.85,'center','.12em');
-  T.t('EXPECTED',px(0.46),y-20,'700 11.5px Inter, sans-serif',T.GREEN,1,'center','.12em');
-  T.t('HIGH',px(0.92),y+30,'700 11.5px Inter, sans-serif',T.INK,.85,'center','.12em');
-  if(n){
-    var ya=h*0.72, yb=h*0.88;
-    T.t('DOMESTIC',X0,ya+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
-    T.rect(X0+118,ya-5,(X1-X0)*0.40,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
-    T.t('INTERNATIONAL',X0,yb+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
-    T.rect(X0+118,yb-5,(X1-X0)*0.30,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
-  } else {
-    var y2=h*0.78;
-    T.t('DOMESTIC',X0,y2+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
-    T.rect(X0+92,y2-5,(X1-X0)*0.26,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
-    T.t('INTERNATIONAL',px(0.52),y2+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
-    T.rect(px(0.52)+128,y2-5,(X1-X0)*0.20,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
-  }
+  var n=w<480, X0=n?46:58, X1=w-(n?14:22), TOP=n?34:38, BASE=h-(n?34:38);
+  var ST=n?[['SCRIPT',1.0],['CAST',0.62],['BUDGET',0.40],['RELEASE',0.16]]:[['SCRIPT',1.0],['DRAFTS',0.78],['CAST',0.58],['BUDGET',0.36],['RELEASE',0.14]];
+  var px=function(i){return X0+(X1-X0)*i/(ST.length-1)}, mid=(TOP+BASE)/2, half=(BASE-TOP)/2-6;
+  x.save();x.beginPath();
+  ST.forEach(function(t,i){var y=mid-half*t[1];i?x.lineTo(px(i),y):x.moveTo(px(i),y)});
+  for(var k=ST.length-1;k>=0;k--){x.lineTo(px(k),mid+half*ST[k][1])}
+  x.closePath();var g=x.createLinearGradient(X0,0,X1,0);g.addColorStop(0,'rgba(143,207,159,.10)');g.addColorStop(1,'rgba(143,207,159,.30)');x.fillStyle=g;x.fill();
+  x.strokeStyle='rgba(143,207,159,.5)';x.lineWidth=1.2;x.stroke();x.restore();
+  T.l(X0,mid,X1,mid,'rgba(228,201,126,.7)',2);
+  ST.forEach(function(t,i){
+    T.dia(px(i),mid,i===ST.length-1?9:6,true);
+    T.t(t[0],px(i),BASE+(n?18:20),'700 '+(n?10:11)+'px Inter, sans-serif',T.GOLD,1,i===0?'left':(i===ST.length-1?'right':'center'),'.1em');
+  });
+  T.t('THE RANGE NARROWS',X0-(n?36:44),TOP-(n?10:12),'700 '+(n?10.5:11.5)+'px Inter, sans-serif',T.INK,.9,'left','.13em');
 });
 
 mount('c-people',function(T,w,h,x){
@@ -699,12 +705,39 @@ mount('c-cost',function(T,w,h,x){
 });
 
 mount('c-draft',function(T,w,h,x){
-  var n=w<480, X0=34, X1=w-34, BASE=h-40, TOP=34;
-  var pts=[[0.10,0.30],[0.50,0.60],[0.90,0.92]];
-  var px=function(t){return X0+(X1-X0)*t}, py=function(v){return BASE-(BASE-TOP)*v};
-  x.save();x.strokeStyle='rgba(228,201,126,.7)';x.lineWidth=2.2;x.lineCap='round';x.shadowColor='rgba(228,201,126,.4)';x.shadowBlur=8;x.beginPath();pts.forEach(function(p,k){k?x.lineTo(px(p[0]),py(p[1])):x.moveTo(px(p[0]),py(p[1]))});x.stroke();x.restore();
-  pts.forEach(function(p,k){T.dia(px(p[0]),py(p[1]),k===2?11:7,true);T.t('DRAFT '+(k+1),px(p[0]),BASE+22,'700 11.5px Inter, sans-serif',T.GOLD,1,'center','.12em')});
-  T.t('POTENTIAL',X0-10,TOP-12,'700 10.5px Inter, sans-serif',T.INK,.8,'left','.12em');
+  var n=w<480, CX=w*0.5, CY=h*0.52;
+  var P=n?[['DRAFTS',-1],['CASTING',0],['BUDGET',1]]:[['DRAFTS',-1],['CASTING',0],['BUDGET',1],['RELEASE',2]];
+  var span=n?w*0.30:w*0.26;
+  T.dia(CX,CY-(n?16:18),n?15:18,true);
+  T.t('THE SAME PROJECTION',CX,CY-(n?46:52),'700 '+(n?11:12)+'px Inter, sans-serif',T.GREEN,1,'center','.14em');
+  T.t(n?'FILMMAKERS DECIDE':'THE FILMMAKERS DECIDE',CX,CY-(n?66:74),'700 '+(n?10.5:11.5)+'px Inter, sans-serif',T.INK,.9,'center','.14em');
+  P.forEach(function(p,i){
+    var off=(i-(P.length-1)/2)*span;
+    var px=CX+off, py=CY+(n?54:60);
+    T.person(px,py,n?0.46:0.54,1);
+    T.t(p[0],px,py+(n?24:26),'700 '+(n?10.5:11.5)+'px Inter, sans-serif',T.GOLD,1,'center','.1em');
+    T.l(px,py-(n?18:20),CX+off*0.18,CY+(n?4:2),'rgba(228,201,126,.4)',1.2,[4,5]);
+  });
+});
+
+/* ── thesis: share of top box office from original films, by year (placeholder data, replace SHARE) ── */
+mount('f-thesis',function(T,w,h,x){
+  var n=w<900, X0=n?44:76, X1=w-(n?16:56), TOP=n?70:86, BASE=h-(n?70:78);
+  var Y0=2000, SHARE=[52,50,47,49,44,46,41,43,38,36,35,31,33,28,27,25,24,21,22,19,20,17,16,15,14,13]; // 2000..2025, percent of top-20 box office from originals
+  var px=function(i){return X0+(X1-X0-(n?40:70))*i/(SHARE.length-1)}, py=function(v){return BASE-(BASE-TOP)*v/60};
+  T.t(n?'TOP BOX OFFICE FROM ORIGINAL FILMS':'SHARE OF TOP-20 BOX OFFICE THAT CAME FROM ORIGINAL FILMS',X0-(n?28:20),n?34:46,'700 '+(n?12:14)+'px Inter, sans-serif',T.INK,1,'left','.14em');
+  [0,20,40,60].forEach(function(v){T.l(X0,py(v),X1,py(v),'rgba(243,239,232,.08)',1);T.t(v+'%',X0-10,py(v)+4,'600 12px Inter, sans-serif','rgba(243,239,232,.6)',1,'right')});
+  // area
+  x.save();x.beginPath();x.moveTo(px(0),BASE);SHARE.forEach(function(v,i){x.lineTo(px(i),py(v))});x.lineTo(px(SHARE.length-1),BASE);x.closePath();var g=x.createLinearGradient(0,TOP,0,BASE);g.addColorStop(0,'rgba(228,201,126,.22)');g.addColorStop(1,'rgba(228,201,126,.02)');x.fillStyle=g;x.fill();x.restore();
+  x.save();x.strokeStyle='rgba(228,201,126,.9)';x.lineWidth=2.4;x.lineJoin='round';x.lineCap='round';x.shadowColor='rgba(228,201,126,.45)';x.shadowBlur=10;x.beginPath();SHARE.forEach(function(v,i){i?x.lineTo(px(i),py(v)):x.moveTo(px(i),py(v))});x.stroke();x.restore();
+  [0,5,10,15,20,25].forEach(function(i){T.t(String(Y0+i),px(i),BASE+24,'600 12px Inter, sans-serif','rgba(243,239,232,.7)',1,'center')});
+  T.t(SHARE[0]+'%',px(0),py(SHARE[0])-16,'700 15px Inter, sans-serif',T.GOLD,1,'left');
+  T.t(SHARE[SHARE.length-1]+'%',px(SHARE.length-1),py(SHARE[SHARE.length-1])-16,'700 15px Inter, sans-serif',T.GOLD,1,'center');
+  // us, at the far right, breaking the line
+  var ux=X1-(n?14:26), uy=py(SHARE[SHARE.length-1]);
+  T.ar(px(SHARE.length-1)+10,uy,ux-16,uy-(n?54:70),'rgba(228,201,126,.5)',1.4);
+  T.dia(ux,uy-(n?66:84),n?12:15,true);
+  T.t('GEM',ux,uy-(n?66:84)-(n?22:26),'700 12px Inter, sans-serif',T.GOLD,1,'center','.16em');
 });
 </script>
 </body>
