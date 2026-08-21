@@ -29,6 +29,11 @@ the reason gets added to the banned list. This file is the memory.
 7. **No disclaimers or footnotes** in graphics ("example project",
    "priced at whatever stage"). If it needs a caveat, it is wrong.
 8. **No em dashes.** Ever. Use a colon, a comma, or a full stop.
+8a. **No incomplete marketing sentences.** Banned forever: a dramatic
+   short sentence standing in for substance ("We can.", "That is what
+   lets us go after original films.", "That changes the math."). Every
+   sentence is complete and carries its own content. No punchy fragment
+   endings, no weak "that is what lets us" closers.
 9. **Never imply we own or hold film data.** Use "studied",
    "measured", "in our study". Never "our data", "trained on",
    "our dataset".
@@ -42,7 +47,12 @@ the reason gets added to the banned list. This file is the memory.
 
 ## 2. The company, in one line
 
-> We make the best entertainment in the world.
+**Hero, verbatim, do not reword:**
+
+> We're bringing original blockbusters back to Hollywood.
+
+Previous headline (superseded): "We make the best entertainment in the
+world.
 
 Deck, under the headline:
 
@@ -145,6 +155,9 @@ service of", "we're excited to".
 
 ## Changelog
 
+- **2026-08-21**: Page restructured and live: hero (locked line; LAUNCHED 2025 ON SOCIAL MEDIA / 500+ million viewers so far / Our first feature film is coming soon; hero graphic = Hollywood's franchise fading Part 2..6 vs our row of new originals) → "Hollywood is stuck in the 20th century" (approved thesis) → "The plan" (billion-dollar original; we search everywhere, doors open, thousands of ideas; mastery of modern media, technology, relationships; franchises have to start somewhere) → "Our technology: Selznick" (five titled cards, each Hollywood-does-X / we-do-Y: read a thousand times more ideas; project box office from the script in full detail; cast on fit not fame; every dollar where the audience will feel it; a number on every draft) → In development (Overlord) → Our work so far (500M) → Work with us → founder, door. Old IP-acquisition / production-financing / cast-and-crew sections retired.
+- **2026-08-21**: Rule 8a added: no incomplete marketing sentences, no "We can." fragments, no weak closers. His explicit order, committed to core memory.
+- **2026-08-21**: Hero locked: "We're bringing original blockbusters back to Hollywood." His words, verbatim. Do not reword, shorten, or "improve" it.
 - **2026-08-19**: All four section paragraphs approved and live. Do not add sentences he did not ask for (e.g. a financing close about our own capital).
 - **2026-08-19**: File created. Rules 1 to 11 set from a full day of
   landing page work. Approved paragraphs for Selznick, IP acquisition,

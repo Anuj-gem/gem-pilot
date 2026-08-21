@@ -55,11 +55,11 @@
   .link{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,232,.6);text-decoration:none;border-bottom:1px solid rgba(243,239,232,.25);padding-bottom:3px}
 
   /* hero */
-  .hero{position:relative;min-height:720px;padding:110px 56px 90px;overflow:hidden}
+  .hero{position:relative;min-height:560px;padding:110px 56px 90px;overflow:hidden}
   #f-hero{position:absolute;inset:0;width:100%;height:100%;display:block}
-  @media (max-width:900px){.hero{display:flex;flex-direction:column}#f-hero{position:relative;inset:auto;order:2;width:100%;height:420px;margin-top:24px}.hero-in{order:1}}
+  @media (max-width:900px){.hero{display:flex;flex-direction:column}#f-hero{position:relative;inset:auto;order:2;width:100%;height:340px;margin-top:24px}.hero-in{order:1}}
   .hero-in{position:relative;z-index:1;max-width:1240px;margin:0 auto}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4vw,58px);font-weight:500;line-height:1.06;letter-spacing:-.02em;max-width:620px;margin-bottom:26px}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4vw,58px);font-weight:500;line-height:1.06;letter-spacing:-.02em;max-width:680px;margin-bottom:26px}
   h1 em{font-style:italic;color:var(--violet)}
   .big{max-width:760px}
   .big .k{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
@@ -76,6 +76,21 @@
   .three p{font-size:16.5px;line-height:1.62;color:rgba(243,239,232,.86)}
   .kick{margin-top:50px;max-width:1000px;font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.35;color:var(--ink)}
 
+  .cl{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px;max-width:1240px}
+  .clc{border-radius:16px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(139,92,246,.045));padding:0 0 26px;overflow:hidden}
+  .clf{position:relative;height:190px;border-bottom:1px solid var(--hair)}
+  .clf canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .clc h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;line-height:1.12;margin:22px 26px 10px}
+  .clc p{font-size:16.5px;line-height:1.6;color:rgba(243,239,232,.88);margin:0 26px}
+  @media (max-width:900px){.cl{grid-template-columns:1fr;gap:16px}.clf{height:180px}.clc h3{font-size:24px;margin:18px 18px 8px}.clc p{margin:0 18px;font-size:15.5px}}
+  #fig-plan{height:520px}
+  @media (max-width:900px){#fig-plan{height:560px}}
+  .claims{list-style:none;padding:0;margin:30px 0 0;max-width:900px}
+  .claims li{position:relative;padding-left:26px;font-size:18px;line-height:1.55;color:rgba(243,239,232,.9);margin-bottom:16px}
+  .claims li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;transform:rotate(45deg);background:linear-gradient(135deg,#F0DCA0,#B08A3E)}
+  .devrow{display:grid;grid-template-columns:360px 1fr;gap:44px;align-items:center;margin-top:34px;max-width:1240px}
+  .devrow .poster{aspect-ratio:3/4}
+  @media (max-width:900px){.devrow{grid-template-columns:1fr;gap:22px}.claims li{font-size:16.5px}}
   /* stages */
   .stg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 44px;margin-top:48px;max-width:1240px}
   .stg div{padding-top:20px;border-top:1px solid var(--hair)}
@@ -149,9 +164,10 @@
 <nav>
   <a class="logo" href="/"><i></i><span>GEM Studios</span></a>
   <div class="nl">
+    <a href="#thesis">Why</a>
+    <a href="#plan">The plan</a>
     <a href="#selznick">Selznick</a>
-    <a href="#acquisition">What we do</a>
-    <a href="#work">Our work</a>
+    <a href="#dev">In development</a>
     <a href="/blog">Blog</a>
     <a class="cta" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
   </div>
@@ -160,73 +176,96 @@
 <section class="hero">
   <canvas id="f-hero" aria-hidden="true"></canvas>
   <div class="hero-in">
-    <h1 class="rv">We make the best entertainment <em>in the world.</em></h1>
+    <h1 class="rv">We&rsquo;re bringing original blockbusters <em>back to Hollywood.</em></h1>
     <div class="big rv">
-      <p class="k">Launched 2025.</p>
+      <p class="k">Launched 2025 on social media.</p>
       <b>500+ million viewers so far</b>
-      <p class="tech">We&rsquo;ve built a powerful AI, Selznick, that helps us find projects that everyone else overlooks and develop them into massive hits.</p>
+      <p class="tech">Our first feature film is coming soon.</p>
     </div>
     <div class="acts rv">
       <a class="btn" href="mailto:info@gem.studio?subject=A%20project%20for%20GEM">Bring us a project</a>
-      <a class="link" href="#selznick">Selznick ↓</a>
+      <a class="link" href="#thesis">Why ↓</a>
     </div>
   </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="thesis">
+  <h2 class="rv">Hollywood is stuck <em>in the 20th century.</em></h2>
+  <p class="lead rv">The market has changed. There are more ways than ever for a great idea to win: more screens, more channels, more paths to a global audience. There are also more ways than ever to lose, and making films has never carried more risk.</p>
+  <p class="lead rv" style="margin-top:18px">In that environment, Hollywood still sizes up risk and opportunity the way David O. Selznick and the great executives of the early 1900s did: instinct, relationships, and a handful of comparable titles. The methods have not changed in a hundred years while the market has changed completely. Faced with risk they cannot measure, studios retreat to what feels safe: franchises, sequels, and remakes. Original films disappeared from theaters not because audiences stopped wanting them, but because nobody in Hollywood is able to take that risk anymore.</p>
+  <p class="lead rv" style="margin-top:18px">Taking a flyer on a great idea has always been part of this business, and Hollywood has never actually gotten better at it. We have figured out how to solve that problem for good, and we intend to build the biggest media company in the world on the back of it.</p>
+</section>
+
+<div class="rule"></div>
+
+<section id="plan">
+  <h2 class="rv">The plan.</h2>
+  <p class="lead rv">We are going to find an original film that can gross a billion dollars at the global box office, and we are going to make it.</p>
+  <p class="lead rv" style="margin-top:18px">Hollywood refuses to look. We search everywhere. Our doors are open to anyone and everyone, and we read thousands of ideas from every source to find the creators and the stories with the potential to become billion-dollar films. We built a mastery of modern media, the technology, and the relationships to do this better than any studio in the world. When we find one, we develop it, we finance it, and we release it in theaters worldwide.</p>
+  <p class="lead rv" style="margin-top:18px">Franchises have to start somewhere. We intend to start the next one.</p>
+  <div class="fig rv" id="fig-plan"><canvas id="f-plan" aria-hidden="true"></canvas></div>
 </section>
 
 <div class="rule"></div>
 
 <section id="selznick">
-  <h2 class="rv">Meet <em>Selznick.</em></h2>
-  <p class="lead rv">Selznick is the most powerful AI creative partner ever built. It reads what is in a story: what happens, who the characters are, how it is built, and how rare that combination is against nearly every film of the last fifty years. It knows who is in it: every credit across a career, what each person has delivered on this kind of material at this budget, who they do their best work with, and how much attention they carry going into a release. And it knows the market they are going into. From that, Selznick projects the financial performance of a project at any stage, from a screenplay through development, casting and production, to theatrical release, and every projection is sharper than the one before it.</p>
-
-  <div class="fig rv"><canvas id="f-selz" aria-hidden="true"></canvas></div>
-
+  <h2 class="rv">Our technology: <em>Selznick.</em></h2>
+  <p class="lead rv">Selznick is the most powerful AI creative partner ever built. It has studied more films, more box office, and more careers than anything else in the industry, and it projects performance and informs decisions with a precision nobody else has. Here is what it lets us do that Hollywood cannot.</p>
+  <div class="cl rv">
+    <div class="clc">
+      <div class="clf"><canvas id="c-read" aria-hidden="true"></canvas></div>
+      <h3>We read a thousand times more ideas than any studio.</h3>
+      <p>Hollywood is closed. A studio sees only what its own network sends it, a few hundred scripts a year, and reads them by hand. Our doors are open to anyone, we seek out ideas across the internet and through our partners, and Selznick reads all of it: screenplays, books, articles, pitches, ideas nobody has written yet. It tells us which of them could be a major theatrical film, so we can consider a thousand times more ideas than any other studio and find the one that can be enormous.</p>
+    </div>
+    <div class="clc">
+      <div class="clf"><canvas id="c-box" aria-hidden="true"></canvas></div>
+      <h3>We project box office from the script, in full detail.</h3>
+      <p>Hollywood sizes a film by a handful of comparable titles and a guess. Selznick projects the full range of outcomes for a film, downside to upside, domestic and international, market by market, from the script alone, and it re-projects every time the script, the cast, or the budget changes. We make every decision on a film knowing what it does to the box office.</p>
+    </div>
+    <div class="clc">
+      <div class="clf"><canvas id="c-people" aria-hidden="true"></canvas></div>
+      <h3>We cast on fit, not fame.</h3>
+      <p>Hollywood casts from a short list of famous names that agents put forward. Selznick knows the full career of every actor, director, writer, and key crew member in the industry: what each delivered, on what material, at what budget, alongside whom, and what each would add to this specific film. That lets us find people Hollywood would never think of who are exactly right for a director&rsquo;s vision, and it makes us a real partner to directors in finding them, whatever their fame.</p>
+    </div>
+    <div class="clc">
+      <div class="clf"><canvas id="c-cost" aria-hidden="true"></canvas></div>
+      <h3>We put every dollar where the audience will feel it.</h3>
+      <p>Hollywood budgets by precedent and then cuts. Selznick reads a script for what it will cost, locations, cast size, night shoots, period detail, stunts, what has to be built or created digitally, and for what each of those does to the box office. We set the budget where the money turns into audience, and we fund the director&rsquo;s vision instead of cutting it.</p>
+    </div>
+    <div class="clc">
+      <div class="clf"><canvas id="c-draft" aria-hidden="true"></canvas></div>
+      <h3>We develop scripts with a number on every draft.</h3>
+      <p>Hollywood develops by notes and instinct. Selznick shows which elements of a story carry its potential, so as we work with a writer draft by draft we can see what each change does to the film, and measure every draft against the last.</p>
+    </div>
+  </div>
+  <p class="lead rv" style="margin-top:34px">Every decision we make, from what to acquire to whom to cast to how much to spend, is made with Selznick&rsquo;s projection in front of us.</p>
 </section>
 
 <div class="rule"></div>
 
-<section id="acquisition">
-  <h2 class="rv">IP acquisition.</h2>
-  <p class="lead rv">Selznick projects the financial performance and market potential of any IP at any stage. Material that needs to be adapted, a screenplay we option or buy from a writer and develop into a feature, or a completed film looking for distribution: in each case we project what it earns, we understand what it costs, and we make the investment with a precision the market cannot match. That precision is what gives us the appetite to take on projects everyone else in Hollywood overlooks and that we can see have enormous potential.</p>
-  <div class="fig rv"><canvas id="f-ip" aria-hidden="true"></canvas></div>
-</section>
-
-<div class="rule"></div>
-
-<section id="financing">
-  <h2 class="rv">Production financing.</h2>
-  <p class="lead rv">Selznick reads a script and tells us what it will cost to make: how many locations, how big the cast is, night shoots, period detail, stunts, how much has to be built or created digitally. It also tells us what each of those does to the box office. The same parts of a story that drive the cost drive the performance, and Selznick measures both at the same time. That is what makes us a real partner to a writer. Going through successive drafts with them, we can make every decision knowing what it costs and what it earns, so the director&rsquo;s vision is properly funded and the film is still made profitably.</p>
-  <div class="fig rv"><canvas id="f-fin" aria-hidden="true"></canvas></div>
-</section>
-
-<div class="rule"></div>
-
-<section id="cast">
-  <h2 class="rv">Cast and crew.</h2>
-  <p class="lead rv">Who makes a film is one of the biggest factors in what it earns, and Selznick treats it that way. It has studied the performance history of people across the entire entertainment industry in more detail than anyone else, including many who are never on the radar of casting agents in Hollywood. Selznick uses those histories to determine the box office potential of a project. It tells us how much a specific person adds to this specific film, and what they cost. It also identifies the cast and crew who, in combination, given their particular backgrounds and capabilities, are most likely to execute this project well and deliver a big hit.</p>
-  <div class="fig rv"><canvas id="f-cast" aria-hidden="true"></canvas></div>
+<section id="dev">
+  <h2 class="rv">In development.</h2>
+  <div class="devrow rv">
+    <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg')">
+      <span class="tag">In development</span>
+      <div class="cp"><b>Overlord</b><span>Feature film &middot; sci-fi</span></div>
+    </div>
+    <div>
+      <p class="lead">Found the way everything we make will be found, and now in development. Budget and casting are underway. More soon.</p>
+    </div>
+  </div>
 </section>
 
 <div class="rule"></div>
 
 <section id="work">
-  <h2 class="rv">Our work.</h2>
-  <p class="lead rv">We chose it, financed it, produced it, and released it ourselves, with Selznick on every decision.</p>
+  <h2 class="rv">Our work so far.</h2>
   <div class="stat rv">
     <span class="cap">Social &middot; the last twelve months</span>
     <b>500+ million viewers</b>
-    <p>on our own channels. Feature film and television are in development.</p>
-  </div>
-  <p class="cap rv" style="margin-top:40px">Film &amp; series &middot; two projects in development</p>
-  <div class="two rv">
-    <div class="poster" style="background-image:url('screenshots/overlord-keyart-web.jpg')">
-      <span class="tag">In development</span>
-      <div class="cp"><b>Overlord</b><span>Feature film &middot; sci-fi</span></div>
-    </div>
-    <div class="poster" style="background-image:url('screenshots/marketing-keyart-web.jpg')">
-      <span class="tag">In development</span>
-      <div class="cp"><b>I Work in Marketing</b><span>Series &middot; comedy</span></div>
-    </div>
+    <p>on our own channels, on original content we wrote and produced ourselves.</p>
   </div>
 </section>
 
@@ -237,7 +276,7 @@
   <div class="ways rv">
     <div class="way">
       <h3>Bring us a project</h3>
-      <p>A script, a book, a package, a finished film. We price it, and we tell you what would move the number.</p>
+      <p>A script, a book, a package, a finished film. We evaluate it and tell you what we see.</p>
     </div>
     <div class="way">
       <h3>Tell us what you invest in</h3>
@@ -245,7 +284,7 @@
     </div>
     <div class="way">
       <h3>Make something with us</h3>
-      <p>We co-invest and produce, and Selznick runs on every decision from acquisition through release.</p>
+      <p>We co-invest and produce, with Selznick informing every decision from acquisition through release.</p>
     </div>
   </div>
   <div class="wcta rv">
@@ -319,47 +358,39 @@ function mulberry(a){return function(){a|=0;a=(a+0x6D2B79F5)|0;var t=Math.imul(a
   addEventListener('resize',lay);lay();
 })();
 
-/* ── hero: overlooked ideas stream into Selznick; each decision adds; it comes out a hit ── */
+/* ── hero: Hollywood runs the same film down; we start new ones ── */
 (function(){
   var c=document.getElementById('f-hero');if(!c)return;
   var x=c.getContext('2d'),w,h,d;
-  var GOLD='#E4C97E',VIOLET='#C4B5FD',GREEN='#8FCF9F',SOFT='rgba(243,239,232,0.82)';
-  var STEP=[['MATERIAL',13],['BUDGET',20],['CAST',34]];
+  var GOLD='#E4C97E',INK='#F3EFE8',SOFT='rgba(243,239,232,0.82)',DIM='rgba(243,239,232,0.55)';
   function T(s,X,Y,f,col,al,ali,sp){x.save();x.textAlign=ali||'left';x.globalAlpha=al==null?1:al;x.font=f;try{if(sp)x.letterSpacing=sp}catch(e){}x.shadowColor='rgba(8,6,14,.95)';x.shadowBlur=8;x.fillStyle=col;x.fillText(s,X,Y);x.restore()}
-  function DIA(X,Y,s,glow,alpha){x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.globalAlpha=alpha==null?1:alpha;if(glow){x.shadowColor='rgba(255,225,140,.95)';x.shadowBlur=14+s}var g=x.createLinearGradient(-s,-s,s,s);g.addColorStop(0,glow?'#FFF4C4':'#F3EFE8');g.addColorStop(1,glow?'#C79B48':'#F3EFE8');x.fillStyle=g;x.fillRect(-s,-s,s*2,s*2);x.restore()}
-  function GEM(X,Y,s){var g=x.createRadialGradient(X,Y,0,X,Y,s*2.6);g.addColorStop(0,'rgba(139,92,246,.26)');g.addColorStop(1,'rgba(139,92,246,0)');x.fillStyle=g;x.fillRect(0,0,w,h);x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.shadowColor='#8b5cf6';x.shadowBlur=40;var gg=x.createLinearGradient(-s/2,-s/2,s/2,s/2);gg.addColorStop(0,'#C4B5FD');gg.addColorStop(1,'#6D28D9');x.fillStyle=gg;var cr=s*.2;x.beginPath();x.moveTo(-s/2+cr,-s/2);x.arcTo(s/2,-s/2,s/2,s/2,cr);x.arcTo(s/2,s/2,-s/2,s/2,cr);x.arcTo(-s/2,s/2,-s/2,-s/2,cr);x.arcTo(-s/2,-s/2,s/2,-s/2,cr);x.closePath();x.fill();x.restore()}
+  function L(a,b,cc,dd,col,lw,dash){x.save();x.strokeStyle=col;x.lineWidth=lw||1;x.lineCap='round';if(dash)x.setLineDash(dash);x.beginPath();x.moveTo(a,b);x.lineTo(cc,dd);x.stroke();x.restore()}
+  function DIA(X,Y,s,glow,al,grey){x.save();x.translate(X,Y);x.rotate(Math.PI/4);x.globalAlpha=al==null?1:al;if(glow){x.shadowColor='rgba(255,225,140,.95)';x.shadowBlur=14+s}var g=x.createLinearGradient(-s,-s,s,s);if(grey){g.addColorStop(0,'#D8D4CC');g.addColorStop(1,'#8A8680')}else{g.addColorStop(0,'#FFF4C4');g.addColorStop(1,'#C79B48')}x.fillStyle=g;x.fillRect(-s,-s,s*2,s*2);x.restore()}
   function draw(){
     x.clearRect(0,0,w,h);
     var wide=w>=900, L0=56+Math.max(0,(w-1352)/2);
-    var r=mulberry(31), i;
-    var CX=wide?(L0+1030):(w*0.42);
-    // lay the chain out first so nothing can overlap: every gap is >= the two radii
-    var sizes=STEP.map(function(st){return st[1]*(wide?1:0.62)});
-    var GS=wide?52:34, GAPMIN=wide?26:18;
-    var TOP=wide?110:56;                       // where the ideas start falling
-    var FIELD=wide?150:104;                    // fall height into the gem
-    var GY=TOP+FIELD+GS;                       // gem centre
-    var ys=[], y=GY+GS*0.72;
-    for(i=0;i<sizes.length;i++){ y+= (i?sizes[i-1]:0)+sizes[i]+GAPMIN+(wide?18:10); ys.push(y); }
-    var BOT=ys[ys.length-1]+sizes[sizes.length-1];
-    // the field of overlooked ideas
-    for(i=0;i<(wide?300:150);i++){
-      var t=r(), px=CX+(r()-0.5)*2*(wide?150:74)*(1-t*0.72), py=TOP+(GY-GS-14-TOP)*t;
-      DIA(px,py,1.5+r()*1.0,false,0.09+r()*0.16);
+    var X0=wide?L0+720:28, X1=wide?w-64:w-28;
+    var Y1=wide?h*0.30:90, Y2=wide?h*0.66:250;
+    var F=wide?13:12;
+    // Hollywood: the same film, running down
+    T('HOLLYWOOD',X0,Y1-(wide?58:44),'700 '+F+'px Inter, sans-serif',DIM,1,'left','.16em');
+    T('the same film, again and again',X0,Y1-(wide?38:26),'400 '+(wide?14:12.5)+'px Inter, sans-serif',DIM,1,'left');
+    var n1=wide?6:5, step=(X1-X0)/(n1-0.3);
+    for(var k=0;k<n1;k++){
+      var px=X0+14+k*step, sz=(wide?16:12)*(1-k*0.11), al=1-k*0.15;
+      if(k)L(px-step+sz*0.9,Y1,px-sz*0.9,Y1,'rgba(243,239,232,'+(0.30-k*0.04)+')',1.2,[3,6]);
+      DIA(px,Y1,sz,false,al,k>0);
+      if(wide||k===0||k===n1-1)T(k===0?'ORIGINAL':'PART '+(k+1),px,Y1+sz+(wide?20:16),'700 '+(wide?11.5:11)+'px Inter, sans-serif',k===0?INK:DIM,al,'center','.1em');
     }
-    T('OVERLOOKED IDEAS',CX,TOP-18,'700 '+(wide?16:12.5)+'px Inter, sans-serif',SOFT,.9,'center','.14em');
-    GEM(CX,GY,GS);
-    T('SELZNICK',CX+GS*0.8+16,GY+5,'700 '+(wide?13.5:12)+'px Inter, sans-serif',VIOLET,1,'left','.2em');
-    var prev=[CX,GY+GS*0.72];
-    STEP.forEach(function(st,k){
-      var py2=ys[k], sz=sizes[k];
-      x.save();x.strokeStyle='rgba(228,201,126,.35)';x.lineWidth=1.4;x.setLineDash([5,7]);x.beginPath();x.moveTo(prev[0],prev[1]);x.lineTo(CX,py2-sz-5);x.stroke();x.restore();
-      DIA(CX,py2,sz,true,1);
-      T(st[0],CX+sz+16,py2+5,'700 '+(wide?14:12.5)+'px Inter, sans-serif',GOLD,1,'left','.12em');
-      T('+$',CX-sz-16,py2+5,'700 '+(wide?15:13.5)+'px Inter, sans-serif',GREEN,1,'right');
-      prev=[CX,py2+sz+5];
-    });
-    T('A MASSIVE HIT',CX,BOT+(wide?34:26),'700 '+(wide?16:12.5)+'px Inter, sans-serif',GOLD,1,'center','.14em');
+    // GEM: new originals, each one its own
+    T('GEM STUDIOS',X0,Y2-(wide?58:44),'700 '+F+'px Inter, sans-serif',GOLD,1,'left','.16em');
+    T('a new original, every time',X0,Y2-(wide?38:26),'400 '+(wide?14:12.5)+'px Inter, sans-serif',SOFT,1,'left');
+    var n2=wide?5:4, step2=(X1-X0)/(n2-0.3);
+    for(var q=0;q<n2;q++){
+      var qx=X0+14+q*step2, qs=(wide?14:10)+q*(wide?3.5:2.5);
+      DIA(qx,Y2,qs,true,1,false);
+      if(wide||q===0||q===n2-1)T('ORIGINAL',qx,Y2+qs+(wide?20:16),'700 '+(wide?11.5:11)+'px Inter, sans-serif',GOLD,1,'center','.1em');
+    }
   }
   function lay(){d=Math.min(devicePixelRatio||1,2);w=c.clientWidth||c.parentElement.clientWidth;h=c.clientHeight||c.parentElement.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);draw()}
   var t,lw=innerWidth;addEventListener('resize',function(){clearTimeout(t);if(innerWidth===lw)return;lw=innerWidth;t=setTimeout(lay,150)});
@@ -581,6 +612,99 @@ mount('f-cast',function(T,w,h,x){
   T.t('$13M',CX+CW*(n?0.62:0.56),BY+(n?24:28),'600 '+(n?12:13.5)+'px Inter, sans-serif',T.GOLD,1,'right');
   T.t('+$310M',X1,BY+(n?24:30),'700 '+(n?16:20)+'px Inter, sans-serif',T.GREEN,1,'right');
   T.t('MORE THAN THE FOUR OF THEM APART',CX+40,BY+(n?46:54),'700 '+(n?11.5:13)+'px Inter, sans-serif',T.INK,1,'left','.12em');
+});
+
+/* ── the plan: thousands of ideas from everywhere, the rare ones lit ── */
+mount('f-plan',function(T,w,h,x){
+  var n=w<900, X0=n?16:56, X1=w-(n?16:56), Y0=n?96:112, Y1=h-(n?70:80);
+  var SRC=n?['SCREENPLAYS','BOOKS','CREATORS','FESTIVAL FILMS']:['SCREENPLAYS','BOOKS','ARTICLES','TRUE STORIES','PITCHES','CREATORS','FESTIVAL FILMS','IP PARTNERS'];
+  T.t(n?'IDEAS FROM EVERYWHERE':'THOUSANDS OF IDEAS, FROM EVERYWHERE',X0,n?32:44,'700 '+(n?12.5:14)+'px Inter, sans-serif',T.INK,1,'left','.16em');
+  var a0=17,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};
+  var N=n?700:1600;
+  for(var i=0;i<N;i++){var px=X0+rr()*(X1-X0),py=Y0+rr()*(Y1-Y0);T.dia(px,py,0.9+rr()*0.9,false,0.10+rr()*0.20)}
+  // sources around the field
+  var cols=n?2:4, rows=Math.ceil(SRC.length/cols);
+  SRC.forEach(function(t,k){
+    var cx=X0+(X1-X0)*((k%cols)+0.5)/cols, cy=(k<cols)?Y0-18:Y1+30;
+    T.t(t,cx,cy,'700 '+(n?11.5:13)+'px Inter, sans-serif',T.GOLD,.95,'center','.13em');
+  });
+  // the rare ones
+  var L=n?[[0.28,0.40,13],[0.70,0.62,17]]:[[0.22,0.38,13],[0.55,0.66,17],[0.80,0.30,21]];
+  L.forEach(function(p,k){var px=X0+(X1-X0)*p[0],py=Y0+(Y1-Y0)*p[1];T.dia(px,py,p[2],true,1);if(k===L.length-1)T.t('$1B+ POTENTIAL',px,py+p[2]+22,'700 '+(n?12:13.5)+'px Inter, sans-serif',T.GOLD,1,'center','.13em')});
+});
+
+/* ── Selznick claims: five small figures ── */
+mount('c-read',function(T,w,h,x){
+  var n=w<480, X0=n?14:24, L=n?[['SCRIPT',0],['BOOK',1],['IDEA',3]]:[['SCRIPT',0],['BOOK',1],['ARTICLE',2],['IDEA',3]], y=h*0.50;
+  L.forEach(function(l,k){
+    var px=X0+22+k*(n?64:78);
+    x.save();x.translate(px,y-6);x.strokeStyle=T.GOLD;x.lineWidth=1.7;x.lineCap='round';x.shadowColor='rgba(228,201,126,.45)';x.shadowBlur=8;
+    var g=l[1];
+    if(g===0){x.beginPath();x.rect(-9,-12,18,24);x.moveTo(-4,-5);x.lineTo(4,-5);x.moveTo(-4,0);x.lineTo(4,0);x.moveTo(-4,5);x.lineTo(2,5);x.stroke()}
+    else if(g===1){x.beginPath();x.rect(-10,-12,20,24);x.moveTo(-3,-12);x.lineTo(-3,12);x.stroke()}
+    else if(g===2){x.beginPath();x.rect(-11,-9,22,18);x.moveTo(-7,-3);x.lineTo(7,-3);x.moveTo(-7,2);x.lineTo(3,2);x.stroke()}
+    else{x.beginPath();x.arc(0,-2,9,0,Math.PI*2);x.stroke();x.beginPath();x.moveTo(-4,9);x.lineTo(4,9);x.stroke()}
+    x.restore();
+    T.t(l[0],px,y+30,'700 11.5px Inter, sans-serif',T.GOLD,.95,'center','.1em');
+  });
+  var ax=X0+22+(L.length-1)*(n?64:78)+30, gx=w-(n?56:80);
+  T.ar(ax,y-6,gx-26,y-6,'rgba(196,181,253,.55)',1.3);
+  T.dia(gx,y-6,14,true);
+  T.t('THEATRICAL',gx,y+28,'700 11.5px Inter, sans-serif',T.GOLD,1,'center','.12em');
+  T.t('POTENTIAL',gx,y+44,'700 11.5px Inter, sans-serif',T.GOLD,1,'center','.12em');
+});
+
+mount('c-box',function(T,w,h,x){
+  var n=w<480, X0=26, X1=w-26, y=h*0.42;
+  var px=function(t){return X0+(X1-X0)*t};
+  T.rect(px(0.08),y-8,px(0.92)-px(0.08),16,'rgba(143,207,159,.14)','rgba(143,207,159,.45)');
+  T.dia(px(0.46),y,9,true);
+  T.t('LOW',px(0.08),y+30,'700 11.5px Inter, sans-serif',T.INK,.85,'center','.12em');
+  T.t('EXPECTED',px(0.46),y-20,'700 11.5px Inter, sans-serif',T.GREEN,1,'center','.12em');
+  T.t('HIGH',px(0.92),y+30,'700 11.5px Inter, sans-serif',T.INK,.85,'center','.12em');
+  if(n){
+    var ya=h*0.72, yb=h*0.88;
+    T.t('DOMESTIC',X0,ya+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
+    T.rect(X0+118,ya-5,(X1-X0)*0.40,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
+    T.t('INTERNATIONAL',X0,yb+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
+    T.rect(X0+118,yb-5,(X1-X0)*0.30,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
+  } else {
+    var y2=h*0.78;
+    T.t('DOMESTIC',X0,y2+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
+    T.rect(X0+92,y2-5,(X1-X0)*0.26,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
+    T.t('INTERNATIONAL',px(0.52),y2+4,'700 11px Inter, sans-serif',T.INK,.85,'left','.12em');
+    T.rect(px(0.52)+128,y2-5,(X1-X0)*0.20,10,'rgba(143,207,159,.35)','rgba(143,207,159,.7)');
+  }
+});
+
+mount('c-people',function(T,w,h,x){
+  var n=w<480, a0=9,rr=function(){a0=(a0+0x6D2B79F5)|0;var t=Math.imul(a0^(a0>>>15),1|a0);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296};
+  for(var i=0;i<(n?22:34);i++){T.person(30+rr()*(w-60),34+rr()*(h-78),0.38,0.16+rr()*0.14)}
+  var lit=[[0.22,0.40],[0.56,0.62],[0.82,0.30]];
+  lit.forEach(function(p){var px=30+(w-60)*p[0],py=34+(h-78)*p[1];T.person(px,py,0.5,1);T.t('+$',px+18,py-8,'700 13px Inter, sans-serif',T.GREEN,1,'left')});
+  T.t('FIT, NOT FAME',w-24,h-18,'700 12px Inter, sans-serif',T.GOLD,1,'right','.14em');
+});
+
+mount('c-cost',function(T,w,h,x){
+  var n=w<480, X0=24, R=[['LOCATIONS',0.7,0.9],['CAST SIZE',0.5,0.55],['NIGHT SHOOTS',0.35,0.3],['STUNTS',0.55,0.7],['BUILDS',0.6,0.45]];
+  var LW=n?96:112, BX=X0+LW, MID=BX+(w-BX-24)*0.46, RX=w-24, TOP=26, RH=(h-40)/R.length;
+  T.t('COST',BX,16,'700 10.5px Inter, sans-serif',T.INK,.8,'left','.12em');
+  T.t('BOX OFFICE',MID+12,16,'700 10.5px Inter, sans-serif',T.INK,.8,'left','.12em');
+  R.forEach(function(r,k){
+    var y=TOP+k*RH+RH/2;
+    T.t(r[0],X0,y+4,'700 10.5px Inter, sans-serif',T.GOLD,.95,'left','.08em');
+    T.rect(BX,y-5,(MID-BX-10)*r[1],10,'rgba(228,201,126,.3)','rgba(228,201,126,.65)');
+    T.rect(MID+12,y-5,(RX-MID-12)*r[2],10,'rgba(143,207,159,.3)','rgba(143,207,159,.65)');
+  });
+});
+
+mount('c-draft',function(T,w,h,x){
+  var n=w<480, X0=34, X1=w-34, BASE=h-40, TOP=34;
+  var pts=[[0.10,0.30],[0.50,0.60],[0.90,0.92]];
+  var px=function(t){return X0+(X1-X0)*t}, py=function(v){return BASE-(BASE-TOP)*v};
+  x.save();x.strokeStyle='rgba(228,201,126,.7)';x.lineWidth=2.2;x.lineCap='round';x.shadowColor='rgba(228,201,126,.4)';x.shadowBlur=8;x.beginPath();pts.forEach(function(p,k){k?x.lineTo(px(p[0]),py(p[1])):x.moveTo(px(p[0]),py(p[1]))});x.stroke();x.restore();
+  pts.forEach(function(p,k){T.dia(px(p[0]),py(p[1]),k===2?11:7,true);T.t('DRAFT '+(k+1),px(p[0]),BASE+22,'700 11.5px Inter, sans-serif',T.GOLD,1,'center','.12em')});
+  T.t('POTENTIAL',X0-10,TOP-12,'700 10.5px Inter, sans-serif',T.INK,.8,'left','.12em');
 });
 </script>
 </body>
