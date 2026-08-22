@@ -68,6 +68,37 @@ Deck, under the headline:
 
 ---
 
+## 2a. What we do (approved Aug 21 2026)
+
+> GEM is a studio built to make original films at blockbuster scale. We
+> find them, we develop them, we finance them, and we release them
+> worldwide, alongside producers, financiers, and studios who want to be
+> in business on originals again.
+>
+> Original films stopped getting made because nobody could see which
+> ones would work. We built technology that can: it finds the projects
+> with massive box office potential that everyone else passes over, and
+> it informs every creative decision that follows, from the script to
+> the cast to the budget, in a way this industry has never had. Where
+> Hollywood sees a gamble, we see a film worth making, and we have the
+> means to back it.
+>
+> We started on social media to test that idea, making original content
+> with the technology behind every choice, and more than 500 million
+> people watched it in our first year. Now we are taking the same
+> approach to feature films.
+>
+> Our founder grew up inside the film business, spent his career
+> building technology and AI at some of the world's leading technology
+> companies, and built that technology himself.
+
+Lessons baked into this: no comparatives aimed at the reader ("we cast
+better than you"), no indictment as an opener, no model mechanics, no
+"put a number on it", no "at any budget and with any cast". Each
+paragraph does one job: what we are / why it is possible now / how we
+tested it / who. It ends on the approach, not on "our first is in
+development" (the next section carries the film).
+
 ## 3. Selznick
 
 **Rule (Aug 21 2026):** the Selznick section lead describes what Selznick lets us do that nobody else can, not what Selznick is. Approved lead:
