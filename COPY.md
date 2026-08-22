@@ -70,6 +70,23 @@ Deck, under the headline:
 
 ## 3. Selznick
 
+**The capability, in one sentence (approved Aug 21 2026, leads the section):**
+
+> We built technology that measures what every creative decision does to
+> a film's commercial potential, from the first idea to the release. In
+> Hollywood, creative choices and financial outcomes have never been
+> spoken in the same language: creative executives guess at commercial
+> results, finance executives cannot read a script, and original films
+> die in the gap between them. Selznick closes it. Here is what we can
+> do with it.
+
+Page order (settled): hero → Hollywood is stuck in the 20th century
+(problem, ends on the problem) → Our technology: Selznick (the answer,
+five cards) → The plan (the payoff, brings partners in) → In development
+→ Our story → Work with us → founder, door. A plan stated before the
+capability reads as a boast; stated after, it reads as a conclusion.
+
+
 What Selznick actually does, in the order we say it:
 
 - reads **what is in a story**: what happens, who the characters are,
