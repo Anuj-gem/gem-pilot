@@ -70,6 +70,22 @@ Deck, under the headline:
 
 ## 3. Selznick
 
+**Rule (Aug 21 2026):** the Selznick section lead describes what Selznick lets us do that nobody else can, not what Selznick is. Approved lead:
+
+> Selznick is the most powerful AI creative partner ever built, and it
+> lets us do things nobody else in this business can do. It lets us read
+> thousands of times more material than any studio and know which ideas
+> can be enormous. It lets us project what a film will earn from the
+> script alone, and sharpen that projection with every decision that
+> follows. It lets us find the right actor or director for a part out of
+> everyone in the industry, not the short list, and know what each one
+> adds. It lets us set a budget where every dollar shows up on screen.
+> And it lets us hand filmmakers the same numbers we have, so they make
+> the creative decisions and we make the financial ones. Here is each of
+> those, in detail.
+
+**Page is written for one reader: a studio executive who arrived from a cold email pitching a film.** Order: hero → What we do (differentiation + founder, two paragraphs) → What we are making (Overlord) → Our technology: Selznick (five cards) → Originals are the most undervalued films in the business (78% → 24%) → Work with us (one ask: partners on our first original films) → Our story (founder letter) → blog, social, door. Never insult the reader's industry in the cards; state what we can do, not what they cannot.
+
 **The capability, in one sentence (approved Aug 21 2026, leads the section):**
 
 > We built technology that measures what every creative decision does to
@@ -169,7 +185,7 @@ potential, box office potential, incremental value, precision, appetite,
 material, underlying rights, a completed film, cast and crew, vendors
 and specialists, the director's vision.
 
-**Never use:** unlock, journey, seamless, empower, leverage (as a verb),
+**Never use:** "price" / "pricing" / "priced" as what we do to a film (we do not price films; we project box office, we measure what a decision does to commercial potential, we evaluate material); unlock, journey, seamless, empower, leverage (as a verb),
 game-changing, revolutionary, "at the end of the day", "that's why we
 can", "the days of X are over", "what it takes to get there", "in
 service of", "we're excited to".
@@ -178,6 +194,8 @@ service of", "we're excited to".
 
 ## Changelog
 
+- **2026-08-21**: Page rebuilt for the studio-exec reader after two adversarial reads by a second agent. "What we do" is differentiation (find what Hollywood overlooks, take the risk it will not, because of Selznick) plus the founder in one paragraph (grew up in the film business, career in technology and AI at leading tech companies, built Selznick himself, 500M viewers across our network in year one). Work with us is one ask. Founder note names Uber and the $15M raise (from Anuj's own account; strike if he objects). Hero number reads "500+ million viewers / across our network in our first year."
+- **2026-08-21**: Banned "price" as a verb for what we do to films (he: "we don't price films, commit that to memory"). Also: never introduce Selznick by name in copy before the reader has been told what it is.
 - **2026-08-21**: Thesis section carries a stat block beside the copy, not a chart: share of global box office from original films, 2000 at 78% and 2025 at 24% (real figures from the Selznick study), with the dollar figures ($19B to $6.5B in today's dollars) as the note underneath. He rejected the line chart as too complicated and dollars alone as misleading because the total market grew. "Our work so far" became "Our story", a four-node timeline (Before / 2025 / The last twelve months / Now).
 - **2026-08-21**: Selznick section now five cards, each a claim we can defend: "We find the ideas Hollywood is not even looking at" (breadth: thousands of times more ideas, sources a studio would never look at, plus our own time making things for modern audiences), "We make more advanced financial projections than any studio in the world" (the projection sharpens with every decision; range narrows script → drafts → cast → budget → release), "We cast on fit, not fame", "We put every dollar where the audience will feel it", "We give filmmakers total creative control" (we make the financial decisions, they make the creative ones, with the same projection; kills the adversarial-studio objection). Thesis section carries a chart of the share of top-20 box office from original films, 2000 to 2025 (placeholder series in `SHARE`, replace with real data). Background sky: tiny violet dust plus small gold diamonds, reduced counts on mobile.
 - **2026-08-21**: Page restructured and live: hero (locked line; LAUNCHED 2025 ON SOCIAL MEDIA / 500+ million viewers so far / Our first feature film is coming soon; hero graphic = Hollywood's franchise fading Part 2..6 vs our row of new originals) → "Hollywood is stuck in the 20th century" (approved thesis) → "The plan" (billion-dollar original; we search everywhere, doors open, thousands of ideas; mastery of modern media, technology, relationships; franchises have to start somewhere) → "Our technology: Selznick" (five titled cards, each Hollywood-does-X / we-do-Y: read a thousand times more ideas; project box office from the script in full detail; cast on fit not fame; every dollar where the audience will feel it; a number on every draft) → In development (Overlord) → Our work so far (500M) → Work with us → founder, door. Old IP-acquisition / production-financing / cast-and-crew sections retired.
